@@ -83,8 +83,8 @@ arcs between words of the sentence.
 \begin{figure}[htb]
 \centering
 \begin{tabular}{cc}
-{{\psfig{figure=ps/overview-files/derived.ps,height=2.0in}}}  &
-{{\psfig{figure=ps/overview-files/derivation.ps,height=1.0in,width=2.7in}}} \\
+{{\psfig{figure=ps/overview-files/derived.ps,height=3.0in}}}  &
+{{\psfig{figure=ps/overview-files/derivation.ps,height=2.0in,width=2.7in}}} \\
 Parse Tree  & Derivation Tree \\
 \end{tabular}
 \caption{Output Structures from the Parser}
@@ -103,14 +103,16 @@ used by the parser. These methods speed the runtime by approximately 87\%.
 \section{Syntactic Database}
 \label{description-syn-entries}
 
-The syntactic database associates lexical items with the appropriate trees and
-tree families based on various selectional information.  The syntactic database
-entries were originally extracted from the Oxford Advanced Learner's Dictionary
-(\cite{oald74}) and Oxford Dictionary for Contemporary Idiomatic English
-(\cite{cie75}) available through ACL-DCI (\cite{liberman89}), and then modified
-and augmented by hand (\cite{EgediMartin94}).  There are more than 37,000
-syntactic database entries.  Selected entries from this database are shown in
-Table~\ref{syn-entries}.
+The syntactic database associates lexical items with the appropriate
+trees and tree families based on various selectional information.  The
+syntactic database entries were originally extracted from the Oxford
+Advanced Learner's Dictionary (\cite{oald74}) and Oxford Dictionary
+for Contemporary Idiomatic English (\cite{cie75}) available through
+ACL-DCI (\cite{liberman89}), and then modified and augmented by hand
+(\cite{EgediMartin94}).  There are more than 31,000 syntactic database
+entries.\footnote{This number does not include trees assigned by
+default based on the part-of-speech of the word.}  Selected entries
+from this database are shown in Table~\ref{syn-entries}.
 
 Each syntactic entry consists of an {\sc index} field, the uninflected form
 under which the entry is compiled in the database, an {\sc entry} field, which
@@ -171,22 +173,25 @@ features to capture lexical idiosyncrasies.
 \label{syn-entries}
 \end{table}
 
-The syntactic database is currently undergoing a series of changes designed to
-make it easier to use and update.  In addition, the number of entries will be
-augmented to increase the coverage of the database, and the defaults used by
-the XTAG system will be accessible from the database itself.  The format of the
-entries as seen in Table \ref{syn-entries} will change slightly in the new
-version, but the same basic information will be included.
+The syntactic database is currently undergoing a series of changes
+designed to make it easier to use and update.  In addition, the number
+of entries will be augmented to increase the coverage of the database,
+and the defaults used by the XTAG system will be accessible from the
+database itself.  The format of the entries as seen in Table
+\ref{syn-entries} will change slightly in the new version, but the
+same basic information will be included.
 
 \section{Tree Database} 
 \label{tree-db}
-Trees in the English XTAG grammar fall into two conceptual classes.  The
-smaller class consists of individual trees such as NP and adverb trees.  The
-trees in this class are generally anchored by non-verbal lexical items. The
-larger class consists of trees that are grouped into tree families.  These tree
-families represent subcategorization frames (see section~\ref{subcat-frames}).
-As of the end of 1994, there are 569 trees that compose 38 tree families, along
-with 67 individually selected trees in the tree database.
+
+Trees in the English XTAG grammar fall into two conceptual classes.
+The smaller class consists of individual trees such as NP and adverb
+trees.  The trees in this class are generally anchored by non-verbal
+lexical items. The larger class consists of trees that are grouped
+into tree families.  These tree families represent subcategorization
+frames (see section~\ref{subcat-frames}).  Currently, there are 739
+trees that compose 49 tree families, along with 218 individually
+selected trees in the tree database.
 
 
 \section{Statistics Database}
@@ -210,9 +215,9 @@ interface for manipulating TAGs.  The interface offers the following:
 \item Menu-based facility for creating and modifying tree files and 
 loading grammar files.
 
-\item User controlled parser parameters, including the parsing of
-categories (S, embedded S, NP, DetP), and the use of the tagger (on/off/retry
-on failure).
+\item User controlled parser parameters, including the root
+category (main S, embedded S, NP, etc.), and the use of the tagger
+(on/off/retry on failure).
 
 \item Storage/retrieval facilities for elementary and parsed trees as
 text files.
@@ -234,20 +239,20 @@ in diagnosing grammar problems.
 
 \section{Computer Platform}
 
-XTAG was developed on the Sun SPARC station series, and has been tested on the
-Sun 4 and HP BOBCATs series 9000.  It is available through anonymous ftp, and
-requires 20MB of disk space.  Please send mail to
-xtag-request@linc.cis.upenn.edu for ftp instructions or more information.  XTAG
-requires the following software to run:
+XTAG was developed on the Sun SPARC station series, and has been
+tested on the Sun 4 and HP BOBCATs series 9000.  It is available
+through anonymous ftp, and requires 20MB of disk space.  Please send
+mail to xtag-request@linc.cis.upenn.edu for ftp instructions or more
+information.  XTAG requires the following software to run:
 
 \begin{itemize}
 
-\item A machine running UNIX and X11R4 (or higher). Previous releases of X will
-not work.  X11R4 is free software available from MIT.
+\item A machine running UNIX and X11R4 (or higher). Previous releases
+of X will not work.  X11R4 is free software available from MIT.
 
 \item A Common Lisp compiler which supports the latest definition of Common 
-Lisp (Steele's Common Lisp, second edition).  XTAG has been tested with Lucid
-Common Lisp 4.0 and Allegro 4.0.1.
+Lisp (Steele's Common Lisp, second edition).  XTAG has been tested
+with Lucid Common Lisp 4.0 and Allegro 4.0.1.
 
 \item CLX version 4 or higher. CLX is the lisp equivalent to the Xlib package 
 written in C.
@@ -257,16 +262,17 @@ defsystem.
 
 \end{itemize}
 
-The latest version of CLX (R5.0) and the CMU Lisp Utilities are provided in our
-ftp directory for your convenience.  However, we ask that you refer to the
-appropriate source for updates.
+The latest version of CLX (R5.0) and the CMU Lisp Utilities are
+provided in our ftp directory for your convenience.  However, we ask
+that you refer to the appropriate source for updates.
 
-The morphology database component (\cite{karp92}), no longer under licensing
-restrictions, is available as a separate system from the XTAG system.  FTP
-instructions and more information can be obtained by mailing requests to
+The morphology database component (\cite{karp92}), no longer under
+licensing restrictions, is available as a separate system from the
+XTAG system.  FTP instructions and more information can be obtained by
+mailing requests to lex-request@linc.cis.upenn.edu.
+
+The syntactic database component is also available as a separate
+system (\cite{EgediMartin94}).  The new format of the database is
+expected to be available in 1995.  FTP instructions and more
+information can be obtained by mailing requests to
 lex-request@linc.cis.upenn.edu.
-
-The syntactic database component is also available as a separate system
-(\cite{EgediMartin94}).  The new format of the database is expected to be
-available in 1995.  FTP instructions and more information can be obtained
-by mailing requests to lex-request@linc.cis.upenn.edu.
