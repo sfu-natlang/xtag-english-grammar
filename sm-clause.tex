@@ -166,23 +166,15 @@ headed by a verb that is either passive or a present participle.
 
 GPSG follows \cite{chomsky70} in adopting the binary valued features [V] and
 [N] for decomposing the verb, noun, adjective and preposition categories.  In
-that analysis, verbs are [+V,$-$N], nouns are [$-$V,+N], adjectives
-[+V,+N] and prepositions [$-$V,$-$N].  Consequently, in \cite{sag85} the
-verb {\it become} can be specified as taking a predicative complement that is
-[+N]; that is, it can take either a predicative NP or predicative AP
-complement.
-
-\enumsentence{Carl became a jerk.}
-\enumsentence{Carl became upset.}
-\enumsentence{$\ast$Carl became in a foul mood.}
-
-NP and AP predicative complements generally pattern together; a fact that can
-be stated economically using this category decomposition.  In neither
-\cite{sag85} nor \cite{chomsky70} is there any discussion of how to handle 
-the complete range of complements to a verb like {\it seem}, which takes AP,
-NP and PP complements, as well as infinitives.  The solution would appear
-to be to associate the verb with two sets of rules for small clauses, leaving
-aside the use of the verb with an expletive subject and sentential complement.
+that analysis, verbs are [+V,$-$N], nouns are [$-$V,+N], adjectives [+V,+N] and
+prepositions [$-$V,$-$N].  NP and AP predicative complements generally pattern
+together; a fact that can be stated economically using this category
+decomposition.  In neither \cite{sag85} nor \cite{chomsky70} is there any
+discussion of how to handle the complete range of complements to a verb like
+{\it seem}, which takes AP, NP and PP complements, as well as infinitives.  The
+solution would appear to be to associate the verb with two sets of rules for
+small clauses, leaving aside the use of the verb with an expletive subject and
+sentential complement.
 
 \subsection{Auxiliary + Small Clause}
 
@@ -263,7 +255,7 @@ the predicative trees.  The auxiliary tree in Figure~\ref{Vvx-with-nomprep}
 will look the same when anchored by the raising verbs, except possibly for the
 value of {\bf $<$mode$>$} on the foot node, VP.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
 \begin{tabular}{c}
 {\psfig{figure=ps/sm-clause-files/betaVvx_is-with-features.ps,height=5.7in}} \\
@@ -375,36 +367,38 @@ is anchored by the NP, AP, or PP, as we have in the predicative sentences.  In
 addition to the conceptual problem, we would also need a mechanism to block
 raising verbs from adjoining into these sentences (while allowing them for true
 predicative phrases), and prevent these types of sentence from being embedded
-(again, while allowing them for true predicative phrases).  An additional
-indication that distinct trees are necessary is the difference in the
-grammaticality of extraction for the material to the right of the predicative
-and non-predicative {\it be}.  The sentences in ({\ex{1}}) contain predicative
-{\it be} as evidenced by the ungrammaticality of switching the subject {\it the
-challenger} with the clause {\it to provide a non-stipulative solution}. In
-contrast the grammaticality of the sentence produced by the equivalent switch
-in ({\ex{2}}) shows that the {\it be} in those sentences is
-non-predicative. Notice that extraction is possible from the clause with
-predicative {\it be} but not with non-predicative {\it be}.
+(again, while allowing them for true predicative phrases).  
 
-\enumsentence{The challenger is to provide a non-stipulative solution.\\
-$\ast$To provide a non-stipulative solution is the challenger.\\
-What$_{i}$ is the challenger to provide $t_{i}$?}
-
-\enumsentence{The challenge is to provide a non-stipulative solution.\\
-To provide a non-stipulative solution is the challenge.\\
-		$\ast$What$_{i}$ is the challenge to provide $t_{i}$?}
-
-The ungrammaticality of the extracted NP in ({\ex{0}}) is explained if the
-clause is a complement added by substitution, since extraction is not possible
-from within substituted elements.  This is true in XTAG of the complements of
-equative {\it be}.  In contrast, the predicative {\it be} in ({\ex{-1}})
-adjoins to {\it What$_{i}$ the challenger to provide
-$\epsilon_{i}$}\footnote{The elementary tree underlying this sentence would not
-include the infinitive {\it to}.  Since the details of how {\it to} is adjoined
-do not affect the thrust of the current argument, we assume a stage of
-derivation where {\it to} has already been adjoined.}. Since the extraction is
-already part of the elementary tree anchored by {\it provide} in the
-predicative analysis, the extraction is unproblematic.
+%%An additional
+%%indication that distinct trees are necessary is the difference in the
+%%grammaticality of extraction for the material to the right of the predicative
+%%and non-predicative {\it be}.  The sentences in ({\ex{1}}) contain predicative
+%%{\it be} as evidenced by the ungrammaticality of switching the subject {\it the
+%%challenger} with the clause {\it to provide a non-stipulative solution}. In
+%%contrast the grammaticality of the sentence produced by the equivalent switch
+%%in ({\ex{2}}) shows that the {\it be} in those sentences is
+%%non-predicative. Notice that extraction is possible from the clause with
+%%predicative {\it be} but not with non-predicative {\it be}.
+%%
+%%\enumsentence{The challenger is to provide a non-stipulative solution.\\
+%%$\ast$To provide a non-stipulative solution is the challenger.\\
+%%What$_{i}$ is the challenger to provide $t_{i}$?}
+%%
+%%\enumsentence{The challenge is to provide a non-stipulative solution.\\
+%%To provide a non-stipulative solution is the challenge.\\
+%%		$\ast$What$_{i}$ is the challenge to provide $t_{i}$?}
+%%
+%%The ungrammaticality of the extracted NP in ({\ex{0}}) is explained if the
+%%clause is a complement added by substitution, since extraction is not possible
+%%from within substituted elements.  This is true in XTAG of the complements of
+%%equative {\it be}.  In contrast, the predicative {\it be} in ({\ex{-1}})
+%%adjoins to {\it What$_{i}$ the challenger to provide
+%%$\epsilon_{i}$}\footnote{The elementary tree underlying this sentence would not
+%%include the infinitive {\it to}.  Since the details of how {\it to} is adjoined
+%%do not affect the thrust of the current argument, we assume a stage of
+%%derivation where {\it to} has already been adjoined.}. Since the extraction is
+%%already part of the elementary tree anchored by {\it provide} in the
+%%predicative analysis, the extraction is unproblematic.
 
 \begin{figure}[htb]
 \centering
