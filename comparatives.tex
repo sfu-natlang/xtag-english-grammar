@@ -1,0 +1,517 @@
+\chapter{Comparatives}
+
+\section{Introduction}
+
+Comparatives in English can manifest themselves in many ways, acting
+on many different grammatical categories and often involving ellipsis.
+A distinction must be made at the outset between two very different
+sorts of comparatives---those which make a comparison between two
+propositions and those which compare the extent to which an entity has
+one property to a greater or lesser extent than another property.  The
+former, which we will refer to as {\it propositional} comparatives, is
+exemplified in (\ex{1}), while the latter, which we will call {\it
+metalinguistic} comparatives (following Hellan 1981), is seen in
+(\ex{2}):
+
+\enumsentence{Ronaldo is more angry than Romario.}
+\enumsentence{Ronaldo is more angry than upset.}
+
+\noindent In (\ex{-1}), the extent to which Ronaldo is angry is greater
+than the extent to which Romario is angry.  Sentence (\ex{0})
+indicates that the extent to which Ronaldo is angry is greater than
+the extent to which he is upset.
+
+Apart from certain of the elliptical cases, both kinds of comparatives
+can be handled straightforwardly in the XTAG system.  Elliptical cases
+which are not presently covered include those exemplified by the
+following sentences, which would presumably be handled in the same way
+as other sorts of VP ellipsis would.
+
+\enumsentence{Ronaldo is more angry than Romario is.}
+\enumsentence{Bill eats more broccoli than George eats.}
+\enumsentence{Bill eats more broccoli than George does.}
+
+We turn to the analysis of metalinguistic comparatives first.
+
+\section{Metalinguistic Comparatives}
+
+A metalinguistic comparison can be performed on basically all of the
+predicational categories---adjectives, verb phrases, prepositional
+phrases, and nouns---as in the following examples:
+
+\enumsentence{The table is more long than wide.}
+\enumsentence{Clark more makes the rules than follows them.}
+\enumsentence{Calvin is more in the living room than in the kitchen.}
+\enumsentence{That unindentified amphibian in the bush is more frog
+than toad, I would say.}
+
+\noindent At present, we only deal with the adjectival metalinguistic
+comparatives as in (\ex{-3}).  The analysis given here for these can
+be easily extended to prepositional phrases and nominal comparatives of
+the metalinguistic sort, but, as with coordination in XTAG, verb
+phrases will prove more difficult.
+
+Adjectival comparatives appear to distribute with simple adjectives,
+as in the following examples:
+
+\enumsentence{Herbert is more livid than angry.}
+\enumsentence{Herbert is more livid and furious than angry.}
+\enumsentence{The more innovative than conventional medication cured
+everyone in the sick ward.}
+\enumsentence{The elephant, more wobbly than steady, fell from the
+circus ball.}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/comparatives-files/betaARBaPa.ps,height=2.0in}}
+\end{tabular}\\
+\caption {Tree for Metalinguistic Adjective Comparative: $\beta$ARBaPa}
+\label {ARBaPa-tree}
+\end{figure}
+
+This patterning indicates that we can give these comparatives a tree
+that adjoins quite freely onto adjectives, as in
+Figure~\ref{ARBaPa-tree}.  This tree is anchored by {\it more/less -
+than}.  The feature {\bf compar} is used to block this tree from
+adjoining onto morphologically comparative adjectives such as {\it
+brighter}, thus avoiding {\it more brighter than X}.  The foot node is
+{\bf compar-}, while {\it brighter} and its comparative siblings are
+{\bf compar+}\footnote {The analysis given later for adjectival
+propositional comparatives produces aggregated {\bf compar+}
+adjectives such as {\it more bright}, which will also be incompatable
+(as desired) with $\beta$ARBaPa.}.  Also, the feature {\bf super} has
+a negative value at the foot node so that $\beta$ARBaPa cannot adjoin
+to superlatives like {\it nicest}.  Furthermore, the root node is {\bf
+super+} so that $\beta$ARBaPa cannot adjoin onto itself and produce
+monstrosities such as (\ex{1}):
+
+\enumsentence{Herbert is more less livid than angry than furious.}
+
+\noindent Thus, the use of the {\bf super} feature is less to indicate
+superlativeness specifically, but rather to indicate that the subtree
+below a {\bf super+} node contains a fully-fleshed comparison.  In the
+case of lexical superlatives, the comparison is against everything,
+implicitly.
+
+A benefit of the multiple-anchor approach here is that we will never
+allow sentences such as (\ex{1}), which would be permissable if we
+split the comparative component and the {\it than} component of
+metalinguistic comparatives into two separate trees.
+
+\enumsentence{*Ronaldo is angrier than upset.}
+
+Another variety of adjectival comparatives is those such as {\it
+more/less than X}, which indicates some property which is more or less
+extreme than the property {\it X}.  In a sentence such as (\ex{1}),
+some property is being said to hold of Francis such that it is of a
+kind with {\it stupid} and that it exceeds {\it stupid} on some scale
+(intelligence, for example).  Quirk et al. also note that these
+constructions remark on the inadequacy of the lexical item.  Thus, in
+(\ex{0}), it could be that {\it stupid} is a starting point from which
+the speaker makes an approximation for some property which the speaker
+feels is beyond the range of the English lexicon, but which expresses
+the supreme lack of intellect of the individual it is predicated of.
+
+\enumsentence{Francis is more than stupid.}
+
+Taking our inspiration from $\beta$ARBaPa, we can handle these
+comparatives, which have the same distribution but contain an empty
+adjective, by using the tree shown in Figure~\ref{ARBPa-tree}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/comparatives-files/betaARBPa.ps,height=2.0in}}
+\end{tabular}\\
+\caption {Tree for Adjective-Extreme Comparative: $\beta$ARBPa}
+\label {ARBPa-tree}
+\end{figure}
+
+This sort of metalinguistic comparative also occurs with the verb
+phrase, prepositional phrase, and noun varieties.
+
+\enumsentence{Clark more than makes the rules.}
+\enumsentence{Calvin's hands are more than near the cookie jar.}
+\enumsentence{That stuff on her face is more than mud.}
+
+\noindent Presumably, the analysis for these would parallel that for
+adjectives, though it has not yet been implemented.
+
+
+\section{Propositional Comparatives}
+
+\subsection{Nominal Comparatives}
+
+Nominal comparatives are considered here to be those which compare the
+cardinality of two sets of entities denoted by nominal phrases.  The
+following data lay out a basic distribution of these comparatives.
+
+\enumsentence{More vikings than mongols eat spam.}
+\enumsentence{*More the vikings than mongols eat spam.}
+\enumsentence{Vikings eat less spaghetti than spam.}
+\enumsentence{More men that walk to the store than women who despise
+spam enjoyed the football game.}
+\enumsentence{More men than James like scotch on the rocks.}
+\enumsentence{Elmer knows fewer martians than rabbits.}
+
+Looking at these examples, we are tempted to produce a tree for this
+construction that is similar to $\beta$ARBaPa.  However, it is quite
+common for the {\it than} portion of these comparatives to be left
+out, as in the following sentences:
+
+\enumsentence{More vikings eat spam.}
+\enumsentence{Mongols eat less spam.}
+
+\noindent Furthermore, {\it than NP} cannot occur without {\it more}.
+These facts indicate that we can and should build up nominal
+comparatives with two separate trees.  The first, which allows a
+comparative adverb to adjoin to a noun, is given in
+Figure~\ref{nom-compar}(a). The second is the noun-phrase modifying
+prepositional tree.  The tree $\beta$CARBn is anchored by {\it
+more/less/fewer} and $\beta$nxPnx is anchored by {\it than}.  The
+feature {\bf compar} is used to ensure that only one $\beta$CARBn tree
+can adjoin to any given noun---the foot node is {\bf compar-} and the
+root node is {\bf compar+}.  All nouns are {\bf compar-}, and the {\bf
+compar} value is passed up through all trees which adjoin to N or NP.
+The NP foot node of $\beta$nxPnx must match the P node for {\bf
+compar}; thus, $\beta$nxPnx will adjoin only to those trees which have
+been already modified by $\beta$CARBn.  In this way, we capture
+sentences like (16) en route to deriving sentences like (10), in a
+principled and simple manner.
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/comparatives-files/betaCARBn.ps,height=1.2in}}  &
+\hspace{0.6in}
+{\psfig{figure=ps/comparatives-files/betanxPnx.ps,height=2.0in}} \\
+(a) $\beta$CARBn tree& \qquad(b) $\beta$CnxPnx tree \\
+\end{tabular}\\
+\caption {Nominal comparative trees}
+\label {nom-compar}
+\end{figure}
+
+Further evidence for this approach comes from comparative clauses
+which are missing the noun phrase which is being compared against
+something, as in the following:
+
+\enumsentence{The vikings ate more.}
+\enumsentence{The vikings ate more than a boar.}
+
+\noindent Sometimes the missing noun refers to an entity or set
+available in the prior discourse, while at other times it is a
+reference to some anonymous, unspecified set.  The former is
+exemplified in a mini-discourse such as the following: \\
+
+\noindent Calvin: ``The mongols ate spam.''\\
+\noindent Hobbes: ``The vikings ate more.''  \\
+
+\noindent The latter can be seen in the following example: \\
+
+\noindent Calvin: ``The vikings ate a aboar.''\\
+\noindent Hobbes: ``Indeed. But in fact, the vikings ate more than a boar.'' \\
+
+Since the lone comparatives {\it more/less/fewer} have the same basic
+distribution as noun phrases, the tree in Figure~\ref{lone-compar} is
+employed to capture this fact. The root node of $\alpha$CARB is {\bf
+compar+}.  Not only does this accord with our intuitions about what
+the {\bf compar} feature is supposed to indicate, it also permits
+$\beta$nxPnx to adjoin, giving us strings such as {\it more than NP}
+for free.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/comparatives-files/alphaCARB.ps,height=2.0in}}
+\end{tabular}\\
+\caption {Tree for Lone Comparatives: $\alpha$CARB}
+\label {lone-compar}
+\end{figure}
+
+Thus, by splitting nominal comparatives into multiple trees, we make
+correct predictions about their distribution with a minimal number of
+simple trees.  Furthermore, we now also get certain comparative
+coordinations for free, once we place the requirement that nouns and
+noun phrases must match for {\bf compar} if they are to be
+coordinated.  This yields strings such as the following:
+
+\enumsentence{Julius eats [(more grapes) and (fewer boars)]$_{N[compar+]}$ than avocados.}
+\enumsentence{Were there [more or less]$_{N[compar+]}$ than one hundred people at the party?}
+
+\noindent Also, it will block strings like {\it more men and women than
+children} under the (impossible) interpretation that there are more
+men than children but the comparison of the quantity of women to
+children is not performed.  Unfortunately, it will permit comparative
+clauses such as ``more grapes and fewer than avocados'' under the
+interpretation in which there are more grapes than avocados and fewer
+of some unspecified thing than avocados.
+
+One aspect of this analysis is that it handles the elliptical
+comparatives such as the following:
+
+\enumsentence{Arnold kills more bad guys than Steven.}
+
+\noindent In a sense, this is actually only simulating the ellipsis of
+these constructions indirectly.  However, consider the following
+sentences:
+
+\enumsentence{Arnold kills more bad guys than I do.}
+\enumsentence{Arnold kills more bad guys than I.}
+\enumsentence{Arnold kills more bad guys than me.}
+
+\noindent The first of these has a {\it pro}-verb phrase which has a
+nominative subject.  If we totally drop the second verb phrase, we
+find that the second NP can be in either the nominative or the
+accusative case.  Prescriptive grammars disallow accusative case, but
+it actually is more common to find accusative case---use of the
+nominative in conversation tends to sound rather stiff and unnatural.
+This accords with the present analysis in which the second noun phrase
+in these comparatives is the complement of {\it than} in $\beta$nxPnx,
+and receives its case-marking from {\it than}.
+
+There is yet another distributional fact which falls out of this
+analysis.  When comparative or comparativized adjectives modify a noun
+phrase, they can stand alone or occur with a {\it than} phrase;
+furthermore, they are obligatory when a {\it than}-phrase is present.
+
+\enumsentence{Hobbes is a better teacher.}
+\enumsentence{Hobbes is a better teacher than Bill.}
+\enumsentence{A more exquisite horse launched onto the racetrack.} 
+\enumsentence{A more exquisite horse than Black Beauty launched onto
+the racetrack.} 
+\enumsentence{*Hobbes is a teacher than Bill.}
+
+\noindent Comparative adjectives such as {\it better} 
+come from the lexicon as {\bf compar+}.  By having trees such as
+$\beta$An transmit the {\bf compar} value of the A node to the root
+N node, we can signal to $\beta$CnxPnx that it may adjoin when a
+comparative adjective has adjoined.  An example of such an adjunction
+is given in Figure~\ref{better-teacher-than-Bill}. Of course, if no
+comparative element is present in the lower part of the noun phrase,
+$\beta$nxPnx will not be able to adjoin since nouns themselves are
+{\bf compar-}.  In order to capture the fact that a comparative
+element blocks further modification to N, $\beta$An must only adjoin
+to N nodes which are {\bf compar-} in their lower feature matrix.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/comparatives-files/better_teacher_than_Bill_nf.ps,height=3.0in}}
+\end{tabular}\\
+\caption {Adjunction of $\beta$nxPnx to NP modified by comparative adjective.}
+\label {better-teacher-than-Bill}
+\end{figure}
+
+In order to obtain this result for phrases like {\it more exquisite
+horse}, we need to provide a way for {\it more} and {\em less} to
+modify adjectives without a {\it than}-clause as we have with
+$\beta$ARBaPa.  Actually, we need this ability independently for
+comparative adjectival phrases, as discussed in the next section.
+
+\subsection{Adjectival Comparatives}
+
+With nominal comparatives, we saw that a single analysis was amenable
+to both ``pure'' comparatives and elliptical comparatives.  This is
+not possible for adjectival comparatives, as the following examples
+demonstrate: 
+
+\enumsentence{The dog is less patient.}
+\enumsentence{The dog is less patient than the cat.}
+\enumsentence{The dog is as patient.}
+\enumsentence{The dog is as patient as the cat.}
+\enumsentence{The less patient dog waited eagerly for its master.}
+\enumsentence{*The less patient than the cat dog waited eagerly for
+its master.}
+
+\noindent The last example shows that comparative adjectival phrases cannot
+distribute quite as freely as comparative nominals.
+
+The analysis of elliptical comparative adjectives follows closely to
+that of comparative nominals.  We build them up by first adjoining the
+comparative element to the A node, which then signals to the AP node,
+via the {\bf compar} feature, that it may allow a {\it than}-clause to
+adjoin.  The relevant trees are given in
+Figure~\ref{ellip-adj-compar}.  $\beta$CARBa is anchored by {\t more,
+less} and {\it as}, and $\beta$axPnx is anchored by both {\it than}
+and {\it as}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/comparatives-files/betaCARBa.ps,height=1.2in}}  &
+\hspace{0.6in}
+{\psfig{figure=ps/comparatives-files/betaaxPnx.ps,height=2.0in}} \\
+(a) $\beta$CARBa tree& \qquad(b) $\beta$axPnx tree \\
+\end{tabular}\\
+\caption {Elliptical adjectival comparative trees}
+\label {ellip-adj-compar}
+\end{figure}
+
+The advantages of this analysis are many-fold.  We capture the
+distribution exhibited in the examples given in (\ex{-5}) - (\ex{0}).
+With $\beta$CARBa, comparative elements may modify adjectives wherever
+they occur.  However, {\it than} clauses for adjectives have a more
+restricted distribution which coincides nicely with the distribution
+of AP's in the XTAG grammar.  Thus, by making them adjoin to AP rather
+than A, ill-formed sentences like (\ex{0}) are not allowed.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/comparatives-files/black_beauty.ps,height=4.0in}}
+\end{tabular}\\
+\caption {Comparativized adjective triggering $\beta$CnxPnx.}
+\label {black_beauty}
+\end{figure}
+
+
+There are two further advantages to this analysis.  One is that
+$\beta$CARBa interacts with $\beta$nxPnx to produce sequences like
+{\it more exquisite horse than Black Beauty}, a result alluded to
+earlier.  We achieve this by ensuring that the comparativeness of an
+adjective is controlled by a comparative adverb which adjoins to it.
+A sample derivation is given in Figure~\ref{black_beauty}.  The
+second advantage is that we get sentences such as (\ex{1}) for free.
+
+\enumsentence{Hobbes is better than Bill.}
+
+\noindent Since {\it better} comes from the lexicon as {\bf compar+}
+and this value is passed up to the AP node, $\beta$axPnx can adjoin as
+desired, giving us the derivation given in
+Figure~\ref{better-than-Bill}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/comparatives-files/better_than_Bill_f.ps,height=4.0in}}
+\end{tabular}\\
+\caption {Adjunction of $\beta$axPnx to comparative adjective.}
+\label {better-than-Bill}
+\end{figure}
+
+Notice that the root AP node of Figure~\ref{better-than-Bill} is {\bf
+compar-}, so we are basically saying that strings such as {\it better
+than Bill} are not ``comparative.''  This accords with our use of the
+{\bf compar} feature---a positive value for {\bf compar} signals that
+the clause beneath it is to {\bf be} compared against something else.  In
+the case of {\it better than Bill}, the comparison has been fulfilled,
+so we do not want it to signal for further comparisons.  A nice result
+which follows is that $\beta$axPnx cannot adjoin more than once to any
+given AP spine, and we have no need for the NA constraint on the
+tree's root node.  Also, this treatment of the comparativeness of
+various strings proves important in getting the coordination of
+comparative constructions to work properly.
+
+A note needs to be made about the analysis regarding the interaction
+of the equivalence comparative construction {\it as ... as} and the
+inequivalence comparative construction {\it more/less ... than}.  In
+the grammar, {\it more, less}, and {\it as} all anchor $\beta$CARBa, and
+both {\it than} and {\it as} anchor $\beta$axPnx.  Without further
+modifications, this of course will give us sentences such as the
+following:
+
+\enumsentence{*?Hobbes is as patient than Bill.}
+\enumsentence{*?Hobbes is more patient as Bill.}
+
+\noindent Such cases are blocked with the feature {\bf equiv}---{\it
+more, less, fewer} and {\it than} are {\bf equiv-} while {\it as} (in
+both adverbial and prepositional uses) is {\bf equiv+}.  The
+prepositional trees then require that their P node and the node to
+which they are adjoining match for {\bf equiv}.
+
+An interesting phenomena in which comparisons seem to be paired with
+an inappropriate {\it as/than}-clause is exhibited in (\ex{1}) and
+(\ex{2}).
+
+\enumsentence{Hobbes is as patient or more patient than Bill.}
+\enumsentence{Hobbes is more patient or as patient as Bill.}
+
+\noindent Though prescriptive grammars disfavor these sentences, these
+are perfectly acceptable.  We can capture the fact that the {\it
+as/than}-clause shares the {\bf equiv} value with the latter of the
+comparison phrases by passing the {\bf equiv} value for the second
+element to the root of the coordination tree.
+
+
+\subsection{Adverbial Comparatives}
+
+The analysis of adverbial comparatives encouragingly parallels the
+analysis for nominal and elliptical adjectival comparatives---with,
+however, some interesting differences.  Some examples of adverbial
+comparatives and their distribution are given in the following:
+
+\enumsentence{Albert works more quickly.}
+\enumsentence{Albert works more quickly than Richard.}
+\enumsentence{Albert works more.}
+\enumsentence{*Albert more works.}
+\enumsentence{Albert works more than Richard.}
+\enumsentence{Hobbes eats his supper more quickly than Calvin.}
+\enumsentence{Hobbes more quickly eats his supper than Calvin.}
+\enumsentence{*Hobbes more quickly than Calvin eats his supper.}
+
+\noindent When {\it more} is used alone as an adverb, it must also
+occur after the verb phrase. Also, it appears that adverbs modified by
+{\it more} and {\it less} have the same distribution as when they are
+not modified.  However, the {\it than} portion of an adverbial
+comparative is restricted to post verb phrase positions.
+
+The first observation can be captured by having {\it more} and {\it
+less} select only $\beta$vxARB from the set of adverb trees.
+Comparativization of adverbs looks very similar to that of other
+categories, and we follow this trend by giving the tree in
+Figure~\ref{more-adv-mod}(a), which parallels the adjectival and
+nominal trees, for these instances.  This handles the quite free
+distribution of adverbs which have been comparativized, while the tree
+in Figure~\ref{more-adv-mod}(b), $\beta$vxPnx, allows the {\it than}
+portion of an adverbial comparative to occur only after the verb
+phrase, blocking examples such as (\ex{0}). 
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/comparatives-files/betaCARBarb.ps,height=1.2in}}  &
+\hspace{0.6in}
+{\psfig{figure=ps/comparatives-files/betavxPnx.ps,height=2.0in}} \\
+(a) $\beta$CARBarb tree& \qquad(b) $\beta$vxPnx tree \\
+\end{tabular}\\
+\caption {Adverbial comparative trees}
+\label {more-adv-mod}
+\end{figure}
+
+The usage of the {\bf compar} feature parallels that of the adjectives
+and nominals; however, trees which adjoin to VP are {\bf compar-} on
+their root VP node.  In this way, $\beta$vxPnx anchored by {\it than}
+or {\it as} (which must adjoin to a {\bf compar+} VP) can only adjoin
+immediately above a comparative or comparativized adverb.  This avoids
+extra parses and less sensible derivations.
+
+A final note is that {\it as} may anchor $\beta$vxPnx
+non-comparatively, as in sentence (\ex{1}). This means that
+there will be two parses for sentences such as (\ex{2}).
+
+\enumsentence{John works as a carpenter.}
+\enumsentence{John works as quickly as a carpenter.}
+
+\noindent This appears to be a legitimate ambiguity.
+
+\section{Future Work}
+
+\begin{itemize}
+\item Interaction with determiner sequencing (e.g., {\it several more
+men than women} but not {\it *every more men than women}).
+
+\item Handle sentential complement comparisons (e.g., {\it Bill eats
+more pasta than Angus drinks beer}).
+
+\item Add partitives.
+
+\item Deal with constructions like {\it as many} and {\it as much}.
+
+\item Look at {\it so...as} construction.
+
+\end{itemize}
+
+
+
+
