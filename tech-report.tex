@@ -1,4 +1,4 @@
-\documentstyle[11pt,titlepage,aaai-named,twoside]{xtag-report}
+\documentstyle[11pt,titlepage,aaai-named,twoside,lingmacros]{xtag-report}
 \title{A  Lexicalized Tree Adjoining Grammar for English}
 \author{The XTAG Research Group \\ \\
 Institute for Research in Cognitive Science\\
@@ -21,20 +21,20 @@ xtag-request@linc.cis.upenn.edu
 % Inserted some style files here for latex2html,
 % and removed them from the documentstyle options list
 %
-\input{leqno}
-\input{example-numbers}
-\newcommand{\enumsentence}[1]{%
-\beginsentences
-\sitem\mbox{\protect #1}
-\endsentences%
-}
+%\input{leqno}
+%\input{example-numbers}
+%\newcommand{\enumsentence}[1]{%
+%\beginsentences
+%\sitem\mbox{\protect #1}
+%\endsentences%
+%}
 
 % The \ex definition
-\newcounter{tempcnt}
+%\newcounter{tempcnt}
 
-\newcommand{\ex}[1]{\setcounter{tempcnt}{\value{sentencectr}}%
-\addtocounter{tempcnt}{#1}%
-\arabic{tempcnt}}
+%\newcommand{\ex}[1]{\setcounter{tempcnt}{\value{sentencectr}}%
+%\addtocounter{tempcnt}{#1}%
+%\arabic{tempcnt}}
 
 
 
@@ -46,7 +46,9 @@ xtag-request@linc.cis.upenn.edu
 \put(0,0){\makebox(0,0)[lb]{\raisebox{0pt}[0pt][0pt]{\special{ps:gsave currentpoint currentpoint translate
 %%%-90.0 rotate neg exch neg exch translate}\twlrm #1\special{ps:currentpoint
 %%grestore moveto}}}}
--90.0 rotate neg exch neg exch translate}\elvrm #1\special{ps:currentpoint grestore moveto}}}}
+%-90.0 rotate neg exch neg exch translate}\elvrm
+%#1\special{ps:currentpoint grestore moveto}}}}
+-90.0 rotate neg exch neg exch translate}\rm #1\special{ps:currentpoint grestore moveto}}}}
 \end{picture}
 %%\hspace*{-18pt}
 \hspace*{-18pt}
@@ -109,8 +111,10 @@ xtag-request@linc.cis.upenn.edu
 \include{modifiers}
 \include{auxs}
 \include{conj}
+\include{punct}
 \part{Appendices}
 \include{future-work}
+\include{metarules}
 \include{tree-naming}
 \include{features}
 \include{evaluation}
