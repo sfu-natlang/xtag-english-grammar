@@ -1,21 +1,20 @@
 \chapter{Underview}
 \label{underview}
 
-The morphology, syntactic, and tree databases together comprise the English
-grammar.  A lexical item that is not in the databases receives a default tree
-selection and features for its part of speech and morphology.  In designing the
-grammar, a decision was made early on to err on the side of acceptance whenever
-there were conflicting opinions as to whether or not a construction is
-grammatical.  In this sense, the XTAG English grammar functions better as an
-acceptor rather than a generator of English sentences.  The range of syntactic
-phenomena that can be handled is large and includes auxiliaries (including
-inversion), copula, raising and small clause constructions, topicalization,
-relative clauses, infinitives, gerunds, passives, adjuncts, it-clefts,
-wh-clefts, PRO constructions, noun-noun modifications, extraposition,
-determiner sequences, genitives, negation, noun-verb contractions, sentential
-adjuncts and imperatives.  The combination of large scale lexicons and wide
-phenomena coverage result in a robust system.
-
+The morphology, syntactic, and tree databases together comprise the
+English grammar.  A lexical item that is not in the databases receives
+a default tree selection and features for its part of speech and
+morphology.  In designing the grammar, a decision was made early on to
+err on the side of acceptance whenever there are conflicting opinions
+as to whether or not a construction is grammatical.  In this sense,
+the XTAG English grammar is intended to function primarily as an
+acceptor rather than a generator of English sentences.  The range of
+syntactic phenomena that can be handled is large and includes
+auxiliaries (including inversion), copula, raising and small clause
+constructions, topicalization, relative clauses, infinitives, gerunds,
+passives, adjuncts, it-clefts, wh-clefts, PRO constructions, noun-noun
+modifications, extraposition, determiner sequences, genitives,
+negation, noun-verb contractions, clausal adjuncts and imperatives.
 
 \section{Subcategorization Frames}
 \label{subcat-frames}
@@ -30,18 +29,19 @@ to the same subcategorization frame.  Consider the following uses of the verb
 \enumsentence{Srini bought a book.}
 \enumsentence{Srini bought Beth a book.}
 
-In sentence (\ex{-1}), the verb {\it buy} subcategorizes for a direct object NP.
-The elementary tree anchored by {\it buy} is shown in
-Figure~\ref{subcat-trees}(a) and includes nodes for the NP complement of {\it
-buy} and for the NP subject.  In addition to this declarative tree structure,
-the tree family also contains the trees that would be related to each other
-transformationally in a movement based approach, i.e passivization,
-imperatives, wh-questions, relative clauses, and so forth.  Sentence (\ex{0})
-shows that {\it buy} also subcategorizes for a double NP object.  This means
-that {\it buy} also selects the double NP object subcategorization frame, or
-tree family, with its own set of transformationally related sentence
-structures.  Figure~\ref{subcat-trees}(b) shows the declarative structure for
-this set of sentence structures.
+In sentence (\ex{-1}), the verb {\it buy} subcategorizes for a direct
+object NP.  The elementary tree anchored by {\it buy} is shown in
+Figure~\ref{subcat-trees}(a) and includes nodes for the NP complement
+of {\it buy} and for the NP subject.  In addition to this declarative
+tree structure, the tree family also contains the trees that would be
+related to each other transformationally in a movement based approach,
+i.e passivization, imperatives, wh-questions, relative clauses, and so
+forth.  Sentence (\ex{0}) shows that {\it buy} also subcategorizes for
+a double NP object.  This means that {\it buy} also selects the double
+NP object subcategorization frame, or tree family, with its own set of
+transformationally related sentence structures.
+Figure~\ref{subcat-trees}(b) shows the declarative structure for this
+set of sentence structures.
 
 \begin{figure}[ht]
 \centering
@@ -80,16 +80,18 @@ sentences:
 \enumsentence{Srini arranged for a ride.}
 \enumsentence{$\ast$Srini arranged.}
 
-Prepositional phrases frequently occur as adjuncts, and when they are used as
-adjuncts they have the tree structure shown in Figure~\ref{compl-adjunct}(a).
-This adjunction tree would adjoin into the tree shown in
-Figure~\ref{subcat-trees}(a) to generate sentence (\ex{-2}).  There are verbs,
-however, such as {\it arrange}, {\it hunger} and {\it differentiate}, that take
-prepositional phrases as complements.  Sentences (\ex{-1}) and (\ex{0}) clearly
-show that the prepositional phrase are not optional for these verbs.  For these
-sentences, the prepositional phrase will be an initial tree (as shown in
-Figure~\ref{compl-adjunct}(b)) that substitutes into an elementary tree, such
-as the one anchored by the verb {\it arrange} in Figure~\ref{compl-adjunct}(c).
+Prepositional phrases frequently occur as adjuncts, and when they are
+used as adjuncts they have a tree structure such as that shown in
+Figure~\ref{compl-adjunct}(a).  This adjunction tree would adjoin into
+the tree shown in Figure~\ref{subcat-trees}(a) to generate sentence
+(\ex{-2}).  There are verbs, however, such as {\it arrange}, {\it
+hunger} and {\it differentiate}, that take prepositional phrases as
+complements.  Sentences (\ex{-1}) and (\ex{0}) clearly show that the
+prepositional phrase are not optional for {\it arrange}.  For these
+sentences, the prepositional phrase will be an initial tree (as shown
+in Figure~\ref{compl-adjunct}(b)) that substitutes into an elementary
+tree, such as the one anchored by the verb {\it arrange} in
+Figure~\ref{compl-adjunct}(c).
 
 \begin{figure}[ht]
 \centering
