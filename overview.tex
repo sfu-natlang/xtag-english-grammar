@@ -130,6 +130,14 @@ number of trees selected by the words in the sentence.
   based on unigram probabilities of non-lexicalized trees (from a hand
   corrected set of approximately 6000 parsed sentences). These methods
   speed the runtime by approximately 87\%.
+  
+\item[Supertagging] Before parsing, one can avail of an optional step
+  of {\em supertagging} the sentence. This step uses statistical
+  disambiguation to assign a unique elementary tree (or {\em
+    supertag}) to each word in the sentence. These assignments can
+  then be hand-corrected. These supertags are used as a filter on the
+  tree assignments made so far. More information on supertagging can
+  be found in (\cite{srini97diss,srini97iwpt}).
 
 \end{description}
 
