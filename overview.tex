@@ -236,89 +236,16 @@ V & Verb \\ \hline
 \label{tagset}
 \end{table*}
 
-
-\subsection{The Grammar Development Environment}
-
-Working with and developing a large grammar is a challenging process,
-and the importance of having good visualization tools cannot be
-over-emphasized. Currently the XTAG system has X-windows based tools
-for viewing and updating the morphological and syntactic databases
-(\cite{karp92,EgediMartin94}). These are available in both ASCII and
-binary-encoded database format. The ASCII format is well-suited for
-various UNIX utilities (awk, sed, grep) while the database format is
-used for fast access during program execution.  However even the ASCII
-formatted representation is not well-suited for human readability. An
-X-windows interface for the databases allows users to easily examine
-them.  Searching for specific information on certain fields of the
-syntactic database is also available. Also, the interface allows a
-user to insert, delete and update any information in the databases.
-Figure~\ref{morphsyn-tool}(a) shows the interface for the morphology
-database and Figure~\ref{morphsyn-tool}(b) shows the interface for the
-syntactic database.
-
-\begin{figure}[htb]
-\begin{tabular}{cc}
-{\psfig{figure=ps/morph.ps,height=3.0in}}&
-{\psfig{figure=ps/syn.ps,height=3.0in,width=2.0in}}\\
-(a) Morphology database&(b) Syntactic database
-\end{tabular}
-\caption[Interfaces database]{Interfaces to the database maintenance tools}
-\label{morphsyn-tool}
-\end{figure}
-
-
-%\begin{figure}[h]
-%\centering
-%\mbox{}
-%{\psfig{figure=ps/syn.ps,height=3.0in}}
-%\caption[Syntactic database]{Interface to the Syntactic database}
-%\label{syn-tool}
-%\end{figure}
-
-XTAG also has a parsing and grammar development interface
-(\cite{PSJ92}). This interface includes a tree editor, the ability to
-vary parameters in the parser, work with multiple grammars and/or
-parsers, and use metarules for more efficient tree editing and
-construction (\cite{becker94}). The interface is shown in
-Figure~\ref{xtag-interface}. It has the following features:
-
-\begin{itemize}
-
-\item Menu-based facility for creating and modifying tree files and 
-loading grammar files.
-
-\item User controlled parser parameters, including the root
-category (main S, embedded S, NP, etc.), and the use of the tagger
-(on/off/retry on failure).
-
-\item Storage/retrieval facilities for elementary and parsed trees.
-
-\item The production of postscript files corresponding to elementary
-and parsed trees.
-
-\item Graphical displays of tree and feature data structures,
-including a scroll `web' for large tree structures.
-
-\item Mouse-based tree editor for creating and modifying trees and
-feature structures.
-
-\item Hand combination of trees by adjunction or substitution for use
-in diagnosing grammar problems.
-
-\item Metarule tool for automatic aid to the generation of trees by using 
-tree-based transformation rules
- 
-\end{itemize}
-
-\begin{figure}[htb]
-\centering
-\mbox{}
-{\psfig{figure=ps/xtag-interface.ps,height=3.0in}}
-\caption[XTAG Interface]{Interface to the XTAG system}
-\label{xtag-interface}
-\end{figure}
-
-More information and download instructions about the XTAG grammar, the
-parser and the grammar development interface can be obtained on the
-XTAG web page at \\ {\tt http://www.cis.upenn.edu/\~{}xtag/}.
+The morphological and syntactic databases are documented in
+(\cite{karp92,EgediMartin94}). XTAG also has a parsing and grammar
+development interface documented in (\cite{PSJ92}). This interface
+includes a tree editor, the ability to vary parameters in the parser,
+work with multiple grammars and/or parsers, and use metarules for more
+efficient tree editing and construction (\cite{becker94}). These
+papers refer to an earlier version of the grammar development
+tools. They have been replaced by newer implementations which are
+described on the XTAG web page. Also, more information and download
+instructions about the XTAG grammar, the parser and the grammar
+development interface can be obtained on the XTAG web page at \\ {\tt
+http://www.cis.upenn.edu/\~{}xtag/}.
 
