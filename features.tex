@@ -46,7 +46,10 @@ $<$passive$>$&$+,-$\\
 $<$pred$>$&$+,-$\\
 $<$pron$>$&$+,-$\\
 $<$punct bal$>$&dquote,squote,paren,nil\\
+$<$punct contains colon$>$&$+,-$\\
+$<$punct contains dash$>$&$+,-$\\
 $<$punct contains dquote$>$&$+,-$\\
+$<$punct contains scolon$>$&$+,-$\\
 $<$punct contains squote$>$&$+,-$\\
 $<$punct struct$>$&comma,dash,colon,scolon,none,nil\\
 $<$punct term$>$&per,qmark,excl,none,nil\\
@@ -622,7 +625,10 @@ For detailed discussion see Chapter \ref{det-comparitives}.
 as its subfeatures:\\
 {\bf $\langle$punct bal$\rangle$}, possible values are {\bf dquote,
 squote, paren, nil}\\
+{\bf $\langle$punct contains colon$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$punct contains dash$\rangle$}, possible values are {\bf +, --}\\
 {\bf $\langle$punct contains dquote$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$punct contains scolon$\rangle$}, possible values are {\bf +, --}\\
 {\bf $\langle$punct contains squote$\rangle$}, possible values are {\bf +, --}\\
 {\bf $\langle$punct struct$\rangle$}, possible values are {\bf comma,
 dash, colon, scolon, none, nil}\\
