@@ -32,25 +32,25 @@ complete complementizer system, which appears to cover the same range
 of data as our analysis.  It is not clear what sort of complementizer
 analysis could be implemented in HPSG.
 
-Following standard GB approach, the English XTAG grammar does not
+Following the standard GB approach, the English XTAG grammar does not
 allow VP complements but treats verb-anchored structures without overt
 subjects as having PRO subjects. Thus, indicative clauses, infinitives
 and gerunds all have a uniform treatment as embedded clauses using the
 same trees under this approach. Furthermore, our analysis is able to
 preserve the selectional and distributional distinction between S's and
-VP's, in the spirit of GB theories, without having to posit `extra'
-empty categories.\footnote{i.e. empty complementizers. We do have PRO
+VP's, in the spirit of GB theories, but without having to posit `extra'
+empty categories, such as empty complementizers.\footnote{We do have PRO
 and NP traces in the grammar.} Consider the alternation between {\it
-that} and the null complementizer\footnote{Although we will continue
+that} and the null complementizer,\footnote{Although we will continue
 to refer to `null' complementizers, in our analysis this is actually
-the absence of a complementizer.}, shown in sentences~(\ex{1}) and (\ex{2}).
+the absence of a complementizer.} shown in sentences \ex{1} and \ex{2}.
 
 \enumsentence{He hopes $\emptyset$ Muriel wins .}
 \enumsentence{He hopes that Muriel wins .}
 
- In GB both {\it Muriel wins} in (\ex{-1}) and {\it that Muriel wins} in
-(\ex{0}) are CPs even though there is no overt complementizer to head the
-phrase in (\ex{-1}).  Our grammar does not distinguish by category label
+ In GB both {\it Muriel wins} in \ex{-1} and {\it that Muriel wins} in
+\ex{0} are CPs even though there is no overt complementizer to head the
+phrase in \ex{-1}.  Our grammar does not distinguish by category label
 between the phrases that would be labeled in GB as IP and CP.  We label
 both of these phrases S.  The difference between these two levels is the
 presence or absence of the complementizer (or extracted WH constituent), and is
@@ -84,7 +84,7 @@ As can be seen in Table \ref{facts}, sentential subjects differ from
 sentential complements in requiring the complementizer {\it that\/}
 for all indicative and subjunctive clauses.  In sentential complements,
 {\it that\/} often varies freely with a null complementizer, as
-illustrated in (\ex{1})-(\ex{6}).
+illustrated in \ex{1}-\ex{6}.
 
 \enumsentence{Christy hopes that Mike wins .}
 \enumsentence{Christy hopes Mike wins .}
@@ -132,7 +132,7 @@ gerunds.\label{gerund-footnote}}
 Another fact which must be accounted for in the analysis is that in infinitival
 clauses, the complementizer {\it for} must appear with an overt subject NP,
 whereas a complementizer-less infinitival clause never has an overt subject, as
-shown in (\ex{1})-(\ex{4}). (See section~\ref{for-complementizer} for more
+shown in \ex{1}-\ex{4}. (See section~\ref{for-complementizer} for more
 discussion of the case assignment issues relating to this construction.)
 
 \enumsentence{To lose would be awful .}
@@ -237,7 +237,7 @@ requiring the foot node of $\beta$COMPs to have {\bf $<$comp$>$=nil}.
 %as using the {\bf $<$conj$>$=nil} feature to prevent complementizers from
 %adjoining above subordinating conjunctions.
 
-\section{Case assignment, {\it for\/} and the two {\it to\/}'s}
+\section{Complementizer {\it for\/} and Case Assignment of the Subject}
 \label{for-complementizer}
 
 The {\bf $<$assign-comp$>$} feature is used to represent the
@@ -254,10 +254,10 @@ ECM constructions in \ref{ecm-verbs}), to block bare indicative
 sentential subjects (bare infinitival subjects are allowed), and to
 block `that-trace' violations.
 
-Examples (\ex{2}), (\ex{3}) and (\ex{4}) show that an accusative
+Examples \ex{2}, \ex{3} and \ex{4} show that an accusative
 case subject is obligatory in an infinitive clause if the
-complementizer {\it for\/} is present. The infinitive clauses in
-(\ex{1}) is analyzed in the English XTAG grammar as
+complementizer {\it for\/} is present. The infinitive clause in
+\ex{1} is analyzed in the English XTAG grammar as
 having a PRO subject.  
 
 %The apparent subject of {\it to win\/} in
@@ -275,41 +275,63 @@ having a PRO subject.
 \enumsentence{$\ast$Mike wants for she to pass the exam .}
 \enumsentence{$\ast$Christy wants for to pass the exam .}
  
-The {\it for-to\/} construction is particularly illustrative of the
-difficulties and benefits faced in using a lexicalized grammar.  It is
-commonly accepted that {\it for\/} behaves as a case-assigning
-complementizer in this construction, assigning accusative case to the
-`subject' of the clause since the infinitival verb does not assign
-case to its subject position.  However, in our featurized grammar, the
-absence of a feature licenses anything, so we must have overt null
-case assigned by infinitives to ensure the correct distribution of PRO
-subjects. (See section~\ref{case-assignment} for more discussion of
-case assignment.)  This null case assignment clashes with accusative
-case assignment if we simply add {\it for\/} as a standard
-complementizer, since NP's (including PRO) are drawn from the lexicon
-already marked for case.  Thus, we must use the {\bf
-$<$assign-comp$>$} feature to pass information about the verb up to
-the root of the embedded sentence.  To capture these facts, two
-infinitive {\it to}'s are posited. One infinitive {\it to\/} has {\bf
-$<$assign-case$>$=none} which forces a PRO subject, and {\bf
-$<$assign-comp$>$=inf\_nil} which prevents {\it for\/} from
-adjoining. The other infinitive {\it to\/} has no value at all for
-{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for/ecm}, so that
-it can only occur either with the complementizer {\it for\/} or with
-ECM constructions. In those
-instances either {\it for} or the ECM verb
-supplies the {\bf $<$assign-case$>$} value, assigning
- accusative case to the overt subject.
- 
+%The {\it for-to\/} construction is particularly illustrative of the
+%difficulties and benefits faced in using a lexicalized grammar.  
+
+It is commonly accepted that {\it for\/} behaves as a case-assigning
+complementizer in this construction. It can assign accusative case to the
+embedded subject since the infinitival verb can not assign
+(nominative) case to this position.  
+%However, in our featurized grammar, the
+%absence of a feature licenses anything, so we must have overt null
+%case assigned by infinitives to ensure the correct distribution of PRO
+%subjects. (See section~\ref{case-assignment} for more discussion of
+%case assignment.)  This null case assignment clashes with accusative
+%case assignment if we simply add {\it for\/} as a standard
+%complementizer, since NP's (including PRO) are drawn from the lexicon
+%already marked for case.  
+In \ex{-1} there is a feature clash between the nominative case subject {\it
+she} and the accusative case assigning complementizer, thus accounting for its
+ungrammaticality. Similarly, the sentence in \ex{0} is ruled out because PRO
+has a feature {\bf $<$case$>$=none} which is coindexed with with the {\bf
+$<$assign-case$>$} feature on S. This feature clashes with the {\bf
+$<$assign-case$>$=acc} feature in the {\it for} auxiliary tree.
+
+
+%Thus, we must use the {\bf
+%$<$assign-comp$>$} feature to pass information about the verb up to
+%the root of the embedded sentence.  To capture these facts, two
+%infinitive {\it to}'s are posited. One infinitive {\it to\/} has {\bf
+%$<$assign-case$>$=none} which forces a PRO subject, and {\bf
+%$<$assign-comp$>$=inf\_nil} which prevents {\it for\/} from
+%adjoining. The other infinitive {\it to\/} has no value at all for
+%{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for/ecm}, so that
+%it can only occur either with the complementizer {\it for\/} or with
+%ECM constructions. In those
+%instances either {\it for} or the ECM verb
+%supplies the {\bf $<$assign-case$>$} value, assigning
+% accusative case to the overt subject.
+%%
+%%{This whole thing about the two to's may still be needed, and in fact I think
+%%they are still in the grammar. However, they are not required to account for
+%%the examples that are given in this section, so I took this discussion
+%%out. The problem is that we can't rule out sentences where no case at all is
+%%assigned to an overt subject, as in ``Mike hopes Christy to pass the exam.''
+%%This is what the two ``to''s may still be needed for -- but it is still far
+%%from clear how this will work. -- Tonia
+
+
 \section{Sentential Complements of Verbs}
 \label{sent-complements}
-{\bf Tree families}: Tnx0Vs1, Tnx0Vnx1s2, TItVnx1s2, TItVpnx1s2, TItVad1s2. 
+{\bf Tree families}: Tnx0Vs1, Tnx0Vnx1s2, TItVnx1s2, TItVpnx1s2, TItVad1s2.
 
-\subsection{Bridge Verbs}
+\subsection{Long Distance Extraction}
 Verbs that select sentential complements restrict the {\bf $<$mode$>$} and {\bf
-$<$comp$>$} values for those complements. For verbs which allow long distance
-extraction from their sentential complements ({\it bridge verbs}), the S
-complement nodes are adjunction nodes. Figure \ref{think} shows the declarative
+$<$comp$>$} values for those complements. Since with very few exceptions long
+distance extraction is possible from sentential complements,\footnote{Although
+see the discussion of non-bridge verbs in the next section.} the S complement
+nodes are adjunction nodes. 
+Figure \ref{think} shows the declarative
 tree for a sentential complement-taking bridge verb, anchored by {\it think}.
 
 \begin{figure}[hbt]
@@ -323,7 +345,7 @@ tree for a sentential complement-taking bridge verb, anchored by {\it think}.
 
 The need for an adjunction node rather than a substitution node at S$_{1}$
 may not be obvious until one considers the derivation of sentences with
-long distance extractions.  For example, the declarative in (\ex{1}) is
+long distance extractions.  For example, the declarative in \ex{1} is
 derived by adjoining the auxiliary tree in Figure~\ref{aard-emu}(b) to the
 S$_{r}$ node of the tree in Figure~\ref{aard-emu}(a).  Since there are no
 bottom features on S$_{1}$ in the auxiliary tree, the same final result
@@ -345,7 +367,7 @@ could have been achieved with a substitution node at S$_{1}$.
 \end{figure}
 
 However, adjunction is crucial in deriving sentences with
-long distance extraction, as in sentences (\ex{1}) and (\ex{2}).  
+long distance extraction, as in sentences \ex{1} and \ex{2}.  
 
 \enumsentence{Who does the emu think smells terrible ?}
 \enumsentence{Who did the elephant think the panda heard the emu say
@@ -369,8 +391,8 @@ unbounded dependencies.
 \end{figure}
 
 In English, a complementizer may not appear on a complement with an extracted
-subject (the `that-trace' configuration). This phenomenon
-is illustrated in (\ex{1})-(\ex{3}):
+subject (the `{\it that}-trace' configuration). This phenomenon
+is illustrated in \ex{1}-\ex{3}:
 
 \enumsentence{Which animal did the giraffe say that he likes ?}
 \enumsentence{$\ast$Which animal did the giraffe say that likes him ?}
@@ -378,20 +400,20 @@ is illustrated in (\ex{1})-(\ex{3}):
 
 These sentences are derived in XTAG by adjoining the tree for {\it did the
 giraffe say} S at the S$_r$ node of the tree for either {\it which animal likes
-him} (to yield sentence~(\ex{0})) or {\it which animal he likes} (to yield
-sentence~(\ex{-2})).  That-trace violations are blocked by the presence of the
+him} (to yield sentence~\ex{0}) or {\it which animal he likes} (to yield
+sentence~\ex{-2}).  That-trace violations are blocked by the presence of the
 feature {\bf $<$assign-comp$>$=inf\underline{~}nil/ind\underline{~}nil/ecm}
 feature on the bottom of the S$_r$ node of trees with extracted subjects (W0),
-i.e. those used in sentences such as (\ex{-1}) and (\ex{0}).  
+i.e. those used in sentences such as \ex{-1} and \ex{0}.  
 If a complementizer tree, $\beta$COMPs, adjoins to a subject
 extraction tree at $S_r$, its {\bf $<$assign-comp$>$ =
 that/whether/for/if} feature will clash and the derivation will
 fail. If there is no complementizer, there is no feature clash, and this will
-permit the derivation of sentences like (\ex{0}), or of ECM constructions, in
+permit the derivation of sentences like \ex{0}, or of ECM constructions, in
 which case the ECM verb will have {\bf $<$assign-comp$>$=ecm} (see
 section~\ref{ecm-verbs} for more discussion of the ECM case).
 Complementizers may adjoin normally to object extraction trees such as those
-used in sentence~(\ex{-2}), and so object extraction trees have no value 
+used in sentence~\ex{-2}, and so object extraction trees have no value 
 for the {\bf $<$assign-comp$>$} feature.
 %This blocks (or
 %`filters') any other values of {\bf $<$assign-comp$>$} projected by the verb,
@@ -399,20 +421,48 @@ for the {\bf $<$assign-comp$>$} feature.
 
 
 % Tonia: 
-\subsection{Non-bridge Verbs}
+\subsection{Bridge vs. Non-bridge Verbs}
 
-There is a class of verbs (such as the manner-of-speaking verbs) which do not
-allow extraction from their sentential complement. These are called
-{\it non-bridge} verbs. Thus, unlike the bridge verb {\it say} which allows
-extraction from its complement, as in~\ex{1}, the non-bridge verb {\it
-whisper} does not allow this extraction, as in~\ex{2}. 
+There is a class of {\it non-bridge verbs} (such as the manner-of-speaking
+verbs, factives, and negative verbs) which do not allow extraction from their
+sentential complement.  In contrast to a bridge verb {\it say} which allows
+extraction from its complement, as in~\ex{1}, the non-bridge verb {\it whisper}
+does not allow this extraction, as shown in~\ex{2}.
 
 \enumsentence{Who did the elephant say that the emu saw ?}
 \enumsentence{$\ast$ Who did the elephant whisper that the emu saw ?}
 
-Therefore, non-bridge verbs such as {\it whisper} do not anchor auxiliary
-trees. Rather, they anchor initial trees with an S substitution site as their
-complement. 
+Similarly, adjunct extraction with a matrix bridge verb yields an ambiguity. In
+\ex{1}, the adjunct wh-expression {\it when} can be interpreted as modifying
+either the matrix predicate or the embedded predicate. In the non-bridge
+example \ex{2}, there is no such ambiguity. The wh-expression can only be
+construed as modifying the matrix predicate.
+
+\enumsentence{When did Laura say she would be back ?}
+\enumsentence{When did Laura whisper she would be back ?}
+
+At this time, however,  we do not account for the bridge/non-bridge
+distinction. 
+
+%One way to account for this distinction would be to analyze non-bridge verbs as
+%anchoring initial trees whose S-node complement was a substitution site, as
+%opposed to bridge verbs which anchor auxiliary trees recursive on S. If this
+%were so, non-bridge verbs would not allow any long-distance extraction from
+%their complements. However, not all examples are as bad as one would expect
+%them to be under this analysis. For example, some verbs do not allow
+%long-distance adjunct extraction, but seem to marginally allow an object to be
+%extracted from its complement S.
+%
+%\enumsentence{$\ast$ Why$_{i}$ do you doubt that Dr. Joshi left e$_{i}$ ?}
+%\enumsentence{? What$_{i}$ do you doubt that Dr. Joshi saw e$_{i}$ ?}
+%
+%In order to account for \ex{-1}, the verb {\it doubt} can be analyzed as
+%anchoring an initial tree, rather than an auxiliary tree. However, then we
+%categorically rule out \ex{0}, as well. 
+%
+%Frank (1992) offers an analysis of the bridge/non-bridge distinction in which
+%bridge verbs adjoin to their complement clause at C', whereas non-bridge verbs
+%adjoin at CP. {etc, etc. I'm not sure how much of this to include. -- Tonia}
 
 \subsection{Subjacency Violations: Multiple Wh-extraction}
 
@@ -476,27 +526,28 @@ with the correct infinitival {\it to} to assign accusative case to the
 subject of the lower infinitive.  However, they are different in that
 {\it for} is blocked along with other complementizers in subject extraction
 contexts, as discussed in section~\ref{sent-complements}, as in
-(\ex{1}), while subject extraction is compatible with ECM cases, 
-as in (\ex{2}).
+\ex{1}, while subject extraction is compatible with ECM cases, 
+as in \ex{2}.
 
 \enumsentence{$\ast$What child did the giraffe ask for to leave ?}
 \enumsentence{Who did Bill expect to eat beans ?}
 
-Sentence (\ex{-1}) is ruled out by the {\bf $<$assign-comp$>$=
+Sentence \ex{-1} is ruled out by the {\bf $<$assign-comp$>$=
 inf\underline{~}nil/ind\underline{~}nil/ecm} feature
 on the subject extraction tree for {\it ask}, since the
 {\bf $<$assign-comp$>$=for} feature from the {\it for} tree will fail to 
 unify.  However, 
-(\ex{0}) will be allowed since {\bf $<$assign-comp$>$=ecm} feature on the
+\ex{0} will be allowed since {\bf $<$assign-comp$>$=ecm} feature on the
 {\it expect} tree will unify with the foot of the ECM verb tree.  
 The use of features allows the ECM and
 {\it for-to\/} constructions to act the same for exceptional case assignment,
-while also being distinguished for that-trace violations.
+while also being distinguished for {\it that}-trace violations.
 
 
 \subsubsection{ECM Passives}
 
-The passive for the ECM verbs is treated as a raising verb.
+Passivized ECM verbs are treated as raising verbs, meaning that they are
+auxiliary trees recursive on VP.
 Since the
 subject of the infinitive is not thematically selected by the ECM verb,
 it is not part of the ECM verb's tree, and so it cannot be part of the
@@ -508,7 +559,7 @@ further discussion, see section~\ref{sm-clause-xtag-ECM}.
 
 \subsubsection{Bare Infinitives}
 
-Verbs that take bare infinitives, as in (\ex{1}), are also treated as ECM
+Verbs that take bare infinitives, as in \ex{1}, are also treated as ECM
 verbs, the only difference being that their foot feature has {\bf
 $<$mode$>$=base} instead of {\bf $<$mode$>$=inf}.  Since the complement does
 not have {\it to}, there is no question of using the {\it to} tree for allowing
@@ -618,7 +669,7 @@ the trees listed above.  These trees use the {\bf $<$mode$>$} and {\bf
 $<$comp$>$} features as shown in Figure~\ref{nounprep}.  For example,
 the noun {\it claim} takes only indicative complements with {\it
 that}, while the preposition {\it with} takes small clause
-complements, as seen in sentences (\ex{1})-(\ex{4}).
+complements, as seen in sentences \ex{1}-\ex{4}.
 
 \enumsentence{Beth's claim that Clove was a smart dog ....}
 \enumsentence{$\ast$Beth's claim that Clove a smart dog ....}
@@ -635,8 +686,8 @@ complements, as seen in sentences (\ex{1})-(\ex{4}).
 \subsection{Types of control}
 
 In the literature on control, two types are often distinguished: obligatory
-control, as in sentences~(\ex{1}), (\ex{2}), (\ex{3}), and (\ex{4}) and optional 
-control, as in sentence~(\ex{5}).
+control, as in sentences~\ex{1}, \ex{2}, \ex{3}, and \ex{4} and optional 
+control, as in sentence~\ex{5}.
 
 \enumsentence{Srini$_i$ promised Mickey [PRO$_i$ to leave] .}
 \enumsentence{Srini persuaded Mickey$_{i}$ [PRO$_i$ to leave] .}
@@ -645,7 +696,7 @@ control, as in sentence~(\ex{5}).
 \enumsentence{[PRO$_{arb/i}$ to dance] is important for Bill$_{i}$ .}
 
 At present, an analysis for obligatory control into complement clauses (as
-in sentences~(\ex{-4}), (\ex{-3}), and (\ex{-2})) has been implemented. An
+in sentences~\ex{-4}, \ex{-3}, and \ex{-2}) has been implemented. An
 analysis for cases of obligatory control into adjunct clauses and optional
 control exists and can be found in \cite{bhatt94}.
 
@@ -666,23 +717,23 @@ PRO.
 
 Depending on the choice of the controlling verb, the control propagation
 paths in the auxiliary trees are different.  In the case of subject control
-(as in sentence~(\ex{-4})), the subject NP and the foot node have
+(as in sentence~\ex{-4}), the subject NP and the foot node have
 co-indexed control features, while for object control
-(e.g. sentence~(\ex{-3}), the object NP and the foot node are co-indexed
+(e.g. sentence~\ex{-3}, the object NP and the foot node are co-indexed
 for control. Among verbs that belong to the Tnx0Vnx1s2 family, i.e. verbs
 that take an NP object and a clausal complement, subject-control verbs form
 a distinct minority, {\em promise} being the only commonly used verb in
 this class.
 
 
-Consider the derivation of sentence~(\ex{-3}). The auxiliary tree for
+Consider the derivation of sentence~\ex{-3}. The auxiliary tree for
 {\em persuade}, shown in Figure \ref{persuade-tree}, has the following
-feature equation~(\ex{1}).
+feature equation~\ex{1}.
 
 \enumsentence{  NP$_{1}$:{\bf $<$control$>$} = S$_{2}$.t:{\bf $<$control$>$} }
 
 The auxiliary tree adjoins into the tree for {\em leave}, shown in Figure
-\ref{leave-tree}, which has the following feature equation~(\ex{1}).
+\ref{leave-tree}, which has the following feature equation~\ex{1}.
 
 \enumsentence{S$_{r}$.b:{\bf $<$control$>$} = NP$_{0}$.t:{\bf $<$control$>$}}
 
@@ -733,32 +784,32 @@ of control; the c-commanding NP controls the c-commanded NP.
 
 \subsection{Long-distance transmission of control features}
 Cases involving embedded infinitival complements with PRO subjects such as
-(\ex{1}) can also be handled.
+\ex{1} can also be handled.
 
 \enumsentence{ John$_i$ wants [PRO$_i$ to want [PRO$_i$ to dance]] .}
 
 The control feature of `John' and the two PRO's all get co-indexed.
-This treatment might appear to lead to a problem. Consider (\ex{1}):
+This treatment might appear to lead to a problem. Consider \ex{1}:
 
 \enumsentence{ John$_{*i}$ wants [Mary$_i$ to want [PRO$_i$ to dance]] .}
 
-If both the `want' trees have the control feature of their subject
+If both the {\it want} trees have the control feature of their subject
 co-indexed to their foot nodes, we would have a situtation where
-the PRO is co-indexed for control feature with `John', as well as with `Mary'. 
-Note that the higher `want' in (\ex{-1}) is {\em want$_{ECM}$} 
+the PRO is co-indexed for control feature with {\it John}, as well as with {\it Mary}. 
+Note that the higher {\it want} in \ex{-1} is {\em want$_{ECM}$} 
 - it assigns case
-to the subject of the lower clause while the lower `want' in (\ex{-1}) is 
+to the subject of the lower clause while the lower {\it want} in \ex{-1} is 
 not. Subject control is restricted
 to non-ECM (Exceptional Case Marking) verbs that take infinitival 
-complements. Since the two `want's in (\ex{-1}) are different with
+complements. Since the two {\it want}s in \ex{-1} are different with
 respect to their control (and other) properties, the control feature
-of PRO stops at `Mary' and is not transmitted to the higher clause.
+of PRO stops at {\it Mary} and is not transmitted to the higher clause.
 
 
 \subsection{Locality constraints on control}
 PRO control obeys locality constraints. The controller for PRO has to be
-in the immediately higher clause. Consider the ungrammatical sentence~(\ex{1})
-((\ex{1}) is ungrammatical only with the co-indexing indicated below).
+in the immediately higher clause. Consider the ungrammatical sentence~\ex{1}
+(\ex{1} is ungrammatical only with the co-indexing indicated below).
 \enumsentence{* John$_i$ wants [PRO$_i$ to persuade Mary$_i$ [PRO$_i$ to dance]]}
 However, such a derivation is ruled out automatically by the 
 mechanisms of a TAG derivation and feature unification. 
@@ -770,7 +821,7 @@ Even then, at the end of the derivation the control feature of the
 subject of {\em want} would end up co-indexed with the PRO subject of
 {\em persuade} and the control feature of {\em Mary} would be co-indexed with the
 PRO subject of {\em dance} as desired. There is no way to generate the illegal
-co-indexing in (\ex{-1}). Thus the locality constraints on PRO control 
+co-indexing in \ex{-1}. Thus the locality constraints on PRO control 
 fall out from the mechanics of TAG derivation and feature unification. 
 
 
