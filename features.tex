@@ -65,7 +65,6 @@ $<$select-mode$>$&ind,inf,ppart,ger\\
 $<$super$>$&$+,-$\\
 $<$tense$>$&pres,past\\
 $<$trace$>$&no value, indexing only\\
-$<$trans$>$&$+,-$\\
 $<$weak$>$&$+,-$\\
 $<$wh$>$&$+,-$\\
 \hline
@@ -732,24 +731,5 @@ used for this purpose are:
 \enumsentence{ {\bf S$_{r}$.b:$\langle$tense$\rangle$ = VP.t:$\langle$tense$\rangle$}}
 \enumsentence{ {\bf VP.b:$\langle$tense$\rangle$ = V.t:$\langle$tense$\rangle$}}
 
-
-{\bf $\langle$trans$\rangle$}, possible values are {\bf +, --}\\
-Many but not all English verbs can anchor both transitive and intransitive trees.
-
-\enumsentence{ The sun melted the ice cream.}
-\enumsentence{ The ice cream melted.}
-\enumsentence{ Elmo borrowed a book.}
-\enumsentence{ * A book borrowed.}
-
-Transitive trees have the {\bf $\langle$trans$\rangle$} feature of their
-anchor set to {\ +} and intransitive trees have the 
-{\bf $\langle$trans$\rangle$} feature of their
-anchor set to {\ --}. Verbs such as {\em melt} which can occur 
-in both transitive and intransitive trees come unspecified for the 
-{\bf $\langle$trans$\rangle$} feature from the lexicon. Verbs which 
-can only occur in transitive trees e.g. {\em borrow} have their
-{\bf $\langle$trans$\rangle$} feature 
-specified in the lexicon as {\bf +} thus blocking their anchoring of 
-an intransitive tree.
 
 
