@@ -105,6 +105,7 @@ right of adverbs ({\ex{3}}).
 \enumsentence{Carl often seems to be upset .\\
 		$\ast$Carl seems often to be upset .}
 
+
 \subsection{Small Clauses}
 
 One way of describing small clauses is as predicative sentences without the
@@ -119,6 +120,27 @@ lexical idiosyncrasies.
 
 \enumsentence{I prefer [Carl in a foul mood] .\\
 		??I prefer [Carl upset] .}
+
+
+\subsection{Raising Adjectives}
+\label{raising-adjs}
+
+Raising adjectives are the class of adjectives that 
+share with the copula and raising verbs the property
+that the complement, rather than the verb, places semantic constraints on
+the subject.  
+
+They appear with the copula in a matrix clause, as in ({\ex{1}}).  However,
+in other cases, such as that of small clauses ({\ex{2}}), they do not
+have to appear with the copula.
+
+\enumsentence{Carl is likely to be a jerk .\\
+		Carl is likely to be upset .\\
+		Carl is likely to be in a foul mood .\\
+                Carl is likely to perjure himself .}
+
+\enumsentence{I consider Carl likely to perjure himself .}
+
 
 
 \section{Various Analyses}
@@ -204,6 +226,22 @@ nature of Agr and the implied existence of sentences without VP's.
 \section{XTAG analysis}
 \label{sm-clause-xtag-analysis}
 
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccccc}
+{\psfig{figure=ps/sm-clause-files/alphanx0N1.ps,height=1.3in}} &
+\hspace{0.5in} &
+{\psfig{figure=ps/sm-clause-files/alphanx0Ax1.ps,height=1.4in}} &
+\hspace{0.5in} &
+{\psfig{figure=ps/sm-clause-files/alphanx0Pnx1.ps,height=1.4in}} \\
+(a)&&(b)&&(c)\\
+\end{tabular}
+\caption{Predicative trees: $\alpha$nx0N1 (a), $\alpha$nx0Ax1 (b) and $\alpha$nx0Pnx1 (c)}
+\label{predicative-trees}
+\label{1;1,7}
+\label{1;1,9}
+\end{figure}
+
 The XTAG grammar provides a uniform analysis for the copula, raising verbs and
 small clauses by treating the maximal projections of lexical items that can be
 predicated as predicative clauses, rather than simply noun, adjective and
@@ -227,21 +265,7 @@ respectively.
 \enumsentence{[$_{S}$ NP [$_{VP}$  A \ldots ]]}
 \enumsentence{[$_{S}$ NP [$_{VP}$  P \ldots ]]}
 
-\begin{figure}[htbp]
-\centering
-\begin{tabular}{ccccc}
-{\psfig{figure=ps/sm-clause-files/alphanx0N1.ps,height=1.3in}} &
-\hspace{0.5in} &
-{\psfig{figure=ps/sm-clause-files/alphanx0Ax1.ps,height=1.4in}} &
-\hspace{0.5in} &
-{\psfig{figure=ps/sm-clause-files/alphanx0Pnx1.ps,height=1.4in}} \\
-(a)&&(b)&&(c)\\
-\end{tabular}
-\caption{Predicative trees: $\alpha$nx0N1 (a), $\alpha$nx0Ax1 (b) and $\alpha$nx0Pnx1 (c)}
-\label{predicative-trees}
-\label{1;1,7}
-\label{1;1,9}
-\end{figure}
+
 
 The copula {\it be} and raising verbs all get the basic auxiliary tree as
 explained in the section on auxiliary verbs (section \ref{aux-non-inverted}).
@@ -249,9 +273,7 @@ Unlike the raising verbs, the copula also selects the inverted auxiliary tree
 set.  Figure~\ref{Vvx-with-nomprep} shows the basic auxiliary tree anchored by
 the copula {\it be}.  The {\bf $<$mode$>$} feature is used to distinguish the
 predicative constructions so that only the copula and raising verbs adjoin onto
-the predicative trees.  The auxiliary tree in Figure~\ref{Vvx-with-nomprep}
-will look the same when anchored by the raising verbs, except possibly for the
-value of {\bf $<$mode$>$} on the foot node, VP.
+the predicative trees.  
 
 \begin{figure}[htb]
 \centering
@@ -326,6 +348,49 @@ that takes the predicative small clauses.
 \end{tabular}
 \caption{{\it Consider} tree for embedded small clauses}
 \label{consider-with-features}
+\end{figure}
+
+Raising verbs such as {\it seems} work essentially the same as the
+auxiliaries, in that they also select the basic auxiliary tree, as in
+Figure~\ref{Vvx-with-nomprep}.  The only difference is that 
+the value of {\bf $<$mode$>$} 
+on the VP foot node might be different, depending on what types of
+complements the raising verb takes.  Also, two of the raising verbs take
+an additional tree, $\beta$Vpxvx, shown in Figure~\ref{Vpxvx}, which
+allows for an experiencer argument, as in {\it John seems to me
+to be happy}.  
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/sm-clause-files/betaVpxvx.ps,height=2.0in}} \\
+\end{tabular}
+\caption{Raising verb with experiencer tree: $\beta$Vpxvx}
+\label{Vpxvx}
+\end{figure}
+
+
+Raising adjectives, such as {\it likely}, take the tree shown in
+Figure~\ref{Vvx-adj}.  This tree combines aspects of the auxiliary
+tree $\beta$Vvx and the adjectival predicative tree shown in
+Figure~\ref{predicative-trees}(b).  As with $\beta$Vvx, it adjoins
+in as a VP auxiliary tree.  However, since it is anchored by an
+adjective, not a verb, it is similar to the adjectival predicative
+tree in that it has an $\epsilon$ at the V node, and a feature value
+of {\bf $<$mode$>$=nom} which is passed up to the VP root indicates
+that it is an adjectival predication.  This serves the same purpose
+as in the 
+case of the tree in Figure~\ref{upset-with-features}, and forces another
+auxiliary verb, such as the copula, to adjoin in to make it
+{\bf $<$mode$>$=ind}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/sm-clause-files/betaVvx-adj.ps,height=2.0in}} \\
+\end{tabular}
+\caption{Raising adjective tree: $\beta$Vvx-adj}
+\label{Vvx-adj}
 \end{figure}
 
 \section{Non-predicative {\it BE}}
