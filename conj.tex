@@ -111,23 +111,23 @@ to handle only the most straightforward cases of conjunction.  Three
 types of conjunction that are not handled are:
 
 \begin{itemize}
-\item {\bf Incomplete Constituents} Although the sentence 
+\item {\bf Incomplete Constituents:} Although the sentence 
 {\it John likes and Bill hates bananas} is a simple case of sentential
 conjunction, it cannot be handled by the current XTAG grammar.  Since {\it
 likes} anchors a tree that needs both a subject noun phrase and an object noun
 phrase to be substituted in, the latter sentence would need have an unfilled
 substitution node after {\it John likes} for the sentence to parse.
 
-\item {\bf Verb Phrase Conjunction} Since verbs anchor a tree with a root node 
-of type S and not VP, there is no straightforward way to implement verb phrase
-conjunction.  For example, in the sentence {\it John eats cookies and drinks
-beer}, there is no point in the derivation at which {\it eats cookies} and {\it
-drinks beer} are available as separate trees ready to be conjoined.  They are
-both only subtrees in their respective S trees.  This could also be considered
-as a case of incomplete constituents, since {\it drinks beer} is missing a noun
-phrase.
+\item {\bf Verb Phrase Conjunction:} Since verbs anchor a tree with a root 
+node of type S and not VP, there is no straightforward way to implement verb
+phrase conjunction.  For example, in the sentence {\it John eats cookies and
+drinks beer}, there is no point in the derivation at which {\it eats cookies}
+and {\it drinks beer} are available as separate trees ready to be conjoined.
+They are both only subtrees in their respective S trees.  This could also be
+considered as a case of incomplete constituents, since {\it drinks beer} is
+missing a noun phrase.
 
-\item {\bf Gapping}
+\item {\bf Gapping:}
 Sentences such as {\it John likes apples and Bill pears} are also not
 handled by the previous analysis.  These could also be considered as a case
 of incomplete constituents.
