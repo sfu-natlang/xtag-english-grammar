@@ -1,0 +1,113 @@
+\chapter{Tree Naming conventions}
+\label{tree-naming}
+
+The various trees within the XTAG grammar are named more or less according to
+the following tree naming conventions.  Although these naming conventions are
+generally followed, there are occasional trees that do not strictly follow
+these conventions.
+
+\section{Tree Families}
+Tree families are named according to the basic declarative tree structure in
+the tree family (see section~\ref{family-trees}), but with a T as the first
+character instead of an $\alpha$ or $\beta$.
+
+\section{Trees within tree families}
+\label{family-trees}
+
+Each tree with begin with either an $\alpha$ (alpha) or a $\beta$ (beta)
+symbol, indicating whether it is an initial or auxiliary tree, respectively.
+Following an $\alpha$ or a $\beta$ the name may additionally contain one of:
+
+\begin{description}
+\item\begin{tabular}{ll}
+I&imperative\\
+E&ergative\\
+N{0,1,2}&relative clause\{position\}\\
+G&NP gerund\\
+D&Determiner gerund\\
+pW{0,1,2}&wh-PP extraction\{position\}\\
+W{0,1,2}&wh-NP extraction\{position\}\\
+\end{tabular}
+\end{description}
+
+\noindent Numbers are assigned according to the position of the argument in the
+declarative tree, as follows:
+
+\begin{description}
+\item\begin{tabular}{ll}
+0&subject position\\
+1&first argument (e.g. direct object)\\
+2&second argument (e.g. indirect object)\\
+\end{tabular}
+\end{description}
+
+\noindent The body of the name consists of a string of the following 
+components, which corresponds to the leaves of the tree.  The anchor(s) of the
+trees is(are) indicated by capitalizing the part of speech corresponding to the
+anchor.
+
+\begin{description}
+\item\begin{tabular}{ll}
+s&sentence\\
+a&adjective\\
+arb&adverb\\
+be&{\it be}\\
+x&phrasal category\\
+d&determiner\\
+v&verb\\
+lv&light verb\\
+conj&conjunction\\
+comp&complementizer\\
+it&{\it it}\\
+n&noun\\
+p&preposition\\
+pl&particle\\
+by&{\it by}\\
+neg&negation\\
+\end{tabular}
+\end{description}
+
+\noindent As an example, the transitive declarative tree consists of a subject
+NP, followed by a verb (which is the anchor), followed by the object NP.  This
+translates into $\alpha$nx0Vnx1.  If the subject NP had been extracted, then
+the tree would be $\alpha$W0nx0Vnx1.  A passive tree with the {\it by} phrase
+in the same tree family would be $\alpha$nx1Vbynx0.  Note that even though the
+object NP has moved to the subject position, it retains the object encoding
+(nx1).
+
+\section{Assorted Initial Trees}
+
+Trees that are not part of the tree families are generally gathered into
+several files for convenience.  The various initial trees are located in
+lex.trees.  All the trees in this file should begin with an $\alpha$,
+indicating that they are initial trees.  This is followed by the root category
+which follows the naming conventions in the previous section (e.g. n for noun,
+x for phrasal category).  The root category is in all capital letters.  After
+the root category, the node leaves are named, beginning from the left, with the
+anchor of the tree also being capitalized.  As an example, the $\alpha$NXdxN
+tree is rooted by an NP node (NX), with a determiner phrase subnode (dx), and
+anchored by a noun (N).  This tree is shown in Figure~\ref{NXdxN}.
+
+\begin{figure}[hbt]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/tree-naming-files/alphaNXdxN.ps,height=2.5cm}}
+\end{tabular}
+\caption{NP with determiner tree: $\alpha$NXdxN}
+\label{NXdxN}
+\end{figure}
+
+
+\section{Assorted Auxiliary Trees}
+
+Most auxiliary trees are contained in modifiers.trees, although a couple of
+other files also contain auxiliary trees.  The auxiliary trees follow a
+slightly different naming convention from the initial trees.  Since the root
+and foot nodes must be the same for the auxiliary trees, the root nodes are not
+explicitly mentioned in the names of auxiliary trees.  The trees are named
+according to the leaf nodes, starting from the left, and capitalizing the
+anchor node.  All auxiliary trees begin with a $\beta$, of course.  For
+example, $\beta$ARBs, indicates a tree anchored by an adverb (ARB), that
+adjoins onto the left of an S node (Note that S must be the foot node, and
+therefore also the root node).
+
