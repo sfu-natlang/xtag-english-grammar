@@ -39,8 +39,7 @@ POS Tagger & Wall Street Journal-trained
 trigram tagger (\cite{kwc88})  \\ 
 and  Lex Prob & extended to output N-best POS sequences  \\
 Database & (\cite{soong90}). Decreases the time to parse \\
-&a sentence by an average of 93\%
-. \\\hline
+&a sentence by an average of 93\%. \\\hline
 Syntactic &  More than 30,000 entries. \\
 Database & Each entry consists of: the uninflected form of the word, \\
 & its POS, the list of trees or tree-families associated with \\
@@ -126,7 +125,7 @@ number of trees selected by the words in the sentence.
   
 \item[Filters] Some of the lexicalized trees chosen in previous stages
   can be eliminated in order to reduce ambiguity. Two methods are
-  currently used: structural filters which eliminates trees which have
+  currently used: structural filters which eliminate trees which have
   impossible spans over the input sentence and a statistical filter
   based on unigram probabilities of non-lexicalized trees (from a hand
   corrected set of approximately 6000 parsed sentences). These methods
