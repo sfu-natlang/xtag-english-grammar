@@ -90,7 +90,7 @@ comma, dash or parentheses. It is shown in Figure \ref{nxPUnxPU} anchored by
 parentheses. 
 
 \enumsentence{The music here , Russell Smith's ``Tetrameron '' ,
-sounded good. [cc09]}
+sounded good . [cc09]}
 \enumsentence{...cost 2 million pounds (3 million dollars)}
 \enumsentence{Sen. David Boren (D., Okla.)...}
 
@@ -182,11 +182,11 @@ appositive and (b) an NP colon expansion}
 \enumsentence{the bank's 90\% shareholder -- Petroliam Nasional Bhd. [brown]}
 
 \enumsentence{...said Chris Dillow, senior U.K. economist at Nomura
-Research Institute.}
+Research Institute .}
 
 \enumsentence{...qualities that are seldom found in one work: Scrupulous
 scholarship, a fund of personal experience,... [cc06]}
-\enumsentence{I had eyes for only one person: him.}
+\enumsentence{I had eyes for only one person : him .}
 
 The colon expansion cannot itself contain a colon, so the foot $S$ has the
 feature NP.t:$<punct contains colon> = -$. 
@@ -195,8 +195,8 @@ feature NP.t:$<punct contains colon> = -$.
 
 Tree for pre-VP parenthetical PP, anchored by commas or dashes - 
 
-\enumsentence{John, in a fit of anger, broke the vase}
-\enumsentence{Mary, just within the last year, has totalled two cars}
+\enumsentence{John , in a fit of anger , broke the vase}
+\enumsentence{Mary , just within the last year , has totalled two cars}
 
 \noindent
 These are clearly not NP modifiers. 
@@ -230,14 +230,14 @@ may be either commas or dashes.  Like the parenthetical PP above,
 these are clearly not NP modifiers.
 
 \enumsentence{The new argument over the notification
-guideline, however, could sour any atmosphere of cooperation that
-existed. \hfill [WSJ]}
+guideline , however , could sour any atmosphere of cooperation that
+existed . \hfill [WSJ]}
 
 \subsection{$\beta$sPUnx}
 
 Sentence final vocative, anchored by comma:  
  
-\enumsentence{You were there, Stanley/my boy.}
+\enumsentence{You were there , Stanley/my boy .}
 
 Also, when anchored by colon, NP expansion on S. These often appear to
 be extraposed modifiers of some internal NP. The NP must be quite
@@ -267,7 +267,7 @@ attached at S.}
 
 Tree for sentence initial vocatives, anchored by a comma: 
 
-\enumsentence{Stanley/my boy, you were there}
+\enumsentence{Stanley/my boy , you were there}
 
 The noun phrase may be anything but a pronoun, although it is most
 commonly a proper noun. The clause adjoined to must be indicative or
@@ -334,7 +334,7 @@ by convention it is shifted inside the quote, as is the final
 period. British English does not do this. We assume here that the
 input has already been tokenized into the ``British'' format.
 
-\enumsentence{``You can't do this to us,'' Diane screamed.  ``We are
+\enumsentence{``You can't do this to us ,'' Diane screamed .  ``We are
 Americans.''}
 
 The $\beta$PUsPU can handle quotation marks around multiple sentences,
@@ -351,8 +351,8 @@ non-peripheral appositive relative clauses, such as
 syntactically differentiated in the XTAG grammar
 (cf. \ref{rel_clauses}).
 
-\enumsentence{This news, announced by Jerome Toobin, the orchestra's
-administrative director, brought applause ...  [brown:cc09]}
+\enumsentence{This news , announced by Jerome Toobin , the orchestra's
+administrative director , brought applause ...  [brown:cc09]}
 
 The trees discussed in this section will only allow balanced
 punctuation marks to adjoin to constituents. We will not get them
@@ -377,7 +377,7 @@ and $\beta$spuPnx).
 Anchored by comma: allows comma-separated clause initial adjuncts,
 (\ex{1}-\ex{2}).
 
-\enumsentence{Here, as in ``Journal'', Mr. Louis has given himself
+\enumsentence{Here , as in ``Journal'' , Mr. Louis has given himself
 the lion's share of the dancing... \hfill [cc09]}
 
 \enumsentence{Choreographed by Mr. Nagrin, the work filled the second
@@ -434,12 +434,12 @@ to parse sequences of multiple sentences. This is not the usual mode
 of parsing; if it were, this sort of sequencing might be better
 handled by a higher level of processing.
 
-\enumsentence{For critics, Hardy has had no poetic periods -- one does
-not speak of early Hardy or late Hardy, or of the London or Max Gate
+\enumsentence{For critics , Hardy has had no poetic periods -- one does
+not speak of early Hardy or late Hardy , or of the London or Max Gate
 period....}
 
-\enumsentence{Then there was exercise, boating and hiking, which was
-not only good for you but also made you more virile: the thought of
+\enumsentence{Then there was exercise , boating and hiking , which was
+not only good for you but also made you more virile : the thought of
 strenuous activity left him exhausted.}
 
 This construction is one of the few where two non-bracketing
@@ -464,18 +464,18 @@ impossible on the left:
 	
 \enumsentence{Killpath would just have to go out and drag Gun back by
 the heels once an hour ; because he'd be damned if he was going to
-be a mid-watch pencil-pusher. [Brown, cl17]}
+be a mid-watch pencil-pusher . [Brown, cl17]}
 
 \enumsentence{The best rule of thumb for detecting corked wine
 (provided the eye has not already spotted it) is to smell the wet end
-of the cork after pulling it: if it smells of wine , the bottle is
-probably all right; if it smells of cork , one has grounds for
+of the cork after pulling it : if it smells of wine , the bottle is
+probably all right ; if it smells of cork , one has grounds for
 suspicion.	[cf27]}
 
-%	?Max left -- he was very tired -- he needed some sleep.
-%	Max left; he was very tired; he needed some sleep.
-%	Max left; (after work) he was very tired (today) ; he needed
-%		some sleep.
+%	?Max left -- he was very tired -- he needed some sleep .
+%	Max left ; he was very tired ; he needed some sleep .
+%	Max left ; (after work) he was very tired (today) ; he needed
+%		some sleep .
 
 %**Do I want to allow ambiguous scopes here? Or force right-branching?
 
@@ -488,9 +488,9 @@ would not allow non-periods to occur internally, for instance before a
 semi-colon or dash as noted above in Section \ref{sPUs}. This tree
 currently only adjoins to indicative or imperative (root) clauses.
 
-\enumsentence{He left!}
-\enumsentence{Get lost.}
-\enumsentence{Get lost?}
+\enumsentence{He left !}
+\enumsentence{Get lost .}
+\enumsentence{Get lost ?}
 
 The feature {\bf punct bal= nil} on the foot node ensures that this
 tree only adjoins inside of parentheses or quotes completely enclosing
@@ -498,9 +498,9 @@ a sentence (\ex{1}), but does not restrict it from adjoining to clause
 which ends with balanced punctuation if only the end of the clause is
 contained in the parentheses or quotes (\ex{2}).
 
-\enumsentence{(John then left.)} 
-\enumsentence{(John then left).}
-\enumsentence{Mary asked him to leave (immediately).}
+\enumsentence{(John then left .)} 
+\enumsentence{(John then left) .}
+\enumsentence{Mary asked him to leave (immediately) .}
 
 This tree is also selected by the colon to handle a colon expansion
 after adjunct clause --
@@ -528,8 +528,8 @@ the matrix rather than the adjunct. Indicative or imperatative
 This tree is anchored by a colon or a dash, and occurs between a verb
 and its complement. These typically are lists.
 
-\enumsentence{Printed material Available, on request, from U.S. Department of
-Agriculture, Washington 25, D.C., are: Cooperative Farm Credit Can
+\enumsentence{Printed material Available , on request , from U.S. Department of
+Agriculture , Washington 25, D.C. , are : Cooperative Farm Credit Can
 Assist......\hfill [Brown ch01]}
 
 \subsection{$\beta$pPU}
@@ -539,8 +539,8 @@ preposition and its complement. It typically occurs with a sequence
 of complements. As with the tree above, this typically occurs with a
 conjoined complement.
 
-\enumsentence{...and utilization such as: (A) the protection of forage...}
-\enumsentence{...can be represented as: Af.}
+\enumsentence{...and utilization such as : (A) the protection of forage...}
+\enumsentence{...can be represented as : Af.}
 
 \section{Other trees}
 
@@ -557,7 +557,7 @@ pre-sententially, without a punctuation mark), it is anchored by the
 adverb.
 
 \enumsentence{The names of some of these products don't suggest the 
-risk involved in buying them, either. \hfill [wsj]}
+risk involved in buying them , either . \hfill [wsj]}
 
 %It should not be forgotten that wines mature fastest in half-bottles,
 %less fast in full bottles, slowly in Magnums -- and slower yet in
@@ -575,19 +575,19 @@ Clause-final PP separated by a comma. Like the adverbs described
 above, these differ from VP adjoined PPs in taking widest scope.
 
 \enumsentence{...gold for current delivery settled at \$367.30 an
-ounce, up 20 cents.} 
+ounce , up 20 cents .} 
 
-\enumsentence{It increases employee commitment to the company, with
-all that means for efficiency and quality control.}
+\enumsentence{It increases employee commitment to the company , with
+all that means for efficiency and quality control .}
 
 \subsection{$\beta$nxPUa}
 
 Anchored by colon or dash, allows for post-modification of NPs by
 adjectives.
 	
-\enumsentence{Make no mistake, this Gorky Studio drama is a
-respectable import -- aptly grave, carefully written, performed and
-directed. }
+\enumsentence{Make no mistake , this Gorky Studio drama is a
+respectable import -- aptly grave , carefully written , performed and
+directed . }
 
 %Vocatives:Quirk discusses these, says they can go where adverbs
 %can - initial, medial or final.
