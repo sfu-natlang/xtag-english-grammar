@@ -27,13 +27,12 @@ $<$comp$>$&that,whether,if,for,rel,inf\_nil,ind\_nil,nil\\
 $<$compar$>$&$+,-$\\
 $<$compl$>$&$+,-$\\
 $<$conditional$>$&$+,-$\\
-$<$conj$>$&and,or,but,comma,scolon,to,nil\\
+$<$conj$>$&and,or,but,comma,scolon,to,disc,nil\\
 $<$const$>$&$+,-$\\
 $<$contr$>$&$+,-$\\
 $<$control$>$&no value, indexing only\\
 $<$decreas$>$&$+,-$\\
 $<$definite$>$&$+,-$\\
-$<$disc-conj$>$&$+, -$\\
 $<$displ-const$>$&$+,-$\\
 $<$equiv$>$&$+,-$\\
 $<$extracted$>$&$+,-$\\
@@ -645,7 +644,7 @@ For detailed discussion see Chapter~\ref{punct-chapt}.
 
 \section{Conjunction}
 {\bf $\langle$conj$\rangle$}, possible values are {\bf but, and, or,
-comma, scolon, to, nil}\\
+comma, scolon, to, disc, nil}\\
 The {\bf $\langle$conj$\rangle$} feature is specified in the lexicon
 for each conjunction and is passed up to the root node 
 of the conjunction tree. If the conjunction is {\em and}, the 
@@ -655,13 +654,13 @@ the root {\bf $\langle$agr num$\rangle$} is equated to the
 {\bf $\langle$agr num$\rangle$} feature of the right conjunct. 
 
 
-{\bf $\langle$disc-conj$\rangle$}, possible values are {\bf +, --}\\
-This feature is only used in the $\beta$CONJs tree.
-It blocks the adjunction of one $\beta$CONJs tree on another.
-The following equations are used (note that S$_{r}$ is the foot node
-and S$_{c}$ is the root node):
-\enumsentence{ S$_{r}$.t:$\langle$disc-conj$\rangle$ = -}
-\enumsentence{ S$_{c}$.b:$\langle$disc-conj$\rangle$ = +}
+The {\bf $\langle$conj$\rangle$=disc} feature is only used at the root
+of  the
+$\beta$CONJs tree.  It blocks the adjunction of one $\beta$CONJs tree
+on another.  The following equations are used, where S$_{r}$ is
+the substitution node and S$_{c}$ is the root node:
+\enumsentence{ S$_{r}$.t:$\langle$conj$\rangle$ = disc}
+\enumsentence{ S$_{c}$.b:$\langle$conj$\rangle$ = and/or/but/nil}
 
 
 \section{Comparatives}
