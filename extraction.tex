@@ -53,32 +53,35 @@ others may not (e.g. sentences (\ex{1})-(\ex{4})).
 \end{figure} 
 
 
-The tree that is used to derive (\ex{-2}) in the English XTAG grammar is shown
-in Figure~\ref{alphaW1nx0Vnx1}\footnote{Features not pertaining to this
-discussion have been taken out to improve readability.}.  The important
-features of extracted trees are:
+The tree that is used to derive the embedded sentence in (\ex{-2}) in
+the English XTAG grammar is shown in
+Figure~\ref{alphaW1nx0Vnx1}\footnote{Features not pertaining to this
+  discussion have been taken out to improve readability.}.  The
+important features of extracted trees are:
 
 \begin{itemize}
 \item The subtree that has S$_{r}$ as its root is identical to the
-declarative tree or a non-extracted passive tree, except for having
-one NP position in the VP filled by $\epsilon$.
+  declarative tree or a non-extracted passive tree, except for having
+  one NP position in the VP filled by $\epsilon$.
 
 \item The root S node is S$_{q}$, which dominates NP and S$_{r}$.
+  
+\item The {\bf $<$trace$>$} feature of the $\epsilon$ filled NP is
+  co-indexed with the {\bf $<$trace$>$} feature of the NP daughter of
+  S$_{q}$.
 
-\item The {\bf $<$trace$>$} feature of the $\epsilon$ filled NP is co-indexed 
-with the {\bf $<$trace$>$} feature of the NP daughter of S$_{q}$.
-
-\item The {\bf $<$case$>$} and {\bf $<$agr$>$} features are passed from the 
-empty NP to the extracted NP.  This is particularly important for extractions
-from subject NP's, since {\bf $<$case$>$} can continue to be assign from the
-verb to the subject NP position, and from there passed to the extracted NP.
-
-\item The {\bf $<$inv$>$} feature of S$_{r}$ is co-indexed to the 
-{\bf $<$wh$>$} feature of NP through the use of the {\bf $<$invlink$>$} feature
-in order to force subject-auxiliary inversion where needed (see
-section~\ref{topicalization} for more discussion of the {\bf
-$<$inv$>$}/{\bf$<$wh$>$} co-indexing and the use of these trees for
-topicalization).
+\item The {\bf $<$case$>$} and {\bf $<$agr$>$} features are passed
+  from the empty NP to the extracted NP.  This is particularly
+  important for extractions from subject NP's, since {\bf $<$case$>$}
+  can continue to be assigned from the verb to the subject NP
+  position, and from there be passed to the extracted NP.
+  
+\item The {\bf $<$inv$>$} feature of S$_{r}$ is co-indexed to the {\bf
+    $<$wh$>$} feature of NP through the use of the {\bf $<$invlink$>$}
+  feature in order to force subject-auxiliary inversion where needed
+  (see section~\ref{topicalization} for more discussion of the {\bf
+    $<$inv$>$}/{\bf$<$wh$>$} co-indexing and the use of these trees
+  for topicalization).
 
 \end{itemize}
 
