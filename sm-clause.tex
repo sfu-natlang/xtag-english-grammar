@@ -393,6 +393,90 @@ auxiliary verb, such as the copula, to adjoin in to make it
 \label{Vvx-adj}
 \end{figure}
 
+\subsection{Raising Passives}
+\label{sm-clause-xtag-ECM}
+As discussed in Section~\ref{ecm-verbs}, the passives of Exceptional
+Case Marking verbs are also treated as raising verbs.  The passive
+therefore also selects the Vvx tree, and like other raising verbs such
+as {\it seems} will select for an infinitival complement.  However, 
+unlike {\it seems}, the {\bf $<$mode$>$} feature is set to {\bf ppart},
+which therefore forces an auxiliary to also adjoin, as with other passives,
+as described in Chapter~\ref{passives}.  For example, to derive (\ex{1}), 
+the Vvx tree for {\it was} adjoins at the root of the 
+tree for {\it expected} in in Figure~\ref{expects-passive}(a), which
+adjoins into a 
+derivation for {\it Bob to talk} at the VP node.
+
+\enumsentence{Bob was expected to talk.}
+
+\begin{figure}[hbt]
+\centering
+\begin{tabular}{ccccc}
+{\psfig{figure=ps/sm-clause-files/expects-Vvx.ps,height=1.5in}} & 
+\hspace{0.4in}&
+{\psfig{figure=ps/sm-clause-files/betaVvxbynx_expected_.ps,height=1.5in}} & 
+\hspace{0.4in}&
+{\psfig{figure=ps/sm-clause-files/betaVbynxvx_expected_.ps,height=1.5in}} \\
+(a) & & (b) & & (c) \\
+\end{tabular}
+\caption{ECM raising passive trees: $\beta$Vvx (a), $\beta$Vvxbynx (b), 
+ $\beta$Vbynxvx (c) }
+\label{expects-passive}
+\end{figure}
+
+
+Also, the {\it by} phrase associated with the raising passives can
+appear to the left or right of the infinitival complement, as in
+(\ex{1}) and (\ex{2}).
+
+\enumsentence{Bob was expected by Bill to talk.}
+\enumsentence{Bob was expected to talk by Bill.}
+
+To handle these cases, the raising passives such as {\it expect} can
+also select the trees shown in figures~\ref{expects-passive}(b)
+and \ref{expects-passive}(c).  ECM verbs such as {\it expect} therefore
+select the ECM tree family and also, separately, the three trees in 
+figure~\ref{expects-passive}.
+
+Also, it has long been noted that passives of both full and bare infinitive 
+ECM constructions are full infinitives, as in (\ex{1}) and (\ex{2}).
+
+\enumsentence{Bob sees the harmonica fall.}
+\enumsentence{The harmonica was seen to fall.}
+\enumsentence{$\ast$The harmonica was seen fall.}
+
+Under the TAG ECM analysis, this fact is easy to implement.  The foot
+node of the ECM passive tree is simply set to have {\bf $<$mode$>$=inf},
+which prevents the derivation of (\ex{0}).  Therefore, while verbs
+selecting full and bare infinitives will differ in the {\bf $<$mode$>$} 
+specified for the active form when selecting the ECM tree family, they
+all use {\bf $<$mode$>$=inf} for the passive tree.
+
+Selecting the passive tree separately from the ECM tree family for the
+active trees has the advantage of allowing verbs which only have the passive to
+not select the active trees.  There are a number of such cases,
+as in (\ex{1}), where
+the raising passive exists but not its active counterpart.  For more 
+discussion of this issue, see \cite{kj85}.
+
+\enumsentence{John is said to be a crook}
+
+There are also some cases for which the raising passive complement does
+not take {\bf $<$mode$>$=inf}, but rather a {\bf nom/prep} complement,
+as in (\ex{1}) and (\ex{2}):
+
+\enumsentence{John is considered a crook.}
+\enumsentence{The Americans are believed involved in the coup.}
+\enumsentence{$\ast$They believe the Americans involved in the coup.}
+
+Such cases are handled by selecting the Vvx, Vbynxvx, and Vvxbynx trees
+with the the appropriate {\bf $<$mode$>$} on the foot node, instead of just
+{\bf inf}.  In some cases, as in (\ex{0}), the corresponding active
+sentence sounds quite bad, and this is prohibited by not selecting the
+ECM family for the active cases with that mode.  For example, {\it believe}
+selects the ECM family with {\bf $<$mode$>$=inf} and the raising passive
+trees with {\bf $<$mode$>$=inf/nom/prep}.
+
 \section{Non-predicative {\it BE}}
 \label{equative-be-xtag-analysis}
 
