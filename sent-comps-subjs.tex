@@ -324,8 +324,8 @@ tree for a sentential complement-taking bridge verb, anchored by {\it think}.
 The need for an adjunction node rather than a substitution node at S$_{1}$ may
 not be obvious until one considers the derivation of sentences with long
 distance extractions.  For example, the declarative in (\ex{1}) is derived by
-adjoining the tree in Figure~\ref{aard-emu}(b) to the S$_{1}$ node of the tree
-in Figure~\ref{aard-emu}(a).  Since there are no bottom features on S$_{1}$,
+adjoining the tree in Figure~\ref{aard-emu}(a) to the S$_{1}$ node of the tree
+in Figure~\ref{aard-emu}(b).  Since there are no bottom features on S$_{1}$,
 the same final result could have been achieved with a substitution node at
 S$_{1}$.
 
@@ -623,57 +623,59 @@ In the literature on control, two types are often distinguished: obligatory
 control, as in sentences~(\ex{1}), (\ex{2}), (\ex{3}), and (\ex{4}) and optional 
 control, as in sentence~(\ex{5}).
 
-\enumsentence{Srini$_i$ promised Mickey$_{i}$ [PRO$_i$ to leave] .}
+\enumsentence{Srini$_i$ promised Mickey [PRO$_i$ to leave] .}
 \enumsentence{Srini persuaded Mickey$_{i}$ [PRO$_i$ to leave] .}
 \enumsentence{Srini$_{i}$ wanted [PRO$_i$ to leave] .}
 \enumsentence{Christy$_{i}$ left the party early [PRO$_i$ to go to the airport] .}
 \enumsentence{[PRO$_{arb/i}$ to dance] is important for Bill$_{i}$ .}
 
-At present, an analysis for obligatory control into complement clauses
-(as in sentences~(\ex{-4}), (\ex{-3}), and (\ex{-2})) has been implemented. An
+At present, an analysis for obligatory control into complement clauses (as
+in sentences~(\ex{-4}), (\ex{-3}), and (\ex{-2})) has been implemented. An
 analysis for cases of obligatory control into adjunct clauses and optional
 control exists and can be found in \cite{bhatt94}.
 
 \subsection{A feature-based analysis of PRO control}
-The analysis for obligatory control involves co-indexation of the control feature
-of the NP anchored by PRO to the control feature of the controller.
-A feature equation in the tree anchored by the control verb 
-co-indexes the control feature of the controlling NP with the foot
-node of the tree.  All sentential trees have a co-indexed
-control feature from the root S to the subject NP. 
+The analysis for obligatory control involves co-indexation of the control
+feature of the NP anchored by PRO to the control feature of the controller.
+A feature equation in the tree anchored by the control verb co-indexes the
+control feature of the controlling NP with the foot node of the tree.  All
+sentential trees have a co-indexed control feature from the root S to the
+subject NP.
 
-When the tree containing the controller adjoins
-onto the complement clause tree containing the PRO, 
-the features of the foot node of the
-auxiliary tree are unified with the bottom features of the root node of the 
-complement clause
-tree containing the PRO. This leads to the control feature of the controller
-being co-indexed with the control feature of the PRO.
+When the tree containing the controller adjoins onto the complement clause
+tree containing the PRO, the features of the foot node of the auxiliary
+tree are unified with the bottom features of the root node of the
+complement clause tree containing the PRO. This leads to the control
+feature of the controller being co-indexed with the control feature of the
+PRO.
 
-Depending on the choice of the controlling verb, the control
-propagation paths in the auxiliary trees are different.  In the case of subject
-control (as in sentence~(\ex{-3})), the subject NP and the foot node are
-have co-indexed control features, while for object control
-(e.g. sentence~(\ex{-4}), the object NP and the foot node are 
-co-indexed for control. Among verbs that belong to the Tnx0Vnx1s2 family,
-i.e. verbs that take an NP object and a clausal complement, subject-control
-verbs form a distinct minority, {\em promise} being the only commonly used
-verb in this class.
+Depending on the choice of the controlling verb, the control propagation
+paths in the auxiliary trees are different.  In the case of subject control
+(as in sentence~(\ex{-4})), the subject NP and the foot node have
+co-indexed control features, while for object control
+(e.g. sentence~(\ex{-3}), the object NP and the foot node are co-indexed
+for control. Among verbs that belong to the Tnx0Vnx1s2 family, i.e. verbs
+that take an NP object and a clausal complement, subject-control verbs form
+a distinct minority, {\em promise} being the only commonly used verb in
+this class.
 
 
 Consider the derivation of sentence~(\ex{-3}). The auxiliary tree for
 {\em persuade}, shown in Figure \ref{persuade-tree}, has the following
 feature equation~(\ex{1}).
+
 \enumsentence{  NP$_{1}$:{\bf $<$control$>$} = S$_{2}$.t:{\bf $<$control$>$} }
-The auxiliary tree adjoins into the tree for {\em leave}, shown in
-Figure \ref{leave-tree}, which 
-has the following feature equation~(\ex{1}).
+
+The auxiliary tree adjoins into the tree for {\em leave}, shown in Figure
+\ref{leave-tree}, which has the following feature equation~(\ex{1}).
+
 \enumsentence{S$_{r}$.b:{\bf $<$control$>$} = NP$_{0}$.t:{\bf $<$control$>$}}
-Since the adjunction takes place at the root node (S$_{r}$) of the
-{\em leave} tree, after unification, NP$_{1}$ of the {\em persuade}
-tree and NP$_{0}$ of the {\em leave} tree share a control feature. The
-resulting derived and derivation trees are shown in Figures
-\ref{derived-tree} and \ref{derivation-tree}.
+
+Since the adjunction takes place at the root node (S$_{r}$) of the {\em
+leave} tree, after unification, NP$_{1}$ of the {\em persuade} tree and
+NP$_{0}$ of the {\em leave} tree share a control feature. The resulting
+derived and derivation trees are shown in Figures \ref{derived-tree} and
+\ref{derivation-tree}.
 
 \begin{figure}[hbt]
 \centering
