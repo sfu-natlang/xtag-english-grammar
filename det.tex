@@ -10,18 +10,18 @@ a lexicalized grammar formalism such as FB-LTAG in which pieces of syntactic
 structure and features representing linguistic properties are associated with
 individual lexical items.
 
-In the English XTAG grammar\footnote{This chapter is a shortened version of
+In the English XTAG grammar,\footnote{This chapter is a shortened version of
 \cite{HockeyEgedi94}, which contains a more extensive discussion of this 
-analysis.}, there are two kinds of basic noun phrases (NP), those that take
+analysis.} there are two kinds of basic noun phrases (NP), those that take
 determiner phrases\footnote{Henceforth DetP's, not to be confused with DP's as
 in the DP Hypothesis.} and those that do not.  Nouns that take (or require)
 determiners have a DetP substitution site. Complex DetP's are formed by having
 determiners adjoin onto each other. There are two basic determiner trees: an
 initial tree and an auxiliary tree.  Figure~\ref{det-trees} shows the initial
 and auxiliary trees anchored by the determiner {\it these}.  Since any single
-determiner can function as a complete DetP\footnote{By definition.  Our main
+determiner can function as a complete DetP,\footnote{By definition.  Our main
 criteria in classifying something as a determiner was that it be able to stand
-alone with a noun to form an NP.}, every determiner selects the initial tree in
+alone with a noun to form an NP.} every determiner selects the initial tree in
 Figure~\ref{det-trees}(a).  Determiners that can modify other determiners also
 select the auxiliary tree in Figure~\ref{det-trees}(b).
 
@@ -71,7 +71,7 @@ A determiner D is cardinal iff D $\in$ cardinal numbers~$\geq$~1.
 
 \item[Genitive:]  Possible Values [+/--]. \\
 Possessive pronouns and the possessive morpheme ({\it 's}) are marked {\bf
-gen+}; all other nouns are {\bf gen-}.
+gen+}; all other nouns are {\bf gen--}.
 
 \item[Decreasing:]  Possible Values [+/--]. \\
 A set of Q properties is decreasing iff whenever s$\leq$t and t$\in$Q then
@@ -90,7 +90,7 @@ Det$_{E}$AB~$\leftrightarrow$~Det$_{E^{\prime}}$AB. Modified from
 
 \item[Wh:]  Possible Values [+/--]. \\
 Interrogative determiners are {\bf wh+}; all other determiners are
-{\bf wh-}. 
+{\bf wh--}. 
 
 \item[Agreement:] Possible Values [3sg, 3pl, 3sgpl]. \\
 Although English does not have the morphological marking of determiners for
@@ -140,13 +140,14 @@ restrictions these determiners impose on the determiners they modify.  The
 selectional restriction features of a determiner appear on the DetP foot node
 of the auxiliary tree that the determiner anchors.  The DetP$_{f}$ node in the
 auxiliary tree in Figure~\ref{det-trees}(b) shows the selectional feature
-restriction imposed by {\it these}\footnote{In addition to this tree, {\it
+restriction imposed by {\it these},\footnote{In addition to this tree, {\it
 these} would also anchor another auxiliary tree that adjoins onto {\bf
-$<$card$>$=+} determiners.}, while Table~\ref{det-ordering} shows the
+$<$card$>$=+} determiners.} while Table~\ref{det-ordering} shows the
 corresponding selectional feature restrictions of several other determiners.
 
 %\tiny
 \begin{table}[hbt]
+\vspace*{-2mm}
 \centering
 \begin{tabular}{|l||c|c|c|c|c|c|c|c|}
 \hline
@@ -154,28 +155,27 @@ Det&defin&quan&card&gen&wh&decreas&const&agr\\
 \hline
 \hline
 all&$+$&$-$&$-$&&$-$&&&\\
-&&&$+$&&&&&\\
+&&&$+$&&&&&\\ \hline
 this&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
+&&&$+$&&&&&\\ \hline
 that&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
+&&&$+$&&&&&\\ \hline
 what&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-the&$-$&&&&$-$&&$-$&\\
-&&&$+$&&&&&\\
+&&&$+$&&&&&\\ \hline
+the&$-$&&&&$-$&&$-$&\\ 
+&&&$+$&&&&&\\ \hline
 every&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
+&&&$+$&&&&&\\ \hline
 each&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-any&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-a&$-$&&&&$-$&$+$&&\\
-many&\multicolumn{8}{c|}{only nouns}\\
-no&\multicolumn{8}{c|}{only nouns}\\
-GEN&\multicolumn{8}{c|}{only nouns}\\
-CARD&\multicolumn{8}{c|}{only nouns}\\
-PART&&&&&$-$&&&\\
-\hline
+&&&$+$&&&&&\\ \hline
+any&$-$&&&&$-$&$+$&&\\ 
+&&&$+$&&&&&\\ \hline
+a&$-$&&&&$-$&$+$&&\\ \hline
+many&\multicolumn{8}{c|}{only nouns}\\ \hline
+no&\multicolumn{8}{c|}{only nouns}\\ \hline
+GEN&\multicolumn{8}{c|}{only nouns}\\ \hline
+CARD&\multicolumn{8}{c|}{only nouns}\\ \hline
+PART&&&&&$-$&&&\\ \hline
 \end{tabular}
 \caption{Selectional Restrictions Imposed by Determiners}
 \label{det-ordering}
@@ -186,7 +186,7 @@ PART&&&&&$-$&&&\\
 
 \section{Wh and Agr Features}
 \label{agr-section}
-A determiner with a {\bf $<$wh$>$=+} feature is always the left-most
+A determiner with a {\bf $<$wh$>$=+} feature is always the leftmost
 determiner since no determiners can adjoin onto it.  The presence of a wh+
 determiner makes the entire NP wh+, so this feature is always passed through to
 the NP node, unlike other features which are considered internal to the
@@ -208,13 +208,13 @@ DetP$_{r}$ node).
 
 There are two kinds of genitive constructions: genitive pronouns, and genitive
 NP's (which have an explicit genitive marker, {\it 's}, associated with them).
-It is clear from examples such as {\it her dog was run over\/} vs {\it
+It is clear from examples such as {\it her dog was run over\/} vs. {\it
 $\ast$dog was run over\/} that genitive pronouns function as determiners and as
 such, they sequence with the rest of the determiners.  The features for the
 genitives are the same as for other determiners, and are given in
 Table~\ref{det-values}.  No {\bf $<$agr$>$} is specified however, since the
 number and person of the genitive will depend on its particular form (e.g.\
-{\it my} vs {\it their}).  Genitives are not required to agree with either the
+{\it my} vs. {\it their}).  Genitives are not required to agree with either the
 determiners or the nouns that they modify.
 
 %Figure of alphaDXnxG-features and betanxGdx-features here 
@@ -238,7 +238,7 @@ phrase.
 
 \enumsentence{[[[John]'s friend from high school]'s uncle]'s mother came to town.}
 
-There are two things to note in the sentence~(\ex{0}).  One is that in embedded
+There are two things to note in sentence~(\ex{0}).  One is that in embedded
 NP's, the genitive morpheme comes at the end of the NP phrase, even if the head
 of the NP is at the beginning of the phrase.  The other is that the determiner
 of an embedded NP can also be a genitive NP, hence the possibility of recursive
@@ -256,7 +256,7 @@ adjoins onto another.
 
 \section{Partitive Constructions}
 
-Partitive constructions (e.g. {\it some kind of}, {\it all of\/}) are
+Partitive constructions (e.g.\ {\it some kind of}, {\it all of\/}) are
 another type of complex determiner construction.  Partitive constructions
 interact with other determiners.  Since they can modify the noun itself ({\it
 [a certain kind of] machine}), or modify other determiners ({\it [some parts
