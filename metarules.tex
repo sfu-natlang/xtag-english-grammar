@@ -57,19 +57,19 @@ is a pair {\bf (lhs, rhs)} of XTAG trees, where:
 
 \begin{itemize}
 \item {\bf lhs}, the {\it left-hand side} of the metarule, is a pattern tree,
-	i.e., it is intended to present a specific pattern of tree to look for
-	in the trees submitted to the application of the metarule.
+        i.e., it is intended to present a specific pattern of tree to look for
+        in the trees submitted to the application of the metarule.
 
 \item When a metarule {\bf mr} is applied to an input tree {\bf inp}, the first
-	step is to verify if the input tree matches the pattern specified by
-	the {\bf lhs}. If there is no match, the application {\it fails}.
+        step is to verify if the input tree matches the pattern specified by
+        the {\bf lhs}. If there is no match, the application {\it fails}.
 
 \item {\bf rhs}, the {\it right-hand side} of the metarule, specifies (together
-	with {\bf lhs}) the transformation that will be done in {\bf inp},
-	in case of successful matching, thus generating the output tree of
-	the metarule application\footnote{actually more than one output tree 
-	can be generated from the successful application of a rule to an 
-	input tree, as will be seen soon}.
+        with {\bf lhs}) the transformation that will be done in {\bf inp},
+        in case of successful matching, thus generating the output tree of
+        the metarule application\footnote{actually more than one output tree 
+        can be generated from the successful application of a rule to an 
+        input tree, as will be seen soon}.
 \end{itemize}
  
 \subsection{Node names, variable instantiation, and matches}
@@ -85,71 +85,70 @@ given below.
 \begin{itemize}
 
 \item {\bf Constant Node:} Its name must not initiate by a question mark
-	('?' character). They are like we expect for names to be in normal
-	Xtag trees; for instance, {\bf inp} is expected to have only constant
-	nodes. Some examples of constant nodes are $NP$, $V$, $NP_0$, $NP_1$,
-	$S_r$. We will call the two parts that compose such names
-	the {\it stem} and the {\it subscript}.
-	In the examples above  $NP$, $V$ and $S$ are stems and 
-	$0$, $1$, $r$ are subscripts. Notice that the
-	subscript part can also be empty as in two of the above examples.
+        (`?' character). They are like we expect for names to be in normal
+        Xtag trees; for instance, {\bf inp} is expected to have only constant
+        nodes. Some examples of constant nodes are $NP$, $V$, $NP_0$, $NP_1$,
+        $S_r$. We will call the two parts that compose such names
+        the {\it stem} and the {\it subscript}.
+        In the examples above  $NP$, $V$ and $S$ are stems and 
+        $0$, $1$, $r$ are subscripts. Notice that the
+        subscript part can also be empty as in two of the above examples.
 
 \item {\bf Non-Typed Variable Node:} Its name initiates by a question 
-	mark ('?'), followed by a sequence of digits (i.e. a number) which 
-	uniquely identifies the variable. Examples: ?1, ?3, 
-	?3452\footnote{Notice
-	however that having the sole purpose of distinguishing between 
-	variables, a number like the one in the last example 
-	is not very likely
-	to occur, and a metarule with more than 
-	three thousand variables can give
-	you a place in the Guinness TagBook of Records.}. We assume that
-	there is no stem and no subscript in this names, i.e., '?' is just
-	a meta-character to introduce a variable, and the number is the 
-	variable identifier. 
+        mark (`?'), followed by a sequence of digits (i.e. a number) which 
+        uniquely identifies the variable. Examples: ?1, ?3, 
+        ?3452\footnote{Notice
+        however that having the sole purpose of distinguishing between 
+        variables, a number like the one in the last example 
+        is not very likely
+        to occur, and a metarule with more than 
+        three thousand variables can give
+        you a place in the Guinness TagBook of Records.}. We assume that
+        there is no stem and no subscript in this names, i.e., `?' is just
+        a meta-character to introduce a variable, and the number is the 
+        variable identifier. 
 
-\item {\bf Typed Variable Node:} Its name initiates by a question mark ('?')
-	followed by a sequence of digits, but is additionally followed by
-	a {\it type specifiers definition}. A {\it type specifiers definition}
-	is a sequence of one or more {\it type specifier} separated by a slash
-	('/'). A {\it type specifier} has the same form of a regular Xtag node
-	name (like the constant nodes), except that the subscript can be also
-	a question mark. Examples of typed variables are:
-	$?1VP$ (a single type specifier with stem $VP$ and no subscript), 
-	$?3NP_1/PP$ (two type specifiers, $NP_1$ and $PP$),
-	$?1NP_?$ (one type specifier, $NP_?$ with undetermined subscript). 
-	We'll see ahead that each type specifier represents an alternative
-	for matching, and the presence of '?' in subscript position of a
-	type specifier means that matching will only check for the stem
-	\footnote{This is different from not having a subscript which is 
-	interpreted as checking that the input tree have no subscript 
-	for matching}.
+\item {\bf Typed Variable Node:} Its name initiates by a question mark (`?')
+        followed by a sequence of digits, but is additionally followed by
+        a {\it type specifiers definition}. A {\it type specifiers definition}
+        is a sequence of one or more {\it type specifier} separated by a slash
+        (`/'). A {\it type specifier} has the same form of a regular Xtag node
+        name (like the constant nodes), except that the subscript can be also
+        a question mark. Examples of typed variables are:
+        $?1VP$ (a single type specifier with stem $VP$ and no subscript), 
+        $?3NP_1/PP$ (two type specifiers, $NP_1$ and $PP$),
+        $?1NP_?$ (one type specifier, $NP_?$ with undetermined subscript). 
+        We'll see ahead that each type specifier represents an alternative
+        for matching, and the presence of `?' in subscript position of a
+        type specifier means that matching will only check for the stem
+        \footnote{This is different from not having a subscript which is 
+        interpreted as checking that the input tree have no subscript 
+        for matching}.
 \end{itemize}
 
-During the process of matching, variables are associated 
-(we use the term {\it instantiated}) with 'tree material'.
-According to its class a variable can be instantiated with different kinds of
-tree material:
+During the process of matching, variables are associated (we use the
+term {\it instantiated}) with `tree material'.  According to its class
+a variable can be instantiated with different kinds of tree material:
 
 \begin{itemize}
-\item	A typed variable will be instantiated with exactly one node of
-	the input tree, which is in accordance to one of its type specifiers
-	(The full rule is in the following subsection). 
+\item   A typed variable will be instantiated with exactly one node of
+        the input tree, which is in accordance to one of its type specifiers
+        (The full rule is in the following subsection). 
 
-\item	A non-typed variable will be instantiated with a range of subtrees.
-	These subtrees will be taken from one of the nodes of the input tree
-	{\bf inp}. Hence, there will a node $n$ in {\bf inp}, with subtrees
-	$n.t_1$, $n.t_2$, ..., $n.t_k$, in this order, where the variable
-	will be instantiated with some subsequence of these subtrees 
-	(e.g., $n.t_2$, $n.t_3$, $n.t_4$). Note however, that some of these
-	subtrees, may be incomplete, i.e., they may not go all the way to the 
-	bottom leaves. Entire subtrees may be removed. Actually for each
-	child of the non-typed variable node, one subtree that matches this
-	child subtree will be removed from some of the $n.t_i$(maybe an entire
-	$n.t_i$), leaving in place a mark for inserting material during the
-	substitution of occurences at {\bf rhs}.\\
-	Notice still that the variable can
-	be instantiated with a single tree and even with no tree. 
+\item   A non-typed variable will be instantiated with a range of subtrees.
+        These subtrees will be taken from one of the nodes of the input tree
+        {\bf inp}. Hence, there will a node $n$ in {\bf inp}, with subtrees
+        $n.t_1$, $n.t_2$, ..., $n.t_k$, in this order, where the variable
+        will be instantiated with some subsequence of these subtrees 
+        (e.g., $n.t_2$, $n.t_3$, $n.t_4$). Note however, that some of these
+        subtrees, may be incomplete, i.e., they may not go all the way to the 
+        bottom leaves. Entire subtrees may be removed. Actually for each
+        child of the non-typed variable node, one subtree that matches this
+        child subtree will be removed from some of the $n.t_i$(maybe an entire
+        $n.t_i$), leaving in place a mark for inserting material during the
+        substitution of occurences at {\bf rhs}.\\
+        Notice still that the variable can
+        be instantiated with a single tree and even with no tree. 
 
 \end{itemize} 
 
@@ -192,7 +191,7 @@ $Mapping$,
 that for each element of $list_{lhs}$ assigns a list of elements of 
 $list_{inp}$, defined by the following condition:
 $$concatenation\ (Mapping(lhs_1),\ Mapping(lhs_2),\ ...,\ Mapping(lhs_l))\ =\ 
-	list_{inp}$$,
+        list_{inp}$$,
 i.e., the elements of $list_{inp}$ are split into sublists and assigned in 
 order of appearance in the list to the elements of $list_{lhs}$.
 
@@ -202,43 +201,43 @@ We say that a mapping is a {\it valid mapping} if for all $j$, $1\leq j \leq l$
 \begin{enumerate}
 
 \item if $lhs_j$ is a constant node, then $Mapping(lhs_j)$ must have a 
-	single element, say, $rhs_{g(j)}$, and the two nodes must have the same
-	name and agree on the markers (foot, substitution, head and NA), i.e.,
-	if $lhs_j$ is NA, then $rhs_{g(j)}$ must be NA, 
-	if $lhs_j$ has no markers, then $rhs_{g(j)}$ must have no markers, etc.
+        single element, say, $rhs_{g(j)}$, and the two nodes must have the same
+        name and agree on the markers (foot, substitution, head and NA), i.e.,
+        if $lhs_j$ is NA, then $rhs_{g(j)}$ must be NA, 
+        if $lhs_j$ has no markers, then $rhs_{g(j)}$ must have no markers, etc.
 
 \item if $lhs_j$ is a type variable node, then $Mapping(lhs_j)$ must have a 
-	single element, say, $rhs_{g(j)}$, and $rhs_{g(j)}$ must be 
-	{\it marker-compatible} and 
-	{\it type-compatible} with $lhs_j$. \\
-	$rhs_{g(j)}$ is 
-	{\it marker-compatible} with $lhs_j$ if any marker
-	 (foot, substitution, head and NA) present in $lhs_j$ is also
-	present in $rhs_{g(j)}$\footnote{Notice that, unlike the case for the
-	constant node, the inverse is not required, 
-	i.e., if $lhs_j$ has no marker, $rhs_{g(j)}$ is still 
-	allowed to have some.}.\\
-	$rhs_{g(j)}$ is {\it type-compatible} with $lhs_j$ 
-	if there is at least one of the alternative 
-	type specifiers for the typed variable that satisfies 
-	the conditions below. 
+        single element, say, $rhs_{g(j)}$, and $rhs_{g(j)}$ must be 
+        {\it marker-compatible} and 
+        {\it type-compatible} with $lhs_j$. \\
+        $rhs_{g(j)}$ is 
+        {\it marker-compatible} with $lhs_j$ if any marker
+         (foot, substitution, head and NA) present in $lhs_j$ is also
+        present in $rhs_{g(j)}$\footnote{Notice that, unlike the case for the
+        constant node, the inverse is not required, 
+        i.e., if $lhs_j$ has no marker, $rhs_{g(j)}$ is still 
+        allowed to have some.}.\\
+        $rhs_{g(j)}$ is {\it type-compatible} with $lhs_j$ 
+        if there is at least one of the alternative 
+        type specifiers for the typed variable that satisfies 
+        the conditions below. 
 
 \begin{itemize}
-\item	$rhs_{g(j)}$ has the stem defined in the type specifier.
-\item	if the type specifier doesn't have subscript, then 
-	$rhs_{g(j)}$ must have no subscript.
-\item	if the type specifier has a subscript different of '?', then 
-	$rhs_{g(j)}$ must have the same subscript as in the type specifier
-	\footnote{If the type specifier has a '?' subscript, there is no
-	restriction, and that is exactly its function: to allow for the 
-	matching to be independent of the subscript}.
+\item   $rhs_{g(j)}$ has the stem defined in the type specifier.
+\item   if the type specifier doesn't have subscript, then 
+        $rhs_{g(j)}$ must have no subscript.
+\item   if the type specifier has a subscript different of `?', then 
+        $rhs_{g(j)}$ must have the same subscript as in the type specifier
+        \footnote{If the type specifier has a `?' subscript, there is no
+        restriction, and that is exactly its function: to allow for the 
+        matching to be independent of the subscript}.
 \end{itemize}
 
 \item if $lhs_j$ is a non-typed variable node, then there's actually no
-	requirement: $Mapping(lhs_j)$ may have any length and even be 
-	empty.
+        requirement: $Mapping(lhs_j)$ may have any length and even be 
+        empty.
 \end{enumerate}
-	
+        
 The following algorithm, Match, takes as input a list of nodes of {\bf lhs}
 and a list of nodes of {\bf inp}, and returns the set of possible matches
 generated in the attempt of match this two lists. If the result is an empty
@@ -249,7 +248,7 @@ set, this means that the matching failed.
 
 \> Function Match ($list_{lhs}$, $list_{rhs}$) \\
 \>\> Let $MAPPINGS$ be the list of all valid mappings from $list_{lhs}$ to 
-	$list_{rhs}$ \\
+        $list_{rhs}$ \\
 
 \>\> Make $MATCHES=\emptyset$ \\
 
@@ -275,7 +274,7 @@ set, this means that the matching failed.
 \>\>\>\>\>     \>$children_{rhs}$ be the list of children of $lhr_{g(j)}$ \\
 
 \>\>\>\>\> Make $Matches=\{\{(lhs_j,lhr_{g(j)})\}\cup
-	m\cup m_j\ \mid\  m\in Matches$ \\
+        m\cup m_j\ \mid\  m\in Matches$ \\
 \>\>\>\>\>\>\>\>\> $and\ m_j\in$ Match$(children_{lhs},\ children_{rhs})\}$ \\ 
 
 \>\>\>\> if $lhs_j$ is a non-typed variable node, then \\
@@ -287,11 +286,11 @@ set, this means that the matching failed.
 \>\>\>\>\>\>\>\> $DESC_s=\{[dr_1,dr_2,...,dr_s]\ \mid\ $ \\
 \>\>\>\>\>\>\>\>\>\> for every $1 \leq k \leq s$, $dr_k$ is a descendant \\
 \>\>\>\>\>\>\>\>\>\>\>\> of
-			some node in $Mapping(lhs_j)$\footnote{it's not 
-		necessary to be a proper descendant,
-	        i.e., $dr_k$ may be a node in $Mapping(lhs_j)$}\\
+                        some node in $Mapping(lhs_j)$\footnote{it's not 
+                necessary to be a proper descendant,
+                i.e., $dr_k$ may be a node in $Mapping(lhs_j)$}\\
 \>\>\>\>\>\>\>\>\>\> for every $1 < k \leq s$, $dr_l$ is {\it to the rigth of}
-			$dr_{k-1}$\footnote{recall that a node 
+                        $dr_{k-1}$\footnote{recall that a node 
 $n$ is to the right of a node $m$, if $n$ and $m$ are not descendant of each
 other, and all the leaves dominated by $n$ are to the right of the leaves
 dominated by $m$.}.\\
@@ -304,9 +303,9 @@ dominated by $m$.}.\\
 \>\>\>\>\>\>\>\>\> cut out from these trees \\
 
 \>\>\>\>\>\>\> Make $Matches=\{\{(lhs_j,\ Tree-Struct)\}\ \cup 
-	m\cup m_j\ \mid$ \\
+        m\cup m_j\ \mid$ \\
 \>\>\>\>\>\>\>\>\> $m\in Matches\ and\ 
-	m_j\in$ Match$(children_{lhs},\ Desc)\}$ \\ 
+        m_j\in$ Match$(children_{lhs},\ Desc)\}$ \\ 
 
 \>\>\> Make $MATCHES\ =\ MATCHES\ \cup\ Matches$ \\
 
@@ -383,11 +382,11 @@ of the same tree} from the input to the output tree.
 The aspects that have to be considered here are:
 
 \begin{itemize}
-\item	Which feature equations should be required to be present in {\bf inp}
-	in order for the match to succeed.
+\item   Which feature equations should be required to be present in {\bf inp}
+        in order for the match to succeed.
 
-\item	Which feature equations should be generated in the output tree as a 
-	function of the feature equations in the input tree.
+\item   Which feature equations should be generated in the output tree as a 
+        function of the feature equations in the input tree.
 \end{itemize}
 
 Based on the possible combinations of these requirements we partition the 
@@ -396,40 +395,40 @@ classification is really a partition, i.e., no equation may be conceptually
 in more than one class at the same time.}: 
 
 \begin{itemize}
-\item	{\it Require \& Retain:} Feature equations in this class
-	are required to be in {\bf inp} in order for matching to succeed.
-	Upon matching, these equations will be copied to the output tree.
-	To achieve this behaviour, the equation must be placed in 
-	the {\bf lhs} tree of the metarule preceded by a plus character
-	(e.g. $+V.t:<trans>=+$)\footnote{Commutativity of equations is 
-	accounted for in the system. Hence an equation $x=y$ can also be
-	specified as $y=x$. Associativity is not accounted for and its need by
-	an user is viewed as indicating misspecification at the input trees.}
-	
-\item	{\it Require \& Don't Copy:} The equation is required to be in 
-	{\bf inp}
-	for matching, but should not be copied to the output tree.
-	Those equations must be in {\bf lhs} preceded by minus character
-	(e.g. $-NP_1:<case>=acc$).
+\item   {\it Require \& Retain:} Feature equations in this class
+        are required to be in {\bf inp} in order for matching to succeed.
+        Upon matching, these equations will be copied to the output tree.
+        To achieve this behaviour, the equation must be placed in 
+        the {\bf lhs} tree of the metarule preceded by a plus character
+        (e.g. $+V.t:<trans>=+$)\footnote{Commutativity of equations is 
+        accounted for in the system. Hence an equation $x=y$ can also be
+        specified as $y=x$. Associativity is not accounted for and its need by
+        an user is viewed as indicating misspecification at the input trees.}
+        
+\item   {\it Require \& Don't Copy:} The equation is required to be in 
+        {\bf inp}
+        for matching, but should not be copied to the output tree.
+        Those equations must be in {\bf lhs} preceded by minus character
+        (e.g. $-NP_1:<case>=acc$).
 
-\item	{\it Optional \& Don't Copy:} 
-	The equation is not required for matching,
-	but we have to make sure not to copy it to the output tree set of
-	equations, regardless of it being present or not in {\bf inp}.
-	Those equations must be in {\bf lhs} in raw form, i.e. neither preceded
-	by a plus nor minus character
-	(e.g. $S_r.b:<perfect>=VP.t:<perfect>$).
+\item   {\it Optional \& Don't Copy:} 
+        The equation is not required for matching,
+        but we have to make sure not to copy it to the output tree set of
+        equations, regardless of it being present or not in {\bf inp}.
+        Those equations must be in {\bf lhs} in raw form, i.e. neither preceded
+        by a plus nor minus character
+        (e.g. $S_r.b:<perfect>=VP.t:<perfect>$).
 
-\item	{\it Optional \& Retain:} 
-	The equation is not required for matching but,
-	in case it is found in {\bf inp} it must be copied to the output tree.
-	This is the {\it default} case, and hence these equations should not be
-	present in the metarule specification.
+\item   {\it Optional \& Retain:} 
+        The equation is not required for matching but,
+        in case it is found in {\bf inp} it must be copied to the output tree.
+        This is the {\it default} case, and hence these equations should not be
+        present in the metarule specification.
 
-\item	{\it Add:} The equation is not required for matching but we want it to
-	be put in the output tree anyway.
-	These equations are placed in raw form in the {\bf rhs} (notice in this
-	case it is the right hand side).
+\item   {\it Add:} The equation is not required for matching but we want it to
+        be put in the output tree anyway.
+        These equations are placed in raw form in the {\bf rhs} (notice in this
+        case it is the right hand side).
 \end{itemize}
 
 Typed variables can be used in feature equations in both {\bf lhs} and 
@@ -438,15 +437,15 @@ they have been instantiated. For each resulting match
 from the structural matching process the following is done:
 
 \begin{itemize}
-\item	The (typed) variables in the equations at {\bf lhs} and {\bf rhs} are 
-	substituted by the names of the nodes they have been instantiated to.
+\item   The (typed) variables in the equations at {\bf lhs} and {\bf rhs} are 
+        substituted by the names of the nodes they have been instantiated to.
 
-\item	The requirements concerning feature equations are checked, according
-	to the above rules.
+\item   The requirements concerning feature equations are checked, according
+        to the above rules.
 
-\item	If the match survives feature equation checking, the proper output tree
-	is generated, according to Section~\ref{output-gen} and to the 
-	rules described above for the feature equations.
+\item   If the match survives feature equation checking, the proper output tree
+        is generated, according to Section~\ref{output-gen} and to the 
+        rules described above for the feature equations.
 \end{itemize}
 
 Finally, a new kind of metavariable, which is not used at the nodes, can be
@@ -560,34 +559,34 @@ files.
 The available options for applying a metarule which is in a buffer are:
 
 \begin{itemize}
-\item	For applying it to a single input tree, click in the name of the
-	tree in the main window, and choose the option 
-	{\it apply metarule to tree}. 
-	You will be prompted for the name of the metarule
-	to apply to the tree
-	which should be, as we mentioned before, the name of the buffer that
-	contains the metarule trees. The output trees will be generated
-	at the end of the buffer that contains the input tree. The names of
-	the trees depend of a LISP parameter {\it *metarules-change-name* }.
-	If the value of the parameter is {\bf false} --- the {\it default} 
-	value --- then the new trees will have the same name as the input, 
-	otherwise, the name of the input tree followed by a dash ('-') and
-	the name of the right hand side of the tree\footnote{the reason why 
-	we do not use the name of the metarule, i.e. the name of the buffer,
-	is because in some forms of application the metarules do not
-	carry individual names, as we'll see soon is the case when a set of
-	metarules from a file is applied.}.
+\item   For applying it to a single input tree, click in the name of the
+        tree in the main window, and choose the option 
+        {\it apply metarule to tree}. 
+        You will be prompted for the name of the metarule
+        to apply to the tree
+        which should be, as we mentioned before, the name of the buffer that
+        contains the metarule trees. The output trees will be generated
+        at the end of the buffer that contains the input tree. The names of
+        the trees depend of a LISP parameter {\it *metarules-change-name* }.
+        If the value of the parameter is {\bf false} --- the {\it default} 
+        value --- then the new trees will have the same name as the input, 
+        otherwise, the name of the input tree followed by a dash (`-') and
+        the name of the right hand side of the tree\footnote{the reason why 
+        we do not use the name of the metarule, i.e. the name of the buffer,
+        is because in some forms of application the metarules do not
+        carry individual names, as we'll see soon is the case when a set of
+        metarules from a file is applied.}.
 
-	The value of the parameter can be changed by choosing {\it Tools} 
-	at the menu bar and then either {\it name mr output trees =
-	input}  or {\it append rhs name to mr output trees}.
+        The value of the parameter can be changed by choosing {\it Tools} 
+        at the menu bar and then either {\it name mr output trees =
+        input}  or {\it append rhs name to mr output trees}.
 
-	
-\item	For applying it to all the trees of a buffer, click in the name of the 
-	buffer that contains the trees and proceed as above. The output will
-	be a new buffer with all the output trees. The name of the new buffer
-	will be the same as the input buffer prefixed by "MR-". The names of
-	the trees follow the conventions above.
+        
+\item   For applying it to all the trees of a buffer, click in the name of the 
+        buffer that contains the trees and proceed as above. The output will
+        be a new buffer with all the output trees. The name of the new buffer
+        will be the same as the input buffer prefixed by "MR-". The names of
+        the trees follow the conventions above.
 
 \end{itemize}
 
@@ -662,32 +661,32 @@ at the menu item {\it Tools} and then choosing the appropriate function
 among:
 
 \begin{itemize}
-\item	{\it Apply metarule to files:}  
-	You'll be prompted for the metarule file name
-	which should contain one metarule\footnote{if it contains more than 
-	2 trees, the additional trees are ignored}, and for input file names.
-	Each input file name {\bf inpfile} will be independently submitted to 
-	the application of the metarule generating an output file with the 
-	name	{\bf MR-inpfile}.
+\item   {\it Apply metarule to files:}  
+        You'll be prompted for the metarule file name
+        which should contain one metarule\footnote{if it contains more than 
+        2 trees, the additional trees are ignored}, and for input file names.
+        Each input file name {\bf inpfile} will be independently submitted to 
+        the application of the metarule generating an output file with the 
+        name    {\bf MR-inpfile}.
 
-\item	{\it Apply metarules in parallel to files:}
-	You'll be prompted for the metarules file name with one or more 
-	metarules and for input file names.
-	Each input file name {\bf inpfile} will be independently submitted to 
-	the application of the metarules in parallel. For each parallel 
-	application to a file {\bf inpfile} an output file with the 
-	name	{\bf MRP-inpfile} will be generated.
+\item   {\it Apply metarules in parallel to files:}
+        You'll be prompted for the metarules file name with one or more 
+        metarules and for input file names.
+        Each input file name {\bf inpfile} will be independently submitted to 
+        the application of the metarules in parallel. For each parallel 
+        application to a file {\bf inpfile} an output file with the 
+        name    {\bf MRP-inpfile} will be generated.
 
-\item	{\it Apply metarules in sequence to files:}  
-	The interaction is as described for the application in parallel, 
-	except that
-	the application of the metarules are in sequence and that 
-	the output files are prefixed by {\bf MRS-} instead of {\bf MRP-}.
+\item   {\it Apply metarules in sequence to files:}  
+        The interaction is as described for the application in parallel, 
+        except that
+        the application of the metarules are in sequence and that 
+        the output files are prefixed by {\bf MRS-} instead of {\bf MRP-}.
 
-\item	{\it Apply metarules cumulatively to files:}  
-	The interaction is as described for the applications in parallel
-	and in sequence, except that the mode of application is cumulative
-	and that the output files are prefixed by {\bf MRC-}.
+\item   {\it Apply metarules cumulatively to files:}  
+        The interaction is as described for the applications in parallel
+        and in sequence, except that the mode of application is cumulative
+        and that the output files are prefixed by {\bf MRC-}.
 \end{itemize}
 
 %For each case the user has the possibility of choosing what to do in the case
