@@ -492,49 +492,16 @@ bare infinitive clause.
 
 \enumsentence{Bob sees the harmonica fall.}
 
-The trees in the TXnx0Vs1 family are generally parallel to those in the
-Tnx0Vs1 family, except for the {\bf $<$assign-case$>$} and
-{\bf $<$assign-comp$>$} values on the foot nodes.  However, the TXnx0Vs1
-family also includes a tree for the passive, which of course is not
-included in the Tnx0Vs1 family.  Unlike all the other trees in the 
-TXnx0Vs1 family, the passive tree is not rooted in S, and is instead a 
-VP auxiliary tree.  Since the
+
+The passive for the ECM verbs is treated as a raising verb.
+Since the
 subject of the infinitive is not thematically selected by the ECM verb,
 it is not part of the ECM verb's tree, and so it cannot be part of the
-passive tree.   Therefore, the passive acts as a raising verb (see 
-section~\ref{sm-clause-xtag-analysis}).
-For example, to derive (\ex{2}), the tree in Figure~\ref{expects-passive}
-would adjoin into a 
-derivation for {\it Bob to talk} at the VP node  (and the 
-{\bf $<$mode$>$=passive} feature, not shown, forces the auxiliary to
-adjoin in, as for other passives, as described in chapter~\ref{passives}).
-
-\enumsentence{Van expects Bob to talk.}
-\enumsentence{Bob was expected to talk.}
-
-\begin{figure}[hbt]
-\centering
-\hspace{0.0in}
-\psfig{figure=ps/sent-comps-subjs-files/expects-passive.ps,height=1.5in}
-\caption{ECM passive}
-\label{expects-passive}
-\label{3;2,15}
-\end{figure}
-
-It has long been noted that passives of both full and bare infinitive 
-ECM constructions are full infinitives, as in (\ex{0}) and (\ex{2}).
-
-\enumsentence{Bob sees the harmonica fall.}
-\enumsentence{The harmonica was seen to fall.}
-\enumsentence{$\ast$The harmonica was seen fall.}
-
-Under the TAG ECM analysis, this fact is easy to implement.  The foot
-node of the ECM passive tree is simply set to have {\bf $<$mode$>$=inf},
-which prevents the derivation of (\ex{0}).  Therefore, for all the other
-trees in the family, to foot nodes are set to have {\bf $<$mode$>$=base} 
-or {\bf $<$mode$>$=inf} depending on whether it is a bare infinitive or not.
-These foot nodes are all S nodes.  The VP foot node of the passive tree, 
-however, has {\bf $<$mode$>$=inf} regardless.
+passive tree. Therefore, the passive acts as a raising verb, and so for
+example, 
+the sentence {\it John is believed to be happy} would be derived by
+adjoining {\it believed} in as a raising verb.  For
+further discussion, see section~\ref{sm-clause-xtag-ECM}.
 
 \section{Sentential Subjects}
 \label{sent-subjs}
