@@ -279,48 +279,158 @@ cardinal.
 \label{to-conj}
 \end{figure}
 
-\section{Other Conjunctions}
+\section{Predicative Coordination}
 
-The conjunction analysis described in the previous sections is
-designed to handle only the most straightforward cases of conjunction.
-Three types of conjunction that are not handled are:
+This section describes the method for predicative coordination
+(including VP coordination of various kinds) used in XTAG. The
+description is derived from work described in (\cite{anoopjoshi96}).
+It is important to say that this implementation of predicative
+coordination is not part of the XTAG release at the moment due massive
+parsing ambiguities. This is partly because of the current
+implementation and also the inherent ambiguities due to VP
+coordination that cause a combinatorial explosion for the parser. We
+are trying to remedy both of these limitations using a probability
+model for coordination attachments which will be included as part of a
+later XTAG release.
 
-\begin{itemize}
-\item {\bf Incomplete Constituents:} The sentence 
-{\it John likes and Bill hates bananas} cannot be handled by the
-current XTAG grammar.  Since {\it likes} anchors a tree that needs
-both a subject noun phrase and an object noun phrase to be substituted
-in, the first conjunct would need have an unfilled substitution node
-after {\it John likes} for the sentence to parse.
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \psfig{figure=ps/conj-files/tags.ps,scale=110}
+  \end{center}
+  \caption{Example of a lexicalized TAG}
+  \label{fig:tags}
+\end{figure}
 
-\item {\bf Verb Phrase Conjunction:} Since verbs anchor a tree with a root 
-node of type S and not VP, there is no straightforward way to implement verb
-phrase conjunction.  For example, in the sentence {\it John eats cookies and
-drinks beer}, there is no point in the derivation at which {\it eats cookies}
-and {\it drinks beer} are available as separate trees ready to be conjoined.
-They are both only subtrees in their respective S trees.  This could also be
-considered as a case of incomplete constituents, since {\it drinks beer} is
-missing a noun phrase.
+This extended domain of locality in a lexicalized Tree Adjoining
+Grammar (see Figure~\ref{fig:tags} for example) causes problems when
+we consider the coordination of such predicates. Consider~(\ex{1}) for
+instance, the NP {\em the beans that I bought from Alice} in the
+Right-Node Raising (RNR) construction has to be shared by the two
+elementary trees (which are anchored by {\em cooked} and {\em ate}
+respectively).
 
-\item {\bf Gapping:}
-Sentences such as {\it John likes apples and Bill pears} are also not
-handled by the previous analysis.  These could also be considered as a case
-of incomplete constituents.
-\end{itemize}
+\enumsentence{(((Harry cooked) and (Mary ate)) the beans that I bought
+  from Alice)}
 
-One grammar formalism that is capable of handling these types of 
-conjunction is Combinatory Categorial Grammar (CCG) (\cite{steedman90})
-which relies on a nonstandard notion of a constituent in order to accomplish
-this.  Proposals have been made (e.g. \cite{joshischabes91}),
-inspired by the CCG approach, to handle these problematic cases in the
-FB-LTAG formalism.  Unlike the CCG analysis, however, the traditional notion
-of constituents and phrase structure is maintained.  Such proposals are
-as of yet unimplemented.
+We use the standard notion of coordination which is shown in
+Figure~\ref{fig:conj} which maps two constituents of {\em like type},
+but with different interpretations, into a constituent of the same
+type.
 
-%test sentences 
-%I ran and found a Brickel bush
-% you and me and the whole world
-% hook and line and bait
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \psfig{figure=ps/conj-files/conj.ps,scale=110}
+  \end{center}
+  \caption{Coordination schema}
+  \label{fig:conj}
+\end{figure}
+
+We add a new operation to the LTAG formalism (in addition to
+substitution and adjunction) called {\em conjoin} (later we discuss an
+alternative which replaces this operation by the traditional
+operations of substitution and adjunction). While substitution and
+adjunction take two trees to give a derived tree, {\em conjoin\/}
+takes three trees and composes them to give a derived tree.  One of
+the trees is always the tree obtained by specializing the schema in
+Figure~\ref{fig:conj} for a particular category. The tree obtained
+will be a lexicalized tree, with the lexical anchor as the
+conjunction: {\em and}, {\em but}, etc.
+
+The conjoin operation then creates a {\em contraction\/} between nodes
+in the contraction sets of the trees being coordinated.  The term {\em
+  contraction\/} is taken from the graph-theoretic notion of edge
+contraction. In a graph, when an edge joining two vertices is
+contracted, the nodes are merged and the new vertex retains edges to
+the union of the neighbors of the merged vertices. The conjoin
+operation supplies a new edge between each corresponding node in the
+contraction set and then contracts that edge.
+
+For example, applying {\em conjoin\/} to the trees {\em Conj(and)},
+$\alpha(eats)$ and $\alpha(drinks)$ gives us the derivation tree and
+derived structure for the constituent in \ex{1} shown in
+Figure~\ref{fig:vpc}.
+
+\enumsentence{$\ldots$ eats cookies and drinks beer}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \psfig{figure=ps/conj-files/vpc.ps,scale=110}
+  \end{center}
+  \caption{An example of the {\em conjoin\/} operation. $\{1\}$
+    denotes a shared dependency.}
+  \label{fig:vpc}
+\end{figure}
+
+Another way of viewing the conjoin operation is as the construction of
+an auxiliary structure from an elementary tree. For example, from the
+elementary tree $\alpha(drinks)$, the conjoin operation would create
+the auxiliary structure $\beta(drinks)$ shown in
+Figure~\ref{fig:aux-conj}. The adjunction operation would now be
+responsible for creating contractions between nodes in the contraction
+sets of the two trees supplied to it. Such an approach is attractive
+for two reasons. First, it uses only the traditional operations of
+substitution and adjunction. Secondly, it treats {\em conj X} as a
+kind of ``modifier'' on the left conjunct {\em X}. This approach
+reduces some of the parsing ambiguities introduced by the predicative
+coordination trees and forms the basis of the XTAG implementation.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \psfig{figure=ps/conj-files/aux-conj.ps,scale=110}
+  \end{center}
+  \caption{Coordination as adjunction.}
+  \label{fig:aux-conj}
+\end{figure}
+
+More information about predicative coordination can be found in
+(\cite{anoopjoshi96}), including an extension to handle gapping constructions.
+
+%\section{Other Conjunctions}
+
+%The conjunction analysis described in the previous sections is
+%designed to handle only the most straightforward cases of conjunction.
+%Three types of conjunction that are not handled are:
+
+%\begin{itemize}
+%\item {\bf Incomplete Constituents:} The sentence 
+%{\it John likes and Bill hates bananas} cannot be handled by the
+%current XTAG grammar.  Since {\it likes} anchors a tree that needs
+%both a subject noun phrase and an object noun phrase to be substituted
+%in, the first conjunct would need have an unfilled substitution node
+%after {\it John likes} for the sentence to parse.
+
+%\item {\bf Verb Phrase Conjunction:} Since verbs anchor a tree with a root 
+%node of type S and not VP, there is no straightforward way to implement verb
+%phrase conjunction.  For example, in the sentence {\it John eats cookies and
+%drinks beer}, there is no point in the derivation at which {\it eats cookies}
+%and {\it drinks beer} are available as separate trees ready to be conjoined.
+%They are both only subtrees in their respective S trees.  This could also be
+%considered as a case of incomplete constituents, since {\it drinks beer} is
+%missing a noun phrase.
+
+%\item {\bf Gapping:}
+%Sentences such as {\it John likes apples and Bill pears} are also not
+%handled by the previous analysis.  These could also be considered as a case
+%of incomplete constituents.
+%\end{itemize}
+
+%One grammar formalism that is capable of handling these types of 
+%conjunction is Combinatory Categorial Grammar (CCG) (\cite{steedman90})
+%which relies on a nonstandard notion of a constituent in order to accomplish
+%this.  Proposals have been made (e.g. \cite{joshischabes91}),
+%inspired by the CCG approach, to handle these problematic cases in the
+%FB-LTAG formalism.  Unlike the CCG analysis, however, the traditional notion
+%of constituents and phrase structure is maintained.  Such proposals are
+%as of yet unimplemented.
+
+%%test sentences 
+%%I ran and found a Brickel bush
+%% you and me and the whole world
+%% hook and line and bait
 
 
 
