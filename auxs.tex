@@ -74,8 +74,8 @@ verb forms that are required to follow each type of auxiliary verb.
 TYPE&LEX ITEMS&SELECTS FOR\\     
 \hline
 modals & {\it can}, {\it could}, {\it may}, {\it might}, {\it will}, & base form\footnotemark
-\\ & {\it would}, {\it ought}, {\it shall}, {\it should} & e.g. {\it will
-go}, {\it might come}\\
+\\ & {\it would}, {\it ought}, {\it shall}, {\it should} & (e.g. {\it will
+go}, {\it might come})\\
 \hline
 perfective & {\it have} & past participle\\
 & & (e.g. {\it has gone})\\  
@@ -113,8 +113,8 @@ accounts for properties of the auxiliary system described above.
 
 In our grammar, auxiliary trees are added to the main verb tree by adjunction.
 Figure~\ref{Vvx} shows the adjunction tree for non-inverted
-sentences\footnote{We saw this tree briefly in section~\ref{case-for-verbs},
-but with most of its features missing.  The full tree is presented here.}.
+sentences.\footnote{We saw this tree briefly in section~\ref{case-for-verbs},
+but with most of its features missing.  The full tree is presented here.}
 
 \begin{figure}[htb]
 \centering
@@ -144,7 +144,7 @@ The restrictions outlined in column 3 of Table \ref{aux-table} are
 implemented through the features {\bf $<$mode$>$}, {\bf
 $<$perfective$>$}, {\bf $<$progressive$>$} and {\bf $<$passive$>$}.
 The syntactic lexicon entries for the auxiliaries gives values for
-these features on the foot node~(VP$_{*}$) in Figure~\ref{Vvx}.  Since
+these features on the foot node~(VP$^{*}$) in Figure~\ref{Vvx}.  Since
 the top features of the foot node must eventually unify with the
 bottom features of the node it adjoins onto for the sentence to be
 valid, this enforces the restrictions made by the auxiliary node.  In
@@ -258,20 +258,18 @@ negative morpheme is present, but this usage is marked as emphatic.  Emphatic
 \enumsentence {$\ast$You {\bf do} can have a backpack, don't you?}
 \enumsentence {$\ast$I {\bf did} have had a backpack!}
 
-In the XTAG grammar, {\it do} is prevented from cooccurring with
-other auxiliary verbs by a requirement that it adjoin only onto main
-verbs.  It has indicative mode, so no other auxiliaries can adjoin
-above it\footnote{Earlier, we said that indicative mode carries tense
-with it.  Since only the topmost auxiliary carries the tense, any
-subsequent verbs must {\bf not} have indicative mode.}.  The lexical
-item {\it not} is only allowed to adjoin onto an non-indicative (and
-therefore non-tensed) verbs.  Since all matrix clauses must be
-indicative (or imperative), a negated sentence will fail unless an
-auxiliary verb, either {\it do} or another auxiliary, adjoins
-somewhere above the negative morpheme, {\it not}. In addition to
-forcing adjunction of an auxiliary, this analysis of {\it not} allows
-it freedom to move around in the auxiliaries, as seen in the sentences
-(\ex{1})-(\ex{4}).
+In the XTAG grammar, {\it do} is prevented from cooccurring with other
+auxiliary verbs by a requirement that it adjoin only onto main verbs.  It has
+indicative mode, so no other auxiliaries can adjoin above it.\footnote{Earlier,
+we said that indicative mode carries tense with it.  Since only the topmost
+auxiliary carries the tense, any subsequent verbs must {\bf not} have
+indicative mode.}  The lexical item {\it not} is only allowed to adjoin onto a
+non-indicative (and therefore non-tensed) verb.  Since all matrix clauses must
+be indicative (or imperative), a negated sentence will fail unless an auxiliary
+verb, either {\it do} or another auxiliary, adjoins somewhere above the
+negative morpheme, {\it not}. In addition to forcing adjunction of an
+auxiliary, this analysis of {\it not} allows it freedom to move around in the
+auxiliaries, as seen in the sentences (\ex{1})-(\ex{4}).
 
 \enumsentence {John will have had a backpack.}
 \enumsentence {$\ast$John not will have had a backpack.}
@@ -290,10 +288,10 @@ as (\ex{1})-(\ex{3}).
 \enumsentence {$\ast$Do you will want to leave home?}
 
 In English, unlike other Germanic languages, the main verb cannot move to the
-beginning of a clause, with the exception of main verb {\it be}\footnote{The
-inversion of main verb {\it have} in British English was previously noted.}.
-In a GB account of inverted yes/no questions, the tense feature is said to be
-in C$^{0}$ at the front of the sentence.  Since main verbs cannot move, they
+beginning of a clause, with the exception of main verb {\it be}.\footnote{The
+inversion of main verb {\it have} in British English was previously noted.}  In
+a GB account of inverted yes/no questions, the tense feature is said to be in
+C$^{0}$ at the front of the sentence.  Since main verbs cannot move, they
 cannot pick up the tense feature, and do-support is again required if there is
 no auxiliary verb to perform the role.  Sentence (\ex{0}) shows that {\it do}
 does not interact with other auxiliary verbs, even when in the inverted
