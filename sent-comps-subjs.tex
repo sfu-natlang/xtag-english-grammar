@@ -6,7 +6,7 @@
 \label{scomps-section}
 
 In the XTAG grammar, arguments of a lexical item, including
-subjects, appear in the initial tree anchored by that lexical item.  A
+subjects, appear in the elementary tree anchored by that lexical item.  A
 sentential argument appears as an S node in the appropriate position
 within an elementary tree anchored by the lexical item that selects
 it. This is the case for sentential complements of verbs, prepositions
@@ -66,7 +66,7 @@ realized by using distinguishing node labels.
 Data}
 \label{data}
 
-Verbs selecting sentential complements (or subjects) place restrictions on
+Verbs selecting sentential complements place restrictions on
 their complements, in particular, on the form of the embedded verb
 phrase.\footnote{Other considerations, such as the relationship between the
 tense/aspect of the matrix clause and the tense/aspect of a complement clause
@@ -245,7 +245,7 @@ requirements of particular types of clauses for particular
 complementizers.  So while the {\bf $<$comp$>$} feature represents
 constraints originating from the VP dominating the clause, the {\bf
 $<$assign-comp$>$} feature represents constraints originating from the
-highest VP in the clause. {\bf $<$assign-comp$>$} is used to control the
+highest VP in the clause. {\bf $<$assign-comp$>$} is used to control
 %appearance of subjects in infinitival clauses,  to
 %ensure the correct distribution of complementizers in sentential
 %subjects, and to block `that-trace' violations.
@@ -305,14 +305,12 @@ supplies the {\bf $<$assign-case$>$} value, assigning
 \label{sent-complements}
 {\bf Tree families}: Tnx0Vs1, Tnx0Vnx1s2, TItVnx1s2, TItVpnx1s2, TItVad1s2. 
 
-
-Verbs that select sentential complements restrict the {\bf $<$mode$>$}
-and {\bf $<$comp$>$} values for those complements. Since with very few
-exceptions\footnote{For example, long distance extraction is not
-possible from the S complement in it-clefts.} long distance extraction
-is possible from sentential complements, the S complement nodes are
-adjunction nodes. Figure \ref{think} shows the declarative tree
-for sentential complements, anchored by {\it think}.  
+\subsection{Bridge Verbs}
+Verbs that select sentential complements restrict the {\bf $<$mode$>$} and {\bf
+$<$comp$>$} values for those complements. For verbs which allow long distance
+extraction from their sentential complements ({\it bridge verbs}), the S
+complement nodes are adjunction nodes. Figure \ref{think} shows the declarative
+tree for a sentential complement-taking bridge verb, anchored by {\it think}.
 
 \begin{figure}[hbt]
 \centering
@@ -400,44 +398,61 @@ for the {\bf $<$assign-comp$>$} feature.
 %and ensures that no complementizer is able to adjoin at this node.
 
 
-In the case of indirect questions, subjacency follows from the
-principle that a given tree cannot contain more than one
-wh-element. Extraction out of an indirect question is ruled out
-because a sentence like:
+% Tonia: 
+\subsection{Non-bridge Verbs}
+
+There is a class of verbs (such as the manner-of-speaking verbs) which do not
+allow extraction from their sentential complement. These are called
+{\it non-bridge} verbs. Thus, unlike the bridge verb {\it say} which allows
+extraction from its complement, as in~\ref{1}, the non-bridge verb {\it
+whisper} does not allow this extraction, as in~\ref{2}. 
+
+\enumsentence{Who did the elephant say that the emu saw ?}
+\enumsentence{$\ast$ Who did the elephant whisper that the emu saw ?}
+
+Therefore, non-bridge verbs such as {\it whisper} do not anchor auxiliary
+trees. Rather, they anchor initial trees with an S substitution site as their
+complement. 
+
+\subsection{Subjacency Violations: Multiple Wh-extraction}
+
+In the case of indirect questions, subjacency follows from the principle that a
+given tree cannot contain more than one wh-element. Extraction out of an
+indirect question is ruled out because a sentence like~\ref{1} would have to be
+derived from the adjunction of {\it do you wonder} into {\it who$_{i}$
+who$_{j}$ e$_{j}$ loves e$_{i}$}, which is an ill-formed elementary
+tree.\footnote{This does not mean that elementary trees with more than one gap
+should be ruled out across the grammar. Such trees might be required for
+dealing with parasitic gaps or gaps in coordinated structures.}
+
 
 \enumsentence{$\ast$ Who$_{i}$ do you wonder who$_{j}$ e$_{j}$ loves e$_{i}$ ?}
 
-\noindent would have to be derived from the adjunction of {\it do you
-wonder} into {\it who$_{i}$ who$_{j}$ e$_{j}$ loves e$_{i}$}, which is an
-ill-formed elementary tree.\footnote{This does not mean that elementary trees
-with more than one gap should be ruled out across the grammar. Such trees might
-be required for dealing with parasitic gaps or gaps in coordinated structures.}
 
 \subsection{Exceptional Case Marking Verbs}
 \label{ecm-verbs}
 
 {\bf Tree family}: TXnx0Vs1
+
 Exceptional Case Marking verbs are those which assign accusative case to the
 subject of the sentential complement. This is in contrast to verbs
 in the Tnx0Vnx1s2 family (section~\ref{nx0Vnx1s2-family}), which assign 
 accusative case to an NP which is not part of the sentential complement.  
 
-The subject of an ECM infinitive
-complement is assigned accusative case is a manner
-analogous to that of a subject in a {\it for-to\/} construction, as described
-in section~\ref{for-complementizer}.  As in the {\it for-to\/} case, the
-ECM verb assigns accusative case into the subject of the lower infinitive, and
-so the infinitive uses the {\it to} which has no value for
-{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for/ecm}.  The ECM verb
-has {\bf $<$assign-comp$>$=ecm} and {\bf $<$assign-case$>$=acc} on its
-foot.  The former allows the {\bf $<$assign-comp$>$} features of the ECM
-verb and the {\it to} tree to unify, and so be used together, and the latter
-assigns the accusative case to the lower subject.  
+The subject of an ECM infinitive complement is assigned accusative case in a
+manner analogous to that of a subject in a {\it for-to\/} construction, as
+described in section~\ref{for-complementizer}.  As in the {\it for-to\/} case,
+the ECM verb assigns accusative case into the subject of the lower infinitive,
+and so the infinitive uses the {\it to} which has no value for {\bf
+$<$assign-case$>$} and has {\bf $<$assign-comp$>$=for/ecm}.  The ECM verb has
+{\bf $<$assign-comp$>$=ecm} and {\bf $<$assign-case$>$=acc} on its foot.  The
+former allows the {\bf $<$assign-comp$>$} features of the ECM verb and the {\it
+to} tree to unify, and so be used together, and the latter assigns the
+accusative case to the lower subject.
 
-Figure~\ref{expects-decl} shows the 
-declarative tree for the 
-tree for the TXnx0Vs1 family, in this case anchored by {\it expects}.
-Figure~\ref{van-expects} shows a parse for {\it Van expects Bob to talk}
+Figure~\ref{expects-decl} shows the declarative tree for the TXnx0Vs1 family,
+in this case anchored by {\it expects}.  Figure~\ref{van-expects} shows a parse
+for {\it Van expects Bob to talk}
 
 \begin{figure}[hbt]
 \centering
@@ -478,17 +493,15 @@ The use of features allows the ECM and
 {\it for-to\/} constructions to act the same for exceptional case assignment,
 while also being distinguished for that-trace violations.
 
-Verbs that take bare infinitives, as in (\ex{1}), are 
-also treated as ECM verbs,
-the only difference being that their foot feature has
-{\bf $<$mode$>$=base} instead of {\bf $<$mode$>$=inf}.  Since the complement
-does not have {\it to}, there is no question of using the {\it to} tree
-for allowing accusative case to be assigned.  Instead, verbs with
-{\bf $<$mode$>$=base} allow either accusative or nominative case to be 
-assigned to the subject, and the foot of the ECM bare infinitive tree 
-forces it to be accusative by its {\bf $<$assign-case$>$=acc} value at its
-foot node unifies with the {\bf $<$assign-case$>$=nom/acc} value of the 
-bare infinitive clause.
+Verbs that take bare infinitives, as in (\ex{1}), are also treated as ECM
+verbs, the only difference being that their foot feature has {\bf
+$<$mode$>$=base} instead of {\bf $<$mode$>$=inf}.  Since the complement does
+not have {\it to}, there is no question of using the {\it to} tree for allowing
+accusative case to be assigned.  Instead, verbs with {\bf $<$mode$>$=base}
+allow either accusative or nominative case to be assigned to the subject. The
+foot of the ECM bare infinitive tree forces the subject to be accusative by its
+{\bf $<$assign-case$>$=acc} value at its foot node which unifies with the {\bf
+$<$assign-case$>$=nom/acc} value of the bare infinitive clause.
 
 \enumsentence{Bob sees the harmonica fall.}
 
