@@ -248,43 +248,14 @@ and a list of nodes of {\bf inp}, and returns the set of possible matches
 generated in the attempt of match this two lists. If the result is an empty
 set, this means that the matching failed.
 
-\begin{alltt}
-   Function {\it{}Match} ({\it{}list}\(\sb{lhs}\), {\it{}list}\(\sb{inp}\))
-       Let {\it{}MAPPINGS} be the list of all valid mappings from {\it{}list\(\sb{lhs}\)} to {\it{}list}\(\sb{inp}\)
-       Make {\it{}MATCHES} = \(\emptyset\)
-       For each mapping {\it{}Mapping} \(\in\) {\it{}MAPPINGS} do:
-           Make {\it{}Matches} = \{\(\emptyset\)\}
-           For each {\it{}j}, \(1\leq\){\it{}j}\(\leq\){\it{}l}, where {\it{}l}=length({\it{}list}\(\sb{lhs}\)), do: 
-               If {\it{}lhs}\(\sb{j}\) is a constant node, then 
-                  Let {\it{}children}\(\sb{lhs}\) be the list of children of {\it{}lhs}\(\sb{j}\) 
-                      {\it{}inp}\(\sb{g(j)}\) be the single element in {\it{}Mapping}({\it{}lhs}\(\sb{j}\))
-                      {\it{}children}\(\sb{inp}\) be the list of children of {\it{}inp}\(\sb{g(j)}\) 
-                  Make {\it{}Matches} = \{{\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\) {\it{}m} \(\in\) {\it{}Matches} and 
-                                          {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}children}\(\sb{inp}\))\}  
-               If {\it{}lhs}\(\sb{j}\) is a typed variable node, then 
-                  Let {\it{}children}\(\sb{lhs}\) be the list of children of {\it{}lhs}\(\sb{j}\)
-                      {\it{}inp}\(\sb{g(j)}\) be the single element in {\it{}Mapping}({\it{}lhs}\(\sb{j}\))
-                      {\it{}children}\(\sb{inp}\) be the list of children of {\it{}inp}\(\sb{g(j)}\)
-                  Make {\it{}Matches} = \{ \{({\it{}lhs}\(\sb{j}\),{\it{}inp}\(\sb{g(j)}\))\}\(\cup\){\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\) {\it{}m} \(\in\) {\it{}Matches} and
-                                         {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}children}\(\sb{inp}\)) \}
-               If {\it{}lhs}\(\sb{j}\) is a non-typed variable node, then 
-                  Let {\it{}children}\(\sb{lhs}\) be the list of children of {\it{}lhs}\(\sb{j}\)
-                      {\it{}sl} be the number of nodes in {\it{}children}\(\sb{lhs}\)
-                      {\it{}DESC} be the set of {\it{}sl}-sized lists given by:
-                             {\it{}DESC} = \{[{\it{}di}\(\sb{1}\),{\it{}di}\(\sb{2}\),...,{\it{}di}\(\sb{sl}\)] \(\mid\)
-                                       For every \(1\leq\){\it{}k}\(\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is a descendant
-                                               of some node in {\it{}Mapping(lhs}\(\sb{j}\))\footnote{It's not necessary to be a proper descendant, i.e., {\it{}di}\(\sb{k}\) may be a node in {\it{}Mapping}({\it{}lhs}\(\sb{j}\))}
-                             For every \(1<k\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is {\it{}to the right of} {\it{}di}\(\sb{k-1}\)\footnote{Recall that a node {\it{}n} is to the right of a node {\it{}m}, if {\it{}n} and {\it{}m} are not descendant of each other, and all the leaves dominated by {\it{}n} are to the right of the leaves dominated by {\it{}m}.}.
-                      For every list {\it{}Desc} = [{\it{}di}\(\sb{1}\),{\it{}di}\(\sb{2}\),...,{\it{}di}\(\sb{sl}\)] \(\in\) {\it{}DESC} do: 
-                          Let {\it{}Tree-Material} be the list of subtrees dominated 
-                                   by the nodes in {\it{}Mapping}({\it{}lhs}\(\sb{j}\)), but, with the
-                                   subtrees dominated by the nodes in {\it{}DESC}
-                                   cut off from these trees 
-                          Make {\it{}Matches} = \{ \{({\it{}lhs}\(\sb{j}\), {\it{}Tree-Material})\}\(\cup\){\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\)
-                                  {\it{}m} \(\in\) {\it{}Matches} and {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}Desc})\} 
-           Make {\it{}MATCHES} = {\it{}MATCHES} \(\cup\) {\it{}Matches}
-       Return {\it{}MATCHES}
-\end{alltt}
+\begin{figure}[p]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/metarulealgo.eps,height=8.3in}
+\end{tabular}
+\caption{Metarule matching algorithm}
+\label{metarule-algo}
+\end{figure}
 
 Finally we can define the process of structurally matching {\bf lhs} to
 {\bf inp} as the evaluation of Match([root({\bf lhs})], [root({\bf inp})].
