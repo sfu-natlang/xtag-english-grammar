@@ -2,6 +2,7 @@
 \label{metarules}
 
 \section{Introduction}
+\label{introduction}
 
 XTAG has now a collection of functions accessible from the user interface that
 helps the user in the construction and maintenance of a tag tree-grammar.
@@ -29,7 +30,7 @@ the identical relation involved in each of the three pairs above.
 
 Notice that the degree of generalization can be much higher than it might be
 thought in principle from the above paragraph. For example, once a rule for
-passivization is applied to the tree different basic trees above, the 
+passivization is applied to the three different basic trees above, the 
 wh-subject moved rule could be again applied to generate the wh-moved subject
 versions for the passive form. Depending on the degree of regularity that one
 can find in the grammar being built, the reduction in the number of original
@@ -41,14 +42,16 @@ reliability and maintainability of the grammar achieved by the use of
 metarules are equally or even more important.
 
 In the next section we define a metarule in XTAG. 
-Section 3 gives some
+Section \ref{examples} gives some
 linguistically motivated examples
-of metarule for the English grammar described in this
-technical report and their application. Section 4 describes the access through 
+of metarules for the English grammar described in this
+technical report and their application. Section \ref{access} 
+describes the access through 
 the user interface.
 %Section 3 describes the access through the user interface.
 
 \section{The definition of a metarule in XTAG}
+\label{definition}
 
 A metarule specifies a rule for transforming grammar rules into grammar rules. 
 In XTAG the grammar 
@@ -121,14 +124,15 @@ given below.
         We'll see ahead that each type specifier represents an alternative
         for matching, and the presence of `?' in subscript position of a
         type specifier means that matching will only check for the stem
-        \footnote{This is different from not having a subscript which is 
-        interpreted as checking that the input tree have no subscript 
-        for matching}.
+        \footnote{This is different from not having a subscript, the latter
+	being
+        interpreted as checking that the matching node at the
+	input tree have no subscript}.
 \end{itemize}
 
 During the process of matching, variables are associated (we use the
 term {\it instantiated}) with `tree material'.  According to its class
-a variable can be instantiated with different kinds of tree material:
+a variable may be instantiated with different kinds of tree material:
 
 \begin{itemize}
 \item   A typed variable will be instantiated with exactly one node of
@@ -137,7 +141,7 @@ a variable can be instantiated with different kinds of tree material:
 
 \item   A non-typed variable will be instantiated with a range of subtrees.
         These subtrees will be taken from one of the nodes of the input tree
-        {\bf inp}. Hence, there will a node $n$ in {\bf inp}, with subtrees
+        {\bf inp}. Hence, there will be a node $n$ in {\bf inp}, with subtrees
         $n.t_1$, $n.t_2$, ..., $n.t_k$, in this order, where the variable
         will be instantiated with some subsequence of these subtrees 
         (e.g., $n.t_2$, $n.t_3$, $n.t_4$). Note however, that some of these
@@ -147,7 +151,7 @@ a variable can be instantiated with different kinds of tree material:
         child subtree will be removed from some of the $n.t_i$(maybe an entire
         $n.t_i$), leaving in place a mark for inserting material during the
         substitution of occurences at {\bf rhs}.\\
-        Notice still that the variable can
+        Notice still that the variable may
         be instantiated with a single tree and even with no tree. 
 
 \end{itemize} 
@@ -161,7 +165,8 @@ Now, we are ready to define what we mean by a successful matching. The process
 of matching is {\it successful} 
 if the number of possible matches is greater then 0.
 When there is no possible match the process is said to {\it fail}.
-In addition to return success or failure, the process also return the set of
+In addition to return success or failure, the 
+matching process also return the set of
 all possible {\it matches}, which will be used for generating the output.
 
 \subsection{Structural Matching}
@@ -201,33 +206,33 @@ We say that a mapping is a {\it valid mapping} if for all $j$, $1\leq j \leq l$
 \begin{enumerate}
 
 \item if $lhs_j$ is a constant node, then $Mapping(lhs_j)$ must have a 
-        single element, say, $rhs_{g(j)}$, and the two nodes must have the same
+        single element, say, $inp_{g(j)}$, and the two nodes must have the same
         name and agree on the markers (foot, substitution, head and NA), i.e.,
-        if $lhs_j$ is NA, then $rhs_{g(j)}$ must be NA, 
-        if $lhs_j$ has no markers, then $rhs_{g(j)}$ must have no markers, etc.
+        if $lhs_j$ is NA, then $inp_{g(j)}$ must be NA, 
+        if $lhs_j$ has no markers, then $inp_{g(j)}$ must have no markers, etc.
 
-\item if $lhs_j$ is a type variable node, then $Mapping(lhs_j)$ must have a 
-        single element, say, $rhs_{g(j)}$, and $rhs_{g(j)}$ must be 
+\item if $lhs_j$ is a typed variable node, then $Mapping(lhs_j)$ must have a 
+        single element, say, $inp_{g(j)}$, and $inp_{g(j)}$ must be 
         {\it marker-compatible} and 
         {\it type-compatible} with $lhs_j$. \\
-        $rhs_{g(j)}$ is 
+        $inp_{g(j)}$ is 
         {\it marker-compatible} with $lhs_j$ if any marker
          (foot, substitution, head and NA) present in $lhs_j$ is also
-        present in $rhs_{g(j)}$\footnote{Notice that, unlike the case for the
+        present in $inp_{g(j)}$\footnote{Notice that, unlike the case for the
         constant node, the inverse is not required, 
-        i.e., if $lhs_j$ has no marker, $rhs_{g(j)}$ is still 
+        i.e., if $lhs_j$ has no marker, $inp_{g(j)}$ is still 
         allowed to have some.}.\\
-        $rhs_{g(j)}$ is {\it type-compatible} with $lhs_j$ 
-        if there is at least one of the alternative 
-        type specifiers for the typed variable that satisfies 
-        the conditions below. 
+        $inp_{g(j)}$ is {\it type-compatible} with $lhs_j$ 
+        if at least one of the alternative 
+        type specifiers for the typed variable $lhs_j$ satisfies 
+        the conditions below:
 
 \begin{itemize}
-\item   $rhs_{g(j)}$ has the stem defined in the type specifier.
+\item   $inp_{g(j)}$ has the stem defined in the type specifier.
 \item   if the type specifier doesn't have subscript, then 
-        $rhs_{g(j)}$ must have no subscript.
+        $inp_{g(j)}$ must have no subscript.
 \item   if the type specifier has a subscript different of `?', then 
-        $rhs_{g(j)}$ must have the same subscript as in the type specifier
+        $inp_{g(j)}$ must have the same subscript as in the type specifier
         \footnote{If the type specifier has a `?' subscript, there is no
         restriction, and that is exactly its function: to allow for the 
         matching to be independent of the subscript}.
@@ -243,75 +248,43 @@ and a list of nodes of {\bf inp}, and returns the set of possible matches
 generated in the attempt of match this two lists. If the result is an empty
 set, this means that the matching failed.
 
-\begin{tabbing}
-012\=0123\=0123\=0123\=0123\=0123\=0123\=0123\=0123\=0123\=0123\=0123\=012\kill
-
-\> Function Match ($list_{lhs}$, $list_{rhs}$) \\
-\>\> Let $MAPPINGS$ be the list of all valid mappings from $list_{lhs}$ to 
-        $list_{rhs}$ \\
-
-\>\> Make $MATCHES=\emptyset$ \\
-
-\>\> For each mapping $Mapping\in MAPPINGS$ do: \\
-
-\>\>\> Make $Matches=\{\emptyset \}$ \\
-
-\>\>\> For each $j$, $1 \leq j \leq l$, where $l=length(list_{lhs})$, do: \\
-
-\>\>\>\> if $lhs_j$ is a constant node, then \\
-
-\>\>\>\>\> let \>$children_{lhs}$ be the list of children of $lhs_j$ \\
-\>\>\>\>\>     \>$lhr_{g(j)}$ be the single element in $Mapping(lhs_j)$ \\
-\>\>\>\>\>     \>$children_{rhs}$ be the list of children of $lhr_{g(j)}$ \\
-
-\>\>\>\>\> Make $Matches=\{m\cup m_j\ \mid\  m\in Matches$ \\
-\>\>\>\>\>\>\>\>\> $and\ m_j\in$ Match$(children_{lhs},\ children_{rhs})\}$ \\ 
-
-\>\>\>\> if $lhs_j$ is a typed variable node, then \\
-
-\>\>\>\>\> let \>$children_{lhs}$ be the list of children of $lhs_j$ \\
-\>\>\>\>\>     \>$lhr_{g(j)}$ be the single element in $Mapping(lhs_j)$ \\
-\>\>\>\>\>     \>$children_{rhs}$ be the list of children of $lhr_{g(j)}$ \\
-
-\>\>\>\>\> Make $Matches=\{\{(lhs_j,lhr_{g(j)})\}\cup
-        m\cup m_j\ \mid\  m\in Matches$ \\
-\>\>\>\>\>\>\>\>\> $and\ m_j\in$ Match$(children_{lhs},\ children_{rhs})\}$ \\ 
-
-\>\>\>\> if $lhs_j$ is a non-typed variable node, then \\
-
-\>\>\>\>\> let \>$children_{lhs}$ be the list of children of $lhs_j$ \\
-\>\>\>\>\> \> $sl$ be the number of nodes in $children_{lhs}$ \\
-
-\>\>\>\>\>\> $DESC_s$ be the set of s-size lists given by: \\
-\>\>\>\>\>\>\>\> $DESC_s=\{[dr_1,dr_2,...,dr_s]\ \mid\ $ \\
-\>\>\>\>\>\>\>\>\>\> for every $1 \leq k \leq s$, $dr_k$ is a descendant \\
-\>\>\>\>\>\>\>\>\>\>\>\> of
-                        some node in $Mapping(lhs_j)\}$\footnote{it's not 
-                necessary to be a proper descendant,
-                i.e., $dr_k$ may be a node in $Mapping(lhs_j)$}\\
-\>\>\>\>\>\>\>\>\>\> for every $1 < k \leq s$, $dr_l$ is {\it to the right of}
-                        $dr_{k-1}$\footnote{recall that a node 
-$n$ is to the right of a node $m$, if $n$ and $m$ are not descendant of each
-other, and all the leaves dominated by $n$ are to the right of the leaves
-dominated by $m$.}.\\
-
-\>\>\>\>\>\> For every list $Desc=[dr_1,dr_2,...,dr_s] \in DESC_s$ do: \\
-
-\>\>\>\>\>\>\> Let Tree-Material be the list of subtrees dominated \\
-\>\>\>\>\>\>\>\>\> by the nodes in $Mapping(lhs_j)$, but, with the \\
-\>\>\>\>\>\>\>\>\> subtrees dominated by the nodes in $DESC_s$ \\
-\>\>\>\>\>\>\>\>\> cut out from these trees \\
-
-\>\>\>\>\>\>\> Make $Matches=\{\{(lhs_j,\ Tree-Struct)\}\ \cup 
-        m\cup m_j\ \mid$ \\
-\>\>\>\>\>\>\>\>\> $m\in Matches\ and\ 
-        m_j\in$ Match$(children_{lhs},\ Desc)\}$ \\ 
-
-\>\>\> Make $MATCHES\ =\ MATCHES\ \cup\ Matches$ \\
-
-\>\> Return $MATCHES$
-
-\end{tabbing}
+\begin{alltt}
+   Function {\it{}Match} ({\it{}list}\(\sb{lhs}\), {\it{}list}\(\sb{inp}\))
+       Let {\it{}MAPPINGS} be the list of all valid mappings from {\it{}list\(\sb{lhs}\)} to {\it{}list}\(\sb{inp}\)
+       Make {\it{}MATCHES} = \(\emptyset\)
+       For each mapping {\it{}Mapping} \(\in\) {\it{}MAPPINGS} do:
+           Make {\it{}Matches} = \{\(\emptyset\)\}
+           For each {\it{}j}, \(1\leq\){\it{}j}\(\leq\){\it{}l}, where {\it{}l}=length({\it{}list}\(\sb{lhs}\)), do: 
+               If {\it{}lhs}\(\sb{j}\) is a constant node, then 
+                  Let {\it{}children}\(\sb{lhs}\) be the list of children of {\it{}lhs}\(\sb{j}\) 
+                      {\it{}inp}\(\sb{g(j)}\) be the single element in {\it{}Mapping}({\it{}lhs}\(\sb{j}\))
+                      {\it{}children}\(\sb{inp}\) be the list of children of {\it{}inp}\(\sb{g(j)}\) 
+                  Make {\it{}Matches} = \{{\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\) {\it{}m} \(\in\) {\it{}Matches} and 
+                                          {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}children}\(\sb{inp}\))\}  
+               If {\it{}lhs}\(\sb{j}\) is a typed variable node, then 
+                  Let {\it{}children}\(\sb{lhs}\) be the list of children of {\it{}lhs}\(\sb{j}\)
+                      {\it{}inp}\(\sb{g(j)}\) be the single element in {\it{}Mapping}({\it{}lhs}\(\sb{j}\))
+                      {\it{}children}\(\sb{inp}\) be the list of children of {\it{}inp}\(\sb{g(j)}\)
+                  Make {\it{}Matches} = \{ \{({\it{}lhs}\(\sb{j}\),{\it{}inp}\(\sb{g(j)}\))\}\(\cup\){\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\) {\it{}m} \(\in\) {\it{}Matches} and
+                                         {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}children}\(\sb{inp}\)) \}
+               If {\it{}lhs}\(\sb{j}\) is a non-typed variable node, then 
+                  Let {\it{}children}\(\sb{lhs}\) be the list of children of {\it{}lhs}\(\sb{j}\)
+                      {\it{}sl} be the number of nodes in {\it{}children}\(\sb{lhs}\)
+                      {\it{}DESC} be the set of {\it{}sl}-sized lists given by:
+                             {\it{}DESC} = \{[{\it{}di}\(\sb{1}\),{\it{}di}\(\sb{2}\),...,{\it{}di}\(\sb{sl}\)] \(\mid\)
+                                       For every \(1\leq\){\it{}k}\(\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is a descendant
+                                               of some node in {\it{}Mapping(lhs}\(\sb{j}\))\footnote{It's not necessary to be a proper descendant, i.e., {\it{}di}\(\sb{k}\) may be a node in {\it{}Mapping}({\it{}lhs}\(\sb{j}\))}
+                             For every \(1<k\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is {\it{}to the right of} {\it{}di}\(\sb{k-1}\)\footnote{Recall that a node {\it{}n} is to the right of a node {\it{}m}, if {\it{}n} and {\it{}m} are not descendant of each other, and all the leaves dominated by {\it{}n} are to the right of the leaves dominated by {\it{}m}.}.
+                      For every list {\it{}Desc} = [{\it{}di}\(\sb{1}\),{\it{}di}\(\sb{2}\),...,{\it{}di}\(\sb{sl}\)] \(\in\) {\it{}DESC} do: 
+                          Let {\it{}Tree-Material} be the list of subtrees dominated 
+                                   by the nodes in {\it{}Mapping}({\it{}lhs}\(\sb{j}\)), but, with the
+                                   subtrees dominated by the nodes in {\it{}DESC}
+                                   cut off from these trees 
+                          Make {\it{}Matches} = \{ \{({\it{}lhs}\(\sb{j}\), {\it{}Tree-Material})\}\(\cup\){\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\)
+                                  {\it{}m} \(\in\) {\it{}Matches} and {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}Desc})\} 
+           Make {\it{}MATCHES} = {\it{}MATCHES} \(\cup\) {\it{}Matches}
+       Return {\it{}MATCHES}
+\end{alltt}
 
 Finally we can define the process of structurally matching {\bf lhs} to
 {\bf inp} as the evaluation of Match([root({\bf lhs})], [root({\bf inp})].
@@ -331,28 +304,35 @@ checking, that matching has failed.
 If the process of matching {\bf lhs} to {\bf inp} fails, there are two 
 alternative behaviors according to the value of a parameter\footnote{the
 parameter is accessible at the Lisp interface by the name 
-{\it XTAG::*metarules-copy-unmatched-trees*}}. 
+{\it XTAG::*metarules-copy-unmatched-trees*}.
+At the end of section \ref{access} it is shown how to change the value
+of this parameter through the XTAG interface.}. 
 If the parameter is set to false, which is the {\it default} value, 
 no output is generated. 
 On the other hand, if 
-it is set to true, then the own {\bf inp} tree is copied to the output.
+it is set to true, then the own {\bf inp} tree is copied to the 
+output\footnote{As it will be seen in section \ref{access} the cumulative
+mode of application is not affected by this parameter.}.
 
 If the process of matching succeeds, as many trees will be generated in the
 output as the number of possible matches obtained in the process. For a 
 given match, the output tree is generated by substituting in the {\bf rhs} tree
 of the metarule the occurrences of variables by the material to which they have
-been instantiated in the match. The case of the typed-variable is simple. 
-The name of the variable is just substituted by the name of the node to which
-it has been instantiated from {\bf inp}. A very important detail is that the
-marker (foot, substitution, head, NA, or none) at the output tree node comes 
-from what is specified in the {\bf rhs} node, which can be different of the
-marker at the variable node in {\bf inp} and of the associated node from 
-{\bf inp}.
+been instantiated in the match. In the case of the typed-variable,
+the name of the variable is just substituted by the name of the node to which
+it has been instantiated from {\bf inp}. An important detail is how the
+markers (foot, substitution, head, NA) are set at the output tree 
+node. The rule is that, if the occurrence of the variable at the {\bf rhs}
+tree has any marker, then the generated node will inherit ALL 
+markers from the {\bf rhs} node. If it has no marker, then all the markers 
+at the generated node will come from {\bf inp}. The exception to the rule is 
+that if the generated node has any children, then it will not be marked
+substitution, foot, or anchor, despite what the previous rule say.
 
 The case of the non-typed variable, not surpringly, is not so simple. 
 In the output tree, this node
-will be substituted by the subtree list that was associated to this node,
-in the same other, attaching to the parent of this non-typed variable node.
+will be substituted by the subtree list that was associated to this variable,
+in the same order, attaching to the parent of this non-typed variable node.
 But remember, that some subtrees may have been removed from some of the trees
 in this list, maybe entire elements of this list, due to the effect of the
 children of the metavariable in {\bf lhs}. 
@@ -362,13 +342,14 @@ tree has exactly the same number of children than the unique occurence of
 this non-typed variable node in {\bf lhs}. Hence, when generating the output
 tree, the subtrees at {\bf rhs}
 will be inserted exactly at the points where subtrees were removed during 
-matching, in a positional, one to one correspondance.
+matching, in a positional, one to one correspondance. If one wants any
+of these cutting points to be left empty, as if the subtree has been removed
+at the substitution points, the corresponding children at the {\bf rhs} tree
+has to be labelled {\bf EMPTY}.
 
-For feature equations in the output trees see the
-next subsection. The comments at the output are the comments at the {\bf lhs}
-tree of the metarule followed by the coments at {\bf inp}, both parts 
-introduced by appropriate headers, allowing the user to have a complete
-history of each tree.
+For feature equations in the output trees see the next subsection. 
+The generated comments deppend on a parameter setting as will be seen at the
+end of section \ref{access}.
 
 \subsection{Feature Matching}
 
@@ -389,15 +370,13 @@ The aspects that have to be considered here are:
         function of the feature equations in the input tree.
 \end{itemize}
 
-Based on the possible combinations of these requirements we partition the 
-feature equations into the following five classes\footnote{This 
-classification is really a partition, i.e., no equation may be conceptually
-in more than one class at the same time.}: 
+Based on the combinations of these aspects the user may specify for a feature
+equation to be considered in the following ways:
 
 \begin{itemize}
-\item   {\it Require \& Retain:} Feature equations in this class
-        are required to be in {\bf inp} in order for matching to succeed.
-        Upon matching, these equations will be copied to the output tree.
+\item   {\it Require \& Retain:} The feature equation
+        is required to be in {\bf inp} in order for matching to succeed.
+        Upon matching, the equation will be copied to the output tree.
         To achieve this behaviour, the equation must be placed in 
         the {\bf lhs} tree of the metarule preceded by a plus character
         (e.g. $+V.t:<trans>=+$)\footnote{Commutativity of equations is 
@@ -408,8 +387,14 @@ in more than one class at the same time.}:
 \item   {\it Require \& Don't Copy:} The equation is required to be in 
         {\bf inp}
         for matching, but should not be copied to the output tree.
-        Those equations must be in {\bf lhs} preceded by minus character
+        To have this behaviout , the equation must be in {\bf lhs} preceded 
+	by the minus character
         (e.g. $-NP_1:<case>=acc$).
+
+\item	{\it Negative Requirement:} In order for matching to succeed the 
+	equation should not be found in {\bf inp}. This is achieved by
+	including the equation in {\bf lhs} preceded by a caret
+	(e.g. $\verb|^|V.b:<passive>=-$).
 
 \item   {\it Optional \& Don't Copy:} 
         The equation is not required for matching,
@@ -428,12 +413,54 @@ in more than one class at the same time.}:
 \item   {\it Add:} The equation is not required for matching but we want it to
         be put in the output tree anyway.
         These equations are placed in raw form in the {\bf rhs} (notice in this
-        case it is the right hand side).
+        case it is the right hand side tree).
 \end{itemize}
 
+There are also some directives available to handle feature equations. For 
+convenience and conformance with the pre-existing interface functions,
+this directives were defined to be included in the {\bf lhs} tree as feature 
+equations among the equations for requirement/copy defined above. The
+equations/directives will be interpreted and executed 
+in the order they appear in the feature equations list definition 
+of the {\bf lhs} tree. The general format of a directive is:
+
+\centerline{D{\it{}name1} $:\ <$ {\it{}dummy1} $>\ =$ {\it{}name2}}
+
+where ``D'' is a single character that specifies the directive, 
+as listed below;
+{\it name1} and {\it name2} are parameters of the directive; 
+and {\it dummy1}, which may literally be the word ``dummy'' is required only
+to conform to the pre-existing format for feature equations in XTAG.
+There must be no blank space between the directive symbol and {\it name1}.
+The currently implemented directives are:
+
+\begin{itemize}
+\item[$\backslash :$] replace {\it name1} with {\it name2} in all 
+	equations from
+	the input tree.
+\item[{$|:$}] exchange {\it name1} with {\it name2} in all equations from
+	the input tree.
+\item[{$!:$}] remove all equations where {\it name1} appears 
+	(here, {\it name2} is also dummy)
+\end{itemize}
+
+Notice that the equations are executed in order. Hence, for instance, if there
+is a directive to remove equation E before an equation that requires E to
+be present for matching, matching will allways fail. Similarly replacing and
+exchanging feature names will affect and be affected by the behaviour of
+surrounding equations. 
+
+In the rest of this subsection we define the role of the meta-variables 
+in the feature equations. Diversely of what we have done until here,
+we will use the terms ``left'' and ``right hand
+side'' ({\bf lhs} and {\bf rhs} for short) to refer to the sides of a
+feature equation from a tree, {\bf NOT} to the sides of the metarule.
+
+Non-typed variables don't play any role in the feature equations part.
 Typed variables can be used in feature equations in both {\bf lhs} and 
-{\bf rhs}. They are intended to represent the nodes of the input tree to which
-they have been instantiated. For each resulting match 
+{\bf rhs} side of the equation. 
+They are intended to represent the nodes of the input tree with which
+the variables have been instantiated. For each resulting match 
 from the structural matching process the following is done:
 
 \begin{itemize}
@@ -450,11 +477,19 @@ from the structural matching process the following is done:
 
 Finally, a new kind of metavariable, which is not used at the nodes, can be
 introduced in the feature equations part. They have the same form of the
-non-typed variables, i.e. quotation mark, followed by a number, and are used
-in the place of feature values and feature names. Hence, if the equation
-$?NP_?.b:<?2> = ?3$ appears in {\bf lhs}, this means, that all feature
-equations of {\bf inp} that match a bottom attribute of some $NP$ to any 
-feature value (but not to a feature path) will not be copied to the output.
+non-typed variables, i.e., a question mark followed by a number, and are used
+in place of feature values and feature names. Hence, if the equation
+$NP_r.b:<?2> = ?3$ appears in {\bf lhs}, this means, that all feature
+equations of {\bf inp} that equate a certain  bottom attribute(?2) of node 
+$NP_r$ to a certain feature value (?3) (but not to a feature path) will not 
+be copied to the output. Notice that before the first time the variables ?2 
+and ?3 match an equation from {\bf inp}, they are free and can match 
+any feature
+value/name. But after a match occurs, 
+they become bound to the matched values, and
+henceforth they'll only match values identical to that they have been
+instantiated. That's why we said ``a certain'' value/name, as opposed to
+``any''.
 
 \setcounter{topnumber}{4}
 \setcounter{bottomnumber}{4}
@@ -462,6 +497,7 @@ feature value (but not to a feature path) will not be copied to the output.
 %\section{Examples of the Application of Metarules}
 
 \section{Examples}
+\label{examples}
 
 Figure~\ref{wh-subj} shows a metarule for wh-movement of the subject. Among
 the trees to which it have been applied are the basic trees of intransitive, 
@@ -471,8 +507,8 @@ passive trees of the same families, and ergative.
 \begin{figure}[htb]
 \begin{center}
 \begin{tabular}{c@{\hspace{2em}}c}
-\framebox{\psfig{figure=fig/lhs-wh-subj.ps,scale=45}} &
-\framebox{\psfig{figure=fig/rhs-wh-subj.ps,scale=45}} \\
+\framebox{\psfig{figure=fig/lhs-wh-subj.ps,height=2.0in}} &
+\framebox{\psfig{figure=fig/rhs-wh-subj.ps,height=2.5in}} \\
 {lhs} & {rhs} \\
 \end{tabular}
 \end{center}
@@ -488,8 +524,8 @@ transitive and ditransitive families.
 \begin{figure}[!htb]
 \begin{center}
 \begin{tabular}{c@{\hspace{2em}}c}
-\framebox{\psfig{figure=fig/lhs-wh-obj.ps,scale=45}} &
-\framebox{\psfig{figure=fig/rhs-wh-obj.ps,scale=45}} \\
+\framebox{\psfig{figure=fig/lhs-wh-obj.ps,height=2.9in}} &
+\framebox{\psfig{figure=fig/rhs-wh-obj.ps,height=2.9in}} \\
 {lhs} & {rhs} \\
 \end{tabular}
 \end{center}
@@ -500,14 +536,14 @@ transitive and ditransitive families.
 Figure~\ref{wh} shows a metarule for general wh-movement of an NP. 
 It can be applied to
 generate trees with either subject or object NP moved. We show in 
-Figure~\ref{prep}, the basic tree for the family Tnx0Vnx1Pnx2 and the tree
+Figure~\ref{prep}, the basic tree for the family Tnx0Vnx1Pnx2 and the three
 wh-trees generated by the application of the rule.
 
 \begin{figure}[!htb]
 \begin{center}
 \begin{tabular}{c@{\hspace{2em}}c}
-\framebox{\psfig{figure=fig/lhs-wh.ps,scale=45}} &
-\framebox{\psfig{figure=fig/rhs-wh.ps,scale=45}} \\
+\framebox{\psfig{figure=fig/lhs-wh.ps,height=2.5in}} &
+\framebox{\psfig{figure=fig/rhs-wh.ps,height=2.5in}} \\
 {lhs} & {rhs} \\
 \end{tabular}
 \end{center}
@@ -518,12 +554,12 @@ wh-trees generated by the application of the rule.
 \begin{figure}[!htb]
 \begin{center}
 \begin{tabular}{c@{\hspace{2em}}c}
-\framebox{\psfig{figure=fig/prep.ps,scale=45}} &
-\framebox{\psfig{figure=fig/prep1.ps,scale=45}} \\
+\framebox{\psfig{figure=fig/prep.ps,height=3.0in}} &
+\framebox{\psfig{figure=fig/prep1.ps,height=3.0in}} \\
 {Tnx0Vnx1Pnx2} & {subject moved} \\
 \\
-\framebox{\psfig{figure=fig/prep2.ps,scale=45}} &
-\framebox{\psfig{figure=fig/prep3.ps,scale=45}} \\
+\framebox{\psfig{figure=fig/prep2.ps,height=3.0in}} &
+\framebox{\psfig{figure=fig/prep3.ps,height=3.0in}} \\
 {NP object moved} & {NP object moved from PP} \\
 \end{tabular}
 \end{center}
@@ -532,11 +568,12 @@ wh-trees generated by the application of the rule.
 \end{figure}
 
 \section{The Access to the Metarules through the XTAG Interface}
+\label{access}
 
 We first describe the access to the metarules subsystem using buffers with
 single metarule applications. Then we proceed by describing the application of 
 multiple metarules in what we call the parallel, sequential, and cumulative
-modes to input tree files.
+modes to input tree files. 
 
 We have defined conceptually a metarule as an ordered pair of trees. 
 In the implementation
@@ -553,8 +590,8 @@ to have naming freedom: the tree names
 are irrelevant\footnote{so that even if we want to have mnemonic names 
 resembling their distinct character - left or right hand side, - we have some
 naming flexibility to call them e.g. {\it lhs23} or {\it lhs-passive}, ...}.
-Since we can save buffers into text files, we can talk also about metarule
-files.
+Since we can save buffers into text files, we can also talk about metarule
+files. \\
 
 The available options for applying a metarule which is in a buffer are:
 
@@ -574,7 +611,8 @@ The available options for applying a metarule which is in a buffer are:
         the name of the right hand side of the tree\footnote{the reason why 
         we do not use the name of the metarule, i.e. the name of the buffer,
         is because in some forms of application the metarules do not
-        carry individual names, as we'll see soon is the case when a set of
+        carry individual names, which as we'll see soon is the case when 
+	a set of
         metarules from a file is applied.}.
 
         The value of the parameter can be changed by choosing {\it Tools} 
@@ -612,7 +650,7 @@ as if each metarule in the metarule file was applied to each tree in the
 input file.
 
 \begin{figure}[htb]
-\centerline{\psfig{figure=fig/parallel.ps,scale=70}}
+\centerline{\psfig{figure=fig/parallel.ps,height=120pt}}
 %\centerline{\psfig{figure=fig/parallel.ps,scale=60}}
 %\centerline{\psfig{figure=fig/parallel.ps,width=330pt}}
 \caption{Parallel application of metarules}
@@ -627,7 +665,7 @@ for each $0<i\leq n$ apply metarule $mr_i$ to the trees generated as a
 result of the application of $mr_{i-1}$.
 
 \begin{figure}[htb]
-\centerline{\psfig{figure=fig/sequential.ps,scale=70}}
+\centerline{\psfig{figure=fig/sequential.ps,height=41pt}}
 %\centerline{\psfig{figure=fig/sequential.ps,scale=60}}
 \caption{Sequential application of metarules}
 \label{sequential}
@@ -638,7 +676,7 @@ except that the input trees at each stage are by-passed to the output together
 with the newly generated ones (see Figure~\ref{cumulative}).
 
 \begin{figure}[htb]
-\centerline{\psfig{figure=fig/cumulative.ps,scale=70}}
+\centerline{\psfig{figure=fig/cumulative.ps,height=53pt}}
 %\centerline{\psfig{figure=fig/cumulative.ps,scale=60}}
 \caption{Cumulative application of metarules}
 \label{cumulative}
@@ -653,7 +691,7 @@ is that for the parallel application the output will have as many copies of
 the input as matching failures. For the sequential case the decision apply
 at each level, and setting the parameter for copying, in a certain sense, 
 guarantees for the 'pipe' not to break.
-Due to its nature and unlike the two other modes, the cumulative 
+Due to its nature, and unlike the two other modes, the cumulative 
 application is not affected by this parameter.
 
 The options for application of metarules to files are available by clicking
@@ -692,9 +730,29 @@ among:
 %For each case the user has the possibility of choosing what to do in the case
 %of matching failure as discussed in the previous session.
 
-Finally still under the {\it Tools} menu we can change the setting of the 
-parameter that controls the output result on matching failure 
-(see Subsection~\ref{output-gen})
-by choosing
+The {\it Tools} menu also has entries to change the parameters of execution
+of metarules. We saw earlier in this section how to set the parameter the 
+controls the name of the tree. Another parameter, explained in 
+Subsection~\ref{output-gen} is the one that 
+controls the output result on matching failure. We can change it in the menu  
+by selecting
 either {\it copy input on mr matching failure} or 
-{\it no output on mr matching failure}.
+{\it no output on mr matching failure}. Recall that this parameter don't
+affect the cumulative mode.
+The third parameter controls comments generation. By choosing,
+{\it append metarule comments} at the {\it Tools} menu, the subsequent
+metarule applications will produce output trees whose comments
+are the comments at the {\bf lhs}
+tree of the metarule followed by the coments at {\bf inp}, both parts 
+introduced by appropriate headers, allowing the user to have a complete
+history of each tree. By choosing
+{\it do not append metarule comments} we make the comments at the output
+trees be exactly the same at the input tree. The third option, 
+{\it clear comments on metarule application}, causes the comment field 
+to be left empty at the ouput trees.
+
+The default values for the tree parameters when XTAG is started are set:
+to generate the output trees with the same name as the input; to not to copy
+the input tree in case of matching failure; and to add the metarule comments
+to the output tree.
+
