@@ -2,7 +2,7 @@
 \label{det-comparitives}
 
 In our English XTAG grammar,\footnote{A more detailed discussion of
-this analysis can be found in \cite{ircs:det98}} all nouns select the
+this analysis can be found in \cite{ircs:det98}.} all nouns select the
 noun phrase (NP) tree structure shown in Figure~\ref{np-tree}.  Common
 nouns do not require determiners in order to form grammatical
 NPs. Rather than being ungrammatical, singular countable nouns without
@@ -21,7 +21,7 @@ features. For example pronouns and proper nouns would be marked as
 definite, a value that NPs containing common nouns can only obtain by
 having a definite determiner adjoin. In addition to the determiner
 features, nouns also have values for features such as reflexive
-(refl), case, pronoun (pron) and conjunction (conj).
+({\bf refl}), case, pronoun ({\bf pron}) and conjunction ({\bf conj}).
 
 
 \begin{figure}[ht]
@@ -30,6 +30,7 @@ features, nouns also have values for features such as reflexive
 %\rule[.1in]{8.35cm}{0.01in}
 {\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/det-files/alphaNXN.ps,height=16.0cm}}\\
 \end{tabular}
+
 \caption{NP Tree}
 \label{np-tree}
 %\rule[.1in]{8.35cm}{0.01in}
@@ -40,22 +41,23 @@ auxiliary tree which adjoins to NP. An example of this determiner tree
 anchored by the determiner {\it these\/} is shown in
 Figure~\ref{det-trees}. In addition to the determiner features the
 tree in Figure~\ref{det-trees} has noun features such as {\bf case}
-(see section 4.4.2),
-the {\bf conj} feature to control conjunction (see Chapter \ref{conjunction}), {\bf
-rel-clause$-$} (see Chapter \ref{rel_clauses})and {\bf gerund$-$} (see
-Chapter \ref{gerunds-chapter}) which prevent determiners from adjoining on top
+(see section 4.4.2), the {\bf conj} feature to control conjunction
+(see Chapter \ref{conjunction}), {\bf rel-clause$-$} (see Chapter
+\ref{rel_clauses}) and {\bf gerund$-$} (see Chapter
+\ref{gerunds-chapter}) which prevent determiners from adjoining on top
 of relative clauses and gerund NPs respectively, and the {\bf
-displ-const} feature which is used to simulate multi-component adjunction.
+displ-const} feature which is used to simulate multi-component
+adjunction.
 
-Complex determiners such as partitives and
-genitives also anchor tree structures that adjoin to NP. They differ
-from the simple determiners in their internal complexity. Details of
-our treatment of these more complex constructions appear in Sections 3
-and 4.  Sequences of determiners, as in the NPs {\it all her dogs\/} or {\it
-those five dogs\/} are derived by multiple adjunctions
-of the determiner tree, with each tree anchored by one of the determiners in
-the sequence. The order in which the determiner trees can adjoin is
-controlled by features.
+Complex determiners such as genitives and partitives also anchor tree
+structures that adjoin to NP. They differ from the simple determiners
+in their internal complexity. Details of our treatment of these more
+complex constructions appear in Sections \ref{genitives} and
+\ref{partitives}.  Sequences of determiners, as in the NPs {\it all
+her dogs\/} or {\it those five dogs\/} are derived by multiple
+adjunctions of the determiner tree, with each tree anchored by one of
+the determiners in the sequence. The order in which the determiner
+trees can adjoin is controlled by features.
 
 \begin{figure}[ht]
 \centering
@@ -71,21 +73,21 @@ controlled by features.
 
 This treatment of determiners as adjoining onto NPs is similar to that
 of \cite{Abeille90:TAG}, and allows us to capture one of the insights of the DP
-hypothesis, namely that Determiners select NPs as complements. In
-Figure~\ref{det-trees} the Determiner and its NP complement appear in
+hypothesis, namely that determiners select NPs as complements. In
+Figure~\ref{det-trees} the determiner and its NP complement appear in
 the configuration that is typically used in LTAG to represent
 selectional relationships. That is, the head serves as the anchor of
 the tree and it's complement is a sister node in the same elementary tree.
 
 
 The XTAG treatment of determiners uses nine features for representing
-their properties: {\bf definiteness} (definite), {\bf quantity}
-(quan), {\bf cardinality} (card), {\bf genitive} (gen), {\bf
-decreasing} (decreas), {\bf constancy} (const), {\bf wh}, {\bf
-agreement} (agr), and {\bf complement} (compl). Seven of these
+their properties: definiteness ({\bf definite}), quantity
+({\bf quan}), cardinality ({\bf card}), genitive ({\bf gen}), 
+decreasing ({\bf decreas}), constancy ({\bf const}), {\bf wh}, agreement ({\bf
+agr}), and complement ({\bf compl}). Seven of these
 features were developed by semanticists for their accounts of semantic
 phenomena (\cite{KeenanStavi86:LP}, \cite{BarwiseCooper81:LP},
-\cite{Partee90:BK}), another which was developed for a semantic
+\cite{Partee90:BK}), another was developed for a semantic
 account of determiner negation by one of the authors of this
 determiner analysis (\cite{Mateyak97}), and the last is the familiar
 agreement feature. When used together these features also account for
@@ -257,11 +259,11 @@ all&$+$&$-$&$-$&UN&$-$&UN&UN&3pl&$-$&{\it these dogs}\\
 &UN&UN&$+$&UN&UN&UN&UN&3pl&UN&{\it five dogs}\\
 \hline
 &$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
-\rb{both}&$+$&$-$&$-$&UN&$-$&UN&UN&3pl&$-$&{\it these dogs}\\
+{both}&$+$&$-$&$-$&UN&$-$&UN&UN&3pl&$-$&{\it these dogs}\\
 \hline
 &$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
 &$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN&{\it few dogs}\\
-\rb{this/that}&$-$&$+$&UN&UN&$-$&$-$&$-$&3pl&$+$&{\it many dogs}\\
+{this/that}&$-$&$+$&UN&UN&$-$&$-$&$-$&3pl&$+$&{\it many dogs}\\
 &UN&UN&$+$&UN&UN&UN&UN&3sg&UN&{\it five dogs}\\
 \hline
 &$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
@@ -320,7 +322,7 @@ foot node}
 \label{det-ordering}
 \end{table}
 
-\begin{table}
+\begin{table}[htb]
 \centering
 \begin{tabular}{|l||c|c|c|c|c|c|c|c|c|}
 \hline\hline
@@ -330,7 +332,7 @@ Det&definite&quan&card&gen&wh&decreas&const&agr&compl\\
 &$-$&$-$&$-$&$-$&$-$&$-$&$-$&3&$-$\\
 &$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN\\
 GENITIVE&$-$&$+$&UN&UN&$-$&$-$&$-$&3pl&$+$\\
-&UN&UN&$+$&UN&UN&UN&UN&3&UN\
+&UN&UN&$+$&UN&UN&UN&UN&3&UN\\
 &$-$&$+$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
 &$-$&$-$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
 \hline
@@ -395,6 +397,7 @@ succeeded .}
 
 
 \section{Genitive Constructions}
+\label{genitives}        
 
 There are two kinds of genitive constructions: genitive pronouns, and genitive
 NP's (which have an explicit genitive marker, {\it 's}, associated with them).
@@ -438,17 +441,6 @@ in, for example, the Determiner Gerund NP tree (see
 Chapter~\ref{gerunds-chapter} for discussion on determiners for gerund
 NP's).
 
-\begin{figure}[htb]
-\centering
-\begin{tabular}{c}
-{\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/det-files/alphaDnxG.ps,height=1.8in}}\\
-\end{tabular}
-\caption{Genitive NP tree for substitution: $\alpha$DnxG}
-\label{subst-genNP-tree}
-\end{figure}
-
-%Figure of alphaDXnxG-features and betanxGdx-features here 
-
 \begin{figure}[ht]
 \centering
 \begin{tabular}{c}
@@ -460,20 +452,30 @@ NP's).
 %\rule[.1in]{8.35cm}{0.01in}
 \end{figure}
 
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/det-files/alphaDnxG.ps,height=1.8in}}\\
+\end{tabular}
+\caption{Genitive NP tree for substitution: $\alpha$DnxG}
+\label{subst-genNP-tree}
+\end{figure}
+
 Since the NP node which is sister
 to the G node could also have a genitive determiner in it, the type of
 genitive recursion shown in (\ex{0}) is quite naturally accounted for
 by the genitive tree structure used in our analysis.
 
-\section{Partitive Constructions}
+\section{Partitive Constructions}        
+\label{partitives}                        
 
 The deciding factor for including an analysis of partitive constructions(e.g.\ {\it some kind
 of}, {\it all of\/}) as a complex determiner constructions was the
 behavior of the agreement features.  If partitive constructions are analyzed as
 an NP with an adjoined PP, then we would expect to get agreement with the head
-of the NP (as in Sentence~({\ex{1}})).  If, on the other hand, we analyze them
+of the NP (as in ({\ex{1}})).  If, on the other hand, we analyze them
 as a determiner construction, then we would expect to get agreement with the
-noun that the determiner sequence modifies (as we do in Sentence~({\ex{2}})).
+noun that the determiner sequence modifies (as we do in ({\ex{2}})).
 
 \enumsentence{a {\it kind} [of these machines] {\it is} prone to failure.}
 \enumsentence{[a kind of] these {\it machines are} prone to failure.}
@@ -541,7 +543,7 @@ phrases, prepositional phrases, and other adverbs.
 Using the determiner feature system, we can obtain a close approximation to an
 accurate characterization of the behavior of the adverbs that interact with
 noun phrases and determiners.  Adverbs can adjoin to either a determiner or a
-noun phrase (see figure~\ref{adv-trees}), with the adverbs restricting what
+noun phrase (see figure~\ref{det-adv-trees}), with the adverbs restricting what
 types of NPs or determiners they can modify by imposing feature requirements on
 the foot D or NP node.  For
 example, the adverb {\it approximately}, seen in (\ref{approx})
@@ -557,7 +559,7 @@ specifically a noun phrase that is not modified by a determiner.
 (a)&&(b)
 \end{tabular}
 \caption{(a) Adverb modifying a determiner; (b) Adverb modifying a noun phrase}
-\label{adv-trees}
+\label{det-adv-trees}
 %\rule[.1in]{8.35cm}{0.01in}
 \end{figure}
 
