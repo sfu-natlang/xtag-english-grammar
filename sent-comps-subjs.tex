@@ -630,6 +630,7 @@ complements, as seen in sentences (\ex{1})-(\ex{4}).
 %%Comparative adjs also take s-comps, e.g. the boys easiest to teach.
 %%See Quirk, section 7.20 and others.
 
+
 \section{PRO control}
 \label{PRO-control}
 
@@ -643,24 +644,20 @@ control, as in sentence~(\ex{5}).
 \enumsentence{Srini persuaded Mickey$_{i}$ [PRO$_i$ to leave].}
 \enumsentence{Srini$_{i}$ wanted [PRO$_i$ to leave].}
 \enumsentence{Christy$_{i}$ left the party early [PRO$_i$ to go to the airport].}
-\enumsentence{[PRO$_{arb}$ to dance] is important.}
+\enumsentence{[PRO$_{arb/i}$ to dance] is important for Bill$_{i}$.}
 
 At present, an analysis for obligatory control into complement clauses
 (as in sentences~(\ex{-4}), (\ex{-3}), and (\ex{-2})) has been implemented. An
 analysis for cases of obligatory control into adjunct clauses and optional
-clauses exists and can be found in \cite{bhatt94}.
+control exists and can be found in \cite{bhatt94}.
 
 \subsection{A feature-based analysis of PRO control}
-The analysis for obligatory control involves transmission of a control feature
-up from the NP anchored by PRO to the controller.
-The NP anchored by PRO has the feature {\bf $<$control$>$=+}. A 
-feature equation in the tree anchored by the control verb 
+The analysis for obligatory control involves co-indexation of the control feature
+of the NP anchored by PRO to the control feature of the controller.
+A feature equation in the tree anchored by the control verb 
 co-indexes the control feature of the controlling NP with the foot
-node of the tree.
-All sentential trees have a co-indexed
-control feature from the root S to the subject NP. However this feature is
-instantiated only when the subject NP is realized as a PRO.
-
+node of the tree.  All sentential trees have a co-indexed
+control feature from the root S to the subject NP. 
 
 When the tree containing the controller adjoins
 onto the complement clause tree containing the PRO, 
@@ -668,7 +665,7 @@ the features of the foot node of the
 auxiliary tree are unified with the bottom features of the root node of the 
 complement clause
 tree containing the PRO. This leads to the control feature of the controller
-being the same as the control feature of the PRO.
+being co-indexed with the control feature of the PRO.
 
 Depending on the choice of the controlling verb, the control
 propagation paths in the auxiliary trees are different.  In the case of subject
@@ -729,19 +726,10 @@ resulting derived and derivation trees are shown in Figures
 
 
 \subsection{The nature of the control feature}
-PROs come from the lexicon with their control feature as ``+''. All
-other NPs lack a control feature. Non-PRO NPs can only acquire a 
-value for their control feature
-by sharing it with a PRO. If two NPs have a 
-control feature with the value ``+'', it does not necessarily mean that they
-are in a relationship of control. In a sentence like (\ex{1}), the 
-control features of both {\em Mickey} and {\em Christy} have the value 
-``+'' but this does not mean that they are co-indexed. A positive value
-only indicates that the NP is participating in a relationship of control.
-
-\enumsentence{ Christy$_i$ wants [PRO$_i$ to persuade Mickey$_j$ [PRO$_j$ to dance]]}
-For two NPs to be in a relationship of control, their control features
-have to have the value ``+'' and they have to be co-indexed to each other.
+The control feature does not have any value and is used only for
+co-indexing purposes. If two NPs have their control features
+co-indexed, it means that they are participating in a relationship
+of control; the c-commanding NP controls the c-commanded NP. 
 
 \subsection{Long-distance transmission of control features}
 Cases involving embedded infinitival complements with PRO subjects such as
@@ -772,20 +760,18 @@ PRO control obeys locality constraints. The controller for PRO has to be
 in the immediately higher clause. Consider the ungrammatical sentence~(\ex{1})
 ((\ex{1}) is ungrammatical only with the co-indexing indicated below).
 \enumsentence{* John$_i$ wants [PRO$_i$ to persuade Mary$_i$ [PRO$_i$ to dance]]}
-This illegitimate co-indexing could arise if at first the {\em want} tree
-was adjoined into the {\em dance} tree giving us the co-indexing between {\em John} and
-the PRO in the {\em leave} tree. The {\em persuade} tree would then be adjoined in
-between. This adjunction would lead to co-indexing between {\em John} and the PRO
-in the {\em persuade} tree, and {\em Mary} and the PRO in the {\em dance} tree. Since
-{\em John} and the PRO in the {\em dance} tree are already co-indexed, all four NPs
-would have the same control feature. 
-
-However, such a derivation is ruled out by the fact that
-auxiliary trees have NA (Null Adjunction) constraints on their foot nodes. 
-Consequently, there is no way to derive (\ex{-1}) by adjoining
-the {\em persuade} tree into the tree for `John wants to dance'. NA constraints, 
-thus, yield the locality constraints on control. 
-
+However, such a derivation is ruled out automatically by the 
+mechanisms of a TAG derivation and feature unification. 
+Suppose it was possible to first compose the {\em want} tree with the
+{\em dance} tree and then insert the {\em persuade} tree. (This is not
+possible in the XTAG grammar because of the convention that
+auxiliary trees have NA (Null Adjunction) constraints on their foot nodes.)
+Even then, at the end of the derivation the control feature of the 
+subject of {\em want} would end up co-indexed with the PRO subject of
+{\em persuade} and the control feature of {\em Mary} would be co-indexed with the
+PRO subject of {\em dance} as desired. There is no way to generate the illegal
+co-indexing in (\ex{-1}). Thus the locality constraints on PRO control 
+fall out from the mechanics of TAG derivation and feature unification. 
 
 
 
