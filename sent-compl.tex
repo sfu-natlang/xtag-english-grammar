@@ -1,0 +1,400 @@
+\section{Embedded Sentences}
+In the LTAG formalism,  arguements of a lexical item including
+subjects appear in an initial tree anchored by that lexical item.  A
+sentential arguement appears  as an S node in the appropriate
+position within an elementary tree anchored by the lexical item that
+selects it. This is the case for  
+sentential complements of verbs, prepositions and nouns and for
+sentential subjects. 
+
+
+INDEX:  agree/1
+ENTRY:  NP0 agree S1
+POS:    NP0 V S1
+FS:     #S1_INDIC
+#S1_INDIC       s_1.t:<mode> = ind/sbjnct,s_1.t:<comp>= that/whether/if/nil!
+#S1_INFIN       s_1.t:<mode> = inf,s_1.t:<comp> = whether/for/nil
+
+INDEX:  struggle/1
+ENTRY:  NP0 struggle S1
+POS:    NP0 V S1
+FS:     #S1_INFIN
+
+In the English LTAG grammar, complementizers select the type of clause
+to which they adjoin through constraints on the {\bf <mode>} feature
+of the S footnote in the $\beta$COMPs tree shown in ().  The grammar
+handles the complementizers: {\it that\/}, {\it whether\/}, {\it
+if\/}, {\it for\/}, {\it inf_nil} and {\it ind_nil} and the clause types: indicative,
+infinitival, gerundive, and subjunctive.  The  {\bf
+<comp>} feature reflects the value of the complementizer if one has
+adjoined to the clause and has the value {\it inf_nil/ind_nil}
+otherwise. The distinction between {\it inf_nil} and {\it ind_nil}
+captures a difference between infinitive and indicative clauses in
+subject position which will be discussed in detail below.  
+
+This grammar
+does not have a category distinction between S and S'. Clauses with
+and without complementizers are all S. The differences attributed to
+bar level in GB are represented by the {\bf <comp>} feature in the
+English LTAG grammar.  The {\bf <comp>} feature also insures that
+there are no multiple complementizers by requiring the footnode of
+$\beta$COMPs to have {\bf <comp>} = nil.  Note that there are no empty
+complementizers in this system. The absence of a complementizer is
+handled by having no complementizer adjoined to the S.
+
+Another component of the complementizer system, the {\bf
+$<$assign-comp$>$} feature, is used to represent the requirements of
+particular types of clauses for particular complementizers.  For
+example, this feature is crucial in accounting for obilgatory overt
+subjects in infinitival clauses with the complementizer {\it for}.
+Infinitival clauses  the grammar has two infinitive {\it to}'s. One infinitive
+{\it to\/} 
+
+INDEX:	agree/1
+ENTRY:	NP0 agree S1
+POS:	NP0 V S1
+FS:	#S1_INFIN
+
+
+ 
+\subsection{Sentential Complements}
+We have chosen in our grammar not to use VP arguments.  All arguments
+ anchored in a verb (or multi-component anchor including a verb) are
+ treated as sentences.  Other grammars, such as LFG and GPSG, posit
+ the existence of VP arguments for cases where there is no overt
+ subject.  There is a long history and a large literature on the right
+ representation of these cases.  We have adopted the GB approach
+ making use of PRO subjects both because of the theoretical
+ generalizations that it allows and for practical reasons. Indicative
+ clauses, infinitives and gerunds all have a uniform treatment as
+ embedded clauses using the same trees under this approach.  When the
+ type of clause allowed as a complement is restricted, the English
+ LTAG grammar enforces that restriction through specifying the value
+ of the <mode> feature in the syntactic database entry of the
+ anchor. For example, in () the syntactic database entry for think
+ specifies the value of <mode> = ind, while the entry for hope allows
+ for both indicative and infinitive complements.  Some of the
+ theoretical reasons are discussed below.  Although many earlier works
+ have presented strong arguments for considering so-called
+ VP-complements as S-complements, we will review here just a few types
+ of examples.  A full discussion of the theoretical benefits of
+ S-complements is outside the scope of this report.  It has been
+ observed (eg., by Borsley (1984)) that infinitival complements are
+ subcategorized for by the same verbs as sentential ones and can be
+ coordinated with them:
+
+(1)	John expects that he will see Mary today.
+(2)	John expects to see Mary today.
+(3)	John expects to be hired and that Mary will be his boss.
+
+
+(4)	John wonders whether to go to Macy's (or not).
+(5)	John wonders whether he should go to Macy's (or not).
+(6)	John wonders whether to go to Macy's and whether Mary will notice him.
+
+Although an imperfect test, coordination is often an indication of
+similarity of syntactic categories.  Notice also that in the second
+example, Whether,  which is considered to be either a complementizer (as in LTAG) or a Wh-term of some type, dominates both the tensed and the untensed clauses. 
+
+
+A similar phenomenon can be seen to exist between infinitival clauses and `for' clauses, as shown below:
+
+(7)	John prefers to go.
+(8)	John prefers for Mary to go.
+(9)	John prefers that Mary leaves early.
+
+(10)	John condescends to come.
+(11)	John condescends for Mary to come.
+(12)	*John condescends that Mary leaves early.
+
+
+If we consider for  a
+complementizer (which will account for its being in sentential subjects as well),
+ then the NP following it is the subject of the
+ infinitival.
+
+
+For gerunds, the same parallels with tensed S-complements hold. An additional significant parallel holds  
+between prepositional gerunds and that-clauses.  This was first mentioned by Rosenbaum (1967)\nocite{ros67}
+and was more recently studied by Freckelton (1984)\nocite{freck84b}:
+
+\beginsentences
+\sitem {\it John insisted on going to the beach.}
+\sitem {\it John insisted that we go to the beach.}
+\sitem {\it Going to the beach was insisted on (by John).}
+\sitem {\it $\ast$ That we go to the beach was insisted (by John).}
+\sitem {\it That we go to the beach was insisted on (by John).}
+\endsentences
+
+Notice that, although two different subcategorization frames seem to be involved in the
+active sentences, passivization shows that the that-clause is in fact to be analysed
+ as a
+prepositional clause with (Prep + that) being reduced to {\it that}. 
+ The tensed clause therefore
+does alternate with the gerund clause  which is thus considered a
+sentential clause as well.
+
+Again, the few predicates that take only gerunds can be shown to have raising properties:
+
+\beginsentences
+\sitem {\it John stopped/quit  lying to Mary.}
+\sitem {\it $\ast$ John stopped/quit that he lies to Mary / for Mary to be angry.}
+\sitem {\it It stopped/quit  raining in BC.}
+\sitem {\it There stopped/quit being troubles around here.}
+\endsentences
+
+As mentioned above, there are also some practical benefits to adopting the
+ S-complement approach for infinitivals and gerunds.
+First, the same basic elementary trees used to represent tensed clauses can be used to represent infinitivals 
+as well, making the grammar more efficient.  Second, this approach is the only one consistent
+ with earlier work on English
+TAGs, if one wants to account for extraction out of infinitivals and 
+gerunds (see next subsection).       
+
+\subsection{Extraction properties}
+
+Treating gerunds, infinitival complements and that-clauses as sentential
+trees allows us to define sentential auxiliary trees for the tree families
+ of verbs that take these forms as complements.
+For example, the tree family for the verbs {\it think} and  {\it prefer}
+ would include the following trees:
+
+%\centerline{\psfig{figure=figures/prefer-kex.fig,height=5.5cm}
+%\psfig{figure=figures/think-kex.fig,height=5.5cm}}
+%\vspace{1.0cm}
+
+\noindent Such a representation has been shown by Kroch and Joshi (1985)\nocite{kj85}  
+to be exactly what one needs for a `natural' account of unbounded dependencies.
+
+Following Kroch and Joshi (1985), extraction out of sentential complements is accounted for in terms of 
+elementary structures. Complement clauses are represented as initial sentential trees, and matrix clause auxiliary
+trees may adjoin to them. Since adjunction can happen at the internal S-node of a wh-tree, extraction is predicted with the 
+matrix clause getting inserted between the wh-element and the rest
+of the complement clause. Adjunction allows this insertion of matrix clauses to
+be recursive. 
+
+
+This analysis has numerous advantages. First, filler-gap relations are localized because the wh-element 
+belongs to the same tree that its trace is an argument of. There is no need for ad hoc procedures to compute
+where a wh-element comes from or where it has to be passed to in the case of unbounded dependencies.
+ For example, devices such as functional uncertainty used in LFG become a mere corollary in a 
+TAG (Joshi and Vijay Shanker, 1989)\nocite{jv89}.
+
+\noindent The derivation of the sentence, 
+``Who\dn{i} do you think Mary loved $\epsilon$\dn{i}?''
+starts with structures shown below:
+%{\bf $\alpha$W\dn{1}nx\dn{0}Vnx\dn{1}}, and $\beta$nx\dn{0}Vs.
+
+%\vspace{0.5c
+%centerline{\psfig{figure=figures/do-you-think.fig,height=8.5cm}\hspace*{1cm}
+%\psfig{figure=figures/Who-Mary-loves.fig,height=9.0cm}}
+%\vspace{1cm} 
+
+Note that the top and bottom values of the {\bf inv} feature
+on node S\dn{r} in the second tree do not unify,
+forming an obligatory adjunction constraint.
+The resulting structure for that sentence is below:
+
+
+%\centerline{\psfig{figure=figures/who-think-Mary-loves.fig,height=13cm}}
+%\vspace{1.0cm}
+%\centerline{{\bf Who do you think Mary loves?}}
+%\vspace{1.0cm}
+
+
+Recursive adjunction provides derivations for the sentences
+``Who do you think Bob said Mary loves?'', ``Who do you think Anne believes Bob said Mary loves'', and so on.
+
+
+
+ECP may be implemented either as a constraint on the form of initial
+trees, or as a feature constraint on the types of auxiliary trees that
+can adjoin to wh-trees. Our current approach is to specify $\langle$COMP$\rangle$= none 
+(described further below) on the root node of 
+tree-structures containing subject gaps (see below),
+so that a sentence such as {\it  *Who\dn{i} do you think that $\epsilon$\dn{i} loves Mary?}
+can not be generated. 
+
+%\centerline{\psfig{figure=figures/Who-loves-Mary.fig,height=9.0cm}}
+%\centerline{{\bf Who  loves Mary}?}
+%\vspace{1cm}
+
+
+
+Extraction properties are also accounted for as  constraints on the structure of the elementary trees, as was first shown by Kroch 1987\nocite{k87}. 
+In the case of relative clauses, they follow directly from the structure of the 
+elementary trees themselves :
+
+%\vspace{0.5cm}
+%\centerline{\psfig{figure=figures/the-man.fig,height=3.5cm}\hspace*{1cm}
+%\psfig{figure=figures/who-saw.fig,height=5.5cm}}
+%\vspace{1cm}
+
+Extraction out of relative clauses is thus ruled out because there is no way a sentence like:
+
+\beginsentences
+\sitem {\it $\ast$ Who$_{i}$ did you meet the man who loves e$_{i}$ ?}
+
+\endsentences
+
+\noindent could  be derived, with such elementary trees, without either loosing the filler-gap relation
+or the desired word order.
+
+In the case of indirect questions, subjacency follows from the principle that 
+a given tree can not contain more than one wh-element:
+
+%\vspace{0.5cm}
+%\centerline{\psfig{figure=figures/do-wonder.fig,height=5.5cm}\hspace*{1cm}
+%\psfig{figure=figures/who-saw1.fig,height=5.5cm}}
+%\vspace{1cm}
+
+Extraction out of an indirect question is ruled out because a sentence like:
+
+\beginsentences
+\sitem {\it $\ast$ Who$_{i}$ do you wonder who loves e$_{i}$ ?}
+\endsentences
+
+\noindent would have to be derived from the adjunction of `do you wonder' into
+`who$_{i}$ who loves e$_{i}$' that is an ill-formed elementary tree.\footnote{This does not mean that elementary
+trees with more than one gap should necessarily be ruled out. Such an option  might actually 
+be considered for dealing with
+parasitic gaps or gaps in coordinated structures.}
+
+
+Extraction can also be ruled out by using substitution, which is forced to
+happen at leaf nodes only, instead of adjunction for combining
+sentential structures (Abeille, 1988). Extraction out of adjunct clauses,
+for example, is thus ruled out :
+
+%\vspace{0.5cm}
+%\centerline{\psfig{figure=figures/since.fig,height=4cm}\hspace*{1cm}
+%\psfig{figure=figures/John-left.fig,height=4cm}\hspace*{1cm}
+%\psfig{figure=figures/who-left-1.fig,height=4cm}}
+%\vspace{1cm}
+
+\noindent Thus the string `who$_{i}$ since e$_{i}$ left' cannot be generated,
+although the echo-question, `... since who$_{i}$ e$_{i}$ left?'
+would be fine. Notice that here using substitution instead of adjunction
+is  not an extra stipulation, it is imposed by the formalism, since
+otherwise the tree for `since' would have two footnodes and would be
+thus ill-formed.
+
+A similar device is also used for sentential subjects. It has long been
+observed that sentential subjects resist extraction (Ross, 1967)\nocite{ross67}. But it
+has less often been noted that extraposed subjects may allow it :
+
+\beginsentences
+\sitem {\it Going to the beach pleases John.}
+\sitem {\it $\ast$  Where does going (to) please John ?}
+\endsentences
+
+\beginsentences
+\sitem {\it It pleases John to go to the beach.}
+\sitem {\it ? Where does it please John to go (to) ?}
+\endsentences
+
+In the family of the verb {\it please} with a sentential subject, the tree for 
+the non-extraposed case will be an initial tree (ruling out extraction) whereas the tree for extraposed subject will be an auxiliary one (allowing for it).
+
+
+A further distinction could be made between verbs that do allow extraction out of their sentential complements
+and those which don't :
+
+\beginsentences
+\sitem {\it John said that he hit Mary.}
+\sitem {\it Which woman did John say that he hit ?}
+\endsentences
+
+\beginsentences
+\sitem {\it John stammered that he hit Mary.}
+\sitem {\it $\ast$  Which woman did John stammer that he hit ?} (Erteschik, 1973)\nocite{ert71}
+\endsentences
+
+\beginsentences
+\sitem {\it John answered that he hit Mary.}
+\sitem {\it $\ast$  Which woman did John answer that he hit ?} (Culicover and Wilkins, 1984)\nocite{culicover-wilkins}
+\endsentences
+
+Such phenomena require further study; but if the non-extractability is regular for all contexts of a given verb
+(and such seems to be the case for {\it stammer}), the corresponding tree family will
+probably be a different one  with the complement clause being a substitution node rather than
+an adjunction node.
+
+\subsection{Selecting the Appropriate Type of Sentential Argument}
+
+Verbs that take sentential arguments may have basic constraints on the verb form and choice 
+of complementizer in these arguments.\footnote{Other considerations, such as the relationship
+between the tense/aspect of the matrix clause and the tense/aspect of a complement clause are
+also important but are not covered at this time}  For example, the verb {\it likes}, 
+which takes an infinitive or a gerundive complement, will require that the highest VP node in 
+the complement be anchored by either a verb in {\it -ing} form or 
+{\it to}.\footnote{Note that we do not make use of an INFL node and therefore 
+treat {\it to} as an auxiliary verb.} {\it Likes} will, of course,  also need to require
+in these cases that the subordinate clause not have a complementizer.  The feature $\langle$MODE$\rangle$ 
+is used to constrain the verb form at the top of the embedded VP. This feature actually 
+conflates a couple of different types of information (mainly, verb form and sentence mood),
+and will eventually need to be re-analyzed. The $\langle$COMP$\rangle$ feature constrains the 
+presence and choice of complementizers. The exact use of these features is described in 
+Appendix B.
+
+For verbs taking prepositional sentential complements, there are no
+lexical variations regarding $\langle$Comp$\rangle$ and
+$\langle$Mode$\rangle$. Their values (respectively {\it none} and {\it gerund}) are thus
+stated directly at the level of tree families without appearing in the
+lexical entry of the matrix verb.
+
+However, verbs that take direct sentential complements may vary widely (though within
+constraints) in the values they assign for these features.  {\it Think}, for example,
+requires either {\it none} and an infinitival complement,
+or {\it that} or {\it none} and an indicative complement. {\it Wonder}, on the other hand, though it
+has same argument structure and thus  selects the same tree family,  takes only indirect 
+wh-questions or {\it whether} clauses. Such constraints are stated by the verbs in 
+the syntactic lexicon.
+
+$\langle$MODE$\rangle$ and $\langle$COMP$\rangle$ of sentential arguments are  also selected 
+by nouns and adjectives taking sentential complements. The noun {\it fact} takes only 
+that-clauses, the noun {\it question} only
+wh-clauses, and a noun like {\it urge} infinitival complements.
+These features can also be imposed by prepositions heading subordinate clauses.
+ {\it
+Because}, for example, requires that the mode of the clause be
+indicative, while {\it after} allows indicative or gerundive complements:
+
+\beginsentences
+\sitem {\it John is happy because he got a job.}
+\sitem {\it $\ast$ John is happy because getting a job.}
+\sitem {\it $\ast$ John is happy because to get a job.}
+\endsentences
+
+\beginsentences
+\sitem {\it After he killed Mary, John was unhappy.}
+\sitem {\it After killing Mary, John was unhappy.}
+\endsentences
+
+As shown below, there are further variations, at least for verbs, depending on 
+whether the context is interrogative, or negative, or neutral:
+
+\beginsentences
+\sitem {\it John said that Mary was coming.}
+\sitem {\it ??John said whether Mary was coming.}
+\sitem {\it Did John say whether Mary was coming ?}
+\sitem {\it John did not say whether Mary was coming.}
+\endsentences
+
+Other feature structures will be needed to capture these constraints on the tree for {\it say}.
+But notice that the possibility of such variation is by itself lexically determined:
+
+\beginsentences
+\sitem {\it John prefers that Mary leaves early.}
+\sitem {\it $\ast$ John prefers whether Mary leaves early.}
+\sitem {\it $\ast$ Who prefers whether Mary leaves early ?}
+\sitem {\it $\ast$ John did not prefer whether Mary leaves early.}
+\endsentences
+
+
+
+
+\subsection{Sentential Subjects}
+
+Verbs that select sentential subjects anchor trees that have an S node in the subject position rather that an NP node.  Since extraction is not possible from sentential subjects, they are implemented as substitution nodes in the English LTAG grammar.  Restrictions on sentential subjects such as the required "that" complementizer for indicatives, are enforced by feature values specified on the S substitution node in the elementary tree.  
+

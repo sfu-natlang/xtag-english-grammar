@@ -1,0 +1,236 @@
+\documentstyle[11pt,leqno,lingmac,aaai-named]{article}
+\begin{document}
+
+\subsection{Light Verbs}
+
+Light verbs are one example of a construction that requires a
+multi-component anchor analysis. Light verbs occur in complex
+predicates such as {\it take a walk} and {\it give a nod} in which the
+interpretation is non-compositional and the noun contributes arguement
+structure to the predicate. The interpretation of {\it take a walk}
+is close to the interpretation of the verb {\it walk} rather than a
+compositional interpretation of {\it take a walk} with {\it take} as
+the main predicate. Comparison of (\ex{1}) and (\ex{2}) illustrates
+this difference.
+
+\enumsentence{ The man took a walk.}
+\enumsentence{The man took a radio.}
+
+Light verb constructions also differ syntactically from other
+constructions with the same verbs. In examples (\ex{1}) and (\ex{2}) from \cite{Cattell84} {\it offer} allows for the dative alternation that {\it make} would not otherwise allow.
+
+\enumsentence{They made an offer of money to the police.}
+\enumsentence{They made the police an offer of money.}
+
+
+The English LTAG grammar light verb analysis includes constructions with {\it do}, {\it
+give}, {\it have}, {\it make}, and {\it take}.  Marginal candidates such as
+{\it get} (as in {\it get a hold of NP} or {\it get a view of NP}) and {\it
+put} (as in {\it put NP in writing} or {\it put the blame on NP}) are
+excluded.  We have a separate analysis for predicative {\it be}, which in
+the literature is often classed along with the light verbs.
+\footnote{The (putative) light verb construction with {\it put} requires
+two objects and does not undergo dative shift.  This does not depart from
+the normal behavior of {\it put}, and therefore we see no need to include
+it in the TAG analysis as a light verb.}
+
+We treat as light verb constructions only those constructions that fit
+the simple transitive (V-NP) or double object (V-NP1-P-NP2 or
+V-NP2-NP1) patterns.  According to the literature, the ``noun''
+following the light verb is (usually) a bare infinitive form and
+(usually) occurs with {\it a(n)}.  However, we include deverbal
+nominals ({\it take a bath}, {\it give a demonstration}) as well as
+constructions with bare infinitives ({\it have a good cry}).
+Constructions with nouns that do not contribute an argument structure
+({\it have a cigarette}, {\it give NP a black eye}) are analyzed as
+idioms in the English LTAG grammar \footnote{The grammar includes as many light verb
+constructions as possible, even if they do not occur in AmEng (e.g., {\it
+have a think}, {\it have a bathe}).}.
+
+Verb-adjective constructions such as {\it make NP angry}, although they
+alternate with expressions like {\it anger NP}, are not included in the
+light verb analysis.  Also, it is not clear whether the first verb in
+serial verb constructions (e.g., {\it go hiking}, {\it come running}, {\it
+keep nodding}) is more like a light verb or an aspectual auxiliary.  At
+present we don't have an analysis for serial verbs.
+
+English light verbs have partially specified argument structures which
+combine with the argument structure of the associated noun to form a
+complex predicate.  For example, {\it take a walk} means essentially what
+{\it walk} means, but {\it take} imposes additional restrictions on the
+types of entities that may be in subject position (for example, the subject
+must be [+human]).
+
+There are also semantic restrictions on the type of noun that may appear in
+the predicate, but these are not useful to us as they are distinctions that
+are not coded for in our lexicon.  (These restrictions have to do with the
+aspectual nature of the construction and include space vs. time, length of
+activity, whether or not the action is goal-directed, repeatability, etc.)
+
+Light verb trees differ from normal transitive trees in that both the verb
+and the noun in direct object position are marked as anchors.
+
+\subsubsection{Syntactic Phenomena}
+
+{\bf Extraction.}
+
+The noun associated with the light verb (nx1, marked as an anchor) does not
+extract.  Extraction may take place from any other position, including
+extraction from within nx1:
+
+\enumsentence{What did John take?  *A jog }
+\enumsentence{Who did an analysis?  John }
+\enumsentence{Who did John make a promise to?  His mother }
+\enumsentence{What did John do an analysis of?}
+\enumsentence{  (cf. *What did John challenge an analysis of?)}
+
+
+Extraction from complex NPs is blocked, except when the NP in question is
+the noun anchor of a light verb construction (nx1).
+
+\enumsentence{*Who did John dislike an imitation of? Bush }
+\enumsentence{Who did John do an imitation of? Bush }
+\enumsentence{*What did John reject an offer of?  Real estate.}
+\enumsentence{What did John make an offer of?  Real estate.}
+
+
+In addition to the generalization that anchors do not extract, it appears
+that indirect objects may not extract from post-verbal position in the
+dative-shifted form.
+
+\enumsentence{The man made a promise to his mother }
+\enumsentence{Who did the man make a promise to t?  His mother. }
+\enumsentence{The man made his mother a promise }
+\enumsentence{??Who did the man make t a promise?  His mother}
+
+However, judgements on this are not firm and vary from speaker to speaker
+and so we allow for extraction from indirect object position in the
+dative-shifted form.
+
+\vspace{0.5in} \noindent
+{\bf Relativization.} \vspace{0.25in}
+
+In the first set of examples the relativized noun and its relative clause
+constitute a complex noun that is only part of a light verb construction.
+In the second set the noun is relativized out of a light verb construction.
+\begin{verse}
+{The horse that won the race gave his groom a kick.} \\
+{I finally got to take the nap that I'd needed all morning.} \\
+{The horse gave the groom a kick he'd never forget.}
+\end{verse}
+
+\begin{verse} 
+{The nap that I took this afternoon was refreshing.} \\
+{The kick that I gave him was stunning.} \\
+{The promises he made were outlandish.}
+\end{verse}
+In examples of the type in the first set, the relative clause adjoins onto
+the NP anchor that appears in the initial tree.  So for example, {\it I
+finally got to take the nap that I'd needed all morning} would start out
+as {\it I finally got to take the nap}.  Then {\it that I needed all
+morning} should adjoin onto [np the nap np], resulting in [np [np the nap
+np] [s that [I needed all morning ]] np]
+
+However, relativization of nx1 poses a problem for the TAG implementation
+in examples of the second type.  For example, to get a correct parse for
+{\it the nap that I took this afternoon}, the noun {\it the nap} must
+combine with the tree for {\it that I took} $\epsilon$ {\it this
+afternoon}.  But there is the conflicting requirement that as an anchor it
+must appear with the initial S tree for {\it take-nap}.  The solution is to
+exclude constructions containing what look like relativized anchors from
+the light verb analysis.  That is, examples of the second type will not
+receive a light verb parse, while the first type will.
+
+Whether there is independent evidence to suggest that such constructions
+are in fact not light verb constructions is a difficult question.  Whatever
+the facts, this approach is consistent with other observations about the
+constraints on wh-extraction and passivization as far as the noun anchor is
+concerned.
+
+\vspace{0.5in} \noindent {\bf  Dative shift.} \vspace{0.25in}
+
+At first glance, it appears that ditransitives with {\it give} have only
+the dative-shifted form: {\it give NP a kick} vs. *{\it give a kick to NP}.
+However, this restriction appears also to interact with something like
+Heavy NP Shift:
+
+\enumsentence{The horse would give a kick *(to) anyone who came too close to him and
+didn't offer sugar cubes.}
+
+where the heavy NP moves to the end and appears as the indirect (dative)
+object.  Light verb constructions with ditransitive {\it give} behave like
+non-light verb constructions with distransitive {\it give} in this respect.
+There remains, however, the problem of the nonextractibility of the anchor:
+
+\enumsentence{I gave the horse a kick. }
+\enumsentence{What did you give the horse?  *A kick.\footnote{Allowing
+extraction from within complex nx1 anchors is not a problem with
+ditransitive {\it give}.  What was once the direct object in
+constructions such as {\it pull NP}, {\it kiss NP} now shows up as nx2
+in light verb constructions such as {\it give NP a pull} or {\it give NP a
+kiss}, and not as a complement of the anchor, which is the case in
+(\ex{1}-(\ex{2}) below.}}
+
+\enumsentence{imitate Bush				V nx }
+\enumsentence{do an imitation of Bush		V Nx1 Pnx }
+\enumsentence{kick the horse			V nx }
+\enumsentence{give the horse a kick		V nx2 Nx1}
+
+Ditransitives with {\it make} also allow dative shift:
+
+\enumsentence{Make an offer to the police.}
+\enumsentence{Make the police an offer of money.}
+\enumsentence{Make a promise to one's mother.}
+\enumsentence{Make one's mother a promise.}
+\enumsentence{Make a payment of \$500 to your agent.}
+\enumsentence{Make your agent a payment of \$500.}
+
+
+
+\vspace{0.5in} \noindent {\bf  Possessives.} \vspace{0.25in}
+
+Light verbs often allow a possessive on the noun in the predicate.  The
+person and number of this possessive must match features of the subject:
+
+\enumsentence{She gave him her usual look.}
+\enumsentence{*She gave him his usual look.}
+\enumsentence{I took my nap.}
+\enumsentence{*I took your nap.}
+
+
+This subject-identity requirement on possessives has not been implemented
+since there are too many exceptions.  For instance, in a case where there
+is a limited amount of hot water and John was planning to take a shower but
+Mary gets there first, you could say {\it Mary took John's shower}.
+
+\vspace{0.5in} \noindent {\bf  Passives.} \vspace{0.25in}
+
+As expected, the noun associated with the light verb construction (marked
+as an anchor) does not passivize, except with ditransitive {\it make}
+constructions.
+
+\enumsentence{*A laugh was given by John.}
+\enumsentence{The groom was given a kick by the horse}
+\enumsentence{*A kick was given to the groom by the horse}
+\enumsentence{An offer was made to John by a large conglomerate}
+
+
+
+\enumsentence{A laugh was given.}
+\enumsentence{The groom was given a kick.}
+\enumsentence{A kick was given to the groom.}
+\enumsentence{After months of interviewing, an offer was finally made to John, but
+Bill still hasn't heard a word.}
+
+We include trees for passivization (with and without {\it by}) of the
+direct object when it is not the anchor noun, with the exception of
+ditransitives with {\it make}.
+
+
+
+
+\end{document}
+
+
+
+

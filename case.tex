@@ -1,0 +1,49 @@
+\section{Case and PRO}
+
+GB theory proposes the ``case filter'' as a requirement on
+S-structure\footnote{There are certain problems with applying the case
+filter as a requrement at the leveel of S-structure.  These issues are
+not crucial to the discussion of the English LTAG implementation of
+case so will not be discussed here.  Interested readers are referred
+to \cite{LasnikUriagereka}.}
+
+\begin{verse}
+\underline{Case Filter}
+Every overt NP must be assigned abstract case
+\end{verse}
+
+Abstract case is taken to be universal.  Languages with rich
+morphological case marking such as Latin and languages like English
+with very limited morphological case marking are presumed to both have
+full systems of abstract case and differ only in the extent of
+morphological realization.
+
+In GB theory, abstract case is assignedd to NP's by various case
+assigners.  For English, one instance of abstract case, accusative, is
+assigned by propositions and verbs.  Nominative case is assigned in
+English by finite INFL.  
+
+The notion of abstract case and the case filter are useful in
+accounting for a number of phenomena including the distribution of
+over nominative and accusative case, the distributions of overt NP's
+and empty categories and case provides motivation for movement.  
+
+The English LTAG grammar adopts the notion of case and the case filter
+for many of the same reasons argued for in the GB literature.
+However, because TAG and unification differ considerabley form the
+mechanisms usually assumed discussions of case in GB, the English LTAG
+grammar implementation of case appears somewhat different than the
+system outlined in the GB literature.
+
+\subsection{Case assignment in the English LTAG grammar}
+
+Case assignment occurs in one of two ways in the English LTAG grammar.
+Case assigners can anchor a tree in which the case value is built into
+certain NP nodes.  This is how accusative case assignment is handled
+for objects of verbs and prepositions.  Nominative case is assigned
+through co-indexing of the value of the case feature of the subject NP
+and the assign-case value of the verb.  In lexicalized TAG tree
+structures and features values are attached to fully inflected lexical
+items.  There is no categorical division between INFL and V.  Tense
+and agreement are expressed as features of verbs and not as separate
+nodes in the derivation structure.

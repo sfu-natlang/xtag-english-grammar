@@ -1,0 +1,212 @@
+\section{Auxiliaries}
+Although there has been some debate about the lexical category of auxiliaries, the English LTAG grammar follows McCawley(1988), Hageman(1991) and others in classifying auxiliaries as verbs. The category of verbs can therefore be divided into two sets, main or lexical verbs and auxiliary verbs. At least some auxiliaries share with lexical verbs the property  of having morphological marking for tense and agreement.  In addition, only the leftmost verb in a verbal sequence is morphologically marked for tense and argreement  regardless of whether it is a main or auxiliary verb. However, auxiliary verbs differ from lexical verbs in several crucial ways. 
+
+\begin{enumerate}
+\item Multiple auxiliaries can occur in a single sentence, while a matrix sentence may have at most one lexical verb. 
+
+\item All auxiliaries preceed the lexical verb in verbal sequences
+
+\item Auxiliaries do not subcategorize for NP, PP or S arguments
+
+\item Auxiliaries impose requirements on the morphological form of the verbs that immediately follow them.
+
+\item Only auxiliary verbs invert in questions (with the sole
+exception in American English of main verb {\it be}).
+
+\item Sentential negation requires an auxiliary verb (e.g. *{\it John not goes}).
+
+\item Auxiliaries can form contractions with subjects, and with negation.
+
+\end{enumerate}
+
+
+The sections that follow describe how the English LTAG implementation accounts for these properties of the auxiliary system.
+
+
+Auxiliary verbs, in contrast to main verbs, do not  occur as the sole verb in a sentence but must be followed by another verb. Verbal sequences in English are limited to a maximum length, in contrast to a language like French in which modals can be recursively added to a sentence. English allows sequences of up to five verbs as shown in (\ex{1})
+
+\enumsentence{The dogs should have been being fed.}
+
+The required ordering of verb forms is:
+
+\begin{description}
+\item {\bf modal base perfective progressive passive}
+\end{description}
+
+The rightmost verb is the main verb of the sentence.  The main verb's
+subcategorization requirements determine the arguments that will appear in the
+sentence.  Rather than selecting arguments, auxiliary verbs select particular
+morphological forms of verbs to follow them.  What  verb form is required
+varies by type of auxiliary verb.  The auxiliaries included in the English
+LTAG grammar are listed in Table (\ref{aux-table}) by type.  The third column
+of Table (\ref{aux-table}) lists the verb forms that are required to follow
+each type of auxiliary verb.       
+
+\vspace{2cm}
+
+\begin{table}[ht]
+\begin{tabular}{|l|c|c|}  
+\hline
+TYPE&LEX ITEMS&SELECTS FOR\\     
+\hline
+modals & can, could, may, might, will, & base form (base)\\
+& would, ought, shall, should & e.g. will go,might come\\   
+\hline
+perfective & have & past participle\\
+& & (e.g. has gone)\\  
+\hline
+progressive & be & gerund\\
+& & (e.g. is going, was coming)\\  
+\hline
+passive & be & past participle\\
+& & (e.g. was helped by Jane)\\  
+\hline
+do support & do &base form\\
+& & (e.g. did go, does come)\\  
+\hline
+infinitive to & to & base form\\
+& & (e.g. to go, to come)\\  
+\hline
+\end{tabular}
+\caption{Auxiliary Verb Properties}
+\label{aux-table}
+\end{table}
+\vspace{2cm}
+
+In the English LTAG grammar, the tree anchored by the main verb
+supplies the structure for the verb and its subcategorized arguments.
+Other trees are added to it by substitution or adjunction.  Auxiliary
+verbs in uninverted sentences anchor the auxiliary tree shown in
+Figure \ref{vVX} which adjoins to a VP.
+
+\begin{figure}[htb]
+\centering
+\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betavVX.ps,height=3.0in}
+\caption{\label{vVX} Tree:  $\beta$vVX}
+\end{figure}
+
+
+In inverted sentences, two trees adjoin to the tree anchored by the
+main verb: $\beta$vS anchored by the auxiliary verb and $\beta$vVX
+anchored by an empty element Figure \ref{inv-set}.
+
+\begin{figure}[htb]
+\begin{tabular}{cc}
+\centering
+{\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betavS.ps,height=10.0cm}}&
+{\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betavVX-epsilon.ps,height=10.0cm}}\\
+Tree: $\beta$vS& Tree: $\beta$vVX[$\epsilon$]
+\end{tabular}
+\caption{\label{inv-set} Tree sequence for auxiliary verb inversion}
+\end{figure}
+
+
+ The feature {\bf $<$disp-const$>$} ensures that both of the trees in
+Figure \ref{inv-set} must adjoin to an elementary tree whenever one of
+them does. For more discussion of this mechanism, which simulates tree
+local multi-component adjunction see \cite{BAH-Srini}.  The $\beta$vVX
+tree anchored by $\epsilon$ represents the base position of the
+inverted auxiliary. It's adjunction blocks the {\bf assign-case}
+values of VP's dominated by $\epsilon$-anchored VP from being
+coindexed with the {\bf $<$case$>$} value of the subject. Since {\bf
+assign-case} values from the VP are blocked, the {\bf $<$case$>$}
+value of the subject can only be coindexed with the {\bf
+$<$assign-case$>$} value of the inverted auxiliary.  Consequently, the
+inverted auxiliary fuctions as the case-assigner for the subject in
+these inverted structures in contrast to the situation in univerted
+structures where the anchor of the highest VP assigns case to the
+subject.  This account is similar to GB accounts if the highest VP is
+taken as roughly corresponding to IP and the inverted auxiliary plus
+$\epsilon$-anchored $\beta$vVX are taken as representing I to C
+movement.
+
+The requirements in Table (\ref{aux-table}) are implemented through the
+multi-valued {\bf $<$mode$>$} feature and by the binary features {\bf
+$<$perf$>$}, {\bf $<$prog$>$},  and {\bf $<$passive$>$} . The synatctic lexicon
+entries for the auxiliaries include values for {\bf mode}, {\bf
+pass}, {\bf prog}, and {\bf perf}  features on the VP foot node of
+$\alpha$vVX.  These feature values ensure the proper auxiliary
+sequencing.  Examples of syntactic entries for auxiliaries are shown
+in 
+\addtocounter{figure}{1}
+Figure \arabic{figure}.
+\begin{quote}
+\tiny
+\begin{verbatim}
+;; AUXILIARY "HAVE"
+INDEX:  have/1
+ENTRY:  have
+POS:    V
+TREES:  Vvx
+FS:     #V_base #VPr_mainv- #VPr_perfect+ #VP_ppart #VP_pass- #V_displ-set1-
+EX:     he will have died
+
+INDEX:  have/1
+ENTRY:  have
+POS:    V
+TREES:  Vs
+FS:     #Sr_ind #Sr_pres #Sr_perfect+ #S_ppart #S_pass-
+
+INDEX:  have/1
+ENTRY:  have
+POS:    V
+TREES:  Vvx
+FS:     #VPr_ind #VPr_present #VPr_perfect+ #VP_ppart #VP_pass- #V_displ-set1-
+EX:     he has died; we have died
+
+INDEX:  have/1
+ENTRY:  have
+POS:    V
+TREES:  Vs
+FS:     #Sr_ind #Sr_past #Sr_perfect+ #S_ppart #S_pass- #V_displ-set1-
+EX:     had we died; had they died
+
+INDEX:  have/1
+ENTRY:  have
+POS:    V
+TREES:  Vvx
+FS:     #VPr_ind #VPr_past #VPr_perfect+ #VP_ppart #VP_pass- #V_displ-set1-
+EX:     he had died; we had died
+
+;; MUST
+;;
+INDEX:  must/1
+ENTRY:  must
+POS:    V
+TREES:  Vvx
+FS:     #VP_base #V_displ-set1-
+
+INDEX:  must/2
+ENTRY:  must
+POS:    V
+TREES:  Vs
+FS:     #S_base
+
+
+;; PROGRESSIVE "BE"
+INDEX:  be/7
+ENTRY:  be
+POS:    V
+TREES:  Vvx
+FS:     #VPr_mainv- #VPr_prog+ #VP_ger #V_displ-set1-
+
+INDEX:  be/8
+ENTRY:  be
+POS:    V
+TREES:  Vs
+FS:     #Sr_prog+ #S_ger
+
+
+\end{verbatim}
+\normalsize
+\center Figure \arabic{figure}: Auxiliary verb syntactic database entries
+\end{quote}
+
+
+
+ As can be seen in (\ref{vVX}) the root VP node inherits {\bf $<$tense$>$}, {\bf $<$mode$>$} and
+{\bf $<$agr$>$} values from its auxiliary verb anchor, so the compound VP is
+of the same variety as its leftmost verb. The feature values on the
+VP foot node enforce the restrictions shown in Table (\ref{}) column 3.
+Main clauses must have tense. The feature {\bf $<$tense$>$} only has values
+specified for verbs that are also {\bf $<$mode$>$= ind} or {\bf $<$mode$>$= imp}, so by requiring one of these values for mode, tense is also required.  The parser enforces the restriction that main clauses must have tense by requiring the top S-node of a sentence to have {\bf $<$mode$>$= ind/imp}.  Since only tensed sentences can have {\bf $<$mode$>$=ind} and only imperatives can have {\bf $<$mode$>$=imp}, non-tensed clauses are restricted to occuring in embedded environments.  

@@ -1,0 +1,74 @@
+\section{Small Clauses, Raising Verbs and the Copula}
+Small clauses offer examples of clauses that are headed by adjectives, nouns or prepositions rather than verbs.  For example, the embedded clause in (\ex{1}) is headed by the adjective {\it frugal}.
+
+\enumsentence{I consider John frugal.}
+
+
+The analysis developed for the English LTAG grammar by Caroline Heycock provides a uniform analysis of the  embedded clause in (\ex{0}) and the predicative sentences in (\ex{1}) and (\ex{2})
+
+\enumsentence{John is frugal.}
+\enumsentence{John seems frugal.}
+
+All three cases use the elementary tree $\alpha$nx0Ax1 tree shown in
+figure \ref{nx0Ax1}. \\
+
+\begin{figure}[htb]
+\centerline{
+\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/alphanx0Ax1.ps,height=10.0cm}}
+\caption{\label{nx0Ax1} Tree:  $\alpha$nx0Ax1}
+\end{figure}
+
+
+This tree is anchored by the adjective {\it frugal\/} and contains
+only the subject, {\it John\/} and the anchor, exactly as in the
+embedded clause in (\ex{-2}).  For examples (\ex{-1}) and (\ex{0})
+either {\it seem\/} or {\it is\/} adjoins on to $\alpha$nx0Ax1.  To
+cover the range of possible small clauses, the following tree families
+contain trees anchored by either nouns, prepositions or adjectives:
+
+\begin{description}
+\item Tnx0Nx1
+\item Tnx0Px1
+\item Tnx0Ax1
+\item Tnx0dNx1
+\item Ts0Nx1
+\item Ts0Px1
+\item Ts0Ax1
+\item Ts0dNx1
+\end{description}
+
+The two tree families anchored by nouns, Tnx0Nx1 and Tnx0dNx1, are needed to handle noun anchored cases with and without determiners as in (\ex{1}) and (\ex{2})
+
+\enumsentence{He is a fireman.}
+\enumsentence{They are firemen.}
+
+The trees in these tree families differ from verb-anchored trees in
+the value of their mode feature as well as the category of their
+anchor. As can be seen in (\ref{nx0Ax1}), these small clause trees have
+the VP top feature {\bf $<$mode = nom/prep$>$}.  This value for mode serves two
+major purposes, 
+\begin{itemize}
+\item restricting small clause complements to the
+small set of verbs like consider that select for them; and, 
+\item forcing adjunction of the
+appropriate form of {\it be\/} or of a raising verb like {\it seem\/}  in main
+clauses and in sentential complements of verbs that do not select for small
+clauses, as in (\ex{-5})-(\ex{-3}) and  (\ex{-1})-(\ex{2}).
+\end{itemize}
+
+\enumsentence{Mary thinks John is happy.}
+\enumsentence{Mary thinks John seems happy.}
+
+Adjunction of {\it be\/}  or a raising verb is forced in main clauses by
+the conflict between the {\bf nom/prep} value of {\bf mode} on VP top and the ind
+value of {\bf mode} enforced on S-top by the parser.  A similar conflict is
+created for embedded sentences by the verbs that select them as
+complements and allow only {\bf mode} values other than {\bf nom/prep}.  For
+example $\beta$nx0Vs1 anchored by think in (\ex{-1}) and (\ex{0}),
+requires S1 to be {\bf $<$mode = ind$>$} as shown in Figure \ref{nx0Vs1}.
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betanx0Vs1.ps,height=10.0cm}
+\caption{\label{nx0Vs1} Tree:  $\beta$nx0Vs1}
+\end{figure}
