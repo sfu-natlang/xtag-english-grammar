@@ -18,19 +18,8 @@ analysis on the sentences rejected by the parser, and we have done
 this several times on WSJ and Brown data.
 %Lifted directly from TAG+ paper
 Based on the results of such analysis, we prioritize upcoming grammar
-development efforts. The results of a recent error analysis are shown
-in Table \ref{errors}.  The table does not show errors in parsing due
-to mistakes made by the POS tagger which contributed the largest
-number of errors: 32. At this point, we have added a treatment of
-punctuation to handle \#1, an analysis of time NPs (\#2), a large
-number of multi-word prepositions (part of \#3), gapless relative
-clauses (\#7), bare infinitives (\#14) and have added the missing
-subcategorization (\#3) and missing lexical entry (\#12).  We are in
-the process of extending the parser to handle VP coordination (\#9)
-(See Section~\ref{conjunction} on recent work to handle VP and other
-predicative coordination). We find that this method of error analysis
-is very useful in focusing grammar development in a productive
-direction.
+development efforts. The results of an error analysis done in 1994
+\cite{xtag-notes} are shown in Table \ref{errors94}.  
 
 \begin{table}[htb]
 \centering
@@ -52,8 +41,81 @@ Rank & No of errors & Category of error \\ \hline
 \#14  & 1    &    Bare infinitive \\ \hline
 \end{tabular}
 \caption{Results of Corpus Based Error Analysis}
-\label{errors}
+\label{errors94}
 \end{table}
+
+The table does not show errors in parsing due to mistakes made by the POS
+tagger which contributed the largest number of errors: 32. Consequent to
+this error analysis, we have added a treatment of punctuation to handle
+\#1, an analysis of time NPs (\#2), a large number of multi-word
+prepositions (part of \#3), gapless relative clauses (\#7), bare
+infinitives (\#14) and have added the missing subcategorization (\#3) and
+missing lexical entry (\#12).  A more recent error analysis was done on a
+corpus of weather reports. The weather reports were provided to us by
+CoGenTex.\footnote{%
+%
+Thanks to the Contrastive Syntax Project, Linguistics Department of the
+University of Montreal, for the use of their weather synopsis corpus.%
+%
+} The sentences in this kind of corpus tend to be quite long (an average of
+20 tokens/sentence) and complex. The examples given below are illustrative
+of the type of sentences and terminology in this domain.
+
+\enumsentence{[The warm air mass] affecting [southwestern Quebec] for
+[the past few days] is still moving slowly eastwards and will make room
+for [a much colder air mass] overnight and Wednesday.}
+\enumsentence{Behind [this area] [a moderate flow] will cause [an inflow]
+of [milder air] in [southwestern Quebec] producing temperatures slightly
+above normal on Sunday.}
+\enumsentence{[Very mild air] preceding [a disturbance] in [north Dakota]
+will gradually push into part of [St Lawrence River valley] today and
+Monday.}
+
+\cite{c.97:_maint_xtag} parsed the corpus of weather reports and found that
+it contained several relative clauses that caused problems for the XTAG
+grammar and also that the parser was unable to handle some of the more
+complex longer sentences. The problematic cases involved two kinds of
+relative clauses (roughly 40\%) which were not accounted for by the grammar
+developer at the time. The first kind contained examples like {\em A
+frontal system approaching from the west} which included an {\em -ing} form
+in the relative clause predicate, and the other kind contained examples
+like {\it The disturbance south of Nova Scotia early this morning} which
+had a directional noun phrase as the predicate. As a result of these
+shortcomings and also due to the long and complex sentences in this test
+set, we could parse only about 20\% of the test set (10 out of 48
+sentences).  After a recent overhaul of the relative clause analysis in the
+XTAG grammar we wanted to test the updated coverage of the grammar on
+the same test set and evaluate the degree of improvement in performance.
+This was done in \cite{prasadandsarkar00}, where we have obtained a much
+better performance of the XTAG parser on the sentences in the weather
+domain. Of the 48 sentences in the corpus, we were able to parse 43
+sentences (89.6\%). A comprehensive breakdown of the errors is described in
+Table~\ref{tab:weather_analysis}.\footnote{%
+%
+A description of the error types is as follows:\\
+{\bf R1:} Lexical item does not get the right part of speech and therefore
+does not select the correct trees.\\
+{\bf R2:} Lexical item does not select the necessary tree or family.\\
+{\bf R3:} Missing analysis for VP coordination in the current grammar.%
+%
+}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|c|c|} \hline \hline
+Error Class & No. & \% \\ \hline \hline
+POS Tag (R1) & 1 & 2.08\% \\ \hline
+Missing Tree (R2) & 1 & 2.08\% \\ \hline
+No VP coordination (R3) & 3 & 6.25\% \\ \hline
+{\bf Total} & {\bf 5} & {\bf 10.4\%} \\ \hline
+\end{tabular}
+\caption{\label{tab:weather_analysis} Results of Corpus-Based Error Analysis}
+\end{table}
+
+We are in the process of extending the parser to handle VP coordination
+(\#9) (See Section~\ref{conjunction} on recent work to handle VP and other
+predicative coordination). We find that this method of error analysis is
+very useful in focusing grammar development in a productive direction.
 
 To ensure that we are not losing coverage of certain phenomena as we
 extend the grammar, we have a benchmark set of grammatical and
@@ -62,16 +124,22 @@ sentences periodically to ensure that in adding new features and
 constructions to the grammar, we are not blocking previous analyses.
 There are approximately $590$ example sentences in this set.
 
-\section{TSNLP}
+\section{Parsing Test-Suites}
 
 In addition to corpus-based evaluation, we have also run the English
-Grammar on the Test Suites for Natural Language Processing (TSNLP)
-English corpus \cite{Lehmann96}. The corpus is intended to be a
-systematic collection of English grammatical phenomena, including
-complementation, agreement, modification, diathesis, modality, tense
-and aspect, sentence and clause types, coordination, and negation. It
-contains 1409 grammatical sentences and phrases and 3036 ungrammatical
-ones.
+Grammar on test-suites. Test-suites are intended to be a systematic
+collection of different types of grammatical phenomena and are used to
+track improvements and verify consistency between successive generations of
+grammar development in a system.
+
+\subsection{TSNLP}
+
+In an earlier evaluation of the grammar on test-suites, we used the TSNLP
+(Test Suites Natural Language Processing) English corpus
+\cite{Lehmann96}. This test set contains construction types which include
+complementation, agreement, modification, diathesis, modality, tense and
+aspect, sentence and clause types, coordination, and negation. It contains
+1409 grammatical sentences and phrases and 3036 ungrammatical ones.
 
 \begin{table*}[htb]
 \centering
@@ -106,18 +174,56 @@ efforts. It also highlighted the fact
 that our grammar is heavily slanted toward American English---our
 grammar did not handle {\it dare} or {\it need} as auxiliary verbs,
 and there were a number of very British particle constructions,
-e.g. {\it She misses him out}. 
+e.g. {\it She misses him out}.
 
-One general problem with the test-suite is that it uses a very
-restricted lexicon, and if there is one problematic lexical item it is
-likely to appear a large number of times and cause a disproportionate
-amount of grief. {\it Used to} appears 33 times and we got all 33
-wrong. However, it must be noted that the XTAG grammar has analyses
-for syntactic phenomena that were not represented in the TSNLP test
-suite such as sentential subjects and subordinating clauses among
-others. This effort was, therefore, useful in highlighting some
-deficiencies in our grammar, but did not provide the same sort of
-general evaluation as parsing corpus data.
+\subsection{CSLI LKB}
+
+In a more recent test-suite based evaluation \cite{prasadandsarkar00}, we
+used the CSLI LKB (Linguistic Knowledge Building) test suite
+\cite{copestake99:_lkb_system}. of the 966 grammatical sentences we were
+unable to parse 26 (2.7\%). A breakdown of the errors is given in
+Table~\ref{tab:CSLI_analysis}):
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|c|c|} \hline \hline
+Error Class & No. & \% \\ \hline \hline
+Missing Lexical Entry & 4 & 0.4\% \\ \hline
+Missing Lexicalized Tree & 4 & 0.4\% \\ \hline
+No analysis for Inverse Predications & 2 & 0.2\% \\ \hline
+No analysis for Ellipsis & 18 & 1.8\% \\ \hline
+Default entry error & 1 & 0.1\% \\ \hline
+{\bf Total} & {\bf 26} & {\bf 2.7\%} \\ \hline
+\end{tabular}
+ \caption{\label{tab:CSLI_analysis} Results of CSLI Test-Suite based Evaluation}
+\end{table}
+
+The analysis for ellipsis and inverse predication has not been added yet in
+our grammar. Of the 387 ungrammatical sentences, 189 did not get any valid
+parses after feature unification. We did not examine the parses obtained
+for the remaining sentences to see if they contained a legitimate ambiguity
+or an error in the grammar.\\
+
+There are several problems with the test-suites as a stand alone metric for
+evaluating wide-coverage grammars like XTAG. Firstly, they are constructed
+by hand to allow for systematic variation only within a particular range of
+grammatical phenomena and, in contrast to the sentences found in
+naturally-occurring corpora, are unlikely to point us towards an increasing
+set of novel constructions. Secondly, in a test-suite, the same lexical
+items are used very often, causing a distribution of words that is unlike
+naturally occurring text~(see \cite{c.97:_maint_xtag} and
+\cite{prasadandsarkar00} for further discussions about the use of
+test-suites for evaluation) and, in addition, can also cause a
+disproportionate amount of grief. For instance, in the TSNLP test-suite,
+{\it used to} appears 33 times and we got all 33 wrong. Thirdly, each
+sentence in a test-suite usually handles a single grammatical phenomena
+and, so, interactions between different phenomena are seldom
+explored. Finally, the XTAG grammar has analyses for syntactic phenomena
+that were not represented in the test suites, such as sentential subjects
+and subordinating clauses, among others. The test-suite evaluations,
+therefore, were useful in highlighting some deficiencies in our grammar,
+but did not provide the same sort of general evaluation as parsing corpus
+data.
 
 \section{Chunking and Dependencies in XTAG Derivations}
 
