@@ -51,7 +51,7 @@ the absence of a complementizer.}, shown in sentences~(\ex{1}) and (\ex{2}).
  In GB both {\it Muriel wins} in (\ex{-1}) and {\it that Muriel wins} in
 (\ex{0}) are CPs even though there is no overt complementizer to head the
 phrase in (\ex{-1}).  Our grammar does not distinguish by category label
-between the the phrases that would be labeled in GB as IP and CP.  We label
+between the phrases that would be labeled in GB as IP and CP.  We label
 both of these phrases S.  The difference between these two levels is the
 presence or absence of the complementizer (or extracted WH constituent), and is
 represented in our system as a difference in feature values (here, of the {\bf
@@ -579,8 +579,8 @@ indicative S-subjs obligatorily have a complementizer (see examples in
 section~\ref{data}). The {\bf $<$assign-comp$>$} feature is used here to
 license a null complementizer for infinitival but not indicative clauses. {\bf
 $<$assign-comp$>$} has the same possible values as {\bf $<$comp$>$}, with the
-exception that the {\bf nil} value is `split' into {\bf ind-nil} and {\bf
-inf-nil}.  This difference in feature values is illustrated in
+exception that the {\bf nil} value is `split' into {\bf ind\_nil} and {\bf
+inf\_nil}.  This difference in feature values is illustrated in
 Figure~\ref{comparison}.
 %This allows us to specify precisely which environments license null
 %complementizers. 
@@ -590,17 +590,18 @@ Figure~\ref{comparison}.
 
 Another minor difference is that {\it whether\/} but not {\it if\/} is
 grammatical with S-subjs.\footnote{Some speakers also find {\it if\/}
-as a complementizer only marginally grammatical in S-comps.} Thus, {\bf if} is
-not among the {\bf $<$comp$>$} values allowed in S-subjs. The final difference
-from S-comps is that there are no S-subjs with {\bf $<$mode$>$=ger}. As noted
-in footnote~\ref{gerund-footnote} of this chapter, gerundive complements are
-only allowed when there is no corresponding NP parse. In the case of gerundive
-S-subjs, there is always an NP parse available.
+  as a complementizer only marginally grammatical in S-comps.} Thus,
+{\it if} is not among the {\bf $<$comp$>$} values allowed in S-subjs.
+The final difference from S-comps is that there are no S-subjs with
+{\bf $<$mode$>$=ger}. As noted in footnote~\ref{gerund-footnote} of
+this chapter, gerundive complements are only allowed when there is no
+corresponding NP parse. In the case of gerundive S-subjs, there is
+always an NP parse available.
 
 \section{Nouns and Prepositions taking Sentential Complements}
 \label{NPA}
 
-{\bf Trees}: $\alpha$NXNs, $\beta$vxPs, $\beta$Pss, $\beta$nxPx,
+{\bf Trees}: $\alpha$NXNs, $\beta$vxPs, $\beta$Pss, $\beta$nxPs,
 Tnx0N1s1, Tnx0A1s1.
 
 \begin{figure}[thb]
