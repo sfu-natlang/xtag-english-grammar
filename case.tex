@@ -7,16 +7,17 @@
 \subsection{Approaches to Case}
 \subsubsection{Case in GB theory}
 
-GB (Government and Binding) theory proposes the following `case filter' as a
-requirement on S-structure.\footnote{There are certain problems with applying
-the case filter as a requirement at the level of S-structure.  These issues are
-not crucial to the discussion of the English XTAG implementation of case and so
-will not be discussed here.  Interested readers are referred to
+GB (Government and Binding) theory proposes the following
+`case filter' as a requirement on S-structure.\footnote{There are certain
+problems with applying the case filter as a requirement at the level of
+S-structure.  These issues are not crucial to the discussion of the English
+XTAG implementation of case and so will not be discussed here.  Interested
+readers are referred to
 \cite{lasnik-uriagereka88}.}
 
 \begin{verse}
 \xtagdef{Case Filter}
-Every overt NP must be assigned abstract case.
+Every overt NP must be assigned abstract case. \cite{haegeman91}
 \end{verse}
 
 Abstract case is taken to be universal.  Languages with rich morphological case
@@ -24,18 +25,18 @@ marking, such as Latin, and languages with very limited morphological case
 marking, like English, are all presumed to have full systems of abstract case
 that differ only in the extent of morphological realization.
 
-In GB, abstract case is assigned to NPs by various case assigners, namely
+In GB, abstract case is assigned to NP's by various case assigners, namely
 verbs, prepositions, and INFL.  Verbs and prepositions are said to assign
-accusative case to NPs that they govern, and INFL assigns nominative case to
-NPs that it governs.  These governing categories are constrained in where they
+accusative case to NP's that they govern, and INFL assigns nominative case to
+NP's that it governs.  These governing categories are constrained in where they
 can assign case by means of `barriers' based on `minimality conditions',
 although these are relaxed in `exceptional case marking' situations.  The
 details of the GB analysis are beyond the scope of this technical report, but
 see \cite{chomsky86} for the original analysis or \cite{haegeman91} for an
 overview.  Let it suffice for us to say that the notion of abstract case and
-the case filter are useful in accounting for a number of phenomenon including
+the case filter are useful in accounting for a number of phenomena including
 the distribution of nominative and accusative case, and the distribution of
-overt NPs and empty categories (such as PRO).
+overt NP's and empty categories (such as PRO).
 
 \subsubsection{Minimalism and Case} 
 
@@ -87,8 +88,8 @@ nom}.
 \label{prep-case}
 
 Case is assigned in the XTAG English grammar by two components - verbs and
-prepositions\footnote{{\it For} also assigns case as a complementizer.  See
-section \ref{for-complementizer} for more details.}.  Prepositions assign
+prepositions.\footnote{{\it For} also assigns case as a complementizer.  See
+section \ref{for-complementizer} for more details.}  Prepositions assign
 accusative case ({\bf acc}) through their {\bf $<$assign-case$>$} feature,
 which is linked directly to the {\bf $<$case$>$} feature of their objects.
 Figure~\ref{PXPnx-with-case}(a) shows a lexicalized preposition tree, while
@@ -157,10 +158,11 @@ joins the {\bf$<$assign-case$>$} feature of the V to the {\bf $<$case$>$}
 feature of the subject NP.  The morphological form of the verb determines the
 value of the {\bf $<$assign-case$>$} feature.
 Figures~\ref{lexicalized-S-tree-with-case}(a) and
-\ref{lexicalized-S-tree-with-case}(b) show the same tree anchored by different
-morphological forms of the verb {\it sing}, which give different values for the
-{\bf $<$assign-case$>$} feature\footnote{Again, the feature structures shown
-have been restricted to those that pertain to the V/NP interaction.}.
+\ref{lexicalized-S-tree-with-case}(b) show the same tree\footnote{Again, the 
+feature structures shown have been restricted to those that pertain to the V/NP
+interaction.} anchored by different morphological forms of the verb {\it sing},
+which give different values for the {\bf $<$assign-case$>$} feature.
+
 
 \begin{figure}[htbp]
 \centering
@@ -187,10 +189,10 @@ have been restricted to those that pertain to the V/NP interaction.}.
 
 The adjunction of an auxiliary verb onto the VP node breaks the {\bf
 $<$assign-case$>$} link from the main V, replacing it with a link from the
-auxiliary verb instead\footnote{See section \ref{aux-non-inverted} for a more
-complete explanation of how this relinking occurs.}. The progressive form of
-the verb in Figure~\ref{lexicalized-S-tree-with-case}(b) has the feature-value
-{\bf $<$assign-case$>$=none}, but this is overridden by the adjunction of the
+auxiliary verb instead.\footnote{See section \ref{aux-non-inverted} for a more
+complete explanation of how this relinking occurs.} The progressive form of the
+verb in Figure~\ref{lexicalized-S-tree-with-case}(b) has the feature-value {\bf
+$<$assign-case$>$=none}, but this is overridden by the adjunction of the
 appropriate form of the auxiliary word {\it be}.  Figure~\ref{Vvx-with-case}(a)
 shows the lexicalized auxiliary tree, while Figure~\ref{Vvx-with-case}(b) shows
 it adjoined into the transitive tree shown in
@@ -211,7 +213,7 @@ case on an NP means that {\em any\/} NP can fill it, regardless of its case.
 This is due to the mechanism of unification, in which if something is
 unspecified, it can unify with anything.  Thus we have a specific case {\bf
 none} to handle verb forms that in GB theory do not assign case.  PRO is the
-only NP with case {\bf none}.  Verbs forms that assign no case, as the past
+only NP with case {\bf none}.  Verb forms that assign no case, as the past
 participle mentioned above, can do so because they cannot occur without an
 auxiliary verb which takes care of the case assignment.  Note that although we
 are drawn to this treatment by our use of unification for feature manipulation,
