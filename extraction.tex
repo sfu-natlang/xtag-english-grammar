@@ -1,17 +1,17 @@
 \chapter{Extraction}
 \label{extraction}
 
-The discussion in this section covers constructions that are analyzed
+The discussion in this chapter covers constructions that are analyzed
 as having wh-movement in GB, in particular, wh-questions and
 topicalization. Relative clauses, which could also be considered
-extractions, are discussed in section~\ref{rel_clauses}.
+extractions, are discussed in Chapter~\ref{rel_clauses}.
 
-Extraction involves a constituent appearing in a linear position to
-the left of the clause with which it is interpreted. One clause
-argument position is empty. For example, the position filled by
-{\it frisbee} in the declarative in (\ex{1}) is empty in (\ex{2}). The
-wh-item {\it what} in (\ex{2}) is of the same syntactic category as
-{\it frisbee} in (\ex{1}) and fills the same role with respect to the
+Extraction involves a constituent appearing in a linear position to the left of
+the clause with which it is interpreted. One clause argument position is
+empty. For example, the position filled by {\it frisbee} in the declarative in
+sentence~(\ex{1}) is empty in sentence~(\ex{2}). The wh-item {\it what} in
+sentence~(\ex{2}) is of the same syntactic category as {\it frisbee} in
+sentence~(\ex{1}) and fills the same role with respect to the
 subcategorization.
 
 \enumsentence{Clove caught a frisbee.}
@@ -31,7 +31,7 @@ NP nodes roughly corresponds to the CP and Spec of CP positions in GB.
 All sentential trees with extracted components (this does not include relative
 clause trees) are marked {\bf $<$extracted$>$=+} at the top S node, while
 sentential trees with no extracted components are marked {\bf
-$<$extracted$>$=-}.  Items that take embedded sentences, such as nouns, verbs
+$<$extracted$>$=--}.  Items that take embedded sentences, such as nouns, verbs
 and some prepositions can place restrictions on whether the embedded sentence
 is allowed to be extracted or not.  For instance, sentential subjects and
 sentential complements of nouns and prepositions are not allowed to be
@@ -39,7 +39,7 @@ extracted, while certain verbs may allow extracted sentential complements and
 others may not (e.g. sentences (\ex{1})-(\ex{4})).
 
 \enumsentence{The jury wondered [who killed Nicole].}
-\enumsentence{The jury wondered [whether Simpson killed Nicole].}
+\enumsentence{The jury wondered [who Simpson killed].}
 \enumsentence{The jury thought [Simpson killed Nicole].}
 \enumsentence{$\ast$The jury thought [who did Simpson kill]?}
 
@@ -53,7 +53,7 @@ others may not (e.g. sentences (\ex{1})-(\ex{4})).
 \end{figure} 
 
 
-The tree that is used to derive (\ex{0}) in the English XTAG grammar is shown
+The tree that is used to derive (\ex{-2}) in the English XTAG grammar is shown
 in Figure~\ref{alphaW1nx0Vnx1}\footnote{Features not pertaining to this
 discussion have been taken out to improve readability.}.  The important
 features of extracted trees are:
@@ -74,8 +74,8 @@ from subject NP's, since {\bf $<$case$>$} can continue to be assign from the
 verb to the subject NP position, and from there passed to the extracted NP.
 
 \item The {\bf $<$inv$>$} feature of S$_{r}$ is co-indexed to the 
-{\bf $<$wh$>$} feature of NP through the use of the {\bf $<$inv-link$>$}
-feature in order to force subject-auxiliary inversion where needed (see the
+{\bf $<$wh$>$} feature of NP through the use of the {\bf $<$invlink$>$} feature
+in order to force subject-auxiliary inversion where needed (see
 section~\ref{topicalization} for more discussion of the {\bf
 $<$inv$>$}/{\bf$<$wh$>$} co-indexing and the use of these trees for
 topicalization).
@@ -95,23 +95,23 @@ constructions is captured by equating the values of the S$_{r}$'s {\bf
 $<$inv$>$} feature and the extracted NP's {\bf $<$wh$>$} feature.  This means
 that if the extracted item is a wh-expression, as in wh-questions, the value of
 {\bf $<$inv$>$} will be {\bf +} and an inverted auxiliary will be forced to
-adjoin. If the extracted item is a non-wh, {\bf $<$inv$>$} will be {\bf -}
+adjoin. If the extracted item is a non-wh, {\bf $<$inv$>$} will be {\bf --}
 and no auxiliary adjunction will occur. An additional complication is that
 inversion only occurs in matrix clauses, so the values of {\bf $<$inv$>$} and
 {\bf $<$wh$>$} should only be equated in matrix clauses and not in embedded
 clauses.  In the English XTAG grammar, appropriate equating of the {\bf
 $<$inv$>$} and {\bf $<$wh$>$} features is accomplished using the {\bf
-$<$inv-link$>$} feature and a restriction imposed on the root S of a
+$<$invlink$>$} feature and a restriction imposed on the root S of a
 derivation. In particular, in extraction trees that are used for both
 wh-questions and topicalizations, the value of the {\bf $<$inv$>$} feature for
 the top of the S$_{r}$ node is co-indexed to the value of the {\bf $<$inv$>$}
 feature on the bottom of the S$_{q}$ node.  On the bottom of the S$_{q}$ node
-the {\bf $<$inv$>$} feature is co-indexed to the {\bf $<$inv-link$>$} feature.
+the {\bf $<$inv$>$} feature is co-indexed to the {\bf $<$invlink$>$} feature.
 The {\bf $<$wh$>$} feature of the extracted NP node is co-indexed to the value
 of the {\bf $<$wh$>$} feature on the bottom of S$_{q}$. The linking between the
-value of the S$_{q}$ {\bf $<$wh$>$} and the {\bf $<$inv-link$>$} features is
+value of the S$_{q}$ {\bf $<$wh$>$} and the {\bf $<$invlink$>$} features is
 imposed by a condition on the final root node of a derivation (i.e. the top S
-node of a matrix clause) requires that {\bf $<$inv-link$>$=$<$wh$>$}.  For
+node of a matrix clause) requires that {\bf $<$invlink$>$=$<$wh$>$}.  For
 example, the tree in Figure~\ref{alphaW1nx0Vnx1} is used to
 derive both (\ex{1}) and (\ex{2}).
 
@@ -123,7 +123,7 @@ For the question in (\ex{0}), the extracted item {\it who} has the feature
 value {\bf $<$wh$>$=+}, so the value of the {\bf $<$inv$>$} feature on VP is
 also $+$ and an auxiliary, in this case {\it do}, is forced to adjoin.  For the
 topicalization (\ex{-1}) the values for {\it John}'s {\bf $<$wh$>$} feature and
-for S$_{q}$'s {\bf $<$inv$>$} feature are both {\bf -} and no auxiliary
+for S$_{q}$'s {\bf $<$inv$>$} feature are both {\bf --} and no auxiliary
 adjoins.
 
 
