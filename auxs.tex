@@ -141,7 +141,7 @@ but with most of its features missing.  The full tree is presented here.}
 
 The restrictions outlined in column 3 of Table \ref{aux-table} are
 implemented through the features {\bf $<$mode$>$}, {\bf
-$<$perfective$>$}, {\bf $<$progressive$>$} and {\bf $<$passive$>$}.
+$<$perfect$>$}, {\bf $<$progressive$>$} and {\bf $<$passive$>$}.
 The syntactic lexicon entries for the auxiliaries gives values for
 these features on the foot node~(VP$^{*}$) in Figure~\ref{Vvx}.  Since
 the top features of the foot node must eventually unify with the
@@ -165,11 +165,12 @@ the final tree created for this sentence.
 \label{non-inverted-sentence}
 \end{figure}
 
-The general English restriction that matrix clauses must have tense (or be
-imperatives) is enforced by requiring the top S-node of a sentence to have {\bf
-$<$mode$>$=ind/imp} (indicative or imperative).  Since only the indicative
-sentences have tense, non-tensed clauses are restricted to occurring in
-embedded environments.
+The general English restriction that matrix clauses must have tense
+(or be imperatives) is enforced by requiring the top S-node of a
+sentence to have {\bf $<$mode$>$=ind/imp} (indicative or imperative).
+Since only the indicative and imperative sentences have tense,
+non-tensed clauses are restricted to occurring in embedded
+environments.
 
 Noun-verb contractions are labeled NVC in their part-of-speech field
 in the morphological database and then undergo special processing to
@@ -277,7 +278,8 @@ negative morpheme is present, but this usage is marked as emphatic.  Emphatic
 At present, the XTAG grammar does not have analyses for emphatic {\it do}.
 
 In the XTAG grammar, {\it do} is prevented from co-occurring with other
-auxiliary verbs by a requirement that it adjoin only onto main verbs.  It has
+auxiliary verbs by a requirement that it adjoin only onto main verbs
+({\bf $<$mainv$>$ = $+$}).  It has
 indicative mode, so no other auxiliaries can adjoin above it.\footnote{Earlier,
 we said that indicative mode carries tense with it.  Since only the topmost
 auxiliary carries the tense, any subsequent verbs must {\bf not} have
