@@ -1,17 +1,23 @@
-\section{Underview}
+\chapter{Underview}
+\label{underview}
 
 The morphology, syntactic, and tree databases together comprise the English
-grammar.  Lexical items not in the databases are handled by default mechanisms.
-The range of syntactic phenomena that can be handled is large and includes
-auxiliaries (including inversion), copula, raising and small clause
-constructions, topicalization, relative clauses, infinitives, gerunds,
-passives, adjuncts, it-clefts, wh-clefts, PRO constructions, noun-noun
-modifications, extraposition, determiner phrases, genitives, negation,
-noun-verb contractions and imperatives.  The combination of large scale
-lexicons and wide phenomena coverage result in a robust system.
+grammar.  A lexical item that is not in the databases receives a default tree
+selection and features for its part of speech and morphology.  In designing the
+grammar, a decision was made early on to err on the side of acceptance whenever
+there were conflicting opinions as to whether or not a construction is
+grammatical.  In this sense, the XTAG English grammar functions better as an
+acceptor rather than a generator of English sentences.  The range of syntactic
+phenomena that can be handled is large and includes auxiliaries (including
+inversion), copula, raising and small clause constructions, topicalization,
+relative clauses, infinitives, gerunds, passives, adjuncts, it-clefts,
+wh-clefts, PRO constructions, noun-noun modifications, extraposition,
+determiner phrases, genitives, negation, noun-verb contractions, sentential
+adjuncts and imperatives.  The combination of large scale lexicons and wide
+phenomena coverage result in a robust system.
 
 
-\subsection{Subcategorization Frames}
+\section{Subcategorization Frames}
 \label{subcat-frames}
 
 Elementary trees for non-auxiliary verbs are used to represent the linguistic
@@ -32,37 +38,38 @@ the tree family also contains the trees that would be related to each other
 transformationally in a movement based approach, i.e passivization,
 imperatives, wh-questions, relative clauses, and so forth.  Sentence (\ex{0})
 shows that {\it buy} also subcategorizes for a double NP object.  This means
-that {\it buy} also selects a the double NP object subcategorization frame, or
+that {\it buy} also selects the double NP object subcategorization frame, or
 tree family, with its own set of transformationally related sentence
 structures.  Figure~\ref{subcat-trees}(b) shows the declarative structure for
 this set of sentence structures.
 
 \begin{figure}[ht]
 \centering
-\rule[.1in]{5.0in}{0.01in}
-\begin{tabular}{cc}
-{\psfig{figure=ps/compl-adj-files/alphanx0Vnx1_bought.ps,height=2.0in}} & {\psfig{figure=ps/compl-adj-files/alphanx0Vnx1nx2_bought.ps,height=2.0in}}\\
-(a) & (b) \\ 
+\begin{tabular}{ccc}
+{\psfig{figure=ps/compl-adj-files/alphanx0Vnx1_bought.ps,height=1.8in}} & 
+\hspace*{0.5in} & 
+{\psfig{figure=ps/compl-adj-files/alphanx0Vnx1nx2_bought.ps,height=1.8in}}\\
+(a) & \hspace*{0.5in} & (b) \\ 
 \end{tabular}
 \caption{Different subcategorization frames for the verb {\it buy}}
-\rule[.1in]{5.0in}{0.01in}
 \label{subcat-trees}
 \end{figure}
 
 
-\subsection{Complements and Adjuncts}
+\section{Complements and Adjuncts}
 \label{compl-adj}
 
-Complements and adjuncts have very different structures in our system.
+Complements and adjuncts have very different structures in the XTAG grammar.
 Complements are included in the elementary tree anchored by the verb that
 selects them, while adjuncts do not originate in the same elementary tree as
 the verb anchoring the sentence, but are instead added to a structure by
 adjunction.  The contrasts between complements and adjuncts have been
 extensively discussed in the linguistics literature and the classification of a
-given element as one or the other remains a matter of debate (see \cite{rizzi90}, 
+given element as one or the other remains a matter of debate (see
+\cite{rizzi90},
 \cite{larson88}, \cite{jackendoff90}, \cite{larson90}, \cite{cinque90}, 
 \cite{obernauer84}, \cite{lasnik-saito84}, and \cite{chomsky86}).  The guiding
-rule used in developing this grammar is whether or not the sentence is
+rule used in developing the XTAG grammar is whether or not the sentence is
 ungrammatical without the questioned structure.\footnote{Iteration of a
 structure can also be used as a diagnostic: {\it Srini bought a book at the
 bookstore on Walnut Street for a friend at work}.} Consider the following
@@ -71,52 +78,56 @@ sentences:
 \enumsentence{Srini bought a book.}
 \enumsentence{Srini bought a book at the bookstore.}
 \enumsentence{Srini arranged for a ride.}
-\enumsentence{*Srini arranged.}
+\enumsentence{$\ast$Srini arranged.}
 
-Prepositional phrases are generally considered adjuncts, and have the tree
-structure shown in Figure \ref{compl-adjunct}a.  This adjunction tree would adjoin
-into the tree shown in Figure \ref{subcat-trees}a to generate sentence (\ex{-2}).
-There are verbs, however, such as {\it arrange}, {\it hunger}, and {\it
-differentiate}, that take prepositional phrases as complements.  Sentences
-(\ex{-1}) and (\ex{0}) clearly show that the prepositional phrase are not optional
-for these verbs.  For these sentences, the prepositional phrase will be an
-initial tree (as shown in Figure \ref{compl-adjunct}b) that substitutes into an
-elementary tree, such as the one anchored by the verb {\it arrange} in Figure
-\ref{compl-adjunct}c.
+Prepositional phrases frequently occur as adjuncts, and when they are used as
+adjuncts they have the tree structure shown in Figure~\ref{compl-adjunct}(a).
+This adjunction tree would adjoin into the tree shown in
+Figure~\ref{subcat-trees}(a) to generate sentence (\ex{-2}).  There are verbs,
+however, such as {\it arrange}, {\it hunger} and {\it differentiate}, that take
+prepositional phrases as complements.  Sentences (\ex{-1}) and (\ex{0}) clearly
+show that the prepositional phrase are not optional for these verbs.  For these
+sentences, the prepositional phrase will be an initial tree (as shown in
+Figure~\ref{compl-adjunct}(b)) that substitutes into an elementary tree, such
+as the one anchored by the verb {\it arrange} in Figure~\ref{compl-adjunct}(c).
 
 \begin{figure}[ht]
 \centering
-\rule[.1in]{5.0in}{0.01in}
-\begin{tabular}{ccc}
-{\psfig{figure=ps/compl-adj-files/betavxPnx_at.ps,height=2.0in}} & {\psfig{figure=ps/compl-adj-files/alphaPXPnx_for.ps,height=1.5in}} & {\psfig{figure=ps/compl-adj-files/alphanx0Vpnx1_arranged.ps,height=2.0in}}\\
-(a) & (b) & (c) \\ 
+\begin{tabular}{ccccc}
+{\psfig{figure=ps/compl-adj-files/betavxPnx_at.ps,height=1.8in}} &
+\hspace*{0.5in} &
+{\psfig{figure=ps/compl-adj-files/alphaPXPnx_for.ps,height=1.3in}} &
+\hspace*{0.5in} & 
+{\psfig{figure=ps/compl-adj-files/alphanx0Vpnx1_arranged.ps,height=1.8in}}\\
+(a) & \hspace*{0.5in} & (b) & \hspace*{0.5in} & (c) \\ 
 \end{tabular}
 \caption{Trees illustrating the difference between Complements and Adjuncts}
-\rule[.1in]{5.0in}{0.01in}
 \label{compl-adjunct}
+\label{2;1,9}
 \end{figure}
+
 
 Virtually all parts of speech, except for main verbs, function as both
 complements and adjuncts in the grammar.  More information is available in this
-tech report on various parts of speech as complements: adjectives
-(e.g. Section \ref{nx0Va1-family}), nouns(e.g.
-Section~\ref{nx0Vnx1-family}), and prepositions (e.g. Section~\ref{nx0Vpnx1-family});
-and as adjuncts: adjectives (Section~\ref{adj-modifier}), adverbs
-(Section~\ref{adv-modifier}, nouns (Section~\ref{noun-modifier}), and
-prepositions (Section~\ref{prep-modifier}).
+tech report on various parts of speech as complements: adjectives (e.g. section
+\ref{nx0Va1-family}), nouns (e.g.  section~\ref{nx0Vnx1-family}), and
+prepositions (e.g. section~\ref{nx0Vpnx1-family}); and as adjuncts: adjectives
+(section~\ref{adj-modifier}), adverbs (section~\ref{adv-modifier}), nouns
+(section~\ref{noun-modifier}), and prepositions (section~\ref{prep-modifier}).
 
-\subsection{Non-S constituents}
+\section{Non-S constituents}
 
 Although sentential trees are generally considered to be special cases in any
-grammar, insofar as they make up a 'starting category', it is the case that any
+grammar, insofar as they make up a `starting category', it is the case that any
 initial tree constitutes a phrasal constituent.  These initial trees may have
 substitution nodes that need to be filled (by other initial trees), and may be
-modified by adjunct trees, exactly as the trees rooted in S.  Although grouping is
-possible according to the heads or anchors of these trees, we have not found
+modified by adjunct trees, exactly as the trees rooted in S.  Although grouping
+is possible according to the heads or anchors of these trees, we have not found
 any classification similar to the subcategorization frames for verbs that can
 be used by a lexical entry to `group select' a set of trees.  These trees are
 selected one by one by each lexical item, according to each lexical item's
-idiosyncracies.  The grammar that accompanies this technical report places them
+idiosyncrasies.  The grammar described by this technical report places them
 into several files for ease of use, but these files do not constitute tree
 families in the way that the subcategorization frames do.
 
+\input{case}
