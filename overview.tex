@@ -1,13 +1,11 @@
 \chapter{Overview of the XTAG System}
 \label{overview}
 
-This section is derived in large part from the XTAG project notes
-(\cite{Xtag-notes}).  An additional section on Corpus Parsing and Evaluation
-has not been replicated here (but see Appendix \ref{evaluation}). This section
-focuses on the various components that comprise the parser and English grammar
-in the XTAG system.  Persons interested only in the linguistic analyses in the
-grammar may skip this section without loss of continuity, although we may
-occasionally refer back to the various components mentioned here.
+This section focuses on the various components that comprise the
+parser and English grammar in the XTAG system.  Persons interested
+only in the linguistic analyses in the grammar may skip this section
+without loss of continuity, although we may occasionally refer back to
+the various components mentioned here.
 
 \section{System Description}
 
@@ -130,24 +128,24 @@ may be provided for example sentences.
 Note that lexical items may have more
 than one entry and may select the same tree more than once, using different
 features to capture lexical idiosyncrasies. For a more detailed description of
-the format, see the Xtag User Manual.
+the format, see the XTAG User Manual.
 
 \begin{table}[htb]
-\begin{tabular}{l}
-<<INDEX>>porousness<<ENTRY>>porousness<<POS>>N<<TREES>>\^{ }BNXN \^{ }BN
-\^{ }CNn<<FEATURES>>\#N\_card- \#N\_const- \#N\_decreas- \#N\_definite- \#N\_gen- \#N\_quan- \#N\_refl-
+\begin{verbatim}
+<<INDEX>>porousness<<ENTRY>>porousness<<POS>>N<<TREES>>\^{}BNXN \^{}BN
+\^{}CNn<<FEATURES>>\#N\_card- \#N\_const- \#N\_decreas- \#N\_definite- \#N\_gen- \#N\_quan- \#N\_refl-
 <<INDEX>>coo<<ENTRY>>coo<<POS>>V<<FAMILY>>Tnx0V
 <<INDEX>>engross<<ENTRY>>engross<<POS>>V<<FAMILY>>Tnx0Vnx1<<FEATURES>>\#TRANS+
 <<INDEX>>forbear<<ENTRY>>forbear<<POS>>V<<FAMILY>>Tnx0Vs1<<FEATURES>>\#S1\_WH- \#S1\_inf\_for\_nil
 <<INDEX>>have<<ENTRY>>have<<POS>>V<<ENTRY>>out<<POS>>PL<<FAMILY>>Tnx0Vplnx1
-\end{tabular}   
+\end{verbatim}   
 \caption{Example Syntactic Database Entries}
 
 \label{syn-entries}
 \end{table}
 
 Note that the format described here now serves mostly as a back-up for
-the coded format that Xtag and xsyn use. All maintenance of the syntactic 
+the coded format that XTAG and xsyn use. All maintenance of the syntactic 
 database can now be done through xsyn, without ever having to use this
 format.  
 
@@ -189,8 +187,7 @@ loading grammar files.
 category (main S, embedded S, NP, etc.), and the use of the tagger
 (on/off/retry on failure).
 
-\item Storage/retrieval facilities for elementary and parsed trees as
-text files.
+\item Storage/retrieval facilities for elementary and parsed trees.
 
 \item The production of postscript files corresponding to elementary
 and parsed trees.
@@ -216,7 +213,7 @@ tree-based transformation rules
 XTAG was developed on the Sun SPARC station series. It has been tested
 on various Sun platforms including Ultra-1, Ultra-Enterprise. XTAG is
 freely available from the XTAG web page at {\tt
-  http://www.cis.upenn.edu/~xtag/}. It requires 75 MB of disk space
+  http://www.cis.upenn.edu/\~{}xtag/}. It requires 75 MB of disk space
 (once all binaries and databases are created after the install). XTAG
 requires the following software to run:
 
@@ -225,7 +222,7 @@ requires the following software to run:
 \item A machine running UNIX and X11R4 (or higher). Previous releases
   of X will not work. X11R4 is free software which usually comes
   bundled with your OS. It is also freely available for various
-  platforms at {\tt http://www.xfree86.org}
+  platforms at {\tt http://www.xfree86.org/}
   
 \item A Common Lisp compiler which supports the latest definition of
   Common Lisp (Steele's Common Lisp, second edition). XTAG has been
@@ -233,7 +230,7 @@ requires the following software to run:
   CL is no longer directly supported, however there have been third
   party ports to recent versions of Allegro CL.
   
-\item CLX version 4 or higher. CLX is the lisp equivalent to the Xlib
+\item CLX version 4 or higher. CLX is the Lisp equivalent to the Xlib
   package written in C.
   
 \item Mark Kantrowitz's Lisp Utilities from CMU: logical-pathnames and
@@ -247,13 +244,11 @@ However, we ask that you refer to the appropriate sources for updates.
 
 The morphology database component (\cite{karp92}), no longer under
 licensing restrictions, is available as a separate download from the
-XTAG web page.  FTP instructions and more information can be obtained
-by mailing requests to xtag-request@linc.cis.upenn.edu.
+XTAG web page (see above for URL).
 
 The syntactic database component is also available as part of the XTAG
 system (\cite{EgediMartin94}). 
 
-More information can be obtained on the
-XTAG web page {\tt http://www.cis.upenn.edu/\~{}xtag/} or by mailing a
-request to xtag-request@linc.cis.upenn.edu.
+More information can be obtained on the XTAG web page at {\tt
+  http://www.cis.upenn.edu/\~{}xtag/}.
 
