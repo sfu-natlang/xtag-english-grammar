@@ -1,11 +1,11 @@
 \chapter{Modifiers}
 \label{modifiers}
 
-This section covers various types of modifiers: adverbs, prepositions,
-adjectives, and noun modifiers in noun-noun compounds\footnote{Relative clauses
-are discussed in section~\ref{rel_clauses}.}.  These categories optionally
-modify other lexical items and phrases by adjoining onto them.  In their
-modifier function these items are adjuncts; they are not part of the
+This chapter covers various types of modifiers: adverbs, prepositions,
+adjectives, and noun modifiers in noun-noun compounds.\footnote{Relative
+clauses are discussed in Chapter~\ref{rel_clauses}.}  These categories
+optionally modify other lexical items and phrases by adjoining onto them.  In
+their modifier function these items are adjuncts; they are not part of the
 subcategorization frame of the items they modify.  Examples of some of these
 modifiers are shown in (\ex{1})-(\ex{3}).
 
@@ -35,7 +35,7 @@ nouns.
 
 In addition to being modifiers, adjectives in the XTAG English grammar can be
 also anchor clauses (see Adjective Small Clauses in
-section~\ref{small-clauses}).  There is also one tree family, Intransitive with
+Chapter~\ref{small-clauses}).  There is also one tree family, Intransitive with
 Adjective (Tnx0Va1), that has an adjective as an argument and is used for
 sentences such as {\it Seth felt happy}. In that tree family the adjective
 substitutes into the tree rather than adjoining as is the case for modifiers.
@@ -82,14 +82,15 @@ shown for {\it colorless green ideas\/} in Figure
 
 
 While (\ex{-2})-(\ex{0}) are all semantically anomalous, (\ex{0}) also suffers
-from an ordering problem that makes it seem ungrammatical as well\footnote{This
-is, in fact, the point of the famous linguistic example in (\ex{-1}).}. We
-would argue that the grammar should accept (\ex{-3})-(\ex{-1}) but not
-(\ex{0}).  One of the future goals for the grammar is to develop a treatment of
-adjective ordering similar to that developed by \cite{HockeyEgedi94} for
-determiners\footnote{See section~\ref{det-comparitives} or \cite{HockeyEgedi94}
-for details of the determiner analysis.}. An adequate implementation of
-ordering restrictions for adjectives would rule out (\ex{0}).
+from an ordering problem that makes it seem ungrammatical as
+well.\footnote{This is, in fact, the point of the famous linguistic example in
+(\ex{-1}).} We would argue that the grammar should accept (\ex{-3})-(\ex{-1})
+but not (\ex{0}).  One of the future goals for the grammar is to develop a
+treatment of adjective ordering similar to that developed by
+\cite{HockeyEgedi94} for determiners\footnote{See
+Chapter~\ref{det-comparitives} or \cite{HockeyEgedi94} for details of the
+determiner analysis.}. An adequate implementation of ordering restrictions for
+adjectives would rule out (\ex{0}).
 
 Another area in which we plan to have future grammar development is
 comparatives.  Comparatives that involve ellipsis will require a general
@@ -131,7 +132,7 @@ results in noun-noun compounds regularly having multiple derivations. However,
 the multiple derivations are not a defect in the grammar because they are
 necessary to correctly represent the genuine ambiguity of these phrases.
 
-\enumsentence{[$_{N}$ big [$_{N}$ blue design $_{N}$]$_{N}$]}
+\enumsentence{[$_{N}$ big [$_{N}$ green design $_{N}$]$_{N}$]}
 
 \enumsentence{[$_{N}$ computer [$_{N}$ furniture design $_{N}$]$_{N}$]\\
 \/~~[$_{N}$ [$_{N}$ computer furniture $_{N}$] design $_{N}$]}
@@ -213,12 +214,12 @@ complements (see section~\ref{NPA}).
 \label{adv-modifier}
 
 In the English XTAG grammar, VP and S-modifying adverbs anchor the auxiliary
-trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx trees\footnote{In
+trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx,\footnote{In
 the naming conventions for the XTAG trees, ARB is used for {\underline
 a}dve{\underline {rb}}s.  Because the letters in A, Ad, and Adv are all used
 for other parts of speech ({\underline a}djective, {\underline d}eterminer and
 {\underline v}erb), ARB was chosen to eliminate ambiguity.
-Appendix~\ref{tree-naming} contains a full explanation of naming conventions.},
+Appendix~\ref{tree-naming} contains a full explanation of naming conventions.}
 allowing pre and post modification of S's and VP's.  Besides the VP and
 S-modifying adverbs, the grammar includes adverbs that modify other
 categories. Examples of adverbs modifying an adjective, an adverb, a PP and a
