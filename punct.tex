@@ -19,13 +19,13 @@ into the ``British'' order (this is discussed in more detail below in
 Section \ref{bal}).
 
 The XTAG POS tagger currently tags every punctuation mark as
-itself. These tags are all converted to the POS tag "Punct" before
+itself. These tags are all converted to the POS tag {\it Punct} before
 parsing. This allows us to treat the punctuation marks as a single POS
 class. They then have features which distinguish amongst them.
-Wherever possible, we have the punctuation marks as anchors, to
+Wherever possible we have the punctuation marks as anchors, to
 facilitate early filtering.
 
-The full set of punctuation marks are separated into three classes:
+The full set of punctuation marks is separated into three classes:
 balanced, separating and terminal. The balanced punctuation marks are
 quotes and parentheses, separating are commas, dashes, semi-colons and
 colons, and terminal are periods, exclamation points and question
@@ -51,7 +51,7 @@ punctuation mark. This feature is percolated through all auxiliary
 trees.  Things which may not embed are: colons under colons,
 semi-colons, dashes or commas; semi-colons under semi-colon or commas.
 Although it is rare, parentheses may appear inside of parentheses, say
-with an academic reference inside a parenthesized sentence.
+with a bibliographic reference inside a parenthesized sentence.
  
 %Embedded appositives are fine:`noted Simon Briscoe, UK economist for Midland
 %Montagu, a unit of Midland Bank PLC.'
@@ -76,7 +76,7 @@ as substitution sites.
 When these constructions can appear inside of clauses
 (non-peripherally), they must be separated by punctuation marks on
 both sides. However, when they occur peripherally they have either a
-preceeding or following punctuation mark. We handle this by having
+preceding or following punctuation mark. We handle this by having
 both peripheral and non-peripheral trees for the relevant
 constructions. The alternative is to insert the second (following)
 punctuation mark in the tokenization process (i.e. insert a comma
@@ -90,14 +90,14 @@ comma, dash or parentheses. It is shown in Figure \ref{nxPUnxPU} anchored by
 parentheses. 
 
 \enumsentence{The music here , Russell Smith's ``Tetrameron '' ,
-sounded good . [cc09]}
+sounded good . [Brown:cc09]}
 \enumsentence{...cost 2 million pounds (3 million dollars)}
 \enumsentence{Sen. David Boren (D., Okla.)...}
 
 \enumsentence{
 ...some analysts believe the two recent natural
-disasters -- Hurrican Hugo and the San Francisco earthquake -- will
-carry economic ramifications.... [wsj]
+disasters -- Hurricane Hugo and the San Francisco earthquake -- will
+carry economic ramifications.... [WSJ]
 }
 
 \begin{figure}[hbt]
@@ -113,12 +113,14 @@ The punctuation marks are the anchors and the appositive NP is
 substituted. The appositive can be conjoined, but only with a lexical
 conjunction (not with a comma). Appositives with commas or dashes
 cannot be pronouns, although they may be conjuncts containing
-pronouns; likewise, they cannot modify pronouns.  When used with
+pronouns.  When used with
 parentheses this tree actually presents an alternative rather than an
 appositive, so a pronoun is possible. Finally, the appositive position
 is restricted to having nominative or accusative case to block PRO
 from appearing here.
 
+%Mickey says he has a counter-example w/stacking, something with
+%``Thomson-CSF'' 
 Appositives can be embedded, as in (\ex{1}), but do not seem to be
 able to stack on a single NP. In this they are more like restrictive
 relatives than appositive relatives, which typically can stack.
@@ -158,7 +160,7 @@ says...}
 This tree, which can be anchored by a comma, dash or colon, handles
 asymmetric (peripheral) NP appositives and NP colon expansions of
 NPs. Figure \ref{nxPUnx} shows this tree anchored by a dash and a
-colon. Like the symmetric appostive tree, $\beta$nxPUnxpu, the
+colon. Like the symmetric appositive tree, $\beta$nxPUnxpu, the
 asymmetric appositive cannot be a pronoun, while the colon expansion
 can. Thus, this constraint comes from the syntactic entry in both
 cases rather than being built into the tree.
@@ -178,13 +180,13 @@ appositive and (b) an NP colon expansion (uttered by the Mouse in
 \label{nxPUnx}
 \end{figure}
 
-\enumsentence{the bank's 90\% shareholder -- Petroliam Nasional Bhd. [brown]}
+\enumsentence{the bank's 90\% shareholder -- Petroliam Nasional Bhd. [Brown]}
 
 \enumsentence{...said Chris Dillow, senior U.K. economist at Nomura
 Research Institute .}
 
 \enumsentence{...qualities that are seldom found in one work: Scrupulous
-scholarship, a fund of personal experience,... [cc06]}
+scholarship, a fund of personal experience,... [Brown:cc06]}
 \enumsentence{I had eyes for only one person : him .}
 
 The colon expansion cannot itself contain a colon, so the foot $S$ has the
@@ -266,7 +268,7 @@ attached at S.}
 
 Tree for sentence initial vocatives, anchored by a comma: 
 
-\enumsentence{Stanley/my boy , you were there}
+\enumsentence{Stanley/my boy , you were there .}
 
 The noun phrase may be anything but a pronoun, although it is most
 commonly a proper noun. The clause adjoined to must be indicative or
@@ -274,6 +276,8 @@ imperative.
 
 \section{Bracketing punctuation}
 \label{bal}
+
+\subsection{Simple bracketing}
 
 Trees: $\beta$PUsPU, $\beta$PUnxPU, $\beta$PUnPU, $\beta$PUvxPU, $\beta$PUvPU,
 $\beta$PUarbPU, $\beta$PUaPU, $\beta$PUdPU, $\beta$PUpxPU,
@@ -289,11 +293,11 @@ derived tree.
 
 \enumsentence{Dick Carroll and his accordion (which we now refer to
 as ``Freida'') held over at Bahia Cabana where ``Sir'' Judson
-Smith brings in his calypso capers Oct. 13 .\hfill [brown:ca31]}
+Smith brings in his calypso capers Oct. 13 .\hfill [Brown:ca31]}
 
 \enumsentence{...noted that the term ``teacher-employee'' (as
 opposed to, e.g., ``maintenance employee'') was a not inapt
-description. \hfill [brown:ca35]}
+description. \hfill [Brown:ca35]}
 
 \begin{figure}[hbt]
 \centering
@@ -345,19 +349,28 @@ paragraphs. We could allow a lone open quote to select the $\beta$PUs
 tree, if this is deemed desirable.
 
 Also, the $\beta$PUsPU is selected by a pair of commas to handle
-non-peripheral appositive relative clauses, such as
-\ex{1}. Restrictive and appositive relative clauses are not
+non-peripheral appositive relative clauses, such as in example
+(\ex{1}). Restrictive and appositive relative clauses are not
 syntactically differentiated in the XTAG grammar
-(cf. \ref{rel_clauses}).
+(cf. Chapter \ref{rel_clauses}).
 
 \enumsentence{This news , announced by Jerome Toobin , the orchestra's
-administrative director , brought applause ...  [brown:cc09]}
+administrative director , brought applause ...  [Brown:cc09]}
 
 The trees discussed in this section will only allow balanced
 punctuation marks to adjoin to constituents. We will not get them
 around non-constituents, as in (\ex{1}).
 
 \enumsentence{Mary asked him to leave (and  he left)}
+
+\subsection{$\beta$sPUsPU}
+
+This tree allows a parenthesized clause to adjoin onto a
+non-parenthesized clause.
+
+\enumsentence{Innumerable motels from Tucson to New York boast
+swimming pools ( `` swim at your own risk '' is the hospitable sign
+poised at the brink of most pools ) . \hfill [Brown:ca17]}
 
 \section{Punctuation trees containing no lexical material}
 
@@ -367,7 +380,7 @@ This is the elementary tree for substitution of punctuation
 marks. This tree is used in the quoted speech trees, where including
 the punctuation mark as an anchor along with the verb of saying would
 require a new entry for every tree selecting the relevant tree
-families. It is also used in the tree for parethetical adverbs
+families. It is also used in the tree for parenthetical adverbs
 ($\beta$puARBpuvx), and for S-adjoined PPs and adverbs ($\beta$spuARB
 and $\beta$spuPnx).
 
@@ -377,15 +390,14 @@ Anchored by comma: allows comma-separated clause initial adjuncts,
 (\ex{1}-\ex{2}).
 
 \enumsentence{Here , as in ``Journal'' , Mr. Louis has given himself
-the lion's share of the dancing... \hfill [cc09]}
+the lion's share of the dancing... \hfill [Brown:cc09]}
 
 \enumsentence{Choreographed by Mr. Nagrin, the work filled the second
 half of a program}
 
 To keep this tree from appearing on root Ss (i.e. {\it , sentence}),
 we have a root constraint that {\bf $<$punct struct = nil$>$} (similar
-to the requirement that root Ss be tensed, i.e. {\bf $<$mode =
-ind/imp$>$}).  The {\bf $<$punct struct$>$ = nil} feature on the foot
+to the requirement that root Ss be tensed, i.e. {\bf $<$mode~=~ind/imp$>$}).  The {\bf $<$punct struct$>$ = nil} feature on the foot
 blocks stacking of multiple punctuation marks. This feature is shown
 in the tree in Figure \ref{PUs}.
 
@@ -401,9 +413,9 @@ This tree can be also used by adjuncts on embedded clauses:
 
 \enumsentence{One might expect that in a poetic career of seventy-odd
 years, some changes in style and method would have occurred, some
-development taken place. \hfill [cj65]}
+development taken place. \hfill [Brown:cj65]}
 
-These adjucts sometimes have commas on both sides of the adjunct, or,
+These adjuncts sometimes have commas on both sides of the adjunct, or,
 like (\ex{0}), only have them at the end of the adjunct.
 
 Finally, this tree is also used for peripheral appositive relative
@@ -463,13 +475,13 @@ impossible on the left:
 	
 \enumsentence{Killpath would just have to go out and drag Gun back by
 the heels once an hour ; because he'd be damned if he was going to
-be a mid-watch pencil-pusher . [Brown, cl17]}
+be a mid-watch pencil-pusher . [Brown:cl17]}
 
 \enumsentence{The best rule of thumb for detecting corked wine
 (provided the eye has not already spotted it) is to smell the wet end
 of the cork after pulling it : if it smells of wine , the bottle is
 probably all right ; if it smells of cork , one has grounds for
-suspicion.	[cf27]}
+suspicion.	[Brown:cf27]}
 
 %	?Max left -- he was very tired -- he needed some sleep .
 %	Max left ; he was very tired ; he needed some sleep .
@@ -505,19 +517,19 @@ This tree is also selected by the colon to handle a colon expansion
 after adjunct clause --
 
 \enumsentence{Expressed differently : if the price for becoming a
-faithful follower... \hfill [cd02]}
+faithful follower... \hfill [Brown:cd02]}
 
 \enumsentence{Expressing it differently : if the price for becoming a
 faithful follower... }
 
 \enumsentence{To express it differently : if the price for becoming a
-faithful follower... \hfill [cd02]}
+faithful follower... \hfill [Brown:cd02]}
 
 This tree is only used after adjunct (untensed) clauses, which adjoin
 to the tensed clause using the adjunct clause trees (cf Section
 \ref{adjunct-cls} ); the {\bf mode} of the complete clause is that of
-the matrix rather than the adjunct. Indicative or imperatative
-(i.e. root) clauses separated by a colon use the $\beta$spus tree
+the matrix rather than the adjunct. Indicative or imperative
+(i.e. root) clauses separated by a colon use the $\beta$sPUs tree
 (Section \ref{sPUs}).
 
 \subsection{$\beta$vPU}
@@ -528,8 +540,8 @@ This tree is anchored by a colon or a dash, and occurs between a verb
 and its complement. These typically are lists.
 
 \enumsentence{Printed material Available , on request , from U.S. Department of
-Agriculture , Washington 25, D.C. , are : Cooperative Farm Credit Can
-Assist......\hfill [Brown ch01]}
+Agriculture , Washington 25 , D.C. , are : Cooperative Farm Credit Can
+Assist......\hfill [Brown:ch01]}
 
 \subsection{$\beta$pPU}
 
@@ -548,7 +560,7 @@ conjoined complement.
 
 In general, we attach post-clausal modifiers at the VP node, as you
 typically get scope ambiguity effects with negation ({\it John didn't
-leave today} - did he leave or not?). However, with post-sentential,
+leave today} -- did he leave or not?). However, with post-sentential,
 comma-separated adverbs, there is no ambiguity - in {\it John didn't
 leave, today} he definitely did not leave. Since this tree is only
 selected by a subset of the adverbs (namely, those which can appear
@@ -556,7 +568,7 @@ pre-sententially, without a punctuation mark), it is anchored by the
 adverb.
 
 \enumsentence{The names of some of these products don't suggest the 
-risk involved in buying them , either . \hfill [wsj]}
+risk involved in buying them , either . \hfill [WSJ]}
 
 %It should not be forgotten that wines mature fastest in half-bottles,
 %less fast in full bottles, slowly in Magnums -- and slower yet in
@@ -604,3 +616,4 @@ directed . }
 %Add entry for PUpxPU w/commas and dashes, appositive use (like
 %relative clauses)
  
+% LocalWords:  bal paren excl punct dquote
