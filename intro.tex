@@ -1,131 +1,294 @@
-\chapter{Feature-Based, Lexicalized Tree Adjoining Grammars}
+
+\chapter{Introduction to Lexicalized Tree Adjoining Grammars}
 \label{intro-FBLTAG}
 
-The English grammar described in this report is based on the TAG formalism
-(\cite{joshi75}), which has been extended to include lexicalization
-(\cite{schabes88}), and unification-based feature structures
-(\cite{vijay91}). Tree Adjoining Languages (TALs) fall into the class of mildly
-context-sensitive languages, and as such are more powerful than context free
-languages.  The TAG formalism in general, and lexicalized TAGs in particular,
-are well-suited for linguistic applications.  As first shown by \cite{joshi85}
-and \cite{kj87}, the properties of TAGs permit us to encapsulate diverse
-syntactic phenomena in a very natural way.  For example, TAG's extended domain
-of locality and its factoring of recursion from local dependencies lead, among
-other things, to a localization of so-called unbounded dependencies.
+Tree-adjoining grammar (TAG) is a formal tree rewriting system. TAG and
+Lexicalized Tree-Adjoining Grammar (LTAG) have been extensively studied both with
+respect to their formal properties and to their linguistic relevance. TAG and
+LTAG are formally equivalent, however, from the linguistic perspective LTAG is
+the system we will be concerned with in this paper. We will often use these
+terms TAG and LTAG interchangeably.
 
-\section{TAG formalism}
+The motivations for the study of LTAG are both linguistic and formal. The
+elementary objects manipulated by LTAG are structured objects (trees or
+directed acyclic graphs) and not strings. Using structured objects as the
+elementary objects of the formal system, it is possible to construct formalisms
+whose properties relate directly to the study of strong generative capacity
+(i.e., structural descriptions), which is more relevant to the linguistic
+descriptions than the weak generative capacity (sets of strings). 
 
-The primitive elements of the standard TAG formalism are known as elementary
-trees.  \xtagdef{Elementary trees} are of two types: initial trees and
-auxiliary trees (see Figure \ref{elem-fig}).  In describing natural language,
-\xtagdef{initial trees} are minimal linguistic structures that contain no
-recursion, i.e. trees containing the phrasal structure of simple sentences,
-NP's, PP's, and so forth.  Initial trees are characterized by the following: 1)
-all internal nodes are labeled by non-terminals, 2) all leaf nodes are labeled
-by terminals, or by non-terminal nodes marked for substitution. An initial tree
-is called an X-type initial tree if its root is labeled with type X.
+Each grammar formalism specifies a domain of locality, i.e., a domain over
+which various dependencies (syntactic and semantic) can be specified. It turns
+out that the various properties of a formalism (syntactic, semantic,
+computational, and even psycholinguistic) follow, to a large extent, from the
+initial specification of the domain of locality. 
 
-\begin{figure}[htb]
-\centering
-\psfig{figure=ps/intro-files/schematic-elem-trees.ps,height=1.9in}
-\caption{Elementary trees in TAG}
-\label{elem-fig}
-\end{figure}
-
-Recursive structures are represented by \xtagdef{auxiliary trees}, which
-represent constituents that are adjuncts to basic structures (e.g. adverbials).
-Auxiliary trees are characterized as follows: 1) all internal nodes are labeled
-by non-terminals, 2) all leaf nodes are labeled by terminals, or by
-non-terminal nodes marked for substitution, except for exactly one non-terminal
-node, called the foot node, which can only be used to adjoin the tree to
-another node\footnote{A null adjunction constraint (NA) is systematically put
-on the foot node of an auxiliary tree. This disallows adjunction of a tree onto
-the foot node itself.}, 3) the foot node has the same label as the root node of
-the tree.
-
-There are two operations defined in the TAG formalism,
-substitution\footnote{Technically, substitution is a specialized version of
-adjunction, but it is useful to make a distinction between the two.} and
-adjunction.  In the \xtagdef{substitution} operation, the root node on an
-initial tree is merged into a non-terminal leaf node marked for substitution in
-another initial tree, producing a new tree.  The root node and the substitution
-node must have the same name.  Figure \ref{proto-subst} shows two initial trees
-and the tree resulting from the substitution of one tree into the other.
-
-\begin{figure}[htb]
-\centering
-\psfig{figure=ps/intro-files/schematic-subst2.ps,height=1.9in}
-\caption{Substitution in TAG}
-\label{proto-subst}
-\end{figure}
-
-In an \xtagdef{adjunction} operation, an auxiliary tree is grafted onto a
-non-terminal node anywhere in an initial tree.  The root and foot nodes of the
-auxiliary tree must match the node at which the auxiliary tree adjoins.  Figure
-\ref{proto-adjunction} shows an auxiliary tree and an initial tree, and the
-tree resulting from an adjunction operation.
-
-\begin{figure}[htb]
-\centering
-\psfig{figure=ps/intro-files/schematic-adjunction2.ps,height=1.9in}
-\caption{Adjunction in TAG}
-\label{proto-adjunction}
-\end{figure}
-
-A TAG $G$ is a collection of finite initial trees, $I$, and auxiliary trees,
-$A$.  The \xtagdef{tree set} of a TAG $G$, ${\cal T}(G)$ is defined to be the
-set of all derived trees starting from S-type initial trees in $I$ whose
-frontier consists of terminal nodes (all substitution nodes having been
-filled). The \xtagdef{string language} generated by a TAG, ${\cal L}(G)$, is
-defined to be the set of all terminal strings on the frontier of the trees in
-${\cal T}(G)$.
-
-\section{Lexicalization}
-
-`Lexicalized' grammars systematically associate each elementary structure with
-a lexical anchor. This means that in each structure there is a lexical item
-that is realized.  It does not mean simply adding feature structures (such as
-head) and unification equations to the rules of the formalism.  These resultant
-elementary structures specify extended domains of locality (as compared to
-CFGs) over which constraints can be stated.
-
-Following \cite{schabes88} we say that a grammar is \xtagdef{lexicalized} if it
-consists of 1) a finite set of structures each associated with a lexical item,
-and 2) an operation or operations for composing the structures.  Each lexical
-item will be called the \xtagdef{anchor} of the corresponding structure, which
-defines the domain of locality over which constraints are specified.  Note
-then, that constraints are local with respect to their anchor.
-
-Not every grammar is in a lexicalized form.\footnote{Notice the similarity of
-the definition of a lexicalized grammar with the off line parsability
-constraint (\cite{kaplan83}). As consequences of our definition, each structure
-has at least one lexical item (its anchor) attached to it and all sentences are
-finitely ambiguous.} In the process of lexicalizing a grammar, the lexicalized
-grammar is required to be strongly equivalent to the original grammar, i.e. it
-must produce not only the same language, but the same structures or tree set as
-well.
-
-\begin{figure*}[htb]
-\centering
-\begin{tabular}{ccccccc}
-{{\psfig{figure=ps/intro-files/john.ps,height=1.0in}}\label{fig1a}}  &
-\hspace{0.1in} &
-{{\psfig{figure=ps/intro-files/walked.ps,height=1.4in}}\label{fig1b}}  & 
-\hspace{0.1in} &
-{{\psfig{figure=ps/intro-files/to.ps,height=1.7in}} \label{fig1c} }  & 
-\hspace{0.1in} &
-{{\psfig{figure=ps/intro-files/philly.ps,height=1.0in}} \label{fig1d}} \\
-(a)&&(b)&&(c)&&(d)\\
-\end{tabular}\\
-\caption {Lexicalized Elementary trees}
-\label {lex-elem-trees}
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=3in]{ps/intro-files/cfg-locality.eps}
+\caption{\label{cfg} Domain of locality of a context-free grammar}
+\end{center}
 \end{figure*}
 
-In Figure \ref{lex-elem-trees}, which shows sample initial and auxiliary trees,
-substitution sites are marked by a $\downarrow$, and foot nodes are marked by
-an $\ast$.  This notation is standard and is followed in the rest of this
-report.
+\subsection{Domain of locality of CFGs} 
 
+In a context-free grammar (CFG) the domain of locality is the one
+level tree corresponding to a rule in a CFG (Fig.~\ref{cfg}). It is
+easily seen that the arguments of a predicate (for example, the two
+arguments of {\it likes}) are not in the same local domain. The two
+arguments are distributed over the two rules (two domains of
+locality)-- $S \rightarrow NP \ VP$ and $VP \rightarrow V \ NP$. They
+can be brought together by introducing a rule $S \rightarrow NP \ V \
+VP $. However, then the structure provided by the VP node is lost. We
+should also note here that not every rule (domain) in the CFG in
+(Fig.~\ref{cfg}) is lexicalized. The three rules on the right are
+lexicalized, i.e., they have a lexical anchor. The rules on the right
+are not lexicalized. The second and the third rules on the left are
+almost lexicalized, in the sense that they each have a preterminal
+category ($V$ in the second rule and $ADV$ in the third rule), i.e.,
+by replacing $V$ by {\it likes} and $ADV$ by {\it passionately} these
+two rules will become lexicalized. However, the first rule on the left
+($S \rightarrow NP \ VP$) cannot be lexicalized. Can a CFG be
+lexicalized, i.e., given a CFG, $G$, can we construct another CFG,
+$G'$, such that every rule in $G'$ is lexicalized and $T(G)$, the set
+of (sentential) trees (i.e., the tree language of $G$) is the same as
+the tree language $T(G')$ of $G'$? It can be shown that this is not
+the case \cite{joshischabes96}.  Of course, if we require that only
+the string languages of $G$ and $G'$ be the same (i.e., they are
+weakly equivalent) then any CFG can be lexicalized. This follows from
+the fact that any CFG can be put in the Greibach normal form where
+each rule is of the form $ A \rightarrow w \ B1 \ B2 \ ... \ Bn$ where
+$w$ is a lexical item and the $B's$ are nonterminals. The
+lexicalization we are interested in req uires the tree languages
+(i.e., the set of structural descriptions) be the same, i.e., we are
+interested in the `strong' lexicalization. To summarize, a CFG cannot
+be strongly lexicalized by a CFG. This follows from the fact that the
+domain of locality of CFG is a one level tree corresponding to a rule
+in the grammar. Note that there are two issues we are concerned with
+here-- lexicalization of each elementary domain and the encapsulation
+of the arguments of the lexical anchor in the elementary domain of
+locality. The second issue is independent of the first issue. From the
+mathematical point of view the first issue, i.e., the lexicalization
+of the elementary domains of locality is the crucial one. We can
+obtain strong lexicalization without satisfying the requirement
+specified in the second issue (encapsulation of the arguments of the
+lexical anchor). Of course, from the linguistic point view the second
+issue is very crucial. What this means is that among all possible
+strong lexicalizations we should choose only those that meet the
+requirements of the second issue. For our discussions in this paper we
+will assume that we always make such a choice.
+
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=1.5in]{ps/intro-files/schematic-subst2.eps}
+\caption{\label{substitution} Substitution}
+\end{center}
+\end{figure*}
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=2.5in]{ps/intro-files/treesubst.eps}
+\caption{\label{tsg} Tree substitution grammar}
+\end{center}
+\end{figure*}
+
+\subsection{Lexicalization of CFGs}
+
+Now we can ask the following question. Can we strongly lexicalize a
+CFG by a grammar with a larger domain of locality?
+Fig.~\ref{substitution} and Fig.~\ref{tsg} show a tree substitution
+grammar where the elementary objects (building blocks) are the three
+trees in Fig.~\ref{tsg} and the combining operation is the tree
+substitution operation shown in Fig.~\ref{substitution}. Note that
+each tree in the tree substitution grammar (TSG), $G'$ is lexicalized,
+i.e., it has a lexical anchor. It is easily seen that $G'$ indeed
+strongly lexicalizes $G$. However, TSG's fail to strongly lexicalize
+CFG's in general. We show this by an example. Consider the CFG, $G$,
+in Fig.~\ref{tsg2} and a proposed TSG, $G'$. It is easily seen that
+although $G$ and $G'$ are weakly equivalent they are not strongly
+equivalent. In $G'$, suppose we start with the tree $\alpha_1$ then by
+repeated substitutions of trees in $G'$ (a node marked with a vertical
+arrow denotes a substitution site) we can grow the right side of
+$\alpha_1$ as much as we want but we cannot grow the left
+side. Similarly for $\alpha_2$ we can grow the left side as much as we
+want but not the right side. However, trees in $G$ can grow on both
+sides. Hence, the TSG, $G'$, cannot strongly lexicalize the CFG, $G$
+\cite{joshischabes96}.
+
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=1.8in]{ps/intro-files/treesubst-rec.eps}
+\caption{\label{tsg2} A tree substitution grammar}
+\end{center}
+\end{figure*}
+
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=1.5in]{ps/intro-files/schematic-adjunction2.eps}
+\caption{\label{adjunction} Adjoining}
+\end{center}
+\end{figure*}
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=3in]{ps/intro-files/adj-arise.eps}
+\caption{\label{tsg-adj} Adjoining arises out of lexicalization}
+\end{center}
+\end{figure*}
+
+We now introduce a new operation called `adjoining' as shown in
+Fig.~\ref{adjunction}. Adjoining involves splicing (in serting) one
+tree into another. More specifically, a tree $\beta$ as shown in
+Fig.~\ref{adjunction} is inserted (adjoined) into the tree $\alpha$ at
+the node $X$ resulting in the tree $\gamma$. The tree $\beta$, called
+an auxiliary tree, has a special form. The root node is labeled with a
+nonterminal, say $X$ and on the frontier there is also a node labeled
+$X$ called the foot node (marked with *). There could be other nodes
+(terminal or nonterminal) nodes on the frontier of $\beta$, the
+nonterminal nodes will be marked as substitution sites (with a
+vertical arrow). Thus if there is another occurrence of $X$ (other
+than the foot node marked with *) on the frontier of $\beta$ it will
+be marked with the vertical arrow and that will be a substitution
+site. Given this specification, adjoining $\beta$ to $\alpha$ at the
+node $X$ in $\alpha$ is uniquely defined. Adjoining can also be seen
+as a pair of substitutions as follows: The subtree at $X$ in $\alpha$
+is detached, $\beta$ is substituted at $X$ and the detached subtree is
+then substituted at the foot node of $\beta$. A tree substitution
+grammar when augmented with the adjoining operation is called a
+tree-adjoining grammar (lexicalized tree-adjoining grammar because
+each elementary tree is lexically anchored). In short, LTAG consists
+of a finite set of elementary trees, each lexicalized with at least
+one lexical anchor. The elementary trees are either initial or
+auxiliary trees. Auxiliary trees have been defined already. Initial
+trees are those for which all nonterminal nodes on the frontier are
+substitution nodes. It can be shown that any CFG can be strongly
+lexicalized by an LTAG~\cite{joshischabes96}.
+
+In Fig.~\ref{tsg-adj} we show a TSG, $G'$, augmented by the operation
+of adjoining, which strongly lexicalizes the CFG, $G$. Note that the
+LTAG looks the same as the TSG considered in Fig.~\ref{tsg2}. However,
+now trees $\alpha_1$ and $\alpha_2$ are auxiliary trees (marked with
+*) that can participate in adjoining. Since adjoining can insert a
+tree in the interior of another tree it is possible to grow both sides
+of the tree $\alpha_1$ and tree $\alpha_2$, which was not possible
+earlier with substitution alone. In summary, we have shown that by
+increasing the domain of locality we have achieved the following: (1)
+lexicalized each elementary domain, (2) introduced an operation of
+adjoining, which would not be possible without the increased domain of
+locality (note that with one level trees as elementary domains
+adjoining becomes the same as substitution since there are no interior
+nodes to be operated upon), and (3) achieved strong lexicalization of
+CFGs.
+
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=2in]{ps/intro-files/likes-ex.eps}
+\caption{\label{trees-likes} LTAG: Elementary trees for {\it likes}}
+\end{center}
+\end{figure*}
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=2in]{ps/intro-files/ltag-sampletrees.eps}
+\caption{\label{more-trees} LTAG: Sample elementary trees}
+\end{center}
+\end{figure*}
+
+\subsection{Lexicalized tree-adjoining grammars}
+
+Rather than giving formal definitions for LTAG and derivations in LTAG
+we will give a simple example to illustrate some key aspects of
+LTAG. We show some elementary trees of a toy LTAG grammar of
+English. Fig.~\ref{trees-likes} shows two elementary trees for a verb
+such as {\it likes}. The tree $\alpha_1$ is anchored on {\it likes}
+and encapsulates the two arguments of the verb. The tree $\alpha_2$
+corresponds to the object extraction construction. Since we need to
+encapsulate all the arguments of the verb in each elementary tree for
+{\it likes}, for the object extraction construction, for example, we
+need to make the elementary tree associated with {\it likes} large
+enough so that the extracted argument is in the same elementary
+domain. Thus, in principle, for each `minimal' construction in which
+{\it likes} can appear (for example, subject extraction,
+topicalization, subject relative, object relative, passive, etc.)
+there will be an elementary tree associated with that construction. By
+`minimal' we mean when all recursion has been factored away. This
+factoring of recursion away from the domain over which the
+dependencies have to be specified is a crucial aspect of LTAGs as they
+are used in linguistic descriptions. This factoring allows all
+dependencies to be localized in the elementary domains. In this sense,
+there will, therefore, be no long distance dependencies as such. They
+will all be local and will become long distance on account of the
+composition operations, especially adjoining.
+
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=2.5in]{ps/intro-files/ltag-derivation.eps}
+\caption{\label{ltag-derivation} LTAG derivation for {\it who does Bill think Harry likes}}
+\end{center}
+\end{figure*}
+
+Fig.~\ref{more-trees} shows some additional trees. Trees $\alpha_3$,
+$\alpha_4$, and $\alpha_5$ are initial trees and trees $\beta_1$ and
+$\beta_2$ are auxiliary trees with foot nodes marked with *. A
+derivation using the trees in Fig.~\ref{more-trees} is shown in
+Fig.~\ref{ltag-derivation}. The trees for {\it who} and {\it Harry}
+are substituted in the tree for {\it likes} at the respective $NP$
+nodes, the tree for {\it Bill} is substituted in the tree for {\it
+think} at the $NP$ node, the tree for {\it does} is adjoined to the
+root node of the tree for {\it think} tree (adjoining at the root node
+is a special case of adjoining), and finally the derived auxiliary
+tree (after adjoining $\beta_2$ to $\beta_1$) is adjoined to the
+indicated interior $S$ node of the tree $\alpha_2$. This derivation
+results in the derived tree for {\it who does Bill think Harry likes}
+as shown in Fig.~\ref{derived-tree}. Note that the dependency between
+{\it who} and the complement $NP$ in $\alpha_2$ (local to that tree)
+has been stretched in the derived tree in
+Fig.~\ref{derived-tree}. This tree is the conventional tree associated
+with the sentence.
+
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=2.5in]{ps/intro-files/ltag-derived-tree.eps}
+\caption{\label{derived-tree} LTAG derived tree for {\it who does Bill think Harry likes}}
+\end{center}
+\end{figure*}
+
+
+However, in LTAG there is also a derivation tree, the tree that
+records the history of composition of the elementary trees associated
+with the lexical items in the sentence. This derivation tree is shown
+in Fig.~\ref{ltag-derivation-tree}. The nodes of the tree are labeled
+by the tree labels such as $\alpha_2$ together with the lexical
+anchor\footnote{The derivation trees of LTAG have a close relationship
+to the dependency trees, although there are some crucial differences;
+however, the semantic dependencies are the same.}.  The derivation
+tree is the crucial derivation structure for LTAG. We can obviously
+build the derived tree from the derivation tree. For semantic
+computation the derivation tree (and not the derived tree) is the
+crucial object. Compositional semantics is defined on the derivation
+tree. The idea is that for each elementary tree there is a semantic
+representation associated with it and these representations are
+composed using the derivation tree. Since the semantic representation
+for each elementary tree is directly associated with the tree there is
+no need to reproduce necessarily the internal hierarchy in the
+elementary tree in the semantic
+representation~\cite{joshi99:_compos_ltag}. This allows the so-called
+`flat' semantic representation as well as helps in dealing with some
+non-compositional aspects as in the case of rigid and flexible idioms.
+
+
+\begin{figure*}[ht] 
+\begin{center}
+\includegraphics[height=1.5in]{ps/intro-files/ltag-derivation-tree.eps}
+\caption{\label{ltag-derivation-tree} LTAG derivation tree}
+\end{center}
+\end{figure*}
 
 \section{Unification-based features}
 
@@ -140,7 +303,7 @@ logically carries the bottom features.
 \begin{figure}[htb]
 \centering
 \begin{tabular}{c}
-\psfig{figure=ps/intro-files/schematic-feat-subst.ps,height=2.0in}
+\includegraphics[height=1.5in]{ps/intro-files/schematic-feat-subst.eps}
 \end{tabular}
 \caption{Substitution in FB-LTAG}
 \label{subst-fig}
@@ -162,7 +325,7 @@ clearly.
 \centering
 \begin{tabular}{c}
 \hspace{0.65in}
-\psfig{figure=ps/intro-files/schematic-feat-adjunction.ps,height=2.0in}
+\includegraphics[height=1.5in]{ps/intro-files/schematic-feat-adjunction.eps}
 \end{tabular}
 \caption{Adjunction in FB-LTAG}
 \label{adjunct-fig}
@@ -181,9 +344,9 @@ of the foot, U$=$unification}.
 \begin{figure}[htbp]
 \centering
 \begin{tabular}{ccc}
-{\psfig{figure=ps/intro-files/think-feat.ps,height=6.5in}}  &
+\includegraphics[height=4.5in]{ps/intro-files/think-feat.eps}  &
 \hspace{0.6in}
-{\psfig{figure=ps/intro-files/want-feat.ps,height=6.5in}} \\
+\includegraphics[height=4.5in]{ps/intro-files/want-feat.eps} \\
 {\it think} tree&{\it want} tree\\
 \end{tabular}\\
 \caption {Lexicalized Elementary Trees with Features}
@@ -216,4 +379,103 @@ easily captured in the features and passed to other nodes to constrain which
 trees this tree can adjoin into, both cutting down the number of separate trees
 needed and enforcing conceptual Selective Adjunctions (SA).
 
+\section{Some important properties of LTAG}
+
+The two key properties of LTAG are (1) extended domain of locality
+(EDL) (for example, as compared to CFG), which allows (2) factoring
+recursion from the domain of dependencies (FRD), thus making all
+dependencies local. All other properties of LTAG (mathematical,
+linguistic, and even psycholinguistic) follow from EDL and FRD. TAGs
+(LTAGs) belong to the so-called class of mildly context-sensitive
+grammars~\cite{joshi85}. CFL's are properly contained in the class of
+languages of LTAG, which in turn are properly contained in the class
+of context-sensitive languages. There is a machine characterization of
+TAG (LTAG), called embedded pushdown automaton (EPDA)~\cite{vijay87},
+i.e., for every TAG language there is an EPDA which corresponds to
+this (and only this) language and the language accepted by any EPDA is
+a TAG language. EPDAs have been used to model some psycholinguistic
+phenomena, for example, processing crossed dependencies and nested
+dependencies have been in discussed in~\cite{joshi90}. With respect to
+formal properties, the class of TAG languages enjoys all the important
+properties of CFLs, including polynomial parsing (with complexity
+$O(n^{6}$)).
+
+Large scale wide coverage grammars have been built using LTAG, the
+XTAG system (LTAG grammar and lexicon for English and a parser) being
+the largest so far (for further details see (The XTAG Research Group
+(2000)). In the XTAG system, each node in each LTAG tree is decorated
+with two feature structures (top and bottom feature structures), in
+contrast to the CFG based feature structure grammars, because
+adjoining can augment a tree internally, while in a CFG based grammar
+a tree can be augmented only at the frontier. It is possible to define
+adjoining and substitution (as it is done in the XTAG system) in terms
+of appropriate unifications of the top and bottom feature
+structures. Because of FRD (factoring recursion from the domain of
+dependencies), there is no recursion in the feature
+structures. Therefore, in principle, feature structures can be
+eliminated. However, they are crucial for linguistic
+descriptions. Constraints on substitution and adjoining are modeled
+via these feature structures~\cite{vijay87}. This method of
+manipulating feature structures is a direct consequence of the
+extended domain of locality of LTAG.
+
+\section{Some related systems}
+
+{\bf Categorial Grammars:} Categories assigned to lexical items in a
+categorial grammar framework do encapsulate the arguments of the
+lexical anchor. It is of interest to see how the basic ideas in LTAG
+could be incorporated in a categorial framework. The idea is not to
+translate LTAG into a categorial grammar but rather construct a
+categorial system with properties similar to LTAG. This is achieved by
+associating partial proof trees with lexical items. These partial
+proof trees are obtained by starting with the type assignment for a
+lexical item as specified by a categorial grammar and then `unfolding'
+it by using certain categorial inference rules such as function
+application. This unfolding is done until the slots for the arguments
+of the lexical anchor are exposed. We thus have a finite collection of
+partial proof trees (lexicalized, of course) which serve as the
+building blocks of our system (analogous to the finite set of
+elementary trees in LTAG). These proof trees are then combined by
+universal categorial inference rules in terms of cuts. Informally
+speaking, the proof trees are hooked up by linking the conclusion
+nodes of one tree to the assumption nodes of another tree. For a
+further discussion of such systems and their relationship to LTAG can
+be found in \cite{JoshiKulick97,joshi99:_proof_trees}.
+
+{\bf From sentence structure to discourse structure:} Using the
+insights from LTAG a structural and presuppositional a ccount of local
+discourse structure has been presented
+in~\cite{webber99:_discourse_tag}. The idea is to start the analysis
+of discourse in the same way as one starts the analysis of a clause,
+looking at how its syntax and semantics project from the lexicon. This
+is complementary to the issue of discourse pragmatics --how these
+small syntactic units of discourse are used in achieving communicative
+intentions --and to the other discourse processes that provide
+additional organizational overlays on these units. A key feature of
+this approach is that semantic discourse relations are associated with
+syntactic structures and anaphoric links, and that the properties of
+the two are (not surprisingly) different. Together they allow more
+complex semantics to be conveyed through simpler structures.
+
+{\bf Phrase structure composition and syntactic dependencies:}
+\cite{frank00:_tag_book} presents a comprehensive perspective on ph
+rase structure composition and syntactic dependencies in a TAG-based
+grammatical architecture and compares it to the minimalist framework,
+showing that a number of stipulative and problematic aspects of that
+theory can be eliminated.
+
+
+
+\section{Summary}
+
+The domain of locality of a grammar formalism, i.e., the domain over which
+various dependencies can be specified determines to a large extent the
+syntactic, semantic, computational, and even psycholinguistic properties of the
+formalism. From this perspective the extended domain of Lexicalized
+Tree-Adjoining Grammars (LTAG) -- extended as compared to the domain of locality
+of CFGs, for example -- was explored. This extended domain is achieved by
+specifying the elementary objects of the grammar as structured objects instead
+of strings, together with two universal combining operations (substitution and
+adjoining). This perspective allows us to study directly many aspects of strong
+generative capacity which are more useful for linguistic description.  
 
