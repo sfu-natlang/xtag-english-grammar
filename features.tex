@@ -1,11 +1,11 @@
 \chapter{Features}
 \label{features}
 
-Table~\ref{feature-table} contains a comprehensive list of the features in the
-XTAG grammar and their possible values.
+This appendix consists of short `biographical' sketches of the various
+features currently in use in the XTAG English
+grammar. Table~\ref{feature-table} contains a comprehensive list of the
+features in the XTAG grammar and their possible values.
 
-This section consists of short `biographical' sketches of the various features
-currently in use in the XTAG English grammar.
 
 \footnotesize
 \begin{table}[htbp]
@@ -20,7 +20,7 @@ $<$agr num$>$&plur,sing\\
 $<$agr pers$>$&1,2,3\\
 $<$agr gen$>$&fem,masc,neuter\\
 $<$assign-case$>$&nom,acc,none\\
-$<$assign-comp$>$&that,whether,if,for,ecm,rel,inf\_nil,ind\_nil,ppart\_nil,none\\
+$<$assign-comp$>$&that,whether,if,for,ecm,inf\_nil,ind\_nil,ppart\_nil,none\\
 $<$card$>$&$+,-$\\
 $<$case$>$&nom,acc,gen,none\\
 $<$comp$>$&that,whether,if,for,rel,inf\_nil,ind\_nil,nil\\
@@ -33,7 +33,6 @@ $<$contr$>$&$+,-$\\
 $<$control$>$&no value, indexing only\\
 $<$decreas$>$&$+,-$\\
 $<$definite$>$&$+,-$\\
-$<$displ-const$>$&$+,-$\\
 $<$equiv$>$&$+,-$\\
 $<$extracted$>$&$+,-$\\
 $<$gen$>$&$+,-$\\
@@ -381,17 +380,17 @@ accusative case to the subject of their complement clause.
 
 In previous versions of the grammar, the distribution of PRO was controlled by
 case features, similar to its treatment GB theory. PRO anchored an NP initial
-tree and had the feature case {\bf none}. This tree could substitute into NP
+tree and had the case feature {\bf none}. This tree could substitute into NP
 positions, but only unify in a position where either case {\bf none} or no case
 at all was assigned, but not in positions with case {\bf nom} or {\bf acc}.
 
-Currently, however, we have dispensed with the non-lexicalized PRO tree, and
-tenseless verbs no longer have the 
-feature {\bf $<$assign-case$>$=none}. Rather than substituting in, PRO
-is built into the subject position of the relevant sentential (and gerund)
-trees.\footnote{In this, we follow the treatment of PRO in the French XTAG
-project \cite{ACK00}.} \footnote{Note that, as of the Fall 2000 release, not
-all the PRO trees had been included in the grammar. Thus, some necessary trees
+Currently, however, we have dispensed with PRO as an anchoring element, and
+tenseless verbs no longer have the feature {\bf
+$<$assign-case$>$=none}. Rather than substituting in, PRO is built into the
+subject position of the relevant sentential (and gerund) trees.\footnote{In
+this, we follow the treatment of PRO in the French XTAG project
+\cite{ACK00}.} \footnote{Note that, as of the Spring 2001 release, not all
+the PRO trees had been included in the grammar. Thus, some necessary trees
 are missing.}
 
 The distribution of PRO is still controlled by case features to some degree,
@@ -631,7 +630,7 @@ $\langle$mode$\rangle$} value of PP predicative trees headed by a null
 copula.  Only the copula auxiliary tree, some sentential complement
 verbs (such as {\it consider} and raising verb auxiliary trees have
 {\bf nom/prep} as the {\bf $\langle$mode$\rangle$} feature
-specification of their foot node. This allow them, and only them, to
+specification of their foot node. This allows them, and only them, to
 adjoin onto AP/NP/PP predicative trees with null copulas.
 
 \subsection{Auxiliary Selection}
@@ -679,9 +678,9 @@ The following features are used to ensure the appropriate distribution
 of complementizers:
 \\
 {\bf $\langle$comp$\rangle$}, possible values: {\bf that, if, whether,
-for, rel, inf\_nil, ind\_nil, nil}\\
+for, inf\_nil, ind\_nil, nil}\\
 {\bf $\langle$assign-comp$\rangle$}, possible values: {\bf that, if,
-whether, for, ecm, rel, ind\_nil, inf\_nil, none}\\
+whether, for, ecm, ind\_nil, inf\_nil, none}\\
 {\bf $\langle$mode$\rangle$}, possible values: {\bf ind, inf, sbjnct, ger, base, ppart, 
 nom, prep}\\
 {\bf $\langle$wh$\rangle$}, possible values: {\bf +, --}
@@ -801,13 +800,13 @@ Features that are peculiar to the relative clause system are:\\
 {\bf $\langle$rel-clause$\rangle$}, possible values are {\bf +/--}
 
 \begin{itemize}
-\item {\bf $\bullet$ $<$nocomp-mode$>$}:
+\item {\bf $<$nocomp-mode$>$}:
 
 Relative clauses which have subject extraction cannot have a null COMP,
 unless there is an intervening clause or the relative clause is a reduced
 relative ({\bf mode = inf/ppart/ger}). In order to ensure this, the top
 feature set of the root node of the relative clause is specified for {\bf
-$<$nocomp-mode$>$} with {\bf inf/ger/ppart} in conjunction with the
+$<$nocomp-mode$>$}={\bf inf/ger/ppart} in conjunction with the
 following equations:
 
 \enumsentence{{\bf S$_{r}$.t:$\langle$nocomp-mode$\rangle =$ inf/ger/ppart} (in
@@ -830,13 +829,13 @@ following equation:
 \enumsentence{
 {\bf S$_{m}$.b:$\langle$nocomp-mode$\rangle =$S$_{f}$.t:$\langle$nocomp-mode$\rangle$}}
 
-\item {\bf $\bullet$ $\langle$rel-clause$\rangle$}:
+\item {\bf $\langle$rel-clause$\rangle$}:
 
 The XTAG analysis forces the adjunction of the determiner below the
 relative clause. This is done by using the {\bf
 $\langle$rel-clause$\rangle$} feature. The relevant equations are:
 
-\enumsentence{ On the root of the RC: {\bf NP$_{r}$.b:$\langle$rel-clause$\rangle = +$}}
+\enumsentence{ On the root of the Relative clause: {\bf NP$_{r}$.b:$\langle$rel-clause$\rangle = +$}}
 \enumsentence{ On the foot node of the 
 Determiner tree: {\bf NP$_{f}$.t:$\langle$rel-clause$\rangle = -$}}
 
