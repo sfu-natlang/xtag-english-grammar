@@ -4,26 +4,29 @@
 \chapter{Verb Classes}
 \label{verb-classes}
 
-Each main\footnote{Auxiliary verbs are handled under a different mechanism.
-See Chapter~\ref{auxiliaries} for details.} verb in the syntactic lexicon
-selects at least one tree family\footnote{See section \ref{tree-db} for
-explanation of tree families.} (subcategorization frame).  Since the tree
-database and syntactic lexicon are already separated for space efficiency (see
-Chapter~\ref{overview}), each verb can efficiently select a large number of
-trees by specifying a tree family, as opposed to each of the individual trees.
-This approach allows for a considerable reduction in the number of trees that
-must be specified for any given verb or form of a verb.
+Each main\footnote{Auxiliary verbs are handled under a different
+mechanism.  See Chapter~\ref{auxiliaries} for details.} verb in the
+syntactic lexicon selects at least one tree family\footnote{See
+section \ref{tree-db} for explanation of tree families.}
+(subcategorization frame).  Since the tree database and syntactic
+lexicon are already separated for space efficiency (see
+Chapter~\ref{overview}), each verb can efficiently select a large
+number of trees by specifying a tree family, as opposed to each of the
+individual trees.  This approach allows for a considerable reduction
+in the number of trees that must be specified for any given verb or
+form of a verb.
 
-There are currently 47 tree families in the system.\footnote{An explanation of
-the naming convention used in naming the trees and tree families is available
-in Appendix~\ref{tree-naming}.}  This chapter gives a brief description of each
-tree family and shows the corresponding declarative tree\footnote{Before
-lexicalization, the $\diamond$ indicates the anchor of the tree.}, along with
-any peculiar characteristics or trees.  It also indicates which transformations
-are in each tree family, and gives the number of verbs that select that
-family.\footnote{Numbers given are as of August 1996 and are subject to some
-change with further development of the grammar.} A few sample verbs are given,
-along with example sentences.
+There are currently 47 tree families in the system.\footnote{An
+explanation of the naming convention used in naming the trees and tree
+families is available in Appendix~\ref{tree-naming}.}  This chapter
+gives a brief description of each tree family and shows the
+corresponding declarative tree\footnote{Before lexicalization, the
+$\diamond$ indicates the anchor of the tree.}, along with any peculiar
+characteristics or trees.  It also indicates which transformations are
+in each tree family, and gives the number of verbs that select that
+family.\footnote{Numbers given are as of August 1996 and are subject
+to some change with further development of the grammar.} A few sample
+verbs are given, along with example sentences.
 
 
 \section{Intransitive: Tnx0V}\index{verbs, intransitive}
@@ -53,7 +56,8 @@ grammatical.  2,092 verbs select this family.
 \end{figure}
 
 \item[Other available trees:] wh-moved subject, subject relative
-clause, imperative, determiner gerund, NP gerund.
+clause, adjunct (gap-less) relative clause, imperative, determiner
+gerund, NP gerund, pre-nominal participal.
 
 \end{description}
 
@@ -89,19 +93,19 @@ verb constructions (see sections~\ref{nx0lVN1-family} and
 \end{figure}
 
 \item[Other available trees:] wh-moved subject, wh-moved object, subject
-relative clause, object relative clause, imperative, pre-sentential
-adjunct, post-sentential adjunct, determiner gerund, NP gerund, passive
-with {\it by} phrase, passive without {\it by} phrase, passive with
-wh-moved subject and {\it by} phrase, passive with wh-moved subject and no
-{\it by} phrase, passive with wh-moved object out of the {\it by} phrase,
+relative clause, adjunct (gap-less) relative clause, object relative
+clause, imperative, determiner gerund, NP gerund, passive with {\it
+by} phrase, passive without {\it by} phrase, passive with wh-moved
+subject and {\it by} phrase, passive with wh-moved subject and no {\it
+by} phrase, passive with wh-moved object out of the {\it by} phrase,
 passive with wh-moved {\it by} phrase, passive with relative clause on
-subject and {\it by} phrase, passive with relative clause on subject and no
-{\it by} phrase, passive with relative clause on object on the {\it by}
-phrase, gerund passive with {\it by} phrase, gerund passive without {\it
-by} phrase, ergative, ergative with wh-moved subject, ergative with subject
-relative clause.  In addition, two other trees that allow transitive verbs
-to function as adjectives (e.g. {\it the stopped truck}) are also in the
-family.
+subject and {\it by} phrase, passive with relative clause on subject
+and no {\it by} phrase, passive with relative clause on object on the
+{\it by} phrase, gerund passive with {\it by} phrase, gerund passive
+without {\it by} phrase, ergative, ergative with wh-moved subject,
+ergative with subject relative clause.  In addition, two other trees
+that allow transitive verbs to function as adjectives (e.g. {\it the
+stopped truck}) are also in the family.
 
 \end{description}
 
@@ -109,23 +113,23 @@ family.
 
 
 
-\section{Transitive Idioms: Tnx0Vdn1}\index{verbs,idiomatic}
+\section{Transitive Idioms: Tnx0VDN1}\index{verbs,idiomatic}
 \label{nx0Vdn1-family}
 
 \begin{description}
 
-\item[Description:]  This tree family is selected by idiomatic phrases in which
-the verb, determiner, and NP are all frozen (as in {\it He kicked the
-bucket.}).  Only a limited number of transformations are allowed, as compared
-to the normal transitive tree family (see section~\ref{nx0Vnx1-family}).  The
-analysis of idioms has not been done for idioms in general; this tree is
-included to illustrate how they could be handled in XTAG.  Other idioms that
-have the same structure as {\it kick the bucket}, and that are limited to the
-same transformations would select this tree, while different tree families
-would be needed to handle other idioms.  Note that {\it John kicked the bucket}
-is actually ambiguous, and would result in two parses - an idiom (meaning that
-John died), a simple transitive sentences (meaning that there is an physical
-bucket that John hit with his foot). 1 verb selects the idiom family.
+\item[Description:]  This tree family is selected by idiomatic phrases
+in which the verb, determiner, and NP are all frozen (as in {\it He
+kicked the bucket.}).  Only a limited number of transformations are
+allowed, as compared to the normal transitive tree family (see
+section~\ref{nx0Vnx1-family}).  Other idioms that have the same
+structure as {\it kick the bucket}, and that are limited to the same
+transformations would select this tree, while different tree families
+are used to handle other idioms.  Note that {\it John kicked the
+bucket} is actually ambiguous, and would result in two parses - an
+idiomatic one (meaning that John died), and a compositional transitive
+one (meaning that there is an physical bucket that John hit with
+his foot). 1 idiom selects this family.
 
 \item[Examples:] {\it kick the bucket} \\
 {\it Nixon kicked the bucket .}
@@ -141,8 +145,8 @@ bucket that John hit with his foot). 1 verb selects the idiom family.
 \label{nx0Vdn1-tree}
 \end{figure}
 
-\item[Other available trees:]  wh-moved subject, subject relative clause, 
-imperative.
+\item[Other available trees:]  wh-moved subject, subject relative
+clause, adjunct (gap-less) relative clause, imperative.
 
 \end{description}
 
@@ -181,7 +185,7 @@ tree family.
 \end{figure}
 
 \item[Other available trees:] wh-moved subject, wh-moved direct object,
-wh-moved indirect object, subject relative clause, direct object relative
+wh-moved indirect object, subject relative clause, adjunct (gap-less) relative clause, direct object relative
 clause, indirect object relative clause, imperative, determiner gerund, NP
 gerund, passive with {\it by} phrase, passive without {\it by} phrase,
 passive with wh-moved subject and {\it by} phrase, passive with wh-moved
@@ -209,14 +213,16 @@ by} phrase.
 \begin{description}
 
 \item[Description:]  This tree family is selected by ditransitive verbs that
-take a noun phrase followed by a prepositional phrase.  The preposition is not
-constrained.  The preposition must be required and not optional - that is, the
-sentence must be ungrammatical with just the noun phrase (e.g. {\it $\ast$John
-put the table}).  No verbs, therefore, should select both this tree family and
-the transitive tree family (see section~\ref{nx0Vnx1-family}).  This tree
-family is also distinguished from the ditransitive verbs, such as {\it give},
-that undergo verb shifting (see section~\ref{nx0Vnx1Pnx2-family}).  There are
-62 verbs that select this tree family.
+take a noun phrase followed by a prepositional phrase.  The
+preposition is not constrained in the syntactic lexicon.  The
+preposition must be required and not optional - that is, the sentence
+must be ungrammatical with just the noun phrase (e.g. {\it $\ast$John
+put the table}).  No verbs, therefore, should select both this tree
+family and the transitive tree family (see
+section~\ref{nx0Vnx1-family}).  This tree family is also distinguished
+from the ditransitive verbs, such as {\it give}, that undergo verb
+shifting (see section~\ref{nx0Vnx1Pnx2-family}).  There are 62 verbs
+that select this tree family.
 
 \item[Examples:] {\it associate}, {\it put}, {\it refer} \\
 {\it Rostenkowski associated money with power .}   \\
@@ -235,7 +241,7 @@ that undergo verb shifting (see section~\ref{nx0Vnx1Pnx2-family}).  There are
 \end{figure}
 
 \item[Other available trees:] wh-moved subject, wh-moved direct object,
-wh-moved object of PP, wh-moved PP, subject relative clause, direct object
+wh-moved object of PP, wh-moved PP, subject relative clause, adjunct (gap-less) relative clause, direct object
 relative clause, object of PP relative clause, imperative, determiner
 gerund, NP gerund, passive with {\it by} phrase, passive without {\it by}
 phrase, passive with wh-moved subject and {\it by} phrase, passive with
@@ -294,7 +300,7 @@ and $\alpha$nx0Vnx2nx1~(b)}
 \end{figure}
 
 \item[Other available trees:] {\bf Non-shifted:} wh-moved subject, wh-moved
-direct object, wh-moved indirect object, subject relative clause, direct
+direct object, wh-moved indirect object, subject relative clause, adjunct (gap-less) relative clause, direct
 object relative clause, indirect object relative clause, imperative, NP
 gerund, passive with {\it by} phrase, passive without {\it by} phrase,
 passive with wh-moved subject and {\it by} phrase, passive with wh-moved
@@ -309,7 +315,7 @@ phrase, passive with relative clause on the indirect object and no {\it by}
 phrase, gerund passive with {\it by} phrase, gerund passive without {\it
 by} phrase;\\ 
 {\bf Shifted:} wh-moved subject, wh-moved direct object,
-wh-moved object of PP, wh-moved PP, subject relative clause, direct object
+wh-moved object of PP, wh-moved PP, subject relative clause, adjunct (gap-less) relative clause, direct object
 relative clause, object of PP relative clause, imperative, determiner
 gerund, NP gerund, passive with {\it by} phrase, passive without {\it by}
 phrase, passive with wh-moved subject and {\it by} phrase, passive with
@@ -366,7 +372,7 @@ said?}).  91 verbs select this tree family.
 \end{figure}
 
 \item[Other available trees:] wh-moved subject, wh-moved object, wh-moved
-sentential complement, subject relative clause, object relative clause,
+sentential complement, subject relative clause, adjunct (gap-less) relative clause, object relative clause,
 imperative, determiner gerund, NP gerund, passive with {\it by} phrase
 before sentential complement, passive with {\it by} phrase after sentential
 complement, passive without {\it by} phrase, passive with wh-moved subject
@@ -379,7 +385,8 @@ complement, passive with relative clause on subject and {\it by} phrase
 after sentential complement, passive with relative clause on subject and no
 {\it by} phrase, gerund passive with {\it by} phrase befor sentential
 complement, gerund passive with {\it by} phrase after the sentential
-complement, gerund passive without {\it by} phrase.
+complement, gerund passive without {\it by} phrase, parenthetical
+reporting clause.
 
 \end{description}
 
@@ -416,7 +423,7 @@ verb particle construction.  There are 159 verb/verb particle combinations.
 \label{nx0Vpl-tree}
 \end{figure}
 
-\item[Other available trees:] wh-moved subject, subject relative clause, 
+\item[Other available trees:] wh-moved subject, subject relative clause, adjunct (gap-less) relative clause, 
 imperative, determiner gerund, NP gerund.
 
 \end{description}
@@ -574,7 +581,7 @@ verbs select this tree family.
 \end{figure}
 
 \item[Other available trees:] wh-moved subject, wh-moved object of the PP,
-wh-moved PP, subject relative clause, object of the PP relative clause,
+wh-moved PP, subject relative clause, adjunct (gap-less) relative clause, object of the PP relative clause,
 imperative, determiner gerund, NP gerund, passive with {\it by} phrase,
 passive without {\it by} phrase, passive with wh-moved subject and {\it by}
 phrase, passive with wh-moved subject and no {\it by} phrase, passive with
@@ -622,7 +629,9 @@ family.
 \end{figure}
 
 \item[Other available trees:]  wh-moved subject, wh-moved sentential
-complement, subject relative clause, imperative, determiner gerund, NP gerund.
+complement, subject relative clause, adjunct (gap-less) relative
+clause, imperative, determiner gerund, NP gerund, parenthetical
+reporting clause.
 
 \end{description}
 
@@ -664,7 +673,7 @@ verbs.  34 verbs select this tree family.
 \end{figure}
 
 \item[Other available trees:]  wh-moved subject, wh-moved adjective 
-({\it how}), subject relative clause, imperative, NP gerund.
+({\it how}), subject relative clause, adjunct (gap-less) relative clause, imperative, NP gerund.
 
 \end{description}
 
@@ -751,7 +760,7 @@ $\alpha$nx0lVdN1~(b)}
 \label{nx0lVN1-tree}
 \end{figure}
 
-\item[Other available trees:] wh-moved subject, subject relative clause, 
+\item[Other available trees:] wh-moved subject, subject relative clause, adjunct (gap-less) relative clause, 
 imperative, determiner gerund, NP gerund.
 
 \end{description}
@@ -809,7 +818,7 @@ $\alpha$nx0lVnx2N1~(b), $\alpha$nx0lVdN1Pnx2~(c) and $\alpha$nx0lVnx2dN1~(d)}
 \end{figure}
 
 \item[Other available trees:] {\bf Non-shifted:} wh-moved subject, wh-moved
-indirect object, subject relative clause, indirect object relative clause,
+indirect object, subject relative clause, adjunct (gap-less) relative clause, indirect object relative clause,
 imperative, NP gerund, passive with {\it by} phrase, gerund passive with
 {\it by} phrase, gerund passive without {\it by} phrase \\ 
 {\bf Shifted:}
@@ -955,45 +964,38 @@ relative clause on subject, imperative, NP gerund.
 
 \end{description}
 
-\section{Adjective Small Clause with Sentential Complement: Tnx0Ax1s2}
-\label{nx0Ax1s2-family}
+\section{Adjective Small Clause with Sentential Complement: Tnx0A1s1}
+\label{nx0A1s1-family}
 
 \begin{description}
 
 \item[Description:]  This tree family is selected by adjectives that take 
-sentential complements.  The sentential complements can be indicative or
-infinitive.  Note that these trees are anchored by adjectives, not verbs.  Most
-adjectives that take the Adjective Small Clause tree family (see
-section~\ref{nx0Ax1-family}) take this family as well.\footnote{No great
-attempt has been made to go through and decide which adjectives should actually
-take this family and which should not.}  Small clauses are explained in much
-greater detail in section~\ref{sm-clause-xtag-analysis}.  This section is
-presented here for completeness.  3,179 adjectives select this tree family.
+sentential complements.  The sentential complements can be indicative
+or infinitive.  Note that these trees are anchored by adjectives, not
+verbs.  Small clauses are explained in much greater detail in
+section~\ref{sm-clause-xtag-analysis}.  This section is presented here
+for completeness.  3,179 adjectives select this tree family.
 
 \item[Examples:] {\it able}, {\it curious}, {\it disappointed} \\
 {\it Christy was able to find the problem .} \\
 {\it Christy was curious whether the new analysis was working .} \\
 {\it Christy was sad that the old analysis failed .} 
 
-\item[Declarative tree:]  See Figure~\ref{nx0Ax1s2-tree}.
+\item[Declarative tree:]  See Figure~\ref{nx0A1s1-tree}.
 
 \begin{figure}[htb]
 \centering
 \begin{tabular}{c}
-\psfig{figure=ps/verb-class-files/alphanx0Ax1s2.ps,height=4.0cm}
+\psfig{figure=ps/verb-class-files/alphanx0A1s1.ps,height=4.0cm}
 \end{tabular}
-\caption{Declarative  Adjective Small Clause with Sentential Complement Tree:  $\alpha$nx0Ax1s2}
-\label{nx0Ax1s2-tree}
+\caption{Declarative  Adjective Small Clause with Sentential Complement Tree:  $\alpha$nx0A1s1}
+\label{nx0A1s1-tree}
 \end{figure}
 
 \item[Other available trees:] wh-moved subject, wh-moved adjective {\it how},
 relative clause on subject, imperative, NP gerund.
 
 \end{description}
-
-
-% Hey! What are we going to do about the nx0A1s1 and s0A1s1 trees?
-
 
 
 \section{Adjective Small Clause with Sentential Subject: Ts0Ax1}
@@ -1003,7 +1005,7 @@ relative clause on subject, imperative, NP gerund.
 
 \item[Description:]  This tree family is selected by adjectives that take 
 sentential subjects.  The sentential subjects can be indicative or infinitive.
-Note that these trees are not anchored by adjectives, not verbs.  Most
+Note that these trees are anchored by adjectives, not verbs.  Most
 adjectives that take the Adjective Small Clause tree family (see
 section~\ref{nx0Ax1-family}) take this family as well.\footnote{No great
 attempt has been made to go through and decide which adjectives should actually
@@ -1869,7 +1871,7 @@ for details on this family.  20 verbs select this tree family.
 \label{Xnx0Vs1-tree}
 \end{figure}
 
-\item[Other available trees:]  wh-moved subject, subject relative clause, 
+\item[Other available trees:]  wh-moved subject, subject relative clause, adjunct (gap-less) relative clause, 
 imperative,  NP gerund. 
 
 \end{description}
