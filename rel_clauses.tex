@@ -13,7 +13,8 @@ as (\ex{2}), the relationship between the head NP {\em export exhibitions}
 may seem to be more direct but even there we assume that there are two
 independent relationships: one between the entire relative clause
 and the NP it modifies, and another between the extracted element
-and its trace. 
+and its trace. The extracted element may be an overt {\em wh}-phrase
+as in (\ex{1}) or a covert element as in (\ex{2}). 
 
 \enumsentence{the person whose mother likes Chris}
 \enumsentence{export exhibitions that included high-tech items}
@@ -44,6 +45,9 @@ equations of the kind shown here are not present.}
 Representative examples from the transitive tree family
 are shown with a relevant subset of their features in
 Figures~\ref{trans-rel-clause-trees}(a) and \ref{trans-rel-clause-trees}(b).
+Figure~\ref{trans-rel-clause-trees}(a) involves a relative clause with a 
+covert extracted element, while figure~\ref{trans-rel-clause-trees}(b)
+involves a relative clause with an overt {\em wh}-phrase.
 
 \begin{figure}[htb]
 \begin{tabular}{cc}
@@ -86,7 +90,7 @@ and relative clauses with a covert extracted {\em wh}-NP. Relative
 clauses with an overt extracted {\em wh}-NP involve substitution
 of a $+${\bf $<$wh$>$} NP into the NP$_{w}$ node
 \footnote{The feature equation used is
-{\bf NP$_{w}$.t:$<$mode$> = +$}. Examples of NPs that could substitute under
+{\bf NP$_{w}$.t:$<$wh$> = +$}. Examples of NPs that could substitute under
 NP$_{w}$ are {\em whose mother}, {\em who}, {\em whom}, and also 
 {\em which} but not {\em when} and {\em where} which are treated as exhaustive 
 $+${\em wh} PPs.
@@ -95,7 +99,7 @@ and have a Comp node headed
 by $\epsilon$$_{C}$ built in. Relative clauses with a covert extracted 
 {\em wh}-NP have a NP$_{w}$ node headed by $\epsilon$$_{w}$ built in and
 involve substitution into the Comp node. The Comp node that is introduced
-by substitution can be the $\epsilon$$_{C}$ (null complementizer), {\em for},
+by substitution can be the $\epsilon$$_{C}$ (null complementizer), {\em that},
 and {\em for}. 
 
 For example, the tree shown in
@@ -113,15 +117,17 @@ clauses in sentences (\ex{3})-(\ex{6}).
 \enumsentence{the man that Muriel likes}
 \enumsentence{the book Muriel is reading}
 
-Cases of PP pied-piping are handled in a similar fashion
+Cases of PP pied-piping (cf. \ex{1}) are handled in a similar fashion
  by building in a PP$_{w}$ node.
+\enumsentence{the demon by whom Muriel was chased}
 See the tree in Figure~\ref{trans-rel-clause-trees2}. 
 
 \begin{figure}[htb]
 \begin{tabular}{cc}
 \centerline{\psfig{figure=ps/rel_clauses-files/NbetaNpxnx0Vnx1.ps,height=12.0cm}}
 \end{tabular}
-\caption{Adjunct relative clause tree with PP-pied-piping in the transitive tree family: $\beta$betaNpxnx0Vnx1}
+\caption{Adjunct relative clause tree with PP-pied-piping in the transitive tree family: 
+$\beta$Npxnx0Vnx1}
 \label{trans-rel-clause-trees2}
 \label{2;Npxnx0Vnx1}
 \end{figure}
@@ -133,13 +139,13 @@ implemented through combinations of different
 clause types using the {\bf $<$mode$>$} feature, the {\bf $<$select-mode$>$}
 feature, and the {\bf $<$rel-pron$>$} feature. 
 
-Clauses are specified for the {\bf $<$mod$>$} feature which indicates
+Clauses are specified for the {\bf $<$mode$>$} feature which indicates
 the clause type of that clause. Possible values for the {\bf $<$mode$>$}
 feature are {\bf ind, inf, ppart, ger} etc. 
 
 Comps are lexically specified for a feature named {\bf $<$select-mode$>$}.
 In addition, the {\bf $<$select-mode$>$} feature of the Comp is 
-equated with the  {\bf $<$mode$>$} feature of S by the following equation:\\
+equated with the  {\bf $<$mode$>$} feature of its complement S by the following equation:\\
 {\bf S$_{r}$.t:$\langle$mode$\rangle =$ Comp.t:$\langle$select-mode$\rangle$}
 
 The lexical specifications of the Comps are shown below:
@@ -210,8 +216,7 @@ separately.
 
 Examples that justify the above feature setting follow.
 \enumsentence{
-the person [by whom] this machine was invented ({\bf S$_{r}$.t:$\langle$mode$\
-rangle =$ind})}
+the person [by whom] this machine was invented ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
 \enumsentence{
 a baker [in whom]$_{i}$ PRO to trust $\epsilon$$_{i}$ ({\bf S$_{r}$.t:$\langle$mode$\rangle =$
 inf})}
@@ -304,7 +309,7 @@ Passive cases of subject extraction have the following
 feature equation:\\
 {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/ppart/inf}
 
-Finallu, all cases of non-subject extraction have the following
+Finally, all cases of non-subject extraction have the following
 feature equation:\\
 {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}\\
 
@@ -398,7 +403,7 @@ This is accomplished by setting the {\bf S$_{r}$.t:$<$comp$>$} feature
 in the relative clause tree to {\bf nil}. The {\bf S$_{r}$.t:$<$comp$>$} 
 feature of the auxiliary tree that introduces 
 (the sentential complementation) {\em that} is set to
-{\bf that}. This leads to a feature clash ruling out (\ex{-1}). On the
+{\bf that}. This leads to a feature clash ruling out (\ex{0}). On the
 other hand, if a sentential complement taking verb is adjoined
 in at S$_{r}$, this feature clash goes away (cf. \ex{1}).
 
@@ -425,7 +430,7 @@ substitution tree with a null {\bf Comp} built in. This is because of
 the contrast between (\ex{1}) and (\ex{2}).
 \enumsentence{the day [[on whose predecessor] [$\epsilon$$_{C}$ [Muriel left]]]}
 \enumsentence{*the day [[whose predecessor] [$\epsilon$$_{C}$ [Muriel left]]]}
-In general, adjunct relatives are not possible with overt {\bf NP$_{w}$}s. 
+In general, adjunct relatives are not possible with an overt {\bf NP$_{w}$}. 
 We do not consider (\ex{1}) and (\ex{2}) to be counterexamples to 
 the above statements because we consider {\em where} and {\em when}
 to be exhaustive {\bf PP}s that head a {\bf PP} initial tree.
@@ -441,13 +446,15 @@ Cases where {\em for} assigns exceptional case (cf. \ex{1}, \ex{2}) are handled.
 
 The assignment of case by {\em for} is implemented by a combination of the
 following equations.\\
+{\bf Comp.t:$\langle$assign-case$\rangle =$acc}\\
 {\bf S$_{r}$.t:$\langle$assign-case$\rangle =$Comp.t:$\langle$assign-case$\rangle$}\\
-{\bf Comp.t:$\langle$assign-case$\rangle =$acc}
+{\bf S$_{r}$.b:$\langle$assign-case$\rangle =$NP$_{0}$.t:$\langle$case$\rangle$}
 
 \section{Cases not handled}
 \subsection{Partial treatment of free-relatives}
 Free relatives are only partially handled. All free relatives on non-subject
-positions and some free relatives are handled. The structure assigned 
+positions and some free relatives on subject positions 
+are handled. The structure assigned 
 to free relatives treats the extracted {\em wh}-NP as the head NP of
 the relative clause. The remaining relative clause modifies this
 extracted {\em wh}-NP (cf. \ex{1}-\ex{3}).
@@ -462,12 +469,8 @@ extracted {\em wh}-NP (cf. \ex{1}-\ex{3}).
 However, simple subject extractions without further emebedding are not
 handled (cf. \ex{1}).
 
-\enumsentence{who(ever)[ $\epsilon$$_{w_{i}}$ [$\epsilon$$_{C}$
-[$\epsilon$$_{i}$ likes Bill]]]}
-
-This is because (\ex{-1}) is treated exactly like the ungrammatical
-(\ex{1}).
-
+\enumsentence{who(ever) [$\epsilon$$_{w_{i}}$ [$\epsilon$$_{C}$ [$\epsilon$$_{i}$ likes Bill]]]}
+This is because (\ex{-1}) is treated exactly like the ungrammatical (\ex{1}).
 \enumsentence{*the person [ $\epsilon$$_{w_{i}}$ [$\epsilon$$_{C}$
 [$\epsilon$$_{i}$ likes Bill]]]}
 
@@ -496,10 +499,10 @@ relative pronoun (cf. \ex{1}).
 
 \enumsentence{*the way [how [$\epsilon$$_{C}$ [PRO to solve this problem]]]}
 
-However, (\ex{-1}) is accepted by the current grammar.
-The only way to rule (\ex{-1}) out would be to introduce a special feature
+However, (\ex{0}) is accepted by the current grammar.
+The only way to rule (\ex{0}) out would be to introduce a special feature
 devoted to this purpose. This is unappealing. Further, there exist
-speech registers/dialects of English, where (\ex{-1}) is acceptable. 
+speech registers/dialects of English, where (\ex{0}) is acceptable. 
 
 \subsubsection{{\em for}-trace effects}
 (\ex{1}) is ungrammatical, being an instance of a violation of the
@@ -508,8 +511,8 @@ speech registers/dialects of English, where (\ex{-1}) is acceptable.
 \enumsentence{the person [$\epsilon$$_{w_{i}}$ [for 
 [$\epsilon$$_{i}$ to read the book]]]}
 
-The Xtag grammar currently accepts (\ex{-1}).\footnote{It may be of
-some interest that (\ex{-1}) is acceptable in certain dialects of Belfast
+The Xtag grammar currently accepts (\ex{0}).\footnote{It may be of
+some interest that (\ex{0}) is acceptable in certain dialects of Belfast
 English.}
 
 
@@ -523,14 +526,14 @@ Muriel likes $\epsilon$$_{i}$]]}
 \enumsentence{*the person [[which person]$_{i}$ [$\epsilon$$_{C}$ 
 Muriel likes $\epsilon$$_{i}$]]}
 
-We know of no good way to rule (\ex{-1}) out, while still ruling (\ex{1}) in.
+We know of no good way to rule (\ex{0}) out, while still ruling (\ex{1}) in.
 \enumsentence{the person [[whose mother]$_{i}$ [$\epsilon$$_{C}$
 Muriel likes $\epsilon$$_{i}$]]}
 
 Dayal (1996) suggests that `full' NPs such as {\em which person} and
 {\em whose mother} are R-expressions while {\em who} and {\em whose}
 are pronouns. R-expressions, unlike pronouns, are subject to Condition C.
-(\ex{-2}) is, then, ruled out as a violation of Condition since {\em 
+(\ex{-2}) is, then, ruled out as a violation of Condition C since {\em 
 the person} and {\em which person} are co-indexed and {\em the person}
 c-commands {\em which person}. If we accept Dayal's argument, we 
 have a principled reason for allowing overgeneration of relative clauses
