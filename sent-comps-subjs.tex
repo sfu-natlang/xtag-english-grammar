@@ -429,10 +429,10 @@ dealing with parasitic gaps or gaps in coordinated structures.}
 \enumsentence{$\ast$ Who$_{i}$ do you wonder who$_{j}$ e$_{j}$ loves e$_{i}$ ?}
 
 
-\subsection{Exceptional Case Marking Verbs}
+\subsection{Exceptional Case Marking Verbs and Bare Infinitives}
 \label{ecm-verbs}
 
-{\bf Tree family}: TXnx0Vs1
+{\bf Tree family}: TXnx0Vs1, Ts0Vs1
 
 Exceptional Case Marking verbs are those which assign accusative case to the
 subject of the sentential complement. This is in contrast to verbs
@@ -493,18 +493,8 @@ The use of features allows the ECM and
 {\it for-to\/} constructions to act the same for exceptional case assignment,
 while also being distinguished for that-trace violations.
 
-Verbs that take bare infinitives, as in (\ex{1}), are also treated as ECM
-verbs, the only difference being that their foot feature has {\bf
-$<$mode$>$=base} instead of {\bf $<$mode$>$=inf}.  Since the complement does
-not have {\it to}, there is no question of using the {\it to} tree for allowing
-accusative case to be assigned.  Instead, verbs with {\bf $<$mode$>$=base}
-allow either accusative or nominative case to be assigned to the subject. The
-foot of the ECM bare infinitive tree forces the subject to be accusative by its
-{\bf $<$assign-case$>$=acc} value at its foot node which unifies with the {\bf
-$<$assign-case$>$=nom/acc} value of the bare infinitive clause.
 
-\enumsentence{Bob sees the harmonica fall .}
-
+\subsubsection{ECM Passives}
 
 The passive for the ECM verbs is treated as a raising verb.
 Since the
@@ -516,11 +506,36 @@ the sentence {\it John is believed to be happy} would be derived by
 adjoining {\it believed} in as a raising verb.  For
 further discussion, see section~\ref{sm-clause-xtag-ECM}.
 
+\subsubsection{Bare Infinitives}
+
+Verbs that take bare infinitives, as in (\ex{1}), are also treated as ECM
+verbs, the only difference being that their foot feature has {\bf
+$<$mode$>$=base} instead of {\bf $<$mode$>$=inf}.  Since the complement does
+not have {\it to}, there is no question of using the {\it to} tree for allowing
+accusative case to be assigned.  Instead, verbs with {\bf $<$mode$>$=base}
+allow either accusative or nominative case to be assigned to the subject. The
+foot of the ECM bare infinitive tree forces the subject to be accusative by its
+{\bf $<$assign-case$>$=acc} value at its foot node which unifies with the {\bf
+$<$assign-case$>$=nom/acc} value of the bare infinitive clause. 
+
+
+\enumsentence{Bob sees the harmonica fall .}
+
+Verbs
+taking a bare infinitive complement and an NP subject select the
+TXnx0Vs1 family.  Verbs taking a bare infinitive complement and a sentential
+subject ({\it make} and {\it let}) select the Ts0Vs1 family (see 
+section~\ref{s0Vs1-family}).  These verbs ({\it make} and {\it let}) also
+take a predicative small clause (see section~\ref{sm-clause-xtag-analysis}),
+and so the foot node has value {\bf $<$mode$>$=nom/prep/base}, thus allowing
+either a bare infinitive or a {\bf nom/prep} complement.
+
+
 \section{Sentential Subjects}
 \label{sent-subjs}
 
 {\bf Tree families}: Ts0Vnx1, Ts0Ax1, Ts0N1, Ts0Pnx1, Ts0ARBPnx1, 
-Ts0PPnx1, Ts0PNaPnx1, Ts0V, Ts0Vtonx1, Ts0NPnx1, Ts0APnx1, Ts0A1s1.
+Ts0PPnx1, Ts0PNaPnx1, Ts0V, Ts0Vtonx1, Ts0NPnx1, Ts0APnx1, Ts0Vs1.
 
 Verbs that select sentential subjects anchor trees that have an S node
 in the subject position rather than an NP node.  Since extraction is
