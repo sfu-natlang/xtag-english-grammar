@@ -16,7 +16,7 @@ readers are referred to
 \cite{lasnik-uriagereka88}.}
 
 \begin{verse}
-\xtagdef{Case Filter}
+\xtagdef{Case Filter:}
 Every overt NP must be assigned abstract case. \cite{haegeman91}
 \end{verse}
 
@@ -56,7 +56,7 @@ of the same reasons argued in the GB literature.  However, in some respects the
 English XTAG grammar's implementation of case more closely resembles the
 treatment in Chomsky's Minimalism framework \cite{chomsky92} than the system
 outlined in the GB literature \cite{chomsky86}.  As in Minimalism, nouns in
-the XTAG grammar carry case with them, which is eventually `checked'. However
+the XTAG grammar carry case with them, which is eventually `checked'. However,
 in the XTAG grammar, noun cases are checked against the case values assigned
 by the verb during the unification of the feature structures.  Unlike Chomsky's
 Minimalism, there are no separate AGR nodes; the case checking comes from the
@@ -86,13 +86,15 @@ nom}.
 
 \subsection{Case Assigners}
 
-\subsubsection{Prepositions}
-\label{prep-case}
-
 Case is assigned in the XTAG English grammar by two lexical categories
 - verbs and prepositions.\footnote{{\it For} also assigns case as a
 complementizer.  See section \ref{for-complementizer} for more
-details.}  Prepositions assign accusative case ({\bf acc}) through
+details.}
+
+\subsubsection{Prepositions}
+\label{prep-case}
+
+Prepositions assign accusative case ({\bf acc}) through
 their {\bf $<$assign-case$>$} feature, which is linked directly to the
 {\bf $<$case$>$} feature of their objects.
 Figure~\ref{PXPnx-with-case}(a) shows a lexicalized preposition tree,
