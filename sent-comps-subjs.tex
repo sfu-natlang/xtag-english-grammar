@@ -481,3 +481,155 @@ with} takes small clause complements, as seen in sentences (\ex{1})-(\ex{4}).
 %%See Quirk, section 7.20 and others.
 
 
+\section{PRO control}
+\subsection{Types of control}
+In the literature on control, two types are often distinguished: obligatory
+control, as in sentences~(\ex{1}), (\ex{2}), (\ex{3}), and (\ex{4}) and optional 
+control, as in sentence~(\ex{5}).
+
+\enumsentence{Srini$_i$ promised Mickey$_{i}$ [PRO$_i$ to go].}
+\enumsentence{Srini persuaded Mickey$_{i}$ [PRO$_i$ to go].}
+\enumsentence{Srini$_{i}$ wanted [PRO$_i$ to leave].}
+\enumsentence{Christy$_{i}$ left the party early [PRO$_i$ to go to the airport].}
+\enumsentence{[PRO$_{arb}$ to dance] is important.}
+
+At present, an analysis for obligatory control into complement clauses
+(as in sentences~(\ex{-3}, (\ex{-4}, and (\ex{-5})) has been implemented. An
+analysis for cases of obligatory control into adjunct clauses and optional
+clauses exists and can be found in (\cite{bhatt94}).
+
+\subsection{A feature-based analysis of PRO control}
+The analysis for obligatory control involves transmission of a control feature
+up from the NP anchored by PRO to the controller.
+The NP anchored by PRO has the feature {\bf $<$control$>$=+}. A 
+feature equation in the tree anchored by the control verb 
+co-indexes the control feature of the controlling NP with the foot
+node of the tree.
+All sentential trees have a co-indexed
+control feature from the root S to the subject NP. However this feature is
+instantiated only when the subject NP is realized as a PRO.
+
+
+When the tree containing the controller adjoins
+onto the complement clause tree containing the PRO, 
+the features of the foot node of the
+auxiliary tree are unified with the bottom features of the root node of the 
+complement clause
+tree containing the PRO. This leads to the control feature of the controller
+being the same as the control feature of the PRO.
+
+Depending on the choice of the controlling verb, the control
+propagation paths in the auxiliary trees are different.  In the case of subject
+control (as in sentence~(\ex{-3})), the subject NP and the foot node are
+have co-indexed control features, while for object control
+(e.g. sentence~(\ex{-4}), the object NP and the foot node are 
+co-indexed for control. Among verbs that belong to the Tnx0Vnx1s2 family,
+i.e. verbs that take an NP object and a clausal complement, subject-control
+verbs form a distinct minority, {\em promise} being the only commonly used
+verb in this class.
+
+
+Consider the derivation of sentence~(\ex{-4}). The auxiliary tree for
+{\em persuade} has the following feature equation~(\ex{1}).
+\enumsentence{  NP$_{1}$:{\bf $<$control$>$} = S$_{2}$.t:{\bf $<$control$>$} }
+The auxiliary tree adjoins into the tree for {\em leave} which 
+has the following feature equation~(\ex{1}).
+\enumsentence{S$_{r}$.b:{\bf $<$control$>$} = NP$_{0}$.t:{\bf $<$control$>$}}
+Since the adjunction takes place at the root node (S$_{r}$) of the
+{\em leave} tree, after unification, NP$_{1}$ of the {\em persuade}
+tree and NP$_{0}$ of the {\em leave} tree share a control feature. 
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/betanx0Vnx1s2_persuaded_.ps,height=8.2cm}
+\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\label{persuade-tree}
+\end{figure}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/alphanx0V_leave_.ps,height=8.2cm}
+\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\label{leave-tree}
+\end{figure}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/derived.ps,height=8.2cm}
+\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\label{derived-tree}
+\end{figure}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/derivation.ps,height=8.2cm}
+\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\label{derivation-tree}
+\end{figure}
+
+
+\subsection{The nature of the control feature}
+PROs come from the lexicon with their control feature as ``+''. All
+other NPs lack a control feature. Non-PRO NPs can only acquire a 
+value for their control feature
+by sharing it with a PRO. If two NPs have a 
+control feature with the value ``+'', it does not necessarily mean that they
+are in a relationship of control. In a sentence like (\ex{1}), the 
+control features of both {\em Mickey} and {\em Christy} have the value 
+``+'' but this does not mean that they are co-indexed. A positive value
+only indicates that the NP is participating in a relationship of control.
+
+\enumsentence{ Christy$_i$ wants [PRO$_i$ to persuade Mickey$_j$ [PRO$_j$ to dance]]}
+For two NPs to be in a relationship of control, their control features
+have to have the value ``+'' and they have to be co-indexed to each other.
+
+\subsection{Long-distance transmission of control features}
+Cases involving embedded infinitival complements with PRO subjects such as
+(\ex{1}) can also be handled .
+
+\enumsentence{ John$_i$ wants [PRO$_i$ to want [PRO$_i$ to dance]].}
+
+The control feature of `John' and the two PRO's all get co-indexed.
+This treatment might appear to lead to a problem. Consider (\ex{1}):
+
+\enumsentence{ John$_{*i}$ wants [Mary$_i$ to want [PRO$_i$ to dance]].}
+
+If both the `want' trees have the control feature of their subject
+co-indexed to their foot nodes, we would have a situtation where
+the PRO is co-indexed for control feature with `John', as well as with `Mary'. 
+Note that the higher `want' in (\ex{-1}) is {\em want$_{ECM}$} 
+- it assigns case
+to the subject of the lower clause while the lower `want' in (\ex{-1}) is 
+not. Subject control is restricted
+to non-ECM (Exceptional Case Marking) verbs that take infinitival 
+complements. Since the two `want's in (\ex{-1}) are different with
+respect to their control (and other) properties, the control feature
+of PRO stops at `Mary' and is not transmitted to the higher clause.
+
+
+\subsection{Locality constraints on control}
+PRO control obeys locality constraints. The controller for PRO has to be
+in the immediately higher clause. Consider the ungrammatical sentence~(\ex{1})
+((\ex{1}) is ungrammatical only with the co-indexing indicated below).
+\enumsentence{* John$_i$ wants [PRO$_i$ to persuade Mary$_i$ [PRO$_i$ to dance]]}
+This illegitimate co-indexing could arise if at first the {\em want} tree
+was adjoined into the {\em dance} tree giving us the co-indexing between {\em John} and
+the PRO in the {\em leave} tree. The {\em persuade} tree would then be adjoined in
+between. This adjunction would lead to co-indexing between {\em John} and the PRO
+in the {\em persuade} tree, and {\em Mary} and the PRO in the {\em dance} tree. Since
+{\em John} and the PRO in the {\em dance} tree are already co-indexed, all four NPs
+would have the same control feature. 
+
+However, such a derivation is ruled out by the fact that
+auxiliary trees have NA (Null Adjunction) constraints on their foot nodes. 
+Consequently, there is no way to derive (\ex{-1}) by adjoining
+the {\em persuade} tree into the tree for `John wants to dance'. NA constraints, 
+thus, yield the locality constraints on control. 
+
+
+
+
