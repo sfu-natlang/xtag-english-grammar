@@ -52,7 +52,7 @@ $<$punct struct$>$&comma,dash,colon,scolon,none,nil\\
 $<$punct term$>$&per,qmark,excl,none,nil\\
 $<$quan$>$&$+,-$\\
 $<$rel-clause$>$&$+,-$\\
-$<$rel-pron$>$&$ppart,ger,adj-clause$\\
+$<$rel-pron$>$&ppart,ger,adj-clause\\
 $<$select-mode$>$&ind,inf,ppart,ger\\
 $<$sub-conj$>$&ind1,ind2,ind3,inf1,inf2,ger,nil\\
 $<$super$>$&$+,-$\\
@@ -203,7 +203,7 @@ at their top S node. The extracted element may be a {\em wh}-NP or a
 topicalized NP. The {\bf $\langle$extracted$\rangle$} feature 
 is currently used to block embedded topicalizations as exemplified
 by the following example.
-\enumsentence{ John wants [Bill$_{i}$ [PRO to leave t$_{i}$]] }
+\enumsentence{ * John wants [Bill$_{i}$ [PRO to leave t$_{i}$]] }
 
 {\bf $\langle$trace$\rangle$}: this feature is not assigned any value and
 is used to co-index moved NPs and their traces which are marked by
