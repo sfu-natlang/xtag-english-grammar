@@ -222,8 +222,9 @@ for other parts of speech ({\underline a}djective, {\underline d}eterminer and
 Appendix~\ref{tree-naming} contains a full explanation of naming conventions.}
 allowing pre and post modification of S's and VP's.  Besides the VP and
 S-modifying adverbs, the grammar includes adverbs that modify other
-categories. Examples of adverbs modifying an adjective, an adverb, and a PP are
-shown in (\ex{1})-(\ex{6}).
+categories. Examples of adverbs modifying an adjective, an adverb, a
+PP and a determiner are
+shown in (\ex{1})-(\ex{7}).
 
 \begin{itemize}
 \item{Modifying an adjective}
@@ -238,6 +239,9 @@ shown in (\ex{1})-(\ex{6}).
 \item{Modifying a PP}
 \enumsentence{{\bf right} through the wall}
 
+\item{Modifying a determiner}
+\enumsentence{{\bf exactly} five men}
+
 \end{itemize}
 
 XTAG has separate trees for each of the modified categories and for pre and
@@ -251,10 +255,10 @@ for future work.  The trees for adverb anchored modifiers are very similar in
 form to the adjective anchored modifier trees.  Examples of two of the basic
 adverb modifier trees are shown in Figure~\ref{adv-trees}.
 
-\begin{figure}[htb]
+\begin{figure}[hb]
 \centering
 \begin{tabular}{ccc}
-{\psfig{figure=ps/modifiers-files/betaARBs.ps,height=4.7in}}&
+{\psfig{figure=ps/modifiers-files/betaARBs.ps,height=4.5in}}&
 \hspace*{1.0in}&
 {\psfig{figure=ps/modifiers-files/betavxARB.ps,height=4in}}\\
 (a)&&(b)\\
@@ -264,6 +268,8 @@ post-modification of a VP: $\beta$vxARB (b)}
 \label{adv-trees}
 \end{figure}
 
+\newpage
+
 Like the adjective anchored trees, these trees also have the NA
 constraint on the foot node to restrict the number of derivations
 produced for a sequence of adverbs.  Features of the modified category
@@ -272,7 +278,7 @@ that these types of properties are unaffected by the adjunction of an
 adverb.  A summary of the categories modified and the position of
 adverbs is given in Table \ref{adv-summary}.
 
-\begin{table}[htb]
+\begin{table}[h]
 \centering
 \begin{tabular}{|c||c|c|}
 \hline
@@ -293,6 +299,8 @@ ADV&$\beta$ARBarb&$\beta$arbARB\\
 \hline
 N&$\beta$ARBn&\\
 \hline
+Det&$\beta$ARBdx&\\
+\hline
 \end{tabular}
 \caption{Simple Adverb Anchored Modifiers}
 \label{adv-summary}
@@ -310,7 +318,8 @@ feature {\bf $<$wh$>$=+}.  Under this treatment, the derived tree for the
 sentence {\it How did you fall?} is as in Figure (\ref{how-did-you-fall}), with
 no trace for the adverb.
 
-\begin{figure}[htb]
+
+\begin{figure}[h]
 \centering
 \begin{tabular}{c}
 {\psfig{figure=ps/modifiers-files/how-did-you-fall.ps,height=3.5in}}
@@ -319,7 +328,8 @@ no trace for the adverb.
 \label {how-did-you-fall}
 \end{figure}
 
-\begin{figure}[htb]
+
+\begin{figure}[h]
 \centering
 \begin{tabular}{c}
 {\psfig{figure=ps/modifiers-files/betaARBarbs.ps,height=6.0in}}
