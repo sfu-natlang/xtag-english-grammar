@@ -1,48 +1,40 @@
 \chapter{Relative Clauses}
 \label{rel_clauses}
 
-Relative clauses are NP modifiers, which involve extraction of an argument
-or an adjunct. The NP head (the portion of the NP being modified by the
-relative clause) is not directly related to the extracted element.  For
-example in \ex{1}, {\it the person} is the head NP and is modified by the
-relative clause {\it whose mother $\epsilon$ likes Chris}. {\em The person}
+Relative clauses are NP modifiers involving extraction of an argument or an
+adjunct. The NP head (the portion of the NP being modified by the relative
+clause) is not directly related to the extracted element.  For example in
+\ex{1}, {\it the person} is the head NP and is modified by the relative
+clause {\it whose mother $\epsilon$ likes Chris}. However, {\em the person}
 is not interpreted as the subject of the relative clause which is missing
 an overt subject. In other cases, such as \ex{2}, the relationship between
 the head NP {\em export exhibitions} may seem to be more direct but even
-there we assume that there are two independent relationships: one between
-the entire relative clause and the NP it modifies, and another between the
-extracted element and its trace. In \ex{2}, the extracted element is
-covert, whereas in \ex{1} it is overt. 
+here we assume that there are two independent relationships: one between
+the entire relative clause and the (head) NP it modifies, and another
+between the extracted element and its trace inside the relative clause. The
+extracted element can further be overt, as in \ex{1}, or covert, as in \ex{2}. 
 
 \enumsentence{[[ the person$_i$ ] [ whose$_i$ mother$_j$ [ $\epsilon_j$ likes Chris ]]]}
 \enumsentence{[[ export exhibitions$_i$ ] [ $\epsilon_i$ that [ $\epsilon_i$ included high-tech items ]]]}
 
-Our analysis is essentially identical to the GB analysis of relative
-clauses. Relative clauses are represented in the English XTAG grammar by
-auxiliary trees that adjoin to NP's. These trees are anchored by the verb
-in the relative clause and appear in the appropriate tree families
-representing various verb subcategorizations. Each family has groups of
-relative clause trees based on the declarative tree and each passive tree
-in that family. Within each of these groups, there is a separate relative
-clause tree corresponding to each possible argument that can be extracted
-from the clause. As stated above, there is no relationship between the
-extracted position and the head NP. The relationship between the relative
-clause and the head NP is treated as a semantic relationship which will be
+The XTAG analysis of relative clauses is essentially identical to the GB
+analysis. We represent relative clauses as auxiliary trees that adjoin to
+NP's. These trees are anchored by the verb of the relative clause and
+appear in the appropriate tree families representing various verb
+subcategorizations. Each family has a group of relative clause trees based
+on the declarative tree and each passive tree in that family. Furthermore,
+within each of these groups, there is a separate relative clause tree
+corresponding to each argument that can be extracted from the clause. The
+relationship between the relative clause and the head NP is not represented
+directly. Rather, it is treated as a semantic relationship which could be
 provided by any reasonable compositional theory. The relationship between
 the extracted element, NP$_w$ (which can be covert) and the position from
 which it was extracted is captured by co-indexing the {\bf $<$trace$>$}
-features of the two positions/nodes.\footnote{%
-%
-No adjunct traces are represented in the XTAG analysis of adjunct
-extraction. Since relative clauses on adjuncts also do not have traces,
-feature equations showing the trace coindexation are not present in such
-trees. See Section~\ref{sec:adju-RC} for more discussion of adjunct
-relative clauses.%
-%
-} If for example, it is {\bf NP$_{1}$} that is extracted, we have the
-following feature equations (see Figure~\ref{trans-rel-clause-trees}(a)):
+features of the two positions/nodes. If for example, it is {\bf NP$_{1}$}
+that is extracted (object extraction), we have the following feature
+equations (see Figure~\ref{trans-rel-clause-trees}(a)):
 
-\begin{\itemize}
+\begin{itemize}
 
 \item {\bf NP$_{w}$.t:$\langle$ trace $\rangle =$NP$_{1}$.t:$\langle$ trace $\rangle$}
 \item {\bf NP$_{w}$.t:$\langle$ case $\rangle =$NP$_{1}$.t:$\langle$ case $\rangle$}
@@ -81,14 +73,14 @@ $+${\em wh} PPs (Figure~\ref{trans-rel-clause-trees}(b))).
 
 \begin{figure}[ htb ]
 \begin{tabular}{cc}
-\psfig{figure=ps/rel_clauses-files/betaN1nx0Vnx1.ps,height=10.0cm}&
-\psfig{figure=ps/rel_clauses-files/betaNpxnx0Vnx1.ps,height=10.0cm}\\
+\psfig{figure=ps/rel_clauses-files/betaN1nx0Vnx1.ps,height=12.0cm}&
+\psfig{figure=ps/rel_clauses-files/betaNpxnx0Vnx1.ps,height=12.0cm}\\
 (a)&(b)
 \end{tabular}
 \caption{Relative clause trees with overt {\em wh}-phrases in the transitive
 tree family: (a) object extraction tree $\beta$N1nx0Vnx1, ({\it the man who
 Muriel loved}), and (b) adjunct relative clause tree with PP pied-piping
-$\beta$Npxnx0Vnx1, {\it the woman who killed the mice}.}
+$\beta$Npxnx0Vnx1, {\it the bowl in which Miranda ate her cereal}.}
 \label{trans-rel-clause-trees}
 \label{2;16,1}
 \label{2;15,1}
@@ -97,17 +89,27 @@ $\beta$Npxnx0Vnx1, {\it the woman who killed the mice}.}
 Complementizers can never cooccur with the overt extracted {\bf $+<$wh$>$}
 NP (cf. *{\it I saw the man who$_i$ that Muriel saw $\epsilon$$_{i}$}).
 Consequently, the auxiliary $\beta$COMPs trees are prevented from adjoining
-at the {\bf S$_r$} node in these trees by the equation \ex{1} in the
-relative clause tree, which will always fail to unify with the (non-{\bf
-nil}) values of the {\bf $<$comp$>$} feature in the $\beta$COMPs trees (see
-for example Figure~\ref{that-comp-tree}).
+at the {\bf S$_r$} node in these trees by the equation
 
-\enumsentence{{\bf S$_{r}$.t:$\langle$comp$\rangle =$ nil}}
+\begin{itemize}
+\item {\bf S$_{r}$.t:$\langle$comp$\rangle =$ nil}
+\end{itemize}
 
-Examples \ex{1} and \ex{2} are examples for which the tree in
-Figure~\ref{trans-rel-clause-trees}(a) is used. Cases of PP pied-piping, as
-in \ex{3}, are handled in a similar fashion by building in a PP$_{w}$
-substitution node (Figure~\ref{trans-rel-clause-trees}(b)).
+in the relative clause tree, which will always fail to unify with the
+(non-{\bf nil}) values of the {\bf $<$comp$>$} feature in the $\beta$COMPs
+trees (see Figure~\ref{that-comp-tree}). Examples \ex{1} and \ex{2} are
+examples for which the tree in Figure~\ref{trans-rel-clause-trees}(a) is
+used. Cases of PP pied-piping, as in \ex{3}, are handled in a similar
+fashion by building in a PP$_{w}$ substitution node
+(Figure~\ref{trans-rel-clause-trees}(b)).\footnote{%
+%
+Adjunct traces are not represented in the XTAG analysis of adjunct
+extraction. Since relative clauses on adjuncts also do not have traces,
+feature equations showing the trace coindexation are not present in such
+trees. See Section~\ref{sec:adju-RC} for more discussion of adjunct
+relative clauses.%
+%
+} 
 
 \enumsentence{the man who Muriel likes}
 \enumsentence{the man whose mother Muriel likes}
@@ -117,28 +119,29 @@ substitution node (Figure~\ref{trans-rel-clause-trees}(b)).
 \label{sec:mode-restriction}
 
 Relative clause trees that have {\bf NP$_{w}$} as a substitution node have
-the feature equation in \ex{1}. The examples in \ex{2}--\ex{6} provide the
+the feature equation given below. The examples in \ex{2}--\ex{6} provide the
 rationale for this feature setting.
 
+\begin{itemize}
+\item {\bf S$_{r}$.t:$\langle$mode$\rangle =$ind}
+\end{itemize}
+
 \enumsentence{
-{\bf S$_{r}$.t:$\langle$mode$\rangle =$ind}}
+the man [[whose wife ]$_{i}$ [ $\epsilon$$_{i}$ cooked this meal ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
 \enumsentence{
-the boy [[whose mother ]$_{i}$ [ $\epsilon$$_{i}$ chased the cat ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
-\enumsentence{
-*the boy [[whose mother ]$_{i}$ [ $\epsilon$$_{i}$ to chase the cat ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =
+*the girl [[who ]$_{i}$ [ $\epsilon$$_{i}$ to win the prize ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =
 $inf})}
 \enumsentence{
-*the boy [[whose mother ]$_{i}$ [ $\epsilon$$_{i}$ eaten the cake ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle 
+*the candidate [[who ]$_{i}$ [ $\epsilon$$_{i}$ defeated in the elections ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle 
 =$ppart})}
 \enumsentence{
-*the boy [[whose mother ]$_{i}$ [ $\epsilon$$_{i}$ chasing the cat ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$
+*the boy [[whose dog ]$_{i}$ [ $\epsilon$$_{i}$ chasing the cat ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$
 ger})}
 \enumsentence{
-the boy [[whose mother ]$_{i}$ [ Bill believes [ $\epsilon$$_{i}$ to chase the
-cat ]]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
+the boy [[whose mother ]$_{i}$ [ Bill believes [ $\epsilon$$_{i}$ to be beautiful]]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
 
-The feature equation in trees with a {\bf PP$_{w}$} substitution node is
-given in \ex{1} with the rationale provided by examples in \ex{2}--\ex{5}.%
+Trees with a {\bf PP$_{w}$} substitution node have the feature equation
+given below with the rationale provided by examples in \ex{2}--\ex{5}.%
 \footnote{%
 %
 As is the case for {\bf NP$_{w}$} substitution, any $+${\bf $<$wh$>$}PP can
@@ -152,12 +155,14 @@ equation: {\bf PP$_{w}$.t:$\langle$wh$\rangle=+$}.
 %
 }
 
-\enumsentence{
-{\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}}
+\begin{itemize}
+\item {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}
+\end{itemize}
+
 \enumsentence{
 the person [[by whom ]$_{i}$ [ this machine was invented $\epsilon$$_{i}$ ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
 \enumsentence{
-a baker [[in whom ]$_{i}$ [ to trust $\epsilon$$_{i}$ ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
+a company [[in which ]$_{i}$ [ to invest $\epsilon$$_{i}$ ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
 \enumsentence{
 *the fork [[with which ]$_{i}$ (Geoffrey) eaten the pudding $\epsilon$$_{i}$
 ]] ({\bf S$_{r}$.t:$\langle$
@@ -166,7 +171,7 @@ mode$\rangle =$ppart})}
 *the person [[by whom ]$_{i}$ [ (this machine) inventing $\epsilon$$_{i}$
 ]] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
 
-\section{Relative Clauses with Complementizers}
+\section{Relative Clauses with Covert Extracted {\it wh}-NP}
 \label{sec:covert-extraction}
 
 Relative clauses with a covert extracted {\em wh}-NP
@@ -179,31 +184,32 @@ complementation (see Chapter~\ref{scomps-section}). The examples in
 \enumsentence{the cake that Muriel said Steven ate}
 \enumsentence{the book for Miranda to read}
 \enumsentence{the man looking at Muriel}
-\enumsentence{the librarian to issue the book}
+\enumsentence{the librarian to check out the book}
 
 \begin{figure}[ htb ]
 \begin{tabular}{c}
-\centerline{\psfig{figure=ps/rel_clauses-files/betaNc0nx0Vnx1.ps,height=12.0cm}}
+\centerline{\psfig{figure=ps/rel_clauses-files/betaNc0nx0Vnx1.ps,height=13.0cm}}
 \end{tabular}
 \caption{Subject extraction tree in the transitive tree family with
 non-overt {\em wh}-phrase, $\beta$Nc0nx0Vnx1}
 \label{trans-rel-clause-trees2}
 \end{figure}
 
-There are three aspects to the implementation of these trees. Firstly, in a
+There are two aspects to the implementation of these trees. Firstly, in a
 manner parallel to the relative clause trees with overt NP$_w$, there are
 constraints on the mode of the relative clause for these trees, which is
 realized with the {\bf $<$mode$>$} feature
-(Section~\ref{sec:clause-mode}). Secondly, there are cooccurrence constraints
-between the mode of the relative clause and the complementizers that can
-adjoin in -- these are realized with the {\bf $<$assign-comp$>$} and {\bf
-$<$comp$>$} features (Section~\ref{sec:comp-selection}). The implementation of
-the couccrrence constraints is entirely parallel to sentential
-complementation, except in one respect: the occurrence of the null COMP
-(which in the case of the relative clauses, is represented by disallowing
-the adjunction of any COMP -- namely, the $\beta$COMPs auxiliary tree --
-altogether) is subject to further constraints, which we realize (crucially)
-with the {\bf $<$nocomp-mode$>$} feature (Section~\ref{sec:nocomp-mode}).
+(Section~\ref{sec:clause-mode}). Secondly, there are cooccurrence
+constraints between the mode of the relative clause and the complementizers
+that can adjoin in -- these are realized with the {\bf $<$assign-comp$>$}
+and {\bf $<$comp$>$} features (Section~\ref{sec:comp-selection}). The
+implementation of the cooccurrence constraints is entirely parallel to
+sentential complementation, except in one respect: the occurrence of the
+null COMP (which in the case of the relative clauses, is represented by
+disallowing the adjunction of any COMP -- namely, the $\beta$COMPs
+auxiliary tree -- altogether) is subject to further constraints, which we
+realize with the {\bf $<$nocomp-mode$>$} feature
+(Section~\ref{sec:nocomp-mode}).
 
 \subsection{Constraints on the mode of the relative clause}
 \label{sec:clause-mode}
@@ -219,65 +225,66 @@ etc.. Figure~\ref{trans-rel-clause-trees2} shows this restriction
 implemented for the relative clause tree with subject extraction in the
 transitive tree family.
 
-\enumsentence{the dog that [ $\epsilon$ ate the cake ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ind})}
-\enumsentence{the dog [ $\epsilon$ to chase the cat ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$inf})}
-\enumsentence{the girl [ $\epsilon$ reading the book ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ger})}
-\enumsentence{*the woman [ $\epsilon$ seen the sight ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
-\enumsentence{the toy that [ Miranda likes $\epsilon$ ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ind})}
-\enumsentence{the guava for [ Miranda to eat $\epsilon$ ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$inf})}
-\enumsentence{*the toy [ Miranda liking $\epsilon$ ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ger})}
-\enumsentence{*the book [ Muriel torn $\epsilon$ ] ({\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
+\enumsentence{the dog [ $\epsilon_w$ that [ $\epsilon$ ate the cake ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
+\enumsentence{the team [ $\epsilon_w$ [ $\epsilon$ to win the gold medal ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
+\enumsentence{the girl [ $\epsilon_w$ [ $\epsilon$ reading the book ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
+\enumsentence{*the woman [ $\epsilon_w$ [ $\epsilon$ seen the sight ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
+
+\noindent
+\enumsentence{the toy [ $\epsilon_w$ that [ Miranda likes $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
+\enumsentence{the guava [ $\epsilon_w$ for [ Susan to eat $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
+\enumsentence{*the toy [ $\epsilon_w$ [ Laura liking $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
+\enumsentence{*the book [ $\epsilon_w$ [ Danny torn $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
 
 The full set of mode restrictions on the different relative clause trees is
-as follows:\\
+as follows:
 
-For all non-passive cases of subject extraction, {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/inf} ( see \ex{1}--\ex{4}):
+\begin{itemize}
 
-\enumsentence{the girl [ $\epsilon$ eating the cake ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
-\enumsentence{the girl [ $\epsilon$ to eat the cake ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
-\enumsentence{the girl that [ $\epsilon$ ate the cake ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
-\enumsentence{*the girl (that/for) [ $\epsilon$ eaten the cake ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
+\item For all non-passive cases of subject extraction, {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/inf} ( see \ex{1}--\ex{4}):
 
-For all passive cases of subject extraction, {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/ppart/inf} (see \ex{1}--\ex{4}):
+\enumsentence{the girl [ $\epsilon_w$ [ $\epsilon$ reading the magazine ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
+\enumsentence{the cowboy [ $\epsilon_w$ [ $\epsilon$ to win the fight ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
+\enumsentence{the man [ $\epsilon_w$ that [ $\epsilon$ loaded the gun ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
+\enumsentence{*the child [ $\epsilon_w$ (that/for) [ $\epsilon$ eaten the cake ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
 
-\enumsentence{the toy that [ $\epsilon$ was broken by the child ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
-\enumsentence{the toy [ $\epsilon$ being broken by the child ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
-\enumsentence{the toy [ $\epsilon$ to be broken by the child ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
-\enumsentence{the toy [ $\epsilon$ broken by the child ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
+\item For all passive cases of subject extraction, {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/ppart/inf} (see \ex{1}--\ex{4}):
 
-Finally, for all cases of non-subject extraction, {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf} (see \ex{1}--\ex{4}): 
+\enumsentence{the toy [ $\epsilon_w$ that [ $\epsilon$ was broken by the child ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
+\enumsentence{the man [ $\epsilon_w$ [ $\epsilon$ being arrested by the officer ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
+\enumsentence{the food [ $\epsilon_w$ [ $\epsilon$ to be served during dinner ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
+\enumsentence{the candidates [ $\epsilon_w$ [ $\epsilon$ elected by the people ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
 
-\enumsentence{the book [ John will tear $\epsilon$ ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
-\enumsentence{the book for [ John to tear $\epsilon$ ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
-\enumsentence{*the book (that/for) [ John tearing $\epsilon$ ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
-\enumsentence{*the book (that/for) [ John torn $\epsilon$ ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
+\item Finally, for all cases of non-subject extraction, {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf} (see \ex{1}--\ex{4}): 
 
-Relative clause formation with {\bf $<$mode$>$=nom/prep} are also
-allowed, but only with a covert $_{NP_{w}}$ and an covert COMP. Furthermore,
-they can be formed only on the subject of the clause. Some families that
-have these additional modes are Tnx0APnx1 \ex{1}, Tnx0ARBPnx1 \ex{2},
-Tnx0nx1ARB \ex{3}.
+\enumsentence{the book [ $\epsilon_w$ [ John will read $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}
+\enumsentence{the candidate [ $\epsilon_w$ for [ people to tear $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$inf})}
+\enumsentence{*the ring [ $\epsilon_w$ (that/for) [ Miranda tearing $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ger})}
+\enumsentence{*the table [ $\epsilon_w$ (that/for) [ Danny broken $\epsilon$ ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}
 
-\enumsentence{the accused [ $\epsilon$ void of all hope ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$prep})} 
-\enumsentence{the dog [ $\epsilon$ next to the tree ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$prep})}
-\enumsentence{the road [ $\epsilon$ seven miles away ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$nom})}
+\end{itemize}
+
+Relative clause formation with {\bf $<$mode$>$=nom/prep} (for adjectival,
+nominal and prepositional predicates) are also allowed, but only with a
+covert $_{NP_{w}}$ and an covert COMP. Furthermore, they can be formed only
+on the subject of the clause. Some families that have these additional
+modes are Tnx0APnx1 \ex{1}, Tnx0ARBPnx1 \ex{2}, Tnx0nx1ARB \ex{3}.
+
+\enumsentence{the accused [ $\epsilon_w$ [ $\epsilon$ void of all hope ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$prep})} 
+\enumsentence{the dog [ $\epsilon_w$ [ $\epsilon$ next to the tree ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$prep})}
+\enumsentence{the road [ $\epsilon_w$ [ $\epsilon$ seven miles away ] ] ({\bf S$_{r}$.t:$\langle$mode$\rangle =$nom})}
 
 \subsection{Complementizer Selection}
 \label{sec:comp-selection}
-The {\bf VP.t:$<$assign-comp$>$} feature is assigned values which represent
-constraints on COMP selection by the highest verb in the clause. The
-feature values are passed up to the {\bf S$_r$} node of the relative clause
-by the equation,
+The {\bf VP.t:$<$assign-comp$>$} feature in the relative clause is assigned
+values which represent constraints on COMP selection by the highest verb in
+the clause. The feature values are passed up to the {\bf S$_r$} node of the
+relative clause by the equation,
 
-\enumsentence{{\bf S$_{r}$.b:$\langle$assign-comp$\rangle=$VP.t:$\langle$assign-comp$\rangle$}}
+\begin{itemize}
+\item {\bf
+S$_{r}$.b:$\langle$assign-comp$\rangle=$VP.t:$\langle$assign-comp$\rangle$}
+\end{itemize}
 
 This ensures proper selection of the appropriate COMP since the auxiliary
 tree anchored by each complementizer also has the {\bf $<$assign-comp$>$}
@@ -304,7 +311,7 @@ that/ind\_nil/inf\_nil/ecm} equation, which is coindexed with the {\bf
 S$_r$.b:$<$assign-comp$>$} feature in the relative clause tree.
 
 
-\subsection{Further constraints on the null COMP}
+\subsection{Further Constraints on the Null COMP}
 \label{sec:nocomp-mode}
 
 In our analysis, the {\it null} complementizer is not represented in the
@@ -316,15 +323,13 @@ extraction with {\bf $<$mode$>$=ind} unless there is an intervening
 clause. The evidence can be seen in \ex{1}-\ex{4}, especially in the
 contrast between \ex{1} and \ex{2}.
 
-\enumsentence{*the toy [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ likes Dafna ]]] ({\bf $<$mode$>$=ind})}
-\enumsentence{the toy [ Mary said [ $\epsilon$$_{i}$ likes Dafna ]]] ({\bf $<$mode$>$=ind})}
-\enumsentence{the boy [ $\epsilon$$_{i}$ $\epsilon$$_{i}$ eating the guava ]]] ({\bf $<$mode$>$=ger})}
-\enumsentence{the guava [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ eaten by the
-boy ]]] ({\bf $<$mode$>$=ppart})}
-\enumsentence{the boy [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ to eat the
-guava ]]] ({\bf $<$mode$>$=inf})}
-\enumsentence{the guava [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ next to the tree ]]] ({\bf $<$mode$>$=prep})}
-\enumsentence{the boy [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ seven miles away ]]] ({\bf $<$mode$>$=nom})}
+\enumsentence{*the girl [ $\epsilon_w$ [ $\epsilon$ likes Danny ]]] ({\bf $<$mode$>$=ind})}
+\enumsentence{the man [ $\epsilon_w$ [ Mary said [ $\epsilon$ likes Dafna ]]] ({\bf $<$mode$>$=ind})}
+\enumsentence{the boy [ $\epsilon_w$ [ $\epsilon_$ eating the guava ]] ({\bf $<$mode$>$=ger})}
+\enumsentence{the man [ $\epsilon_w$ [ $\epsilon_i$ defeated by the cowboy ]]] ({\bf $<$mode$>$=ppart})}
+\enumsentence{the boy [ $\epsilon_w$ [ $\epsilon_i$ to win the gold medal ]]] ({\bf $<$mode$>$=inf})}
+\enumsentence{the snake [ $\epsilon_w$ [ $\epsilon_i$ next to the tree ]]] ({\bf $<$mode$>$=prep})}
+\enumsentence{the town [ $\epsilon_w$ [ $\epsilon_i$ seven miles away ]]] ({\bf $<$mode$>$=nom})}
 
 To model this paradigm, the feature {\bf $\langle$nocomp-mode$\rangle$} is
 used in conjunction with the following equations.\footnote{%
@@ -391,8 +396,8 @@ the {\it that-trace} violation.%
 A relative clause can combine with the NP it modifies in at least 
 the following two ways:
 
-\enumsentence{[ the [ toy [ $\epsilon$$_{i}$ [ Dafna likes $\epsilon$$_{i}$ ]]]]}
-\enumsentence{[[ the toy ] [ $\epsilon$$_{i}$ [ Dafna likes $\epsilon$$_{i}$ ]]]}
+\enumsentence{[ the [ toy [ $\epsilon_w$ [ Dafna likes $\epsilon_i$ ]]]]}
+\enumsentence{[[ the toy ] [ $\epsilon_w$ [ Dafna likes $\epsilon_i$ ]]]}
 
 Based on cases like \ex{1} and \ex{2}, which are problematic for the
 structure in \ex{-1}, the structure in \ex{0} is
@@ -405,27 +410,26 @@ adopted.
 \begin{tabular}{cc}
 \centerline{\psfig{figure=ps/rel_clauses-files/NbetaDnx.ps,height=10.0cm}}
 \end{tabular}
-\label{trans-rel-clause-trees3}
-\caption{Determiner tree with {\bf $<$rel-clause$>$} feature: $\beta$Dnx}
+\caption{\label{trans_rel_clause_trees3} Determiner tree with {\bf $<$rel-clause$>$} feature: $\beta$Dnx}
 \end{figure}
 
 As it stands, the relative clause analysis sketched so far will combine in
 two ways with the Determiner tree shown in
-Figure~(\ref{trans-rel-clause-trees3}),%
+Figure~(\ref{trans_rel_clause_trees3}),%
 %
 \footnote{The determiner tree shown has the {\bf $<$rel-clause$>$} feature
 built in. The relative clause analysis would give two parses in the absence
 of this feature.%
 %
-} giving us both the possiblities shown in (\ref{n-attach-ex}) and
-(\ref{np-attach-ex}). In order to block the structure exemplified in
-(\ref{n-attach-ex}), the feature {\bf $\langle$rel-clause$\rangle$} is used
-in combination with the following equations.
+} giving us both the possiblities shown in \ex{-3} and \ex{-2}. In order to
+block the structure exemplified in \ex{-3}, the feature {\bf
+$\langle$rel-clause$\rangle$} is used in combination with the following
+equations.
 
-\enumsentence{{\bf NP$_{r}$.b:$\langle$rel-clause$\rangle=+$} on the
-Relative Clause}, and 
-
-\enumsentence{{\bf NP$_{f}$.t:$\langle$rel-clause$\rangle=-$} on the Determiner tree.}
+\begin{itemize}
+\item {\bf NP$_{r}$.b:$\langle$rel-clause$\rangle=+$} (on the Relative Clause)
+\item {\bf NP$_{f}$.t:$\langle$rel-clause$\rangle=-$} (on the Determiner tree)
+\end{itemize}
 
 Together, these equations block introduction of the determiner above the
 relative clause.
@@ -442,28 +446,28 @@ See \ex{1}-\ex{8}.
 
 
 \enumsentence{
-the toy [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ playing the banjo ]]]
+the gypsy [ $\epsilon_w$ [ $\epsilon$ playing the banjo ]]]
 }
 \enumsentence{
-*the instrument [ $\epsilon$$_{i}$ [ Amis playing $\epsilon$$_{i}$ ]]]
+*the instrument [ $\epsilon_w$ [ Amis playing $\epsilon$ ]]]
 }
 \enumsentence{
-*the day [ $\epsilon$$_{w}$ [ Amis playing the banjo ]]]
+*the day [ $\epsilon_w$ [ Amis playing the banjo ]]]
 }
 \enumsentence{
-the apple [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ eaten by Dafna ]]]
+the apple [ $\epsilon_w$ [ $\epsilon$ eaten by Dafna ]]]
 }
 \enumsentence{
-*the child [ $\epsilon$$_{i}$ [ the apple eaten by $\epsilon$$_{i}$ ]]]
+*the child [ $\epsilon_w$ [ the apple eaten by $\epsilon$ ]]]
 }
 \enumsentence{
-*the day [ $\epsilon$$_{w}$ [ Amis eaten the apple ]]]
+*the day [ $\epsilon_w$ [ Amis eaten the apple ]]]
 }
 \enumsentence{
-*the apple [ $\epsilon$$_{i}$ [ Dafna eaten $\epsilon$$_{i}$ ]]]
+*the apple [ $\epsilon_w$ [ Dafna eaten $\epsilon$ ]]]
 }
 \enumsentence{
-*the child [ $\epsilon$$_{i}$ [ $\epsilon$$_{i}$ eaten the apple ]]]
+*the child [ $\epsilon_w$ [ $\epsilon$ eaten the apple ]]]
 }
 
 These restrictions are built into the {\bf $<$mode$>$} specifications
@@ -482,18 +486,18 @@ be a semantic and/or pragmatic difference.
 Complementizers are prevented from stacking, as in example \ex{1}, just as
 in sentential complementation.
 
-\enumsentence{*the book [ $\epsilon$$_w$$_i$ [ that [ that [ Muriel wrote
-$\epsilon$$_i$ ]]]]}
+\enumsentence{*the book [ $\epsilon_w$ [ that [ that [ Muriel wrote
+$\epsilon$ ]]]]}
 
 \subsection{Adjunction on PRO}
 Adjunction on PRO, which would yield the ungrammatical \ex{1} is blocked.
 
 \enumsentence{*I want [[PRO [ who Muriel likes ] to read a book ]].}
 
-This is done by specifying the {\bf $<$case$>$} feature of {\bf NP$_{f}$} to be
-{\bf nom/acc}. The {\bf $<$case$>$} feature of PRO is {\bf none}. This
-leads to a feature clash and blocks adjunction of relative clauses on to
-PRO.
+This is done by setting the {\bf $<$case$>$} feature of {\bf NP$_{f}$}
+(foot node of the relative clause treee) to be {\bf nom/acc}. The {\bf
+$<$case$>$} feature of PRO is {\bf none}. This leads to a feature clash and
+blocks adjunction of relative clauses onto PRO.
 
 \subsection{Adjunct relative clauses}
 \label{sec:adju-RC}
@@ -503,8 +507,8 @@ there is a null {\bf NP$_{w}$} built in and a {\bf COMP} adjoins in. There
 is no {\bf NP$_{w}$} substitution tree. This is because of the contrast
 between \ex{1} and \ex{2}.  
 
-\enumsentence{the day [[on whose predecessor ] [ Muriel left ]]]}
-\enumsentence{*the day [[whose predecessor ] [ Muriel left ]]]}
+\enumsentence{the horse [[on whose back ] [ Muriel rode away ]]]}
+\enumsentence{*the horse [[whose back ] [ Muriel rode away ]]]}
 
 In general, adjunct relatives are not possible with an overt {\bf
 NP$_{w}$}.  We do not consider \ex{1} and \ex{2} to be counterexamples
@@ -518,29 +522,31 @@ be exhaustive {\bf PP}s that head a {\bf PP} initial tree.
 Cases where {\em for} assigns exceptional case (cf. \ex{1}, \ex{2}) are
 handled, again parallel to the way ECM is done in sentential complementation.
 
-\enumsentence{a book [ $\epsilon$$_{w_{i}}$ [ for [ Muriel to read $\epsilon$$_{i}$ ]]]}
-\enumsentence{the time [ $\epsilon$$_{w_{i}}$ [ for [ Muriel to leave Haverford ]]]}
+\enumsentence{a book [ $\epsilon_w$ [ for [ him to read $\epsilon$ ]]]}
+\enumsentence{the time [ $\epsilon_w$ [ for [ her to leave Haverford ]]]}
 
 The assignment of case by {\em for} is implemented by a combination of the
 following equations:
 
-\enumsentence{{\bf S$_{r}$.b:$\langle$assign-case$\rangle$=acc} (in the {\it for} $\beta$COMPs tree)}
-\enumsentence{{\bf S$_{r}$.b:$\langle$assign-case$\rangle =$ NP$_{0}$.t:$\langle$case$\rangle$} (in the Relative clause tree)}
+\begin{itemize}
+\item {\bf S$_{r}$.b:$\langle$assign-case$\rangle$=acc} (in the {\it for} $\beta$COMPs tree)
+\item {\bf S$_{r}$.b:$\langle$assign-case$\rangle =$
+NP$_{0}$.t:$\langle$case$\rangle$} (in the Relative clause tree)
+\end{itemize}
 
 \section{Cases not handled}
 \subsection{Partial treatment of free-relatives}
-Free relatives are only partially handled. All free relatives on non-subject
-positions and some free relatives on subject positions 
-are handled. The structure assigned 
-to free relatives treats the extracted {\em wh}-NP as the head NP of
-the relative clause. The remaining relative clause modifies this
-extracted {\em wh}-NP (cf. \ex{1}-\ex{3}).
+Free relatives are only partially handled. All free relatives in
+non-subject positions and some free relatives on subject positions are
+handled. The structure assigned to free relatives treats the extracted {\em
+wh}-NP as the head NP of the relative clause. The remaining relative clause
+modifies this extracted {\em wh}-NP (cf. \ex{1}-\ex{3}).
 
 \enumsentence{what(ever) [ $\epsilon$$_{w_{i}}$ [ Mary likes $\epsilon$$_{i}$ ]]]}
 \enumsentence{where(ever) [ $\epsilon$$_{w}$ [ Mary lives ]]]}
 \enumsentence{who(ever) [ $\epsilon$$_{w_{i}}$ [ Muriel thinks [ $\epsilon$$_{i}$ likes Mary ]]]]}
 
-However, simple subject extractions without further emebedding are not
+However, simple subject extractions without further embedding are not
 handled (cf. \ex{1}).
 
 \enumsentence{who(ever) [ $\epsilon$$_{w_{i}}$ [ $\epsilon$$_{i}$ likes Bill ]]]}
@@ -557,13 +563,13 @@ The following cases of adjunct preposition stranding are not handled
 
 Adjuncts are not built into elementary trees in XTAG. So there is no
 clean way to represent adjunct preposition stranding. A better
-solution might, probably, available if we make use of multi-component
+solution might, probably, be available if we make use of multi-component
 adjunction. 
 
 \subsection{Overgeneration}
 The following types of ungrammatical examples are currently accepted by
 the XTAG grammar. This is because no clean and conceptually attractive way
-of ruling them out is obvious to us.
+of ruling them out is obvious to us yet.
 
 \subsubsection{{\em how} as {\em wh}-NP}
 In standard American English, {\em how} is not acceptable as a 
