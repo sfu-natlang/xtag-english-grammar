@@ -170,10 +170,19 @@ verb as well as whether an auxiliary verb adjoins in.
 
 Finite verbs like {\em sings} have {\bf nom} as the value of their
 {\bf $\langle$assign-case$\rangle$} feature. Non-finite verbs have
-{\bf none} as the value of their {\bf $\langle$assign-case$\rangle$}
-feature. So if no auxiliary adjoins in, the only subject they can have
-is {\bf PRO} which is the only NP with {\bf none} as the value its
-{\bf $\langle$case$\rangle$} feature.
+no value for the {\bf $\langle$assign-case$\rangle$}
+feature. In all grammatical examples with lexical NP subjects, a tensed
+auxiliary adjoins in which assigns {\bf nom} to the subject, or accusative case
+is assigned from above (from the complementizer {\it for} or from an ECM
+verb). PRO subjects have {\bf $\langle$case$\rangle =$ none} which would clash
+with the {\bf $\langle$assign-case$\rangle$} of a tensed auxiliary or anything
+else that would try to assign case to the subject.\footnote{Note that tensed
+auxiliaries are independently ruled out from adjoining into PRO trees by the
+{\bf $\langle$mode$\rangle$} feature.}
+
+%So if no auxiliary adjoins in, the only subject they can have
+%is {\bf PRO} which is the only NP with {\bf none} as the value its
+%{\bf $\langle$case$\rangle$} feature.
 
 \subsection{ECM}
 Certain verbs e.g. {\em want, believe, consider} etc. and one complementizer
@@ -201,6 +210,8 @@ a pre-existing relationship of case-assignment between a verb and an NP.
 
 
 \section{Extraction and Inversion}
+
+\subsection{Extraction}
 {\bf $\langle$extracted$\rangle$}, possible vales are {\bf $+/-$}
 
 All sentential trees with extracted components, with the exception of
@@ -254,7 +265,7 @@ The {\bf $\langle$wh$\rangle$} feature is also used to get the correct
 inversion patterns.
 
 
-\subsection{Inversion, Part 1}
+\subsection{Inversion}
 The following three features are used to ensure the correct pattern of
 inversion:\\
 {\bf $\langle$wh$\rangle$}: possible values are {\bf $+/-$}\\
@@ -327,26 +338,41 @@ Subject topicalizations are blocked by setting the
 {\bf $\langle$wh$\rangle$} feature of the extracted NP to $+$ i.e. only
 {\em wh}-phrases can go in this location. 
 
-\subsection{Inversion, Part 2}
+%\subsection{Inversion, Part 2}
 
-{\bf $\langle$displ-const$\rangle$}:\\ Possible values: {\bf [set1:
-+], [set1: --]}\\ In the previous section, we saw how inversion is
-triggered using the {\bf $\langle$invlink$\rangle$}, {\bf
-$\langle$inv$\rangle$}, {\bf $\langle$wh$\rangle$} features. Inversion
-involves movement of the verb from V to C. This movement process is
-represented using the {\bf $\langle$displ-const$\rangle$} feature
-which is used to simulate Multi-Component TAGs.\footnote{The {\bf
-$\langle$displ-const$\rangle$} feature is also used in the ECM
-analysis.} The sub-value {\bf set1} indicates the inversion
-multi-component set; while there are not currently any other uses of
-this mechanism, it could be expanded with other sets receiving
-different {\bf set} values.
+\section{Multi-component Adjoining}
 
+{\bf $\langle$displ-const$\rangle$}:\\ Possible values: {\bf [set1: +], [set1:
+--]}\\ This feature can be used to simulate multi-component
+adjoining\footnote{The {\bf $\langle$displ-const$\rangle$} feature is also used
+in the ECM analysis.} and was previously used this way in the analysis of
+inversion. In the previous analysis, an empty verb trace tree adjoined in
+at VP whenever an auxiliary verb tree adjoined at S.
+However, we have dispensed with the empty verb tree and thus do not require a
+multi-component analysis to account for inversion.
+
+We leave a description of the feature here for possible future analyses of
+phenomena which might require a multi-component analysis, such as
+extraposition, for example. 
+
+%In the previous section, we saw how inversion is
+%triggered using the {\bf $\langle$invlink$\rangle$}, {\bf
+%$\langle$inv$\rangle$}, {\bf $\langle$wh$\rangle$} features. Inversion
+%involves movement of the verb from V to C. This movement process is
+%represented using the {\bf $\langle$displ-const$\rangle$} feature
+%which is used to simulate Multi-Component TAGs.\footnote{The {\bf
+%$\langle$displ-const$\rangle$} feature is also used in the ECM
+%analysis.} The sub-value {\bf set1} indicates the inversion
+%multi-component set; while there are not currently any other uses of
+%this mechanism, it could be expanded with other sets receiving
+%different {\bf set} values.
+%
 The {\bf $\langle$displ-const$\rangle$} feature is used to ensure
-adjunction of two trees, which in this case are the auxiliary
-tree corresponding to the moved verb (S adjunct) and the auxiliary tree
-corresponding to the trace of the moved verb (VP adjunct). The following
-equations are used:
+adjunction of two trees.
+% which in this case are the auxiliary
+%tree corresponding to the moved verb (S adjunct) and the auxiliary tree
+%corresponding to the trace of the moved verb (VP adjunct). 
+The following equations are used:
 
 \enumsentence{  {\bf S$_{r}$.b:$\langle$displ-const set1$\rangle = -$}\label{dis1}}
 \enumsentence{  {\bf S.t:$\langle$displ-const set1$\rangle = +$}\label{dis2}}
