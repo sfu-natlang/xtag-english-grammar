@@ -38,7 +38,7 @@ we have the following feature equations:\\
 {\bf NP$_{w}$.t:$\langle$ case $\rangle =$NP$_{0}$.t:$\langle$ case $\rangle$}\\
 {\bf NP$_{w}$.t:$\langle$ agr $\rangle =$NP$_{0}$.t:$\langle$ agr $\rangle$}
 \footnote{
-No adjunct traces are represented in the Xtag analysis of adjunct extraction.
+No adjunct traces are represented in the XTAG analysis of adjunct extraction.
 Relative clauses on adjuncts do not have traces and consequently feature
 equations of the kind shown here are not present.}
 
@@ -72,7 +72,7 @@ See  (\ex{1}) and (\ex{2}) for example.
 \enumsentence{export exhibitions [ [$_{NP_{w}}$$\epsilon$]$_{i}$ [ that [ $\epsilon$$_{i}$ included high-tech items]]]}
 \enumsentence{the export exhibition [ [$_{NP_{w}}$$\epsilon$]$_{i}$ [ $\epsilon$$_{C}$ [Muriel planned  $\epsilon$$_{i}$]]]}
 
-The lexicalized nature of Xtag makes it problematic to have trees headed by
+The lexicalized nature of XTAG makes it problematic to have trees headed by
 null strings. Of the two null trees, NP$_{w}$ and Comp, that we could postulate,
 the former is definitely more undesirable because it would lead to 
 massive overgeneration, as can be seen in (\ex{1}) and (\ex{2}).
@@ -370,7 +370,7 @@ introduction of the determiner above the relative clause.
 \section{Other Issues}
 
 \subsection{Interaction with adjoined Comps}
-The Xtag analysis now has two different ways of introducing a 
+The XTAG analysis now has two different ways of introducing a 
 complementizer like {\em that} or {\em for}, depending upon whether
 it occurs in a relative clause or in sentential complementation. 
 Relative clause complementizers substitute in (using the
@@ -405,7 +405,7 @@ PRO.
 
 \subsection{Adjunct relative clauses}
 Two types of trees to handle adjunct relative clauses exist in the 
-Xtag grammar: one in which there is {\bf PP$_{w}$} substitution with 
+XTAG grammar: one in which there is {\bf PP$_{w}$} substitution with 
 a null {\bf Comp} built in and one in which there is a null {\bf NP$_{w}$}
 built in and a {\bf Comp} substitutes in. There is no {\bf NP$_{w}$}
 substitution tree with a null {\bf Comp} built in. This is because of
@@ -464,14 +464,14 @@ The following cases of adjunct preposition stranding are not handled
 \enumsentence{the pen Muriel wrote this letter with}
 \enumsentence{the street Muriel lives on}
 
-Adjuncts are not built into elementary trees in Xtag. So there is no
+Adjuncts are not built into elementary trees in XTAG. So there is no
 clean way to represent adjunct preposition stranding. A better
 solution is, probably , available if we make use of multi-component
 adjunction. 
 
 \subsection{Overgeneration}
 The following ungrammatical sentences are currently being 
-accepted by the Xtag grammar. This is because no clean 
+accepted by the XTAG grammar. This is because no clean 
 and conceptually attractive way of ruling them out
 is obvious to us.
 
@@ -493,7 +493,7 @@ speech registers/dialects of English, where (\ex{0}) is acceptable.
 \enumsentence{the person [$\epsilon$$_{w_{i}}$ [for 
 [$\epsilon$$_{i}$ to read the book]]]}
 
-The Xtag grammar currently accepts (\ex{0}).\footnote{It may be of
+The XTAG grammar currently accepts (\ex{0}).\footnote{It may be of
 some interest that (\ex{0}) is acceptable in certain dialects of Belfast
 English.}
 
@@ -520,7 +520,7 @@ the person} and {\em which person} are co-indexed and {\em the person}
 c-commands {\em which person}. If we accept Dayal's argument, we 
 have a principled reason for allowing overgeneration of relative clauses
 that violate the internal head constraint, the reason being that 
-the Xtag grammar does generate binding theory violations.
+the XTAG grammar does generate binding theory violations.
 
 \subsubsection{Overt Comp constraint on stacked relatives}
 Stacked relatives of the kind in (\ex{1}) are handled.

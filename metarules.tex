@@ -3,7 +3,7 @@
 
 \section{Introduction}
 
-Xtag has now a collection of functions accessible from the user interface that
+XTAG has now a collection of functions accessible from the user interface that
 helps the user in the construction and maintenance of a tag tree-grammar.
 This subsystem is based on the idea of metarules (\cite{becker93}).
 Here our primary
@@ -13,9 +13,9 @@ For a discussion of the metarules as a method for compact representation
 of the Lexicon see \cite{becker93} and \cite{srini94}.
 
 The basic idea of using metarules is to take profit of the similarities of the
-relations involving related pairs of Xtag elementary trees. 
+relations involving related pairs of XTAG elementary trees. 
 For example, in the English grammar described in this technical report,
-comparing the Xtag trees for the basic form and the 
+comparing the XTAG trees for the basic form and the 
 wh-subject moved form, the relation between this two trees for transitive verbs
 ($\alpha nx_0Vnx_1$, $\alpha W_0nx_0Vnx_1$) is similar to the relation for the
 intransitive verbs ($\alpha nx_0V$, $\alpha W_0nx_0V$) and also to the 
@@ -40,7 +40,7 @@ is not the only advantage of the approach. Robustness,
 reliability and maintainability of the grammar achieved by the use of  
 metarules are equally or even more important.
 
-In the next section we define a metarule in Xtag. 
+In the next section we define a metarule in XTAG. 
 Section 3 gives some
 linguistically motivated examples
 of metarule for the English grammar described in this
@@ -48,11 +48,11 @@ technical report and their application. Section 4 describes the access through
 the user interface.
 %Section 3 describes the access through the user interface.
 
-\section{The definition of a metarule in Xtag}
+\section{The definition of a metarule in XTAG}
 
 A metarule specifies a rule for transforming grammar rules into grammar rules. 
-In Xtags the grammar 
-rules are lexicalized trees. Hence an Xtag metarule {\bf mr} 
+In XTAG the grammar 
+rules are lexicalized trees. Hence an XTAG metarule {\bf mr} 
 is a pair {\bf (lhs, rhs)} of XTAG trees, where:
 
 \begin{itemize}
@@ -86,7 +86,7 @@ given below.
 
 \item {\bf Constant Node:} Its name must not initiate by a question mark
         (`?' character). They are like we expect for names to be in normal
-        Xtag trees; for instance, {\bf inp} is expected to have only constant
+        XTAG trees; for instance, {\bf inp} is expected to have only constant
         nodes. Some examples of constant nodes are $NP$, $V$, $NP_0$, $NP_1$,
         $S_r$. We will call the two parts that compose such names
         the {\it stem} and the {\it subscript}.
@@ -112,7 +112,7 @@ given below.
         followed by a sequence of digits, but is additionally followed by
         a {\it type specifiers definition}. A {\it type specifiers definition}
         is a sequence of one or more {\it type specifier} separated by a slash
-        (`/'). A {\it type specifier} has the same form of a regular Xtag node
+        (`/'). A {\it type specifier} has the same form of a regular XTAG node
         name (like the constant nodes), except that the subscript can be also
         a question mark. Examples of typed variables are:
         $?1VP$ (a single type specifier with stem $VP$ and no subscript), 
@@ -331,7 +331,7 @@ checking, that matching has failed.
 If the process of matching {\bf lhs} to {\bf inp} fails, there are two 
 alternative behaviors according to the value of a parameter\footnote{the
 parameter is accessible at the Lisp interface by the name 
-{\it Xtag::*metarules-copy-unmatched-trees*}}. 
+{\it XTAG::*metarules-copy-unmatched-trees*}}. 
 If the parameter is set to false, which is the {\it default} value, 
 no output is generated. 
 On the other hand, if 
