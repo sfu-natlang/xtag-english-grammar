@@ -25,41 +25,6 @@ ordering systems are structured on the idea that certain types of lexical items
 others.  We believe that an analysis of adjectival ordering would follow the
 same type of mechanism.
 
-
-
-\section{Determiner Adverbs}
-
-There are some apparent adverbs that interact with the NP and determiner system
-(\cite{quirk85}), although there is some debate in the literature as to whether
-these should be classified as determiners or adverbs.\footnote{This section is
-from \cite{HockeyEgedi94}.}
-
-\enumsentence{{\bf hardly} any attempt was made at restitution .}
-\enumsentence{{\bf only} Albert would say such a thing .}
-\enumsentence{{\bf almost} all the people had left by 5pm .}
-
-Adverbs that modify NP's or determiners have restrictions on what types of NP's
-or determiners they can modify. They divide into three classes based on the
-pattern of these restrictions.  The adverbs {\it especially}, {\it even}, {\it
-just} and {\it only} form a class that can modify any NP that is {\bf
-$<$wh$>$=--}, including proper nouns.  A second class, consisting of adverbs
-such as {\it hardly}, {\it merely} and {\it simply}, modifies NP's with
-determiners that are {\bf $<$definite$>$=--} and {\bf $<$const$>$=+}, or that
-are {\bf $<$gen$>$=+}.  This second class of adverbs can also modify NP's with
-{\it the} as a determiner, but they do not modify NP's without determiners.
-The third class, exemplified by {\it almost}, {\it approximately} and {\it
-relatively}, modifies the determiner itself.  These adverbs are restricted to
-modifying determiners with the {\bf $<$card$>$=+} feature, as well as {\it
-all}, {\it double} and {\it half}.  The distinction between adverbs that modify
-NP's and ones that modify determiners can be seen in the NP's in
-({\ex{1}})~and~({\ex{2}}).
-
-\enumsentence{[just][half the people]}
-\enumsentence{[approximately half][the people]}
-
-
-
-
 \section{More work on Determiners}
 
 In addition to the analysis described in Chapter~\ref{det-comparitives}, there
@@ -78,68 +43,21 @@ enough}, {\it less}, {\it more} and {\it much}) that have the property that
 they cannot cooccur with determiners.  We feel that a complete analysis of
 determiners should be able to account for this phenomenon, as well.
 
-
-
-
-\section{Comparatives}
-
-Also included in our future grammar development plans are comparatives.
-Comparatives that involve ellipsis would require a general solution of the
-problem of representing ellipsis, but simpler comparatives without ellipsis,
-such as {\it fewer than nine\/} in (\ex{1}), should be amenable to analysis as
-complex determiners, perhaps with trees similar in construction to the
-partitive and genitive NP trees.
-
-\enumsentence{cats have {\bf fewer than} nine lives .}
-
-
-
-%%Removed this section from Future Work and replaced with section on
-%%the implementation of Time NPs in the Modifiers section.
-%\section{Time NP's}
-
-%Although in general NP's cannot simply adjoin onto sentences, there is a class
-%of NP's, called Time NP's, that can.  These NP's behave essentially like PP's,
-%and the XTAG analysis for this is fairly simple, requiring only the creation of
-%proper NP auxiliary trees.  Only slightly more difficult is the identification
-%of all possible anchors of these trees.  A {\bf $<$time$>$=+} feature will be
-%used to ensure that only certain nouns can select the time NP auxiliary trees.
-
-%\enumsentence{I went to Kentucky last month/$\ast$big cat .}
-%\enumsentence{this morning/$\ast$Big cat, we practiced juggling four balls .}
-
-
-
 \section{{\it -ing} adjectives}
 
-An analysis has already been provided for {\it -ed} adjectives (as in sentence~
-(\ex{1})), which are restricted to the Transitive Verb family.\footnote{This
-analysis may need to be extended to the Transitive Verb particle family as
-well.}  A similar analysis needs to take place for the \nolinebreak[4]{\it
--ing} adjectives.  This type of adjective, however, does not seem to be as
-restricted as the \nolinebreak[4]{\it -ed} adjectives, since verbs in other
-tree families seem to exhibit this alternation as well (e.g. sentences~(\ex{2})
-and (\ex{3})).
+An analysis has already been provided for past participal ({\it -ed})
+adjectives (as in sentence~ (\ex{1})), which are restricted to the
+Transitive Verb family.\footnote{This analysis may need to be extended
+to the Transitive Verb particle family as well.}  A similar analysis
+needs to take place for the present participle~({\it -ing}) used as a
+pre-nominal modifier.  This type of adjective, however, does not seem
+to be as restricted as the~{\it -ed} adjectives, since verbs in other
+tree families seem to exhibit this alternation as well
+(e.g. sentences~(\ex{2}) and (\ex{3})).
 
 \enumsentence{The murdered man was a doctoral student at UPenn .}
 \enumsentence{The man died .}
 \enumsentence{The dying man pleaded for his life .}
-
-
-
-\section{Punctuation}
-
-We are currently developing an analysis of comma coordination, to
-cover sentences such as (\ex{1}) and (\ex{2}).
-
-\enumsentence{The brilliant , funny and timeless comedian had his 99th birthday
-today .}
-\enumsentence{NP's , PP's and VP's are all adjunction sites .}
-
-Beyond this, we intend to add an analysis of other types of punctuation. We
-believe that there are cases where the punctuation will serve as a guide to the
-correct parse (e.g. comma following topicalized element), thus reducing
-ambiguity.
 
 
 \section{Verb selectional restrictions}
@@ -176,18 +94,6 @@ derivations when embedded into a specific context.  In the case of a
 Synchronous TAG, $\theta$-roles can also be used to automatically establish
 links between two elementary trees, one in the object language and one in the
 target language.
-
-
-\section{Idioms}
-
-An analysis of idioms has already been worked out (\cite{AS89}), and one idiom
-tree family is contained in the English XTAG grammar (Transitive Idioms;
-section~\ref{nx0Vdn1-family}).  What remains to be done is a wide-ranging
-cataloging of the many English idioms.  The list of idioms must then be divided
-into appropriate tree families, based on the construction of the idiom, the
-elements that are frozen and must therefore anchor the trees, and the
-alternations that the idiom can undergo (e.g. passive, wh-movement, etc).  This
-work has not been done.
 
 
 
