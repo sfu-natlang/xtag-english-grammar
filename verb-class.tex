@@ -16,17 +16,18 @@ individual trees.  This approach allows for a considerable reduction
 in the number of trees that must be specified for any given verb or
 form of a verb.
 
-There are currently 47 tree families in the system.\footnote{An
-explanation of the naming convention used in naming the trees and tree
-families is available in Appendix~\ref{tree-naming}.}  This chapter
-gives a brief description of each tree family and shows the
+There are currently 48 tree families in the system.\footnote{An
+  explanation of the naming convention used in naming the trees and
+  tree families is available in Appendix~\ref{tree-naming}.}  This
+chapter gives a brief description of each tree family and shows the
 corresponding declarative tree\footnote{Before lexicalization, the
-$\diamond$ indicates the anchor of the tree.}, along with any peculiar
-characteristics or trees.  It also indicates which transformations are
-in each tree family, and gives the number of verbs that select that
-family.\footnote{Numbers given are as of August 1996 and are subject
-to some change with further development of the grammar.} A few sample
-verbs are given, along with example sentences.
+  $\diamond$ indicates the anchor of the tree.}, along with any
+peculiar characteristics or trees.  It also indicates which
+transformations are in each tree family, and gives the number of verbs
+that select that family.\footnote{Numbers given are as of August 1998
+  and are subject to some change with further development of the
+  grammar.} A few sample verbs are given, along with example
+sentences.
 
 
 \section{Intransitive: Tnx0V}\index{verbs, intransitive}
@@ -342,22 +343,23 @@ Complement with NP}
 \label{nx0Vnx1s2-family}
 
 \begin{description}
-
-\item[Description:]  This tree family is selected by verbs that take both an NP
-and a sentential complement.  The sentential complement may be infinitive or
-indicative.  The type of clause is specified by each individual verb in its
-syntactic lexicon entry.  A given verb may select more than one type of
-sentential complement.  The declarative tree, and many other trees in this
-family, are auxiliary trees, as opposed to the more common initial trees.
-These auxiliary trees adjoin onto an S node in an existing tree of the type
-specified by the sentential complement.  This is the mechanism by which TAGs
-are able to maintain long-distance dependencies (see Chapter~\ref{extraction}),
-even over multiple embeddings (e.g. {\it What did Bill tell Mary that John
-said?}).  91 verbs select this tree family.
+  
+\item[Description:] This tree family is selected by verbs that take
+  both an NP and a sentential complement.  The sentential complement
+  may be infinitive or indicative.  The type of clause is specified by
+  each individual verb in its syntactic lexicon entry.  A given verb
+  may select more than one type of sentential complement.  The
+  declarative tree, and many other trees in this family, are auxiliary
+  trees, as opposed to the more common initial trees.  These auxiliary
+  trees adjoin onto an S node in an existing tree of the type
+  specified by the sentential complement.  This is the mechanism by
+  which TAGs are able to maintain long-distance dependencies (see
+  Chapter~\ref{extraction}), even over multiple embeddings (e.g. {\it
+    What did Bill tell Mary that John said?}).  79 verbs select this
+  tree family.
 
 \item[Examples:] {\it beg}, {\it expect}, {\it tell} \\
 {\it Srini begged Mark to increase his disk quota .} \\
-{\it Jim expected Beth to feed the dogs .} \\
 {\it Beth told Jim that it was his turn .}
 
 \item[Declarative tree:]  See Figure~\ref{nx0Vnx1s2-tree}.
@@ -598,19 +600,21 @@ passive with {\it by} phrase, gerund passive without {\it by} phrase.
 \label{nx0Vs1-family}
 
 \begin{description}
-
-\item[Description:]  This tree family is selected by verbs that take just a
-sentential complement.  The sentential complement may be of type infinitive,
-indicative, or small clause (see Chapter~\ref{small-clauses}).  The type of
-clause is specified by each individual verb in its syntactic lexicon entry, and
-a given verb may select more than one type of sentential complement.  The
-declarative tree, and many other trees in this family, are auxiliary trees, as
-opposed to the more common initial trees.  These auxiliary trees adjoin onto an
-S node in an existing tree of the type specified by the sentential complement.
-This is the mechanism by which TAGs are able to maintain long-distance
-dependencies (see Chapter~\ref{extraction}), even over multiple embeddings
-(e.g. {\it What did Bill think that John said?}). 340 verbs select this tree
-family.
+  
+\item[Description:] This tree family is selected by verbs that take
+  just a sentential complement.  The sentential complement may be of
+  type infinitive, indicative, or small clause (see
+  Chapter~\ref{small-clauses}).  The type of clause is specified by
+  each individual verb in its syntactic lexicon entry, and a given
+  verb may select more than one type of sentential complement.  The
+  declarative tree, and many other trees in this family, are auxiliary
+  trees, as opposed to the more common initial trees.  These auxiliary
+  trees adjoin onto an S node in an existing tree of the type
+  specified by the sentential complement.  This is the mechanism by
+  which TAGs are able to maintain long-distance dependencies (see
+  Chapter~\ref{extraction}), even over multiple embeddings (e.g. {\it
+    What did Bill think that John said?}). 339 verbs select this tree
+  family.
 
 \item[Examples:]  {\it consider}, {\it think} \\
 {\it Dania considered the algorithm unworkable .}\\
@@ -1497,7 +1501,7 @@ multi-word prepositions select this tree family.
 \caption{Declarative PP Small Clause tree with two-word preposition, where both
 words are prepositions:  $\alpha$nx0PPnx1}
 \label{nx0PPnx1-tree}
-\end{figure}	
+\end{figure}    
 
 \item[Other available trees:] wh-moved subject, wh-moved object of PP, relative
 clause on subject, relative clause on object of PP, imperative, wh-moved object
@@ -1600,7 +1604,7 @@ explained in much greater detail in section~\ref{sm-clause-xtag-analysis}.
 theory .} \\
 
 \item[Declarative tree:]  See Figure~\ref{s0APnx1-tree}.
-	
+        
 \begin{figure}[htb]
 \centering
 \begin{tabular}{c}
@@ -1719,9 +1723,40 @@ three-word preposition, where the middle noun is marked for null adjunction:
 $\alpha$s0PNaPnx1} 
 \label{s0PNaPnx1-tree}
 \end{figure}
-	
+        
 \item[Other available trees:] wh-moved subject, relative clause on object of 
 the PP.
+
+\end{description}
+
+\section{Predicative Adjective with Sentential Subject and Complement: Ts0A1s1}
+\label{s0A1s1-family}
+
+\begin{description}
+  
+\item{Description:} This tree family is selected by predicative
+  adjectives that take sentential subjects and a sentential
+  complement. This tree family is selected by {\it likely} and {\it
+    certain}.
+
+\item[Examples:]  {\it likely}, {\it certain} \\
+{\it that Max continues to drive a Jaguar is certain to make Bill jealous .} \\
+{\it for the Jaguar to be towed seems likely to make Max very angry .} \\
+
+\item[Declarative tree:]  See Figure~\ref{s0A1s1-tree}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphas0A1s1.ps,height=4.0cm}
+\end{tabular}
+\caption{Predicative Adjective with Sentential Subject and Complement:
+$\alpha$s0A1s1} 
+\label{s0A1s1-tree}
+\end{figure}
+        
+\item[Other available trees:] wh-moved subject, relative clause on
+  adjunct with PP, relative clause on adjunct with Comp.
 
 \end{description}
 
