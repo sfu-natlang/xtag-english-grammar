@@ -189,6 +189,8 @@ Feature&Values\\
 
 
 \section{Distribution of Complementizers}
+\label{comp-distr}
+
 Like other non-arguments, complementizers anchor an auxiliary tree (shown in
 Figure \ref{comp-tree}) and adjoin to elementary clausal trees.  The auxiliary
 tree for complementizers is the only alternative to having a complementizer
@@ -638,8 +640,8 @@ In the literature on control, two types are often distinguished: obligatory
 control, as in sentences~(\ex{1}), (\ex{2}), (\ex{3}), and (\ex{4}) and optional 
 control, as in sentence~(\ex{5}).
 
-\enumsentence{Srini$_i$ promised Mickey$_{i}$ [PRO$_i$ to go].}
-\enumsentence{Srini persuaded Mickey$_{i}$ [PRO$_i$ to go].}
+\enumsentence{Srini$_i$ promised Mickey$_{i}$ [PRO$_i$ to leave].}
+\enumsentence{Srini persuaded Mickey$_{i}$ [PRO$_i$ to leave].}
 \enumsentence{Srini$_{i}$ wanted [PRO$_i$ to leave].}
 \enumsentence{Christy$_{i}$ left the party early [PRO$_i$ to go to the airport].}
 \enumsentence{[PRO$_{arb}$ to dance] is important.}
@@ -680,20 +682,24 @@ verbs form a distinct minority, {\em promise} being the only commonly used
 verb in this class.
 
 
-Consider the derivation of sentence~(\ex{-4}). The auxiliary tree for
-{\em persuade} has the following feature equation~(\ex{1}).
+Consider the derivation of sentence~(\ex{-3}). The auxiliary tree for
+{\em persuade}, shown in Figure \ref{persuade-tree}, has the following
+feature equation~(\ex{1}).
 \enumsentence{  NP$_{1}$:{\bf $<$control$>$} = S$_{2}$.t:{\bf $<$control$>$} }
-The auxiliary tree adjoins into the tree for {\em leave} which 
+The auxiliary tree adjoins into the tree for {\em leave}, shown in
+Figure \ref{leave-tree}, which 
 has the following feature equation~(\ex{1}).
 \enumsentence{S$_{r}$.b:{\bf $<$control$>$} = NP$_{0}$.t:{\bf $<$control$>$}}
 Since the adjunction takes place at the root node (S$_{r}$) of the
 {\em leave} tree, after unification, NP$_{1}$ of the {\em persuade}
-tree and NP$_{0}$ of the {\em leave} tree share a control feature. 
+tree and NP$_{0}$ of the {\em leave} tree share a control feature. The
+resulting derived and derivation trees are shown in Figures
+\ref{derived-tree} and \ref{derivation-tree}.
 
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=ps/sent-comps-subjs-files/betanx0Vnx1s2_persuaded_.ps,height=8.2cm}
+\psfig{figure=ps/sent-comps-subjs-files/betanx0Vnx1s2_persuaded_.ps,height=5.2cm}
 \caption{Tree for {\it persuaded}}
 \label{persuade-tree}
 \end{figure}
@@ -701,7 +707,7 @@ tree and NP$_{0}$ of the {\em leave} tree share a control feature.
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=ps/sent-comps-subjs-files/alphanx0V_leave_.ps,height=7.2cm}
+\psfig{figure=ps/sent-comps-subjs-files/alphanx0V_leave_.ps,height=5.2cm}
 \caption{Tree for {\it leave}}
 \label{leave-tree}
 \end{figure}
@@ -709,7 +715,7 @@ tree and NP$_{0}$ of the {\em leave} tree share a control feature.
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=ps/sent-comps-subjs-files/persuaded-derv.ps,height=9.2cm}
+\psfig{figure=ps/sent-comps-subjs-files/persuaded-derv.ps,height=8.2cm}
 \caption{Derived tree for {\it Srini persuaded Mickey to leave}}
 \label{derived-tree}
 \end{figure}
