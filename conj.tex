@@ -29,9 +29,9 @@ component substitutes into the auxiliary tree.
 \begin{figure}[htb]
 \centering
 \begin{tabular}{ccc}
-{\psfig{figure=ps/conj-files/betaA1conjA2.ps,height=0.8in}}&
+{\psfig{figure=ps/conj-files/betaA1conjA2.ps,height=2.8in}}&
 \hspace*{0.5in}&
-{\psfig{figure=ps/conj-files/derived-tree-140291.ps,height=1.8in}}\\
+{\psfig{figure=ps/conj-files/derived-tree-140291.ps,height=2.8in}}\\
 (a) & \hspace*{0.5in}& (b)\\
 \end{tabular}
 \caption{Tree for adjective conjunction: $\beta$a1CONJa2 and a resulting parse tree}
@@ -76,9 +76,9 @@ cats}).
 \begin{figure}[htb]
 \centering
 \begin{tabular}{cc}
-{\psfig{figure=ps/conj-files/betaCONJnx1CONJnx2.ps,height=2.3in}}
+{\psfig{figure=ps/conj-files/betaCONJnx1CONJnx2.ps,height=6.5in}}
 \hspace{0.5cm} &
-{\psfig{figure=ps/conj-files/aardvarks-and-emus.ps,height=2.3in}}\\
+{\psfig{figure=ps/conj-files/aardvarks-and-emus.ps,height=6.5in}}\\
 (a) &  (b)\\
 \end{tabular}
 \caption{Tree for NP conjunction: $\beta$CONJnx1CONJnx2 and a resulting
@@ -107,10 +107,10 @@ conjunctions, but {\it $\ast$which and all} is not.
 \enumsentence{how many and which people camp frequently ?}
 \enumsentence{$^*$some or which people enjoy nature .}
 
-\begin{figure}[h*]
+\begin{figure}[htbp]
 \centering
 \begin{tabular}{c}
-\psfig{figure=ps/conj-files/betad1CONJd2.ps,height=4.3in}
+\psfig{figure=ps/conj-files/betad1CONJd2.ps,height=5.3in}
 \end{tabular}
 \vspace{-0.25in}
 \caption{Tree for determiner conjunction: $\beta$d1CONJd2.ps}
@@ -293,22 +293,12 @@ are trying to remedy both of these limitations using a probability
 model for coordination attachments which will be included as part of a
 later XTAG release.
 
-\begin{figure}[htbp]
-  \begin{center}
-    \leavevmode
-    \psfig{figure=ps/conj-files/tags.ps,scale=110}
-  \end{center}
-  \caption{Example of a lexicalized TAG}
-  \label{fig:tags}
-\end{figure}
-
 This extended domain of locality in a lexicalized Tree Adjoining
-Grammar (see Figure~\ref{fig:tags} for example) causes problems when
-we consider the coordination of such predicates. Consider~(\ex{1}) for
-instance, the NP {\em the beans that I bought from Alice} in the
-Right-Node Raising (RNR) construction has to be shared by the two
-elementary trees (which are anchored by {\em cooked} and {\em ate}
-respectively).
+Grammar causes problems when we consider the coordination of such
+predicates. Consider~(\ex{1}) for instance, the NP {\em the beans that
+  I bought from Alice} in the Right-Node Raising (RNR) construction
+has to be shared by the two elementary trees (which are anchored by
+{\em cooked} and {\em ate} respectively).
 
 \enumsentence{(((Harry cooked) and (Mary ate)) the beans that I bought
   from Alice)}
