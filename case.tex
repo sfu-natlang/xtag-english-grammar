@@ -1,17 +1,21 @@
+%%  This was originally a separate chapter, but I think that it works well as a
+%%  section under the Underview chapter.  I am leaving it as a separate file,
+%%  however, in case others believe otherwise.
+
 \section{Case Assignment}
 \label{case-assignment}
 \subsection{Approaches to Case}
 \subsubsection{Case in GB theory}
 
-GB (Government and Binding) theory proposes the following ``case filter'' as a
+GB (Government and Binding) theory proposes the following `case filter' as a
 requirement on S-structure.\footnote{There are certain problems with applying
 the case filter as a requirement at the level of S-structure.  These issues are
-not crucial to the discussion of the English LTAG implementation of case and so
+not crucial to the discussion of the English XTAG implementation of case and so
 will not be discussed here.  Interested readers are referred to
 \cite{lasnik-uriagereka88}.}
 
 \begin{verse}
-\underline{Case Filter}
+\xtagdef{Case Filter}
 Every overt NP must be assigned abstract case.
 \end{verse}
 
@@ -35,43 +39,47 @@ overt NPs and empty categories (such as PRO).
 
 \subsubsection{Minimalism and Case} 
 
-A major conceptual difference between GB theories and minimalism is that in
-minimalism, lexical items carry their features with them rather than being
+A major conceptual difference between GB theories and Minimalism is that in
+Minimalism, lexical items carry their features with them rather than being
 assigned their features based on the nodes that they end up at.  For nouns,
-this means that they carry case with them, and that case is 'checked' by
-AGR$_s$ or AGR$_o$, which then disappears \cite{chomsky92}.
+this means that they carry case with them, and that their case is `checked'
+when they are in SPEC position of AGR$_s$ or AGR$_o$, which subsequently
+disappears (\cite{chomsky92}).
 
 \subsection{Case in XTAG}
 
-The English XTAG grammar adopts the notion of case and the case filter for
-many of the same reasons argued in the GB literature.  However, the English
-XTAG grammar implementation of case more closely resembles the treatment in
-Chomsky's minimalism framework \cite{chomsky92} than the system outlined in the
-GB literature \cite{chomsky86}.  As in minimalism, nouns in the XTAG approach
-carry case with them, which is eventually 'checked' against the case values
-assigned by the verb during the unification of the feature structures.  Unlike
-Chomsky's minimalism, there is no separate AGR nodes; the case checking comes
-from the verbs directly.
+The English XTAG grammar adopts the notion of case and the case filter for many
+of the same reasons argued in the GB literature.  However, in some respects the
+English XTAG grammar's implementation of case more closely resembles the
+treatment in Chomsky's Minimalism framework (\cite{chomsky92}) than the system
+outlined in the GB literature (\cite{chomsky86}).  As in Minimalism, nouns in
+the XTAG grammar carry case with them, which is eventually `checked'. However
+in the XTAG grammar, noun cases are checked against the case values assigned
+by the verb during the unification of the feature structures.  Unlike Chomsky's
+Minimalism, there are no separate AGR nodes; the case checking comes from the
+verbs directly. Case assignment from the verb is more like the GB approach than
+the requirement of a SPEC-head relationship in Minimalism.
 
 Most nouns in English do not have separate forms for nominative and accusative
 case, and so they are ambiguous between the two.  Pronouns, of course, are
 morphologically marked for case, and each carries the appropriate case in its
-feature.  Figures \ref{nouns-with-case}a and \ref{nouns-with-case}b show the NP
-tree anchored by a noun and a pronoun, respectively, along with the feature
-values associated with each word.
+feature.  Figures~\ref{nouns-with-case}(a) and \ref{nouns-with-case}(b) show
+the NP tree anchored by a noun and a pronoun, respectively, along with the
+feature values associated with each word.  Note that {\it books} simply gets
+the default case {\bf nom/acc}, while {\it she} restricts the case to be {\bf
+nom}.
 
-\begin{figure*}[ht]
+\begin{figure}[htb]
 \centering
-\rule[.1in]{3.5in}{0.01in} \\
-\begin{tabular}{cc}
+\begin{tabular}{ccc}
 {\psfig{figure=ps/case-files/alphaNXN_books.ps,height=3.0in}}  &
+\hspace*{0.5in} &
 {\psfig{figure=ps/case-files/alphaNXN_she.ps,height=3.2in}} \\
-(a)&(b)\\
+(a)& \hspace*{0.5in}&(b)\\
 \end{tabular}\\
-\caption {Lexicalized NP trees with case markings}
-\rule[.1in]{3.5in}{0.01in}
+\caption{Lexicalized NP trees with case markings}
 \label {nouns-with-case}
-\end{figure*}
+\end{figure}
 
 \subsection{Case Assigners}
 
@@ -81,40 +89,39 @@ values associated with each word.
 Case is assigned in the XTAG English grammar by two components - verbs and
 prepositions\footnote{{\it For} also assigns case as a complementizer.  See
 section \ref{for-complementizer} for more details.}.  Prepositions assign
-accusative case ({\bf acc})through their {\bf assign-case} feature, which is
-linked directly to the {\bf case} feature of their objects.  Figure
-\ref{PXPnx-with-case}a shows a lexicalized preposition tree, while
-\ref{PXPnx-with-case}b shows the same tree with the NP tree from
-\ref{nouns-with-case}a substituted into the NP position.  Figure
-\ref{PXPnx-with-case}c is the tree \ref{PXPnx-with-case}b after unification has
-taken place.  Note that the case ambiguity of {\it books} has been resolved to
-accusative case.
+accusative case ({\bf acc}) through their {\bf $<$assign-case$>$} feature,
+which is linked directly to the {\bf $<$case$>$} feature of their objects.
+Figure~\ref{PXPnx-with-case}(a) shows a lexicalized preposition tree, while
+Figure~\ref{PXPnx-with-case}(b) shows the same tree with the NP tree from
+Figure~\ref{nouns-with-case}(a) substituted into the NP position.
+Figure~\ref{PXPnx-with-case}(c) is the tree in Figure~\ref{PXPnx-with-case}(b)
+after unification has taken place.  Note that the case ambiguity of {\it books}
+has been resolved to accusative case.
 
-\begin{figure*}[ht]
+\begin{figure}[htb]
 \centering
-\rule[.1in]{6.0in}{0.01in}
-\begin{tabular}{ccc}
+\begin{tabular}{ccccc}
 {\psfig{figure=ps/case-files/alphaPXPnx_of.ps,height=1.7in}}  &
-{\psfig{figure=ps/case-files/NXN-substituted-into-PXPnx.ps,height=3.5in}}  &
+&
+{\psfig{figure=ps/case-files/NXN-substituted-into-PXPnx.ps,height=3.5in}} &
+&
 {\psfig{figure=ps/case-files/NXN-substituted-into-PXPnx-unified.ps,height=2.8in}} \\
-(a)&(b)&(c)\\
+(a)& \hspace*{0.05in}&(b)& \hspace*{0.05in}&(c)\\
 \end{tabular}\\
 \caption {Assigning case in prepositional phrases}
-\rule[.1in]{6.0in}{0.01in}
-\label {PXPnx-with-case}
-\end{figure*}
+\label{PXPnx-with-case}
+\end{figure}
 
 \subsubsection{Verbs}
 \label{case-for-verbs}
-Verbs are the other part of speech in XTAG that can assign case.  Because
-XTAG does not distinguish INFL and VP nodes\footnote{See section
-\ref{VP-INFL-collapse} for an explanation of how this was done.}, verbs must
-provide case assignment on the subject position in addition to the
-case assigned to their NP complements.
+Verbs are the other part of speech in the XTAG grammar that can assign case.
+Because XTAG does not distinguish INFL and VP nodes, verbs must provide case
+assignment on the subject position in addition to the case assigned to their NP
+complements.
 
 Assigning case to NP complements is handled by building the case values of the
 complements directly into the tree that the case assigner (the verb) anchors.
-Figures \ref{S-tree-with-case}a and \ref{S-tree-with-case}b show an S
+Figures~\ref{S-tree-with-case}(a) and \ref{S-tree-with-case}(b) show an S
 tree\footnote{Features not pertaining to this discussion have been taken out to
 improve readability and to make the trees easier to fit onto the page.} that
 would be anchored\footnote{The diamond marker ($\diamond$) indicates the
@@ -126,85 +133,89 @@ lexical item anchoring the tree.  Since every verb that selects these trees
 case to the complements, building case features into the tree has exactly the
 same result as putting the case feature value in each verb's lexical entry.
 
-\begin{figure*}[ht]
+\begin{figure}[htb]
 \centering
-\rule[.1in]{5.0in}{0.01in}
-\begin{tabular}{cc}
-{\psfig{figure=ps/case-files/alphanx0Vnx1-case-features.ps,height=2.0in}}  &
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphanx0Vnx1-case-features.ps,height=2.0in}}
+& \hspace*{0.5in} &
 {\psfig{figure=ps/case-files/alphanx0Vnx1nx2-case-features.ps,height=2.0in}} \\
-(a)&(b)\\
+(a)& \hspace*{0.5in}&(b)\\
 \end{tabular}\\
-\caption {Case assignment to NP complements}
-\rule[.1in]{5.0in}{0.01in}
-\label {S-tree-with-case}
-\end{figure*}
+\caption {Case assignment to NP arguments}
+\label{S-tree-with-case}
+\label{2;1,1}
+\label{2;1,3}
+\end{figure}
+
 
 The case assigned to the subject position varies with verb form.  Since the
-XTAG grammar treats the inflected verb as a single unit rather than dividing
-it into INFL and V nodes, case, along with tense and agreement, is expressed in
+XTAG grammar treats the inflected verb as a single unit rather than dividing it
+into INFL and V nodes, case, along with tense and agreement, is expressed in
 the features of verbs, and must be passed in the appropriate manner.  The trees
-in Figure \ref {S-tree-with-case} show the path of linkages that joins the {\bf
-assign-case} feature of the V to the {\bf case} feature of the subject NP.  The
-morphological form of the verb determines the value of the {\bf assign-case}
-feature.  Figures \ref{lexicalized-S-tree-with-case}a and
-\ref{lexicalized-S-tree-with-case}b show the same tree anchored by different
+in Figure~\ref{lexicalized-S-tree-with-case} show the path of linkages that
+joins the {\bf$<$assign-case$>$} feature of the V to the {\bf $<$case$>$}
+feature of the subject NP.  The morphological form of the verb determines the
+value of the {\bf $<$assign-case$>$} feature.
+Figures~\ref{lexicalized-S-tree-with-case}(a) and
+\ref{lexicalized-S-tree-with-case}(b) show the same tree anchored by different
 morphological forms of the verb {\it sing}, which give different values for the
-assign-case feature\footnote{Again, the feature structures shown have been
-restricted to those that pertain to the V/NP interaction.}.
+{\bf $<$assign-case$>$} feature\footnote{Again, the feature structures shown
+have been restricted to those that pertain to the V/NP interaction.}.
 
-\begin{figure*}[ht]
+\begin{figure}[htbp]
 \centering
-\rule[.1in]{5.0in}{0.01in}
-\begin{tabular}{cc}
-{\psfig{figure=ps/case-files/alphanx0Vnx1_sings-case-features.ps,height=3.2in}}  &
-{\psfig{figure=ps/case-files/alphanx0Vnx1_singing-case-features.ps,height=2.9in}} \\
-(a)&(b)\\
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphanx0Vnx1_sings-case-features.ps,height=3.3in}}  & \hspace*{0.5in}&
+{\psfig{figure=ps/case-files/alphanx0Vnx1_singing-case-features.ps,height=3.0in}} \\
+(a)& \hspace*{0.5in}&(b)\\
 \end{tabular}\\
 \caption {Assigning case according to verb form}
-\rule[.1in]{5.0in}{0.01in}
 \label {lexicalized-S-tree-with-case}
-\end{figure*}
+\end{figure}
 
-The adjunction of an auxiliary verb onto the VP node breaks the {\bf
-assign-case} link from the main V and substitutes a link from the auxiliary
-verb instead\footnote{see section \ref{aux-non-inverted} for a more complete
-explanation of how this relinking occurs.}. The progressive form of the verb in
-Figure \ref{lexicalized-S-tree-with-case}b assigns case {\bf none}, but this is
-overridden by the adjunction of the appropriate form of the auxiliary word {\it
-be}.  Figure \ref{Vvx-with-case}a shows the lexicalized auxiliary tree, while
-\ref{Vvx-with-case}b shows it adjoined into the transitive tree shown in Figure
-\ref{lexicalized-S-tree-with-case}b.  The case value passed to the NP is now
-{\bf nom} (nominative).
-
-\begin{figure*}[ht]
+\begin{figure}[htbp]
 \centering
-\rule[.1in]{5.0in}{0.01in}
-\begin{tabular}{cc}
-{\psfig{figure=ps/case-files/betaVvx_is-with-case.ps,height=2.1in}}  &
-{\psfig{figure=ps/case-files/betaVvx_is-adjoined-into-nx0Vnx1_singing.ps,height=3.5in}} \\
-(a)&(b)\\
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/betaVvx_is-with-case.ps,height=2.3in}}  &
+\hspace*{0.5in} &
+{\psfig{figure=ps/case-files/betaVvx_is-adjoined-into-nx0Vnx1_singing.ps,height=3.7in}} \\
+(a)&\hspace*{0.5in} &(b)\\
 \end{tabular}\\
 \caption {Proper case assignment with auxiliary verbs}
-\rule[.1in]{5.0in}{0.01in}
-\label {Vvx-with-case}
-\end{figure*}
+\label{Vvx-with-case}
+\end{figure}
+
+The adjunction of an auxiliary verb onto the VP node breaks the {\bf
+$<$assign-case$>$} link from the main V, replacing it with a link from the
+auxiliary verb instead\footnote{See section \ref{aux-non-inverted} for a more
+complete explanation of how this relinking occurs.}. The progressive form of
+the verb in Figure~\ref{lexicalized-S-tree-with-case}(b) has the feature-value
+{\bf $<$assign-case$>$=none}, but this is overridden by the adjunction of the
+appropriate form of the auxiliary word {\it be}.  Figure~\ref{Vvx-with-case}(a)
+shows the lexicalized auxiliary tree, while Figure~\ref{Vvx-with-case}(b) shows
+it adjoined into the transitive tree shown in
+Figure~\ref{lexicalized-S-tree-with-case}(b).  The case value passed to the
+subject NP is now {\bf nom} (nominative).
 
 
 \subsection{PRO in a unification based framework}
 
 Most forms of a verb assign nominative case, although some forms, such as past
 participle, assign no case whatsoever.  This is different than assigning case
-{\bf none}, as the progressive form of the verb {\it sing} does in Figure
-\ref{lexicalized-S-tree-with-case}b.  The distinction of a case {\bf none} from
-no case is indicative of a divergence from the standard GB theory.  In GB
-theory, the absence of case on an NP means that only PRO can fill that NP.  In
-XTAG, the absence of case on an NP means that *any* NP can fill it,
-regardless of its case.  This is due to the mechanism of unification, in which
-if something is unspecified, it can unify with anything.  Thus we have a
-specific case {\bf none} to handle verb forms that in GB theory do not assign
-case.  PRO is the only NP with case {\bf none}.  Verbs forms that assign no
-case, as the past participle mentioned above, can do so because they cannot
-occur without an auxiliary verb which takes care of the case assignment.  Note
-that although we are drawn to this treatment by our use of unification for
-feature manipulation, \cite{watanabe93} proposes a very similar approach within
-Chomsky's minimalist framework for entirely different reasons.
+{\bf none}, as the progressive form of the verb {\it sing} does in
+Figure~\ref{lexicalized-S-tree-with-case}(b).  The distinction of a case {\bf
+none} from no case is indicative of a divergence from the standard GB theory.
+In GB theory, the absence of case on an NP means that only PRO can fill that
+NP.  With feature unification as is used in the FB-LTAG grammar, the absence of
+case on an NP means that {\em any\/} NP can fill it, regardless of its case.
+This is due to the mechanism of unification, in which if something is
+unspecified, it can unify with anything.  Thus we have a specific case {\bf
+none} to handle verb forms that in GB theory do not assign case.  PRO is the
+only NP with case {\bf none}.  Verbs forms that assign no case, as the past
+participle mentioned above, can do so because they cannot occur without an
+auxiliary verb which takes care of the case assignment.  Note that although we
+are drawn to this treatment by our use of unification for feature manipulation,
+our treatment is very similar to the assignment of null case to PRO in
+\cite{ChomskyLasnik93}.  \cite{watanabe93} also proposes a very similar 
+approach within Chomsky's Minimalist framework.\footnote{See section \ref{PRO}
+for additional discussion of PRO.}
