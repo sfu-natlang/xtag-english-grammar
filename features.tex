@@ -32,6 +32,7 @@ $<$contr$>$&$+,-$\\
 $<$control$>$&no value, indexing only\\
 $<$decreas$>$&$+,-$\\
 $<$definite$>$&$+,-$\\
+$<$disc-conj$>$&$+, -$\\
 $<$displ-const$>$&$+,-$\\
 $<$equiv$>$&$+,-$\\
 $<$extracted$>$&$+,-$\\
@@ -51,7 +52,7 @@ $<$punct struct$>$&comma,dash,colon,scolon,none,nil\\
 $<$punct term$>$&per,qmark,excl,none,nil\\
 $<$quan$>$&$+,-$\\
 $<$rel-clause$>$&$+,-$\\
-$<$rel-pron$>$&$+,-$\\
+$<$rel-pron$>$&$ppart,ger,adj-clause$\\
 $<$select-mode$>$&ind,inf,ppart,ger\\
 $<$sub-conj$>$&ind1,ind2,ind3,inf1,inf2,ger,nil\\
 $<$super$>$&$+,-$\\
@@ -198,13 +199,11 @@ a pre-existing relationship of case-assignment between a verb and an NP.
 
 All sentential trees with extracted components, with the exception of
 relative clauses are marked {\bf S.b$\langle$extracted$\rangle = +$}
-at their top S node.  This feature is used to impose
-subcategorizational constraints.  Certain verbs like {\em wonder} can
-only take interrogative complements, other verbs such as {\em know}
-can take both interrogative and non-interrogative complements, and yet
-other verbs like {\em think} can only take non-interrogative
-complements (cf. the {\bf $\langle$wh$\rangle$} and {\bf
-$\langle$mode$\rangle$} features also play a role in this selection).
+at their top S node. The extracted element may be a {\em wh}-NP or a
+topicalized NP. The {\bf $\langle$extracted$\rangle$} feature 
+is currently used to block embedded topicalizations as exemplified
+by the following example.
+\enumsentence{ John wants [Bill$_{i}$ [PRO to leave t$_{i}$]] }
 
 {\bf $\langle$trace$\rangle$}: this feature is not assigned any value and
 is used to co-index moved NPs and their traces which are marked by
@@ -232,6 +231,16 @@ is also propagated up PPs. Thus the PP {\em to whom} has $+$ as the value of its
 In trees with extracted NPs, the {\bf $\langle$wh$\rangle$} feature of the
 root node S node is equated with the {\bf $\langle$wh$\rangle$} feature
 of the extracted NPs. 
+
+The {\bf $\langle$wh$\rangle$} feature is used to impose
+subcategorizational constraints.
+Certain verbs like {\em wonder} can
+only take interrogative complements, other verbs such as {\em know}
+can take both interrogative and non-interrogative complements, and yet
+other verbs like {\em think} can only take non-interrogative
+complements (cf. the {\bf $\langle$extracted$\rangle$} and {\bf
+$\langle$mode$\rangle$} features also play a role in imposing 
+subcategorizational constraints).
 
 The {\bf $\langle$wh$\rangle$} feature is also used to get the correct
 inversion patterns.
@@ -408,7 +417,7 @@ $\langle$passive$\rangle$} feature.
 \section{Relative Clauses}
 Features that are peculiar to the relative clause system are:\\
 {\bf $\langle$select-mode$\rangle$}, possible values are {\bf ind, inf, ppart, ger}\\
-{\bf $\langle$rel-pron$\rangle$}, possible values are {\bf +/--}\\
+{\bf $\langle$rel-pron$\rangle$}, possible values are {\bf ppart, ger, adj-clause}\\
 {\bf $\langle$rel-clause$\rangle$}, possible values are {\bf +/--}
 
 {\bf $\langle$select-mode$\rangle$}:\\
@@ -426,7 +435,6 @@ The lexical specifications of the Comps are shown below:
 =$ind/inf/ger/ppart}
 \item {\em that}, {\bf Comp.t:$\langle$select-mode$\rangle =$ind}
 \item {\em for}, {\bf Comp.t:$\langle$select-mode$\rangle =$inf}
-\item {\em whether}, {\bf Comp.t:$\langle$select-mode$\rangle =$inf}
 \end{itemize}
 
 {\bf $\langle$rel-pron$\rangle$}:\\
@@ -601,6 +609,7 @@ will also serve to rule out the {\em for}-trace violations above.
 \section{Determiner ordering}
 {\bf $\langle$card$\rangle$}, possible values are {\bf +, --}\\
 {\bf $\langle$compl$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$const$\rangle$}, possible values are {\bf +, --}\\
 {\bf $\langle$decreas$\rangle$}, possible values are {\bf +, --}\\
 {\bf $\langle$definite$\rangle$}, possible values are {\bf +, --}\\
 {\bf $\langle$gen$\rangle$}, possible values are {\bf +, --}\\
@@ -635,9 +644,14 @@ the root {\bf $\langle$agr num$\rangle$} is equated to the
 {\bf $\langle$agr num$\rangle$} feature of the right conjunct. 
 
 
-{\bf $\langle$disc-conj$\rangle$}, possible values are {\bf ind1, ind2, ind3, infl, infl2, ger, nil}\\
+{\bf $\langle$disc-conj$\rangle$}, possible values are {\bf +, --}\\
 This feature is only used in the $\beta$CONJs tree.
 It blocks the adjunction of one $\beta$CONJs tree on another.
+The following equations are used (note that S$_{r}$ is the foot node
+and S$_{c}$ is the root node):
+\enumsentence{ S$_{r}$.t:$\langle$disc-conj$\rangle$ = -}
+\enumsentence{ S$_{c}$.b:$\langle$disc-conj$\rangle$ = +}
+
 
 \section{Comparatives}
 {\bf $\langle$compar$\rangle$}, possible values are {\bf +, --}\\
@@ -647,7 +661,7 @@ It blocks the adjunction of one $\beta$CONJs tree on another.
 For detailed discussion see Chapter~\ref{compars-chapter}.
 
 \section{Control}
-{\bf $\langle$control$\rangle$} has no value and used only for indexing
+{\bf $\langle$control$\rangle$} has no value and is used only for indexing
 purposes.  The root node of every clausal tree has its {\bf
 $\langle$control$\rangle$} feature coindexed with the control feature of
 its subject.  This allows adjunct control to take place. In addition,
