@@ -535,6 +535,104 @@ $\beta$ARBnx, $\beta$PARBd and $\beta$PaPd}
 
 \input{multiword-advs}
 
+\section{Locative Adverbial Phrases}
+\label{locatives}
+
+Locative adverbial phrases are multi-word adverbial modifiers whose 
+meanings relate to spatial location. Locatives consist of a locative adverb 
+(such as {\it ahead} or {\it downstream}) preceded by an NP, an adverb, or 
+nothing, as in Examples \ex{1}--\ex{3} respectively. The modifier as a 
+whole describes a position relative to one previously 
+specified in the discourse. The nature of the relation, which is usually
+a direction, is specified by the anchoring locative adverb({\em behind, 
+east}). If an NP or a second adverb is present in the phrase, it specifies the 
+degree of the relation (for example: {\it three city blocks, many meters,} 
+and {\it far}).
+
+\enumsentence{The accident {\it three blocks ahead} stopped traffic}
+\enumsentence{The ship sank {\it far offshore}}
+\enumsentence{The trouble {\it ahead} distresses me}
+
+Locatives can modify NPs, VPs and Ss. They modify NPs only by right-adjoining 
+postpositively, as in Example \ex{-2}. Postpositive is also the more 
+common position when a locative modifies either of the other categories. 
+Locatives premodify VPs only when separated by balanced punctuation 
+(commas or dashes). The trees locatives select when modifying NPs are shown 
+in Figure \ref{loc-np-trees}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/betanxnxARB.ps,height=4.0cm}
+& \hspace{0.5in} &
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/betanxARB.ps,height=4.0cm}
+\end{tabular}
+\caption{Locative Modifier Trees: $\beta$nxnxARB, $\beta$nxARB}
+\label{loc-np-trees}
+\end{figure}
+  
+When the locative phrase consists of only the anchoring locative adverb, as in
+Example \ex{-1}, it uses the $\beta$nxARB tree, shown in Figure 
+\ref{loc-np-trees}, and its VP analogue, $\beta$vxARB. In addition, these 
+are the trees selected when the locative anchor is modified by an adverb 
+expressing degree, as in Example \ex{-1}. The degree adverb adjoins on to 
+the anchor using the $\beta$ARBarb tree, which is described in Section 
+\ref{adv-modifier}. Figure \ref{toupees} shows an example of these trees in 
+action. Though there is a tree for a presentential locative phrase, 
+$\beta$nxARBs, there is no corresponding postsentential tree, as it is highly 
+debatable whether the postsentential version actually has the entire 
+sentence or just the preceding verb phrase as its scope. Thus, in 
+accordance with XTAG practice, which considers ambiguous postsentential 
+modifiers to be VP-modifiers rather than S-modifiers, there is only a 
+$\beta$vxnxARB tree, as shown in Figure \ref{toupees}. 
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/toupee_np.ps,height=7.0cm}
+& \hspace{0.5in} &
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/toupee_ad.ps,height=7.0cm}
+\end{tabular}
+\caption{Locative Phrases featuring NP and Adverb Degree Specifications}
+\label{toupees}
+\end{figure}
+
+One possible analysis of locative phrases with NPs might maintain that 
+the NP is the head, with the locative adverb modifying the NP. This is 
+initially attractive because of the similarity to time NPs, which also 
+feature NPs that can modify clauses. This analysis seems insufficient, 
+however, in light of the fact that virtually any NP can occur in 
+locative phrases, as in example \ex{1}. Therefore, in the XTAG analysis 
+the locative adverb anchors the locative phrase trees. A complete summary 
+of all trees selected by locatives is contained in Table \ref{loc-summary}. 
+26\footnote{Though nearly all of these adverbs are spatial in nature, 
+this number also includes a few temporal adverbs, such as {\it ago}, 
+that also select these trees.} adverbs select the locative trees.
+
+\enumsentence{I left my toupee and putter {\it three holes back}}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l||c|c|}
+\hline
+\multicolumn{1}{|c||}{}&
+\multicolumn{2}{|c|}{Degree Phrase Type}\\
+\cline{2-3}
+\multicolumn{1}{|c||}{Category Modified}&NP&Ad/None\\
+\hline
+\hline
+NP&$\beta$nxnxARB&$\beta$nxARB\\
+\hline
+VP (post)&$\beta$vxnxARB&$\beta$vxARB\\
+\hline
+VP (pre, punct-separated)&$\beta$punxARBpuvx&$\beta$puARBpuvx\\
+\hline
+S&$\beta$nxARBs&$\beta$ARBs\\
+\hline
+\end{tabular}
+\caption{Locative Modifiers}
+\label{loc-summary}
+\end{table}
 
 
 
