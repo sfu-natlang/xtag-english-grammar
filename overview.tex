@@ -115,71 +115,40 @@ default based on the part-of-speech of the word.}  Selected entries
 from this database are shown in Table~\ref{syn-entries}.
 
 Each syntactic entry consists of an {\sc index} field, the uninflected form
-under which the entry is compiled in the database, an {\sc entry} field, which
-contains all of the lexical items that will anchor the associated tree(s), a
-{\sc pos} field, which gives the part of speech for the lexical item(s) in the
-{\sc entry} field, and then either (but not both) a {\sc trees} or {\sc fam}
+under which the entry is compiled in the database, one or more {\sc entry}
+fields, each of which
+contains one of the lexical items that will anchor the associated tree(s), one
+or more
+{\sc pos} fields, which give the parts of speech for the lexical item(s) in the
+{\sc entry} field(s), and then either (but not both) a {\sc trees} or {\sc fam}
 field.  The {\sc trees} field indicates a list of individual trees to be
 associated with the entry, while the {\sc fam} field indicates a list of tree
 families. A tree family may contain a number of trees.  A syntactic entry may
 also contain a list of feature templates ({\sc fs}) which expand out to feature
 equations to be placed in the specified tree(s). Any number of {\sc ex} fields
-may be provided for example sentences. Note that lexical items may have more
+may be provided for example sentences, though the {\sc ex} fields are somewhat 
+unstable and have been mostly phased out of the current Xtag database.. 
+Note that lexical items may have more
 than one entry and may select the same tree more than once, using different
 features to capture lexical idiosyncrasies.
 
 \begin{table}[htb]
-\begin{tabular}{lll}
-
-\hspace{0.5in}&INDEX: & have/26 \\
-&ENTRY: & have \\
-&POS: & V \\
-&TREES:& $\beta$Vvx \\
-&FS:&\#VPr\_ind, \#VPr\_past, \#VPr\_perfect+, \#VP\_ppart, \#VP\_pass- \\
-&EX:&he had died; we had died \\
-\\
-&INDEX: & have/50 \\
-&ENTRY:& have \\ 
-&POS:& V \\ 
-&TREES:& $\beta$Vvx \\
-&FS:&\#VP\_inf  \\ 
-&EX:&John has to go to the store. \\
-\\
-&INDEX:&have/69\\
-&ENTRY:&NP0 have NP1\\
-&POS:&NP0 V NP1 \\
-&FAM: &Tnx0Vnx1 \\
-&FS:&\#TRANS+ \\
-&EX:&John has a problem. \\
-\\
-&INDEX:&map/1 \\
-&ENTRY:&NP0 map out NP1 \\
-&POS:&NP0 V PL NP1 \\
-&FAM: &Tnx0Vplnx1 \\
-\\
-&INDEX:& map/3 \\
-&ENTRY:& map \\
-&POS: & N \\
-&TREES: & $\alpha$N,  $\alpha$NXdxN, $\beta$Nn \\
-&FS: & \#N\_wh-, \#N\_refl- \\
-\\
-&INDEX: & map/4 \\
-&ENTRY: & map \\
-&POS: & N \\
-&TREES: & $\alpha$NXN \\
-&FS: & \#N\_wh-, \#N\_refl-, \#N\_plur \\
+\begin{tabular}{l}
+<<INDEX>>porousness<<ENTRY>>porousness<<POS>>N<<TREES>>NXN N
+Nn<<FEATURES>>#N_card- #N_const- 
+#N_decreas- #N_definite- #N_gen- #N_quan- #N_refl-
+<<INDEX>>coo<<ENTRY>>coo<<POS>>V<<FAMILY>>Tnx0V
+<<INDEX>>engross<<ENTRY>>engross<<POS>>V<<FAMILY>>Tnx0Vnx1<<FEATURES>>#TRANS+
+<<INDEX>>forbear<<ENTRY>>forbear<<POS>>V<<FAMILY>>Tnx0Vs1<<FEATURES>>#S1_WH- #S1_inf_for_nil
 \end{tabular}	
 \caption{Example Syntactic Database Entries}
+
 \label{syn-entries}
 \end{table}
 
-The syntactic database is currently undergoing a series of changes
-designed to make it easier to use and update.  In addition, the number
-of entries will be augmented to increase the coverage of the database,
-and the defaults used by the XTAG system will be accessible from the
-database itself.  The format of the entries as seen in Table
-\ref{syn-entries} will change slightly in the new version, but the
-same basic information will be included.
+Note that the format described here functions mostly as a back-up for
+the coded format that Xtag and xsyn use. All maintenance of the syntactic 
+database can now be done through xsyn, without ever having to use this format. 
 
 \section{Tree Database} 
 \label{tree-db}
