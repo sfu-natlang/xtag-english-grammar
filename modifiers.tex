@@ -227,8 +227,7 @@ Appendix~\ref{tree-naming} contains a full explanation of naming conventions.}
 allowing pre and post modification of S's and VP's.  Besides the VP and
 S-modifying adverbs, the grammar includes adverbs that modify other
 categories. Examples of adverbs modifying an adjective, an adverb, a
-PP and a determiner are
-shown in (\ex{1})-(\ex{7}).
+PP and a determiner are shown in (\ex{1})-(\ex{7}).
 
 \begin{itemize}
 \item{Modifying an adjective}
@@ -350,7 +349,49 @@ wh+ adverb, it is the only adverb that can anchor this tree.
 
 \enumsentence{How quickly did Srini fix the problem?}
 
+Focus adverbs such as {\it only}, {\it even}, and {\it at least} are also
+handled by the system.  Since the syntax allows focus adverbs to appear in
+practically any position, these adverbs select all of the trees listed in Table
+\ref{adv-summary}, as well as a tree for adverbial modification of noun phrases
+(see Figure~\ref{other-adv-trees}).  It is left up to the semantics or 
+pragmatics to decide the correct scope for the focus adverb for a given 
+instance.  In addition to {\it at least}, the system handles other multi-word 
+adverbs such as {\it at most} and {\it as-as} constructions like {\it as 
+little as}, where an adjective substitutes between the two occurences of 
+{\it as}.  These adverbs can only modify cardinal determiners.  Example 
+sentences using the trees in Figure~\ref{other-adv-trees} are shown in
+(\ex{8})-(\ex{12}).
 
+\begin{itemize}
+\item{Focus Adverb modifying an NP}
+\enumsentence{{\bf Only} a member of our crazy family could pull off that kind
+of a stunt.}
+\enumsentence{{\bf Even} a flying saucer sighting would seem interesting in
+comparison with your story.}
+\enumsentence{The report includes a proposal for {\bf at least} a partial 
+impasse in negotiations.}
+
+\item{Multi-word adverbs modifying cardinal determiners}
+\enumsentence{{\bf At most} ten people came to the party.} 
+\enumsentence{They gave monetary gifts of {\bf as little as} five dollars.}
+
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/modifiers-files/betaARBnx.ps,height=1.5in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betaPARBd.ps,height=1.5in}}
+&  \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betaCONJaCONJd.ps,height=1.5in}}
+\\
+$\beta$ARBnx&&$\beta$PARBd&&$\beta$CONJaCONJd&&$\\
+\end{tabular}\\
+\caption {Selected Focus and Multi-word Adverb Modifier trees:
+$\beta$ARBnx, $\beta$PARBd and $\beta$CONJaCONJd}
+\label {other-adv-trees}
+\end{figure}
 
 
 
