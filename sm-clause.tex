@@ -1,74 +1,433 @@
-\section{Small Clauses, Raising Verbs and the Copula}
-Small clauses offer examples of clauses that are headed by adjectives, nouns or prepositions rather than verbs.  For example, the embedded clause in (\ex{1}) is headed by the adjective {\it frugal}.
+\section{The English Copula, Raising Verbs, and Small Clauses}
 
-\enumsentence{I consider John frugal.}
-
-
-The analysis developed for the English LTAG grammar by Caroline Heycock provides a uniform analysis of the  embedded clause in (\ex{0}) and the predicative sentences in (\ex{1}) and (\ex{2})
-
-\enumsentence{John is frugal.}
-\enumsentence{John seems frugal.}
-
-All three cases use the elementary tree $\alpha$nx0Ax1 tree shown in
-figure \ref{nx0Ax1}. \\
-
-\begin{figure}[htb]
-\centerline{
-\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/alphanx0Ax1.ps,height=10.0cm}}
-\caption{\label{nx0Ax1} Tree:  $\alpha$nx0Ax1}
-\end{figure}
+The English copula, raising verbs, and small clauses are all handled in XTAG by
+a common analysis based on sentential clauses headed by non-verbal elements.
+Since there are a number of different analyses in the literature of how these
+phenomena are related (or not), we will present first the data for all three
+phenomena, then various analyses from the literature, finishing with the
+analysis used in the English XTAG grammar\footnote{This chapter is strongly
+based on \cite{heycock91}.  Sections \ref{sm-clause-data} and
+\ref{sm-clause-other-analyses} are greatly condensed from her paper, while the 
+description of the XTAG analysis in section \ref{sm-clause-xtag-analysis} is a
+much expanded version.}.
 
 
-This tree is anchored by the adjective {\it frugal\/} and contains
-only the subject, {\it John\/} and the anchor, exactly as in the
-embedded clause in (\ex{-2}).  For examples (\ex{-1}) and (\ex{0})
-either {\it seem\/} or {\it is\/} adjoins on to $\alpha$nx0Ax1.  To
-cover the range of possible small clauses, the following tree families
-contain trees anchored by either nouns, prepositions or adjectives:
+\subsection{Usages of the copula, raising verbs, and small clauses}
+\label{sm-clause-data}
 
-\begin{description}
-\item Tnx0Nx1
-\item Tnx0Px1
-\item Tnx0Ax1
-\item Tnx0dNx1
-\item Ts0Nx1
-\item Ts0Px1
-\item Ts0Ax1
-\item Ts0dNx1
-\end{description}
+\subsubsection{Copula}
+\label{copula-data}
 
-The two tree families anchored by nouns, Tnx0Nx1 and Tnx0dNx1, are needed to handle noun anchored cases with and without determiners as in (\ex{1}) and (\ex{2})
+The verb {\it be} as used in sentences ({\ex{1}})~-~({\ex{3}}) is often
+referred to as the {\bf copula}.  It can be followed by a noun, adjective, or
+prepositional phrase.
 
-\enumsentence{He is a fireman.}
-\enumsentence{They are firemen.}
+\enumsentence{Carl is a jerk.}
+\enumsentence{Carl is upset.}
+\enumsentence{Carl is in a foul mood.}
 
-The trees in these tree families differ from verb-anchored trees in
-the value of their mode feature as well as the category of their
-anchor. As can be seen in (\ref{nx0Ax1}), these small clause trees have
-the VP top feature {\bf $<$mode = nom/prep$>$}.  This value for mode serves two
-major purposes, 
+Although the copula may look like a main verb at first glance, its syntactic
+behavior follows the auxiliary verbs rather than main verbs.  In particular,
+
 \begin{itemize}
-\item restricting small clause complements to the
-small set of verbs like consider that select for them; and, 
-\item forcing adjunction of the
-appropriate form of {\it be\/} or of a raising verb like {\it seem\/}  in main
-clauses and in sentential complements of verbs that do not select for small
-clauses, as in (\ex{-5})-(\ex{-3}) and  (\ex{-1})-(\ex{2}).
+\item Copula {\it be} inverts with the subject.
+\enumsentence{Is Beth writing her dissertation?\\
+		Is Beth upset?\\
+		$*$Wrote Beth her dissertation?}
+
+\item Copula {\it be} occurs to the left of the negative marker {\it
+not}.
+\enumsentence{Beth is not writing her dissertation.\\
+		Beth is not upset.\\
+		$*$Beth wrote not her dissertation.}
+
+\item Copula {\it be} can contract with the negative marker {\it not}.
+\enumsentence{Beth isn't writing her dissertation.\\
+		Beth isn't upset.\\
+		$*$Beth wroten't her dissertation.}
+
+\item Copula {\it be} can contract with pronomial subjects.
+\enumsentence{She's writing her dissertation.\\
+		She's upset.\\
+		$*$She'ote her dissertation.}
+
+\item Copula {\it be} occurs to the left of adverbs in the unmarked order.
+\enumsentence{Beth is often writing her dissertation.\\
+		Beth is often upset.\\
+		$*$Beth wrote often her dissertation.}
 \end{itemize}
 
-\enumsentence{Mary thinks John is happy.}
-\enumsentence{Mary thinks John seems happy.}
+Unlike all the other auxiliaries, however, copula {\it be} is not followed by
+a verbal category (by definition) and therefore must be the rightmost verb.  In
+this respect, it is like a main verb.
 
-Adjunction of {\it be\/}  or a raising verb is forced in main clauses by
-the conflict between the {\bf nom/prep} value of {\bf mode} on VP top and the ind
-value of {\bf mode} enforced on S-top by the parser.  A similar conflict is
-created for embedded sentences by the verbs that select them as
-complements and allow only {\bf mode} values other than {\bf nom/prep}.  For
-example $\beta$nx0Vs1 anchored by think in (\ex{-1}) and (\ex{0}),
-requires S1 to be {\bf $<$mode = ind$>$} as shown in Figure \ref{nx0Vs1}.
+The semantic behavior of the copula is also unlike main verbs.  In particular,
+any semantic restrictions or roles placed on the subject come from the
+complement phrase (NP, AP, PP) rather than from the verb, as illustrated in
+sentences ({\ex{1}}) and ({\ex{2}}).  Because the complement phrases predicate over
+the subject, these types of sentences are often called {\bf predicative}
+sentences.
 
-\begin{figure}[ht]
+\enumsentence{The bartender was garrulous.}
+\enumsentence{?The cliff was garrulous.}
+
+
+\subsubsection{Raising Verbs}
+\label{raising-verbs}
+
+Raising verbs are the class of verbs that share with the copula the property
+that the complement, rather than the verb, places semantic constraints on
+the subject.  
+
+\enumsentence{Carl seems a jerk.\\
+		Carl seems upset.\\
+		Carl seems in a foul mood.}
+
+\enumsentence{Carl appears a jerk.\\
+		Carl appears upset.\\
+		Carl appears in a foul mood.}
+
+The raising verbs are similar to auxiliaries in that they order with other
+verbs, but they are unique in that they can appear to the left of the
+infinitive, as seen in the sentences in ({\ex{1}}).  They cannot, however, invert
+or contract like other auxiliaries ({\ex{2}}), and they appear to the right of
+adverbs ({\ex{3}}).
+
+\enumsentence{Carl seems to be a jerk.\\
+		Carl seems to be upset.\\
+		Carl seems to be in a foul mood.}
+
+\enumsentence{$*$Seems Carl to be a jerk?\\
+		$*$Carl seemn't to be upset.\\
+		$*$Carl`ems to be in a foul mood.}
+
+\enumsentence{Carl often seems to be upset.\\
+		$*$Carl seems often to be upset.}
+
+\subsubsection{Small Clauses}
+
+One way of describing small clauses is as predicative sentences without the
+copula.  Since matrix clauses require tense, these clausal structures appear
+only as embedded sentences.  They occur as complements of certain verbs, each
+of which may allow one type of small clause but not another, depending on its
+lexical idiosyncrasies.
+
+\enumsentence{I consider [Carl a jerk].\\
+		I consider [Carl upset].\\
+		?I consider [Carl in a foul mood].}
+
+\enumsentence{$*$I prefer [Carl a jerk].\\
+		??I prefer [Carl upset].\\
+		I prefer [Carl in a foul mood].}
+
+
+\subsection{Various Analyses}
+\label{sm-clause-other-analyses}
+
+\subsubsection{Main Verb Raising to INFL + Small Clause}
+
+In \cite{pollack89} the copula is generated as the head of a VP, like any main
+verb such as {\it sing} or {\it buy}. Unlike all other main verbs\footnote{with
+the exception of {\it have} in British English. See footnote
+\ref{have-footnote} in Section \ref{auxiliaries} for an example sentence.},
+however, {\it be} moves out of the VP and into Infl in a tensed sentence.  This
+analysis aims to account for the behavior of {\it be} as an auxiliary in terms
+of inversion, negative placement, and adverb placement, while retaining a
+sentential structure in which {\it be} heads the main VP at D-Structure and can
+thus be the only verb in the clause.
+
+Pollock claims that the predicative phrase is not an argument of {\it be},
+which instead he assumes to take a small clause complement, consisting of a
+node dominating an NP and an predicative AP, NP, or PP. The subject NP of the
+small clause then raises to become the subject of the sentence.  This accounts
+for the failure of the copula to impose any selectional restrictions on the
+subject.  Raising verbs such as {\it seem} and {\it appear}, presumably, take the
+same type of small clause complement.
+
+\subsubsection{Auxiliary + Null Copula}
+\label{la}
+
+In \cite{lapointe80} the copula is treated as an auxiliary verb that takes as its
+complement a VP headed by a passive verb, a present participle, or a null verb
+(the true copula). This verb may then take AP, NP, or PP complements.  The
+author points out that there are many languages that have been analyzed as
+having a null copula, but that English has the peculiarity that its
+null copula requires the copresence of the auxiliary {\it be}.
+
+\subsubsection{Auxiliary + Predicative Phrase}
+\label{gpsg}
+
+In GPSG (\cite{gazdar85}, \cite{sag85}) the copula is treated as an auxiliary
+verb that takes an X$^{2}$ category with a + value for the head feature
+[PRD] (predicative). AP, NP, PP, and VP can all be [+PRD], but a
+Feature Co-occurrence Restriction guarantees that a [+PRD] VP will be
+headed by a verb that is either passive or a present participle.
+
+GPSG follows \cite{chomsky70} in adopting the binary valued features [V] and
+[N] for decomposing the verb, noun, adjective, and preposition categories.  In
+that analysis, verbs are [+V,$-$N], nouns are [$-$V,+N], adjectives {\it
+[+V,+N]}, and prepositions [$-$V,$-$N].  Consequently, in \cite{sag85} the
+verb {\it become} can be specified as taking a predicative complement that is
+[+N]; that is, it can take either a predicative NP or predicative AP
+complement.
+
+\enumsentence{Carl became a jerk.}
+\enumsentence{Carl became upset.}
+\enumsentence{$*$Carl became in a foul mood.}
+
+NP and AP predicative complements generally pattern together; a fact that can
+be stated economically using this category decomposition.  In neither
+\cite{sag85} nor \cite{chomsky70} is there any discussion of how to handle 
+the complete range of complements to a verb like {\it seem}, which takes AP,
+NP, and PP complements, as well as infinitives.  The solution would appear
+to be to associate the verb with two sets of rules for small clauses, leaving
+aside the use of the verb with an expletive subject and sentential complement.
+
+\subsubsection{Auxiliary + Small Clause}
+
+\label{mo}
+In \cite{moro90} the copula is treated as a special functional category - a
+lexicalization of tense, which is considered to head its own projection. It
+takes as a complement the projection of another functional category, Agr
+(agreement). This projection corresponds roughly to a small clause, and is
+considered to be the domain within which predication takes place.  An NP must
+then raise out of this projection to become the subject of the sentence: it may
+be the subject of the AgrP, or, if the predicate of the AgrP is an NP, this may
+raise instead.  In addition to occurring as the complement of {\it be}, AgrP is
+selected by certain verbs such as {\it consider}. It follows from this analysis
+that when the complement to {\it consider} is a simple AgrP, it will always
+consist of a subject followed by a predicate, whereas if the complement
+contains the verb {\it be}, the predicate of the AgrP may raise to the left of
+{\it be}, leaving the subject of the AgrP to the right.
+
+\enumsentence{John$_{i}$ is [$_{AgrP}$ $t_{i}$ the culprit ].}
+\enumsentence{The culprit$_{i}$ is [$_{AgrP}$ John $t_{i}$ ].}
+\enumsentence{I consider [$_{AgrP}$ John the culprit].}
+\enumsentence{$*$I consider the culprit John.}
+\enumsentence{I consider [John$_{i}$ to be [$_{AgrP}$ $t_{i}$ the culprit ]].}
+\enumsentence{I consider [the culprit$_{i}$ to be [$_{AgrP}$ John $t_{i}$ ]].}
+
+Moro does not discuss a number of aspects of his analysis, including the
+nature of Agr and the implied existence of sentences without VPs. 
+
+\subsection{XTAG analysis}
+\label{sm-clause-xtag-analysis}
+
+The XTAG grammar provides a uniform analysis for the copula, raising verbs, and
+small clauses by treating the maximal projections of lexical items that can be
+predicated as predicative clauses, rather than simply noun, adjective, and
+prepositional phrases.  The copula adjoins in for matrix clauses, as do the
+raising verbs.  Certain other verbs (such as {\it consider}) can take the
+predicative clause as a complement, without the adjunction of the copula, to
+form the embedded small clause.
+
+The structure of a predicative clause, then, is roughly as seen in
+({\ex{1}})~-~({\ex{3}}) for NPs, APs, and PPs.  The XTAG trees corresponding to
+these structures\footnote{There are actually two other predicative trees in the
+XTAG grammar.  Another predicative noun phrase tree is needed for noun phrases
+without determiners, as in the sentence {\it They are firemen}, and another
+prepositional phrase tree is needed for exhaustive prepositional phrases, such
+as {\it The workers are below}.} are shown in Figures \ref{predicative-trees}a,
+\ref{predicative-trees}b, and \ref{predicative-trees}c, 
+respectively\footnote{The diamond marker ($\diamond$) indicates the lexical
+anchor(s) of a structure if the tree has not yet been lexicalized.}.
+
+\enumsentence{[$_{S}$ NP [$_{VP}$  N \ldots ]]}
+\enumsentence{[$_{S}$ NP [$_{VP}$  A \ldots ]]}
+\enumsentence{[$_{S}$ NP [$_{VP}$  P \ldots ]]}
+
+\begin{figure}[htb]
 \centering
-\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betanx0Vs1.ps,height=10.0cm}
-\caption{\label{nx0Vs1} Tree:  $\beta$nx0Vs1}
+\rule[.1in]{5.0in}{0.01in} \\
+\begin{tabular}{ccc}
+{\psfig{figure=ps/sm-clause-files/alphanx0dxN1.ps,height=1.2in}} &
+{\psfig{figure=ps/sm-clause-files/alphanx0Ax1.ps,height=1.3in}} &
+{\psfig{figure=ps/sm-clause-files/alphanx0Pnx1.ps,height=1.3in}} \\
+(a)&(b)&(c)\\
+\end{tabular}
+\caption{Predicative trees}
+\rule[.1in]{5.0in}{0.01in}
+\label{predicative-trees}
+\end{figure}
+
+The copula {\it be} and raising verbs all get the basic auxiliary tree as
+explained in the chapter on auxiliary verbs (section \ref{aux-non-inverted})
+and shown in Figure \ref{Vvx}.  The copula also selects the inverted auxiliary
+tree set shown in Figure \ref{inverted-trees} from that chapter.  The feature
+{\bf $<$mode$>$} is used to distinguish the predicative constructions so that
+only the copula and raising verb adjoin onto the predicative trees.  Figure
+\ref{Vvx-with-nomprep} shows the auxiliary tree anchored by the copula {\it
+be}.  It will look the same when anchored by the raising verbs, except possibly
+for the value of {\bf $<$mode$>$} on the foot node (VP$_{f}$).
+
+\begin{figure}[htb]
+\centering
+\rule[.1in]{3.5in}{0.01in} \\
+\begin{tabular}{c}
+{\psfig{figure=ps/sm-clause-files/betaVvx_is-with-features.ps,height=4.5in}} \\
+\end{tabular}
+\caption{Copula auxiliary tree}
+\rule[.1in]{3.5in}{0.01in}
+\label{Vvx-with-nomprep}
+\end{figure}
+
+There are two possible values of {\bf $<$mode$>$} that correspond to the
+predicative trees, {\bf nom} and {\bf prep}.  They correspond to a modified
+version of the four-valued [N,V] feature described in section \ref{gpsg}.  The
+{\bf nom} value corresponds to [N+], selecting the NP and AP predicative
+clauses.  As mentioned earlier, they often pattern together with respect to
+constructions using predicative clauses.  The remaining prepositional phrase
+predicative clauses, then, correspond to the {\bf prep} mode.
+
+Figure \ref{upset-with-features} shows the predicative adjective tree from
+Figure \ref{predicative-trees}b now anchored by {\it upset} and with the
+features visible.  As mentioned, {\bf $<$mode$>$~=~nom} on the VP node prevents
+auxiliaries other than the copula or raising verbs from adjoining into this
+tree.  In addition, it prevents the predicative tree from occurring as a matrix
+clause.  Since all matrix clauses in XTAG must be mode indicative ({\bf ind})
+or imperative ({\bf imp}), a tree with {\bf $<$mode$>$~=~nom} or {\bf
+$<$mode$>$~=~prep} must have an auxiliary verb (the copula or a raising verb)
+adjoin in to make it {\bf $<$mode$>$~=~ind}.  The process works the same for
+the prepositional predictive clauses with {\bf $<$mode$>$~=~prep}.
+
+\begin{figure}[htb]
+\centering
+\rule[.1in]{3.5in}{0.01in} \\
+\begin{tabular}{c}
+{\psfig{figure=ps/sm-clause-files/alphanx0Ax1_upset-with-features.ps,height=4.8in}} \\
+\end{tabular}
+\caption{Predicative AP tree with features}
+\rule[.1in]{3.5in}{0.01in}
+\label{upset-with-features}
+\end{figure}
+
+The distribution of small clauses as embedded complements to some verbs is also
+managed through the mode feature.  Verbs such as {\it consider} and {\it
+prefer} select trees that take a sentential complement, and then restrict that
+complement to be {\bf $<$mode$>$~=~nom} and/or {\bf $<$mode$>$~=~prep},
+depending on the lexical idiosyncrasies of that particular verb.  Many verbs
+that don't take small clause complements do take sentential complements that
+are {\bf $<$mode$>$~=~ind}, which includes small clauses with the copula
+already adjoined.  Hence, as seen in sentence sets ({\ex{1}})~-~({\ex{3}}),
+{\it consider} takes only small clause complements, {\it prefer} takes both
+{\bf prep} (but not {\bf nom}) small clauses and indicative clauses, while {\it
+feel} takes only indicative clauses.
+
+\enumsentence{She considers Carl a jerk.\\
+		?She considers Carl in a foul mood.\\
+		$*$She considers that Carl is a jerk.}
+
+\enumsentence{$*$She prefers Carl a jerk.\\
+		She prefers Carl in a foul mood.\\
+		She prefers that Carl is a jerk.}
+
+\enumsentence{$*$She feels Carl a jerk.\\
+		$*$She feels Carl in a foul mood.\\
+		She feels that Carl is a jerk.}
+
+\noindent
+Figure \ref{consider-with-features} shows the tree anchored by {\it consider}
+that takes the predicative small clauses.
+
+\begin{figure}[htb]
+\centering
+\rule[.1in]{3.5in}{0.01in} \\
+\begin{tabular}{c}
+{\psfig{figure=ps/sm-clause-files/betanx0Vs1_consider-with-features.ps,height=2.3in}} \\
+\end{tabular}
+\caption{{\it Consider} tree for embedded small clauses}
+\rule[.1in]{3.5in}{0.01in}
+\label{consider-with-features}
+\end{figure}
+
+\subsection{Non-predicative {\it BE}}
+
+The examples with the copula that we have given seem to indicate that {\it be}
+is always followed by a predicative phrase of some sort.  This is not the case,
+however, as seen in sentences such as ({\ex{1}})~-~({\ex{6}}).  The noun phrases in
+these sentences are not predicative.  They do not take raising verbs, and they
+do not occur in embedded small clause constructions.
+
+\enumsentence{My teacher is Mrs. Wayman.}
+\enumsentence{Doug is the man with the glasses.}
+
+\enumsentence{$*$My teacher seems Mrs. Wayman.}
+\enumsentence{$*$Doug appears the man with the glasses.}
+
+\enumsentence{$*$I consider [my teacher Mrs. Wayman].}
+\enumsentence{$*$I prefer [Doug the man with the glasses].}
+
+In addition, the subject and complement can exchange positions in these type of
+examples but not in sentences with predicative {\it be}.  Sentence ({\ex{1}})
+has the same interpretation as sentence ({\ex{-4}}) and differs only in the
+positions of the subject and complement NPs. Similar sentences, with a
+predicative {\it be}, are shown in ({\ex{2}}) and ({\ex{3}}).  In this case,
+the sentence with the exchanged NPs ({\ex{3}}) is ungrammatical.
+
+\enumsentence{The man with the glasses is Doug.}
+\enumsentence{Doug is a programmer.}
+\enumsentence{$*$A programmer is Doug.}
+
+The non-predicative {\it be} in ({\ex{-8}}) and ({\ex{-7}}), also called {\bf
+equative be}, patterns differently, both syntactically and semantically, from
+the predicative usage of {\it be}.  Since these sentences are clearly not
+predicative, it is not desirable to have a tree structure that is anchored by
+the NP, AP, or PP, as we have in the predicative sentences.  In addition to the
+conceptual problem, we would also need a mechanism to block raising verbs from
+adjoining into these sentences (while allowing them for true predicative
+phrases), and prevent these types of sentence from being embedded (again, while
+allowing them for true predicative phrases).  An additional indication that
+distinct trees are necessary is the difference in the grammaticality of
+extraction for the material to the right of the predicative and non-predicative
+{\it be}.  The sentences in ({\ex{1}}) contain predicative {\it be} as
+evidenced by the ungrammaticality of switching the subject {\it the challenger}
+with the clause `{\it to provide a non-stipulative solution}'. In contrast the
+grammaticality of the sentence produced by the equivalent switch in ({\ex{2}})
+shows that the {\it be} in those sentences is non-predicative. Notice that
+extraction is possible from the clause with predicative {\it be} but not with
+non-predicative {\it be}.
+
+\enumsentence{The challenger is to provide a non-stipulative solution.\\
+$*$To provide a non-solution stipulative solution is the challenger.\\
+What$_{i}$ is the challenger to provide $t_{i}$?}
+
+\enumsentence{The challenge is to provide a non-stipulative solution.\\
+To provide a non-stipulative solution is the challenge.\\
+		$*$What$_{i}$ is the challenge to provide $t_{i}$?}
+
+The ungrammaticality of the extracted NP in ({\ex{0}}) is explained if the
+clause is a complement added by substitution, since extraction is not possible
+from within substituted elements.  This is true in XTAG of the complements of
+equative {\it be}.  In contrast, the predicative {\it be} in ({\ex{-1}})
+adjoins to {\it What$_{i}$ the challenger to provide
+$\epsilon_{i}$}\footnote{The elementary tree underlying this sentence would not
+include the infinitive {\it to}.  Since the details of how {\it to} is adjoined
+do not affect the thrust of the current arguement, we assume a stage of
+derivation where {\it to} has already been adjoined.}. Since the extraction is
+already part of the elementary tree anchored by {\it provide} in the
+predicative analysis, the extraction is unproblematic.
+
+Although non-predicational {\it be} is not a raising verb, it does exhibit the
+auxiliary verb behavior set out in section \ref{copula-data}.  It inverts,
+contracts, and so forth, as seen in sentences ({\ex{1}}) and ({\ex{2}}), and
+therefore can not be associated with any existing tree family for main verbs.
+It requires a separate tree family that includes the tree for inversion.
+Figures \ref{equative-be}a and \ref{equative-be}b show the declarative and
+inverted trees, respectively, for equative {\it be}.
+
+\enumsentence{Is my teacher Mrs. Wayman?}
+\enumsentence{Doug isn't the man with the glasses.} 
+
+
+\begin{figure}[htb]
+\centering
+\rule[.1in]{5.0in}{0.01in} \\
+\begin{tabular}{cc}
+{\psfig{figure=ps/sm-clause-files/alphanx0BEnx1_is.ps,height=1.5in}} &
+{\psfig{figure=ps/sm-clause-files/alphaInvnx0BEnx1_is.ps,height=2.2in}} \\
+(a)&(b)\\
+\end{tabular}
+\caption{Equative {\it BE} trees}
+\rule[.1in]{5.0in}{0.01in}
+\label{equative-be}
 \end{figure}
