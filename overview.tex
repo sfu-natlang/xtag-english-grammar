@@ -126,29 +126,30 @@ associated with the entry, while the {\sc fam} field indicates a list of tree
 families. A tree family may contain a number of trees.  A syntactic entry may
 also contain a list of feature templates ({\sc fs}) which expand out to feature
 equations to be placed in the specified tree(s). Any number of {\sc ex} fields
-may be provided for example sentences, though the {\sc ex} fields are somewhat 
-unstable and have been mostly phased out of the current Xtag database.. 
+may be provided for example sentences. 
 Note that lexical items may have more
 than one entry and may select the same tree more than once, using different
-features to capture lexical idiosyncrasies.
+features to capture lexical idiosyncrasies. For a more detailed description of
+the format, see the Xtag User Manual.
 
 \begin{table}[htb]
 \begin{tabular}{l}
-<<INDEX>>porousness<<ENTRY>>porousness<<POS>>N<<TREES>>NXN N
-Nn<<FEATURES>>#N_card- #N_const- 
-#N_decreas- #N_definite- #N_gen- #N_quan- #N_refl-
+<<INDEX>>porousness<<ENTRY>>porousness<<POS>>N<<TREES>>\^{ }BNXN \^{ }BN
+\^{ }CNn<<FEATURES>>#N_card- #N_const- #N_decreas- #N_definite- #N_gen- #N_quan- #N_refl-
 <<INDEX>>coo<<ENTRY>>coo<<POS>>V<<FAMILY>>Tnx0V
 <<INDEX>>engross<<ENTRY>>engross<<POS>>V<<FAMILY>>Tnx0Vnx1<<FEATURES>>#TRANS+
 <<INDEX>>forbear<<ENTRY>>forbear<<POS>>V<<FAMILY>>Tnx0Vs1<<FEATURES>>#S1_WH- #S1_inf_for_nil
+<<INDEX>>have<<ENTRY>>have<<POS>>V<<ENTRY>>out<<POS>>PL<<FAMILY>>Tnx0Vplnx1
 \end{tabular}	
 \caption{Example Syntactic Database Entries}
 
 \label{syn-entries}
 \end{table}
 
-Note that the format described here functions mostly as a back-up for
+Note that the format described here now serves mostly as a back-up for
 the coded format that Xtag and xsyn use. All maintenance of the syntactic 
-database can now be done through xsyn, without ever having to use this format. 
+database can now be done through xsyn, without ever having to use this
+format.  
 
 \section{Tree Database} 
 \label{tree-db}
