@@ -27,13 +27,13 @@ subsequent parts of the technical report.
 \section{Tree Families and Subcategorization Frames}
 \label{subcat-frames}
 
-Elementary trees for words that are predicates (such as non-auxiliary
-verbs) are used to represent the linguistic notion of
-subcategorization.  The anchor of the elementary tree subcategorizes
-for the other elements that appear in the tree, forming a clausal or
-sentential structure.  Tree families group together trees belonging to
-the same subcategorization frame.  Consider the following uses of the
-verb {\it buy}:
+Elementary trees for predicative words\footnote{ Such as non-auxiliary
+verbs or predicative nouns. } are used to represent the linguistic
+notion of subcategorization.  The anchor of the elementary tree
+subcategorizes for the other elements that appear in the tree, forming
+a clausal or sentential structure.  Tree families group together trees
+that belong to the same subcategorization frame. Consider the
+following uses of the verb {\it buy}:
 
 \enumsentence{Srini bought a book.}
 \enumsentence{Srini bought Beth a book.}
@@ -67,23 +67,21 @@ set of sentence structures.
 \label{subcat-trees}
 \end{figure}
 
-Thus, the intuitive notion of tree family is that it represents the entire set
-of trees that each predicate selects. Furthermore, each predicate selects for a
-tree family for each concomitant subcategorization. In principle, there exists
-a different tree family for each predicate in such a representation. However,
-since syntactic transformations are not usually sensitive to the anchor of the
-tree family, entire classes of words can be assigned a tree family. For
-example, the transitive verbs get their own tree family denoted as
-Tnx0Vnx1. (Chapter~\ref{verb-classes} contains more information about the
-different tree families in the grammar.) Thus a tree family in XTAG is a set of
-trees selected by a verb class and furthermore, each member of this set of
-trees is related to the base tree by a syntactic transformation. That is, it
-represents all the syntactic environments that a class of words can appear in.
+Entire classes of anchors select a tree family. All the transitive
+verbs form a class which selects the transitive tree family. Recall
+that a tree family is a group of trees related by some syntactic
+transformations. Since an entire class of anchors are selecting this
+tree family, the assumption is that these syntactic transformations
+are valid for each member of this class. For instance, wh- extraction
+is a syntactic transformation that will apply regardless of any
+idiosyncratic properties of any particular anchor of the tree family.
+Chapter~\ref{verb-classes} contains more information about
+the different tree families in the grammar.
 
 There are some syntactic transformations, however, that are sensitive
-to the properties of a particular word within the same
-subcategorization frame. The ergative (or transitive-inchoative
-alternation) for transitive verbs is one such transformation. Only a
+to the properties of a particular anchor within the same
+subcategorization frame. The ergative (or transitive-inchoative)
+alternation for transitive verbs is one such transformation. Only a
 subset of the transitive verbs can undergo this transformation. A more
 rigorous definition of tree family that accounts for such lexical
 idiosyncrasies within an otherwise homogeneous family is discussed in
