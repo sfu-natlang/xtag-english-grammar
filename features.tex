@@ -4,7 +4,7 @@
 Table~\ref{feature-table} contains a comprehensive list of the features in the
 XTAG grammar and their possible values.
 
-The table is followed by short `biographical' sketches of the various features
+This section consists of short `biographical' sketches of the various features
 currently in use in the Xtag English grammar.
 
 \footnotesize
@@ -212,10 +212,12 @@ is currently used to block embedded topicalizations as exemplified
 by the following example.
 \enumsentence{ * John wants [Bill$_{i}$ [PRO to leave t$_{i}$]] }
 
+\noindent
 {\bf $\langle$trace$\rangle$}: this feature is not assigned any value and
 is used to co-index moved NPs and their traces which are marked by
 $\epsilon$.
 
+\noindent
 {\bf $\langle$wh$\rangle$}: possible values are {\bf $+/-$}\\ NPs like
 {\em who}, {\em what} etc. come marked from the lexicon with a value
 of {\bf $+$} for the feature {\bf $\langle$wh$\rangle$}.  Non {\em
@@ -277,6 +279,7 @@ The following feature equations are used:\\
 \enumsentence{ {\bf S$_{q}$.b:$\langle$inv$\rangle =$  S$_{r}$.t:$\langle$inv$\rangle$}\label{inv3}}
 \enumsentence{ {\bf S$_{r}$.b:$\langle$inv$\rangle = -$}\label{inv4}}
 
+\noindent
 {\bf Root restriction}: A restriction is imposed on the final root
 node of any XTAG derivation of a tensed sentence which equates the
 {\bf $\langle$wh$\rangle$} feature and the {\bf
@@ -359,10 +362,10 @@ equations are used:
 There are several features that mark clause type.\footnote{We have
 already seen one instance of a feature that marks clause-type: {\bf
 $\langle$extracted$\rangle$}, which marks whether a certain S involves
-extraction or not.} They are:\\ {\bf $\langle$mode$\rangle$}\\ {\bf
-$\langle$passive$\rangle$}: possible values are {\bf +/--}
+extraction or not.} They are:\\ {\bf $\langle$mode$\rangle$}\\ 
+{\bf $\langle$passive$\rangle$}: possible values are {\bf +/--}
 
-
+\noindent
 {\bf $\langle$mode$\rangle$}: possible values are 
 {\bf base, ger, ind, inf, imp, nom, ppart, prep, sbjnct}\\
 The {\bf $\langle$mode$\rangle$} feature of a verb in its root form is
@@ -373,6 +376,7 @@ the {\bf $\langle$mode$\rangle$} feature of a tensed verb is {\bf ind},
 and the {\bf $\langle$mode$\rangle$} feature of a verb in the imperative 
 is {\bf imp}. 
 
+\noindent
 {\bf nom} is the {\bf $\langle$mode$\rangle$} value of AP/NP
 predicative trees headed by a null copula.  {\bf prep} is the {\bf
 $\langle$mode$\rangle$} value of PP predicative trees headed by a null
@@ -402,7 +406,7 @@ following equations:
 \enumsentence{ {\bf  V.t:$\langle$mode$\rangle =$ base}\label{mode2}}
 \enumsentence{ {\bf VP.b:$\langle$mode$\rangle =$ ppart}\label{mode3}}
 
-
+\noindent
 {\bf $\langle$passive$\rangle$}: This feature is used to ensure that
 passives only have {\em be} as their auxiliary. Passive trees start
 out with their {\bf $\langle$passive$\rangle$} feature as {\bf +}.
@@ -427,6 +431,7 @@ Features that are peculiar to the relative clause system are:\\
 {\bf $\langle$rel-pron$\rangle$}, possible values are {\bf ppart, ger, adj-clause}\\
 {\bf $\langle$rel-clause$\rangle$}, possible values are {\bf +/--}
 
+\noindent
 {\bf $\langle$select-mode$\rangle$}:\\
 Comps are lexically specified for {\bf $\langle$select-mode$\rangle$}.
 In addition, the {\bf $\langle$select-mode$\rangle$} feature of a Comp
@@ -434,7 +439,6 @@ is equated to the {\bf $\langle$mode$\rangle$} feature of its
 sister S node by the following equation:
 
 \enumsentence{ {\bf Comp.t:$\langle$select-mode$\rangle =$ S$_{t}$.t:$\langle$mode$\rangle$}}
-
 
 The lexical specifications of the Comps are shown below:
 \begin{itemize}
@@ -444,6 +448,7 @@ The lexical specifications of the Comps are shown below:
 \item {\em for}, {\bf Comp.t:$\langle$select-mode$\rangle =$inf}
 \end{itemize}
 
+\noindent
 {\bf $\langle$rel-pron$\rangle$}:\\
 There are additional constraints on where the null Comp $\epsilon$$_{C}$
 can occur. The null Comp is not permitted in cases of subject
@@ -479,7 +484,7 @@ because of the following equation:
 \enumsentence{
 {\bf S$_{m}$.b:$\langle$rel-pron$\rangle =$ S$_{f}$.t:$\langle$rel-pron$\rangle$}}
 
-
+\noindent
 {\bf $\langle$rel-clause$\rangle$}:\\ The XTAG analysis forces the
 adjunction of the determiner below the relative clause. This is done
 by using the {\bf $\langle$rel-clause$\rangle$} feature. The relevant
@@ -685,6 +690,7 @@ or object control verbs respectively.
 {\bf $\langle$neg$\rangle$}, possible values are {\bf +, --}\\
 Used for controlling the interaction of negation and auxiliary verbs.
 
+\noindent
 {\bf $\langle$pred$\rangle$}, possible values are {\bf +, --}\\
 The {\bf $\langle$pred$\rangle$} feature is used in the following tree
 families: Tnx0N1.trees and Tnx0nx1ARB.trees.
@@ -708,12 +714,13 @@ following equations) are used only in the $\alpha$W1nx0nx1ARB tree.
 \enumsentence{ NP.t:$\langle$pred$\rangle$ = +}
 \enumsentence{ AdvP.b:$\langle$pred$\rangle$ = NP.t:$\langle$pred$\rangle$}
 
-
+\noindent
 {\bf $\langle$pron$\rangle$}, possible values are {\bf +, --}\\
 This feature indicates whether a particular NP is a pronoun or not. 
 Certain constructions which do not permit pronouns use this 
 feature to block pronouns.
 
+\noindent
 {\bf $\langle$tense$\rangle$}, possible values are {\bf pres, past}\\
 It does not seem to be the case that the {\bf $\langle$tense$\rangle$}
 feature interacts with other features/syntactic processes. It 
