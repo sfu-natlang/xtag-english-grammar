@@ -191,7 +191,20 @@ accepted.
 \enumsentence{\#The man about the earthquake survived.}
 \enumsentence{\#The president arranged on a meeting.}
 
+\section{Thematic Roles}
 
+Elementary trees in TAGs capture several notions of locality, with the most
+primary of these being locality of $\theta$-role assignment.  Each elementary
+tree has associated with it the $\theta$-roles assigned by the anchor of that
+elementary tree.  In the current XTAG system, while the notion of locality of
+$\theta$-role assignment within an elementary tree has been implicit, the
+$\theta$-roles assigned by a head have not been explicitly represented in the
+elementary tree. Incorporating $\theta$-role information will make the
+elementary trees more informative and will enable efficient pruning of spurious
+derivations when embedded into a specific context.  In the case of a
+Synchronous TAG, $\theta$-roles can also be used to automatically establish
+links between two elementary trees, one in the object language and one in the
+target language.
 
 
 \section{Idioms}
