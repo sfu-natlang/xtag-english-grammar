@@ -367,7 +367,8 @@ not seem to closely follow the behavior of auxiliaries.  One of these
 auxiliaries, {\it dare}, mainly behaves as a modal and selects for the base 
 form of the verb.  The other semi-auxiliaries all select for the infinitival 
 form of the verb.  Examples of this second type of semi-auxiliary are {\it 
-used to}, {\it ought to}, {\it get to}, {\it have to}, and {\it BE to}.  
+used to}, {\it ought to}, {\it get to}, {\it have to}, {\it BE to} and {\it
+BE about to}.  
 
 \subsection{Marginal Modal {\it dare}}
 
@@ -428,7 +429,69 @@ indicative forms.  The only connection {\it used to} maintains with the
 infinitival form {\it use} is that occasionally, the bare form {\it use} will
 appear with DO-support.  Since the three modes mentioned above are mutually
 exclusive in terms of both the morphology and the lexicon, {\it used} has three
-entries in each.  
+entries in each.\\ 
+
+Semi-auxiliaries like {\it BE about to} are modal expressions derived from
+adverbs like {\it about}, which select for {\it BE} as the immediately
+preceding auxiliary and for infinitive {\it to} as the following one. This
+is illustrated in the following examples:
+
+\enumsentence{The party cannot possibly {\it be about to} begin just yet .}
+\enumsentence{Miranda {\it is about to} steal the gun .}
+\enumsentence{I consider Miranda {\it about to} be upset .}
+
+In order to handle these expressions, we have auxiliary trees anchored by
+the word from which the modal expression is derived. So, for {\it BE about
+to}, {\it about} anchors the $\beta$Vvx-arb tree with its {\bf $<$mode$>$}
+value set to {\bf nom} (Figure~\ref{fig:semi-aux-about}) and selects for
+the infinitive VP, {\it to}, with the following equation: {\bf
+VP.b:$<$mode$>$=inf}.
+
+In addition to the above constraint that restricts the form of the verb
+selected by the $\beta$Vvx-arb tree to be infinitive, there is another
+constraint that needs to be accounted for, namely, the selection of {\it
+BE} as the immediately preceding auxiliary. This is especially needed to
+rule out examples like \ex{1} and \ex{2}:
+
+\enumsentence{??John seems about to leave .}
+\enumsentence{*Mary could about to solve the problem .}
+
+{\it Seems} is a raising verb that can select for VP's which have {\bf
+$<$mode$>$ = nom} ({\it Miranda seems ready}) and will therefore be able to
+incorrectly adjoin to the root VP node of the $\beta$Vvx-arb tree anchored
+by {\it about}.\footnote{%
+%
+Adjectival predicates project to a VP with the equation {\bf
+$<$mode$>$=nom} on the VP node. See Chapter~\ref{small-clauses} for the
+XTAG analysis of adjectival predicative constructions and the associated
+feature structures and equations.%
+%
+} We are able to rule \ex{-1} out because of the special status of raising
+verbs like {\it seems}. Though the raising verbs are treated like the other
+auxiliary verbs in that they select the same tree,$\beta$Vvx, they are
+different in that the value for their {\bf $<$mainv$>$} feature is {\bf +},
+whereas it is {\bf -} for the other auxiliaires. We simply add the feature
+equation {\bf $<$mainv$>$=-} in the top node of the root VP in the
+$\beta$Vvx-arb tree. As a result only auxiliaries that come with the same
+binary feature value will be able to adjoin in.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/auxs-files/betaVvxarb.ps,height=3.6in}} \\
+\end{tabular}
+\caption{Auxiliary Tree for Semi-auxiliary anchored by {\it about}: $\beta$Vvx-arb}
+\label{fig:semi-aux-about}
+\end{figure}
+
+To further disallow auxiliaries other than {\it BE} from selecting the
+$\beta$Vvx-arb tree, as illustrated in \ex{0} above, we have an additional
+lexical entry for {\it BE} which selects for a VP with the feature equation
+{\bf VP.b:$<$mode$>$=nom}. Since no other auxiliary has this equation in
+the tree it anchors (except for raising verbs which are independently ruled
+out by the mechanism described above), the grammar correctly excludes
+examples like \ex{0}.
+
 
 \subsection{Other Issues}
 
