@@ -16,9 +16,9 @@ sentence. The input sentence is submitted to the {\bf Morphological Analyzer}
 and the {\bf Tagger}. The morphological analyzer retrieves the morphological
 information for each individual word in the sentence from the {\bf
 Morphological Database}. The result is filtered in the {\bf P.O.S. Blender}
-using the output of the {\bf Trigram Tagger} to reduce the part-of-speech
+using the output of the {\bf Trigram Tagger} to reduce the part of speech
 ambiguity of the words. The augmented sentence, with each word annotated with
-part-of-speech tags and morphological information, is input to the {\bf
+part of speech tags and morphological information, is input to the {\bf
 Parser}, which then consults the {\bf Syntactic Database} and the {\bf Tree
 Database} to retrieve the appropriate tree structures for each word in the
 sentence.  Information from the {\bf Statistical Database}, along with a
@@ -41,21 +41,21 @@ Dictionary ({\cite{ced79}) and Oxford Advanced Learner's Dictionary
 up and augmented by hand (\cite{karp92}).  The database consists of
 approximately 317,000 inflected items, along with their root forms and
 inflectional information (such as case, number, tense).  Thirteen different
-parts-of-speech are differentiated: Noun, Proper Noun, Pronoun, Verb, Verb
+parts of speech are differentiated: Noun, Proper Noun, Pronoun, Verb, Verb
 Particle, Adverb, Adjective, Preposition, Complementizer, Determiner,
 Conjunction, Interjection, and Noun/Verb Contraction.  Nouns and Verbs are the
 largest categories, with approximately 213,000 and 46,500 inflected forms
 respectively.  This information is maintained in database form for quick
 access.  Retrieval time for a given inflected entry is approximately 0.6 msec.
 
-\section{Part-of-Speech Tagger}
+\section{Part of Speech Tagger}
 
-A trigram part-of-speech tagger (\cite{kwc88}), trained on the Wall Street
+A trigram part of speech tagger (\cite{kwc88}), trained on the Wall Street
 Journal Corpus, is incorporated in XTAG. The trigram tagger has been extended
-to output the N-best parts-of-speech sequences (\cite{soong90}).  XTAG uses
+to output the N-best parts of speech sequences (\cite{soong90}).  XTAG uses
 this information to reduce the number of specious parses by filtering the
-possible parts-of-speech provided by the morphological analyzer for each word.
-When the correct part-of-speech sequence is returned, the time required to
+possible parts of speech provided by the morphological analyzer for each word.
+When the correct part of speech sequence is returned, the time required to
 parse a sentence decreases by an average of 93\%.
 
 \section{Parser}
@@ -115,7 +115,7 @@ Table~\ref{syn-entries}.
 Each syntactic entry consists of an {\sc index} field, the uninflected form
 under which the entry is compiled in the database, an {\sc entry} field, which
 contains all of the lexical items that will anchor the associated tree(s), a
-{\sc pos} field, which gives the part-of-speech for the lexical item(s) in the
+{\sc pos} field, which gives the part of speech for the lexical item(s) in the
 {\sc entry} field, and then either (but not both) a {\sc trees} or {\sc fam}
 field.  The {\sc trees} field indicates a list of individual trees to be
 associated with the entry, while the {\sc fam} field indicates a list of tree
@@ -195,7 +195,7 @@ The statistics database contains tree unigram frequencies which have been
 collected by parsing the Wall Street Journal, IBM manual, and ATIS corpora
 using the XTAG English grammar. The parser, augmented with the statistics
 database, assigns each word of the input sentence the top three most frequently
-used trees given the part-of-speech of the word. On failure the parser retries
+used trees given the part of speech of the word. On failure the parser retries
 using all the trees suggested by the syntactic database for each word.  The
 augmented parser has been observed to have a success rate of 50\% without
 retries.
