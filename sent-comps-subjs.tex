@@ -231,9 +231,11 @@ $<$comp$>$=nil}; this feature indicates that the tree does not already
 cannot have complementizers, the parser checks that the root S has {\bf
 $<$comp$>$=nil} at the end of the derivation, when the S is also checked for
 a tensed verb.} We ensure that there are no stacked complementizers by
-requiring the foot node of $\beta$COMPs to have {\bf $<$comp$>$=nil}, as well
-as using the {\bf $<$sub-conj$>$=nil} feature to prevent complementizers from
-adjoining above subordinating conjunctions.
+requiring the foot node of $\beta$COMPs to have {\bf $<$comp$>$=nil}.
+
+% as well
+%as using the {\bf $<$conj$>$=nil} feature to prevent complementizers from
+%adjoining above subordinating conjunctions.
 
 \section{Case assignment, {\it for\/} and the two {\it to\/}'s}
 \label{for-complementizer}
@@ -774,4 +776,13 @@ co-indexing in (\ex{-1}). Thus the locality constraints on PRO control
 fall out from the mechanics of TAG derivation and feature unification. 
 
 
+
+\section{Reported speech}
+
+Reported speech is handled in the XTAG grammar by having the reporting
+clause adjoin into the quote. Thus, the reporting clause is an
+auxiliary tree, anchored by the reporting verb. See \cite{doran-diss}
+for details of the analysis. There are trees in both the Tnx0Vs1 and
+Tnx0nx1s2 families to handle reporting clauses which precede, follow
+and come in the middle of the quote.
 
