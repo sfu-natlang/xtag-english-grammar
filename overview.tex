@@ -4,131 +4,135 @@
 This section focuses on the various components that comprise the
 parser and English grammar in the XTAG system.  Persons interested
 only in the linguistic analyses in the grammar may skip this section
-without loss of continuity, although we may occasionally refer back to
-the various components mentioned here.
+without loss of continuity, although a quick glance at the tagset used
+in XTAG and the set of non-terminal labels used will be useful. We may
+occasionally refer back to the various components mentioned in this
+section.
 
 \section{System Description}
 
-Figure~{\ref{flowchart}} shows the overall flow of the system when parsing a
-sentence. The input sentence is submitted to the {\bf Morphological Analyzer}
-and the {\bf Tagger}. The morphological analyzer retrieves the morphological
-information for each individual word in the sentence from the {\bf
-Morphological Database}. The result is filtered in the {\bf P.O.S. Blender}
-using the output of the {\bf Trigram Tagger} to reduce the part of speech
-ambiguity of the words. The augmented sentence, with each word annotated with
-part of speech tags and morphological information, is input to the {\bf
-Parser}, which then consults the {\bf Syntactic Database} and the {\bf Tree
-Database} to retrieve the appropriate tree structures for each word in the
-sentence.  Information from the {\bf Statistical Database}, along with a
-variety of heuristics, is used to reduce the number of trees selected. The
-parser then composes the structures to obtain the parse(s) of the sentence.
+Figure~{\ref{flowchart}} shows the overall flow of the system when
+parsing a sentence; a summary of each component is presented in
+Table~\ref{sys-table}. At the heart of the system is a parser for
+lexicalized TAGs (\cite{schabesjoshi88,schabes90}) which produces all
+legitimate parses for the sentence. The parser has two phases: {\bf
+Tree Selection} and {\bf Tree Grafting}.
 
-\begin{figure}[htb]
+\begin{figure}[t]
+\hspace{0.35in}
 \centering
-\mbox{}
-{\psfig{figure=ps/overview-files/overview.eps,height=3.0in}}
-\caption{Overview of the XTAG system}
+{\psfig{figure=ps/flowchart.eps,height=3.0in,angle=270}}
+\caption[XTAG system diagram]{Overview of XTAG system }
 \label{flowchart}
 \end{figure}
 
-\section{Morphological Analyzer}
-
-The morphology data was originally extracted from the Collins English
-Dictionary ({\cite{ced79}) and Oxford Advanced Learner's Dictionary
-(\cite{oald74}) available through ACL-DCI (\cite{liberman89}), and then cleaned
-up and augmented by hand (\cite{karp92}).  The database consists of
-approximately 317,000 inflected items, along with their root forms and
-inflectional information (such as case, number, tense).  Thirteen different
-parts of speech are differentiated: Noun, Proper Noun, Pronoun, Verb, Verb
-Particle, Adverb, Adjective, Preposition, Complementizer, Determiner,
-Conjunction, Interjection, and Noun/Verb Contraction.  Nouns and Verbs are the
-largest categories, with approximately 213,000 and 46,500 inflected forms
-respectively.  This information is maintained in database form for quick
-access.  Retrieval time for a given inflected entry is approximately 0.6 msec.
-
-\section{Part of Speech Tagger}
-
-A trigram part of speech tagger (\cite{kwc88}), trained on the Wall Street
-Journal Corpus, is incorporated in XTAG. The trigram tagger has been extended
-to output the N-best parts of speech sequences (\cite{soong90}).  XTAG uses
-this information to reduce the number of specious parses by filtering the
-possible parts of speech provided by the morphological analyzer for each word.
-When the correct part of speech sequence is returned, the time required to
-parse a sentence decreases by an average of 93\%.
-
-\section{Parser}
-
-XTAG uses an Earley-style parser which has been extended to handle
-feature structures associated with trees (\cite{schabes90}). The parser uses a
-general two-pass parsing strategy for lexicalized grammars (\cite{schabes88}).
-In the tree-selection pass, the parser uses the syntactic database entry for
-each lexical item in the sentence to select a set of elementary structures from
-the tree database.  The tree-grafting pass composes the selected trees using
-substitution and adjunction operations to obtain the parse of the sentence.
-The output of the parser for the sentence {\it I had a map yesterday} is
-illustrated in Figure~\ref{sentence}. The parse tree\footnote{The feature
-structures associated with each note of the parse tree are not shown here.}
-represents the surface constituent structure, while the derivation tree
-represents the derivation history of the parse. The nodes of the derivation
-tree are the tree names anchored by the lexical items\footnote{Appendix
-\ref{tree-naming} explains the conventions used in naming the trees.}.  The
-composition operation is indicated by the nature of the arcs: a dashed line is
-used for substitution and a bold line for adjunction.  The number beside each
-tree name is the address of the node at which the operation took place.  The
-derivation tree can also be interpreted as a dependency graph with unlabeled
-arcs between words of the sentence.
-
-\begin{figure}[htb]
+\begin{table}[ht]
+\small
 \centering
-\begin{tabular}{cc}
-{{\psfig{figure=ps/overview-files/derived.ps,height=3.0in}}}  &
-{{\psfig{figure=ps/overview-files/derivation.ps,height=2.0in,width=2.7in}}} \\
-Parse Tree  & Derivation Tree \\
+\begin{tabular}{|l|l|} \hline
+Component & Details \\ \hline
+Morphological & Consists of approximately 317,000 inflected items \\ 
+Analyzer and & derived from over 90000 stems. \\ 
+Morph Database & Entries are indexed on the inflected form and return \\
+& the root form, POS, and inflectional information.\\ \hline
+POS Tagger & Wall Street Journal-trained
+trigram tagger (\cite{kwc88})  \\ 
+and  Lex Prob & extended to output N-best POS sequences  \\
+Database & (\cite{soong90}). Decreases the time to parse \\
+&a sentence by an average of 93\%
+. \\\hline
+Syntactic &  More than 30,000 entries. \\
+Database & Each entry consists of: the uninflected form of the word, \\
+& its POS, the list of trees or tree-families associated with \\
+& the word, and a list of feature equations that capture \\
+&lexical idiosyncrasies. \\ \hline
+Tree Database &  886 trees, divided into 48 tree families and 187 individual \\
+& trees. Tree families represent subcategorization frames; \\
+& the trees in a tree family would be related to each other \\
+
+& transformationally in a movement-based approach. \\ \hline
+X-Interface & Menu-based facility for creating and modifying tree files. \\
+&  User controlled parser parameters: parser's start category, \\ 
+& enable/disable/retry on failure for POS tagger. \\
+& Storage/retrieval facilities for elementary and parsed trees.\\
+& Graphical displays of tree and feature data structures. \\
+& Hand combination of trees by adjunction or substitution \\
+& for grammar development. \\ 
+& Ability to manually assign POS tag \\
+& and/or Supertag before parsing \\ \hline
 \end{tabular}
-\caption{Output Structures from the Parser}
-\label{sentence}
-\end{figure}
+\caption{System Summary}
+\label{sys-table}
+\end{table}
 
-Additional methods that take advantage of FB-LTAGs have been implemented to
-improve the performance of the parser.  For instance, the span\footnote{The
-\xtagdef{span} of a tree is the number of terminals and non-terminals along its
-frontier.} of the tree and the position of the anchor in the tree are used to
-weed out unsuitable trees in the first pass of the parser.  Statistical
-information about the usage frequency of the trees has been acquired by parsing
-corpora. This information has been compiled into a statistical database that is
-used by the parser. These methods speed the runtime by approximately 87\%.
+\subsection{Tree Selection}
 
-\section{Syntactic Database}
-\label{description-syn-entries}
+Since we are working with lexicalized TAGs, each word in the sentence
+selects at least one tree. The advantage of a lexicalized formalism
+like LTAGs is that rather than parsing with all the trees in the
+grammar, we can parse with only the trees selected by the words in the
+input sentence.
 
-The syntactic database associates lexical items with the appropriate
-trees and tree families based on various selectional information.  The
-syntactic database entries were originally extracted from the Oxford
-Advanced Learner's Dictionary (\cite{oald74}) and Oxford Dictionary
-for Contemporary Idiomatic English (\cite{cie75}) available through
-ACL-DCI (\cite{liberman89}), and then modified and augmented by hand
-(\cite{EgediMartin94}).  There are more than 31,000 syntactic database
-entries.\footnote{This number does not include trees assigned by
-default based on the part-of-speech of the word.}  Selected entries
-from this database are shown in Table~\ref{syn-entries}.
+In the XTAG system, the selection of trees by the words is done in
+several steps. Each step attempts to reduce ambiguity, i.e. reduce the
+number of trees selected by the words in the sentence.
 
-Each syntactic entry consists of an {\sc index} field, the uninflected form
-under which the entry is compiled in the database, one or more {\sc entry}
-fields, each of which
-contains one of the lexical items that will anchor the associated tree(s), one
-or more
-{\sc pos} fields, which give the parts of speech for the lexical item(s) in the
-{\sc entry} field(s), and then either (but not both) a {\sc trees} or {\sc fam}
-field.  The {\sc trees} field indicates a list of individual trees to be
-associated with the entry, while the {\sc fam} field indicates a list of tree
-families. A tree family may contain a number of trees.  A syntactic entry may
-also contain a list of feature templates ({\sc fs}) which expand out to feature
-equations to be placed in the specified tree(s). Any number of {\sc ex} fields
-may be provided for example sentences. 
-Note that lexical items may have more
-than one entry and may select the same tree more than once, using different
-features to capture lexical idiosyncrasies. For a more detailed description of
-the format, see the XTAG User Manual.
+\begin{description}
+\item[Morphological Analysis and POS Tagging] The input sentence is
+  first submitted to the {\bf Morphological Analyzer} and the {\bf
+    Tagger}. The morphological analyzer~(\cite{karp92}) consists of a
+  disk-based database (a compiled version of the derivational rules)
+  which is used to map an inflected word into its stem, part of speech
+  and feature equations corresponding to inflectional information.
+  These features are inserted at the anchor node of the tree
+  eventually selected by the stem. The POS Tagger can be disabled in
+  which case only information from the morphological analyzer is used.
+  The morphology data was originally extracted from the Collins
+  English Dictionary (\cite{ced79}) and Oxford Advanced Learner's
+  Dictionary (\cite{oald74}) available through ACL-DCI
+  (\cite{liberman89}), and then cleaned up and augmented by hand
+  (\cite{karp92}).
+    
+\item[POS Blender] The output from the morphological analyzer and the
+  POS tagger go into the {\bf POS Blender} which uses the output of
+  the POS tagger as a filter on the output of the morphological
+  analyzer. Any words that are not found in the morphological database
+  are assigned the POS given by the tagger.
+  
+\item[Syntactic Database] The syntactic database contains the mapping
+  between particular stem(s) and the tree templates or tree-families
+  stored in the {\bf Tree Database} (see Table~\ref{sys-table}). The
+  syntactic database also contains a list of feature equations that
+  capture lexical idiosyncrasies. The output of the POS Blender is
+  used to search the {\bf Syntactic Database} to produce a set of
+  lexicalized trees with the feature equations associated with the
+  word(s) in the syntactic database unified with the feature equations
+  associated with the trees. Note that the features in the syntactic
+  database can be assigned to any node in the tree and not just to the
+  anchor node. The syntactic database entries were originally
+  extracted from the Oxford Advanced Learner's Dictionary
+  (\cite{oald74}) and Oxford Dictionary for Contemporary Idiomatic
+  English (\cite{cie75}) available through ACL-DCI
+  (\cite{liberman89}), and then modified and augmented by hand
+  (\cite{EgediMartin94}).  There are more than 31,000 syntactic
+  database entries.\footnote{This number does not include trees
+    assigned by default based on the part-of-speech of the word.}
+  Selected entries from this database are shown in
+  Table~\ref{syn-entries}.
+    
+\item[Default Assignment] For words that are not found in the
+  syntactic database, default trees and tree-families are assigned
+  based on their POS tag.
+  
+\item[Filters] Some of the lexicalized trees chosen in previous stages
+  can be eliminated in order to reduce ambiguity. Two methods are
+  currently used: structural filters which eliminates trees which have
+  impossible spans over the input sentence and a statistical filter
+  based on unigram probabilities of non-lexicalized trees (from a hand
+  corrected set of approximately 6000 parsed sentences). These methods
+  speed the runtime by approximately 87\%.
+
+\end{description}
 
 \begin{table}[htb]
 \begin{verbatim}
@@ -153,39 +157,123 @@ the format, see the XTAG User Manual.
 \label{syn-entries}
 \end{table}
 
-Note that the format described here now serves mostly as a back-up for
-the coded format that XTAG and xsyn use. All maintenance of the syntactic 
-database can now be done through xsyn, without ever having to use this
-format.  
-
-\section{Tree Database} 
+\subsection{Tree Database}
 \label{tree-db}
 
-Trees in the English XTAG grammar fall into two conceptual classes.
-The smaller class consists of individual trees such as NP and adverb
-trees.  The trees in this class are generally anchored by non-verbal
-lexical items. The larger class consists of trees that are grouped
-into tree families.  These tree families represent subcategorization
-frames (see section~\ref{subcat-frames}).  Currently, there are 739
-trees that compose 49 tree families, along with 218 individually
-selected trees in the tree database.
+The {\bf Tree Database} contains the tree templates that are
+lexicalized by following the various steps given above. The lexical
+items are inserted into distinguished nodes in the tree template
+called the {\em anchor nodes}.  The part of speech of each word in the
+sentence corresponds to the label of the anchor node of the trees.
+Hence the tagset used by the POS Tagger corresponds exactly to the
+labels of the anchor nodes in the trees.  The tagset used in the XTAG
+system is given in Table~\ref{tagset}. The tree templates are
+subdivided into tree families (for verbs and other predicates), and
+tree files which are simply collections of trees for lexical items
+like prepositions, determiners, etc%
+\footnote{ The nonterminals in the tree database are {\tt A, AP, Ad,
+    AdvP, Comp, Conj, D, N, NP, P, PP, Punct, S, V, VP}.}%
+.
+
+\subsection{Tree Grafting}
+
+Once a particular set of lexicalized trees for the sentence have been
+selected, XTAG uses an Earley-style predictive left-to-right parsing
+algorithm for LTAGs (\cite{schabesjoshi88,schabes90}) to find all
+derivations for the sentence. The derivation trees and the associated
+derived trees can be viewed using the X-interface (see
+Table~\ref{sys-table}). The X-interface can also be used to save
+particular derivations to disk.
+
+The output of the parser for the sentence {\it I had a map yesterday} is
+illustrated in Figure~\ref{sentence}. The parse tree\footnote{The feature
+structures associated with each note of the parse tree are not shown here.}
+represents the surface constituent structure, while the derivation tree
+represents the derivation history of the parse. The nodes of the derivation
+tree are the tree names anchored by the lexical items\footnote{Appendix
+\ref{tree-naming} explains the conventions used in naming the trees.}.  The
+composition operation is indicated by the nature of the arcs: a dashed line is
+used for substitution and a bold line for adjunction.  The number beside each
+tree name is the address of the node at which the operation took place.  The
+derivation tree can also be interpreted as a dependency graph with unlabeled
+arcs between words of the sentence.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{{\psfig{figure=ps/overview-files/derived.ps,height=3.0in}}}  &
+{{\psfig{figure=ps/overview-files/derivation.ps,height=2.0in,width=2.7in}}} \\
+Parse Tree  & Derivation Tree \\
+\end{tabular}
+\caption{Output Structures from the Parser}
+\label{sentence}
+\end{figure}
+
+\begin{table*}[ht]
+\small
+\centering
+\begin{tabular}{|l|l|} \hline
+Part of Speech & Description \\ \hline
+A & Adjective \\ \hline
+Ad & Adverb \\ \hline
+Comp & Complementizer \\ \hline
+D & Determiner \\ \hline
+G & Genitive Noun \\ \hline
+I & Interjection \\ \hline
+N & Noun \\ \hline
+P & Preposition \\ \hline
+PL & Particle \\ \hline
+Punct & Punctuation \\ \hline
+V & Verb \\ \hline
+\end{tabular}
+\caption{XTAG tagset}
+\label{tagset}
+\end{table*}
 
 
-\section{Statistics Database}
-\label{stat-db}
-The statistics database contains tree unigram frequencies which have been
-collected by parsing the Wall Street Journal, IBM manual, and ATIS corpora
-using the XTAG English grammar. The parser, augmented with the statistics
-database, assigns each word of the input sentence the top three most frequently
-used trees given the part of speech of the word. On failure the parser retries
-using all the trees suggested by the syntactic database for each word.  The
-augmented parser has been observed to have a success rate of 50\% without
-retries.
+\subsection{The Grammar Development Environment}
 
-\section{X-Interface}
+Working with and developing a large grammar is a challenging process,
+and the importance of having good visualization tools cannot be
+over-emphasized. Currently the XTAG system has X-windows based tools
+for viewing and updating the morphological and syntactic databases
+(\cite{karp92,EgediMartin94}). These are available in both ASCII and
+binary-encoded database format. The ASCII format is well-suited for
+various UNIX utilities (awk, sed, grep) while the database format is
+used for fast access during program execution.  However even the ASCII
+formatted representation is not well-suited for human readability. An
+X-windows interface for the databases allows users to easily examine
+them.  Searching for specific information on certain fields of the
+syntactic database is also available. Also, the interface allows a
+user to insert, delete and update any information in the databases.
+Figure~\ref{morphsyn-tool}(a) shows the interface for the morphology
+database and Figure~\ref{morphsyn-tool}(b) shows the interface for the
+syntactic database.
 
-In addition to the parser and English grammar, XTAG provides a graphical
-interface for manipulating TAGs.  The interface offers the following:
+\begin{figure}[htb]
+\begin{tabular}{cc}
+{\psfig{figure=ps/morph.ps,height=3.0in}}&{\psfig{figure=ps/syn.ps,height=3.0in,width=2.0in}}\\
+(a) Morphology database&(b) Syntactic database
+\end{tabular}
+\caption[Interfaces database]{Interfaces to the database maintenance tools}
+\label{morphsyn-tool}
+\end{figure}
+
+
+%\begin{figure}[h]
+%\centering
+%\mbox{}
+%{\psfig{figure=ps/syn.ps,height=3.0in}}
+%\caption[Syntactic database]{Interface to the Syntactic database}
+%\label{syn-tool}
+%\end{figure}
+
+XTAG also has a parsing and grammar development interface
+(\cite{PSJ92}). This interface includes a tree editor, the ability to
+vary parameters in the parser, work with multiple grammars and/or
+parsers, and use metarules for more efficient tree editing and
+construction (\cite{becker94}). The interface is shown in
+Figure~\ref{xtag-interface}. It has the following features:
 
 \begin{itemize}
 
@@ -215,6 +303,13 @@ tree-based transformation rules
  
 \end{itemize}
 
+\begin{figure}[htb]
+\centering
+\mbox{}
+{\psfig{figure=ps/xtag-interface.ps,height=3.0in}}
+\caption[XTAG Interface]{Interface to the XTAG system}
+\label{xtag-interface}
+\end{figure}
 
 \section{Computer Platform}
 
@@ -258,6 +353,6 @@ XTAG web page (see above for URL).
 The syntactic database component is also available as part of the XTAG
 system (\cite{EgediMartin94}). 
 
-More information can be obtained on the XTAG web page at {\tt
-  http://www.cis.upenn.edu/\~{}xtag/}.
+More information can be obtained on the XTAG web page at \\
+{\tt http://www.cis.upenn.edu/\~{}xtag/}.
 
