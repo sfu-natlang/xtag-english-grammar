@@ -227,7 +227,7 @@ Appendix~\ref{tree-naming} contains a full explanation of naming conventions.}
 allowing pre and post modification of S's and VP's.  Besides the VP and
 S-modifying adverbs, the grammar includes adverbs that modify other
 categories. Examples of adverbs modifying an adjective, an adverb, a
-PP and a determiner are shown in (\ex{1})-(\ex{7}).
+PP, an NP, and a determiner are shown in (\ex{1})-(\ex{8}).  
 
 \begin{itemize}
 \item{Modifying an adjective}
@@ -241,6 +241,9 @@ PP and a determiner are shown in (\ex{1})-(\ex{7}).
 
 \item{Modifying a PP}
 \enumsentence{{\bf right} through the wall}
+
+\item{Modifying a NP}
+\enumsentence{{\bf quite} some time}
 
 \item{Modifying a determiner}
 \enumsentence{{\bf exactly} five men}
@@ -300,9 +303,9 @@ PP&$\beta$ARBpx&$\beta$pxARB\\
 \hline
 ADV&$\beta$ARBarb&$\beta$arbARB\\
 \hline
-N&$\beta$ARBn&\\
+NP&$\beta$ARBnx&\\
 \hline
-Det&$\beta$ARBdx&\\
+Det&$\beta$ARBd&\\
 \hline
 \end{tabular}
 \caption{Simple Adverb Anchored Modifiers}
@@ -349,18 +352,25 @@ wh+ adverb, it is the only adverb that can anchor this tree.
 
 \enumsentence{How quickly did Srini fix the problem?}
 
-Focus adverbs such as {\it only}, {\it even}, and {\it at least} are also
-handled by the system.  Since the syntax allows focus adverbs to appear in
-practically any position, these adverbs select all of the trees listed in Table
-\ref{adv-summary}, as well as a tree for adverbial modification of noun phrases
-(see Figure~\ref{other-adv-trees}).  It is left up to the semantics or 
+Focus adverbs such as {\it only}, {\it even}, {\it just} and {\it at least} 
+are also handled by the system.  Since the syntax allows focus adverbs to 
+appear in practically any position, these adverbs select most of the trees 
+listed in Table \ref{adv-summary}.  It is left up to the semantics or 
 pragmatics to decide the correct scope for the focus adverb for a given 
-instance.  In addition to {\it at least}, the system handles other multi-word 
-adverbs such as {\it at most} and {\it as-as} constructions like {\it as 
-little as}, where an adjective substitutes between the two occurences of 
-{\it as}.  These adverbs can only modify cardinal determiners.  Example 
-sentences using the trees in Figure~\ref{other-adv-trees} are shown in
-(\ex{8})-(\ex{12}).
+instance.  In terms of the ability of the focus adverbs to modify at different
+levels of a noun phrase, the focus adverbs can modify either cardinal 
+determiners or noun-cardinal noun phrases, and cannot modify at the level of 
+noun.  The tree for adverbial modification of noun phrases is in 
+Figure~\ref{other-adv-trees}. 
+
+In addition to {\it at least}, the system handles the other two-word adverbs, 
+{\it at most} and {\it up to}, and the three-word {\it as-as} adverb
+constructions, where an adjective substitutes between the two occurences of 
+{\it as}.  An example of a three-word as-as adverb is {\it as little as}.  
+Except for the ability of {\it at least} to modify many different types of 
+constituents, the multi-word adverbs are restricted to modifying cardinal 
+determiners.  Example sentences using the trees in Figure~\ref{other-adv-trees}
+are shown in (\ex{1})-(\ex{5}).
 
 \begin{itemize}
 \item{Focus Adverb modifying an NP}
