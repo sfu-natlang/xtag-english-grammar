@@ -242,19 +242,30 @@ complementizers.  So while the {\bf $<$comp$>$} feature represents
 constraints originating from the VP dominating the clause, the {\bf
 $<$assign-comp$>$} feature represents constraints originating from the
 highest VP in the clause. {\bf $<$assign-comp$>$} is used to control the
-appearance of subjects in infinitival clauses,  to
-ensure the correct distribution of complementizers in sentential
-subjects, and to block `that-trace' violations.
+%appearance of subjects in infinitival clauses,  to
+%ensure the correct distribution of complementizers in sentential
+%subjects, and to block `that-trace' violations.
+the appearance of subjects in infinitival clauses (see discussion of
+ECM constructions in \ref{ecm-verbs}), to block bare indicative
+sentential subjects (bare infinitival subjects are allowed), and to
+block `that-trace' violations.
 
-Examples (\ex{3}), (\ex{4}) and (\ex{5}) show that an accusative
+Examples (\ex{2}), (\ex{3}) and (\ex{4}) show that an accusative
 case subject is obligatory in an infinitive clause if the
-complementizer {\it for\/} is present. The infinitive clauses in both
-(\ex{1}) and (\ex{2}) are analyzed in the English XTAG grammar as
-having PRO subjects.  The apparent subject of {\it to win\/} in
-(\ex{1}) is taken to be an object of the verb rather than the subject
-of the infinitive clause. 
+complementizer {\it for\/} is present. The infinitive clauses in
+(\ex{1}) is analyzed in the English XTAG grammar as
+having a PRO subject.  
 
-\enumsentence{Mike wants her to pass the exam.}
+%The apparent subject of {\it to win\/} in
+%(\ex{1}) is taken to be an object of the verb rather than the subject
+%of the infinitive clause. 
+%\enumsentence{Mike wants her to pass the exam.}
+%Note: I (Seth) took out this sentence, since the tech report 
+%claims it gets an object-control analysis, while it in fact gets an
+% ECM analysis.  It may be the case that it *should* get an ECM analysis,
+% but for now I took it out, because it doesn't seem to have anything to
+% do anyway with the point of this section.
+
 \enumsentence{Christy wants to pass the exam.}
 \enumsentence{Mike wants for her to pass the exam.}
 \enumsentence{$\ast$Mike wants for she to pass the exam.}
@@ -279,13 +290,15 @@ infinitive {\it to}'s are posited. One infinitive {\it to\/} has {\bf
 $<$assign-case$>$=none} which forces a PRO subject, and {\bf
 $<$assign-comp$>$=inf\_nil} which prevents {\it for\/} from
 adjoining. The other infinitive {\it to\/} has no value at all for
-{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for}, so that
-it can only occur with the complementizer {\it for\/}. In those
-instances {\it for} supplies the {\bf $<$assign-case$>$} value and
-assigns accusative case to the overt subject.
+{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for/ecm}, so that
+it can only occur either with the complementizer {\it for\/} or with
+ECM constructions. In those
+instances either {\it for} or the ECM verb
+supplies the {\bf $<$assign-case$>$} value, assigning
+ accusative case to the overt subject.
  
 \section{Sentential Complements of Verbs}
-
+\label{sent-complements}
 {\bf Tree families}: Tnx0Vs1, Tnx0Vnx1s2, TItVnx1s2, TItVpnx1s2, TItVad1s2,
 Tnx0Ax1s2, Tnx0dxN1s1, Tnx0N1s1, Tnx0Pnx1s2, Tnx0Px1s2. 
 
@@ -327,6 +340,7 @@ S$_{1}$.
 \end{tabular}
 \caption{Trees for {\it The emu thinks that the aardvark smells terrible.}}  
 \label{aard-emu}
+\label{1;4,4}
 \end{figure}
 
 However, adjunction is crucial in deriving sentences with
@@ -365,13 +379,23 @@ These sentences are derived in XTAG by adjoining the tree for {\it did the
 giraffe say} S at the S$_r$ node of the tree for either {\it which animal likes
 him} (to yield sentence~(\ex{0})) or {\it which animal he likes} (to yield
 sentence~(\ex{-2})).  That-trace violations are blocked by the presence of the
-feature {\bf $<$assign-comp$>$=inf\underline{~}nil/ind\underline{~}nil}
-feature on the bottom of the S$_r$ node of trees with extracted subjects,
-i.e. those used in sentences such as (\ex{-1}) and (\ex{0}).  This blocks (or
-`filters') any other values of {\bf $<$assign-comp$>$} projected by the verb,
-and ensures that no complementizer is able to adjoin at this node.
+feature {\bf $<$assign-comp$>$=inf\underline{~}nil/ind\underline{~}nil/ecm}
+feature on the bottom of the S$_r$ node of trees with extracted subjects (W0),
+i.e. those used in sentences such as (\ex{-1}) and (\ex{0}).  
+If a complementizer tree, $\beta$COMPs, adjoins to a subject
+extraction tree at $S_r$, its {\bf $<$assign-comp$>$ =
+that/whether/for/if} feature will clash and the derivation will
+fail. If there is no complementizer, there is no feature clash, and this will
+permit the derivation of sentences like (\ex{0}), or of ECM constructions, in
+which case the ECM verb will have {\bf $<$assign-comp$>$=ecm} (see
+section~\ref{ecm-verbs} for more discussion of the ECM case).
 Complementizers may adjoin normally to object extraction trees such as those
-used in sentence~(\ex{-2}).
+used in sentence~(\ex{-2}), and so object extraction trees have no value 
+for the {\bf $<$assign-comp$>$} feature.
+%This blocks (or
+%`filters') any other values of {\bf $<$assign-comp$>$} projected by the verb,
+%and ensures that no complementizer is able to adjoin at this node.
+
 
 In the case of indirect questions, subjacency follows from the
 principle that a given tree cannot contain more than one
@@ -398,11 +422,16 @@ accusative case to an NP which is not part of the sentential complement.
 The subject of an ECM infinitive
 complement is assigned accusative case is a manner
 analogous to that of a subject in a {\it for-to\/} construction, as described
-in section~\ref{for-complementizer}.  The {\it to} tree in the infinitive
-is the one which has no value at all for
-{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for}.  The ECM verb
-acts just like {\it for} and has the appropriate {\bf $<assign-case>$>$}
-and {\bf $<$assign-comp$>$} features.  Figure~\ref{expects-decl} shows the 
+in section~\ref{for-complementizer}.  As in the {\it for-to\/} case, the
+ECM verb assigns accusative case into the subject of the lower infinitive, and
+so the infinitive uses the {\it to} which has no value for
+{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for/ecm}.  The ECM verb
+has {\bf $<$assign-comp$>$=ecm} and {\bf $<$assign-case$>$=acc} on its
+foot.  The former allows the {\bf $<$assign-comp$>$} features of the ECM
+verb and the {\it to} tree to unify, and so be used together, and the latter
+assigns the accusative case to the lower subject.  
+
+Figure~\ref{expects-decl} shows the 
 declarative tree for the 
 tree for the TXnx0Vs1 family, in this case anchored by {\it expects}.
 Figure~\ref{van-expects} shows a parse for {\it Van expects Bob to talk}
@@ -410,7 +439,7 @@ Figure~\ref{van-expects} shows a parse for {\it Van expects Bob to talk}
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=ps/sent-comps-subjs-files/expects.ps,height=2in}
+\psfig{figure=ps/sent-comps-subjs-files/expects.ps,height=2.5in}
 \caption{ECM tree: $\beta$Xnx0Vs1}
 \label{expects-decl}
 \label{3;1,15}
@@ -419,10 +448,32 @@ Figure~\ref{van-expects} shows a parse for {\it Van expects Bob to talk}
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=ps/sent-comps-subjs-files/van-expects.ps,height=2in}
+\psfig{figure=ps/sent-comps-subjs-files/van-expects.ps,height=2.5in}
 \caption{Sample ECM parse}
 \label{van-expects}
 \end{figure}
+
+The ECM and {\it for-to\/} cases are analogous in how they are used together
+with the correct infinitival {\it to} to assign accusative case to the 
+subject of the lower infinitive.  However, they are different in that
+{\it for} is blocked along with other complementizers in subject extraction
+contexts, as discussed in section~\ref{sent-complements}, as in
+(\ex{1}), while subject extraction is compatible with ECM cases, 
+as in (\ex{2}).
+
+\enumsentence{$\ast$What child did the giraffe ask for to leave?}
+\enumsentence{Who did Bill expect to eat beans?}
+
+Sentence (\ex{-1}) is ruled out by the {\bf $<$assign-comp$>$=
+inf\underline{~}nil/ind\underline{~}nil/ecm} feature
+on the subject extraction tree for {\it ask}, since the
+{\bf $<$assign-comp$>$=for} feature from the {\it for} tree will fail to 
+unify.  However, 
+(\ex{0}) will be allowed since {\bf $<$assign-comp$>$=ecm} feature on the
+{\it expect} tree will unify with the foot of the ECM verb tree.  
+The use of features allows the ECM and
+{\it for-to\/} constructions to act the same for exceptional case assignment,
+while also being distinguished for that-trace violations.
 
 Verbs that take bare infinitives, as in (\ex{1}), are 
 also treated as ECM verbs,
@@ -436,7 +487,7 @@ forces it to be accusative by its {\bf $<$assign-case$>$=acc} value at its
 foot node unifies with the {\bf $<$assign-case$>$=nom/acc} value of the 
 bare infinitive clause.
 
-\enumsentence{Bob sees the harmonica fall}
+\enumsentence{Bob sees the harmonica fall.}
 
 The trees in the TXnx0Vs1 family are generally parallel to those in the
 Tnx0Vs1 family, except for the {\bf $<$assign-case$>$} and
@@ -449,34 +500,34 @@ subject of the infinitive is not thematically selected by the ECM verb,
 it is not part of the ECM verb's tree, and so it cannot be part of the
 passive tree.   Therefore, the passive acts as a raising verb (see 
 section~\ref{sm-clause-xtag-analysis}).
-For example, to derive (\ex{2}), the tree in Figure~\ref{expected-passive}
+For example, to derive (\ex{2}), the tree in Figure~\ref{expects-passive}
 would adjoin into a 
 derivation for {\it Bob to talk} at the VP node  (and the 
-{\bf $<$mode=$>$=passive} feature, not shown, forces the auxiliary to
+{\bf $<$mode$>$=passive} feature, not shown, forces the auxiliary to
 adjoin in, as for other passives, as described in chapter~\ref{passives}).
 
-\enumsentence{Van expects Bob to talk}
-\enumsentence{Bob was expected to talk}
+\enumsentence{Van expects Bob to talk.}
+\enumsentence{Bob was expected to talk.}
 
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=ps/sent-comps-subjs-files/expects-passive.ps,height=2in}
+\psfig{figure=ps/sent-comps-subjs-files/expects-passive.ps,height=1.5in}
 \caption{ECM passive}
 \label{expects-passive}
 \label{3;2,15}
 \end{figure}
 
 It has long been noted that passives of both full and bare infinitive 
-ECM constructions are full infinitives, as in (\ex{-1}) and (\ex{2}).
+ECM constructions are full infinitives, as in (\ex{0}) and (\ex{2}).
 
 \enumsentence{Bob sees the harmonica fall.}
 \enumsentence{The harmonica was seen to fall.}
-\enumsentence{$\ast$*The harmonica seen to fall.}
+\enumsentence{$\ast$The harmonica was seen fall.}
 
 Under the TAG ECM analysis, this fact is easy to implement.  The foot
 node of the ECM passive tree is simply set to have {\bf $<$mode$>$=inf},
-which prevents the derivation of (\ex{-1}).  Therefore, for all the other
+which prevents the derivation of (\ex{0}).  Therefore, for all the other
 trees in the family, to foot nodes are set to have {\bf $<$mode$>$=base} 
 or {\bf $<$mode$>$=inf} depending on whether it is a bare infinitive or not.
 These foot nodes are all S nodes.  The VP foot node of the passive tree, 
@@ -590,7 +641,7 @@ control, as in sentence~(\ex{5}).
 \enumsentence{[PRO$_{arb}$ to dance] is important.}
 
 At present, an analysis for obligatory control into complement clauses
-(as in sentences~(\ex{-3}, (\ex{-4}, and (\ex{-5})) has been implemented. An
+(as in sentences~(\ex{-4}), (\ex{-3}), and (\ex{-2})) has been implemented. An
 analysis for cases of obligatory control into adjunct clauses and optional
 clauses exists and can be found in (\cite{bhatt94}).
 
@@ -638,32 +689,32 @@ tree and NP$_{0}$ of the {\em leave} tree share a control feature.
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/betanx0Vnx1s2_persuaded_.ps,height=8.2cm}
-\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\psfig{figure=ps/sent-comps-subjs-files/betanx0Vnx1s2_persuaded_.ps,height=8.2cm}
+\caption{Tree for {\it persuaded}}
 \label{persuade-tree}
 \end{figure}
 
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/alphanx0V_leave_.ps,height=8.2cm}
-\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\psfig{figure=ps/sent-comps-subjs-files/alphanx0V_leave_.ps,height=7.2cm}
+\caption{Tree for {\it leave}}
 \label{leave-tree}
 \end{figure}
 
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/derived.ps,height=8.2cm}
-\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\psfig{figure=ps/sent-comps-subjs-files/persuaded-derv.ps,height=9.2cm}
+\caption{Derived tree for ???}
 \label{derived-tree}
 \end{figure}
 
 \begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=/mnt/linc/xtag/work/bhatt/xtag/tr/derivation.ps,height=8.2cm}
-\caption{Tree $\beta$COMPs, anchored by {\it that}}
+\psfig{figure=ps/sent-comps-subjs-files/persuaded-derivation.ps,height=4.2cm}
+\caption{Derivation tree for ???}
 \label{derivation-tree}
 \end{figure}
 
