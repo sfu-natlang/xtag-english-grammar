@@ -214,16 +214,16 @@ complements (see section~\ref{NPA}).
 \label{adv-modifier}
 
 In the English XTAG grammar, VP and S-modifying adverbs anchor the auxiliary
-trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx,\footnote{In
-the naming conventions for the XTAG trees, ARB is used for {\underline
+trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx,\footnote{In the
+naming conventions for the XTAG trees, ARB is used for {\underline
 a}dve{\underline {rb}}s.  Because the letters in A, Ad, and Adv are all used
 for other parts of speech ({\underline a}djective, {\underline d}eterminer and
 {\underline v}erb), ARB was chosen to eliminate ambiguity.
 Appendix~\ref{tree-naming} contains a full explanation of naming conventions.}
 allowing pre and post modification of S's and VP's.  Besides the VP and
 S-modifying adverbs, the grammar includes adverbs that modify other
-categories. Examples of adverbs modifying an adjective, an adverb, a PP and a
-determiner are shown in (\ex{1})-(\ex{8}).
+categories. Examples of adverbs modifying an adjective, an adverb, and a PP are
+shown in (\ex{1})-(\ex{6}).
 
 \begin{itemize}
 \item{Modifying an adjective}
@@ -238,24 +238,18 @@ determiner are shown in (\ex{1})-(\ex{8}).
 \item{Modifying a PP}
 \enumsentence{{\bf right} through the wall}
 
-\item{Modifying a determiner}
-\enumsentence{He has {\bf hardly} any friends}
-\enumsentence{{\bf just} two hundred deaths}
-
 \end{itemize}
 
-We have separate trees for each of the modified categories and for
-pre and post modification where needed.  The kind of treatment we
-give to adverbs here is very much in line with the base-generation
-approach proposed by \cite{Ernst84}, which assumes all positions where
-an adverb can occur to be base-generated, and that the semantics of
-the adverb specifies a range of possible positions occupied by each
-adverb. While the relevant semantic features of the adverbs are not
-currently implemented, implementation of semantic features is
-scheduled for future work.  The trees for adverb anchored modifiers
-are very similar in form to the adjective anchored modifier trees.
-Examples of two of the basic adverb modifier trees are shown in
-Figure~\ref{adv-trees}.
+XTAG has separate trees for each of the modified categories and for pre and
+post modification where needed.  The kind of treatment given to adverbs here is
+very much in line with the base-generation approach proposed by \cite{Ernst84},
+which assumes all positions where an adverb can occur to be base-generated, and
+that the semantics of the adverb specifies a range of possible positions
+occupied by each adverb. While the relevant semantic features of the adverbs
+are not currently implemented, implementation of semantic features is scheduled
+for future work.  The trees for adverb anchored modifiers are very similar in
+form to the adjective anchored modifier trees.  Examples of two of the basic
+adverb modifier trees are shown in Figure~\ref{adv-trees}.
 
 \begin{figure}[htb]
 \centering
@@ -299,38 +293,10 @@ ADV&$\beta$ARBarb&$\beta$arbARB\\
 \hline
 N&$\beta$ARBn&\\
 \hline
-Det&$\beta$ARBdx&\\
-\hline
 \end{tabular}
 \caption{Simple Adverb Anchored Modifiers}
 \label{adv-summary}
 \end{table}
-
-\begin{figure}[htb]
-\centering
-\begin{tabular}{c}
-{\psfig{figure=ps/modifiers-files/betaARBarbs.ps,height=3.0in}}
-\end{tabular}
-\caption {Complex adverb phrase modifier: $\beta$ARBarbs}
-\label{weird-adv-tree}
-\end{figure}
-
-
-The one tree in the grammar that has a complex adverb phrase, $\beta$ARBarbs,
-is not included in Table \ref{adv-summary}. This tree shown in
-Figure~\ref{weird-adv-tree} and is used for two-adverb phrases that occur
-sentence initially, such as in sentence (\ex{1}).
-
-\enumsentence{How quickly the time passed.}
-
-\begin{figure}[htb]
-\centering
-\begin{tabular}{c}
-{\psfig{figure=ps/modifiers-files/how-did-you-fall.ps,height=3.5in}}
-\end{tabular}
-\caption {Derived tree for {\it How did you fall?}}
-\label {how-did-you-fall}
-\end{figure}
 
 In the English XTAG grammar, no traces are posited for wh-adverbs, in-line with
 the base-generation approach (\cite{Ernst84}) for various positions of
@@ -344,6 +310,31 @@ sentence in (\ex{1}) is as in Figure (\ref{how-did-you-fall}), with no trace
 for the adverb.
 
 \enumsentence{How did you fall?}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/modifiers-files/how-did-you-fall.ps,height=3.5in}}
+\end{tabular}
+\caption {Derived tree for {\it How did you fall?}}
+\label {how-did-you-fall}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/modifiers-files/betaARBarbs.ps,height=3.0in}}
+\end{tabular}
+\caption {Complex adverb phrase modifier: $\beta$ARBarbs}
+\label{weird-adv-tree}
+\end{figure}
+
+There is one more adverb modifier tree in the grammar which is not included in
+Table \ref{adv-summary}.  This tree, shown in Figure~\ref{weird-adv-tree}, has
+a complex adverb phrase and is used for wh+ two-adverb phrases that occur
+sentence initially, such as in sentence (\ex{1}).
+
+\enumsentence{How quickly did the time pass.}
 
 
 
