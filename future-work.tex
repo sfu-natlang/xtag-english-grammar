@@ -140,37 +140,6 @@ correct parse (e.g. comma following topicalized element), thus reducing
 ambiguity.
 
 
-\section{PRO control}
-
-Within the FB-LTAG formalism, PRO-control is an interesting problem because of
-the intrinsic non-local nature of control.\footnote{This section is taken from
-\cite{bhatt94}.}  The controller NP and the controlled PRO are always in
-different clauses.  In this sense, Control is even more non-local than Binding.
-
-In the literature on Control, two types are often distinguished: obligatory
-control, as in sentences~(\ex{1}) and (\ex{2}), and optional control, as in
-sentence~(\ex{3}).
-
-\enumsentence{Jan$_i$ promised Maria [PRO$_i$ to go].}
-\enumsentence{Jan persuaded Maria$_i$ [PRO$_i$ to go].}
-\enumsentence{[PRO$_{arb}$ to dance] is important.}
-
-An analysis for obligatory control has been worked out, although it has yet to
-be implemented.  The NP anchored by PRO will have the feature {\bf
-$<$control$>$=+}.  The {\bf $<$control$>$} feature is also introduced in trees
-that can take sentential arguments.  Depending on the verb, the control
-propagation paths in the auxiliary trees are different.  In the case of subject
-control (as in sentence~(\ex{-2})), the subject NP and the foot node are
-constrained to have the same control features, while for object control
-(e.g. sentence~(\ex{-1})), the object NP and the foot node are constrained to
-have the same control features. 
-
-Work has also been done on an XTAG analysis for optional control, but this has
-not been fully worked out yet.
-
-
-
-
 \section{Verb selectional restrictions}
 
 Although we explicitly do not want to model semantics in the XTAG grammar,
