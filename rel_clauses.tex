@@ -1,32 +1,121 @@
 \section{Relative Clauses}
-Relative clauses are represented in the grammar by auxiliary trees
-that adjoin to NP. These trees are anchored by the verb in the clause
-and appear in the appropriate tree families for the various verb
-subcategorizations. Our analysis of relative clauses allows a single
-tree to provide the structure for various relative clause types. For
-example, the Rnx0Vnx1 tree shown in () is used for the relative
-clauses shown in ()-()
+Relative clauses are NP modifiers. For relative clauses on arguements,
+an arguement in the clause is extracted, and the NP head (the
+portion of the NP being modified by the relative clause) is
+interpreted as having the same role in the clause as the extracted
+item.  For example in (\ex{1}) {\it export exhibitions} is the head NP
+and is modified by the relative clause {\it $\epsilon$ included high-tech
+items}. {\it Export exhibitions} is interpreted as the subject of the
+the relative clause which is missing an overt subject.
 
-%insert tree
+\enumsentence{export exhibitions that included high-tech items}
 
-	() the man that Muriel likes
-	() the man who Muriel likes
-	() the man Muriel likes
-	() what Muriel likes
-	() the book for Muriel to read
-	() the man reading the book
+Relative clauses are represented in the English LTAG grammar by
+auxiliary trees that adjoin to NPs. These trees are anchored by the
+verb in the clause and appear in the appropriate tree families for the
+various verb subcategorizations. Within a tree family there will be
+group of relative clause trees based on the declarative tree and each
+passive tree. Within each of these groups is a separate relative
+clause tree corresponding to each possible arguement that can be
+extracted from the clause. The relationship between the extracted
+position and the head NP is captured by coindexing the {\bf
+$<$trace$>$} features of the extracted NP and the NP footnode in the
+relative clause tree.  Examples from
+Tnx0Vnx1 are shown in figures \ref{betaN1nx0Vnx1} $-$
+\ref{betaN1nx1V}.
 
-The relative pronouns who, and which are treated uniformly with that
-as complementizers restricted to relative clauses. These relative
-complementizers anchor the tree $\beta$???? and adjoin onto the S node
-of the relative clauses trees.  The complementizer
-analysis also extends to infinitives with for complementizers as in
-example ().  
-The relative clauses in ()-() vary by clause type, type of complementizer
-and the wh-status of the head NP.  Examples ()-() have indicative
-clauses with wh = - head NP's and show variation between that, who and
-no complementizers.   
-By not putting a restriction on the wh feature on the NP footnode of
-relative clauses, free relatives such as () are accounted for as wh =
-+ NP head with no complementizer.
+\begin{figure}[htbp]
+\begin{tabular}{cc}
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/rel_clauses-files/betaN1nx0Vnx1.ps,height=15.0cm}&
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/rel_clauses-files/betaN0nx0Vnx1.ps,height=15.0cm}\\
+$\beta$N1nx0Vnx1&$\beta$N0nx0Vnx\\
+\end{tabular}
+\caption{ \label{betaN1nx0Vnx1} Trees:  $\beta$N1nx0Vnx1 and $\beta$N0nx0Vnx1}
+\end{figure}
 
+\begin{figure}[htbp]
+\begin{tabular}{cc}
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/rel_clauses-files/betaN0nx1Vbynx0.ps,height=15.0cm}&
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/rel_clauses-files/betaN1nx1Vbynx0.ps,height=15.0cm}\\
+$\beta$N0nx1Vbynx0&$\beta$N1nx1Vbynx0
+\end{tabular}
+\caption{ \label{betaN0nx1Vbynx0} Trees:  $\beta$N0nx1Vbynx0 and $\beta$N1nx1Vbynx0}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/rel_clauses-files/betaN1nx1V.ps,height=15.0cm}
+\caption{ \label{betaN1nx1V} Tree:  $\beta$N1nx1V}
+}
+\end{figure}
+
+
+
+
+Our treatment of relative clauses allows a single tree to provide the
+structure for various relative clause types. For example, the
+$\beta$N1xn0Vnx1 tree shown in figure (\ref{betaN1nx0Vnx1}) is used
+for all of the the relative clauses shown in (\ex{1})-(\ex{6})
+\vspace{0.5cm}
+
+\enumsentence{the man that Muriel likes}
+\enumsentence{the man who Muriel likes}
+\enumsentence{the man Muriel likes}
+\enumsentence{what Muriel likes}
+\enumsentence{the book for Muriel to read}
+\enumsentence{the man reading the book}
+
+This variety of clause types is achieved through combinations of
+different clause types using the {\bf $<$mode$>$} feature, different
+complementizers using the {\bf $<$comp$>$} and {\bf $<$assign-comp$>$}
+and {\bf $+$} or {\bf $-$} {\bf $<$wh$>$} NP heads. A detailed
+discussion of how the {\bf $<$mode$>$}, {\bf $<$comp$>$} and {\bf
+$<$assign-comp$>$} features are used to account for embedded clauses
+generally can be found in Section
+\ref{embedded-cl}.  
+
+The relative pronouns {\it who}, and {\it which} are treated as
+complementizers restricted to relative clauses.  Their treatment as
+complementizers is consistent with our treatment of the
+complementizers {\it that} and {\it for} in other embedded clause
+environments as well as in relative clauses. Like other
+complementizers, the relative complementizers use the tree
+$\beta$COMPs in figure (\ref{betaCOMPs}).
+
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/rel_clauses-files/betaCOMPs.ps,height=10.0cm}
+\caption{ \label{betaCOMPs} Tree:  $\beta$COMPs}
+}
+\end{figure}
+
+The relative complementizers, {\it who} and {\it which}, have {\bf
+rel} as their value for the feature {\bf $<$comp$>$}. This feature
+value insures that {\it who} and {\it which} do not adjoin onto
+sentential complements, subjects or adjunct modifiers because only
+relative clause trees allow complementizers with the value {\bf rel}.
+Relative clause trees such as $\beta$N1xn0Vnx1 in figure
+(\ref{betaN1nx0Vnx1}) also allow other complementizers with the
+approriate clause type. For example, in (\ex{-1}) the infinitive
+relative clause with an overt subject requires the complementizer {\it
+for} just as an infinitive with an overt subject would in other
+embedded clauses. Similarly, the adjunction of the complementizer {\it
+that} is optional in indicative relative clauses with non-subject
+extractions, such as (\ex{-3}) and (\ex{-5}), just as it is in
+sentential complements. The same system of features, $<$comp$>$,
+$<$mode$>$, and $<$assign-comp$>$, is used in all cases of embedded
+clauses including relative clauses to insure the proper cooccurance of
+complementizers and clause types.
+
+Under this type of account, free relatives such as (\ex{-3}) require
+no additional mechanisms. They are simply $+$wh NP heads with
+complementizerless relative clauses. For example, the clause {\it Mary likes
+$\epsilon$} using the $\beta$N1nx0Vnx1 tree in figure
+\ref{betaN1nx0Vnx1} adjoins onto the NP {\it what} to derive {\it
+what Mary likes $\epsilon$}.
+
+The English Xtag grammar does not contain any  syntactic distinction between
+restrictive and non-restrictive relatives because we believe this to
+be a semantic and/or pragmatic difference.
