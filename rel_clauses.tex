@@ -15,14 +15,14 @@ relative clause which is missing an overt subject.
 Relative clauses are represented in the English XTAG grammar by auxiliary trees
 that adjoin to NP's. These trees are anchored by the verb in the clause and
 appear in the appropriate tree families for the various verb
-subcategorizations. Within a tree family there will be group of relative clause
-trees based on the declarative tree and each passive tree. Within each of these
-groups is a separate relative clause tree corresponding to each possible
-argument that can be extracted from the clause. The relationship between the
-extracted position and the head NP is captured by co-indexing the {\bf
-$<$trace$>$} features of the extracted NP and the NP foot node in the relative
-clause tree.  Representative examples from the transitive tree family are shown
-with a relevant subset of their features in
+subcategorizations. Within a tree family there will be groups of relative
+clause trees based on the declarative tree and each passive tree. Within each
+of these groups, there is a separate relative clause tree corresponding to each
+possible argument that can be extracted from the clause. The relationship
+between the extracted position and the head NP is captured by co-indexing the
+{\bf $<$trace$>$} features of the extracted NP and the NP foot node in the
+relative clause tree.  Representative examples from the transitive tree family
+are shown with a relevant subset of their features in
 Figures~\ref{trans-rel-clause-trees}(a) and \ref{trans-rel-clause-trees}(b).
 
 \begin{figure}[htb]
@@ -32,7 +32,7 @@ Figures~\ref{trans-rel-clause-trees}(a) and \ref{trans-rel-clause-trees}(b).
 (a)&(b)
 \end{tabular}
 \caption{Relative clause trees in the transitive tree family: $\beta$N1nx0Vnx1
-and $\beta$N0nx0Vnx1 }
+(a) and $\beta$N0nx0Vnx1 (b)}
 \label{trans-rel-clause-trees}
 \label{2;16,1}
 \label{2;15,1}
@@ -49,15 +49,15 @@ clauses shown in sentences (\ex{1})-(\ex{6}).
 \enumsentence{the man Muriel likes}
 \enumsentence{what Muriel likes}
 \enumsentence{the book for Muriel to read}
-\enumsentence{the man reading the book}
+\enumsentence{the book Muriel is reading}
 
 This variety of clause types is achieved through combinations of different
 clause types using the {\bf $<$mode$>$} feature, different complementizers
 using the {\bf $<$comp$>$} and {\bf $<$assign-comp$>$} features and {\bf
-$<$wh$>$=+} or {\bf $<$wh$>$=-} NP heads. A detailed discussion of how the
+$<$wh$>$=+} or {\bf $<$wh$>$=--} NP heads. A detailed discussion of how the
 {\bf $<$mode$>$}, {\bf $<$comp$>$} and {\bf $<$assign-comp$>$} features are
 used to account for embedded clauses in general can be found in
-section~\ref{scomps-section}.
+Chapter~\ref{scomps-section}.
 
 The relative pronouns {\it who} and {\it which} are treated as complementizers
 restricted to relative clauses.  Their treatment as complementizers is
@@ -93,10 +93,10 @@ relative clauses, to insure the proper cooccurrence of complementizers and
 clause types.
 
 Under this account, free relatives as in sentence~(\ex{-2}) require no
-additional mechanisms. They are simply +wh NP heads with complementizerless
-relative clauses. For example, the clause {\it Mary likes $\epsilon$}, using
-the tree in Figure~\ref{trans-rel-clause-trees}(a), adjoins onto the NP {\it
-what} to derive {\it what Mary likes $\epsilon$}.
+additional mechanisms. They are simply {\bf $<$wh$>$=+} NP heads with
+complementizerless relative clauses. For example, the clause {\it Mary likes
+$\epsilon$}, using the tree in Figure~\ref{trans-rel-clause-trees}(a), adjoins
+onto the NP {\it what} to derive {\it what Mary likes $\epsilon$}.
 
 The English XTAG grammar does not contain any  syntactic distinction between
 restrictive and non-restrictive relatives because we believe this to
