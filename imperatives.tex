@@ -1,15 +1,25 @@
-\section{Imperative}
-Imperatives in English do not have overt subjects, and the subject
-role is always interpreted as being second person, i.e. {\it you}.
+\section{Imperatives}
+Imperatives in English do not require overt subjects.  The subject in
+imperatives is second person, i.e. {\it you}, whether it is overt or
+not as is clear from the verbal agreement and the interpretation.
+Imperatives with overt subjects can be  parsed using the trees already
+needed for declaratives.  The imperative cases in which the subject is
+not overt are handled by the imperative trees discussed in this section.
+
 The imperative trees in English LTAG grammar are identical to the
-declarative tree except that the NP$_{0}$ subject position is filled by an
-$\epsilon$ and the NP$_{0}$ agr-pers feature is set in the tree to the
-value 2. Figure \ref{Inx0Vnx1} is the imperative tree for the transitive tree
-family.
+declarative tree except that the NP$_{0}$ subject position is filled
+by an $\epsilon$, the NP$_{0}$ agr-pers feature is set in the tree to
+the value 2 and the mode feature on the root node has the value imp.
+The value for agr-pers that comes from the epsilon node insures the
+proper verbal agreement for an imperative.  The mode value of imp on
+the root node is recognized as a valid mode for a matrix clause.  The
+imp value for mode also allows imperatives to be blocked from
+appearing as embedded clauses.  Figure \ref{Inx0Vnx1} is
+the imperative tree for the transitive tree family.
 
 \begin{figure}[htbp]
 \center{
 \psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphaInx0Vnx1.ps,height=10.0cm}
 \caption{ \label{{alphaInx0Vnx1} Tree:  $\alpha$Inx0Vnx1}
 }
-\end{figure}}
+\end{figure}
