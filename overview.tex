@@ -15,9 +15,9 @@ Figure~{\ref{flowchart}} shows the overall flow of the system when parsing a
 sentence. The input sentence is submitted to the {\bf Morphological Analyzer}
 and the {\bf Tagger}. The morphological analyzer retrieves the morphological
 information for each individual word in the sentence from the {\bf
-Morphological Database}. The result is filtered in the {\bf P.O.S Blender}
-using the output of the trigram tagger to reduce the part-of-speech ambiguity
-of the words. The augmented sentence, with each word annotated with
+Morphological Database}. The result is filtered in the {\bf P.O.S. Blender}
+using the output of the {\bf Trigram Tagger} to reduce the part-of-speech
+ambiguity of the words. The augmented sentence, with each word annotated with
 part-of-speech tags and morphological information, is input to the {\bf
 Parser}, which then consults the {\bf Syntactic Database} and the {\bf Tree
 Database} to retrieve the appropriate tree structures for each word in the
@@ -29,7 +29,7 @@ parser then composes the structures to obtain the parse(s) of the sentence.
 \centering
 \mbox{}
 {\psfig{figure=ps/overview-files/overview.eps,height=3.0in}}
-\caption{Overview of XTAG system}
+\caption{Overview of the XTAG system}
 \label{flowchart}
 \end{figure}
 
@@ -55,7 +55,8 @@ Journal Corpus, is incorporated in XTAG. The trigram tagger has been extended
 to output the N-best parts-of-speech sequences (\cite{soong90}).  XTAG uses
 this information to reduce the number of specious parses by filtering the
 possible parts-of-speech provided by the morphological analyzer for each word.
-The tagger decreases the time to parse a sentence by an average of 93\%.
+When the correct part-of-speech sequence is returned, the time required to
+parse a sentence decreases by an average of 93\%.
 
 \section{Parser}
 
@@ -235,9 +236,9 @@ in diagnosing grammar problems.
 
 XTAG was developed on the Sun SPARC station series, and has been tested on the
 Sun 4 and HP BOBCATs series 9000.  It is available through anonymous ftp, and
-requires 20MB of space.  Please send mail to xtag-request@linc.cis.upenn.edu
-for ftp instructions or more information.  XTAG requires the following software
-to run:
+requires 20MB of disk space.  Please send mail to
+xtag-request@linc.cis.upenn.edu for ftp instructions or more information.  XTAG
+requires the following software to run:
 
 \begin{itemize}
 
