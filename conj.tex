@@ -389,6 +389,26 @@ coordination trees and forms the basis of the XTAG implementation.
 More information about predicative coordination can be found in
 (\cite{anoopjoshi96}), including an extension to handle gapping constructions.
 
+\section{Pseudo-coordination}
+
+The XTAG grammar does handle one sort of verb pseudo-coordination. 
+Semi-idiomatic phrases such as 'try and' and 'up and' (as in 'they might 
+try and come today') are handled as multi-anchor modifiers 
+rather than as true coordination. These items adjoin to a V node, using 
+the $\beta$VCONJv tree. This tree adjoins only to verbs in their base 
+morphological (non-inflected) form. The verb anchor of the $\beta$VCONJv 
+must also be in its base form, as shown in examples 
+(\ref{pseudo1})-(\ref{pseudo3}). This blocks 3rd-person singular derivations, 
+which are the only person morphologically marked in the present, except when 
+an auxiliary verb is present or the verb is in the infinitive.
+
+\beginsentences
+\sitem{$\ast$He tried and came yesterday.}\label{pseudo1}
+\sitem{They try and exercise three times a week.}\label{pseudo2}
+\sitem{He wants to try and sell the puppies.}\label{pseudo3}
+\endsentences
+
+
 %\section{Other Conjunctions}
 
 %The conjunction analysis described in the previous sections is
