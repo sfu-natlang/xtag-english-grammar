@@ -1,160 +1,144 @@
-\section{Conjunction}
+\chapter{Conjunction}
+\label{conjunction}
 
-\subsection{Introduction}
-The XTAG system can handle sentences with conjunction of two constituents
-of the same syntactical category.  
-There are eight syntactical categories that can conjoin,  and
-in each case an auxiliary tree is used to implement the conjunction.
-These eight categories can be considered as four different
-cases, as described in the following subsections.  In all cases the
-two constituents are required to be of the same syntactical category, but
-there may also be some additional constraints, as described below.
+\section{Introduction}
 
-\subsection{Adjective, Adverb, Preposition, Preposition Phrase Conjunction}
+The XTAG system can handle sentences with conjunction of two constituents of
+the same syntactic category.  There are eight syntactic categories that can
+conjoin, and in each case an auxiliary tree is used to implement the
+conjunction.  These eight categories can be considered as four different cases,
+as described in the following sections.  In all cases the two constituents are
+required to be of the same syntactic category, but there may also be some
+additional constraints, as described below.
 
-%\begin{description}
-%
-%\item[Adjective] ``the dark and dreary day''
-%\item[PP] ``down the street and around the corner''
-%\item[Adverb] ``slowly and carefully''
-%\item[preposition] ``the student goes to and from the office''
-%\item[NP] ``the boy and the girl''
-%\item[noun] `` the boy and girl have left''
-%\item[sentential] `` the day was dark and the phone never rang''
-%\item[determiner] `` all but one have left''
-%\end{description}
-
-\begin{figure}[ht]
-\centering
-\rule[.1in]{5.0in}{0.01in}
-\begin{tabular}{cc}
-{\psfig{figure=ps/conj-files/betaA1conjA2.ps,height=1in}}&
-{\psfig{figure=ps/conj-files/derived-tree-140291.ps,height=1.8in,width=2in}}\\
-(a) & (b)\\
-\end{tabular}
-\caption{Tree for adjective conjunction and a resulting parse tree}
-\rule[.1in]{5.0in}{0.01in}
-\label{A1conjA2}
-\end{figure}
+\section{Adjective, Adverb, Preposition and PP Conjunction}
 
 Each of these four categories has an auxiliary tree that is used for
 conjunction of two constituents of that category.  The auxiliary tree
-gets adjoined into the left-hand-side component, and the right-hand-side
-component gets substituted into the auxiliary tree.  
+adjoins into the left-hand-side component, and the right-hand-side
+component substitutes into the auxiliary tree.  
 
-Figure~\ref{A1conjA2}(a)  shows the auxiliary tree for adjective conjunction,
-and is used, for example, in the derivation of the parse tree for the 
-noun phrase {\it the dark and dreary day}, as shown in
- figure~\ref{A1conjA2}(b).  The auxiliary tree gets adjoined onto the node for
-the left adjective, and the right adjective gets substituted into the right
-hand side node of the auxiliary
-tree.\footnote{see section~\ref{mc-adjunction} for an explanation of the
-{\bf displ-const} feature.}
-The analysis for adverb, preposition, and PP conjunction is exactly the
-same and there is a corresponding auxiliary tree for each of these that
-is identical to that of Figure~\ref{A1conjA2}(a) except, of course,
-for the node labels.
-\subsection{Noun Phrase and Noun Conjunction}
-
-\begin{figure}[ht]
+\begin{figure}[htb]
 \centering
-\rule[.1in]{5.0in}{0.01in}
-\psfig{figure=ps/conj-files/betaNP1conjNP2.ps,height=2in}
-\caption{Tree for NP conjunction}
-\rule[.1in]{5.0in}{0.01in}
+\begin{tabular}{ccc}
+{\psfig{figure=ps/conj-files/betaA1conjA2.ps,height=0.8in}}&
+\hspace*{0.5in}&
+{\psfig{figure=ps/conj-files/derived-tree-140291.ps,height=1.8in}}\\
+(a) & \hspace*{0.5in}& (b)\\
+\end{tabular}
+\caption{Tree for adjective conjunction: $\beta$A1conjA2 and a resulting parse tree}
+\label{A1conjA2}
+\end{figure}
+
+Figure~\ref{A1conjA2}(a) shows the auxiliary tree for adjective conjunction,
+and is used, for example, in the derivation of the parse tree for the noun
+phrase {\it the dark and dreary day}, as shown in Figure~\ref{A1conjA2}(b).
+The auxiliary tree adjoins onto the node for the left adjective, and the
+right adjective substitutes into the right hand side node of the auxiliary
+tree. The analysis for adverb, preposition and PP conjunction is exactly the
+same and there is a corresponding auxiliary tree for each of these that is
+identical to that of Figure~\ref{A1conjA2}(a) except, of course, for the node
+labels.
+
+
+\section{Noun Phrase and Noun Conjunction}
+
+The tree for NP conjunction, shown in Figure~\ref{NP1conjNP2}, has the same
+basic analysis as in the previous section except that the {\bf $<$wh$>$} and
+{\bf $<$case$>$} features are used to force the two noun phrases to have the
+same {\bf $<$wh$>$} and {\bf $<$case$>$} values.  This allows, for example,
+{\it he and she wrote the book together} while disallowing {\it $\ast$he and
+her wrote the book together.}  The {\bf $<$agr$>$} feature of the top node sets
+the resulting NP to have plural number.  The tree for N conjunction is
+identical to that for the NP tree except for the node labels.
+
+\begin{figure}[htb]
+\centering
+\mbox{}
+\psfig{figure=ps/conj-files/betaNP1conjNP2.ps,height=2.2in}
+\caption{Tree for NP conjunction: $\beta$NP1conjNP2}
 \label{NP1conjNP2}
 \end{figure}
 
-The tree for NP conjunction, shown in figure~\ref{NP1conjNP2}, has the
-same basic analysis as in the previous section except that the {\bf wh}
-and {\bf case} features are
-used to constrain the two noun phrases to have the same {\bf wh} and 
-{\bf case} values.
-This allows, for example, {\it he and she wrote the book together} while
-disallowing {\it he and her wrote the book together.} 
-The {\bf agr} feature of the top node
-sets the resulting NP to get plural number.  The  tree for N conjunction
-is identical to that for the NP tree except for the node labels. 
 
-\subsection{Sentential Conjunction}
-\begin{figure}[ht]
+\section{Sentential Conjunction}
+
+The tree for sentential conjunction, shown in Figure~\ref{S1conjS2}, is based
+on the same analysis as the conjunctions in the previous two sections, with a
+slight difference in features.  The {\bf $<$mode$>$} feature\footnote{See
+section~\ref{s-features} for an explanation of the {\bf $<$mode$>$} feature.}
+is used to constrain the two sentences being conjoined to have the same mode so
+that {\it the day is dark and the phone never rang} is acceptable, but {\it
+$\ast$the day dark and the phone never rang} is not.  The {\bf
+$<$assign-comp$>$} feature\footnote{See section~\ref{for-complementizer} for an
+explanation of the {\bf $<$assign-comp$>$} feature.} feature is used to allow
+conjunction of infinitival sentences, such as {\it to read and to sleep is a
+good life}.
+
+\begin{figure}[htb]
 \centering
-\rule[.1in]{5.0in}{0.01in}
-\psfig{figure=ps/conj-files/betaS1conjS2.ps,height=1.6in}
-\caption{Tree for sentential conjunction}
-\rule[.1in]{5.0in}{0.01in}
+\begin{tabular}{c}
+\psfig{figure=ps/conj-files/betaS1conjS2.ps,height=1.8in}
+\end{tabular}
+\caption{Tree for sentential conjunction: $\beta$S1conjS2}
 \label{S1conjS2}
 \end{figure}
 
-The tree for sentential conjunction, shown in figure~\ref{S1conjS2}, is
-based on the same analysis as in the previous two sections except with
-some different features.  The {\bf mode}
-feature \footnote{see section~\ref{s-features} 
-for an explanation of the {\bf mode} feature.} 
-is used to 
-constrain the two sentences being conjoined to have the same mode so that
-{\it the day is dark and the phone never rang} is acceptable, but 
-{\it the day is dark and that the phone never rang} is not.  The 
-{\bf assign-comp} feature \footnote{see section~\ref{for-complementizer} 
-for an explanation of the {\bf assign-comp} feature.} 
-feature is used to allow conjunction of infinitival sentences, such as
-{\it to read and to sleep is a good life}.
+\section{Determiner Conjunction}
 
-\subsection{Determiner Conjunction}
-\begin{figure}[ht]
+The tree for determiner conjunction, shown in Figure~\ref{DX1conjDX2}, is
+unlike the other conjunction trees in that the foot node is on the right.  This
+is because determiner phrases generally build to the left. For the same reason,
+all the various feature values are taken from the left determiner, and the only
+requirement is that the {\bf $<$wh$>$} feature is the same, while the other
+features, such as {\bf $<$card$>$}, are unconstrained.  For example, {\it who
+and which} and {\it all but one} are both acceptable determiner conjunctions,
+but {\it $\ast$who and all} is not.
+
+\begin{figure}[htb]
 \centering
-\rule[.1in]{5.0in}{0.01in}
+\begin{tabular}{c}
 \psfig{figure=ps/conj-files/betaDX1conjDX2.ps,height=3.5in}
-\caption{Tree for determiner conjunction}
-\rule[.1in]{5.0in}{0.01in}
+\end{tabular}
+\caption{Tree for determiner conjunction: $\beta$DX1conjDX2}
 \label{DX1conjDX2}
 \end{figure}
 
-The tree for determiner conjunction, shown in figure~\ref{DX1conjDX2},
-is unlike the other conjunction trees in that the foot node is on the right.
-This is because 
-determiner phrases generally build to the left. For the same reason,
-all the various feature values are taken from the left determiner, and the
-only requirement is that the {\bf wh} feature is the same, while the
-other features, such as {\bf card}, are unconstrained.  For example,
-{\it who and which} and {\it all but one} are both acceptable determiners,
-but {\it who and all} is not. 
+\section{Other Conjunctions}
 
-\subsection{Other Conjunctions}
 The conjunction analysis described in the previous sections is designed
 to handle only the most straightforward cases of conjunction.  Three
 types of conjunction that are not handled are:
-\begin{description}
-\item [Incomplete Constituents] Whereas the sentence 
-{\it John likes bananas and Bill hates bananas} is a simple
-case of sentential conjunction, {\it John likes and Bill hates bananas}
-cannot be handled by the previous analysis.  Since {\it likes} 
-anchors a tree that needs both a subject noun phrase and an object noun
-phrase to be substituted in, the latter sentence has an empty
-substitution node after {\it John likes}.  
 
-\item [Verb Phrase Conjunction] Since verbs anchor a tree with a root node 
-of type {\bf S} and not {\bf VP},
-there is no straightforward way to implement verb phrase conjunction.
-For example, in the sentence {\it John eats cookies and drinks beer},
-there is no point in the derivation at which {\it eats cookies} and
-{\it drinks beer} are available as separate trees ready to be conjoined.
-They are both only subtrees in their respective {\bf S} trees.  This could
-also be considered as a case of incomplete constituents, since
-they are both missing a noun phrase.
+\begin{itemize}
+\item {\bf Incomplete Constituents} Although the sentence 
+{\it John likes and Bill hates bananas} is a simple case of sentential
+conjunction, it cannot be handled by the current XTAG grammar.  Since {\it
+likes} anchors a tree that needs both a subject noun phrase and an object noun
+phrase to be substituted in, the latter sentence would need have an unfilled
+substitution node after {\it John likes} for the sentence to parse.
 
-\item [Gapping]
+\item {\bf Verb Phrase Conjunction} Since verbs anchor a tree with a root node 
+of type S and not VP, there is no straightforward way to implement verb phrase
+conjunction.  For example, in the sentence {\it John eats cookies and drinks
+beer}, there is no point in the derivation at which {\it eats cookies} and {\it
+drinks beer} are available as separate trees ready to be conjoined.  They are
+both only subtrees in their respective S trees.  This could also be considered
+as a case of incomplete constituents, since {\it drinks beer} is missing a noun
+phrase.
+
+\item {\bf Gapping}
 Sentences such as {\it John likes apples and Bill pears} are also not
 handled by the previous analysis.  These could also be considered as a case
 of incomplete constituents.
-\end{description}
+\end{itemize}
 
 One grammar formalism that is capable of handling these types of 
-conjunction is Combinatory Categorial Grammar (CCG) (see \cite{steedman90})
+conjunction is Combinatory Categorial Grammar (CCG) (\cite{steedman90})
 which relies on a nonstandard notion of a constituent in order to accomplish
-this.  Proposals have been made (for example, \cite{joshischabes91}),
+this.  Proposals have been made (e.g. \cite{joshischabes91}),
 inspired by the CCG approach, to handle these problematic cases in the
-LTAG formalism.  Unlike the CCG analysis, however, the traditional notion
+FB-LTAG formalism.  Unlike the CCG analysis, however, the traditional notion
 of constituents and phrase structure is maintained.  Such proposals are
 as of yet unimplemented.
 
