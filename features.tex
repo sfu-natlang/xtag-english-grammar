@@ -127,6 +127,66 @@ a pre-existing agreement relationship between an NP and a verb.
 
 \section{Case}
 
+\subsection{Approaches to Case}
+\subsubsection{Case in GB theory}
+
+GB (Government and Binding) theory proposes the following
+`case filter' as a requirement on S-structure.\footnote{There are certain
+problems with applying the case filter as a requirement at the level of
+S-structure.  These issues are not crucial to the discussion of the English
+XTAG implementation of case and so will not be discussed here.  Interested
+readers are referred to
+\cite{lasnik-uriagereka88}.}
+
+\begin{verse}
+\xtagdef{Case Filter:}
+Every overt NP must be assigned abstract case. \cite{haegeman91}
+\end{verse}
+
+Abstract case is taken to be universal.  Languages with rich morphological case
+marking, such as Latin, and languages with very limited morphological case
+marking, like English, are all presumed to have full systems of abstract case
+that differ only in the extent of morphological realization.
+
+In GB, abstract case is argued to be assigned to NP's by various case
+assigners, namely verbs, prepositions, and INFL.  Verbs and
+prepositions are said to assign accusative case to NP's that they
+govern, and INFL assigns nominative case to NP's that it governs.
+These governing categories are constrained as to where they can assign
+case by means of `barriers' based on `minimality conditions', although
+these are relaxed in `exceptional case marking' situations.  The
+details of the GB analysis are beyond the scope of this technical
+report, but see \cite{chomsky86} for the original analysis or
+\cite{haegeman91} for an overview.  Let it suffice for us to say that
+the notion of abstract case and the case filter are useful in
+accounting for a number of phenomena including the distribution of
+nominative and accusative case, and the distribution of overt NP's and
+empty categories (such as PRO).
+
+\subsubsection{Minimalism and Case} 
+
+A major conceptual difference between GB theories and Minimalism is that in
+Minimalism, lexical items carry their features with them rather than being
+assigned their features in the course of the derivation.  For example, nouns
+have a case feature when it comes into the derivation. This feature is
+`checked' in a particular configuration (in SPEC position of AGR$_s$ or
+AGR$_o$) and then deleted. If the feature is not checked
+(deleted), the derivation fails.\cite{chomsky92}
+
+\subsection{Case in XTAG}
+
+The English XTAG grammar adopts the notion of case and the case filter for many
+of the same reasons argued in the GB literature.  However, in some respects the
+English XTAG grammar's implementation of case more closely resembles the
+treatment in Chomsky's Minimalism framework \cite{chomsky92} than the system
+outlined in the GB literature \cite{chomsky86}.  As in Minimalism, nouns in
+the XTAG grammar carry case with them, which is eventually `checked'. However,
+in the XTAG grammar, noun cases are checked against the case values assigned
+by the verb during the unification of the feature structures.  Unlike Chomsky's
+Minimalism, there are no separate AGR nodes; the case checking comes from the
+verbs directly. Case assignment from the verb is more like the GB approach than
+the requirement of a SPEC-head relationship in Minimalism.
+
 There are two features responsible for case-assignment:\\
 {\bf $\langle$case$\rangle$}, possible values: {\bf nom, acc, gen, none}\\
 {\bf $\langle$assign-case$\rangle$}, possible values: {\bf nom, acc, none}
@@ -136,57 +196,220 @@ nodes that dominate them have an {\bf $\langle$assign-case$\rangle$}
 case feature. Phrases and lexical items that have case i.e. Ns and NPs
 have a {\bf $\langle$case$\rangle$} feature.
 
-Case assignment by prepositions involves the following equations:
+\subsubsection{Lexical Noun Phrases}
 
-\enumsentence{ {\bf PP.b:$\langle$assign-case$\rangle =$ P.t:$\langle$case$\rangle$}}
+Most nouns in English do not have separate forms for nominative and accusative
+case, and so they are ambiguous between the two.  Pronouns, of course, are
+morphologically marked for case, and each carries the appropriate case in its
+feature.  Figures~\ref{nouns-with-case}(a) and \ref{nouns-with-case}(b) show
+the NP tree anchored by a noun and a pronoun, respectively, along with the
+feature values associated with each word.  Note that {\it books} simply gets
+the default case {\bf nom/acc}, while {\it she} restricts the case to be {\bf
+nom}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphaNXN_books.ps,height=3.0in}}  &
+\hspace*{0.5in} &
+{\psfig{figure=ps/case-files/alphaNXN_she.ps,height=3.2in}} \\
+(a)& \hspace*{0.5in}&(b)\\
+\end{tabular}\\
+\caption{Lexicalized NP trees with case markings}
+\label {nouns-with-case}
+\end{figure}
+
+\subsubsection{Case Assigners}
+
+Case is assigned in the XTAG English grammar by two lexical categories
+- verbs and prepositions.\footnote{{\it For} also assigns case as a
+complementizer.  See section \ref{for-complementizer} for more
+details.}
+
+\subsubsubsection{Prepositions}
+\label{prep-case}
 
 
-\enumsentence{ {\bf NP.t:$\langle$case$\rangle =$ P.t:$\langle$case$\rangle$}}
-
-Prepositions come specified from the lexicon with their {\bf $\langle$assign-case$\rangle$}
-feature.
+Prepositions assign accusative case ({\bf acc}) through
+their {\bf $<$assign-case$>$} feature, which is specified in the lexicon.
 
 \enumsentence{ {\bf P.b:$\langle$assign-case$\rangle =$ acc}}
 
+This feature is linked directly to the
+{\bf $<$case$>$} feature of their objects, which is accomplished with 
+the following feature equations:
 
-Case assignment by verbs has two parts: assignment of case to the
-object(s) and assignment of case to the subject. Assignment of case to
-the object is simpler.  English verbs always assign accusative case to
-their NP objects (direct or indirect).  Hence this is built into the
-tree and not put into the lexical entry of each individual verb.
+\enumsentence{ {\bf PP.b:$\langle$assign-case$\rangle =$ P.t:$\langle$assign-case$\rangle$}}
+
+
+\enumsentence{ {\bf NP.t:$\langle$case$\rangle =$ P.t:$\langle$assign-case$\rangle$}}
+
+Figure~\ref{PXPnx-with-case}(a) shows a lexicalized preposition tree,
+while Figure~\ref{PXPnx-with-case}(b) shows the same tree with the NP
+tree from Figure~\ref{nouns-with-case}(a) substituted into the NP
+position.  Figure~\ref{PXPnx-with-case}(c) is the tree in
+Figure~\ref{PXPnx-with-case}(b) after unification has taken place.
+Note that the case ambiguity of {\it books} has been resolved to
+accusative case.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccc}
+{\psfig{figure=ps/case-files/alphaPXPnx_of.ps,height=1.7in}}  &
+&
+{\psfig{figure=ps/case-files/NXN-substituted-into-PXPnx.ps,height=3.5in}} &
+&
+{\psfig{figure=ps/case-files/NXN-substituted-into-PXPnx-unified.ps,height=2.8in}} \\
+(a)& \hspace*{0.05in}&(b)& \hspace*{0.05in}&(c)\\
+\end{tabular}\\
+\caption {Assigning case in prepositional phrases}
+\label{PXPnx-with-case}
+\end{figure}
+
+\subsubsubsection{Verbs}
+\label{case-for-verbs}
+Verbs are the other part of speech in the XTAG grammar that can assign case.
+Because XTAG does not distinguish INFL and VP nodes, verbs must provide case
+assignment on the subject position in addition to the case assigned to their NP
+complements.
+
+Assigning case to NP complements is handled by building the case values of the
+complements directly into the tree that the case assigner (the verb) anchors.
+Figures~\ref{S-tree-with-case}(a) and \ref{S-tree-with-case}(b) show an S
+tree\footnote{Features not pertaining to this discussion have been taken out to
+improve readability and to make the trees easier to fit onto the page.} that
+would be anchored\footnote{The diamond marker ($\diamond$) indicates the
+anchor(s) of a structure if the tree has not yet been lexicalized.} by a
+transitive and ditransitive verb, respectively.  Note that the case assignments
+for the NP complements are already in the tree, even though there is not yet a
+lexical item anchoring the tree.  Since every verb that selects these trees
+(and other trees in each respective subcategorization frame) assigns the same
+case to the complements, building case features into the tree has exactly the
+same result as putting the case feature value in each verb's lexical
+entry. \ex{1} shows the equation used for specifying accusative case on the
+object NP (where {\it object} is replaced by an underscore and the number of
+the argument -- either 1 or 2 -- which is getting accusative case).
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphanx0Vnx1-case-features.ps,height=2.0in}}
+& \hspace*{0.5in} &
+{\psfig{figure=ps/case-files/alphanx0Vnx2nx1-case-features.ps,height=2.0in}} \\
+(a)& \hspace*{0.5in}&(b)\\
+\end{tabular}\\
+\caption {Case assignment to NP arguments}
+\label{S-tree-with-case}
+\label{2;1,1}
+\label{2;1,3}
+\end{figure}
 
 \enumsentence{ {\bf NP$_{object}$.t:$\langle$case$\rangle =$ acc}}
+
+The case assigned to the subject position varies with verb form.  Since the
+XTAG grammar treats the inflected verb as a single unit rather than dividing it
+into INFL and V nodes, case, along with tense and agreement, is expressed in
+the features of verbs, and must be passed in the appropriate manner.  The trees
+in Figure~\ref{lexicalized-S-tree-with-case} show the path of linkages that
+joins the {\bf$<$assign-case$>$} feature of the V to the {\bf $<$case$>$}
+feature of the subject NP.  The morphological form of the verb determines the
+value of the {\bf $<$assign-case$>$} feature.
+Figures~\ref{lexicalized-S-tree-with-case}(a) and
+\ref{lexicalized-S-tree-with-case}(b) show the same tree\footnote{Again, the 
+feature structures shown have been restricted to those that pertain to the V/NP
+interaction.} anchored by different morphological forms of the verb {\it sing},
+which give different values for the {\bf $<$assign-case$>$} feature.
+Tensed verbs assign case {\bf nom}, whereas non-tensed verbs assign no case at
+all; that is, a verb such as {\it singing} has no {\bf $<$assign-case$>$}
+feature. 
 
 Assignment of case to the subject involves the following two equations.
 
 \enumsentence{ {\bf NP$_{subj}$:$\langle$case$\rangle =$ VP.t:$\langle$assign-case$\rangle$}}
 
-
 \enumsentence{ {\bf VP.b:$\langle$assign-case$\rangle =$ V.t:$\langle$assign-case$\rangle$}}
 
-This is a two step process -- the final case assigned to the subject
-depends upon the {\bf $\langle$assign-case$\rangle$} feature of the
-verb as well as whether an auxiliary verb adjoins in.
 
-Finite verbs like {\em sings} have {\bf nom} as the value of their
-{\bf $\langle$assign-case$\rangle$} feature. Non-finite verbs have
-no value for the {\bf $\langle$assign-case$\rangle$}
-feature. In all grammatical examples with lexical NP subjects, a tensed
-auxiliary adjoins in which assigns {\bf nom} to the subject, or accusative case
-is assigned from above (from the complementizer {\it for} or from an ECM
-verb). PRO subjects have {\bf $\langle$case$\rangle =$ none} which would clash
-with the {\bf $\langle$assign-case$\rangle$} of a tensed auxiliary or anything
-else that would try to assign case to the subject.\footnote{Note that tensed
-auxiliaries are independently ruled out from adjoining into PRO trees by the
-{\bf $\langle$mode$\rangle$} feature.}
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphanx0Vnx1_sings-case-features.ps,height=3.3in}}  & \hspace*{0.5in}&
+{\psfig{figure=ps/case-files/alphanx0Vnx1_singing_.ps,height=3.0in}} \\
+(a)& \hspace*{0.5in}&(b)\\
+\end{tabular}\\
+\caption {Assigning case according to verb form}
+\label {lexicalized-S-tree-with-case}
+\end{figure}
 
-%So if no auxiliary adjoins in, the only subject they can have
-%is {\bf PRO} which is the only NP with {\bf none} as the value its
-%{\bf $\langle$case$\rangle$} feature.
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/betaVvx_is-with-case.ps,height=2.6in}}  &
+\hspace*{0.5in} &
+{\psfig{figure=ps/case-files/is-adjoined-into-singing.ps,height=3.0in}} \\
+(a)&\hspace*{0.5in} &(b)\\
+\end{tabular}\\
+\caption {Proper case assignment with auxiliary verbs}
+\label{Vvx-with-case}
+\end{figure}
 
-\subsection{ECM}
-Certain verbs e.g. {\em want, believe, consider} etc. and one complementizer
-{\em for} are able to assign case to the subject of their complement clause. 
+In the case of a tenseless verb, a tensed auxiliary will adjoin in and assign
+case to the subject, or the subject will be assigned accusative from a higher
+ECM verb.\footnote{Currently, there is nothing in the grammar which acts as a
+Case Filter to rule out sentences with nouns that are not receiving
+case. Thus, sentences such as {\it $\ast$I hope Carlos to be happy} are
+accepted, even though the NP {\it Carlos} does not receive case. We are
+exploring ways of handling this for future releases.}
+Figure~\ref{Vvx-with-case}(a) shows the auxiliary tree for {\it is}, and
+Figure~\ref{Vvx-with-case}(b) shows the result of adjoining {\it is} into the
+transitive tree anchored by {\it singing}. The case feature on the subject NP
+has the value {\bf $<$nom$>$}, which comes from the auxiliary verb {\it is}. 
+
+\subsubsection{PRO}
+
+In GB theory, the null NP element PRO can only appear in positions where it
+does not receive case (and in fact, where it is ungoverned). PRO only appears
+in subject position of tenseless (non-matrix) clauses, where the clause is
+either an adjunct, as in \ex{1}, or a CP infinitival complement clause, as in
+\ex{2}. Since only tensed verbs can assign nominative case, a PRO in the
+subject position of a tenseless clause will not receive nominative case. PRO
+also cannot appear in the complement of an ECM verb, since ECM verbs assign
+accusative case to the subject of their complement clause.
+
+\enumsentence{While PRO talking to Anoop, Carlos drank a coke.}
+\enumsentence{Tonia wants PRO to eat lunch.}
+
+In previous versions of the grammar, the distribution of PRO was controlled by
+case features, similar to its treatment GB theory. PRO anchored an NP initial
+tree and had the feature case {\bf none}. This tree could substitute into NP
+positions, but only unify in a position where either case {\bf none} or no case
+at all was assigned, but not in positions with case {\bf nom} or {\bf acc}.
+
+Currently, however, we have dispensed with the non-lexicalized PRO tree, and
+tenseless verbs no longer have the 
+feature {\bf $<$assign-case$>$=none}. Rather than substituting in, PRO
+is built into the subject position of the relevant sentential (and gerund)
+trees.\footnote{In this, we follow the treatment of PRO in the French XTAG
+project \cite{ACK00}.} \footnote{Note that, as of the Fall 2000 release, not
+all the PRO trees had been included in the grammar. Thus, some necessary trees
+are missing.}
+
+The distribution of PRO is still controlled by case features to some degree,
+however. The trees with PRO built-in have an {\bf $<$assign-case$>$=none}
+feature in the root S node (rather than being assigned by the verb). By having
+this feature, we can make sure that the PRO tree cannot appear as the
+complement of an ECM verb, since it will clash with the ECM verb's {\bf
+$<$assign-case$>$=acc} feature. The equations in the PRO trees are given in
+\ex{1} and \ex{2}.
+
+\enumsentence{ {\bf NP$_{subj}$:$\langle$case$\rangle =$ none}}
+
+\enumsentence{ {\bf S_r.b:$\langle$case$\rangle =$
+NP$_{subj}$:$\langle$case$\rangle$}}
+
+
+\subsubsection{ECM}
+Certain verbs, such as {\em want, believe, consider}, and one complementizer
+({\em for}) are able to assign case to the subject of their complement clause. 
 
 The complementizer {\em for}, like the preposition {\em for}, has the
 {\bf $\langle$assign-case$\rangle$} feature of its complement set to
@@ -201,12 +424,12 @@ foot S node set to {\bf acc}. The co-indexation between the
 the root S$_{r}$ and the {\bf $\langle$case$\rangle$} feature of the NP subject
 leads to the subject being assigned accusative case.
 
-\subsection{Agreement and Case}
+\subsubsection{The Case of Extracted NPs}
 The {\bf $\langle$case$\rangle$} features of a moved NP and its trace 
 are co-indexed. This captures the fact that movement does not disrupt 
 a pre-existing relationship of case-assignment between a verb and an NP.
 
-\enumsentence{ Her$_{i}$/*She$_{i}$, I think that Odo like t$_{i}$.}
+\enumsentence{ Her$_{i}$/*She$_{i}$, I think that Odo likes t$_{i}$.}
 
 
 \section{Extraction and Inversion}
