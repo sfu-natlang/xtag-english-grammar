@@ -20,13 +20,16 @@ construction is grammatical for {\it give\/} but not for {\it put}.
 \enumsentence{$\ast$Christy put the refrigerator the cannoli .}
 
 The alternation between (\ex{-5}) and (\ex{-1}) is known as dative
-shift.\footnote{In languages similar to English that have overt case marking
-indirect objects would be marked with dative case. It has also been suggested
-that for English the preposition {\it to} serves as a dative case marker.} In
-order to account for verbs with dative shift the English XTAG grammar includes
-structures for both variants in the tree family Tnx0Vnx1Pnx2.  The declarative
-trees for the shifted and non-shifted alternations are shown in
-Figure~\ref{dative-alt}.
+shift.\footnote{In languages similar to English that have overt case
+marking indirect objects would be marked with dative case. It has also
+been suggested that for English the preposition {\it to} serves as a
+dative case marker.} In order to account for verbs with dative shift
+the English XTAG grammar includes structures for both variants in the
+two tree families Tnx0Vnx1Pnx2 and Tnx0Vnx2nx1.  For an alternating
+verb such as {\it give}, there are two anchoring instances: {\it give
+to} selecting Tnx0Vnx1Pnx2 and {\it give} selecting Tnx0Vnx2nx1.  The
+declarative trees for the shifted and non-shifted alternations are
+shown in Figure~\ref{dative-alt}.
 
 
 \begin{figure}[htb]
@@ -49,20 +52,19 @@ as that of the direct object (NP$_2$) in Figure~\ref{dative-alt}(b) (and vice
 versa).  This use of indexing is consistent with our treatment of other
 constructions such as passive and ergative.
 
-%Tonia: Tnx0Vnx1Pnx2 does not contain trees for NP NP structure either
+Verbs that do not show this alternation and have only the NP PP
+structure (e.g. {\it put\/}) do not select the tree family
+Tnx0Vnx2nx1.  Non-alternating verbs with a correlated preposition take
+Tnx0Vnx1Pnx2 and those which take a wider range of prepositions take
+Tnx0Vnx1pnx2 (see Chapter~\ref{pp-complement-chapter} for more
+exposition on the XTAG treatment of these constructions).  
 
-Verbs that do not show this alternation and have only the NP PP structure
-(e.g. {\it put\/}) select the tree family Tnx0Vnx1pnx2.  Unlike the
-Tnx0Vnx1Pnx2 family, the Tnx0Vnx1pnx2 tree family does not contain trees for
-the NP NP structure. Other verbs such as {\it ask} allow only the NP NP
-structure as shown in (\ex{1}) and (\ex{2}).
+Other verbs such as {\it ask} allow only the NP NP structure as shown
+in (\ex{1}) and (\ex{2}).  These verbs select only the tree family
+Tnx0Vnx2nx1.
 
 \enumsentence{Beth Ann asked Srini a question .}
 \enumsentence{$\ast$Beth Ann asked a question to Srini .}
-
-Verbs that only allow the NP NP structure select the tree family
-Tnx0Vnx2nx1. This tree family does not have the trees for the NP PP
-structure. 
 
 There are other apparent cases of dative shift with {\it for}, such as in
 (\ex{1}) and (\ex{2}), that we have taken to be structurally distinct from the
@@ -88,14 +90,31 @@ that PP's with {\it for} are optional while ditransitive {\it to} PP's are not.
 \enumsentence{Beth Ann made dinner .}
 \enumsentence{$\ast$Beth Ann gave dinner .}
 
-% Fei: 1/13/98 It needs to be changed. Tonia: ``to'' not built in.
+Other evidence in support of the view that {\it for} PP's are adjuncts
+comes for the {\it do so} test.  {\it Do so} substitutes for an entire
+VP, as demonstrated in the following:
+
+\enumsentence{John ate a banana and Mary did so too . (Mary ate a banana also)}
+\enumsentence{John ate a banana in the morning and Mary did so in the evening.  (Mary ate a banana also and she ate it in the evening)}
+\enumsentence{*John ate a banana and Mary did so an apple.}
+
+\noindent Now observe the following data:
+
+\enumsentence{John gave a book to Mary and Bill did so too .}
+\enumsentence{*John gave a book to Mary and Bill did so to Janet .}
+
+\enumsentence{John baked a cake for Mary and Bill did so too .}
+\enumsentence{John baked a cake for Mary and Bill did so for Janet }.
+
+Since {\it do so} substitutes for an entire VP, the fact that (\ex{0}) 
+indicates that the {\it for} PP is an adjunct.
+
 Consequently, in the XTAG grammar the apparent dative shift with {\it
-  for} PP's is treated as Tnx0Vnx2nx1 for the NP NP structure, and as
-a transitive plus an adjoined adjunct PP for the NP PP structure.  To
+for} PP's is treated as Tnx0Vnx2nx1 for the NP NP structure, and as a
+transitive plus an adjoined adjunct PP for the NP PP structure.  To
 account for the ditransitive {\it to} PP's, the preposition {\it to}
-is built into the tree family Tnx0Vnx1tonx2. This accounts for the
-fact that {\it to} is the only preposition allowed in dative shift
-constructions.
+co-anchors the tree family Tnx0Vnx1Pnx2 with the alternating
+verb. 
 
 \cite{mccawley88} also notes that the {\it to} and {\it for} cases
 differ with respect to passivization; the indirect objects with {\it to} may be
