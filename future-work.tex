@@ -1,0 +1,205 @@
+\appendix
+\chapter{Future Work}
+\label{future-work}
+
+\section{Adjective ordering}
+
+At this point, the treatment of adjectives in the XTAG English grammar does not
+include selectional or ordering restrictions\footnote{This section is a repeat
+of information found in section~\ref{adj-modifier}.}. Consequently, any
+adjective can adjoin onto any noun and on top of any other adjective already
+modifying a noun. All of the modified noun phrases shown in (\ex{1})-(\ex{4})
+currently parse.
+
+\enumsentence{big green bugs}
+\enumsentence{big green ideas}
+\enumsentence{colorless green ideas}
+\enumsentence{$\ast$green big ideas}
+
+While (\ex{-2})-(\ex{0}) are all semantically anomalous, (\ex{0}) also suffers
+from an ordering problem that makes it seem ungrammatical as well.  Since the
+XTAG grammar focuses on syntactic constructions, it should accept
+(\ex{-3})-(\ex{-1}) but not (\ex{0}).  Both the auxiliary and determiner
+ordering systems are structured on the idea that certain types of lexical items
+(specified by features) can adjoin onto some types of lexical items, but not
+others.  We believe that an analysis of adjectival ordering would follow the
+same type of mechanism.
+
+
+
+\section{Determiner Adverbs}
+
+There are some apparent adverbs that interact with the NP and determiner system
+(\cite{quirk85}), although there is some debate in the literature as to whether
+these should be classified as determiners or adverbs.\footnote{This section is
+from \cite{HockeyEgedi94}.}
+
+\enumsentence{{\bf Hardly} any attempt was made at restitution.}
+\enumsentence{{\bf Only} Albert would say such a thing.}
+\enumsentence{{\bf Almost} all the people had left by 5pm.}
+
+Adverbs that modify NP's or determiners have restrictions on what types of NP's
+or determiners they can modify. They divide into three classes based on the
+pattern of these restrictions.  The adverbs {\it especially}, {\it even}, {\it
+just} and {\it only} form a class that can modify any NP that is {\bf
+$<$wh$>$=-}, including proper nouns.  A second class, consisting of adverbs
+such as {\it hardly}, {\it merely} and {\it simply}, modifies NP's with
+determiners that are {\bf $<$definite$>$=-} and {\bf $<$const$>$=+}, or that
+are {\bf $<$gen$>$=+}.  This second class of adverbs can also modify NP's with
+{\it the} as a determiner, but they do not modify NP's without determiners.
+The third class, exemplified by {\it almost}, {\it approximately} and {\it
+relatively}, modifies the determiner itself.  These adverbs are restricted to
+modifying determiners with the {\bf $<$card$>$=+} feature, as well as {\it
+all}, {\it double} and {\it half}.  The distinction between adverbs that modify
+NP's and ones that modify determiners can be seen in the NP's in
+({\ex{1}})~and~({\ex{2}}).
+
+\enumsentence{[Just][half the people]}
+\enumsentence{[Approximately half][the people]}
+
+
+
+
+\section{More work on Determiners}
+
+In addition to the analysis described in section~\ref{det-comparitives}, there
+remains work to be done to complete the analysis of determiner constructions in
+English\footnote{This section is from \cite{HockeyEgedi94}.}.  Although
+constructions such as determiner coordination are easily handled if
+overgeneration is allowed, blocking sequences such as {\it one and some} while
+allowing sequences such as {\it five or ten} still remains to be worked out.
+There are still a handful of determiners that are not currently handled by our
+system.  We do not have an analysis to handle {\it most}, {\it such}, {\it
+certain}, {\it other} and {\it own}\footnote{The behavior of {\it own} is
+sufficiently unlike other determiners that it most likely needs a tree of its
+own, adjoining onto the right-hand side of genitive determiners.}.  In
+addition, there is a set of lexical items that we consider adjectives ({\it
+enough}, {\it less}, {\it more} and {\it much}) that have the property that
+they cannot cooccur with determiners.  We feel that a complete analysis of
+determiners should be able to account for this phenomena, as well.
+
+
+
+
+\section{Comparatives}
+
+Also included in our future grammar development plans are comparatives.
+Comparatives that involve ellipsis would require a general solution of the
+problem of representing ellipsis, but simpler comparatives without ellipsis,
+such as {\it fewer than nine\/} in (\ex{1}), should be amenable to analysis as
+complex determiners, perhaps with trees similar in construction to the
+partitive and genitive NP trees.
+
+\enumsentence{Cats have {\bf fewer than} nine lives.}
+
+
+
+\section{Time NP's}
+
+Although in general NP's cannot simply adjoin onto sentences, there is a class
+of NP's, called Time NP's, that can.  These NP's behave essentially like PP's,
+and the XTAG analysis for this is fairly simple, requiring only the creation of
+proper NP auxiliary trees.  Only slightly more difficult is the identification
+of all possible anchors of these trees.  A {\bf $<$time$>$=+} feature will be
+used to ensure that only certain nouns can select the time NP auxiliary trees.
+
+\enumsentence{I went to Kentucky last month/$\ast$big cat.}
+\enumsentence{This morning/$\ast$Big cat, we practiced juggling four balls.}
+
+
+
+\section{-ing adjectives}
+
+An analysis has already been provided for -ed adjectives (as in sentence~
+(\ex{1})), which are restricted to the Transitive Verb family.\footnote{This
+analysis may need to be extended to the Transitive Verb particle family as
+well.}  A similar analysis needs to take place for the -ing adjectives.  This
+type of adjective, however, does not seem to be as restricted as the -ed
+adjectives, since verbs in other tree families seem to exhibit this alternation
+as well (e.g. sentences~(\ex{2}) and (\ex{3})).
+
+\enumsentence{The murdered man was a doctoral student at UPenn.}
+\enumsentence{The man died.}
+\enumsentence{The dying man pleaded for his life.}
+
+
+
+\section{Punctuation}
+
+We are currently developing an analysis of comma coordination, to
+cover sentences such as (\ex{1}) and (\ex{2}).
+
+\enumsentence{The brilliant, funny and timeless comedian had his 99th birthday
+today.}
+\enumsentence{NP's, PP's and VP's are all adjunction sites.}
+
+Beyond this, we intend to add an analysis of other types of punctuation. We
+believe that there are cases where the punctuation will serve as a guide to the
+correct parse (e.g. comma following topicalized element), thus reducing
+ambiguity.
+
+
+\section{PRO control}
+
+Within the FB-LTAG formalism, PRO-control is an interesting problem because of
+the intrinsic non-local nature of control.\footnote{This section is taken from
+\cite{bhatt94}.}  The controller NP and the controlled PRO are always in
+different clauses.  In this sense, Control is even more non-local than Binding.
+
+In the literature on Control, two types are often distinguished: obligatory
+control, as in sentences~(\ex{1}) and (\ex{2}), and optional control, as in
+sentence~(\ex{3}).
+
+\enumsentence{Jan$_i$ promised Maria [PRO$_i$ to go].}
+\enumsentence{Jan persuaded Maria$_i$ [PRO$_i$ to go].}
+\enumsentence{[PRO$_{arb}$ to dance] is important.}
+
+An analysis for obligatory control has been worked out, although it has yet to
+be implemented.  The NP anchored by PRO will have the feature {\bf
+$<$control$>$=+}.  The {\bf $<$control$>$} feature is also introduced in trees
+that can take sentential arguments.  Depending on the verb, the control
+propagation paths in the auxiliary trees are different.  In the case of subject
+control (as in sentence~(\ex{-2})), the subject NP and the foot node are
+constrained to have the same control features, while for object control
+(e.g. sentence~(\ex{-1})), the object NP and the foot node are constrained to
+have the same control features. 
+
+Work has also been done on an XTAG analysis for optional control, but this has
+not been fully worked out yet.
+
+
+
+
+\section{Verb selectional restrictions}
+
+Although we explicitly do not want to model semantics in the XTAG grammar,
+there is some work along the syntax/semantics interface that would help reduce
+syntactic ambiguity and thus decrease the number of semantically anomalous
+parses.  In particular, verb selectional restrictions, particularly for PP
+arguments and adjuncts, would be quite useful.  With the exception of the
+required {\it to} in the Ditransitive with PP Shift tree family (Tnx0Vnx1Pnx2),
+any preposition is allowed in the tree families that have prepositions as their
+arguments.  In addition, there are no restrictions as to which prepositions are
+allowed to adjoin onto a given verb.  The sentences in (\ex{1})-(\ex{3}) are
+all currently accepted by the XTAG grammar.  Their violations are stronger than
+would be expected from purely semantic violations, however, and the presence of
+verb selectional restrictions on PP's would keep these sentences from being
+accepted.
+
+\enumsentence{\#Survivors walked of the street.}
+\enumsentence{\#The man about the earthquake survived.}
+\enumsentence{\#The president arranged on a meeting.}
+
+
+
+
+\section{Idioms}
+
+An analysis of idioms has already been worked out (\cite{AS89}), and one idiom
+tree family is contained in the English XTAG grammar (Transitive Idioms;
+section~\ref{nx0Vdn1-family}).  What remains to be done is a wide-ranging
+cataloging of the many English idioms.  The list of idioms must then be divided
+into appropriate tree families, based on the construction of the idiom, the
+elements that are frozen and must therefore anchor the trees, and the
+alternations that the idiom can undergo (e.g. passive, wh-movement, etc).  This
+work has not been done.

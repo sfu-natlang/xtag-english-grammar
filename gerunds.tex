@@ -1,0 +1,77 @@
+\chapter{Gerund NP's}
+\label{gerunds-chapter}
+
+The puzzle over gerunds in the linguistics literature has been that they seem
+to have both NP and clausal properties. That is to say they seem to have
+certain clausal properties but occur in positions typically occupied by noun
+phrases. The bold face portions of examples (\ex{1})-(\ex{3}) show examples of
+gerunds as subjects in (\ex{1}) and (\ex{2}), and as the object of a
+preposition in (\ex{3}).
+
+
+\enumsentence{And {\bf avoiding such losses} will take a monumental
+effort. (WSJ)}
+\enumsentence{{\bf Mr. Nolen's nocturnal wandering} doesn't make him a
+weirdo. (WSJ)}
+\enumsentence{Is this a case where private markets are approving of
+{\bf Washington's bashing of Wall Street}? (WSJ)}
+
+
+In the English XTAG grammar we adopt a position similar to that of
+\cite{Rosenbaum67} and \cite{Emonds70} - that gerunds are NP's exhaustively 
+dominating a clause.  In particular, we found that any place an NP is allowed,
+a gerundive clause is also allowed, and no cases in which a verb
+subcategorized for gerundive clauses, but not NP's.  
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/gerund-files/alphaDnx0Vnx1.ps,height=3.2in}}&
+{\psfig{figure=ps/gerund-files/alphaGnx0Vnx1.ps,height=3.2in}}
+\\
+(a)&(b)\\
+\end{tabular}
+\caption{Gerund trees from the transitive tree family: $\alpha$Dnx0Vnx1 (a) and
+$\alpha$Gnx0Vnx (b)}
+\label{gerund-trees}
+\label{2;12,1}
+\label{2;13,1}
+\end{figure}
+
+Our implementation includes at least two gerundive trees in each tree family
+(see Figure~\ref{gerund-trees}).  The gerund trees in a tree family have
+basically the form of the declarative for that family but have NP as the
+category of their top node.  The Determiner Gerund tree in
+Figure~\ref{gerund-trees}(a) has an initial DetP and instantiates the direct
+object as a PP. It is used for gerunds such as the one in bold face in
+sentence~(\ex{1}).
+
+\enumsentence{Some think {\bf the rapid selling of bonds} has a way to go.}
+
+Notice that the modification of {\it selling of bonds} by the adjective {\it
+rapid} supports the choice of N as the label for the node dominating V and
+PP$_{1}$.
+
+The NP gerund tree in Figure~\ref{gerund-trees}(b) has exactly the same
+structure as the declarative transitive tree except for the root node label and
+for feature values.  In particular, the verb is required to be {\bf
+$<$mode$>$=ger}, and the subject is required to be {\bf
+$<$case$>$=acc/none/gen}, i.e. either an accusative, PRO or genitive NP. The
+whole NP formed by the gerund can itself have either nominative or accusative
+case. The NP gerund tree is used for gerunds such as the one in bold face in
+sentence~(\ex{-3}) and (\ex{-2}).
+
+One question that arises with respect to gerunds is whether there is anything
+special about their distribution as compared to other types of NP's.  In fact,
+it appears that gerund NP's can occur in any NP position.  Some verbs might not
+seem to be very accepting of gerund NP arguments, as in (\ex{1}), but we
+believe this to be a semantic incompatibility rather than a syntactic problem
+since the same structures are fine with other lexical items.
+
+\enumsentence{?[$_{NP}$John's repairing$_{NP}$] ran.}
+\enumsentence{[$_{NP}$John's tinkering$_{NP}$] worked.}
+
+By having the root node of gerund trees be NP, the gerunds have the
+same distribution as any other NP in the English XTAG grammar without
+doing anything exceptional. The clause structure is captured by the
+form of the trees and by inclusion in the tree families.
