@@ -1,0 +1,1362 @@
+\section{Verb Classes}
+\label{verb-classes}
+
+Each main\footnote{Auxiliary verbs are handled under a different mechanism.
+See section~\ref{aux-verbs} for details.} verb in the syntactic lexicon selects
+at least one tree family\footnote{A tree family is a collection of trees that
+would be considered related under a transformational grammar approach.  See
+section~\ref{verb-transformations} for more details.}, or subcategorization
+frame.  Since the tree database and syntactic lexicon are already separated for
+space efficiency (see \ref{overview?}), each verb can efficiently select a
+large number of trees by specifying a tree family, as opposed to each of the
+individual trees.  This approach allows for a considerably reduction in the
+number of trees that must be specified for any given verb or form of a verb.
+
+There are currently 38 tree families in the system\footnote{An explanation of
+the naming convention used in naming the trees and tree families is available
+in Appendix \ref{naming-conventions}.}.  This section gives a brief description
+of each tree family and and shows the corresponding declarative tree (before
+lexicalization - the $\diamond$ indicates the anchor of the tree), along with
+any peculiar characteristics or trees.  It also tells which transformations are
+in each tree family, and gives the approximate number of verbs that select that
+family.  A few sample verbs are given, along with example sentences.
+
+
+\subsection{Intransitive: Tnx0V}\index{verbs, intransitive}
+\label{nx0V-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by verbs that do not 
+require an object complement of any type.  Adverbs, prepositional phrases and
+other adjuncts may adjoin on, but are required for the sentences to be
+grammatical.  Approximately 2,091 verbs select this family.
+
+\item[Examples:]  {\it eat}, {\it kill}, {\it dance} \\
+{\it Al ate.} \\ 
+{\it Seth killed.} \\ 
+{\it Hyun danced.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0V-tree}.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0V.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Intransitive Tree:  $\alpha$nx0V}
+\label{nx0V-tree}
+\end{figure}
+
+\item[Other available trees\footnote{Please see 
+Section~\ref{verb-transformations} for description of each of these types of
+trees.}:] Wh-moved subject, subject relative clause, imperative, determiner
+gerund, NP gerund.
+
+\end{description}
+
+
+
+
+\subsection{Transitive: Tnx0Vnx1}\index{verbs,transitive}
+\label{nx0Vnx1-family}
+
+\begin{description}
+
+\item[Description:] This tree family is selected by verbs that require only a 
+NP object complement.  The NP's may be complex structures, including NP's that
+take sentential complements and gerund NPs.  This does not include light verb
+constructions (see Sections~\ref{nx0lVN1-family} and \ref{nx0lVN1Pnx2-family}).
+Approximately 4,335 verbs select the transitive tree family.
+
+\item[Examples:] eat, dance, take, like\\
+{\it Al ate an apple.} \\ 
+{\it Seth danced the tango.} \\ 
+{\it Hyun is taking an algorithms course.} \\
+{\it Anoop likes the fact that the semester is over.}
+
+\item[Declarative tree:] See Figure~\ref{nx0Vnx1-tree}.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Transitive Tree:  $\alpha$nx0Vnx1}
+\label{nx0Vnx1-tree}
+\end{figure}
+
+\item[Other available trees:] wh-moved subject, wh-moved object, subject
+relative clause, object relative clause, imperative, pre-sentential adjunct,
+post-sentential adjunct, determiner gerund, NP gerund, passive with {\it by}
+phrase, passive without {\it by} phrase, passive with wh-moved subject and {\it
+by} phrase, passive with wh-moved subject and no {\it by} phrase, passive with
+wh-moved object out of the {\it by} phrase, passive with wh-moved {\it by}
+phrase, passive with relative clause on subject and {\it by} phrase, passive
+with relative clause on subject and no {\it by} phrase, passive with relative
+clause on object on the {\it by} phrase, ergative, ergative with wh-moved
+subject, ergative with subject relative clause.  In addition, two other trees
+that allowed transitive verbs to function as adjectives {\it the stopped truck}
+are also in the family.
+
+\end{description}
+
+
+
+
+
+\subsection{Transitive Idioms: Tnx0Vdn1}\index{verbs,idiomatic}
+\label{nx0Vdn1-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by idiomatic phrases in which
+the verb, determiner, and NP are all frozen (as in {\it He kicked the
+bucket.}).  Only a limited number of transformations are allowed, as compared
+to the normal transitive tree family (see Section~\ref{nx0Vnx1-family}).  The
+analysis of idioms has not been done for idioms in general; this tree is
+included to illustrate how they could be handled in XTAG.  Other idioms that
+have the same structure as {\it kick the bucket}, and that are limited to the
+same transformations would select this tree, and more trees would be built to
+handle other idioms.  Note that {\it John kicked the bucket} is actually
+ambiguous, and would result in two parses - an idiom (meaning that John died),
+a simple transitive sentences (meaning that there is an physical bucket that
+John hit with his foot).
+
+\item[Examples:] {\it kick} \\
+{\it He kicked the bucket.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vdn1-tree}.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Vdn1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Transitive Idiom Tree:  $\alpha$nx0Vdn1}
+\label{nx0Vdn1-tree}
+\end{figure}
+
+\item[Other available trees:]  wh-moved subject, subject relative clause, 
+imperative.
+
+\end{description}
+
+
+
+
+\subsection{Di-Transitive: Tnx0Vnx1nx2}\index{verbs,ditransitive}
+\label{nx0Vnx1nx2-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by verbs that take exactly 
+two NP complements.  It does {\bf not} include verbs that undergo the
+ditransitive verb shift (see Section~\ref{nx0Vnx1Pnx2-family}).  Various
+alternations that change a sentence in this class into a NP followed by a PP
+are handled by the transitive version of the verb (see
+Section~\ref{nx0Vnx1-family}) followed by a PP that adjoins on.  In these
+cases, the PP is optional.  Currently, only one verb in our database ({\it
+ensure}) selects the DiTransitive with PP tree family (see
+Section~\ref{nx0Vnx1pnx2-family}).  In this case, the verb does not have a
+transitive alternation, and so the prepositional phrase is required.
+Approximately 54 verbs select the Di-Transitive tree family.
+
+\item[Examples:] {\it ask}, {\it cook}, {\it win} \\
+{\it Christy asked Mike a question.} \\ 
+{\it Doug cooked his father dinner.} \\
+{\it Dania won her sister a stuffed animal.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vnx1nx2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1nx2.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative DiTransitive Tree:  $\alpha$nx0Vnx1nx2}
+\label{nx0Vnx1nx2-tree}
+\end{figure}
+
+\item[Other available trees:] wh-moved subject, wh-moved direct object, 
+wh-moved indirect object, subject relative clause, direct object relative
+clause, indirect object relative clause, imperative, determiner gerund, NP
+gerund, passive with {\it by} phrase, passive without {\it by} phrase, passive
+with wh-moved subject and {\it by} phrase, passive with wh-moved subject and no
+{\it by} phrase, passive with wh-moved object out of the {\it by} phrase,
+passive with wh-moved {\it by} phrase, passive with wh-moved indirect object
+and {\it by} phrase, passive with wh-moved indirect object and no {\it by}
+phrase,  passive with relative clause on subject and {\it by} phrase, passive
+with relative clause on subject and no {\it by} phrase, passive with relative
+clause on object of the {\it by} phrase, passive with relative clause on the
+indirect object and {\it by} phrase, passive with relative clause on the
+indirect object and no {\it by} phrase.
+
+
+\end{description}
+
+
+
+
+
+\subsection{DiTransitive with PP:Tnx0Vnx1pnx2}\index{verbs, NP with VP verbs}
+\label{nx0Vnx1pnx2-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by ditransitive verbs that
+take a noun phrase followed by a prepositional phrase.  The preposition is not
+constrained.  The prepositional must be required and not optional - that is,
+the sentence must be ungrammatical with just the noun phrase (i.e. {\it John
+put the table}).  No verbs, therefore, should select both this tree family and
+the transitive tree family.  (see Section~\ref{nx0Vnx1-family}).  This tree
+family is also distinguished from the ditransitive verbs, such as {\it give}
+that undergo verb shifting (see Section~\ref{nx0Vnx1Pnx2-family}).  There are
+approximately 61 verbs that select this tree family.
+
+\item[Examples:] {\it associate}, {\it put}, {\it refer} \\
+{\it Rostenkowski associated money with power.}   \\
+{\it He put his reputation on the line.}  \\
+{\it He referred all questions to his attorney.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vnx1pnx2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1pnx2.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative DiTransitive with PP Tree:  $\alpha$nx0Vnx1pnx2}
+\label{nx0Vnx1pnx2-tree}
+\end{figure}
+
+\item[Other available trees:]  wh-moved subject, wh-moved direct object, 
+wh-moved object of PP, wh-moved PP, subject relative clause, direct object
+relative clause, object of PP relative clause, imperative, determiner gerund,
+NP gerund, passive with {\it by} phrase, passive without {\it by} phrase,
+passive with wh-moved subject and {\it by} phrase, passive with wh-moved
+subject and no {\it by} phrase, passive with wh-moved object out of the {\it
+by} phrase, passive with wh-moved {\it by} phrase, passive with wh-moved object
+out of the PP and {\it by} phrase, passive with wh-moved object out of the PP
+and no {\it by} phrase, passive with wh-moved PP and {\it by} phrase, passive
+with wh-moved PP and no {\it by} phrase, passive with relative clause on
+subject and {\it by} phrase, passive with relative clause on subject and no
+{\it by} phrase, passive with relative clause on object of the {\it by} phrase,
+passive with relative clause on the object of the PP and {\it by} phrase,
+passive with relative clause on the object of the PP and no {\it by} phrase.
+
+\end{description}
+
+
+
+
+\subsection{Ditransitive with PP shift: Tnx0Vnx1Pnx2}\index{verbs,ditransitive
+with PP shift}
+\label{nx0Vnx1Pnx2-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by ditransitive verbs that
+undergo a shift to a {\it to} prepositional phrase.  These ditransitive verbs
+are clearly constrained so that when they shift, the prepositional phrase must
+start with {\it to}, unlike the di-transitives in Section~{\it
+nx0Vnx1nx2-family}, in which verbs may shift to any of a number of
+prepositions.  Both the shifted and non-shifted trees are included.
+Approximately 55 verbs select this family.
+
+\item[Examples:] {\it give}, {\it promise}, {\it tell} \\
+{\it Bill gave Hillary flowers.} \\ 
+{\it Bill gave flowers to Hillary.} \\
+{\it Whitman had promised the voters a tax cut.} \\
+{\it Whitman had promised a tax cut to the voters.} \\
+{\it Pinnochino told Gepetto a lie.} \\
+{\it Pinnochino told a lie to Gepetto.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vnx1Pnx2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1Pnx2.ps,height=5.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0Vnx2nx1.ps,height=4.0cm} \\
+$\alpha$nx0Vnx1Pnx2 & $\alpha$nx0Vnx2nx1
+\end{tabular}
+\caption{Declarative Ditransitive with PP shift Trees}
+\label{nx0Vnx1Pnx2-tree}
+\end{figure}
+
+\item[Other available trees:] 
+{\bf Non-shifted:}  wh-moved subject, wh-moved direct object, 
+wh-moved indirect object, subject relative clause, direct object relative
+clause, indirect object relative clause, imperative, NP
+gerund, passive with {\it by} phrase, passive without {\it by} phrase, passive
+with wh-moved subject and {\it by} phrase, passive with wh-moved subject and no
+{\it by} phrase, passive with wh-moved object out of the {\it by} phrase,
+passive with wh-moved {\it by} phrase, passive with wh-moved indirect object
+and {\it by} phrase, passive with wh-moved indirect object and no {\it by}
+phrase,  passive with relative clause on subject and {\it by} phrase, passive
+with relative clause on subject and no {\it by} phrase, passive with relative
+clause on object of the {\it by} phrase, passive with relative clause on the
+indirect object and {\it by} phrase, passive with relative clause on the
+indirect object and no {\it by} phrase; \\
+{\bf Shifted:} wh-moved subject, wh-moved direct object, 
+wh-moved object of PP, wh-moved PP, subject relative clause, direct object
+relative clause, object of PP relative clause, imperative, determiner gerund,
+NP gerund, passive with {\it by} phrase, passive without {\it by} phrase,
+passive with wh-moved subject and {\it by} phrase, passive with wh-moved
+subject and no {\it by} phrase, passive with wh-moved object out of the {\it
+by} phrase, passive with wh-moved {\it by} phrase, passive with wh-moved object
+out of the PP and {\it by} phrase, passive with wh-moved object out of the PP
+and no {\it by} phrase, passive with wh-moved PP and {\it by} phrase, passive
+with wh-moved PP and no {\it by} phrase, passive with relative clause on
+subject and {\it by} phrase, passive with relative clause on subject and no
+{\it by} phrase, passive with relative clause on object of the {\it by} phrase,
+passive with relative clause on the object of the PP and {\it by} phrase,
+passive with relative clause on the object of the PP and no {\it by} phrase.
+
+
+\end{description}
+
+
+
+
+\subsection{Sentential Complement with NP: Tnx0Vnx1s2}\index{verbs,Sentential
+Complement with NP} 
+\label{nx0Vnx1s2-family}
+
+\begin{description}
+
+\item[Description:]  The tree family is selected by verbs that take both a NP
+and sentential complement.  The sentential complement may be an infinitive,
+indicative, or small clause (see Section~\ref{small-clauses}).  The type of
+clause is specified by each individual verb in its syntactic lexicon entry.  A
+given verb may select more than one type of sentential complement.  The
+declarative tree, and many other trees in this family, are auxiliary trees, as
+opposed to the more normal initial trees.  These auxiliary trees adjoin onto an
+S node in an existing tree of the type specified by the sentential complement.
+This is the mechanism by which TAGs are able to maintain long-distance
+dependencies (see Section~\ref{long-distance-dependencies}), even over multiple
+embeddings (ie. {\it What did Bill tell Mary that John said?}.  Approximately
+106 verbs select this tree family.
+
+\item[Examples:] {\it beg}, {\it promise}, {\it regard} \\
+{\it Srini begged Mark to increase his disk quota.} \\
+{\it Jim promised that he would feed the dogs.} \\
+{\it Dania regarded Carl a jerk.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vnx1s2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/betanx0Vnx1s2.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Transitive Tree:  $\beta$nx0Vnx1s2}
+\label{nx0Vnx1s2-tree}
+\end{figure}
+
+\item[Other available trees:]  wh-moved subject, wh-moved object, wh-moved
+sentential complement, subject relative clause, object relative clause,
+imperative, determiner gerund, NP gerund, passive with {\it by} phrase before
+sentential complement, passive with {\it by} phrase after sentential
+complement, passive without {\it by} phrase, passive with wh-moved subject and
+{\it by} phrase before sentential complement, passive with wh-moved subject and
+{\it by} phrase after sentential complement, passive with wh-moved subject and
+no {\it by} phrase, passive with wh-moved object out of the {\it by} phrase,
+passive with wh-moved {\it by} phrase, passive with relative clause on subject
+and {\it by} phrase before sentential complement, passive with relative clause
+on subject and {\it by} phrase after sentential complement, passive with
+relative clause on subject and no {\it by} phrase.
+
+\end{description}
+
+
+
+\subsection{Intransitive Verb Particle: Tnx0Vpl}\index{verbs,verb particle,intransitive}
+\label{nx0Vpl}
+
+\begin{description}
+
+\item[Description:]  The trees in this tree family are anchored by both the
+verb and the verb particle.  Both appear in the syntactic lexicon and together
+select this tree family.  Intransitive verb particles can be difficult to 
+distinguish from intransitive verbs with adverbs adjoined on. The main
+diagnostics for including verbs in this class was whether the meaning seemed
+compositional or not, and whether there existed a transitive version of the
+verb/verb particle combination with the same meaning.  The existence of an
+alternate compositional meaning was a strong indication that a verb particle
+construction consisted.  There are approximately 164 verb/verb particle
+combinations.
+
+\item[Examples:] {\it add up}, {\it come out}, {\it sign off} \\
+{\it The number never quite added up.} \\
+{\it John finally came out (of the closet).} \\
+{\it I think that I will sign off now.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vpl-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Vpl.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Intransitive Verb Particle Tree:  $\alpha$nx0Vpl}
+\label{nx0Vpl-tree}
+\end{figure}
+
+\item[Other available trees:] Wh-moved subject, subject relative clause, 
+imperative, determiner gerund, NP gerund.
+
+\end{description}
+
+
+
+
+\subsection{Transitive Verb Particle: Tnx0Vplnx1}\index{verbs,particle,transitive}
+\label{nx0Vplnx1-family}
+
+\begin{description}
+
+\item[Description:]  Verb/Verb particle combinations that take an NP complement
+select this tree family.  Both the verb and the verb particle are anchors of
+the trees.  Distinguishing verb particles with an NP complement from
+prepositional phrases can be somewhat controversial, but we fell back on a
+purely syntactic test.  If the Prep/particle lexical item moved, then it was a
+particle.  If it did not, then it was a preposition heading a prepositional
+phrase.  In many, but not all, of the verb particle cases, there was an
+alternate prepositional meaning in which the lexical item did not move.
+(ie. {\it He looked up the number (in the phonebook).  He looked the number
+up. He looked up the road (to see if any cars were coming).  *He looked the
+road up.})  There are approximately 841 verb/verb particle combinations.
+
+\item[Examples:] {\it blow off}, {\it make up}, {\it pick out} \\
+{\it He blew off classes for the third time this year.} \\
+{\it He blew classes off for the third time this year.} \\
+{\it The dyslexic leprechaun made up the syntactic lexicon.} \\
+{\it The dyslexic leprechaun made the syntactic lexicon up.} \\
+{\it I would like to pick out a new computer.} \\
+{\it I would like to pick a new computer out.} 
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vplnx1-tree}.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/verb-class-files/alphanx0Vplnx1.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1pl.ps,height=4.0cm} \\
+$\alpha$nx0Vplnx1 & $\alpha$nx0Vnx1pl
+\end{tabular}
+\caption{Declarative Transitive Verb Particle Tree}
+\label{nx0Vplnx1-tree}
+\end{figure}
+
+\item[Other available trees:] wh-moved subject with particle before the NP,
+wh-moved subject with particle after the NP, wh-moved object, subject relative
+clause with particle before the NP, subject relative clause with particle after
+the NP, object relative clause, imperative with particle before the NP,
+imperative with particle after the NP, determiner gerund with particle before
+the NP, NP gerund with particle before the NP, NP gerund with particle after
+the NP, passive with {\it by} phrase, passive without {\it by} phrase, passive
+with wh-moved subject and {\it by} phrase, passive with wh-moved subject and no
+{\it by} phrase, passive with wh-moved object out of the {\it by} phrase,
+passive with wh-moved {\it by} phrase, passive with relative clause on subject
+and {\it by} phrase, passive with relative clause on subject and no {\it by}
+phrase, passive with relative clause on object of the {\it by} phrase.
+
+\end{description}
+
+
+
+
+\subsection{Ditransitive Verb Particle: Tnx0Vplnx1nx2}\index{verbs,particle,ditransitive}
+\label{nx0Vplnx1nx2}
+
+\begin{description}
+
+\item[Description:]  Verb/verb particle combinations that select this tree
+family take 2 NP complements.  Both the verb and the verb particle anchor the
+trees, and the verb particle can occur before, between, or after the noun
+phrases.  Perhaps because of the complexity of the sentence, these verbs do not
+seem to have passive alternations (*{\it A new bank account was opened Michelle
+by me.})  There are 4 verb/verb particle combinations that select this tree
+family.  The exhaustive list is given in the examples.
+
+\item[Examples:] {\it dish out}, {\it open up}, {\it pay off}, {\it rustle up}
+\\
+{\it I opened up Michelle a new bank account.} \\
+{\it I opened Michelle up a new bank account.} \\
+{\it I opened Michelle a new bank account up.}
+
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vplnx1nx2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=ps/verb-class-files/alphanx0Vplnx1nx2.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1plnx2.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1nx2pl.ps,height=4.0cm} \\
+$\alpha$nx0Vplnx1nx2 & $\alpha$nx0Vnx1plnx2 & $\alpha$nx0Vnx1nx2pl
+\end{tabular}
+\caption{Declarative Ditransitive Verb Particle Tree}
+\label{nx0Vplnx1nx2-tree}
+\end{figure}
+
+\item[Other available trees:] wh-moved subject with particle before the NPs,
+wh-moved subject with particle between the NPs, wh-moved subject with particle
+after the NPs, wh-moved indirect object with particle before the NPs, wh-moved
+indirect object with particle after the NPs, wh-moved direct object with
+particle before the NPs, wh-moved direct object with particle between the NPs,
+subject relative clause with particle before the NPs, subject relative clause
+with particle between the NPs, subject relative clause with particle after the
+NPs, indirect object relative clause with particle before the NPs, indirect
+object relative clause with particle after the NPs, direct object relative
+clause with particle before the NPs, direct object relative clause with
+particle between the NPs, imperative with particle before the NPs, imperative
+with particle between the NPs, imperative with particle after the NPs,
+determiner gerund with particle before the NPs, NP gerund with particle before the NPs, NP gerund with particle between the NPs, NP gerund with
+particle after the NPs.
+
+\end{description}
+
+
+
+
+
+\subsection{Intransitive with PP:Tnx0Vpnx1}\index{verbs,intransitive with PP}
+\label{nx0Vpnx1-family}
+\begin{description}
+
+\item[Description:]  The verbs that select this tree family are not strictly 
+intransitive, in that they {\bf must} be followed by a prepositional phrase.
+Verbs that are intransitive and simply {\bf can} be followed by a prepositional
+phrase do not select this family, but instead have the PP adjoin onto the
+intransitive sentence.  Accordingly, there should be no verbs in both this
+class and the intransitive tree family (see Section~\ref{nx0V-family}).  The
+prepositional phrase is not restricted to be headed by any particular lexical
+item.  Note that these are not transitive verb particles (see
+Section~\ref{nx0Vplnx1-family}, since the head of the PP does not move.
+Approximately 171 verbs select this tree family.
+
+\item[Examples:] {\it grab}, {\it impinge}, {\it provide} \\
+{\it Seth grabbed for the brass ring.} \\
+{\it The noise gradually impinged on Dania's thoughts.} \\
+{\it A good host provides for everyone's needs.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vpnx1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Vpnx1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Intransitive with PP Tree:  $\alpha$nx0Vpnx1}
+\label{nx0Vpnx1-tree}
+\end{figure}
+
+\item[Other available trees:]  wh-moved subject, wh-moved object of the PP,
+wh-moved PP, subject relative clause, object of the PP relative clause,
+imperative, determiner gerund, NP gerund, passive with {\it by} phrase, passive
+without {\it by} phrase, passive with wh-moved subject and {\it by} phrase,
+passive with wh-moved subject and no {\it by} phrase, passive with wh-moved
+{\it by} phrase, passive with relative clause on subject and {\it by} phrase,
+passive with relative clause on subject and no {\it by} phrase, passive with
+relative clause on object of the {\it by} phrase.
+
+\end{description}
+
+
+
+\subsection{Sentential Complement: Tnx0Vs1}\label{verbs,sentential complement}
+\label{nx0Vs1-family}
+
+\begin{description}
+
+\item[Description:]  The tree family is selected by verbs that take just a
+sentential complement.  The sentential complement may be of type infinitive,
+indicative, or small clause (see Section~\ref{small-clauses}).  The type of
+clause is specified by each individual verb in its syntactic lexicon entry, and
+a given verb may select more than one type of sentential complement.  The
+declarative tree, and many other trees in this family, are auxiliary trees, as
+opposed to the more normal initial trees.  These auxiliary trees adjoin onto an
+S node in an existing tree of the type specified by the sentential complement.
+This is the mechanism by which TAGs are able to maintain long-distance
+dependencies (see Section~\ref{long-distance-dependencies}), even over multiple
+embeddings (ie. {\it What did Bill think that John said?}  Approximately 318
+verbs select this tree family.
+
+\item[Examples:]  {\it consider}, {\it think}, {\it want} \\
+{\it Dania considered the algorithm unworkable.}
+{\it Srini thought that the program was working.} \\
+{\it They wanted to make the sentence parse correctly.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Vs1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/betanx0Vs1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Sentential Complement Tree:  $\beta$nx0Vs1}
+\label{nx0Vs1-tree}
+\end{figure}
+
+\item[Other available trees:]  Wh-moved subject, Wh-moved sentential
+complement, subject relative clause, imperative, determiner gerund, NP gerund.
+
+\end{description}
+
+
+
+
+\subsection{Intransitive with Adjective: Tnx0Va1}\index{verbs,intransitive with adjective}
+\label{nx0Va1-family}
+
+\begin{description}
+
+\item[Description:]  The verbs that select this tree family take an adjective
+as a complement.  The adjective may be regular, comparative, or superlative.
+It may also be formed from the special class of adjectives derived from the
+transitive verbs (i.e. {\it agitated, broken}.  See Section~\ref{AV-tree}).
+Unlike the Intransitive with PP verbs (see Section~\ref{nx0Vpnx1-family}), some
+of these verbs may also occur as bare intransitives as well.  This distinction
+is drawn because adjectives do not normally adjoin onto sentences, as
+prepositional phrases do.  Other intransitive verbs can only occur with the
+adjective, and these select only this family.  The verb class is also
+distinguished from the adjective small clauses (see
+Section''\ref{nx0Ax1-family}) because these verbs are not raising verbs.
+Approximately 34 verbs select this tree family.
+
+\item[Examples:] {\it become}, {\it grow}, {\it smell} \\
+{\it The greenhouse became hotter.} \\
+{\it The plants grew tall and strong.} \\
+{\it The flowers smelled wonderful.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Va1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Va1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Intransitive with Adjective Tree:  $\alpha$nx0Va1}
+\label{nx0Va1-tree}
+\end{figure}
+
+\item[Other available trees:]  Wh-moved subject, Wh-moved adjective 
+({\it how}), subject relative clause, imperative, NP gerund.
+
+\end{description}
+
+
+
+
+\subsection{Sentential Subject:Ts0Vnx1}\index{verbs,sentential subject}
+\label{s0Vnx1-family}
+
+\begin{description}
+
+\item[Description:] The verbs that select this tree family all take sentential
+subjects, and are often referred to as 'psych' verbs, since they all refer to
+some psychological state of mind.  The sentential subject can be indicative
+(complementizer required) or infinitive (complementizer optional).
+Approximately 100 verbs that select this tree family.
+
+\item[Examples:] {\it delight}, {\it impress}, {\it surprise} \\
+{\it That the tea had rosehips in it delighted Christy.} \\
+{\it To even attempt a marathon impressed Dania.} \\
+{\it For Jim to have walked the dogs surprised Beth.}
+
+\item[Declarative tree:]  See Figure~\ref{s0Vnx1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphas0Vnx1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Sentential Subject Tree:  $\alpha$s0Vnx1}
+\label{s0Vnx1-tree}
+\end{figure}
+
+\item[Other available trees:]  Wh-moved subject, Wh-moved object.
+
+\end{description}
+
+
+
+
+
+\subsection{Light Verbs: Tnx0lVN1, Tnx0lVdxN1}\index{verbs, light}
+\label{nx0lVN1-family}
+
+\begin{description}
+
+\item[Description:] The verb/noun pairs that select this tree family are pairs
+in which the interpretation is non-compositional and the noun contributes
+argument structure to the predicate (i.e. {\it The man took a walk.} vs {\it
+The man took a radio}).  The verb and the noun occur together in the syntactic
+database, and both anchor the trees.  The verbs in the light verb constructions
+are {\it do}, {\it give}, {\it have}, {\it make}, and {\it take}.  The noun
+following the light verb is (usually) a bare infinitive form (ie. {\it have a
+good cry}) and usually occurs with {\it a(n)}.  However, we include deverbal
+nominals ({\it take a bath}, {\it give a demonstration}) as well.  onstructions
+with nouns that do not contribute an argument structure ({\it have a
+cigarette}, {\it give NP a black eye}) are excluded.  In addition to semantic
+considerations of light verbs, they differ syntactically from transitive verbs
+(see Section~\ref{nx0Vnx1-family}) as well in that the noun in the light verb
+construction does not extract.  Because the noun is an anchor in the tree,
+there are two different tree families representing nouns that require
+determiners and those that occur without them (see Section~\ref{nouns} for more
+information on noun phrases in general).  There are approximately 96 verb/noun
+pairs that select the light verb tree without determiners, and 242 that select
+the light verb tree with determiners.
+
+\item[Examples:] {\it give groan}, {\it have discussion}, {\it make comment} \\
+{\it The audience gave a collective groan.} \\
+{\it We had a big discussion about closing the libraries.} \\
+{\it The professors made comments on the paper.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0lVN1-tree}.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/verb-class-files/alphanx0lVN1.ps,height=4.0cm}
+\psfig{figure=ps/verb-class-files/alphanx0lVdxN1.ps,height=4.0cm} \\
+$\alpha$nx0lVN1 & $\alpha$nx0lVdxN1
+\end{tabular}
+\caption{Declarative Light Verb Trees}
+\label{nx0lVN1-tree}
+\end{figure}
+
+\item[Other available trees:] Wh-moved subject, subject relative clause, 
+imperative, determiner gerund, NP gerund.
+
+\end{description}
+
+
+
+
+\subsection{Ditransitive Light Verbs with PP Shift: Tnx0lVN1Pnx2,Tnx0lVdxN1Pnx2}\index{verbs,ditransitive light verbs with PP shift}
+\label{nx0lVN1Pnx2-family}
+
+\begin{description}
+
+\item[Description:]  The verb/noun pairs that select this tree family are pairs
+in which the interpretation is non-compositional and the noun contributes
+argument structure to the predicate (i.e. {\it Dania made Srini a cake.} vs
+{\it Dania made Srini a loan.}).  The verb and the noun occur together in the
+syntactic database, and both anchor the trees.  The verbs in these light verb
+constructions are {\it give} and {\it make}.  The noun following the light verb
+is (usually) a bare infinitive form (ie. {\it make promise to Anoop}).
+However, we include deverbal nominals ({\it make a payment to Anoop}) as well.
+Constructions with nouns that do not contribute an argument structure are
+excluded.  In addition to semantic considerations of light verbs, they differ
+syntactically from the ditransitive with PP shift verbs (see
+Section~\ref{nx0Vnx1Pnx2-family}) as well in that the noun in the light verb
+construction does not extract.  Also, passivization is severely restricted.
+Because the noun is an anchor in the tree, there are two different tree
+families representing nouns that require determiners and those that occur
+without them (see Section~\ref{nouns} for more information on noun phrases in
+general).  There are approximately 10 verb/noun pairs that select the trees
+without determiners, and 18 that select the trees with determiners.
+
+\item[Examples:] {\it give look}, {\it give wave}, {\it make promise} \\
+{\it Dania gave Carl a look that would kill.} \\
+{\it Amanda gave a little wave as she left.} \\
+{\it Dania made Doug a promise.} 
+
+\item[Declarative tree:]  See Figure~\ref{nx0lVN1Pnx2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/verb-class-files/alphanx0lVN1Pnx2.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0lVnx2N1.ps,height=4.0cm} \\
+$\alpha$nx0lVN1Pnx2 & $\alpha$nx0lVnx2N1 \\
+\vspace{1.5cm}
+\psfig{figure=ps/verb-class-files/alphanx0lVdxN1Pnx2.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0lVnx2dxN1.ps,height=4.0cm} \\
+$\alpha$nx0lVdxN1Pnx2 & $\alpha$nx0lVnx2dxN1 \\
+\end{tabular}
+\caption{Declarative Light Verbs with PP Tree}
+\label{nx0lVN1Pnx2-tree}
+\end{figure}
+
+\item[Other available trees:]
+{\bf Non-shifted:}  wh-moved subject,
+wh-moved indirect object, subject relative clause, indirect object relative 
+clause, imperative, NP gerund, passive with {\it by} phrase \\
+{\bf Shifted:} wh-moved subject,  wh-moved object of PP, wh-moved PP, subject 
+relative clause, object of PP relative clause, imperative, determiner gerund,
+NP gerund, passive with {\it by} phrase.
+\end{description}
+
+
+
+
+\subsection{NP It-Cleft: TItVnx1s2}
+\label{ItVnx1s2-family}
+
+\begin{description}
+
+\item[Description:] ** Beth to fill this in **
+
+\item[Examples:] {\it it be} \\
+{\it It was Beth who agreed to do the demo.}
+
+\item[Declarative tree:]  See Figure~\ref{ItVnx1s2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphaItVnx1s2.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative NP It-Cleft Tree:  $\alpha$ItVnx1s2}
+\label{ItVnx1s2-tree}
+\end{figure}
+
+\item[Other available trees:]  inverted question, wh-moved object with
+{\it be} inverted, wh-moved object with {\it be} not inverted.
+
+\end{description}
+
+
+
+\subsection{PP It-Cleft: TItVpnx1s2}
+\label{ItVpnx1s2-family}
+
+\begin{description}
+
+\item[Description:]  ** Beth to fill this in **
+
+\item[Examples:] {\it it be} \\
+{\it It was at Kent State that the police shot all those students.}
+
+\item[Declarative tree:]  See Figure~\ref{ItVpnx1s2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphaItVpnx1s2.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative PP It-Cleft Tree:  $\alpha$ItVnx1s2}
+\label{ItVpnx1s2-tree}
+\end{figure}
+
+\item[Other available trees:] inverted question, wh-moved prepositional phrase
+with {\it be} inverted, wh-moved prepositional phrase with {\it be} not
+inverted.
+
+\end{description}
+
+\subsection{Adverb It-Cleft: TItVad1s2}
+\label{ItVad1s2-family}
+
+\begin{description}
+
+\item[Description:]  ** Beth to fill this in **
+
+\item[Examples:] {\it it be} \\
+{\it It was reluctantly that Dania agreed to do the tech report.}
+
+\item[Declarative tree:]  See Figure~\ref{ItVad1s2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphaItVad1s2.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Transitive Tree:  $\alpha$ItVad1s2}
+\label{ItVad1s2-tree}
+\end{figure}
+
+\item[Other available trees:]  inverted question, wh-moved adverb {\it how}
+with {\it be} inverted, wh-moved adverb {\it how} with {\it be} not
+inverted.
+
+\end{description}
+
+
+
+\subsection{Adjective Small Clause Tree: Tnx0Ax1}\index{verbs,small-clause}
+\label{nx0Ax1-family}
+
+\begin{description}
+
+\item[Description:]  These trees are not anchored by verbs, but by adjectives.
+They are explained in much greater detail in the section on small clauses (see
+Section~\ref{sm-clause-xtag-analysis}).  The section is presented here for
+completeness.  Approximately 3312 adjectives select this tree family.
+
+\item[Examples:] {\it addictive}, {\it dangerous}, {\it wary}\\
+{\it Cigarettes are addictive.} \\
+{\it Smoking cigarettes is dangerous.} \\
+{\it John seems wary of the Surgeon General's warnings.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Ax1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Ax1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Adjective Small Clause Tree:  $\alpha$nx0Ax1}
+\label{nx0Ax1-tree}
+\end{figure}
+
+\item[Other available trees:]  wh-moved subject, wh-moved adjective {\it how},
+relative clause on subject, imperative, NP gerund.
+
+\end{description}
+
+\subsection{Adjective Small Clause with Sentential Complement: Tnx0Ax1s2}
+\label{nx0Ax1s2-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by adjectives that take 
+sentential complements.  The sentential complements can be indicative or
+infinitive.  Note that these trees are not anchored by adjectives, not verbs.
+Most adjectives that take the Adjective Small Clause tree family (see
+Section~\ref{nx0Ax1-family}) takes this family as well\footnote{No great
+attempt has been made to go through and decide which adjective actually should
+take this family and which should not.}.  Small clauses are explained in much
+greater detail in Section~\ref{sm-clause-xtag-analysis}).  This section is
+presented here for completeness.  Approximately 3229 adjectives select this
+tree family.
+
+\item[Examples:] {\it able}, {\it curious}, {\it disappointed} \\
+{\it Christy was able to find the problem.} \\
+{\it Christy was curious whether the new analysis was working.} \\
+{\it Christy was disappointed that the old analysis failed.} 
+
+\item[Declarative tree:]  See Figure~\ref{nx0Ax1s2-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Ax1s2.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative  Adjective Small Clause with Sentential Complement Tree:  $\alpha$nx0Ax1s2}
+\label{nx0Ax1s2-tree}
+\end{figure}
+
+\item[Other available trees:] wh-moved subject, wh-moved adjective {\it how},
+relative clause on subject, imperative, NP gerund.
+
+\end{description}
+
+\subsection{Adjective Small Clause with Sentential Subject: Ts0Ax1}
+\label{s0Ax1-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by adjectives that take 
+sentential subjects.  The sentential subjects can be indicative or infinitive.
+Note that these trees are not anchored by adjectives, not verbs.  Most
+adjectives that take the Adjective Small Clause tree family (see
+Section~\ref{nx0Ax1-family}) takes this family as well\footnote{No great
+attempt has been made to go through and decide which adjective actually should
+take this family and which should not.}.  Small clauses are explained in much
+greater detail in Section~\ref{sm-clause-xtag-analysis}).  This section is
+presented here for completeness.  Approximately 3227 adjectives select this
+tree family.
+
+\item[Examples:] {\it decadent}, {\it incredible}, {\it uncertain} \\
+{\it To eat raspberry chocolate truffle ice cream is decadent.} \\
+{\it That Carl could eat a large bowl of it is incredible.} \\
+{\it Whether he will actually survive the experience is uncertain.}
+
+\item[Declarative tree:]  See Figure~\ref{s0Ax1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphas0Ax1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Adjective Small Clause with Sentential Subject Tree:  $\alpha$s0Ax1}
+\label{s0Ax1-tree}
+\end{figure}
+
+\item[Other available trees:]  Wh-moved subject.
+
+\end{description}
+
+
+
+\subsection{Equitive {\it BE}: Tnx0BEnx1}
+\label{nx0BEnx1-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected only by the verb {\it be}.
+It is distinguished from the predicative NPs (see Section~\ref{nx0N1-family},
+or the section on English Copular (Section~\ref{english-copular} in that two
+NP's are equated, and hence interchangeable.  The XTAG analysis for equative
+{\it be} is explained in greater detail in
+Section~\ref{equative-be-xtag-analysis}.
+
+\item[Examples:] {\it be} \\
+{\it That man is my uncle.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0BEnx1-tree}.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0BEnx1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Equitive {\it BE} Tree:  $\alpha$nx0BEnx1}
+\label{nx0BEnx1-tree}
+\end{figure}
+
+\item[Other available trees:] Inverted-question.
+
+\end{description}
+
+
+
+
+\subsection{NP Small Clauses: Tnx0N1, Tnx0dxN1}
+\label{nx0N1-family}
+
+\begin{description}
+
+\item[Description:]  These trees are not anchored by verbs, but by nouns.
+Because they are anchored by nouns, there are two different tree families
+representing nouns that require determiners and those that occur without them
+(see Section~\ref{nouns} for more information on noun phrases in general).
+Small clauses are explained in much greater detail in the
+Section~\ref{sm-clause-xtag-analysis}).  The section is presented here for
+completeness.  Approximately 9915 nouns select the tree family without
+determiners, and 9888 nouns select the family with determiners.
+
+\item[Examples:] {\it author}, {\it chair}, {dish} \\
+{\it Dania is an author.} \\
+{\it That blue, warped-looking thing is a chair.} \\
+{\it Those broken pieces were dishes.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0N1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/verb-class-files/alphanx0N1.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0dxN1.ps,height=4.0cm} \\
+$\alpha$nx0N1 & $\alpha$nx0dxN1
+\end{tabular}
+\caption{Declarative NP Small Clause Trees}
+\label{nx0N1-tree}
+\end{figure}
+
+\item[Other available trees:] Wh-moved subject, Wh-moved object, relative
+clause on object, imperative, NP gerund.
+
+\end{description}
+
+
+
+%%  No nouns select this tree family.  What is up?
+%%\subsection{NP Small Clauses with Sentential Complement: Tnx0dxN1s2, Tnx0N1s2}
+%%\label{nx0N1s2-family}
+%%
+%%\begin{description}
+%%
+%%\item[Description:]
+%%
+%%\item[Examples:]
+%%
+%%\item[Declarative tree:]  See Figure~\ref{nx0N1s2-tree}
+%%
+%%\begin{figure}[ht]
+%%\centering
+%%\begin{tabular}{cc}
+%%\psfig{figure=ps/verb-class-files/betanx0N1s2.ps,height=4.0cm} &
+%%psfig{figure=ps/verb-class-files/betanx0dxN1s2.ps,height=4.0cm} \\
+%%$\beta$nx0N1s2 &$\beta$nx0dxN1s2 
+%%\end{tabular}
+%%\caption{Declarative NP Small Clauses with Sentential Complement Tree}
+%%\label{nx0N1s2-tree}
+%%\end{figure}
+%%
+%%\item[Other available trees:]  Wh-moved subject, Wh-moved object, relative clause on object, imperative.
+%%
+%%\end{description}
+
+
+
+\subsection{NP with Sentential Complement Small Clause: Tnx0dxN1s1, Tnx0N1s1}
+\label{nx0N1s1-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by the small group of nouns
+that take sentential complements by themselves (see
+Section~\ref{NP-with-sentential-complement}).  The sentential complements can
+be indicative or infinitive, depending on the noun.  Because the trees are
+anchored by nouns, there are two different tree families representing nouns
+that require determiners and those that occur without them (see
+Section~\ref{nouns} for more information on noun phrases in general).  Small
+clauses in general are explained in much greater detail in the
+Section~\ref{sm-clause-xtag-analysis}).  The section is presented here for
+completeness.  Approximately 216 nouns select both the family with and without
+determiners.
+
+\item[Examples:] {\it admission}, {\it claim}, {\it vow} \\
+{\it The affidavits are admissions that they killed the sheep.} \\
+{\it There is always is the claim that they were insane at the time.} \\
+{\it This is his vow to fight the charges.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0N1s1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/verb-class-files/alphanx0N1s1.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphanx0dxN1s1.ps,height=4.0cm} \\
+$\alpha$nx0N1s1 & $\alpha$nx0dxN1s1
+\end{tabular}
+\caption{Declarative NP with Sentential Complement Small Clause Tree}
+\label{nx0N1s1-tree}
+\end{figure}
+
+\item[Other available trees:] Wh-moved subject, Wh-moved object, relative
+clause on object, imperative, NP gerund.
+
+\end{description}
+
+
+
+\subsection{NP Small Clause with Sentential Subject: Ts0dxN1, Ts0N1}
+\label{s0N1-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by nouns that take 
+sentential subjects.  The sentential subjects can be indicative or infinitive.
+Note that these trees are not anchored by nouns, not verbs.  Because they are
+anchored by nouns, there are two different tree families representing nouns
+that require determiners and those that occur without them (see
+Section~\ref{nouns} for more information on noun phrases in general).  Most
+nouns that take the NP Small Clause tree family (see
+Section~\ref{nx0N1-family}) takes this family as well\footnote{No great attempt
+has been made to go through and decide which nouns actually should take this
+family and which should not.}.  Small clauses are explained in much greater
+detail in Section~\ref{sm-clause-xtag-analysis}).  This section is presented
+here for completeness.  Approximately 9888 nouns select both the tree family
+with determiners and the tree family without determiners.
+
+\item[Examples:] {\it dilemma}, {\it insanity}, {\it tragedy} \\
+{\it Whether to keep the job he hates is a dilemma.} \\
+{\it For Bill to invest all of his money in worms is insanity.} \\
+{\it That the worms died is a tragedy.}
+
+\item[Declarative tree:]  See Figure~\ref{s0N1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/verb-class-files/alphas0N1.ps,height=4.0cm} &
+\psfig{figure=ps/verb-class-files/alphas0dxN1.ps,height=4.0cm} \\
+$\alpha$s0N1 & $\alpha$s0dxN1
+\end{tabular}
+\caption{Declarative NP Small Clause with Sentential Subject Tree}
+\label{s0N1-tree}
+\end{figure}
+
+\item[Other available trees:]  Wh-moved subject.
+
+\end{description}
+
+
+
+
+\subsection{PP Small Clause: Tnx0Pnx1}
+\label{nx0Pnx1-family}
+
+\begin{description}
+
+\item[Description:]  This family is selected by prepositions that can occur in
+small clause constructions (see Section~\ref{sm-clause-xtag-analysis} for more
+information on small clause constructions).  The section is presented here for
+completeness.  Approximately 39 prepositions select this tree family.
+
+\item[Examples:] {\it around}, {\it in}, {\it underneath} \\
+{\it Chris is around the corner.} \\
+{\it Trisha is in big trouble.} \\
+{\it The dog is underneath the table.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Pnx1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Pnx1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative PP Small Clause  Tree:  $\alpha$nx0Pnx1}
+\label{nx0Pnx1-tree}
+\end{figure}
+
+\item[Other available trees:]  Wh-moved subject, Wh-moved object of PP, 
+relative clause on subject, relative clause on object of PP, imperative, NP
+gerund.
+
+\end{description}
+
+
+
+
+
+\subsection{Exhaustive PP Small Clause: Tnx0Px1}
+\label{nx0Px1-family}
+
+\begin{description}
+
+\item[Description:] This family is selected by {\bf exhaustive} prepositions
+that can occur in small clauses.  Exhaustive prepositions are prepositions that
+function as prepositional phrases by themselves.  For more information on small
+clause constructions, please see the Section~\ref{sm-clause-xtag-analysis} for
+more information on small clause constructions).  The section is presented here
+for completeness.  Approximately 8 exhaustive prepositions select this tree
+family.
+
+\item[Examples:] {\it abroad}, {\it below}, {\it outside} \\
+{\it Dr. Joshi is abroad.} \\
+{\it The workers are all below.} \\
+{\it Clove is outside.}
+
+\item[Declarative tree:]  See Figure~\ref{nx0Px1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Px1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative Exhaustive PP Small Clause Tree:  $\alpha$nx0Px1}
+\label{nx0Px1-tree}
+\end{figure}
+
+\item[Other available trees:] Wh-moved subject, Wh-moved PP, relative clause 
+on subject, imperative, NP gerund.
+
+\end{description}
+
+
+%%  I think that these trees are going away with the new sentential adjunct analysis.
+%%\subsection{PP Small Clause with Sentential Complement: Tnx0Pnx1s2}
+%%\label{nx0Pnx1s2-family}
+%%
+%%\begin{description}
+%%
+%%\item[Description:] Approximately 41 prepositions select this tree family.
+%%
+%%\item[Examples:] {\it } \\
+%%
+%%\item[Declarative tree:]  See Figure~\ref{nx0Pnx1s2-tree}
+%%
+%%\begin{figure}[ht]
+%%\centering
+%%\begin{tabular}{c}
+%%\psfig{figure=ps/verb-class-files/alphanx0Pnx1s2.ps,height=4.0cm}
+%%\end{tabular}
+%%\caption{Declarative PP Small Clause with Sentential Complement Tree:  $\alpha$nx0Pnx1s2}
+%%\label{nx0Pnx1s2-tree}
+%%\end{figure}
+%%
+%%\item[Other available trees:]  Wh-moved subject, Wh-moved object of the PP, 
+%%Wh-moved PP with wh+ noun, Wh-moved PP with wh+ preposition {\it where},
+%%relative clause on subject, relative clause on object of PP, imperative, NP
+%%gerund.
+%%
+%%\end{description}
+%%
+%%\subsection{Exhaustive PP Small Clause with Sentential Complement:Tnx0Px1s2}
+%%\label{nx0Px1s2-family}
+%%
+%%\begin{description}
+%%
+%%\item[Description:]  Approximately 7 exhaustive prepositions select this
+%%family. 
+%%
+%%\item[Examples:]
+%%
+%%\item[Declarative tree:]  See Figure~\ref{nx0Px1s2-tree}
+%%
+%%\begin{figure}[ht]
+%%\centering
+%%\begin{tabular}{c}
+%%\psfig{figure=ps/verb-class-files/alphanx0Px1s2.ps,height=4.0cm}
+%%\end{tabular}
+%%\caption{Declarative Transitive Tree:  $\alpha$nx0Px1s2}
+%%\label{nx0Px1s2-tree}
+%%\end{figure}
+%%
+%%\item[Other available trees:]  Wh-moved subject,  Wh-moved PP with wh+ 
+%%preposition {\it where}, relative clause on subject, imperative, NP gerund.
+%%
+%%\end{description}
+
+
+
+
+\subsection{PP Small Clause with Sentential Subject: Ts0Pnx1}
+\label{s0Pnx1-family}
+
+\begin{description}
+
+\item[Description:]  This tree family is selected by prepositions that take
+sentential subjects.  The sentential subject can be indicative or infinitive.
+Small clauses are explained in much greater detail in
+Section~\ref{sm-clause-xtag-analysis}).  This section is presented here for
+completeness.  Approximately 39 prepositions select this tree family.
+
+\item[Examples:] {\it beyond}, {\it unlike} \\
+{\it That Ken could forget to pay the taxes is beyond belief.} \\
+{\it To explain how this happened is outside the scope of this discussion.} \\
+{\it For Ken to do something right is unlike him.}
+
+
+\item[Declarative tree:]  See Figure~\ref{s0Pnx1-tree}
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphas0Pnx1.ps,height=4.0cm}
+\end{tabular}
+\caption{Declarative PP Small Clause with Sentential Subject Tree:  $\alpha$s0Pnx1}
+\label{s0Pnx1-tree}
+\end{figure}
+
+\item[Other available trees:] Wh-moved subject, relative clause on object of
+the PP.
+
+\end{description}
+
+
+
+
+%%\section{Template}
+%%
+%%\begin{description}
+%%
+%%\item[Description:]
+%%
+%%\item[Declarative tree:]  See Figure~\ref{decl-???-tree}
+%%
+%%\begin{figure}[ht]
+%%\centering
+%%\begin{tabular}{c}
+%%\psfig{figure=ps/verb-class-files/alpha???.ps,height=4.0cm}
+%%\end{tabular}
+%%\caption{Declarative Transitive Tree:  $\alpha$nx0Vnx1}
+%%\label{decl-????-tree}
+%%\end{figure}
+%%
+%%\item[Other available trees:]
+%%
+%%\item[Examples:]
+%%
+%%\end{description}
+
+
