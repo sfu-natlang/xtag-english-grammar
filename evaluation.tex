@@ -50,9 +50,9 @@ this error analysis, we have added a treatment of punctuation to handle
 \#1, an analysis of time NPs (\#2), a large number of multi-word
 prepositions (part of \#3), gapless relative clauses (\#7), bare
 infinitives (\#14) and have added the missing subcategorization (\#3) and
-missing lexical entry (\#12).  A more recent error analysis was done on a
-corpus of weather reports. The weather reports were provided to us by
-CoGenTex.\footnote{%
+missing lexical entry (\#12).  A more recent evaluation was done on a
+corpus of weather reports \cite{c.97:_maint_xtag}. The weather reports were
+provided to us by CoGenTex.\footnote{%
 %
 Thanks to the Contrastive Syntax Project, Linguistics Department of the
 University of Montreal, for the use of their weather synopsis corpus.%
@@ -67,22 +67,19 @@ for [a much colder air mass] overnight and Wednesday.}
 \enumsentence{Behind [this area] [a moderate flow] will cause [an inflow]
 of [milder air] in [southwestern Quebec] producing temperatures slightly
 above normal on Sunday.}
-\enumsentence{[Very mild air] preceding [a disturbance] in [north Dakota]
-will gradually push into part of [St Lawrence River valley] today and
-Monday.}
 
-\cite{c.97:_maint_xtag} parsed the corpus of weather reports and found that
-it contained several relative clauses that caused problems for the XTAG
-grammar and also that the parser was unable to handle some of the more
-complex longer sentences. The problematic cases involved two kinds of
-relative clauses (roughly 40\%) which were not accounted for by the grammar
-developer at the time. The first kind contained examples like {\em A
-frontal system approaching from the west} which included an {\em -ing} form
-in the relative clause predicate, and the other contained examples like
-{\it The disturbance south of Nova Scotia early this morning} which had a
+The performance evaluation showed that the weather reports contained
+several relative clauses that caused problems for the grammar and also that
+the parser was unable to handle some of the more complex longer
+sentences. The problematic cases involved two kinds of relative clauses
+(roughly 40\%) which were not accounted for by the grammar developer at the
+time. The first kind contained examples like {\em A frontal system
+approaching from the west} which included an {\em -ing} form in the
+relative clause predicate, and the other contained examples like {\it The
+disturbance south of Nova Scotia early this morning} which had a
 directional noun phrase as the predicate. As a result of these shortcomings
 and also due to the long and complex sentences in this test set, we could
-parse only about 20\% of the test set (10 out of 48 sentences). 
+parse only about 20\% of the test set (10 out of 48 sentences).
 
 The current version of {\sc XTAG} contains an overhaul of the relative
 clause analysis, which has been updated to extend the coverage of the
@@ -536,11 +533,6 @@ XTAG  & 7.62 & 88.35\% \\ \hline
 \label{clare-results}
 \end{table}
 
-In an attempt to compare the performance of the two systems on a wider
-range of sentences (from similar genres), we provide in
-Table~\ref{clare-results1} the performance of CLARE-2 on LOB corpus
-and the performance of XTAG on the WSJ corpus. The performance was
-measured on sentences of up to 10 words for both systems.
 \begin{table}[ht]
 \centering
 \begin{tabular}{|c|c|c|c|}  \hline
@@ -553,4 +545,11 @@ XTAG & WSJ & 6.00 & 55.58\% \\ \hline
 respectively}
 \label{clare-results1}
 \end{table}
+
+
+In an attempt to compare the performance of the two systems on a wider
+range of sentences (from similar genres), we provide in
+Table~\ref{clare-results1} the performance of CLARE-2 on LOB corpus
+and the performance of XTAG on the WSJ corpus. The performance was
+measured on sentences of up to 10 words for both systems.
 
