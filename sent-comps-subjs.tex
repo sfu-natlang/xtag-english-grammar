@@ -73,11 +73,26 @@ tense/aspect of the matrix clause and the tense/aspect of a complement clause
 are also important but are not currently addressed in the current English XTAG
 grammar.}  Furthermore, complementizers are constrained to appear with certain
 types of clauses, again, based primarily on the form of the embedded VP.  For
-example {\it think\/} selects both indicative and infinitival complements. With
+example, {\it hope\/} selects both indicative and infinitival complements. With
 an indicative complement, it may only have {\it that\/} or null as possible
-complementizers; with an infinitival complement, it may have either {\it if\/}
-or {\it whether\/}, but never {\it that\/}.  The possible combinations of
-complementizers and clause types is summarized in Table \ref{facts}.
+complementizers; with an infinitival complement, it may only have a null
+complementizer.  Verbs that allow wh+ complementizers, such as {\it ask}, can
+take {\it whether} and {\it if} as complementizers.  The possible combinations
+of complementizers and clause types is summarized in Table \ref{facts}.
+
+As can be seen in Table \ref{facts}, sentential subjects differ from
+sentential complements in requiring the complementizer {\it that\/}
+for all indicative and subjunctive clauses.  In sentential complements,
+{\it that\/} often varies freely with a null complementizer, as
+illustrated in (\ex{1})-(\ex{6}).
+
+\enumsentence{Christy hopes that Mike wins.}
+\enumsentence{Christy hopes Mike wins.}
+\enumsentence{Dania thinks that Newt is a liar.}
+\enumsentence{Dania thinks Newt is a liar.}
+\enumsentence{That Helms won so easily annoyed me.}
+\enumsentence{$\ast$Helms won so easily annoyed me.}
+
 
 \begin{table}[ht]
 \centering
@@ -110,21 +125,9 @@ small clause & complement & No & No & No & No & Yes \\
 fact, all gerundive subjects are treated as NP's, and the only gerundive
 complements which receive a sentential parse are those for which there is no
 corresponding NP parse.  This was done to reduce duplication of parses. See
-section \ref{gerunds-chapter} for further discussion of
+Chapter~\ref{gerunds-chapter} for further discussion of
 gerunds.\label{gerund-footnote}}
 
-As can be seen in Table \ref{facts}, sentential subjects differ from
-sentential complements in requiring the complementizer {\it that\/}
-for all indicative and subjunctive clauses.  In sentential complements,
-{\it that\/} often varies freely with a null complementizer, as
-illustrated in (\ex{1})-(\ex{6}).
-
-\enumsentence{Christy hopes that Mike wins.}
-\enumsentence{Christy hopes Mike wins.}
-\enumsentence{Dania thinks that Newt is a liar.}
-\enumsentence{Dania thinks Newt is a liar.}
-\enumsentence{That Helms won so easily annoyed me.}
-\enumsentence{$\ast$Helms won so easily annoyed me.}
 
 Another fact which must be accounted for in the analysis is that in infinitival
 clauses, the complementizer {\it for} must appear with an overt subject NP,
@@ -152,13 +155,13 @@ or clauses with {\it whether} or {\it if}) (\cite{grimshaw90}):
 \section{Features Required}
 \label{s-features}
 
-As we have seen above, clauses may be {\bf $<$wh$>$=+} or {\bf $<$wh$>$=-},
+As we have seen above, clauses may be {\bf $<$wh$>$=+} or {\bf $<$wh$>$=--},
 may have one of several complementizers or no complementizer, and can be of
 various clause types.  The XTAG analysis uses three features to capture these
 possibilities: {\bf $<$comp$>$} for the variation in complementizers,
 {\bf$<$wh$>$} for the question vs.  non-question alternation and {\bf
-$<$mode$>$} for clause types\footnote{{\bf $<$mode$>$} actually conflates
-several types of information, in particular verb form and mood.}.  In addition
+$<$mode$>$}\footnote{{\bf $<$mode$>$} actually conflates several types of
+information, in particular verb form and mood.} for clause types.  In addition
 to these three features, the {\bf $<$assign-comp$>$} feature represents
 complementizer requirements of the embedded verb.  More detailed discussion of
 the {\bf $<$assign-comp$>$} feature appears below in the discussions of
@@ -177,7 +180,7 @@ Feature&Values\\
 \hline
 {\bf$<$assign-comp$>$}&that, if, whether, for, rel, ind\underline{~}nil, inf\underline{~}nil\\
 \hline
-{\bf$<$wh$>$}&+,-\\
+{\bf$<$wh$>$}&+,--\\
 \hline
 \end{tabular}
 \caption{Summary of Relevant Features}
@@ -336,8 +339,8 @@ smells terrible?}
 The example in (\ex{-1}) is derived from the trees for {\it who smells
 terrible?}  shown in Figure ~\ref{who-smells} and {\it the emu thinks} S shown
 in Figure~\ref{aard-emu}(b), by adjoining the latter at the S$_r$ node of the
-former.\footnote{See section \ref{auxiliaries} for a discussion of do-support.}
-This process is recursive allowing sentences like (\ex{0}). Such a
+former.\footnote{See Chapter~\ref{auxiliaries} for a discussion of do-support.}
+This process is recursive, allowing sentences like (\ex{0}). Such a
 representation has been shown by \cite{kj85} to be well-suited for describing
 unbounded dependencies.
 
@@ -435,11 +438,11 @@ Figure~\ref{comparison}.
 %where it is `visible' to the extra-clausal environment.  
 
 Another minor difference is that {\it whether\/} but not {\it if\/} is
-grammatical with S-subjs\footnote{Some speakers also find {\it if\/}
-as a complementizer only marginally grammatical in S-comps.}. Thus, {\bf if} is
+grammatical with S-subjs.\footnote{Some speakers also find {\it if\/}
+as a complementizer only marginally grammatical in S-comps.} Thus, {\bf if} is
 not among the {\bf $<$comp$>$} values allowed in S-subjs. The final difference
 from S-comps is that there are no S-subjs with {\bf $<$mode$>$=ger}. As noted
-in footnote~\ref{gerund-footnote} of this section, gerundive complements are
+in footnote~\ref{gerund-footnote} of this chapter, gerundive complements are
 only allowed when there is no corresponding NP parse. In the case of gerundive
 S-subjs, there is always an NP parse available.
 
