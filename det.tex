@@ -1,0 +1,279 @@
+\chapter{Determiners and Noun Phrases}
+\label{det-comparitives}
+
+Previous approaches to syntactic determiner ordering (e.g.\ \cite{quirk85})
+have simply divided determiners into subcategories (predet, det, postdet).
+This type of approach is inadequate because it allows ungrammatical sequences
+like {\it $\ast$all what no}, and misses the finer distinctions among
+particular determiners. These finer distinctions are modeled very naturally in
+a lexicalized grammar formalism such as FB-LTAG in which pieces of syntactic
+structure and features representing linguistic properties are associated with
+individual lexical items.
+
+In the English XTAG grammar\footnote{This chapter is a shortened version of
+\cite{HockeyEgedi94}, which contains a more extensive discussion of this 
+analysis.}, there are two kinds of basic noun phrases (NP), those that take
+determiner phrases\footnote{Henceforth DetP's, not to be confused with DP's as
+in the DP Hypothesis.} and those that do not.  Nouns that take (or require)
+determiners have a DetP substitution site. Complex DetP's are formed by having
+determiners adjoin onto each other. There are two basic determiner trees: an
+initial tree and an auxiliary tree.  Figure~\ref{det-trees} shows the initial
+and auxiliary trees anchored by the determiner {\it these}.  Since any single
+determiner can function as a complete DetP\footnote{By definition.  Our main
+criteria in classifying something as a determiner was that it be able to stand
+alone with a noun to form an NP.}, every determiner selects the initial tree in
+Figure~\ref{det-trees}(a).  Determiners that can modify other determiners also
+select the auxiliary tree in Figure~\ref{det-trees}(b).
+
+\begin{figure}[hbt]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/det-files/alphaD-these.ps,height=12.3cm}} & 
+\hspace{1.0in}&
+{\psfig{figure=ps/det-files/betaD-these.ps,height=12.3cm}}\\
+(a)&&(b)
+\end{tabular}
+\caption{Determiner Trees with Features: $\alpha$DXD (a) and $\beta$Ddx (b)}
+\label{det-trees}
+\end{figure}
+
+The current grammar includes a DetP substitution node in the NP but having
+determiners adjoin on has also been proposed in the literature
+(\cite{Abeille90:TAG}).  The correct ordering of determiners and reasonable
+coverage is possible with either approach. In fact, the core of our analysis is
+based on the features and would essentially be the same with adjoined
+DetP's. We are currently considering whether there would be any compelling
+advantages of an adjunction analysis for the XTAG grammar.
+
+In the XTAG grammar, features are crucial to ordering determiners correctly.
+We have identified eight features which are sufficient to order the
+determiners.  These features are: {\bf definiteness}, {\bf quantity}, {\bf
+cardinality}, {\bf genitive}, {\bf decreasing}, {\bf constancy}, {\bf wh} and
+{\bf agr}.  These features have all been previously proposed as semantic
+properties of determiners.  The semantic definitions underlying the features
+are given below.
+
+\begin{description}
+
+\item[Definiteness:] Possible Values [+/--]. \\
+A function f is definite iff f is non-trivial and whenever
+f(s)~$\neq~\emptyset$ then it is always the intersection of one or
+more individuals.  \cite{KeenanStavi86:LP}
+
+\item[Quantity:]  Possible Values [+/--]. \\
+If A and B are sets denoting an NP and associated predicate, respectively; E is
+a domain in a model M, and F is a bijection from M$_{1}$ to M$_{2}$, then we
+say that a determiner satisfies the constraint of quantity if
+Det$_{E_{1}}$AB~$\leftrightarrow$~Det$_{E_{2}}$F(A)F(B). \cite{Partee90:BK}
+
+\item[Cardinality:]  Possible Values [+/--]. \\
+A determiner D is cardinal iff D $\in$ cardinal numbers~$\geq$~1.
+
+\item[Genitive:]  Possible Values [+/--]. \\
+Possessive pronouns and the possessive morpheme ({\it 's}) are marked {\bf
+gen+}; all other nouns are {\bf gen-}.
+
+\item[Decreasing:]  Possible Values [+/--]. \\
+A set of Q properties is decreasing iff whenever s$\leq$t and t$\in$Q then
+s$\in$Q. A function f is decreasing iff for all properties f(s) is a decreasing
+set.
+
+A non-trivial NP (one with a Det node) is decreasing iff its denotation in any
+model is decreasing. \cite{KeenanStavi86:LP}
+
+\item[Constancy:] Possible Values [+/--]. \\
+If A and B are sets denoting an NP and associated predicate, respectively, and
+E is a domain, then we say that a determiner displays constancy if
+(A$\cup$B)~$\subseteq$~E~$\subseteq$~E$^{\prime}$ then
+Det$_{E}$AB~$\leftrightarrow$~Det$_{E^{\prime}}$AB. Modified from
+\cite{Partee90:BK}
+
+\item[Wh:]  Possible Values [+/--]. \\
+Interrogative determiners are {\bf wh+}; all other determiners are
+{\bf wh-}. 
+
+\item[Agreement:] Possible Values [3sg, 3pl, 3sgpl]. \\
+Although English does not have the morphological marking of determiners for
+case, gender or number, we hold that most determiners in English are
+semantically marked for number.
+
+\end{description}
+
+The initial determiner tree in Figure~\ref{det-trees}(a) shows the appropriate
+feature values for the determiner {\it these}, while Table~\ref{det-values}
+shows the corresponding feature values of several other common determiners.
+
+%\tiny
+\begin{table}[hbt]
+\centering
+\begin{tabular}{|l||c|c|c|c|c|c|c|c|}
+\hline
+Det&defin&quan&card&gen&wh&decreas&const&agr\\
+\hline
+\hline
+all&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3pl\\
+this&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sg\\
+that&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sg\\
+what&$+$&$-$&$-$&$-$&$+$&$-$&$+$&3sgpl\\
+the&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sgpl\\
+every&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
+each&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
+any&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
+a&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
+no&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3sgpl\\
+few&$-$&$+$&$-$&$-$&$-$&$+$&$-$&3pl\\
+many&$-$&$+$&$-$&$-$&$-$&$-$&$-$&3pl\\
+GEN&$+$&$-$&$-$&$+$&$-$&$-$&$+$&\\
+CARD&$+$&$+$&$+$&$-$&$-$&$-$&$+$&3pl\footnotemark\ \\
+PART&$-$&&$-$&$-$&$-$&$-$&$+$&\\
+\hline
+\end{tabular}
+ \caption{Determiner Features}
+\label{det-values}
+\end{table}\addtocounter{footnote}{0}\footnotetext{{except {\it one} which is 3sg.}} 
+
+%\normalsize
+
+In addition to the features that represent their own properties, determiners
+that select the auxiliary tree have features to represent the selectional
+restrictions these determiners impose on the determiners they modify.  The
+selectional restriction features of a determiner appear on the DetP foot node
+of the auxiliary tree that the determiner anchors.  The DetP$_{f}$ node in the
+auxiliary tree in Figure~\ref{det-trees}(b) shows the selectional feature
+restriction imposed by {\it these}\footnote{In addition to this tree, {\it
+these} would also anchor another auxiliary tree that adjoins onto {\bf
+$<$card$>$=+} determiners.}, while Table~\ref{det-ordering} shows the
+corresponding selectional feature restrictions of several other determiners.
+
+%\tiny
+\begin{table}[hbt]
+\centering
+\begin{tabular}{|l||c|c|c|c|c|c|c|c|}
+\hline
+Det&defin&quan&card&gen&wh&decreas&const&agr\\
+\hline
+\hline
+all&$+$&$-$&$-$&&$-$&&&\\
+&&&$+$&&&&&\\
+this&$-$&&&&$-$&$+$&&\\
+&&&$+$&&&&&\\
+that&$-$&&&&$-$&$+$&&\\
+&&&$+$&&&&&\\
+what&$-$&&&&$-$&$+$&&\\
+&&&$+$&&&&&\\
+the&$-$&&&&$-$&&$-$&\\
+&&&$+$&&&&&\\
+every&$-$&&&&$-$&$+$&&\\
+&&&$+$&&&&&\\
+each&$-$&&&&$-$&$+$&&\\
+&&&$+$&&&&&\\
+any&$-$&&&&$-$&$+$&&\\
+&&&$+$&&&&&\\
+a&$-$&&&&$-$&$+$&&\\
+many&\multicolumn{8}{c|}{only nouns}\\
+no&\multicolumn{8}{c|}{only nouns}\\
+GEN&\multicolumn{8}{c|}{only nouns}\\
+CARD&\multicolumn{8}{c|}{only nouns}\\
+PART&&&&&$-$&&&\\
+\hline
+\end{tabular}
+\caption{Selectional Restrictions Imposed by Determiners}
+\label{det-ordering}
+\end{table}
+
+%\normalsize
+
+
+\section{Wh and Agr Features}
+\label{agr-section}
+A determiner with a {\bf $<$wh$>$=+} feature is always the left-most
+determiner since no determiners can adjoin onto it.  The presence of a wh+
+determiner makes the entire NP wh+, so this feature is always passed through to
+the NP node, unlike other features which are considered internal to the
+determiner system.
+
+The {\bf $<$agr$>$} feature functions differently from most of the features in
+the determiner sequencing system.  Notice that in the auxiliary tree in
+Figure~\ref{det-trees}(b), the {\bf $<$agr$>$} feature is the only feature not
+passed from the D node to the root DetP node, but is passed instead from the
+foot DetP to the root DetP.  In the determiner system, the {\bf $<$agr$>$}
+feature is generally propagated from the rightmost determiner (i.e.\ the one
+closest to the noun), although some adjoining determiners require that they
+also agree with that determiner.  This distinction is captured in XTAG by
+having each determiner specify in its lexical entry whether or not its
+agreement feature is passed to the root DetP (i.e.\ from the D node to the
+DetP$_{r}$ node).
+
+\section{Genitive Constructions}
+
+There are two kinds of genitive constructions: genitive pronouns, and genitive
+NP's (which have an explicit genitive marker, {\it 's}, associated with them).
+It is clear from examples such as {\it her dog was run over\/} vs {\it
+$\ast$dog was run over\/} that genitive pronouns function as determiners and as
+such, they sequence with the rest of the determiners.  The features for the
+genitives are the same as for other determiners, and are given in
+Table~\ref{det-values}.  No {\bf $<$agr$>$} is specified however, since the
+number and person of the genitive will depend on its particular form (e.g.\
+{\it my} vs {\it their}).  Genitives are not required to agree with either the
+determiners or the nouns that they modify.
+
+%Figure of alphaDXnxG-features and betanxGdx-features here 
+
+\begin{figure}[hbt]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/det-files/alphaDXnxG-features.ps,height=11.3cm}} & 
+\hspace{1.0in}&
+{\psfig{figure=ps/det-files/betanxGdx-features.ps,height=11.8cm}}\\
+(a)&&(b)
+\end{tabular}
+\caption{Initial: $\alpha$DXnxG (a) and Auxiliary: $\beta$nxGdx (b) Genitive Determiner Trees}
+\label{gen-trees}
+\end{figure}
+
+
+Genitive NP's are particularly interesting because they are potentially
+recursive structures.  Complex NP's can easily be embedded in a determiner
+phrase.
+
+\enumsentence{[[[John]'s friend from high school]'s uncle]'s mother came to town.}
+
+There are two things to note in the sentence~(\ex{0}).  One is that in embedded
+NP's, the genitive morpheme comes at the end of the NP phrase, even if the head
+of the NP is at the beginning of the phrase.  The other is that the determiner
+of an embedded NP can also be a genitive NP, hence the possibility of recursive
+structures.
+
+In the XTAG grammar, the genitive marker, {\it 's}, is separated from the
+lexical item that it is attached to and given its own category (G).  In this
+way, we can allow the full complexity of NP's to come from the existing NP
+system, including any recursive structures.  The two trees in
+Figure~\ref{gen-trees} demonstrate how easily the complexity of genitive NP's
+are captured in XTAG.  As with the standard determiner trees, there are two
+trees - one for the determiner that stands alone and one for a determiner that
+adjoins onto another.
+
+
+\section{Partitive Constructions}
+
+Partitive constructions (e.g. {\it some kind of}, {\it all of\/}) are
+another type of complex determiner construction.  Partitive constructions
+interact with other determiners.  Since they can modify the noun itself ({\it
+[a certain kind of] machine}), or modify other determiners ({\it [some parts
+of] these machines}), the partitive construction has both an initial and
+auxiliary tree that are anchored by the preposition {\it of}. The partitive
+trees are shown in Figure~\ref{partitive-trees}.
+
+\begin{figure}[hbt]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/det-files/alphaDXnxP.ps,height=11.5cm}} & 
+\hspace{1.0in}&
+{\psfig{figure=ps/det-files/betanxPdx.ps,height=12.0cm}}\\
+(a)&&(b) \\
+\end{tabular}
+\caption{Initial: $\alpha$DXnxP (a) and Auxiliary: $\beta$nxPdx (b) Partitive trees}
+\label{partitive-trees}
+\end{figure}
+
+
