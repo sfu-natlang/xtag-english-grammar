@@ -2,29 +2,38 @@
 \label{underview}
 
 The morphology, syntactic, and tree databases together comprise the
-English grammar.  A lexical item that is not in the databases receives
-a default tree selection and features for its part of speech and
-morphology.  In designing the grammar, a decision was made early on to
-err on the side of acceptance whenever there are conflicting opinions
-as to whether or not a construction is grammatical.  In this sense,
-the XTAG English grammar is intended to function primarily as an
-acceptor rather than a generator of English sentences.  The range of
-syntactic phenomena that can be handled is large and includes
-auxiliaries (including inversion), copula, raising and small clause
-constructions, topicalization, relative clauses, infinitives, gerunds,
-passives, adjuncts, it-clefts, wh-clefts, PRO constructions, noun-noun
-modifications, extraposition, determiner sequences, genitives,
-negation, noun-verb contractions, clausal adjuncts and imperatives.
+English grammar\footnote{ See Chapter~\ref{overview} for details on
+these levels of representation. }.  A lexical item that is not in the
+databases receives a default tree selection and features for its part
+of speech and morphology.  
 
-\section{Subcategorization Frames}
+In designing the grammar, a decision was made early on to err on the
+side of acceptance whenever there are conflicting opinions as to
+whether or not a construction is grammatical.  In this sense, the XTAG
+English grammar is intended to function primarily as an acceptor
+rather than a generator of English sentences.  The range of syntactic
+phenomena that can be handled is large and includes auxiliaries
+(including inversion), copula, raising and small clause constructions,
+topicalization, relative clauses, infinitives, gerunds, passives,
+adjuncts, it-clefts, wh-clefts, PRO constructions, noun-noun
+modifications, determiner sequences, genitives, negation, noun-verb
+contractions, clausal adjuncts and imperatives.
+
+This chapter is meant to be an introductory look at grammar
+organization in XTAG. It serves as basic information the reader would
+need to read the more detailed information about the grammar in
+subsequent parts of the technical report.
+
+\section{Tree Families and Subcategorization Frames}
 \label{subcat-frames}
 
-Elementary trees for non-auxiliary verbs are used to represent the linguistic
-notion of subcategorization frames.  The anchor of the elementary tree
-subcategorizes for the other elements that appear in the tree, forming a
-clausal or sentential structure.  Tree families group together trees belonging
-to the same subcategorization frame.  Consider the following uses of the verb
-{\it buy}:
+Elementary trees for words that are predicates (such as non-auxiliary
+verbs) are used to represent the linguistic notion of
+subcategorization.  The anchor of the elementary tree subcategorizes
+for the other elements that appear in the tree, forming a clausal or
+sentential structure.  Tree families group together trees belonging to
+the same subcategorization frame.  Consider the following uses of the
+verb {\it buy}:
 
 \enumsentence{Srini bought a book.}
 \enumsentence{Srini bought Beth a book.}
@@ -36,7 +45,10 @@ of {\it buy} and for the NP subject.  In addition to this declarative
 tree structure, the tree family also contains the trees that would be
 related to each other transformationally in a movement based approach,
 i.e passivization, imperatives, wh-questions, relative clauses, and so
-forth.  Sentence (\ex{0}) shows that {\it buy} also subcategorizes for
+forth.  Each tree family selected by its anchor represents all the
+various syntactic environments that it can appear in.
+
+Sentence (\ex{0}) shows that {\it buy} also subcategorizes for
 a double NP object.  This means that {\it buy} also selects the double
 NP object subcategorization frame, or tree family, with its own set of
 transformationally related sentence structures.
@@ -55,6 +67,29 @@ set of sentence structures.
 \label{subcat-trees}
 \end{figure}
 
+Thus, the intuitive notion of tree family is that it represents the
+entire set of trees that each predicate selects. Furthermore, each
+predicate selects for a tree family for each concomitant
+subcategorization. In such a representation each predicate would
+select its own private tree family. However, since syntactic
+transformations are not usually sensitive to the anchor of the tree
+family, entire classes of words can be assigned a tree family. For
+example, the transitive verbs get their own tree family denoted as
+Tnx0Vnx1. Chapter~\ref{verb-classes} contains more information about
+the different tree families in the grammar. Thus a tree family in XTAG
+is a set of trees selected by a verb class and furthermore, this each
+member of this set of trees is related to the base tree by a syntactic
+transformation. That is, it represents all the syntactic environments
+that a class of words can appear in.
+
+There are some syntactic transformations, however, that are sensitive
+to the properties of a particular word within the same
+subcategorization frame. The ergative (or transitive-inchoative
+alternation) for transitive verbs is one such transformation. Only a
+subset of the transitive verbs can undergo this transformation. A more
+rigorous definition of tree family that accounts for such lexical
+idiosyncrasies within an otherwise homogeneous family is discussed in
+detail in Appendix~\ref{families}.
 
 \section{Complements and Adjuncts}
 \label{compl-adj}
@@ -80,8 +115,8 @@ sentences:
 \enumsentence{Srini arranged for a ride.}
 \enumsentence{$\ast$Srini arranged.}
 
-Prepositional phrases frequently occur as adjuncts, and when they are
-used as adjuncts they have a tree structure such as that shown in
+Prepositional phrases are common adjuncts, and when they are used as
+adjuncts they have a tree structure such as that shown in
 Figure~\ref{compl-adjunct}(a).  This adjunction tree would adjoin into
 the tree shown in Figure~\ref{subcat-trees}(a) to generate sentence
 (\ex{-2}).  There are verbs, however, such as {\it arrange}, {\it
@@ -119,17 +154,20 @@ prepositions (e.g. section~\ref{nx0Vpnx1-family}); and as adjuncts: adjectives
 
 \section{Non-S constituents}
 
-Although sentential trees are generally considered to be special cases in any
-grammar, insofar as they make up a `starting category', it is the case that any
-initial tree constitutes a phrasal constituent.  These initial trees may have
-substitution nodes that need to be filled (by other initial trees), and may be
-modified by adjunct trees, exactly as the trees rooted in S.  Although grouping
-is possible according to the heads or anchors of these trees, we have not found
-any classification similar to the subcategorization frames for verbs that can
-be used by a lexical entry to `group select' a set of trees.  These trees are
-selected one by one by each lexical item, according to each lexical item's
-idiosyncrasies.  The grammar described by this technical report places them
-into several files for ease of use, but these files do not constitute tree
-families in the way that the subcategorization frames do.
+Although sentential trees are generally considered to be special cases
+in any grammar, insofar as they make up a `starting category', it is
+the case that any initial tree constitutes a phrasal constituent.
+These initial trees may have substitution nodes that need to be filled
+(by other initial trees), and may be modified by adjunct trees,
+exactly as the trees rooted in S.  Although grouping is possible
+according to the heads or anchors of these trees, we have not found
+any classification similar to the subcategorization frames for verbs
+that can be used by a lexical entry to create a tree family of the set
+of trees selected by such entries.  These trees are selected one by
+one by each lexical item, according to each lexical item's
+idiosyncrasies.  The grammar described by this technical report places
+them into several files for ease of use, but these files do not
+constitute tree families in the way that the subcategorization frames
+do.
 
 \input{case}
