@@ -97,6 +97,51 @@ Chapter~\ref{det-comparitives} or \cite{ircs:det98} for details of the
 determiner analysis.}. An adequate implementation of ordering
 restrictions for adjectives would rule out (\ex{0}).
 
+\section{Adjectival Passives and Adjectival Gerunds as Noun Modifiers}
+
+XTAG has an analysis of adjectival passives ({\it $-$ed}) (\ex{1}-\ex{2})
+as well as adjectival gerunds ({\it $-$ing}) (\ex{3}-\ex{4}). The former
+are treated as derived from transitive verbs and are thus part of the
+transitive tree family (Figure~\ref{transitive-verb-modifier}). The latter
+are derived from intransitives (Figure~\ref{intransitive-verb-modifier})
+and ergatives (Figure~\ref{ergative-verb-modifier})and thus have a tree in
+both the families.
+
+\enumsentence{the murdered man .}
+\enumsentence{the devoured meal .}
+
+\enumsentence{the drinking man .}
+\enumsentence{the melting ice .}
+
+The feature equations {\bf $<$mode$>$=ppart} in the $\beta$Vtransn tree and
+the equation {\bf $<$mode$>$=ger} in the $\beta$Vintransn and the
+$\beta$Vergativen trees forces only passive forms to be derived from the
+transitive verbs and only gerundive forms to be derived from the
+intransitive and ergative verbs.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/modifiers-files/betaVtransn.ps,height=2.5in}} 
+& {\psfig{figure=ps/modifiers-files/betaVintransn.ps,height=2.5in}}
+\end{tabular}\\
+\caption {(a) $\beta$Vtransn: Adjectival Passive Noun Modifiers (b)
+$\beta$Vintransn: Adjectival Gerund Noun Modifiers}
+\label {intransitive-verb-modifier}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/modifiers-files/betaVergativen.ps,height=2.5in}}
+\end{tabular}\\
+\caption {$\beta$Vergativen: Adjectival Gerund Noun Modifiers}
+\label {ergative-verb-modifier}
+\end{figure}
+
+
+
+
 \section{Noun-Noun Modifiers}
 \label{noun-modifier}
 
