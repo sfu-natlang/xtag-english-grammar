@@ -54,7 +54,7 @@ types.  This same mechanism is used here to ensure the correct distribution of
 $<$mode$>$} are licensed: {\bf inf} (infinitive), 
 {\bf ger} (gerundive) and {\bf ppart} (past participal, licensed only
 for passive adjuncts).\footnote{We considered allowing bare indicative
-clauses, such as {\it He died that other may live}, but these were
+clauses, such as {\it He died that others may live}, but these were
 considered too archaic to be worth the additional ambiguity they would
 add to the grammar.} They interact with complementizers as follows:
 
@@ -196,14 +196,15 @@ when}.
 
 \end{itemize}
 
-These auxiliary trees are also used to do `discourse' coordination, as in
-sentence (\ex{1}).  All subordinating conjunctions which can conjoin indicative
-clauses may also adjoin to root matrix sentences, as seen in the derived tree
-in Figure~\ref{seuss-sentence}.
+The CONJs auxiliary tree is also used to do `discourse' conjunction,
+as in sentence (\ex{1}).  Only the coordinating conjunctions (class
+{\bf $<$sub-conj$>$=ind3}) are allowed to adjoin to the roots of
+matrix sentences. Discourse conjunction with {\it and} is shown in the
+derived tree in Figure~\ref{seuss-sentence}.
 
 \enumsentence{And Truffula trees are what everyone needs! \cite{seuss71}}
 
-\begin{figure}[htb]
+\begin{figure}[h]
 \centering
 \hspace{0in}
 \psfig{figure=ps/sent-adjs-files/disc-conj.ps,height=4.5in}
@@ -212,7 +213,13 @@ Lorax}\nocite{seuss71}}
 \label{seuss-sentence}
 \end{figure}
 
-%s{\it and} as an asymmetric as well as coordinating conjunction.
+The equation {\bf $<$sub-conj$>$=ind3} is checked as a root feature by
+the parser (just as the root {\bf $<$mode$>$} must be indicative or
+imperative).  This means that sentences with {\it and} or {\it but} at
+the root are allowed as full sentences, while clauses with any other
+conjunction at the root will be rejected. If the parser is set to
+accept fragments (i.e. the top node is ``unconstrained''), it will
+allow sentences with any conjunction at the root.
 
 
 
