@@ -89,7 +89,7 @@ complement for these constructions.
 
 We have thus determined one important motivation for the suggested basic
 structure of PP complement verbs.  Another important aspect of these verbs
-is that contrary to cases where verbs take an NP complement, certain
+is that, contrary to cases where verbs take an NP complement, certain
 adjuncts are found to occur relatively freely between the verb and the PP
 complement. NP complements cannot be separated from the verb by modifiers
 unless they are heavy, as shown in examples (\ex{1}-\ex{4}).
@@ -150,7 +150,9 @@ quite heavy here.
 The analysis we provide is structural, and is given in
 Figure~\ref{pp-comp-trees} for the multi-anchor PP complement verbs.  The
 analysis suggests short verb movement, and is reminiscent of Larsonian
-shells.  However, the most important aspect of these trees for the purposes
+shells. 
+%Tonia: add a reference 
+However, the most important aspect of these trees for the purposes
 of the English XTAG grammar is that it provides a site for left adjunction
 to VP that intervenes between the verb and the preposition.  This
 immediately rules out the adjunct clauses as desired, since such clauses
@@ -160,14 +162,14 @@ fact that the grammar does not have left VP adjoining prepositional
 phrases.  For the restricted class of prepositions which are permitted in
 the intervening position, the grammar currently does not parse them, but
 entries which allow such left adjuction can be easily added later.
-Adverbs, however, already left adjoin to VP's in the current grammar, so
+Adverbs, however, already left-adjoin to VP's in the current grammar, so
 the structure accomodates this without need of any further modification.
 
-The comparatives also provide motivation for the above proposed
-structure. Comparativized adverbs such as {\it more heavily} may either
-left or right adjoin, so that portion of a comparative can adjoin in the
+The comparatives also provide motivation for the structure that we have
+adopted. Comparative adverb phrases such as {\it more heavily} may either
+left- or right-adjoin, and can thus adjoin in the
 intervening position.  However, the {\it than}-clause portion of a
-comparative can only right adjoin, and together, these two adjoining
+comparative can only right adjoin. Together, these two adjoining
 behaviors work with our PP complement analysis to correctly capture the
 distinctions seen in the following examples:
 
@@ -175,11 +177,11 @@ distinctions seen in the following examples:
 \enumsentence{John depends on his staff more heavily than Mary .}
 \enumsentence{*John depends more heavily than Mary on his staff .}
 
-In (\ex{-2}), the comparativized adverb has left adjoined to the lower VP
+In (\ex{-2}), the comparative adverb phrase has left-adjoined to the lower VP
 and the {\it than}-clause has right adjoined to it.  In (\ex{-1}), both are
-right adjoined.  However, in (\ex{0}) the {\it than}-clause cannot right
-adjoin before the preposition since there is no right-adjoinable VP
-available between the verb and the preposition.
+right adjoined.  The ungrammaticality of (\ex{0}) is captured by the fact that
+the {\it than}-clause can only right-adjoin, and there is no right-adjoinable
+VP node available between the verb and the preposition.
 
 \begin{figure}[htbp]
 \centering
@@ -200,9 +202,9 @@ very little modification to the grammar. The analysis is operative
 in the families Tnx0Vpnx1, Tnx0Vnx1pnx2, Tnx0VPnx1, and Tnx0Vnx1Pnx2.
 
 Notice that having two VP nodes along the right spine of the trees will
-engender right edge ambiguities. This arises in other structures, for which
-VP right adjoining modifiers are restricted by the feature {\bf mainv = +}
-on their footnodes to avoid right edge ambiguities in sentences with
-auxiliaries. This restriction is extended to the present case where right
-VP adjunction is allowed to occur only on the higher VP by making the lower
-VP have the feature {\bf mainv = -}.
+engender right edge ambiguities. In other structures where this ambiguity
+arises (for example, sentences with auxiliaries), VP right-adjoining modifiers
+are restricted by the feature {\bf mainv = +} on their footnodes to avoid
+right-edge ambiguities. This restriction is extended to the present case where
+right VP adjunction is allowed to occur only on the higher VP by giving the
+lower VP the feature {\bf mainv = -}.
