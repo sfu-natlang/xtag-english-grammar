@@ -3,25 +3,28 @@
 \label{intro-FBLTAG}
 
 Tree-adjoining grammar (TAG) is a formal tree rewriting system. TAG and
-Lexicalized Tree-Adjoining Grammar (LTAG) have been extensively studied both with
-respect to their formal properties and to their linguistic relevance. TAG and
-LTAG are formally equivalent, however, from the linguistic perspective LTAG is
-the system we will be concerned with in this paper. We will often use these
-terms TAG and LTAG interchangeably.
+Lexicalized Tree-Adjoining Grammar (LTAG) have been extensively studied
+both with respect to their formal properties and to their linguistic
+relevance. TAG and LTAG are formally equivalent, however, from the
+linguistic perspective LTAG is the system we will be concerned with in
+the XTAG system. We will often use these terms TAG and LTAG
+interchangeably.
 
-The motivations for the study of LTAG are both linguistic and formal. The
-elementary objects manipulated by LTAG are structured objects (trees or
-directed acyclic graphs) and not strings. Using structured objects as the
-elementary objects of the formal system, it is possible to construct formalisms
-whose properties relate directly to the study of strong generative capacity
-(i.e., structural descriptions), which is more relevant to the linguistic
-descriptions than the weak generative capacity (sets of strings). 
+The motivations for the study of LTAG are both linguistic and formal.
+The elementary objects manipulated by LTAG are structured objects
+(trees or directed acyclic graphs) and not strings. Using structured
+objects as the elementary objects of the formal system, it is possible
+to construct formalisms whose properties relate directly to the study
+of strong generative capacity (i.e., structural descriptions), which is
+more relevant to the linguistic descriptions than the weak generative
+capacity (sets of strings).
 
-Each grammar formalism specifies a domain of locality, i.e., a domain over
-which various dependencies (syntactic and semantic) can be specified. It turns
-out that the various properties of a formalism (syntactic, semantic,
-computational, and even psycholinguistic) follow, to a large extent, from the
-initial specification of the domain of locality. 
+Each grammar formalism specifies a domain of locality, i.e., a domain
+over which various dependencies (syntactic and semantic) can be
+specified. It turns out that the various properties of a formalism
+(syntactic, semantic, computational, and even psycholinguistic) follow,
+to a large extent, from the initial specification of the domain of
+locality.
 
 \begin{figure*}[ht] 
 \begin{center}
@@ -32,51 +35,50 @@ initial specification of the domain of locality.
 
 \subsection{Domain of locality of CFGs} 
 
-In a context-free grammar (CFG) the domain of locality is the one
-level tree corresponding to a rule in a CFG (Fig.~\ref{cfg}). It is
-easily seen that the arguments of a predicate (for example, the two
-arguments of {\it likes}) are not in the same local domain. The two
-arguments are distributed over the two rules (two domains of
-locality)-- $S \rightarrow NP \ VP$ and $VP \rightarrow V \ NP$. They
-can be brought together by introducing a rule $S \rightarrow NP \ V \
-VP $. However, then the structure provided by the VP node is lost. We
-should also note here that not every rule (domain) in the CFG in
-(Fig.~\ref{cfg}) is lexicalized. The three rules on the right are
-lexicalized, i.e., they have a lexical anchor. The rules on the right
-are not lexicalized. The second and the third rules on the left are
-almost lexicalized, in the sense that they each have a preterminal
-category ($V$ in the second rule and $ADV$ in the third rule), i.e.,
-by replacing $V$ by {\it likes} and $ADV$ by {\it passionately} these
-two rules will become lexicalized. However, the first rule on the left
-($S \rightarrow NP \ VP$) cannot be lexicalized. Can a CFG be
-lexicalized, i.e., given a CFG, $G$, can we construct another CFG,
-$G'$, such that every rule in $G'$ is lexicalized and $T(G)$, the set
-of (sentential) trees (i.e., the tree language of $G$) is the same as
-the tree language $T(G')$ of $G'$? It can be shown that this is not
-the case \cite{joshischabes96}.  Of course, if we require that only
-the string languages of $G$ and $G'$ be the same (i.e., they are
-weakly equivalent) then any CFG can be lexicalized. This follows from
-the fact that any CFG can be put in the Greibach normal form where
-each rule is of the form $ A \rightarrow w \ B1 \ B2 \ ... \ Bn$ where
-$w$ is a lexical item and the $B's$ are nonterminals. The
-lexicalization we are interested in req uires the tree languages
-(i.e., the set of structural descriptions) be the same, i.e., we are
-interested in the `strong' lexicalization. To summarize, a CFG cannot
-be strongly lexicalized by a CFG. This follows from the fact that the
-domain of locality of CFG is a one level tree corresponding to a rule
-in the grammar. Note that there are two issues we are concerned with
-here-- lexicalization of each elementary domain and the encapsulation
-of the arguments of the lexical anchor in the elementary domain of
-locality. The second issue is independent of the first issue. From the
-mathematical point of view the first issue, i.e., the lexicalization
-of the elementary domains of locality is the crucial one. We can
-obtain strong lexicalization without satisfying the requirement
-specified in the second issue (encapsulation of the arguments of the
-lexical anchor). Of course, from the linguistic point view the second
-issue is very crucial. What this means is that among all possible
-strong lexicalizations we should choose only those that meet the
-requirements of the second issue. For our discussions in this paper we
-will assume that we always make such a choice.
+In a context-free grammar (CFG) the domain of locality is the one level
+tree corresponding to a rule in a CFG (Fig.~\ref{cfg}). It is easily
+seen that the arguments of a predicate (for example, the two arguments
+of {\it likes}) are not in the same local domain. The two arguments are
+distributed over the two rules (two domains of locality)-- $S
+\rightarrow NP \ VP$ and $VP \rightarrow V \ NP$. They can be brought
+together by introducing a rule $S \rightarrow NP \ V \ VP $. However,
+then the structure provided by the VP node is lost. We should also note
+here that not every rule (domain) in the CFG in (Fig.~\ref{cfg}) is
+lexicalized. The three rules on the right are lexicalized, i.e., they
+have a lexical anchor. The rules on the right are not lexicalized. The
+second and the third rules on the left are almost lexicalized, in the
+sense that they each have a preterminal category ($V$ in the second
+rule and $ADV$ in the third rule), i.e., by replacing $V$ by {\it
+likes} and $ADV$ by {\it passionately} these two rules will become
+lexicalized. However, the first rule on the left ($S \rightarrow NP
+\ VP$) cannot be lexicalized. Can a CFG be lexicalized, i.e., given a
+CFG, $G$, can we construct another CFG, $G'$, such that every rule in
+$G'$ is lexicalized and $T(G)$, the set of (sentential) trees (i.e.,
+the tree language of $G$) is the same as the tree language $T(G')$ of
+$G'$? It can be shown that this is not the case \cite{joshischabes96}.
+Of course, if we require that only the string languages of $G$ and $G'$
+be the same (i.e., they are weakly equivalent) then any CFG can be
+lexicalized. This follows from the fact that any CFG can be put in the
+Greibach normal form where each rule is of the form $ A \rightarrow w
+\ B1 \ B2 \ ... \ Bn$ where $w$ is a lexical item and the $B's$ are
+nonterminals. The lexicalization we are interested in requires the
+tree languages (i.e., the set of structural descriptions) be the same,
+i.e., we are interested in the `strong' lexicalization. To summarize, a
+CFG cannot be strongly lexicalized by a CFG. This follows from the fact
+that the domain of locality of CFG is a one level tree corresponding to
+a rule in the grammar. Note that there are two issues we are concerned
+with here-- lexicalization of each elementary domain and the
+encapsulation of the arguments of the lexical anchor in the elementary
+domain of locality. The second issue is independent of the first issue.
+From the mathematical point of view the first issue, i.e., the
+lexicalization of the elementary domains of locality is the crucial
+one. We can obtain strong lexicalization without satisfying the
+requirement specified in the second issue (encapsulation of the
+arguments of the lexical anchor). Of course, from the linguistic point
+view the second issue is very crucial. What this means is that among
+all possible strong lexicalizations we should choose only those that
+meet the requirements of the second issue. In implementing a grammar in
+the XTAG system we will assume that we always make such a choice.
 
 
 \begin{figure*}[ht] 
@@ -140,7 +142,7 @@ sides. Hence, the TSG, $G'$, cannot strongly lexicalize the CFG, $G$
 \end{figure*}
 
 We now introduce a new operation called `adjoining' as shown in
-Fig.~\ref{adjunction}. Adjoining involves splicing (in serting) one
+Fig.~\ref{adjunction}. Adjoining involves splicing (inserting) one
 tree into another. More specifically, a tree $\beta$ as shown in
 Fig.~\ref{adjunction} is inserted (adjoined) into the tree $\alpha$ at
 the node $X$ resulting in the tree $\gamma$. The tree $\beta$, called
@@ -290,15 +292,52 @@ non-compositional aspects as in the case of rigid and flexible idioms.
 \end{center}
 \end{figure*}
 
+\section{Some important properties of LTAG}
+
+The two key properties of LTAG are (1) extended domain of locality
+(EDL) (for example, as compared to CFG), which allows (2) factoring
+recursion from the domain of dependencies (FRD), thus making all
+dependencies local. All other properties of LTAG (mathematical,
+linguistic, and even psycholinguistic) follow from EDL and FRD. TAGs
+(LTAGs) belong to the so-called class of mildly context-sensitive
+grammars~\cite{joshi85}. CFL's are properly contained in the class of
+languages of LTAG, which in turn are properly contained in the class
+of context-sensitive languages. There is a machine characterization of
+TAG (LTAG), called embedded pushdown automaton (EPDA)~\cite{vijay87},
+i.e., for every TAG language there is an EPDA which corresponds to
+this (and only this) language and the language accepted by any EPDA is
+a TAG language. EPDAs have been used to model some psycholinguistic
+phenomena, for example, processing crossed dependencies and nested
+dependencies have been in discussed in~\cite{joshi90}. With respect to
+formal properties, the class of TAG languages enjoys all the important
+properties of CFLs, including polynomial parsing (with complexity
+$O(n^{6}$)).
+
 \section{Unification-based features}
 
-In a unification framework, a feature structure is associated with each node in
-an elementary tree.  This feature structure contains information about how the
-node interacts with other nodes in the tree.  It consists of a top part, which
-generally contains information relating to the supernode, and a bottom part,
-which generally contains information relating to the subnode.  Substitution
-nodes, however, have only the top features, since the tree substituting in
-logically carries the bottom features.
+In the XTAG system, each node in each LTAG tree is decorated with two
+feature structures (top and bottom feature structures), in contrast to
+the CFG based feature structure grammars, because adjoining can augment
+a tree internally, while in a CFG based grammar a tree can be augmented
+only at the frontier. It is possible to define adjoining and
+substitution (as it is done in the XTAG system) in terms of appropriate
+unifications of the top and bottom feature structures. Because of FRD
+(factoring recursion from the domain of dependencies), there is no
+recursion in the feature structures. Therefore, in principle, feature
+structures can be eliminated. However, they are crucial for linguistic
+descriptions. Constraints on substitution and adjoining are modeled via
+these feature structures~\cite{vijay87}. This method of manipulating
+feature structures is a direct consequence of the extended domain of
+locality of LTAG.
+
+In a unification framework, a feature structure is associated with each
+node in an elementary tree.  This feature structure contains
+information about how the node interacts with other nodes in the tree.
+It consists of a top part, which generally contains information
+relating to the supernode, and a bottom part, which generally contains
+information relating to the subnode.  Substitution nodes, however, have
+only the top features, since the tree substituting in logically carries
+the bottom features.
 
 \begin{figure}[htb]
 \centering
@@ -310,16 +349,15 @@ logically carries the bottom features.
 \end{figure}
 
 The notions of substitution and adjunction must be augmented to fit
-within this new framework.  The feature structure of a new node
-created by substitution inherits the union of the features of the
-original nodes.  The top feature of the new node is the union of the
-top features of the two original nodes, while the bottom feature of
-the new node is simply the bottom feature of the top node of the
-substituting tree (since the substitution node has no bottom feature).
-Figure \ref{subst-fig}\footnote{abbreviations in the figure:
-t$=$top feature structure, tr$=$top feature structure of the root, br$=$bottom
-feature structure of the root, U$=$unification} shows this more
-clearly.
+within this new framework.  The feature structure of a new node created
+by substitution inherits the union of the features of the original
+nodes.  The top feature of the new node is the union of the top
+features of the two original nodes, while the bottom feature of the new
+node is simply the bottom feature of the top node of the substituting
+tree (since the substitution node has no bottom feature).  Figure
+\ref{subst-fig}\footnote{abbreviations in the figure:  t$=$top feature
+structure, tr$=$top feature structure of the root, br$=$bottom feature
+structure of the root, U$=$unification} shows this more clearly.
 
 \begin{figure}[htb]
 \centering
@@ -379,46 +417,6 @@ easily captured in the features and passed to other nodes to constrain which
 trees this tree can adjoin into, both cutting down the number of separate trees
 needed and enforcing conceptual Selective Adjunctions (SA).
 
-\section{Some important properties of LTAG}
-
-The two key properties of LTAG are (1) extended domain of locality
-(EDL) (for example, as compared to CFG), which allows (2) factoring
-recursion from the domain of dependencies (FRD), thus making all
-dependencies local. All other properties of LTAG (mathematical,
-linguistic, and even psycholinguistic) follow from EDL and FRD. TAGs
-(LTAGs) belong to the so-called class of mildly context-sensitive
-grammars~\cite{joshi85}. CFL's are properly contained in the class of
-languages of LTAG, which in turn are properly contained in the class
-of context-sensitive languages. There is a machine characterization of
-TAG (LTAG), called embedded pushdown automaton (EPDA)~\cite{vijay87},
-i.e., for every TAG language there is an EPDA which corresponds to
-this (and only this) language and the language accepted by any EPDA is
-a TAG language. EPDAs have been used to model some psycholinguistic
-phenomena, for example, processing crossed dependencies and nested
-dependencies have been in discussed in~\cite{joshi90}. With respect to
-formal properties, the class of TAG languages enjoys all the important
-properties of CFLs, including polynomial parsing (with complexity
-$O(n^{6}$)).
-
-Large scale wide coverage grammars have been built using LTAG, the
-XTAG system (LTAG grammar and lexicon for English and a parser) being
-the largest so far (for further details see (The XTAG Research Group
-(2000)). In the XTAG system, each node in each LTAG tree is decorated
-with two feature structures (top and bottom feature structures), in
-contrast to the CFG based feature structure grammars, because
-adjoining can augment a tree internally, while in a CFG based grammar
-a tree can be augmented only at the frontier. It is possible to define
-adjoining and substitution (as it is done in the XTAG system) in terms
-of appropriate unifications of the top and bottom feature
-structures. Because of FRD (factoring recursion from the domain of
-dependencies), there is no recursion in the feature
-structures. Therefore, in principle, feature structures can be
-eliminated. However, they are crucial for linguistic
-descriptions. Constraints on substitution and adjoining are modeled
-via these feature structures~\cite{vijay87}. This method of
-manipulating feature structures is a direct consequence of the
-extended domain of locality of LTAG.
-
 \section{Some related systems}
 
 {\bf Categorial Grammars:} Categories assigned to lexical items in a
@@ -458,8 +456,8 @@ the two are (not surprisingly) different. Together they allow more
 complex semantics to be conveyed through simpler structures.
 
 {\bf Phrase structure composition and syntactic dependencies:}
-\cite{frank00:_tag_book} presents a comprehensive perspective on ph
-rase structure composition and syntactic dependencies in a TAG-based
+\cite{frank00:_tag_book} presents a comprehensive perspective on phrase
+structure composition and syntactic dependencies in a TAG-based
 grammatical architecture and compares it to the minimalist framework,
 showing that a number of stipulative and problematic aspects of that
 theory can be eliminated.
@@ -468,14 +466,16 @@ theory can be eliminated.
 
 \section{Summary}
 
-The domain of locality of a grammar formalism, i.e., the domain over which
-various dependencies can be specified determines to a large extent the
-syntactic, semantic, computational, and even psycholinguistic properties of the
-formalism. From this perspective the extended domain of Lexicalized
-Tree-Adjoining Grammars (LTAG) -- extended as compared to the domain of locality
-of CFGs, for example -- was explored. This extended domain is achieved by
-specifying the elementary objects of the grammar as structured objects instead
-of strings, together with two universal combining operations (substitution and
-adjoining). This perspective allows us to study directly many aspects of strong
-generative capacity which are more useful for linguistic description.  
+The domain of locality of a grammar formalism, i.e., the domain over
+which various dependencies can be specified determines to a large
+extent the syntactic, semantic, computational, and even
+psycholinguistic properties of the formalism. From this perspective the
+extended domain of Lexicalized Tree-Adjoining Grammars (LTAG) --
+extended as compared to the domain of locality of CFGs, for example --
+was explored. This extended domain is achieved by specifying the
+elementary objects of the grammar as structured objects instead of
+strings, together with two universal combining operations (substitution
+and adjoining). This perspective allows us to study directly many
+aspects of strong generative capacity which are more useful for
+linguistic description.
 
