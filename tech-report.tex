@@ -1,11 +1,41 @@
-\documentstyle[11pt,leqno,lingmac,aaai-named]{article}
+\documentstyle[11pt,leqno,lingmac,titlepage,aaai-named,twoside]{xtag-report}
 \title{A  Lexicalized Tree Adjoining Grammar for English}
-\author{}
+\author{The XTAG Research Group \\ \\
+Institute for Research in Cognitive Science\\
+University of Pennsylvania \\
+3401 Walnut St., Suite 400C \\
+Philadelphia, PA 19104-6228 \\ \\
+xtag-request@linc.cis.upenn.edu
+}
+\date{January 24, 1995}
+%\makeindex
 \oddsidemargin 0.25in
+\evensidemargin 0.25in
 \topmargin 0in
 \textheight 8.5in
 \textwidth 6.25in
-\typein {do the ``includeonly''}
+%\typein {do the ``includeonly''}
+
+\newcommand{\vertical}[1]{
+\setlength{\unitlength}{0.012500in}%
+%%%\hspace*{6pt}
+\hspace*{2pt}
+\begin{picture}(12,12)(0,0)
+\put(0,0){\makebox(0,0)[lb]{\raisebox{0pt}[0pt][0pt]{\special{ps:gsave currentpoint currentpoint translate
+%%%-90.0 rotate neg exch neg exch translate}\twlrm #1\special{ps:currentpoint
+%%grestore moveto}}}}
+-90.0 rotate neg exch neg exch translate}\elvrm #1\special{ps:currentpoint grestore moveto}}}}
+\end{picture}
+%%\hspace*{-18pt}
+\hspace*{-18pt}
+}
+
+\newcommand{\xtagdef}[1]{{\sc #1}}
+\newcommand{\xtagcheck}{$\surd$}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
 \begin{document}
 \setcounter{bottomnumber}{20}
 \setcounter{topnumber}{20}
@@ -14,25 +44,52 @@
 \setcounter{totalnumber}{30}
 \renewcommand{\textfraction}{0}
 \renewcommand{\floatpagefraction}{0}
-\bibliographystyle{aaai-named}
 \input{psfig}
+\pagestyle{plain}
 
 \maketitle
+\pagenumbering{roman}
 \tableofcontents
+\listoffigures
 \include{abstr}
-%\include{intro}
+\include{acknowledgements}
+\pagenumbering{arabic}
+\pagestyle{headings}
+\part{General Information}
+\include{getting-around}
+\include{intro}
+\include{overview}
 \include{compl-adj}
-\include{case}
-\include{auxs}
+% \include{case}  This is now included from the compl-adj file.
+\part{Verb Classes}
+\include{table-intro}
+\include{table}
+\include{verb-class}
+\include{ergatives}
+\include{sent-comps-subjs}
 \include{sm-clause}
-\include{embedded-clauses}
-\include{mult-anchor}
-\include{adv}
-\include{determiners}
-\include{adj-pass}
-\include{n-ncompounds}
-\include{appendix}
-
+\include{double-obj}
+\include{it-clefts}
+\part{Sentence Types}
+\include{passives}
+\include{extraction}
+\include{rel_clauses}
+\include{sent-adjs-sub-conjs}
+\include{imperatives}
+\include{gerunds}
+%%\include{mc-adjunction}
+\part{Other Constructions}
+\include{det}
+\include{modifiers}
+\include{auxs}
+\include{conj}
+\part{Appendices}
+\include{future-work}
+\include{tree-naming}
+\include{features}
+\include{evaluation}
+\bibliographystyle{aaai-named}
+\bibliography{xtag}
 
 \end{document}
 
