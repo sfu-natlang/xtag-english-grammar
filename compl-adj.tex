@@ -1,29 +1,112 @@
-\section{Complements and Adjuncts}
+\section{Underview}
 
-Elementary trees in the LTAG formalism are used to represent the
-linguistic notion of subcategorization frames.  The anchor of the
-elementary tree subcategorizes for the other elements that appear in
-the tree.  For example, the verb {\it buy} subcategorizes for a direct
-object NP. The elementary tree anchored by {\it buy} shown in
-Figure~\ref{comp-adj}(a) includes nodes for the NP complement of {\it
-buy} and for the NP subject.  The contrasts between complements and
-adjuncts have been extensively discussed in the linguistics
-literature. and the classification of some element as one or the other
-remains a matter of debate.  In the LTAG formalism, decisions about
-whether some constituent is a complement or an adjunct leads to two
-quite different structures. Complements are included in the elementary
-tree anchored by the verb that selects them. Adjuncts are added to a
-structure by adjunction and do not originate in the same elementary
-tree as the verb anchoring the sentence. This difference is
-illustrated by the tree structures shown in Figure~\ref{comp-adj}(a)
-and Figure~\ref{comp-adj}(b).
+The morphology, syntactic, and tree databases together comprise the English
+grammar.  Lexical items not in the databases are handled by default mechanisms.
+The range of syntactic phenomena that can be handled is large and includes
+auxiliaries (including inversion), copula, raising and small clause
+constructions, topicalization, relative clauses, infinitives, gerunds,
+passives, adjuncts, it-clefts, wh-clefts, PRO constructions, noun-noun
+modifications, extraposition, determiner phrases, genitives, negation,
+noun-verb contractions and imperatives.  The combination of large scale
+lexicons and wide phenomena coverage result in a robust system.
+
+
+\subsection{Subcategorization Frames}
+\label{subcat-frames}
+
+Elementary trees for non-auxiliary verbs are used to represent the linguistic
+notion of subcategorization frames.  The anchor of the elementary tree
+subcategorizes for the other elements that appear in the tree, forming a
+clausal or sentential structure.  Tree families group together trees belonging
+to the same subcategorization frame.  Consider the following uses of the verb
+{\it buy}:
+
+\enumsentence{Srini bought a book.}
+\enumsentence{Srini bought Beth a book.}
+
+In sentence \ex{-1}, the verb {\it buy} subcategorizes for a direct object NP.
+The elementary tree anchored by {\it buy} is shown in
+Figure~\ref{subcat-trees}(a) and includes nodes for the NP complement of {\it
+buy} and for the NP subject.  In addition to this declarative tree structure,
+the tree family also contains the trees that would be related to each other
+transformationally in a movement based approach, i.e passivization,
+imperatives, wh-questions, relative clauses, and so forth.  Sentence \ex{0}
+shows that {\it buy} also subcategorizes for a double NP object.  This means
+that {\it buy} also selects a the double NP object subcategorization frame, or
+tree family, with its own set of transformationally related sentence
+structures.  Figure~\ref{subcat-trees}(b) shows the declarative structure for
+this set of sentence structures.
 
 \begin{figure}[ht]
 \centering
+\rule[.1in]{5.0in}{0.01in}
 \begin{tabular}{cc}
-{\psfig{figure=ps/alphanx0Vnx1.ps}} & {\psfig{figure=ps/betaARBs.ps}}\\
+{\psfig{figure=ps/compl-adj-files/alphanx0Vnx1_bought.ps,height=2.0in}} & {\psfig{figure=ps/compl-adj-files/alphanx0Vnx1nx2_bought.ps,height=2.0in}}\\
 (a) & (b) \\ 
 \end{tabular}
-\caption{Trees illustrating the difference between Complements and Adjuncts}
-\label{comp-adj}
+\caption{Different subcategorization frames for the verb {\it buy}}
+\rule[.1in]{5.0in}{0.01in}
+\label{subcat-trees}
 \end{figure}
+
+
+\subsection{Complements and Adjuncts}
+
+Complements and adjuncts have very different structures in our system.
+Complements are included in the elementary tree anchored by the verb that
+selects them, while adjuncts do not originate in the same elementary tree as
+the verb anchoring the sentence, but are instead added to a structure by
+adjunction.  The contrasts between complements and adjuncts have been
+extensively discussed in the linguistics literature and the classification of a
+given element as one or the other remains a matter of debate (see \cite{rizzi90}, 
+\cite{larson88}, \cite{jackendoff90}, \cite{larson90}, \cite{cinque90}, 
+\cite{obernauer84}, \cite{lasnik-saito84}, and \cite{chomsky86}).  The guiding
+rule used in developing this grammar is whether or not the sentence is
+ungrammatical without the questioned structure.\footnote{Iteration of a
+structure can also be used as a diagnostic: {\it Srini bought a book at the
+bookstore on Walnut Street for a friend at work}.} Consider the following
+sentences:
+
+\enumsentence{Srini bought a book.}
+\enumsentence{Srini bought a book at the bookstore.}
+\enumsentence{Srini arranged for a ride.}
+\enumsentence{*Srini arranged.}
+
+Prepositional phrases are generally considered adjuncts, and have the tree
+structure shown in Figure \ref{compl-adj}a.  This adjunction tree would adjoin
+into the tree shown in Figure \ref{subcat-trees}a to generate sentence \ex{-2}.
+There are verbs, however, such as {\it arrange}, {\it hunger}, and {\it
+differentiate}, that take prepositional phrases as complements.  Sentences
+\ex{-1} and \ex{0} clearly show that the prepositional phrase are not optional
+for these verbs.  For these sentences, the prepositional phrase will be an
+initial tree (as shown in Figure \ref{compl-adj}b) that substitutes into an
+elementary tree, such as the one anchored by the verb {\it arrange} in Figure
+\ref{compl-adj}c.
+
+\begin{figure}[ht]
+\centering
+\rule[.1in]{5.0in}{0.01in}
+\begin{tabular}{ccc}
+{\psfig{figure=ps/compl-adj-files/betavxPnx_at.ps,height=2.0in}} & {\psfig{figure=ps/compl-adj-files/alphaPXPnx_for.ps,height=1.5in}} & {\psfig{figure=ps/compl-adj-files/alphanx0Vpnx1_arranged.ps,height=2.0in}}\\
+(a) & (b) & (c) \\ 
+\end{tabular}
+\caption{Trees illustrating the difference between Complements and Adjuncts}
+\rule[.1in]{5.0in}{0.01in}
+\label{compl-adj}
+\end{figure}
+
+\subsection{Non-S constituents}
+
+Although sentential trees are generally considered to be special cases in any
+grammar, insofar as they make up a 'starting category', it is the case that any
+initial tree constitutes a phrasal constituent.  These initial trees may have
+substitution nodes that need to be filled (by other initial trees), and may be
+modified by adjunct trees, exactly as the trees rooted in S.  Although grouping is
+possible according to the heads or anchors of these trees, we have not found
+any classification similar to the subcategorization frames for verbs that can
+be used by a lexical entry to `group select' a set of trees.  These trees are
+selected one by one by each lexical item, according to each lexical item's
+idiosyncracies.  The grammar that accompanies this technical report places them
+into several files for ease of use, but these files do not constitute tree
+families in the way that the subcategorization frames do.
+
