@@ -25,18 +25,20 @@ marking, such as Latin, and languages with very limited morphological case
 marking, like English, are all presumed to have full systems of abstract case
 that differ only in the extent of morphological realization.
 
-In GB, abstract case is assigned to NP's by various case assigners, namely
-verbs, prepositions, and INFL.  Verbs and prepositions are said to assign
-accusative case to NP's that they govern, and INFL assigns nominative case to
-NP's that it governs.  These governing categories are constrained in where they
-can assign case by means of `barriers' based on `minimality conditions',
-although these are relaxed in `exceptional case marking' situations.  The
-details of the GB analysis are beyond the scope of this technical report, but
-see \cite{chomsky86} for the original analysis or \cite{haegeman91} for an
-overview.  Let it suffice for us to say that the notion of abstract case and
-the case filter are useful in accounting for a number of phenomena including
-the distribution of nominative and accusative case, and the distribution of
-overt NP's and empty categories (such as PRO).
+In GB, abstract case is argued to be assigned to NP's by various case
+assigners, namely verbs, prepositions, and INFL.  Verbs and
+prepositions are said to assign accusative case to NP's that they
+govern, and INFL assigns nominative case to NP's that it governs.
+These governing categories are constrained as to where they can assign
+case by means of `barriers' based on `minimality conditions', although
+these are relaxed in `exceptional case marking' situations.  The
+details of the GB analysis are beyond the scope of this technical
+report, but see \cite{chomsky86} for the original analysis or
+\cite{haegeman91} for an overview.  Let it suffice for us to say that
+the notion of abstract case and the case filter are useful in
+accounting for a number of phenomena including the distribution of
+nominative and accusative case, and the distribution of overt NP's and
+empty categories (such as PRO).
 
 \subsubsection{Minimalism and Case} 
 
@@ -45,15 +47,15 @@ Minimalism, lexical items carry their features with them rather than being
 assigned their features based on the nodes that they end up at.  For nouns,
 this means that they carry case with them, and that their case is `checked'
 when they are in SPEC position of AGR$_s$ or AGR$_o$, which subsequently
-disappears (\cite{chomsky92}).
+disappears \cite{chomsky92}.
 
 \subsection{Case in XTAG}
 
 The English XTAG grammar adopts the notion of case and the case filter for many
 of the same reasons argued in the GB literature.  However, in some respects the
 English XTAG grammar's implementation of case more closely resembles the
-treatment in Chomsky's Minimalism framework (\cite{chomsky92}) than the system
-outlined in the GB literature (\cite{chomsky86}).  As in Minimalism, nouns in
+treatment in Chomsky's Minimalism framework \cite{chomsky92} than the system
+outlined in the GB literature \cite{chomsky86}.  As in Minimalism, nouns in
 the XTAG grammar carry case with them, which is eventually `checked'. However
 in the XTAG grammar, noun cases are checked against the case values assigned
 by the verb during the unification of the feature structures.  Unlike Chomsky's
@@ -87,17 +89,19 @@ nom}.
 \subsubsection{Prepositions}
 \label{prep-case}
 
-Case is assigned in the XTAG English grammar by two components - verbs and
-prepositions.\footnote{{\it For} also assigns case as a complementizer.  See
-section \ref{for-complementizer} for more details.}  Prepositions assign
-accusative case ({\bf acc}) through their {\bf $<$assign-case$>$} feature,
-which is linked directly to the {\bf $<$case$>$} feature of their objects.
-Figure~\ref{PXPnx-with-case}(a) shows a lexicalized preposition tree, while
-Figure~\ref{PXPnx-with-case}(b) shows the same tree with the NP tree from
-Figure~\ref{nouns-with-case}(a) substituted into the NP position.
-Figure~\ref{PXPnx-with-case}(c) is the tree in Figure~\ref{PXPnx-with-case}(b)
-after unification has taken place.  Note that the case ambiguity of {\it books}
-has been resolved to accusative case.
+Case is assigned in the XTAG English grammar by two lexical categories
+- verbs and prepositions.\footnote{{\it For} also assigns case as a
+complementizer.  See section \ref{for-complementizer} for more
+details.}  Prepositions assign accusative case ({\bf acc}) through
+their {\bf $<$assign-case$>$} feature, which is linked directly to the
+{\bf $<$case$>$} feature of their objects.
+Figure~\ref{PXPnx-with-case}(a) shows a lexicalized preposition tree,
+while Figure~\ref{PXPnx-with-case}(b) shows the same tree with the NP
+tree from Figure~\ref{nouns-with-case}(a) substituted into the NP
+position.  Figure~\ref{PXPnx-with-case}(c) is the tree in
+Figure~\ref{PXPnx-with-case}(b) after unification has taken place.
+Note that the case ambiguity of {\it books} has been resolved to
+accusative case.
 
 \begin{figure}[htb]
 \centering
@@ -202,22 +206,26 @@ subject NP is now {\bf nom} (nominative).
 
 \subsection{PRO in a unification based framework}
 
-Most forms of a verb assign nominative case, although some forms, such as past
-participle, assign no case whatsoever.  This is different than assigning case
-{\bf none}, as the progressive form of the verb {\it sing} does in
-Figure~\ref{lexicalized-S-tree-with-case}(b).  The distinction of a case {\bf
-none} from no case is indicative of a divergence from the standard GB theory.
-In GB theory, the absence of case on an NP means that only PRO can fill that
-NP.  With feature unification as is used in the FB-LTAG grammar, the absence of
-case on an NP means that {\em any\/} NP can fill it, regardless of its case.
-This is due to the mechanism of unification, in which if something is
-unspecified, it can unify with anything.  Thus we have a specific case {\bf
-none} to handle verb forms that in GB theory do not assign case.  PRO is the
-only NP with case {\bf none}.  Verb forms that assign no case, as the past
-participle mentioned above, can do so because they cannot occur without an
-auxiliary verb which takes care of the case assignment.  Note that although we
-are drawn to this treatment by our use of unification for feature manipulation,
-our treatment is very similar to the assignment of null case to PRO in
+Tensed forms of a verb assign nominative case, and untensed forms
+assign case {\bf none}, as the progressive form of the verb {\it sing}
+does in Figure~\ref{lexicalized-S-tree-with-case}(b). This is
+different than assigning no case at all, as one form of the infinitive
+marker {\it to} does. )See Section~\ref{for-complementizer} for more
+discussion of this special case.) The distinction of a case {\bf none}
+from no case is indicative of a divergence from the standard GB
+theory.  In GB theory, the absence of case on an NP means that only
+PRO can fill that NP.  With feature unification as is used in the
+FB-LTAG grammar, the absence of case on an NP means that {\em any\/}
+NP can fill it, regardless of its case.  This is due to the mechanism
+of unification, in which if something is unspecified, it can unify
+with anything.  Thus we have a specific case {\bf none} to handle verb
+forms that in GB theory do not assign case.  PRO is the only NP with
+case {\bf none}.  Note that although we are drawn to this treatment by
+our use of unification for feature manipulation, our treatment is very
+similar to the assignment of null case to PRO in
 \cite{ChomskyLasnik93}.  \cite{watanabe93} also proposes a very similar 
-approach within Chomsky's Minimalist framework.\footnote{See section \ref{PRO}
+approach within Chomsky's Minimalist framework.\footnote{See Sections~
+\ref{PRO} and \ref{PRO-control}
 for additional discussion of PRO.}
+
+
