@@ -185,12 +185,11 @@ like prepositions, determiners, etc%
 \subsection{Tree Grafting}
 
 Once a particular set of lexicalized trees for the sentence have been
-selected, XTAG uses an Earley-style predictive left-to-right parsing
-algorithm for LTAGs (\cite{schabesjoshi88,schabes90}) to find all
-derivations for the sentence. The derivation trees and the associated
-derived trees can be viewed using the X-interface (see
-Table~\ref{sys-table}). The X-interface can also be used to save
-particular derivations to disk.
+selected, XTAG a parsing algorithm for LTAGs
+(\cite{schabesjoshi88,schabes90}) to find all derivations for the
+sentence. The derivation trees and the associated derived trees can be
+viewed using the X-interface (see Table~\ref{sys-table}). The
+X-interface can also be used to save particular derivations to disk.
 
 The output of the parser for the sentence {\it I had a map yesterday} is
 illustrated in Figure~\ref{sentence}. The parse tree\footnote{The feature
@@ -319,48 +318,7 @@ tree-based transformation rules
 \label{xtag-interface}
 \end{figure}
 
-\section{Computer Platform}
-
-
-XTAG was developed on the Sun SPARC station series. It has been tested
-on various Sun platforms including Ultra-1, Ultra-Enterprise. XTAG is
-freely available from the XTAG web page at {\tt
-  http://www.cis.upenn.edu/\~{}xtag/}. It requires 75 MB of disk space
-(once all binaries and databases are created after the install). XTAG
-requires the following software to run:
-
-\begin{itemize}
-  
-\item A machine running UNIX and X11R4 (or higher). Previous releases
-  of X will not work. X11R4 is free software which usually comes
-  bundled with your OS. It is also freely available for various
-  platforms at {\tt http://www.xfree86.org/}
-  
-\item A Common Lisp compiler which supports the latest definition of
-  Common Lisp (Steele's Common Lisp, second edition). XTAG has been
-  tested on Lucid Common Lisp/SPARC Solaris, Version: 4.2.1. Allegro
-  CL is no longer directly supported, however there have been third
-  party ports to recent versions of Allegro CL.
-  
-\item CLX version 4 or higher. CLX is the Lisp equivalent to the Xlib
-  package written in C.
-  
-\item Mark Kantrowitz's Lisp Utilities from CMU: logical-pathnames and
-  defsystem.
-
-\end{itemize}
-
-A patched version of CLX (Version 5.02) for SunOS 5.5.1 and the CMU
-Lisp Utilities are provided in our ftp directory for your convenience.
-However, we ask that you refer to the appropriate sources for updates.
-
-The morphology database component (\cite{karp92}), no longer under
-licensing restrictions, is available as a separate download from the
-XTAG web page (see above for URL).
-
-The syntactic database component is also available as part of the XTAG
-system (\cite{EgediMartin94}). 
-
-More information can be obtained on the XTAG web page at \\
-{\tt http://www.cis.upenn.edu/\~{}xtag/}.
+More information and download instructions about the XTAG grammar, the
+parser and the grammar development interface can be obtained on the
+XTAG web page at \\ {\tt http://www.cis.upenn.edu/\~{}xtag/}.
 
