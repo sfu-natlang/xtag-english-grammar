@@ -1,56 +1,79 @@
 \section{Auxiliaries}
-Although there has been some debate about the lexical category of auxiliaries, the English LTAG grammar follows McCawley(1988), Hageman(1991) and others in classifying auxiliaries as verbs. The category of verbs can therefore be divided into two sets, main or lexical verbs and auxiliary verbs. At least some auxiliaries share with lexical verbs the property  of having morphological marking for tense and agreement.  In addition, only the leftmost verb in a verbal sequence is morphologically marked for tense and argreement  regardless of whether it is a main or auxiliary verb. However, auxiliary verbs differ from lexical verbs in several crucial ways. 
+\label{auxiliaries}
 
-\begin{enumerate}
-\item Multiple auxiliaries can occur in a single sentence, while a matrix sentence may have at most one lexical verb. 
+Although there has been some debate about the lexical category of auxiliaries,
+the English XTAG grammar follows \cite{mccawley88}, \cite{haegeman91}, and
+others in classifying auxiliaries as verbs. The category of verbs can therefore
+be divided into two sets, main or lexical verbs, and auxiliary verbs, which can
+co-occur in a verbal sequence.  Only the highest verb in a verbal sequence is
+marked for tense and agreement regardless of whether it is a main or auxiliary
+verb.  Some auxiliaries ({\it be}, {\it do}, and {\it have}) share with main
+verbs the property of having overt morphological marking for tense and
+agreement, while the modal auxiliaries do not.  However, all auxiliary verbs
+differ from main verbs in several crucial ways.
 
-\item All auxiliaries preceed the lexical verb in verbal sequences
+\begin{itemize}
 
-\item Auxiliaries do not subcategorize for NP, PP or S arguments
+\item Multiple auxiliaries can occur in a single sentence, while a matrix
+sentence may have at most one main verb. 
 
-\item Auxiliaries impose requirements on the morphological form of the verbs that immediately follow them.
+\item Auxiliary verbs cannot occur as the sole verb in the sentence, but must
+be followed by a main verb.
 
-\item Only auxiliary verbs invert in questions (with the sole
-exception in American English of main verb {\it be}).
+\item All auxiliaries precede the main verb in verbal sequences.
 
-\item Sentential negation requires an auxiliary verb (e.g. *{\it John not goes}).
+\item Auxiliaries do not subcategorize for any arguments.
 
-\item Auxiliaries can form contractions with subjects, and with negation.
+\item Auxiliaries impose requirements on the morphological form of the verbs
+that immediately follow them.
 
-\end{enumerate}
+\item Only auxiliary verbs invert in questions (with the sole exception in 
+American English of main verb {\it be}\footnote{Some dialects, particularly
+British English, can also invert main verb {\it have} in yes/no questions: {\it
+Have you any Grey Poupon?}  This is usually attributed to the influence of
+auxiliary {\it have}, coupled with the historic fact that English once allowed
+this movement for all verbs.\label{have-footnote}}).
+
+\item An auxiliary verb must precede sentential negation (e.g. *{\it John not goes}).
+
+\item Auxiliaries can form contractions with subjects and negation (e.g. {\it
+he'll}, {\it won't}).
+
+\end{itemize}
 
 
-The sections that follow describe how the English LTAG implementation accounts for these properties of the auxiliary system.
+\noindent The restrictions that an auxiliary verb imposes on the succeeding verb limits
+the sequence of verbs that can occur.  In English, sequences of up to five
+verbs are allowed, as in sentence (\ex{1}).
 
+\enumsentence{The music should have been being played [when the president arrived].}
 
-Auxiliary verbs, in contrast to main verbs, do not  occur as the sole verb in a sentence but must be followed by another verb. Verbal sequences in English are limited to a maximum length, in contrast to a language like French in which modals can be recursively added to a sentence. English allows sequences of up to five verbs as shown in (\ex{1})
+\noindent 
+The required ordering of verb forms when all five verbs are present is:
 
-\enumsentence{The dogs should have been being fed.}
+\begin{quote}
+\begin{tabular}{ccl}
+& & {\bf modal base perfective progressive passive}
+\end{tabular}
+\end{quote}
 
-The required ordering of verb forms is:
-
-\begin{description}
-\item {\bf modal base perfective progressive passive}
-\end{description}
-
-The rightmost verb is the main verb of the sentence.  The main verb's
-subcategorization requirements determine the arguments that will appear in the
-sentence.  Rather than selecting arguments, auxiliary verbs select particular
-morphological forms of verbs to follow them.  What  verb form is required
-varies by type of auxiliary verb.  The auxiliaries included in the English
-LTAG grammar are listed in Table (\ref{aux-table}) by type.  The third column
-of Table (\ref{aux-table}) lists the verb forms that are required to follow
-each type of auxiliary verb.       
-
-\vspace{2cm}
+\noindent
+The rightmost verb is the main verb of the sentence.  While a main verb
+subcategorizes for the arguments that appear in the sentence, the auxiliary
+verbs select the particular morphological forms of the verb to follow each of
+them.  The auxiliaries included in the English XTAG grammar are listed in Table
+\ref{aux-table} by type.  The third column of Table \ref{aux-table} lists the
+verb forms that are required to follow each type of auxiliary verb.
 
 \begin{table}[ht]
+\centering
 \begin{tabular}{|l|c|c|}  
 \hline
 TYPE&LEX ITEMS&SELECTS FOR\\     
 \hline
-modals & can, could, may, might, will, & base form (base)\\
-& would, ought, shall, should & e.g. will go,might come\\   
+modals & can, could, may, might, will, & base form\footnotemark
+\\ & would, ought, shall, should & e.g. will
+go, might come\\
 \hline
 perfective & have & past participle\\
 & & (e.g. has gone)\\  
@@ -71,142 +94,233 @@ infinitive to & to & base form\\
 \caption{Auxiliary Verb Properties}
 \label{aux-table}
 \end{table}
-\vspace{2cm}
 
-In the English LTAG grammar, the tree anchored by the main verb
-supplies the structure for the verb and its subcategorized arguments.
-Other trees are added to it by substitution or adjunction.  Auxiliary
-verbs in uninverted sentences anchor the auxiliary tree shown in
-Figure \ref{vVX} which adjoins to a VP.
+%  This text belong with the table above.  It is put here so that it gets on
+%  the right page.
+\footnotetext{There are American dialects, particularly in the South, which
+allow double modals such as {\it might could} and {\it might should}. These
+constructions are not allowed in the XTAG English grammar.}
+
+\subsection{Non-inverted sentences}
+\label{aux-non-inverted}
+
+This section and the sections that follow describe how the English XTAG
+implementation accounts for properties of the auxiliary system described above.
+
+In our grammar, auxiliary trees are added to the main verb tree by adjunction.
+Figure \ref{Vvx} shows the adjunction tree for non-inverted
+sentences\footnote{We saw this tree briefly in section \ref{case-for-verbs},
+but with most of its features missing.  The full tree is presented here.}.
 
 \begin{figure}[htb]
 \centering
-\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betavVX.ps,height=3.0in}
-\caption{\label{vVX} Tree:  $\beta$vVX}
-\end{figure}
-
-
-In inverted sentences, two trees adjoin to the tree anchored by the
-main verb: $\beta$vS anchored by the auxiliary verb and $\beta$vVX
-anchored by an empty element Figure \ref{inv-set}.
-
-\begin{figure}[htb]
-\begin{tabular}{cc}
-\centering
-{\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betavS.ps,height=10.0cm}}&
-{\psfig{figure=/mnt/linc/extra/xtag/work/beth/ps/betavVX-epsilon.ps,height=10.0cm}}\\
-Tree: $\beta$vS& Tree: $\beta$vVX[$\epsilon$]
+\rule[.1in]{4.0in}{0.01in}\\ 
+\begin{tabular}{c}
+\psfig{figure=ps/auxs-files/betaVvx-with-features.ps,height=3.0in}
 \end{tabular}
-\caption{\label{inv-set} Tree sequence for auxiliary verb inversion}
+\caption{Auxiliary verb tree for non-inverted sentences}
+\rule[.1in]{4.0in}{0.01in}\\
+\label{Vvx} 
 \end{figure}
 
+\begin{figure}[htb]
+\centering
+\rule[.1in]{6.0in}{0.01in} \\
+\begin{tabular}{cc}
+{\psfig{figure=ps/auxs-files/betaVvx_should-with-features.ps,height=3.45in}} &
+{\psfig{figure=ps/auxs-files/betaVvx_have-with-features.ps,height=3.45in}} \\
+\\
+{\psfig{figure=ps/auxs-files/betaVvx_been-with-features.ps,height=3.45in}} &
+{\psfig{figure=ps/auxs-files/betaVvx_being-with-features.ps,height=3.45in}} \\
+\end{tabular}
+\caption{Auxiliary trees for {\it The music should have been being played.}}
+\rule[.1in]{6.0in}{0.01in}
+\label{anchored-aux-trees}
+\end{figure}
 
- The feature {\bf $<$disp-const$>$} ensures that both of the trees in
-Figure \ref{inv-set} must adjoin to an elementary tree whenever one of
-them does. For more discussion of this mechanism, which simulates tree
-local multi-component adjunction see \cite{BAH-Srini}.  The $\beta$vVX
-tree anchored by $\epsilon$ represents the base position of the
-inverted auxiliary. It's adjunction blocks the {\bf assign-case}
-values of VP's dominated by $\epsilon$-anchored VP from being
-coindexed with the {\bf $<$case$>$} value of the subject. Since {\bf
-assign-case} values from the VP are blocked, the {\bf $<$case$>$}
-value of the subject can only be coindexed with the {\bf
-$<$assign-case$>$} value of the inverted auxiliary.  Consequently, the
-inverted auxiliary fuctions as the case-assigner for the subject in
-these inverted structures in contrast to the situation in univerted
-structures where the anchor of the highest VP assigns case to the
-subject.  This account is similar to GB accounts if the highest VP is
-taken as roughly corresponding to IP and the inverted auxiliary plus
-$\epsilon$-anchored $\beta$vVX are taken as representing I to C
-movement.
+The restrictions outlined in Column 3 of Table \ref{aux-table} are implemented
+through the features {\it $<$mode$>$}, {\it $<$perfective$>$}, {\it
+$<$progressive$>$}, and {\it $<$passive$>$}.  The syntactic lexicon entries for
+the auxiliaries gives values for these features on the foot node~(VP$_{*}$) in
+Figure \ref{Vvx}.  Since the top features of the foot node must unify with the
+bottom features of the node it adjoins onto for the sentence to be valid, this
+enforces the restrictions made by the auxiliary node.  In addition to these
+feature values, each auxiliary also gives values to the anchoring
+node~(V$\diamond$), to be passed up the tree to the root VP~(VP$_{r}$) node;
+there they will become the new features for the top VP node of the sentential
+tree.  Another auxiliary may now adjoin on top of it, and so forth.  These
+feature values thereby ensure the proper auxiliary sequencing.  Figure
+\ref{anchored-aux-trees} shows the auxiliary trees anchored by the 4 auxiliary
+verbs in sentence (\ex{0}).  Figure \ref{non-inverted-sentence} shows the
+final tree created for this sentence.
 
-The requirements in Table (\ref{aux-table}) are implemented through the
-multi-valued {\bf $<$mode$>$} feature and by the binary features {\bf
-$<$perf$>$}, {\bf $<$prog$>$},  and {\bf $<$passive$>$} . The synatctic lexicon
-entries for the auxiliaries include values for {\bf mode}, {\bf
-pass}, {\bf prog}, and {\bf perf}  features on the VP foot node of
-$\alpha$vVX.  These feature values ensure the proper auxiliary
-sequencing.  Examples of syntactic entries for auxiliaries are shown
-in 
-\addtocounter{figure}{1}
-Figure \arabic{figure}.
-\begin{quote}
-\tiny
-\begin{verbatim}
-;; AUXILIARY "HAVE"
-INDEX:  have/1
-ENTRY:  have
-POS:    V
-TREES:  Vvx
-FS:     #V_base #VPr_mainv- #VPr_perfect+ #VP_ppart #VP_pass- #V_displ-set1-
-EX:     he will have died
+\begin{figure}[htb]
+\centering
+\rule[.1in]{4.0in}{0.01in} \\
+\begin{tabular}{c}
+{\psfig{figure=ps/auxs-files/non-inverted-sentence.ps,height=3.0in}} \\
+\end{tabular}
+\caption{{\it The music should have been being played.}}
+\rule[.1in]{4.0in}{0.01in}
+\label{non-inverted-sentence}
+\end{figure}
 
-INDEX:  have/1
-ENTRY:  have
-POS:    V
-TREES:  Vs
-FS:     #Sr_ind #Sr_pres #Sr_perfect+ #S_ppart #S_pass-
+The general English restriction that matrix clauses must have tense (or be
+imperatives) is enforced by requiring the top S-node of a sentence to have {\it
+$<$mode$>$= ind/imp} (indicative or imperative).  Since only the indicative
+sentences have tense, non-tensed clauses are restricted to occurring in embedded
+environments. 
 
-INDEX:  have/1
-ENTRY:  have
-POS:    V
-TREES:  Vvx
-FS:     #VPr_ind #VPr_present #VPr_perfect+ #VP_ppart #VP_pass- #V_displ-set1-
-EX:     he has died; we have died
+\subsection{Inverted Sentences}
 
-INDEX:  have/1
-ENTRY:  have
-POS:    V
-TREES:  Vs
-FS:     #Sr_ind #Sr_past #Sr_perfect+ #S_ppart #S_pass- #V_displ-set1-
-EX:     had we died; had they died
-
-INDEX:  have/1
-ENTRY:  have
-POS:    V
-TREES:  Vvx
-FS:     #VPr_ind #VPr_past #VPr_perfect+ #VP_ppart #VP_pass- #V_displ-set1-
-EX:     he had died; we had died
-
-;; MUST
-;;
-INDEX:  must/1
-ENTRY:  must
-POS:    V
-TREES:  Vvx
-FS:     #VP_base #V_displ-set1-
-
-INDEX:  must/2
-ENTRY:  must
-POS:    V
-TREES:  Vs
-FS:     #S_base
+In inverted sentences, the two trees shown in Figure \ref{inverted-trees}
+adjoin to an S tree anchored by a main verb.  The tree in Figure 
+\ref{inverted-trees}a is anchored by the auxiliary verb and adjoins to the S
+node, while Tree \ref{inverted-trees}b is anchored by an empty element and
+adjoins at the VP node.  Figure \ref{yes/no-question} shows these trees
+(anchored by {\it will}) adjoined to the declarative transitive
+tree\footnote{The declarative transitive tree was seen in section
+\ref{subcat-frames}.} (anchored by main verb {\it buy}).
 
 
-;; PROGRESSIVE "BE"
-INDEX:  be/7
-ENTRY:  be
-POS:    V
-TREES:  Vvx
-FS:     #VPr_mainv- #VPr_prog+ #VP_ger #V_displ-set1-
+\begin{figure}[htb]
+\centering
+\rule[.1in]{4.0in}{0.01in} \\
+\begin{tabular}{cc}
+{\psfig{figure=ps/auxs-files/betaVs-with-features.ps,height=3.0in}} &
+{\psfig{figure=ps/auxs-files/betaVvx_epsilon-with-features.ps,height=3.2in}} \\
+(a) & (b) \\ 
+\end{tabular}
+\caption{Trees for auxiliary verb inversion}
+\rule[.1in]{4.0in}{0.01in}
+\label{inverted-trees}
+\end{figure}
 
-INDEX:  be/8
-ENTRY:  be
-POS:    V
-TREES:  Vs
-FS:     #Sr_prog+ #S_ger
+\begin{figure}[htb]
+\centering
+\rule[.1in]{4.0in}{0.01in} \\
+\begin{tabular}{c}
+{\psfig{figure=ps/auxs-files/yes-no-question.ps,height=3.0in}} \\
+\end{tabular}
+\caption{{\it Will John buy a backpack?}}
+\rule[.1in]{4.0in}{0.01in}
+\label{yes/no-question}
+\end{figure}
+
+The feature {\it $<$displ-const$>$} ensures that both of the trees in Figure
+\ref{inverted-trees} must adjoin to an elementary tree whenever one of them does. For
+more discussion on this mechanism, which simulates tree local multi-component
+adjunction, see \cite{hockeysrini93} [NOTE: refer to section in this report, if
+we include it].  Tree \ref{inverted-trees}b, anchored by $\epsilon$, represents
+the originating position of the inverted auxiliary. Its adjunction blocks the
+{\it $<$assign-case$>$} values of the VP it dominates from being coindexed with
+the {\it $<$case$>$} value of the subject. Since {\it $<$assign-case$>$} values
+from the VP are blocked, the {\it $<$case$>$} value of the subject can only be
+coindexed with the {\it $<$assign-case$>$} value of the inverted auxiliary
+(Tree \ref{inverted-trees}a).  Consequently, the inverted auxiliary functions
+as the case-assigner for the subject in these inverted structures.  This is in
+contrast to the situation in uninverted structures where the anchor of the
+highest (leftmost) VP assigns case to the subject (see Section
+\ref{case-for-verbs} for more on case assignment).  The XTAG analysis is similar to
+GB accounts where the inverted auxiliary plus the $\epsilon$-anchored tree are
+taken as representing I to C movement.
+
+\subsection{Do-Support}
+
+It is well-known that English requires a mechanism called 'do-support' for
+negated sentences and for inverted yes-no questions without auxiliaries.
+
+\enumsentence {John does not want a car.}
+\enumsentence {*John not wants a car.}
+\enumsentence {John will not want a car.}
+\enumsentence {Do you want to leave home?}
+\enumsentence {*Want you to leave home?}
+\enumsentence {Will you want to leave home?}
+
+\subsubsection{In negated sentences}
+\label{do-support-negatives}
+
+The GB analysis of do-support in negated sentences hinges on the separation of
+the INFL and VP nodes (see \cite{chomsky65}, \cite{jackendoff72}, and
+\cite{chomsky86}).  The claim is that the presence of the negative morpheme
+blocks the main verb from getting tense from the INFL node, thereby forcing the
+addition of a verbal lexeme to carry the inflectional elements.  If an
+auxiliary verb is present, then it carries tense, but if not, periphrastic or
+`dummy', {\it do} is required.  This seems to indicate that {\it do} and other
+auxiliary verbs would not co-occur, and indeed this is the case (see sentences
+(\ex{1}) - (\ex{2})).  Auxiliary {\it do} is allowed in English when no
+negative morpheme is present, but this usage is marked as emphatic.  Emphatic
+{\it do} is also not allowed to co-occur with auxiliary verbs (sentences
+(\ex{3}) - (\ex{6})).
+
+\enumsentence {*We will have do bought a sleeping bag.}
+\enumsentence {*We do will have bought a sleeping bag.}
+\enumsentence {You {\bf do} have a backpack, don't you?}
+\enumsentence {I {\bf do} want to go!}
+\enumsentence {*You {\bf do} can have a backpack, don't you?}
+\enumsentence {*I {\bf did} have had a backpack!}
+
+In the XTAG grammar, {\it do} is prevented from co-occurring with other
+auxiliary verbs by a requirement that it adjoin only onto main verbs.  It has
+indicative mode, so no other auxiliaries can adjoin above it\footnote{Earlier,
+we said that indicative mode carries tense with it.  Since only the topmost
+auxiliary carries the tense, any subsequent verbs must {\bf not} have
+indicative mode.}.  {\it Do} or another auxiliary is required to adjoin on top
+of a negative morpheme by allowing {\it not} to only adjoin onto an
+non-indicative (and therefore non-tensed) verb.  Since all matrix clauses must
+be indicative (or imperative), a negative sentence will fail without an
+auxiliary verb.  This analysis allows {\it not} the freedom to move around in
+the auxiliaries, as seen in the sentences (\ex{1}) - (\ex{4}).
+
+\enumsentence {John will have had a backpack.}
+\enumsentence {*John not will have had a backpack.}
+\enumsentence {John will not have had a backpack.}
+\enumsentence {John will have not had a backpack.}
+
+\subsubsection{In inverted yes/no questions}
+
+In inverted yes/no questions, {\it do} is required if there is no auxiliary
+verb to invert, as seen in sentences (\ex{-12}) - (\ex{-10}), replicated here
+as (\ex{1}) - (\ex{3}).
+
+\enumsentence {Do you want to leave home?}
+\enumsentence {*Want you to leave home?}
+\enumsentence {Will you want to leave home?}
+\enumsentence {*Do you will want to leave home?}
+
+In English, unlike other Germanic languages, the main verb cannot move to the
+beginning of a clause, with the exception of main verb {\it be}\footnote{The
+inversion of main verb {\it have} in British English was previously noted.}.
+In a GB account of inverted yes/no questions, the tense feature is said to be
+in C$^{0}$ at the front of the sentence.  Since main verbs cannot move, they
+cannot pick up the tense feature, and do-support is again required if there is
+no auxiliary verb to perform the role.  Sentence (\ex{0}) shows that {\it do}
+does not interact with other auxiliary verbs, even when in the inverted
+position.
+
+In XTAG, trees anchored by a main verb that lacks tense are required to have an
+auxiliary verb adjoin onto them, whether at the VP node to form a declarative
+sentence, or at the S node to form an inverted question.  {\it Do} selects the
+inverted auxiliary trees given in Figure \ref{inverted-trees}, just as other
+auxiliaries do, so it is available to adjoin onto a tree at the S node to form
+a yes/no question.  The mechanism described in Section \ref{do-support-negatives} 
+prohibits {\it do} from co-occuring with other auxiliary verbs even in the
+inverted position.
 
 
-\end{verbatim}
-\normalsize
-\center Figure \arabic{figure}: Auxiliary verb syntactic database entries
-\end{quote}
+\subsection{Infinitives}
 
+The infinitive {\it to} is considered an auxiliary verb in the XTAG system, and
+selects the auxiliary tree in Figure \ref{Vvx}.  {\it To}, like {\it do}, does
+not interact with the other auxiliary verbs, adjoining only to main verb base
+forms, and carrying infinitive mode.  It is used in embedded clauses, both with
+and without a complementizer, as in sentences (\ex{1}) - (\ex{3}).  Since it
+cannot be inverted, it simply does not select the trees in Figure
+\ref{inverted-trees}.
 
+\enumsentence {John wants to have a backpack.}
+\enumsentence {John wants Mary to have a backpack.}
+\enumsentence {John wants for Mary to have a backpack.}
 
- As can be seen in (\ref{vVX}) the root VP node inherits {\bf $<$tense$>$}, {\bf $<$mode$>$} and
-{\bf $<$agr$>$} values from its auxiliary verb anchor, so the compound VP is
-of the same variety as its leftmost verb. The feature values on the
-VP foot node enforce the restrictions shown in Table (\ref{}) column 3.
-Main clauses must have tense. The feature {\bf $<$tense$>$} only has values
-specified for verbs that are also {\bf $<$mode$>$= ind} or {\bf $<$mode$>$= imp}, so by requiring one of these values for mode, tense is also required.  The parser enforces the restriction that main clauses must have tense by requiring the top S-node of a sentence to have {\bf $<$mode$>$= ind/imp}.  Since only tensed sentences can have {\bf $<$mode$>$=ind} and only imperatives can have {\bf $<$mode$>$=imp}, non-tensed clauses are restricted to occuring in embedded environments.  
+Its usage interacts closely with the distribution of null subjects (PRO), and
+is described in more detail in Section \ref{inf-clauses}.
