@@ -800,9 +800,8 @@ Features that are peculiar to the relative clause system are:\\
 {\bf $<$nocomp-mode$>$}, possible values are {\bf inf/ger/ppart}\\
 {\bf $\langle$rel-clause$\rangle$}, possible values are {\bf +/--}
 
-\begin{flushleft}
-{\bf $\bullet$ $<$nocomp-mode$>$}:
-\end{flushleft}
+\begin{itemize}
+\item {\bf $\bullet$ $<$nocomp-mode$>$}:
 
 Relative clauses which have subject extraction cannot have a null COMP,
 unless there is an intervening clause or the relative clause is a reduced
@@ -811,12 +810,10 @@ feature set of the root node of the relative clause is specified for {\bf
 $<$nocomp-mode$>$} with {\bf inf/ger/ppart} in conjunction with the
 following equations:
 
-\begin{itemize}
-\item {\bf S$_{r}$.t:$\langle$nocomp-mode$\rangle =$ inf/ger/ppart} (in
-relative clause trees with subject extraction)
-\item {\bf S$_{r}$.b:$\langle$nocomp-mode$\rangle =$
-S$_{r}$.b:$\langle$mode$\rangle$}
-\end{itemize}
+\enumsentence{{\bf S$_{r}$.t:$\langle$nocomp-mode$\rangle =$ inf/ger/ppart} (in
+relative clause trees with subject extraction)}
+\enumsentence{{\bf S$_{r}$.b:$\langle$nocomp-mode$\rangle =$
+S$_{r}$.b:$\langle$mode$\rangle$}}
 
 The full set of the equations above is only present in Comp
 substitution trees involving subject extraction. So the following will
@@ -831,12 +828,9 @@ transparent to the {\bf $\langle$nocomp-mode$\rangle$} feature because of the
 following equation:
 
 \enumsentence{
-{\bf S$_{m}$.b:$\langle$nocomp-mode$\rangle
-=$S$_{f}$.t:$\langle$nocomp-mode$\rangle$}}
+{\bf S$_{m}$.b:$\langle$nocomp-mode$\rangle =$S$_{f}$.t:$\langle$nocomp-mode$\rangle$}}
 
-\begin{flushleft}
-{\bf $\bullet$ $\langle$rel-clause$\rangle$}:
-\end{flushleft}
+\item {\bf $\bullet$ $\langle$rel-clause$\rangle$}:
 
 The XTAG analysis forces the adjunction of the determiner below the
 relative clause. This is done by using the {\bf
@@ -846,50 +840,45 @@ $\langle$rel-clause$\rangle$} feature. The relevant equations are:
 \enumsentence{ On the foot node of the 
 Determiner tree: {\bf NP$_{f}$.t:$\langle$rel-clause$\rangle = -$}}
 
-Relative clauses also use the $<$mode$>$ and the $<$comp$>$ features in a
-manner largely parallel to the way they are used in sentential
-complementation. Some of the feature specifications and equations that are
-specific to relative clause formation are discussed below:
+Relative clauses also use the {\bf $<$mode$>$} and the {\bf $<$comp$>$}
+features in a manner largely parallel to the way they are used in
+sentential complementation. Some of the feature specifications and
+equations that are specific to relative clause formation are discussed
+below:
 
-$\bullet$ Complementizers (which appear in relative clauses via adjunction)
+\item Complementizers (which appear in relative clauses via adjunction)
 can never cooccur with the overt extracted {\bf $+<$wh$>$} NP (cf. *{\it I
 saw the man who$_i$ that Muriel saw $\epsilon$$_{i}$}).  Consequently, the
 auxiliary $\beta$COMPs trees are prevented from adjoining at the {\bf
 S$_r$} node in the relative clause trees by the equation
 
-\begin{itemize}
-\item {\bf S$_{r}$.t:$\langle$comp$\rangle =$ nil}
-\end{itemize}
+\enumsentence{{\bf S$_{r}$.t:$\langle$comp$\rangle =$ nil}}
 
 which will always fail to unify with the (non-{\bf nil}) values of the {\bf
 $<$comp$>$} feature in the $\beta$COMPs trees.
 
-$\bullet$ Relative clause trees that have {\bf NP$_{w}$} as a substitution
+\item Relative clause trees that have {\bf NP$_{w}$} as a substitution
 node have the feature equation given below.
 
-\begin{itemize}
-\item {\bf S$_{r}$.t:$\langle$mode$\rangle =$ind}
-\end{itemize}
+\enumsentence{{\bf S$_{r}$.t:$\langle$mode$\rangle =$ind}}
 
-$\bullet$ Trees with a {\bf PP$_{w}$} substitution node have the feature
+\item Trees with a {\bf PP$_{w}$} substitution node have the feature
 equation:
 
-\begin{itemize}
-\item {\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}
-\end{itemize}
+\enumsentence{{\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}}
 
-$\bullet$ In relative clauses with covert extracted {\bf $+<$wh$>$ NP}, the
+\item In relative clauses with covert extracted {\bf $+<$wh$>$ NP}, the
 mode of relative clause varies depending on which argument has been
 extracted. The full set of mode restrictions on the different relative
 clause trees is as follows:
 
-\begin{itemize}
-\item For all non-passive cases of subject extraction, {\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/inf}
-\item For all passive cases of subject extraction, {\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/ppart/inf}
-\item For all cases of non-subject extraction, {\bf
-S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}
+\enumsentence{For all non-passive cases of subject extraction, {\bf
+S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/inf}}
+\enumsentence{For all passive cases of subject extraction, {\bf
+S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/ppart/inf}}
+\enumsentence{For all cases of non-subject extraction, {\bf
+S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}}
+
 \end{itemize}
 
 \section{Determiner ordering}
