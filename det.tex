@@ -1,23 +1,27 @@
 \chapter{Determiners and Noun Phrases}
 \label{det-comparitives}
 
-In our English XTAG grammar,\footnote{A more detailed discussion of the analysis in this chapter is currently being revised to appear in a forthcoming CSLI volume on Tree Adjoining Grammar. Drafts of the CSLI chapter should be available for anyone particularly interested around October 1997.} all nouns select the noun phrase (NP)
-tree structure shown in Figure~\ref{np-tree}.  Common nouns do not
-require determiners in order to form grammatical NPs. Rather than
-being ungrammatical, singular countable nouns without determiners are
-restricted in interpretation and can only be interpreted as mass
-nouns.  Allowing all nouns to head determinerless NPs correctly treats
-the individuation in countable NPs as a property of
-determiners. Common nouns have negative(``-'') values for determiner
-features in the lexicon in our analysis and can only acquire a
-positive(``+'') value for those features if determiners ajoin to them.
-Other types of NPs such as pronouns and proper nouns have been argued
-by Abney \cite{Abney87} to either be determiners or to move to the
-determiner position because they exhibit determiner-like behavior. We
-can capture this insight in our system by giving pronouns and proper
-nouns positive values for determiner features. For example pronouns
-and proper nouns would be marked as definite, a value that common
-nouns can only obtain by having a definite determiner adjoin.
+In our English XTAG grammar,\footnote{A more detailed discussion of
+this analysis can be found in \cite{ircs:det98}} all nouns select the
+noun phrase (NP) tree structure shown in Figure~\ref{np-tree}.  Common
+nouns do not require determiners in order to form grammatical
+NPs. Rather than being ungrammatical, singular countable nouns without
+determiners are restricted in interpretation and can only be
+interpreted as mass nouns.  Allowing all nouns to head determinerless
+NPs correctly treats the individuation in countable NPs as a property
+of determiners. Common nouns have negative(``-'') values for
+determiner features in the lexicon in our analysis and can only
+acquire a positive(``+'') value for those features if determiners
+adjoin to them.  Other types of NPs such as pronouns and proper nouns
+have been argued by Abney \cite{Abney87} to either be determiners or
+to move to the determiner position because they exhibit
+determiner-like behavior. We can capture this insight in our system by
+giving pronouns and proper nouns positive values for determiner
+features. For example pronouns and proper nouns would be marked as
+definite, a value that NPs containing common nouns can only obtain by
+having a definite determiner adjoin. In addition to the determiner
+features, nouns also have values for features such as reflexive
+(refl), case, pronoun (pron) and conjunction (conj).
 
 
 \begin{figure}[ht]
@@ -34,7 +38,16 @@ nouns can only obtain by having a definite determiner adjoin.
   A single tree structure is selected by simple determiners, an
 auxiliary tree which adjoins to NP. An example of this determiner tree
 anchored by the determiner {\it these\/} is shown in
-Figure~\ref{det-trees}. Complex determiners such as partitives and
+Figure~\ref{det-trees}. In addition to the determiner features the
+tree in Figure~\ref{det-trees} has noun features such as {\bf case}
+(see section 4.4.2),
+the {\bf conj} feature to control conjunction (see Chapter \ref{conjunction}), {\bf
+rel-clause$-$} (see Chapter \ref{rel_clauses})and {\bf gerund$-$} (see
+Chapter \ref{gerunds-chapter}) which prevent determiners from adjoining on top
+of relative clauses and gerund NPs respectively, and the {\bf
+displ-const} feature which is used to simulate multi-component adjunction.
+
+Complex determiners such as partitives and
 genitives also anchor tree structures that adjoin to NP. They differ
 from the simple determiners in their internal complexity. Details of
 our treatment of these more complex constructions appear in Sections 3
@@ -65,29 +78,29 @@ selectional relationships. That is, the head serves as the anchor of
 the tree and it's complement is a sister node in the same elementary tree.
 
 
-The XTAG treatment of determiners uses a set of eight
-features for representing their properties. Most of these determiner features
-were developed by semanticists in their accounts of semantic phenomena
-related to quantifiers
-\cite{KeenanStavi86:LP,Partee90:BK} but when used together also
-account for a substantial portion of the complex patterns of
-determiner sequencing. Although we do not claim to have exhaustively
-covered the complex determiner system of English, we do cover a large
-subset, both in terms of the phenomena handled and in terms of corpus
-coverage. The XTAG grammar has also been extended to include complex
-determiner constructions such as genitives and partitives using these
-determiner features.
+The XTAG treatment of determiners uses nine features for representing
+their properties: {\bf definiteness} (definite), {\bf quantity}
+(quan), {\bf cardinality} (card), {\bf genitive} (gen), {\bf
+decreasing} (decreas), {\bf constancy} (const), {\bf wh}, {\bf
+agreement} (agr), and {\bf complement} (compl). Seven of these
+features were developed by semanticists for their accounts of semantic
+phenomena (\cite{KeenanStavi86:LP}, \cite{BarwiseCooper81:LP},
+\cite{Partee90:BK}), another which was developed for a semantic
+account of determiner negation by one of the authors of this
+determiner analysis (\cite{Mateyak97}), and the last is the familiar
+agreement feature. When used together these features also account for
+a substantial portion of the complex patterns of English determiner
+sequencing. Although we do not claim to have exhaustively covered the
+sequencing of determiners in English, we do cover a large subset, both
+in terms of the phenomena handled and in terms of corpus coverage. The
+XTAG grammar has also been extended to include complex determiner
+constructions such as genitives and partitives using these determiner
+features.
 
 Each determiner carries with it a set of values for these features
 that represents its own properties, and a set of values for the
-properties of NPs to which can adjoin. Features are crucial to
-ordering determiners correctly.  We have identified eight features
-which are sufficient to order the determiners.  These features are:
-{\bf definiteness}, {\bf quantity}, {\bf cardinality}, {\bf genitive},
-{\bf decreasing}, {\bf constancy}, {\bf wh}, and {\bf agr}. {\bf
-Definiteness}, {\bf quantity}, {\bf cardinality}, {\bf genitive}, {\bf
-decreasing} and {\bf constancy} have been previously proposed as
-semantic properties of determiners.  The semantic definitions
+properties of NPs to which can adjoin. The features are crucial to
+ordering determiners correctly. The semantic definitions
 underlying the features are given below.
 
 \begin{description}
@@ -125,6 +138,12 @@ E is a domain, then we say that a determiner displays constancy if
 Det$_{E}$AB~$\leftrightarrow$~Det$_{E^{\prime}}$AB. Modified from
 \cite{Partee90:BK}
 
+\item[Complement:] Possible Values [+/--]. \\
+A determiner Q is positive complement if and only if for every set X, there
+exists a continuous set of possible values for the size of the negated
+determined set, NOT(QX), and the cardinality of QX is the only aspect of QX
+that can be negated. (adapted from \cite{Mateyak97})
+
 \end{description}
 
 The {\bf wh}-feature has been discussed in the linguistics literature mainly in relation to wh-movement and with respect to NPs and nouns as well as determiners. We give a shallow but useful working definition of the {\bf wh}-feature below:
@@ -145,7 +164,7 @@ example, {\it a\/} can only adjoin to singular nouns ({\it a dog\/} vs
 dogs\/} vs {\it $\ast$many dog\/}). Other determiners such as {\it some} are
 unspecified for agreement in our analysis because they are compatible
 with either singulars or plurals ({\it some dog}, {\it some
-dogs}). The possible values of agreement for determiners are: [3sg, 3pl, 3sgpl].
+dogs}). The possible values of agreement for determiners are: [3sg, 3pl, 3].
 
 
 
@@ -154,36 +173,67 @@ The determiner tree in Figure~\ref{det-trees} shows the appropriate
 feature values for the determiner {\it these}, while Table \ref{det-values}
 shows the corresponding feature values of several other common determiners.
 
-\small
+
 \begin{table}
 \centering
-\begin{tabular}{|l||c|c|c|c|c|c|c|c|}
+\begin{tabular}{|l||c|c|c|c|c|c|c|c|c|}
 \hline
-Det&defin&quan&card&gen&wh&decreas&const&agr\\
+Det&definite&quan&card&gen&wh&decreas&const&agr&compl\\
 \hline
 \hline
-all&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3pl\\
-this&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sg\\
-that&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sg\\
-what&$+$&$-$&$-$&$-$&$+$&$-$&$+$&3sgpl\\
-the&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sgpl\\
-every&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
-each&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
-any&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
-a&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg\\
-no&$+$&$+$&$-$&$-$&$-$&$-$&$+$&3sgpl\\
-few&$-$&$+$&$-$&$-$&$-$&$+$&$-$&3pl\\
-many&$-$&$+$&$-$&$-$&$-$&$-$&$-$&3pl\\
-GEN&$+$&$-$&$-$&$+$&$-$&$-$&$+$&\\
-CARD&$+$&$+$&$+$&$-$&$-$&$-$&$+$&3pl\footnotemark\ \\
-PART&$-$&&$-$&$-$&$-$&$-$&$+$&\\
+all&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3pl&$+$\\
+both&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3pl&$+$\\
+this&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sg&$-$\\
+these&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+that&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3sg&$-$\\
+those&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+what&$-$&$-$&$-$&$-$&$+$&$-$&$+$&3&$-$\\
+whatever&$-$&$-$&$-$&$-$&$-$&$-$&$+$&3&$-$\\
+which&$-$&$-$&$-$&$-$&$+$&$-$&$+$&3&$-$\\
+whichever&$-$&$-$&$-$&$-$&$-$&$-$&$+$&3&$-$\\
+the&$+$&$-$&$-$&$-$&$-$&$-$&$+$&3&$-$\\
+each&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg&$-$\\
+every&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg&$+$\\
+a/an&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg&$+$\\
+some$_{1}$&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3&$-$\\
+some$_{2}$&$-$&$+$&$-$&$-$&$-$&$-$&$-$&3pl&$-$\\
+any&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg&$+$\\
+another&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3sg&$+$\\
+few&$-$&$+$&$-$&$-$&$-$&$+$&$-$&3pl&$-$\\
+a few&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+many&$-$&$+$&$-$&$-$&$-$&$-$&$-$&3pl&$+$\\
+many a/an&$-$&$+$&$-$&$-$&$-$&$-$&$-$&3sg&$+$\\
+several&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+various&$-$&$-$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+sundry&$-$&$-$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+no&$-$&$+$&$-$&$-$&$-$&$+$&$+$&3&$-$\\
+neither&$-$&$-$&$-$&$-$&$-$&$+$&$+$&3&$-$\\
+either&$-$&$-$&$-$&$-$&$-$&$-$&$+$&3&$-$\\
+\hline
+\hline
+GENITIVE&$+$&$-$&$-$&$+$&$-$&$-$&$+$&UN\footnotemark&$-$\\
+CARDINAL&$-$&$+$&$+$&$-$&$-$&$-$&$+$&3pl\footnotemark\ &$-$\footnotemark\ \\
+PARTITIVE&$-$&+/-\footnotemark\ &$-$&$-$&$-$&$-$&$+$&UN&+/-\\
 \hline
 \end{tabular}
- \caption{Determiner Features}
+ \caption{Determiner Features associated with D anchors}
 \label{det-values}
-\end{table}\addtocounter{footnote}{0}\footnotetext{{except {\it one} which is 3sg}} 
+\end{table}
+\addtocounter{footnote}{-3}
+\footnotetext{We use the symbol UN to represent the fact that the selectional
+restrictions for a given feature are unspecified, meaning the noun phrase that
+the determiner selects can be either positive or negative for this
+feature.}
+\stepcounter{footnote}
+\footnotetext{Except {\it one} which is 3sg.}
+\stepcounter{footnote}
+\footnotetext{Except {\it one} which is {\bf complem+}.}
+\stepcounter{footnote}
+\footnotetext{A partitive can be either {\bf quan+} or {\bf quan-}, depending
+upon the nature of the noun that anchors the partitive.  If the anchor noun is
+modified, then the quantity feature is determined by the modifier's quantity
+value.}
 
-\normalsize
 
 In addition to the features that represent their own properties, determiners
 also have features to represent the selectional
@@ -194,42 +244,108 @@ restriction imposed by {\it these}\footnote{In addition to this tree, {\it
 these} would also anchor another auxiliary tree that adjoins onto {\bf card+}
 determiners.}, while Table~\ref{det-ordering} shows the corresponding
 selectional feature restrictions of several other determiners.
-
 \small
 \begin{table}
 \centering
-\begin{tabular}{|l||c|c|c|c|c|c|c|c|}
+\begin{tabular}{|l||c|c|c|c|c|c|c|c|c||l|}
 \hline
-Det&defin&quan&card&gen&wh&decreas&const&agr\\
+Det&defin&quan&card&gen&wh&decreas&const&agr&compl&{\it e.g.}\\
 \hline
 \hline
-all&$+$&$-$&$-$&&$-$&&&\\
-&&&$+$&&&&&\\
-this&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-that&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-what&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-the&$-$&&&&$-$&&$-$&\\
-&&&$+$&&&&&\\
-every&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-each&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-any&$-$&&&&$-$&$+$&&\\
-&&&$+$&&&&&\\
-a&$-$&&&&$-$&$+$&&\\
-many&\multicolumn{8}{c|}{only nouns}\\
-no&\multicolumn{8}{c|}{only nouns}\\
-GEN&\multicolumn{8}{c|}{only nouns}\\
-CARD&\multicolumn{8}{c|}{only nouns}\\
-PART&&&&&$-$&&&\\
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+all&$+$&$-$&$-$&UN&$-$&UN&UN&3pl&$-$&{\it these dogs}\\
+&UN&UN&$+$&UN&UN&UN&UN&3pl&UN&{\it five dogs}\\
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+\rb{both}&$+$&$-$&$-$&UN&$-$&UN&UN&3pl&$-$&{\it these dogs}\\
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
+&$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN&{\it few dogs}\\
+\rb{this/that}&$-$&$+$&UN&UN&$-$&$-$&$-$&3pl&$+$&{\it many dogs}\\
+&UN&UN&$+$&UN&UN&UN&UN&3sg&UN&{\it five dogs}\\
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+these/those&$-$&$+$&UN&UN&$-$&$+$&$-$&3pl&UN&{\it few dogs}\\
+&UN&UN&$+$&UN&UN&UN&UN&3pl&UN&{\it five dogs}\\
+\hline
+what/which&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3&$-$&{\it dog(s)}\\
+whatever&$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN&{\it few dogs}\\
+whichever&UN&UN&$+$&UN&UN&UN&UN&3&UN&{\it many dogs}\\
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3&$-$&{\it dog(s)}\\
+the&$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN&{\it few dogs}\\
+&$-$&$+$&UN&UN&$-$&$-$&$-$&3pl&$+$&{\it many dogs}\\
+&UN&UN&$+$&UN&UN&UN&UN&3&UN&{\it five dogs}\\
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
+every/each&$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN&{\it few dogs}\\
+&UN&UN&$+$&UN&UN&UN&UN&3&UN&{\it five dogs}\\
+\hline
+a/an&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
+\hline
+some$_{1,2}$&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3&$-$&{\it dog(s)}\\
+some$_{1}$&UN&UN&$+$&UN&UN&UN&UN&3pl&UN&{\it dogs}\\
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
+any&$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN&{\it few dogs}\\
+&UN&UN&$+$&UN&UN&UN&UN&3&UN&{\it five dogs}\\
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
+another&$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN&{\it few dogs}\\
+&UN&UN&$+$&UN&UN&UN&UN&3&UN&{\it five dogs}\\
+\hline
+few&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+\hline
+a few&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+\hline
+many&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+\hline
+many a/an&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
+\hline
+several&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+\hline
+various&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+\hline
+sundry&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl&$-$&{\it dogs}\\
+\hline
+no&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3&$-$&{\it dog(s)}\\
+\hline
+neither&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
+\hline
+either&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3sg&$-$&{\it dog}\\
 \hline
 \end{tabular}
-\caption{Selectional Restrictions Imposed by Determiners}
+\caption{Selectional Restrictions Imposed by Determiners on the NP
+foot node}
 \label{det-ordering}
 \end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|l||c|c|c|c|c|c|c|c|c|}
+\hline\hline
+Det&definite&quan&card&gen&wh&decreas&const&agr&compl\\
+\hline
+\hline
+&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3&$-$\\
+&$-$&$+$&UN&UN&$-$&$+$&$-$&3&UN\\
+GENITIVE&$-$&$+$&UN&UN&$-$&$-$&$-$&3pl&$+$\\
+&UN&UN&$+$&UN&UN&UN&UN&3&UN\
+&$-$&$+$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+&$-$&$-$&$-$&$-$&$-$&$-$&$+$&3pl&$-$\\
+\hline
+CARDINAL&$-$&$-$&$-$&$-$&$-$&$-$&$-$&3pl\footnotemark&$-$\\
+\hline
+PARTITIVE&UN&UN&UN&UN&$-$&UN&UN&UN&UN\\
+\hline
+\end{tabular}
+\caption{Selectional Restrictions Imposed by Groups of
+Determiners/Determiner Constructions}
+\label{det-ordering2}
+\end{table}
+\footnotetext{{\it one} differs from the rest of CARD in selecting
+singular nouns}
+
 
 \normalsize
 
@@ -244,7 +360,7 @@ this is correctly represented by the coindexation of the determiner
 and root NP nodes' values for the wh-feature. Wh+ determiners'
 selectional restrictions on the NP foot node of their tree only allows them
 adjoin onto NPs that are {\bf wh-} or unspecified for the
-wh-feature. Therefore ungrammatical sequences such as {\it which what
+wh-feature. Therefore ungrammatical sequences such as {\it $\ast$which what
 dog} are impossible.  The adjunction of {\bf wh +} determiners onto
 {\bf wh+} pronouns is also prevented by the same mechanism.
 
@@ -282,14 +398,20 @@ succeeded .}
 
 There are two kinds of genitive constructions: genitive pronouns, and genitive
 NP's (which have an explicit genitive marker, {\it 's}, associated with them).
-It is clear from examples such as {\it her dog was run over\/} vs {\it
-$\ast$dog was run over\/} that genitive pronouns function as determiners and as
+It is clear from examples such as {\it her dog returned home\/} and
+{\it her five dogs returned home} vs {\it
+$\ast$dog returned home\/} that genitive pronouns function as determiners and as
 such, they sequence with the rest of the determiners.  The features for the
-genitives are the same as for other determiners.  No {\bf agr} is specified in
-Table \ref{det-values}, since the {\bf number} and {\bf person} of the genitive
-will depend on its particular form (i.e.\ {\it my} vs {\it their}).  Genitives
-are not required to agree with either the determiners or the nouns that they
-modify.
+genitives are the same as for other determiners.  Genitives are not required to agree with
+either the determiners or the nouns in the NPs that they modify. The
+value of the {\bf agr} feature for an NP with a genitive determiner
+depends on the NP to which the genitive determiner adjoins. While it
+might seem to make sense to take {\it their} as 3pl, {\it my} as 1sg,
+and {\it Alfonso's} as 3sg, this number and person information only
+effects the genitive NP itself and bears no relationship to the number
+and person of the NPs with these items as determiners. Consequently,
+we have represented {\bf agr} as unspecified for genitives in Table
+\ref{det-values}.
 
 Genitive NP's are particularly interesting because they are potentially
 recursive structures.  Complex NP's can easily be embedded within a determiner.
@@ -297,7 +419,7 @@ recursive structures.  Complex NP's can easily be embedded within a determiner.
 \enumsentence{[[[John]'s friend from high school]'s uncle]'s mother came to town.}
 
 There are two things to note in the above example.  One is that in embedded
-NP's, the genitive morpheme comes at the end of the NP phrase, even if the head
+NPs, the genitive morpheme comes at the end of the NP phrase, even if the head
 of the NP is at the beginning of the phrase.  The other is that the determiner
 of an embedded NP can also be a genitive NP, hence the possibility of recursive
 structures.
@@ -309,7 +431,7 @@ existing NP system, including any recursive structures.  As with the simple
 determiners, there is one auxiliary tree structure for genitives which
 adjoins to NPs. As can be seen in \ref{gen-trees}, this tree is anchored by
 the genitive marker {\it 's} and has a branching D node which accomodates
-the additional complexity of genitive determiners. Also, like simple
+the additional internal structure of genitive determiners. Also, like simple
 determiners, there is one initial tree structure
 (Figure~\ref{subst-genNP-tree}) available for substitution where needed, as
 in, for example, the Determiner Gerund NP tree (see
@@ -340,7 +462,7 @@ NP's).
 
 Since the NP node which is sister
 to the G node could also have a genitive determiner in it, the type of
-genitive recursion shown in \ex{-1} is quite naturally accounted for
+genitive recursion shown in (\ex{0}) is quite naturally accounted for
 by the genitive tree structure used in our analysis.
 
 \section{Partitive Constructions}
@@ -356,14 +478,14 @@ noun that the determiner sequence modifies (as we do in Sentence~({\ex{2}})).
 \enumsentence{a {\it kind} [of these machines] {\it is} prone to failure.}
 \enumsentence{[a kind of] these {\it machines are} prone to failure.}
 
-In otherwords, for partitive constructions, the semantic head of the NP is the second rather than the first noun in linear order. That the agreement shown in ({\ex{0}}) is possible suggests that the second noun in linear order in these constructions should also be treated as the syntactic head. Note that both the partitive and PP readings are usually possible for a particular NP. In the cases where either the partitive or the PP reading is preferred, we take it to be just that, a preference, most appropriately modeled not in the grammar but in the a component such as the heuristics used with the XTAG parser for reducing the analyses produced to the most likely. 
+In other words, for partitive constructions, the semantic head of the NP is the second rather than the first noun in linear order. That the agreement shown in ({\ex{0}}) is possible suggests that the second noun in linear order in these constructions should also be treated as the syntactic head. Note that both the partitive and PP readings are usually possible for a particular NP. In the cases where either the partitive or the PP reading is preferred, we take it to be just that, a preference, most appropriately modeled not in the grammar but in the a component such as the heuristics used with the XTAG parser for reducing the analyses produced to the most likely. 
 
-In our analysis the partitive tree in Figure~ref{part-tree} is anchored
+In our analysis the partitive tree in Figure~\ref{part-tree} is anchored
 by one of a limited group of nouns that can appear in the determiner
 portion of a partitive construction. A rough semantic characterization
-of these nouns is that they either represent quantity (e.g. part, half,
-most, pot, cup, pound etc.) or classification (e.g. type, variety,
-kind, version etc.).  In the abscence of a more implementable
+of these nouns is that they either represent quantity (e.g. {\it part, half,
+most, pot, cup, pound} etc.) or classification (e.g. {\it type, variety,
+kind, version} etc.).  In the absence of a more implementable
 characterization we use a list of such nouns compiled from a
 descriptive grammar \cite{quirk85}, a thesaurus, and from online
 corpora. In our grammar the nouns on the list are the only ones that
@@ -388,44 +510,138 @@ machines'}. Notice that just as for the genitives, the complexity and
 the recursion are contained below the D node and rest of the structure
 is the same as for simple determiners.
 
-
-
-\section{Determiner Adverbs}
+\section{Adverbs, Noun Phrases, and Determiners}
 \label{adverbial-section}
 
 %% Quirk, Sections 7.62, 7.53
 
-There are some adverbs that interact with the NP and determiner system
-\cite{quirk85}, although there is some debate in the literature as to
-whether these should be classified as determiners or adverbs.
-Sentences~(\ex{1})~-~(\ex{3}) contain examples of this phenomena.
+Many adverbs interact with the noun phrase and determiner system in English.
+For example, consider sentences (\ref{approx})-(\ref{double}) below.
 
-\enumsentence{Hardly any attempt was made at restitution.}
-\enumsentence{Only Albert would say such a thing.}
-\enumsentence{Almost all the people had left by 5pm.}
+\enumsentence{\label{approx}{\bf Approximately} thirty people came to the lecture.}
+\enumsentence{\label{practically}{\bf Practically} every person in the theater was laughing
+hysterically during that scene.}
+\enumsentence{\label{only}{\bf Only} John's crazy mother can make stuffing that tastes so good.}
+\enumsentence{\label{relatively}{\bf Relatively} few programmers remember how to program in
+COBOL.}
+\enumsentence{\label{not}{\bf Not} every martian would postulate that all humans speak a
+universal language.}
+\enumsentence{\label{enough}{\bf Enough} money was gathered to pay off the group gift.}
+\enumsentence{\label{quite}{\bf Quite} a few burglaries occurred in that neighborhood last
+year.}
+\enumsentence{\label{double}I wanted to be paid {\bf double} the amount they offered.}
+
+Although there is some debate in the literature as to whether these should be
+classified as determiners or adverbs, we believe that these items that
+interact with the NP and determiner system are in fact adverbs.   These items
+exhibit a broader distribution than either determiners or adjectives in that
+they can modify many other phrasal categories, including adjectives, verb
+phrases, prepositional phrases, and other adverbs.
+
+Using the determiner feature system, we can obtain a close approximation to an
+accurate characterization of the behavior of the adverbs that interact with
+noun phrases and determiners.  Adverbs can adjoin to either a determiner or a
+noun phrase (see figure~\ref{adv-trees}), with the adverbs restricting what
+types of NPs or determiners they can modify by imposing feature requirements on
+the foot D or NP node.  For
+example, the adverb {\it approximately}, seen in (\ref{approx})
+above, selects for determiners that are {\bf card+}.  The adverb {\it enough}
+in (\ref{enough}) is an example of an adverb that selects for a noun phrase,
+specifically a noun phrase that is not modified by a determiner.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/det-files/advdet.ps,height=5.0cm}}&&
+{\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/det-files/advnoun.ps,height=5.0cm}}\\
+(a)&&(b)
+\end{tabular}
+\caption{(a) Adverb modifying a determiner; (b) Adverb modifying a noun phrase}
+\label{adv-trees}
+%\rule[.1in]{8.35cm}{0.01in}
+\end{figure}
+
+Most of the adverbs that modify determiners and NPs divide into six classes,
+with some minor variation within classes, based on the pattern of these
+restrictions.  Three of the classes are adverbs that modify determiners, while
+the other three modify NPs.
+
+The largest of the five classes is the class of adverbs that modify cardinal
+determiners.  This class includes, among others, the adverbs {\it about}, {\it
+at most}, {\it exactly}, {\it nearly}, and {\it only}.  These adverbs have the
+single restriction that they must adjoin to determiners that are {\bf card+}.
+Another class of adverbs consists of those that can modify the determiners {\it
+every}, {\it all}, {\it any}, and {\it no}.  The adverbs in this class are {\it
+almost}, {\it nearly}, and {\it practically}.  Closely related to this class
+are the adverbs {\it mostly} and {\it roughly}, which are restricted to
+modifying {\it every} and {\it all}, and {\it hardly}, which can only modify
+{\it any}.  To select for {\it every}, {\it all}, and {\it any}, these adverbs
+select for determiners that are [{\bf quan+}, {\bf card-}, {\bf const+}, {\bf
+compl+}], and to select for {\it no}, the adverbs choose a determiner that is
+[{\bf quan+}, {\bf decreas+}, {\bf const+}].  The third class of adverbs that
+modify determiners are those that modify the determiners {\it few} and {\it
+many}, representable by the feature sequences [{\bf quan+}, {\bf decreas+},
+{\bf const-}] and [{\bf quan+}, {\bf decreas-}, {\bf const-}, {\bf 3pl}, {\bf
+compl+}], respectively.  Examples of these adverbs are {\it awfully}, {\it
+fairly}, {\it relatively}, and {\it very}.
+
+Of the three classes of adverbs that modify noun phrases, one actually consists
+of a single adverb {\it not}, that only modifies determiners that are {\bf
+compl+}.  Another class consists of the focus adverbs, {\it at least}, {\it
+even}, {\it only}, and {\it just}.  These adverbs select NPs that are {\bf wh-}
+and {\bf card-}.  For the NPs that are {\bf card+}, the focus adverbs actually
+modify the cardinal determiner, and so these adverbs are also included in the
+first class of adverbs mentioned in the previous paragraph.  The last major
+class that modify NPs consist of the adverbs {\it double} and {\it twice},
+which select NPs that are [{\bf definite+}] (i.e., {\it the}, {\it
+this/that/those/these}, and the genitives).
+
+Although these restrictions succeed in recognizing the correct
+determiner/adverb sequences, a few unacceptable sequences slip through.  For
+example, in handling the second class of adverbs mentioned above, {\it every},
+{\it all}, and {\it any} share the features [{\bf quan+}, {\bf card-}, {\bf
+const+}, {\bf compl+}] with {\it a} and {\it another}, and so {\it
+$\ast$nearly a man} is acceptable in this system.  In addition to this
+over-generation within a major class, the adverb {\it quite} selects for
+determiners and NPs in what seems to be a purely idiosyncratic fashion.
+Consider the following examples.
+
+\eenumsentence{\label{quite2}\item[a.] {\bf Quite} a few members of the audience had to
+leave.
+	\item[b.] There were {\bf quite} many new participants at this
+year's conference.
+	\item[c.] {\bf Quite} few triple jumpers have jumped that far.
+	\item[d.] Taking the day off was {\bf quite} the right thing to do.
+	\item[e.] The recent negotiation fiasco is {\bf quite} another issue.
+	\item[f.] Pandora is {\bf quite} a cat!}
+
+In examples (\ref{quite2}a)-(\ref{quite2}c), {\it quite} modifies the determiner, while in (\ref{quite2}d)-(\ref{quite2}f),
+{\it quite} modifies the entire noun phrase.  Clearly, it functions in a
+different manner in the two sets of sentences; in (\ref{quite2}a)-(\ref{quite2}c), {\it quite}
+intensifies the amount implied by the determiner, whereas in (\ref{quite2}d)-(\ref{quite2}f), it
+singles out an individual from the larger set to which it belongs.  To capture
+the selectional restrictions needed for (\ref{quite2}a)-(\ref{quite2}c), we utilize the two sets of
+features mentioned previously for selecting {\it few} and {\it many}.  However,
+{\it a few} cannot be singled out so easily; using the sequence [{\bf quan+},
+{\bf card-}, {\bf decreas-}, {\bf const+}, {\bf 3pl}, {\bf compl-}], we also
+accept the ungrammatical NPs {\it $\ast$quite several members} and {\it
+$\ast$quite some members} (where {\it quite} modifies {\it some}).  In
+selecting {\it the} as in (d) with the features [{\bf definite+}, {\bf gen-}, {\bf
+3sg}], {\it quite} also selects {\it this} and {\it that}, which are
+ungrammatical in this position.  Examples (\ref{quite2}e) and (\ref{quite2}f) present yet another
+obstacle in that in selecting {\it another} and {\it a}, {\it quite}
+erroneously selects {\it every} and {\it any}.
+
+It may be that there is an undiscovered semantic feature that would
+alleviate these difficulties.  However, on the whole, the determiner feature system we have proposed can be
+used as a surprisingly efficient method of characterizing the interaction of
+adverbs with determiners and noun phrases.
 
 
-Adverbs that modify NP's or determiners have restrictions on what types of NP's
-or determiners they can modify. They divide into three classes based on the
-pattern of these restrictions.  The adverbs {\it especially}, {\it even}, {\it
-just}, and {\it only} form a class that can modify any NP that is {\bf wh--},
-including Proper Nouns.  A second class, consisting of adverbs such as {\it
-hardly}, {\it merely}, and {\it simply}, modifies NP's with determiners that
-are {\bf definite--} and {\bf const+}, or that are {\bf gen+}.  This second
-class of adverbs can also modify NP's with {\it the} as a determiner.  They do
-not modify NP's without determiners.  The third class, exemplified by {\it
-almost}, {\it approximately}, and {\it relatively}, modifies the determiner
-itself.  These adverbs are restricted to modifying {\bf card+} determiners, as
-well as {\it all}, {\it double}, and {\it half}.  The distinction between
-adverbs that modify NP's and ones that modify determiners can be seen in the
-NP's in ({\ex{1}})~and~({\ex{2}}).
 
-\enumsentence{[Just][half the people]}
-\enumsentence{[Approximately half][the people]}
 
-This analysis of determiner adverbs is still somewhat preliminary and
-only the adverbs that modify {\bf card+} determiners have been fully
-implemented in the XTAG English grammar.
+
+
 
 
 
