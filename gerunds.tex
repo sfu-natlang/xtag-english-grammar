@@ -42,7 +42,7 @@ assign case to their direct object.  Secondly, like nouns, only determiner
 gerunds can appear with articles (cf. example (\ex{1}) and
 (\ex{2})). Thirdly, determiner gerunds, like nouns, can be modified by
 adjectives (cf. example (\ex{3})), whereas NP gerunds, like verbs, resist
-such modification (cf. example (\ex{4})). Fourthly, Nouns, unlike verbs,
+such modification (cf. example (\ex{4})). Fourthly, nouns, unlike verbs,
 cannot co-occur with aspect (cf. example (\ex{5}) and (\ex{6})). Finally,
 only NP gerunds, like verbs, can take adverbial modification (cf. example
 (\ex{7}) and (\ex{8})).
@@ -67,12 +67,12 @@ with Adverb)}
 In English XTAG, the two types of gerunds are assigned separate
 trees within each tree family, but in order to capture their similar
 distributional behavior, both are assigned NP as the category label of
-their top node. The feature {\bf gerund = +/-} distinguishes gerund NP's from
+their top node. The feature {\bf gerund = +/--} distinguishes gerund NP's from
 regular NP's where needed.\footnote{This feature is also needed to restrict
 the selection of gerunds in NP positions. For example, the subject and
 object NP's in the ``equative BE'' tree (Tnx0BEnx1) cannot be filled by
 gerunds, and are therefore assigned the feature {\bf
-gerund = -}, which prevents gerunds (which have the feature {\bf gerund =
+gerund = --}, which prevents gerunds (which have the feature {\bf gerund =
 +}) from substituting into these NP positions.} The determiner gerund 
 and the NP gerund trees are discussed in section~(\ref{detger-sec}) and
 ~(\ref{NPger-sec}) respectively.
@@ -88,10 +88,10 @@ straightforwardly modified by adjectives; it cannot co-occur with aspect;
 and it can appear with articles. The only difference of the determiner
 gerund nominal with the basic nominals is that the former cannot occur
 without the determiner, whereas the latter can. The determiner gerund 
-tree therefore has an intial D modifying the N.\footnote{Note that
+tree therefore has an initial D modifying the N.\footnote{Note that
 the determiner can adjoin to the gerund only from {\it within} the gerund
 tree. Adjunction of determiners to the gerund root node is prevented by
-constraining determiners to only select NP's with the feature {\bf gerund = -}.
+constraining determiners to only select NP's with the feature {\bf gerund = --}.
 This rules out sentences like {\it Private markets approved of (*the) [the
 selling of bonds]}.} It is used for gerunds such as the ones in bold face
 in sentences (\ex{1}), (\ex{2}) and (\ex{3}).
@@ -99,19 +99,20 @@ in sentences (\ex{1}), (\ex{2}) and (\ex{3}).
 \begin{figure}[htb]
 \centering
 \begin{tabular}{c}
-{\psfig{figure=ps/gerund-files/alphaDnx0Vnx1.ps,height=3.2in}}\\
+{\psfig{figure=ps/gerund-files/alphaDnx0Vnx1.ps,height=4.0in}}\\
 $\alpha$Dnx0Vnx1\\
 \end{tabular}
 \caption{Determiner Gerund tree from the transitive tree family: $\alpha$Dnx0Vnx1}
 \label{detgerund-tree}
+\label{2;12,1}
 
 \end{figure}
 
-The D node can take a simple determiner (cf. example (\ex{1})), a 
-genitive pronoun (cf. example (\ex{2})), or a genitive NP.\footnote{The 
-trees for genitive pronouns and
-genitive NP's have the root node labelled as D because they seem to
-function as determiners and as such, sequence with the rest of the
+The D node can take a simple determiner (cf. example (\ex{1})), a
+genitive pronoun (cf. example (\ex{2})), or a genitive NP (cf. example
+(\ex{3})).\footnote{The trees for genitive pronouns and genitive NP's
+have the root node labelled as D because they seem to function as
+determiners and as such, sequence with the rest of the
 determiners. See Chapter~\ref{det-comparitives} for discussion on
 determiner trees.}
 
@@ -172,17 +173,18 @@ ger}.
 \begin{figure}[htb]
 \centering
 \begin{tabular}{cc}
-{\psfig{figure=ps/gerund-files/alphaGnx0Vnx1.ps,height=3.2in}}\\
+{\psfig{figure=ps/gerund-files/alphaGnx0Vnx1.ps,height=4.0in}}\\
 $\alpha$Gnx0Vnx1\\
 \end{tabular}
 \caption{NP Gerund tree from the transitive tree family: $\alpha$Gnx0Vnx1}
 \label{NPgerund-tree}
+\label{2;13,1}
 \end{figure}
 
 
 Additionally, the subject in the NP gerund tree is required to have {\bf
 $<$case$>$=acc/none/gen}, i.e., it can be either a PRO (cf. example
-\ex{1}, a genitive NP (cf. example \ex{2}), or an accusative NP
+\ex{1}), a genitive NP (cf. example \ex{2}), or an accusative NP
 (cf. example \ex{3}). The whole NP formed by the gerund can occur in either
 nominative or accusative positions.
 
@@ -195,7 +197,7 @@ Street}?}
 One question that arises with respect to gerunds is whether there is anything
 special about their distribution as compared to other types of NP's.  In fact,
 it appears that gerund NP's can occur in any NP position.  Some verbs might not
-seem to be very accepting of gerund NP arguments, as in (\ex{2}) below, but we
+seem to be very accepting of gerund NP arguments, as in (\ex{1}) below, but we
 believe this to be a semantic incompatibility rather than a syntactic problem
 since the same structures are possible with other lexical items.
 
@@ -213,14 +215,12 @@ It was mentioned above that the NP gerunds display certain clausal
 properties. It is therefore not surprising that they too have their own set
 of transformationally related structures. For example, NP gerunds allow
 passivization just like their sentential counterparts (cf. examples
-(\ex{1}) and (\ex{2})).\footnote{Note that the passive trees in all the
-tree families are assumed to be related to and derived from the NP
-gerunds.}
+(\ex{1}) and (\ex{2})).
 
 \enumsentence{The lawyers objected to {\bf the slanderous book being
 written by John}.}
 \enumsentence{Susan could not forget {\bf having
-been embarassed by the vicar}.}
+been embarrassed by the vicar}.}
 
 In the English XTAG grammar, gerund passives are treated in an almost
 exactly similar fashion to sentential passives, and are assigned separate
@@ -244,8 +244,8 @@ the gerund passive trees for the transitive tree family.
 \begin{figure}[htb]
 \centering
 \begin{tabular}{cc}
-{\psfig{figure=ps/gerund-files/alphaGnx1Vbynx0.ps,height=3.8in}}&
-{\psfig{figure=ps/gerund-files/alphaGnx1V.ps,height=3.8in}}
+{\psfig{figure=ps/gerund-files/alphaGnx1Vbynx0.ps,height=4.0in}}&
+{\psfig{figure=ps/gerund-files/alphaGnx1V.ps,height=4.0in}}
 \\
 (a) $\alpha$Gnx1Vbynx0&(b) $\alpha$Gnx1V\\
 \end{tabular}
