@@ -386,6 +386,102 @@ ill-formed elementary tree.\footnote{This does not mean that elementary trees
 with more than one gap should be ruled out across the grammar. Such trees might
 be required for dealing with parasitic gaps or gaps in coordinated structures.}
 
+\subsection{Exceptional Case Marking Verbs}
+\label{ecm-verbs}
+
+{\bf Tree family}: TXnx0Vs1
+Exceptional Case Marking verbs are those which assign accusative case to the
+subject of the sentential complement. This is in contrast to verbs
+in the Tnx0Vnx1s2 family (section~\ref{nx0Vnx1s2-family}), which assign 
+accusative case to an NP which is not part of the sentential complement.  
+
+The subject of an ECM infinitive
+complement is assigned accusative case is a manner
+analogous to that of a subject in a {\it for-to\/} construction, as described
+in section~\ref{for-complementizer}.  The {\it to} tree in the infinitive
+is the one which has no value at all for
+{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for}.  The ECM verb
+acts just like {\it for} and has the appropriate {\bf $<assign-case>$>$}
+and {\bf $<$assign-comp$>$} features.  Figure~\ref{expects-decl} shows the 
+declarative tree for the 
+tree for the TXnx0Vs1 family, in this case anchored by {\it expects}.
+Figure~\ref{van-expects} shows a parse for {\it Van expects Bob to talk}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=ps/sent-comps-subjs-files/expects.ps,height=2in}
+\caption{ECM tree: $\beta$Xnx0Vs1}
+\label{expects-decl}
+\label{3;1,15}
+\end{figure}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=ps/sent-comps-subjs-files/van-expects.ps,height=2in}
+\caption{Sample ECM parse}
+\label{van-expects}
+\end{figure}
+
+Verbs that take bare infinitives, as in (\ex{1}), are 
+also treated as ECM verbs,
+the only difference being that their foot feature has
+{\bf $<$mode$>$=base} instead of {\bf $<$mode$>$=inf}.  Since the complement
+does not have {\it to}, there is no question of using the {\it to} tree
+for allowing accusative case to be assigned.  Instead, verbs with
+{\bf $<$mode$>$=base} allow either accusative or nominative case to be 
+assigned to the subject, and the foot of the ECM bare infinitive tree 
+forces it to be accusative by its {\bf $<$assign-case$>$=acc} value at its
+foot node unifies with the {\bf $<$assign-case$>$=nom/acc} value of the 
+bare infinitive clause.
+
+\enumsentence{Bob sees the harmonica fall}
+
+The trees in the TXnx0Vs1 family are generally parallel to those in the
+Tnx0Vs1 family, except for the {\bf $<$assign-case$>$} and
+{\bf $<$assign-comp$>$} values on the foot nodes.  However, the TXnx0Vs1
+family also includes a tree for the passive, which of course is not
+included in the Tnx0Vs1 family.  Unlike all the other trees in the 
+TXnx0Vs1 family, the passive tree is not rooted in S, and is instead a 
+VP auxiliary tree.  Since the
+subject of the infinitive is not thematically selected by the ECM verb,
+it is not part of the ECM verb's tree, and so it cannot be part of the
+passive tree.   Therefore, the passive acts as a raising verb (see 
+section~\ref{sm-clause-xtag-analysis}).
+For example, to derive (\ex{2}), the tree in Figure~\ref{expected-passive}
+would adjoin into a 
+derivation for {\it Bob to talk} at the VP node  (and the 
+{\bf $<$mode=$>$=passive} feature, not shown, forces the auxiliary to
+adjoin in, as for other passives, as described in chapter~\ref{passives}).
+
+\enumsentence{Van expects Bob to talk}
+\enumsentence{Bob was expected to talk}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=ps/sent-comps-subjs-files/expects-passive.ps,height=2in}
+\caption{ECM passive}
+\label{expects-passive}
+\label{3;2,15}
+\end{figure}
+
+It has long been noted that passives of both full and bare infinitive 
+ECM constructions are full infinitives, as in (\ex{-1}) and (\ex{2}).
+
+\enumsentence{Bob sees the harmonica fall.}
+\enumsentence{The harmonica was seen to fall.}
+\enumsentence{$\ast$*The harmonica seen to fall.}
+
+Under the TAG ECM analysis, this fact is easy to implement.  The foot
+node of the ECM passive tree is simply set to have {\bf $<$mode$>$=inf},
+which prevents the derivation of (\ex{-1}).  Therefore, for all the other
+trees in the family, to foot nodes are set to have {\bf $<$mode$>$=base} 
+or {\bf $<$mode$>$=inf} depending on whether it is a bare infinitive or not.
+These foot nodes are all S nodes.  The VP foot node of the passive tree, 
+however, has {\bf $<$mode$>$=inf} regardless.
+
 \section{Sentential Subjects}
 \label{sent-subjs}
 
