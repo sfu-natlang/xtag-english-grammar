@@ -1,50 +1,97 @@
 \chapter{Gerund NP's}
 \label{gerunds-chapter}
 
-There are two main types of gerundives identified in the linguistics
-literature. One is the class of {\it derived nominalizations} exemplified
-in (\ex{1}), also called {\it nominal gerundives} or {\it action
-nominalizations}. The other is the class of so-called {\it sentential} or
-{\it VP gerundives} exemplified in (\ex{2}).
+There are two types of gerunds identified in the linguistics
+literature. One is the class of {\it derived nominalizations} (also 
+called {\it nominal gerundives} or {\it action nominalizations}) 
+exemplified in (\ex{1}), which instantiates the direct object within an
+{\it of} PP.
+The other is the class of so-called {\it sentential} or
+{\it VP gerundives} exemplified in (\ex{2}). In the English XTAG grammar,
+the derived nominalizations are termed {\bf determiner gerunds}, and the
+sentential or VP gerunds are termed {\bf NP gerunds}.
 
 \enumsentence{Some think that {\bf the selling of bonds} is beneficial.}
-
-\enumsentence{Are private markets approving of {\bf Washington bashing Wall Street}?}
-
-In the English XTAG grammar, the two classes of gerunds are analyzed
-differently - owing to the differences in their internal structure - and
-assigned different trees within each tree family. The derived
-nominalizations are termed {\bf Determiner gerunds}, and the sentential or
-VP gerunds are termed {\bf NP gerunds}.
-
-The external distribution of both classes of gerunds is parallel to that of
-noun phrases. In particular, it has been observed that most places where
-NP's are allowed, a gerundive clause is also allowed.\footnote{Restricting
-the selection of gerundives in NP positions is handled by the feature {\bf
-gerund = -}. For example, the subject and object NP's in the ``equative
-BE'' tree (Tnx0BEnx1) have the feature {\bf gerund = -}, which prevents
-gerunds (which have the feature {\bf gerund = +}) from substituting into
-these NP positions.} The bold face portions of sentences (\ex{1})--(\ex{3})
-show examples of gerunds as a subject and as the object of a preposition.
-
-\enumsentence{\ldots and {\bf avoiding such losses} will take a monumental
-effort.}
-
-\enumsentence{{\bf Mr. Nolen's wandering} doesn't make him a weirdo.}
 
 \enumsentence{Are private markets approving of {\bf Washington bashing Wall
 Street}?}
 
+Both types of gerunds exhibit a similar distribution, appearing in most
+places where NP's are allowed.\footnote{an exception being the NP positions
+in ``equative BE'' sentences, such as, {\it John is my father}.}  The bold
+face portions of sentences (\ex{1})--(\ex{3}) show examples of gerunds as a
+subject and as the object of a preposition.
 
-In order to capture their distributional behavior, both types of trees are
-assigned NP as the category label of their top node.
+\enumsentence{{\bf Avoiding such losses} will take a monumental effort.}
+\enumsentence{{\bf Mr. Nolen's wandering} doesn't make him a weirdo.}
+\enumsentence{Are private markets approving of {\bf Washington bashing Wall
+Street}?}
+
+The motivation for splitting the gerunds into two classes is semantic as
+well as structural in nature. Semantically, the two gerunds are in sharp
+contrast with each other. NP gerunds refer to an action, i.e., a way of
+doing something, whereas determiner gerunds refer to a fact. Structurally,
+there are a number of properties (extensively discussed in \cite{Lees60})
+that show that NP gerunds have the syntax of verbs, whereas determiner
+gerunds have the syntax of basic nouns.  Firstly, the fact that the direct
+object of the determiner gerund can only appear within an {\it of} PP
+suggests that the determiner gerund, like nouns, is not a case assigner and
+needs insertion of the preposition {\it of} for assignment of case to the
+direct object. NP gerunds, like verbs, need no such insertion and can
+assign case to their direct object.  Secondly, like nouns, only determiner
+gerunds can appear with articles (cf. example (\ex{1}) and
+(\ex{2})). Thirdly, determiner gerunds, like nouns, can be modified by
+adjectives (cf. example (\ex{3})), whereas NP gerunds, like verbs, resist
+such modification (cf. example (\ex{4})). Fourthly, Nouns, unlike verbs,
+cannot co-occur with aspect (cf. example (\ex{5}) and (\ex{6})). Finally,
+only NP gerunds, like verbs, can take adverbial modification (cf. example
+(\ex{7}) and (\ex{8})).
+
+\enumsentence{\ldots the proving of the theorem\ldots. \hspace{1.0in} (det
+ger with article)}
+\enumsentence{* \ldots the proving the theorem\ldots. \hspace{1.0in} (NP ger
+with article)}
+\enumsentence{John's rapid writing of the book\ldots. \hspace{1.0in} (det
+ger with Adj)}
+\enumsentence{* John's rapid writing the book\ldots. \hspace{1.0in} (NP ger
+with Adj)}
+\enumsentence{* John's having written of the book\ldots. \hspace{1.0in}
+(det ger with aspect)}
+\enumsentence{John having written the book\ldots. \hspace{1.0in} (NP ger
+with aspect)}
+\enumsentence{* His writing of the book rapidly\ldots. \hspace{1.0in} (det
+ger with Adverb)}
+\enumsentence{His writing the book rapidly\ldots. \hspace{1.0in} (NP ger
+with Adverb)}
+
+In English XTAG, the two types of gerunds are assigned separate
+trees within each tree family, but in order to capture their similar
+distributional behavior, both are assigned NP as the category label of
+their top node. The feature {\bf gerund = +/-} distinguishes gerund NP's from
+regular NP's where needed.\footnote{This feature is also needed to restrict
+the selection of gerunds in NP positions. For example, the subject and
+object NP's in the ``equative BE'' tree (Tnx0BEnx1) cannot be filled by
+gerunds, and are therefore assigned the feature {\bf
+gerund = -}, which prevents gerunds (which have the feature {\bf gerund =
++}) from substituting into these NP positions.} The determiner gerund 
+and the NP gerund trees are discussed in section~(\ref{detger-sec}) and
+~(\ref{NPger-sec}) respectively.
 
 \section{Determiner Gerunds}
-The Determiner Gerund tree in Figure~\ref{detgerund-tree} has an initial D
-and instantiates the direct object as an {\it of} PP.\footnote{Note that
+\label{detger-sec}
+The determiner gerund tree in Figure~\ref{detgerund-tree} is anchored by a
+V, capturing the fact that the gerund is derived from a verb. The verb
+projects an N and instantiates the direct object as an {\it of} PP. The
+nominal category projected by the verb can now display all the syntactic
+properties of basic nouns, as discussed above. For example, it can be
+straightforwardly modified by adjectives; it cannot co-occur with aspect;
+and it can appear with articles. The only difference of the determiner
+gerund nominal with the basic nominals is that the former cannot occur
+without the determiner, whereas the latter can. The determiner gerund 
+tree therefore has an intial D modifying the N.\footnote{Note that
 the determiner can adjoin to the gerund only from {\it within} the gerund
 tree. Adjunction of determiners to the gerund root node is prevented by
-constraining determiners to select NP's with the feature {\bf gerund = -}
+constraining determiners to only select NP's with the feature {\bf gerund = -}.
 This rules out sentences like {\it Private markets approved of (*the) [the
 selling of bonds]}.} It is used for gerunds such as the ones in bold face
 in sentences (\ex{1}), (\ex{2}) and (\ex{3}).
@@ -57,70 +104,70 @@ $\alpha$Dnx0Vnx1\\
 \end{tabular}
 \caption{Determiner Gerund tree from the transitive tree family: $\alpha$Dnx0Vnx1}
 \label{detgerund-tree}
+
 \end{figure}
 
-There are two trees that can substitute into the D node: a simple
-determiner tree, which can be anchored by a simple determiner (cf. example
-(\ex{1})) or a possessive pronoun (cf. example (\ex{2})), and a
-possessive NP tree (cf. example (\ex{3})) with the root node labeled as
-D (see Figure~\ref{DnxG}).\footnote{The trees for genitive pronouns and
+The D node can take a simple determiner (cf. example (\ex{1})), a 
+genitive pronoun (cf. example (\ex{2})), or a genitive NP.\footnote{The 
+trees for genitive pronouns and
 genitive NP's have the root node labelled as D because they seem to
 function as determiners and as such, sequence with the rest of the
 determiners. See Chapter~\ref{det-comparitives} for discussion on
-Determiner trees.}
+determiner trees.}
 
 \enumsentence{Some think that {\bf the selling of bonds} is beneficial.}
-
 \enumsentence{{\bf His painting of Mona Lisa} is highly acclaimed.}
-
 \enumsentence{Are private markets approving of {\bf Washington's bashing of Wall Street}?}
 
+%\begin{figure}[htb]
+%\centering
+%\begin{tabular}{c}
+%{\psfig{figure=ps/gerund-files/alphaDnxG.ps,height=1.5in}}\\
+%\end{tabular}
+%\caption{Possessive NP Determiner tree: $\alpha$DnxG}
+%\label{DnxG}
+%\end{figure}
 
+%The anchoring verb is required to be {\bf $<$mode$>$ = ger}. Auxiliaries
+%cannot left-adjoin to the anchoring verb in the determiner gerund tree, as
+%can be seen in the ungrammatical sentences (\ex{1}) and (\ex{2}).
 
-\begin{figure}[htb]
-\centering
-\begin{tabular}{c}
-{\psfig{figure=ps/gerund-files/alphaDnxG.ps,height=1.5in}}\\
-\end{tabular}
-\caption{Possessive NP Determiner tree: $\alpha$DnxG}
-\label{DnxG}
-\end{figure}
+%\enumsentence{* {\bf The having sold of bonds} is beneficial.}
+%\enumsentence{* {\bf The having been selling of bonds} is beneficial.}
 
-The anchoring verb is required to be {\bf $<$mode$>$ = ger}. Auxiliaries
-cannot left-adjoin to the anchoring verb in the Determiner gerund tree, as
-can be seen in the ungrammatical sentences (\ex{1}) and (\ex{2}).
+%Since the verb projects an N instead of a VP, this prevents auxiliary
+%adjunction. It should be noted, however, that the crucial motivation for
+%making the verb project an N instead of a VP arises from the ability of the
+%verb in these trees to be adjectivally modified (cf. example
+%(\ex{1})). Adjectival modification would not have been possible if
+%the projected node had been labeled VP.
 
-\enumsentence{* {\bf The having sold of bonds} is beneficial.}
-\enumsentence{* {\bf The having been selling of bonds} is beneficial.}
+%\enumsentence{{\bf Her rapid writing of the book} was astonishing.}
 
-Since the verb projects an N instead of a VP, this prevents auxiliary
-adjunction. It should be noted, however, that the crucial motivation for
-making the verb project an N instead of a VP arises from the ability of the
-verb in these trees to be adjectivally modified (cf. example
-(\ex{1})). Adjectival modification would not have been possible if
-the projected node had been labeled VP.
+\section{NP Gerunds}
+\label{NPger-sec}
+NP gerunds show a number of structural peculiarities, the crucial one being
+that they have the internal properties of sentences. In the English XTAG
+grammar, we adopt a position similar to that of \cite{Rosenbaum67} and
+\cite{Emonds70} -- that these gerunds are NP's exhaustively dominating a
+clause. Consequently, the tree assigned to the transitive NP gerund tree
+(cf. Figure~\ref{NPgerund-tree}) looks exactly like the declarative
+transitive tree for clauses except for the root node label and the feature
+values. The anchoring verb projects a VP. Auxiliary adjunction is allowed,
+subject to one constraint -- that the highest verb in the verbal sequence
+be in gerundive form, regardless of whether it is a main or auxiliary verb.
+This constraint is implemented by requiring the topmost VP node to be {\bf
+$<$mode$>$ = ger}. In the absence of any adjunction, the anchoring verb
+itself is forced to be gerundive. But if the verbal sequence has more than
+one verb, then the sequence and form of the verbs is limited by the
+restrictions that each verb in the sequence imposes on the succeeding
+verb. The nature of these restrictions for sentential clauses, and the
+manner in which they are implemented in XTAG, are both discussed in
+Chapter~\ref{auxiliaries}. The analysis and implementation discussed there
+differs from that required for gerunds only in one respect -- that the
+highest verb in the verbal sequence is required to be {\bf $<$mode$>$ =
+ger}.
 
-\enumsentence{{\bf Her rapid writing of the book} was astonishing.}
-
-\section{Sentential Gerunds}
-Sentential gerundives show a number of structural peculiarities, but the
-main puzzle about them in the linguistics literature has been that they
-have the internal properties of sentences. Thus, as the example in
-(\ex{1}) demonstrates, they may contain adverbial expressions and
-object NP's, but adjectival modifiers and determiners are excluded.
-
-\enumsentence{{\bf Her writing the book so rapidly} was astonishing.}
-
-Such properties of internal structure are characteristic of clauses rather
-than NP's, and thereby, in the English XTAG grammar, we adopt a position
-similar to that of \cite{Rosenbaum67} and \cite{Emonds70} -- that these
-gerunds are NP's exhaustively dominating a clause. Consequently, the tree
-assigned to the NP gerund (cf. Figure~\ref{NPgerund-tree}) looks exactly
-like the declarative transitive tree for clauses except for the root node
-label and the feature values. The anchoring verb projects a VP. Auxiliary
-adjunction is allowed (cf. example (\ex{1})), subject to one
-constraint -- that the highest verb in the verbal sequence be in gerundive
-form, regardless of whether it is a main or auxiliary verb.
 
 \begin{figure}[htb]
 \centering
@@ -132,34 +179,18 @@ $\alpha$Gnx0Vnx1\\
 \label{NPgerund-tree}
 \end{figure}
 
-\enumsentence{Private markets approved of {\bf Washington having bashed
-Wall Street}}
-
-This constraint is implemented by requiring the topmost VP node to be {\bf
-$<$mode$>$ = ger}. In the absence of any adjunction, the anchoring verb
-itself is forced to be gerundive. But if the verbal sequence has more than
-one verb, then the sequence and form of the verbs is limited by the
-restrictions that each verb in the sequence imposes on the succeeding
-verb. The nature of these restrictions for sentential clauses, and the
-manner in which they are implemented in XTAG, are both discussed in
-Chapter~\ref{auxiliaries}. The analysis and implementation discussed there
-differs from that required for gerunds only in one respect -- that the
-highest verb in the verbal sequence is required to be {\bf $<$mode$>$ =
-ger}.\\
 
 Additionally, the subject in the NP gerund tree is required to have {\bf
 $<$case$>$=acc/none/gen}, i.e., it can be either a PRO (cf. example
 \ex{1}, a genitive NP (cf. example \ex{2}), or an accusative NP
 (cf. example \ex{3}). The whole NP formed by the gerund can occur in either
-nominative or accusative positions.\\
+nominative or accusative positions.
 
-\enumsentence{\ldots and {\bf avoiding such losses} will take a monumental
-effort.}
 
-\enumsentence{{\bf Mr. Nolen's wandering} doesn't make him a weirdo.}
-
-\enumsentence{Are private markets approving of {\bf Washington bashing Wall
+\enumsentence{\ldots John does not like {\bf wearing a hat}.}
+\enumsentence{Are private markets approving of {\bf Washington's bashing Wall
 Street}?}
+\enumsentence{Mother disapproved of {\bf me wearing such casual clothes}.}
 
 One question that arises with respect to gerunds is whether there is anything
 special about their distribution as compared to other types of NP's.  In fact,
@@ -173,17 +204,18 @@ since the same structures are possible with other lexical items.
 
 By having the root node of gerund trees be NP, the gerunds have the same
 distribution as any other NP in the English XTAG grammar without doing
-anything exceptional.\footnote{with the exception of NP's in ``equative
-BE'' structures.} The clause structure is captured by the form of the trees
-and by inclusion in the tree families.\\
+anything exceptional. The clause structure is captured by the form of the trees
+and by inclusion in the tree families.
 
 \section{Gerund Passives}
 
-It was mentioned above that gerunds display certain clausal properties. It
-is therefore not surprising that gerunds also have their own set of
-transformationally related structures. For example, gerunds allow
+It was mentioned above that the NP gerunds display certain clausal
+properties. It is therefore not surprising that they too have their own set
+of transformationally related structures. For example, NP gerunds allow
 passivization just like their sentential counterparts (cf. examples
-(\ex{1}) and (\ex{2})). 
+(\ex{1}) and (\ex{2})).\footnote{Note that the passive trees in all the
+tree families are assumed to be related to and derived from the NP
+gerunds.}
 
 \enumsentence{The lawyers objected to {\bf the slanderous book being
 written by John}.}
@@ -201,11 +233,11 @@ anchors, and (b) the highest verb in the verb sequence is required to be
 selection of only those sequences of auxiliary verb(s) that select {\bf
 $<$mode$>$ = ppart} and {\bf $<$passive$>$ = +} (such as {\it being} or
 {\it having been} but NOT {\it having}). The passive trees are assumed to
-be related to only the NP gerund trees (and not the Determiner gerund
+be related to only the NP gerund trees (and not the determiner gerund
 trees), since passive structures involve movement of some object to the
 subject position (in a movement analysis). Also, like the sentential
 passives, gerund passives are found in most tree families that have a
-direct object in the declarative tree. Figure~\ref{passive-trees} shows
+direct object in the declarative tree. Figure~\ref{pass-trees} shows
 the gerund passive trees for the transitive tree family.
 
 
@@ -219,7 +251,7 @@ the gerund passive trees for the transitive tree family.
 \end{tabular}
 \caption{Passive Gerund trees from the transitive tree family: $\alpha$Gnx1Vbynx0 (a) and
 $\alpha$Gnx1V (b)}
-\label{passive-trees}
+\label{pass-trees}
 \end{figure}
 
 
