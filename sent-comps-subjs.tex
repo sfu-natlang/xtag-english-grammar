@@ -20,8 +20,8 @@ the clauses themselves, in both subject and complement positions.
 \section{S or VP complements?}
  
 Two comparable grammatical formalisms, Generalized Phrase Structure
-Grammar (GPSG) (\cite{gazdar85}) and Head-driven Phrase Structure
-Grammar (HPSG) (\cite{pollard87}), have rather different treatments of
+Grammar (GPSG) \cite{gazdar85} and Head-driven Phrase Structure
+Grammar (HPSG) \cite{pollard87}, have rather different treatments of
 sentential complements (S-comps).  They both treat embedded sentences
 as VP's with subjects, which generates the correct structures but
 misses the generalization that S's behave similarly in both matrix and
@@ -141,7 +141,7 @@ discussion of the case assignment issues relating to this construction.)
 \enumsentence{$\ast$Penn to lose would be awful.}
 
 In addition, some verbs select {\bf $<$wh$>$=+} complements (either questions
-or clauses with {\it whether} or {\it if}) (\cite{grimshaw90}):
+or clauses with {\it whether} or {\it if}) \cite{grimshaw90}:
 
 \enumsentence{Jesse wondered who left.}
 \enumsentence{Jesse wondered if Barry left.}
@@ -536,7 +536,8 @@ however, has {\bf $<$mode$>$=inf} regardless.
 \section{Sentential Subjects}
 \label{sent-subjs}
 
-{\bf Tree families}: Ts0Vnx1, Ts0Ax1, Ts0dxN1, Ts0N1, Ts0Pnx1.
+{\bf Tree families}: Ts0Vnx1, Ts0Ax1, Ts0N1, Ts0Pnx1, Ts0ARBPnx1, 
+Ts0PPnx1, Ts0PNaPnx1, Ts0V, Ts0Vtonx1, Ts0NPnx1, Ts0APnx1, Ts0A1s1.
 
 Verbs that select sentential subjects anchor trees that have an S node
 in the subject position rather than an NP node.  Since extraction is
@@ -596,19 +597,18 @@ S-subjs, there is always an NP parse available.
 \section{Nouns and Prepositions taking Sentential Complements}
 \label{NPA}
 
-{\bf Trees}: $\alpha$NXNs, $\alpha$NXdxNs, $\alpha$PXPs, $\beta$vxPs,
-$\beta$Pss, $\beta$nxPx.
+{\bf Trees}: $\alpha$NXNs, $\beta$vxPs, $\beta$Pss, $\beta$nxPx.
 
 \begin{figure}[thb]
 \centering
 \begin{tabular}{ccc}
-\psfig{figure=ps/sent-comps-subjs-files/with.ps,height=1.8in}&
+\psfig{figure=ps/sent-comps-subjs-files/betaPss.ps,height=5cm}&
 \hspace{0.3in}&
-\psfig{figure=ps/sent-comps-subjs-files/boast.ps,height=1.9in}
+\psfig{figure=ps/sent-comps-subjs-files/alphaNXNs.ps,height=4cmin}
 \\
 (a) && (b)\\
 \end{tabular}
-\caption{Sample trees for preposition: $\alpha$PXPs (a) and noun: $\beta$NXdxNs (b) taking
+\caption{Sample trees for preposition: $\beta$Pss (a) and noun: $\alpha$NXNs (b) taking
 sentential complements}
 \label{nounprep}
 \end{figure}
@@ -643,7 +643,7 @@ control, as in sentence~(\ex{5}).
 At present, an analysis for obligatory control into complement clauses
 (as in sentences~(\ex{-4}), (\ex{-3}), and (\ex{-2})) has been implemented. An
 analysis for cases of obligatory control into adjunct clauses and optional
-clauses exists and can be found in (\cite{bhatt94}).
+clauses exists and can be found in \cite{bhatt94}.
 
 \subsection{A feature-based analysis of PRO control}
 The analysis for obligatory control involves transmission of a control feature
@@ -706,7 +706,7 @@ tree and NP$_{0}$ of the {\em leave} tree share a control feature.
 \centering
 \hspace{0.0in}
 \psfig{figure=ps/sent-comps-subjs-files/persuaded-derv.ps,height=9.2cm}
-\caption{Derived tree for ???}
+\caption{Derived tree for {\it Srini persuaded Mickey to leave}}
 \label{derived-tree}
 \end{figure}
 
@@ -714,7 +714,7 @@ tree and NP$_{0}$ of the {\em leave} tree share a control feature.
 \centering
 \hspace{0.0in}
 \psfig{figure=ps/sent-comps-subjs-files/persuaded-derivation.ps,height=4.2cm}
-\caption{Derivation tree for ???}
+\caption{Derivation tree for {\it Srini persuaded Mickey to leave}}
 \label{derivation-tree}
 \end{figure}
 
@@ -736,7 +736,7 @@ have to have the value ``+'' and they have to be co-indexed to each other.
 
 \subsection{Long-distance transmission of control features}
 Cases involving embedded infinitival complements with PRO subjects such as
-(\ex{1}) can also be handled .
+(\ex{1}) can also be handled.
 
 \enumsentence{ John$_i$ wants [PRO$_i$ to want [PRO$_i$ to dance]].}
 
