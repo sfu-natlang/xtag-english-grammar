@@ -5,7 +5,7 @@ Although there has been some debate about the lexical category of auxiliaries,
 the English XTAG grammar follows \cite{mccawley88}, \cite{haegeman91}, and
 others in classifying auxiliaries as verbs. The category of verbs can therefore
 be divided into two sets, main or lexical verbs, and auxiliary verbs, which can
-cooccur in a verbal sequence.  Only the highest verb in a verbal sequence is
+co-occur in a verbal sequence.  Only the highest verb in a verbal sequence is
 marked for tense and agreement regardless of whether it is a main or auxiliary
 verb.  Some auxiliaries ({\it be}, {\it do}, and {\it have}) share with main
 verbs the property of having overt morphological marking for tense and
@@ -172,6 +172,23 @@ $<$mode$>$=ind/imp} (indicative or imperative).  Since only the indicative
 sentences have tense, non-tensed clauses are restricted to occurring in
 embedded environments.
 
+Noun-verb contractions are labeled NVC in their part-of-speech field
+in the morphological database and then undergo special processing to
+split them apart into the noun and the reduced verb before
+parsing. The noun then selects its trees in the normal fashion. The
+contraction, say {\it 'll} or {\it 'd}, likewise selects the normal
+auxiliary verb tree, $\beta$Vvx. However, since the contracted form,
+rather than the verb stem, is given in the morphology, the contracted
+form must also be listed as a separate syntactic entry. These entries
+have all the same features of the full form of the auxiliary verbs,
+with tense constraints coming from the morphological entry (e.g. {\it
+it's} is listed as {\sc it 's NVC 3sg PRES}). The ambiguous
+contractions {\it 'd} ({\it had/would}) and {\it `s} ({\it has/is})
+behave like other ambiguous lexical items; there are simply multiple
+entries for those lexical items in the lexicon, each with different
+features. In the resulting parse, the contracted form is shown with
+features appropriate to the full auxiliary it represents.
+
 \section{Inverted Sentences}
 
 In inverted sentences, the two trees shown in Figure~\ref{inverted-trees}
@@ -245,10 +262,10 @@ blocks the main verb from getting tense from the INFL node, thereby forcing the
 addition of a verbal lexeme to carry the inflectional elements.  If an
 auxiliary verb is present, then it carries tense, but if not, periphrastic or
 `dummy', {\it do} is required.  This seems to indicate that {\it do} and other
-auxiliary verbs would not cooccur, and indeed this is the case (see sentences
+auxiliary verbs would not co-occur, and indeed this is the case (see sentences
 (\ex{1})-(\ex{2})).  Auxiliary {\it do} is allowed in English when no
 negative morpheme is present, but this usage is marked as emphatic.  Emphatic
-{\it do} is also not allowed to cooccur with auxiliary verbs (sentences
+{\it do} is also not allowed to co-occur with auxiliary verbs (sentences
 (\ex{3})-(\ex{6})).
 
 \enumsentence {$\ast$We will have do bought a sleeping bag.}
@@ -258,7 +275,7 @@ negative morpheme is present, but this usage is marked as emphatic.  Emphatic
 \enumsentence {$\ast$You {\bf do} can have a backpack, don't you?}
 \enumsentence {$\ast$I {\bf did} have had a backpack!}
 
-In the XTAG grammar, {\it do} is prevented from cooccurring with other
+In the XTAG grammar, {\it do} is prevented from co-occurring with other
 auxiliary verbs by a requirement that it adjoin only onto main verbs.  It has
 indicative mode, so no other auxiliaries can adjoin above it.\footnote{Earlier,
 we said that indicative mode carries tense with it.  Since only the topmost
@@ -303,7 +320,7 @@ sentence, or at the S node to form an inverted question.  {\it Do} selects the
 inverted auxiliary trees given in Figure~\ref{inverted-trees}, just as other
 auxiliaries do, so it is available to adjoin onto a tree at the S node to form
 a yes/no question.  The mechanism described in
-section~\ref{do-support-negatives} prohibits {\it do} from cooccurring with
+section~\ref{do-support-negatives} prohibits {\it do} from co-occurring with
 other auxiliary verbs, even in the inverted position.
 
 
