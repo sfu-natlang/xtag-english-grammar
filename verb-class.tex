@@ -2,25 +2,25 @@
 \label{verb-classes}
 
 Each main\footnote{Auxiliary verbs are handled under a different mechanism.
-See section~\ref{auxiliaries} for details.} verb in the syntactic lexicon
+See Chapter~\ref{auxiliaries} for details.} verb in the syntactic lexicon
 selects at least one tree family\footnote{See section \ref{tree-db} for
 explanation of tree families.} (subcategorization frame).  Since the tree
 database and syntactic lexicon are already separated for space efficiency (see
-section \ref{overview}), each verb can efficiently select a large number of
+Chapter~\ref{overview}), each verb can efficiently select a large number of
 trees by specifying a tree family, as opposed to each of the individual trees.
 This approach allows for a considerable reduction in the number of trees that
 must be specified for any given verb or form of a verb.
 
-There are currently 38 tree families in the system\footnote{An explanation of
+There are currently 38 tree families in the system.\footnote{An explanation of
 the naming convention used in naming the trees and tree families is available
-in appendix~\ref{tree-naming}.}.  This section gives a brief description of
-each tree family and and shows the corresponding declarative
-tree\footnote{Before lexicalization, the $\diamond$ indicates the anchor of the
-tree.}, along with any peculiar characteristics or trees.  It also indicates
-which transformations are in each tree family, and gives the number of verbs
-that select that family.\footnote{Numbers given are as of August 1994 and are
-subject to some change with further development of the grammar.} A few sample
-verbs are given, along with example sentences.
+in Appendix~\ref{tree-naming}.}  This chapter gives a brief description of each
+tree family and shows the corresponding declarative tree\footnote{Before
+lexicalization, the $\diamond$ indicates the anchor of the tree.}, along with
+any peculiar characteristics or trees.  It also indicates which transformations
+are in each tree family, and gives the number of verbs that select that
+family.\footnote{Numbers given are as of August 1994 and are subject to some
+change with further development of the grammar.} A few sample verbs are given,
+along with example sentences.
 
 
 \section{Intransitive: Tnx0V}\index{verbs, intransitive}
@@ -156,7 +156,7 @@ ditransitive alternates involving verbs in this class and benefactive PP's
 (e.g. {\it John baked a cake for Mary}) are analyzed as transitives (see
 section~\ref{nx0Vnx1-family}) with a PP adjunct. Benefactives are
 taken to be adjunct PP's because they are optional (e.g. {\it John baked a
-cake} vs {\it John baked a cake for Mary}).  54 verbs select the ditransitive
+cake} vs. {\it John baked a cake for Mary}).  54 verbs select the ditransitive
 tree family.
 
 \item[Examples:] {\it ask}, {\it cook}, {\it win} \\
@@ -256,7 +256,7 @@ with PP shift}
 \item[Description:]  This tree family is selected by ditransitive verbs that
 undergo a shift to a {\it to} prepositional phrase.  These ditransitive verbs
 are clearly constrained so that when they shift, the prepositional phrase must
-start with {\it to}.  This is in contrast to the ditransitives in
+start with {\it to}.  This is in contrast to the Ditransitives with PP in
 section~\ref{nx0Vnx1pnx2-family}, in which verbs may appear in [NP V NP PP]
 constructions with a variety of prepositions.  Both the dative shifted and
 non-shifted PP complement trees are included.  55 verbs select this family.
@@ -277,9 +277,10 @@ non-shifted PP complement trees are included.  55 verbs select this family.
 \psfig{figure=ps/verb-class-files/alphanx0Vnx1Pnx2.ps,height=5.2cm} &
 \hspace{1.0in}&
 \psfig{figure=ps/verb-class-files/alphanx0Vnx2nx1.ps,height=3.3cm} \\
-$\alpha$nx0Vnx1Pnx2 && $\alpha$nx0Vnx2nx1
+(a) && (b)
 \end{tabular}
-\caption{Declarative Ditransitive with PP shift Trees: $\alpha$nx0Vnx1Pnx2 and $\alpha$nx0Vnx2nx1}
+\caption{Declarative Ditransitive with PP shift Trees: $\alpha$nx0Vnx1Pnx2~(a)
+and $\alpha$nx0Vnx2nx1~(b)}
 \label{nx0Vnx1Pnx2-tree}
 \end{figure}
 
@@ -324,15 +325,15 @@ Complement with NP}
 
 \begin{description}
 
-\item[Description:]  This tree family is selected by verbs that take both a NP
-and sentential complement.  The sentential complement may be infinitive or
+\item[Description:]  This tree family is selected by verbs that take both an NP
+and a sentential complement.  The sentential complement may be infinitive or
 indicative.  The type of clause is specified by each individual verb in its
 syntactic lexicon entry.  A given verb may select more than one type of
 sentential complement.  The declarative tree, and many other trees in this
-family, are auxiliary trees, as opposed to the more normal initial trees.
+family, are auxiliary trees, as opposed to the more common initial trees.
 These auxiliary trees adjoin onto an S node in an existing tree of the type
 specified by the sentential complement.  This is the mechanism by which TAGs
-are able to maintain long-distance dependencies (see section~\ref{extraction}),
+are able to maintain long-distance dependencies (see Chapter~\ref{extraction}),
 even over multiple embeddings (e.g. {\it What did Bill tell Mary that John
 said?}).  106 verbs select this tree family.
 
@@ -375,7 +376,7 @@ relative clause on subject and no {\it by} phrase.
 \begin{description}
 
 \item[Description:]  The trees in this tree family are anchored by both the
-verb and the verb-particle.  Both appear in the syntactic lexicon and together
+verb and the verb particle.  Both appear in the syntactic lexicon and together
 select this tree family.  Intransitive verb particles can be difficult to
 distinguish from intransitive verbs with adverbs adjoined on. The main
 diagnostics for including verbs in this class are whether the meaning is
@@ -408,15 +409,15 @@ imperative, determiner gerund, NP gerund.
 
 
 
-\section{Transitive Verb-Particle: Tnx0Vplnx1}\index{verbs,particle,transitive}
+\section{Transitive Verb Particle: Tnx0Vplnx1}\index{verbs,particle,transitive}
 \label{nx0Vplnx1-family}
 
 \begin{description}
 
-\item[Description:]  Verb/verb-particle combinations that take an NP complement
+\item[Description:]  Verb/verb particle combinations that take an NP complement
 select this tree family.  Both the verb and the verb particle are anchors of
 the trees. Particle movement has been taken as the diagnostic to distinguish
-verb-particle constructions from intransitives with adjoined PP's.  If the
+verb particle constructions from intransitives with adjoined PP's.  If the
 alleged particle is able to undergo particle movement, in other words appear
 both before and after the direct object, then it is judged to be a particle.
 Items that do not undergo particle movement are taken to be prepositions.  In
@@ -424,7 +425,7 @@ many, but not all, of the verb particle cases, there is also an alternate
 prepositional meaning in which the lexical item did not move.  (e.g. {\it He
 looked up the number (in the phonebook).  He looked the number up. He looked up
 the road (to see if any cars were coming).  $\ast$He looked the road up.})
-There are 841 verb/verb-particle combinations.
+There are 841 verb/verb particle combinations.
 
 \item[Examples:] {\it blow off}, {\it make up}, {\it pick out} \\
 {\it He blew off classes for the third time this year.} \\
@@ -442,9 +443,10 @@ There are 841 verb/verb-particle combinations.
 \psfig{figure=ps/verb-class-files/alphanx0Vplnx1.ps,height=3.4cm} &
 \hspace{1.0in}&
 \psfig{figure=ps/verb-class-files/alphanx0Vnx1pl.ps,height=3.4cm} \\
-$\alpha$nx0Vplnx1 && $\alpha$nx0Vnx1pl
+(a)&&(b)
 \end{tabular}
-\caption{Declarative Transitive Verb Particle Tree: $\alpha$nx0Vplnx1 and $\alpha$nx0Vnx1pl}
+\caption{Declarative Transitive Verb Particle Tree: $\alpha$nx0Vplnx1~(a) and
+$\alpha$nx0Vnx1pl~(b)}
 \label{nx0Vplnx1-tree}
 \end{figure}
 
@@ -494,9 +496,10 @@ tree family.  The exhaustive list is given in the examples.
 \psfig{figure=ps/verb-class-files/alphanx0Vplnx1nx2.ps,height=3.0cm} &
 \psfig{figure=ps/verb-class-files/alphanx0Vnx1plnx2.ps,height=3.0cm} &
 \psfig{figure=ps/verb-class-files/alphanx0Vnx1nx2pl.ps,height=3.0cm} \\
-$\alpha$nx0Vplnx1nx2 & $\alpha$nx0Vnx1plnx2 & $\alpha$nx0Vnx1nx2pl
+(a) & (b)  & (c)
 \end{tabular}
-\caption{Declarative Ditransitive Verb Particle Tree: $\alpha$nx0Vplnx1nx2, $\alpha$nx0Vnx1plnx2 and $\alpha$nx0Vnx1nx2pl}
+\caption{Declarative Ditransitive Verb Particle Tree: $\alpha$nx0Vplnx1nx2~(a),
+$\alpha$nx0Vnx1plnx2~(b) and $\alpha$nx0Vnx1nx2pl~(c)}
 \label{nx0Vplnx1nx2-tree}
 \end{figure}
 
@@ -573,14 +576,14 @@ relative clause on object of the {\it by} phrase.
 
 \item[Description:]  This tree family is selected by verbs that take just a
 sentential complement.  The sentential complement may be of type infinitive,
-indicative, or small clause (see section~\ref{small-clauses}).  The type of
+indicative, or small clause (see Chapter~\ref{small-clauses}).  The type of
 clause is specified by each individual verb in its syntactic lexicon entry, and
 a given verb may select more than one type of sentential complement.  The
 declarative tree, and many other trees in this family, are auxiliary trees, as
 opposed to the more common initial trees.  These auxiliary trees adjoin onto an
 S node in an existing tree of the type specified by the sentential complement.
 This is the mechanism by which TAGs are able to maintain long-distance
-dependencies (see section~\ref{extraction}), even over multiple embeddings
+dependencies (see Chapter~\ref{extraction}), even over multiple embeddings
 (e.g. {\it What did Bill think that John said?}). 318 verbs select this tree
 family.
 
@@ -690,9 +693,9 @@ some psychological state of mind.  The sentential subject can be indicative
 
 \begin{description}
 
-\item[Description:] The verb/noun pairs that select this tree family are pairs
-in which the interpretation is non-compositional and the noun contributes
-argument structure to the predicate (e.g. {\it The man took a walk.} vs {\it
+\item[Description:] The verb/noun pairs that select these tree families are 
+pairs in which the interpretation is non-compositional and the noun contributes
+argument structure to the predicate (e.g. {\it The man took a walk.} vs. {\it
 The man took a radio}).  The verb and the noun occur together in the syntactic
 database, and both anchor the trees.  The verbs in the light verb constructions
 are {\it do}, {\it give}, {\it have}, {\it make} and {\it take}.  The noun
@@ -706,7 +709,7 @@ Transitive verbs (section~\ref{nx0Vnx1-family}) as well in that the noun in the
 light verb construction does not extract.  Because the noun is an anchor in the
 tree, there are two different tree families representing nouns that require
 determiners and those that occur without them (see
-section~\ref{det-comparitives}).  There are 96 verb/noun pairs that select the
+Chapter~\ref{det-comparitives}).  There are 96 verb/noun pairs that select the
 light verb tree without determiners, and 242 that select the light verb tree
 with determiners.
 
@@ -723,9 +726,10 @@ with determiners.
 \psfig{figure=ps/verb-class-files/alphanx0lVN1.ps,height=4.0cm} &
 \hspace*{0.5in} &
 \psfig{figure=ps/verb-class-files/alphanx0lVdxN1.ps,height=4.0cm} \\
-$\alpha$nx0lVN1 & \hspace*{0.5in} & $\alpha$nx0lVdxN1
+(a) & \hspace*{0.5in} & (b)
 \end{tabular}
-\caption{Declarative Light Verb Trees: $\alpha$nx0lVN1 and $\alpha$nx0lVdxN1}
+\caption{Declarative Light Verb Trees: $\alpha$nx0lVN1~(a) and
+$\alpha$nx0lVdxN1~(b)}
 \label{nx0lVN1-tree}
 \end{figure}
 
@@ -742,9 +746,9 @@ imperative, determiner gerund, NP gerund.
 
 \begin{description}
 
-\item[Description:]  The verb/noun pairs that select this tree family are pairs
-in which the interpretation is non-compositional and the noun contributes
-argument structure to the predicate (e.g. {\it Dania made Srini a cake.} vs
+\item[Description:]  The verb/noun pairs that select these tree families are 
+pairs in which the interpretation is non-compositional and the noun contributes
+argument structure to the predicate (e.g. {\it Dania made Srini a cake.} vs.
 {\it Dania made Srini a loan}).  The verb and the noun occur together in the
 syntactic database, and both anchor the trees.  The verbs in these light verb
 constructions are {\it give} and {\it make}.  The noun following the light verb
@@ -757,7 +761,7 @@ section~\ref{nx0Vnx1Pnx2-family}) as well in that the noun in the light verb
 construction does not extract.  Also, passivization is severely restricted.
 Because the noun is an anchor in the tree, there are two different tree
 families representing nouns that require determiners and those that occur
-without them (see section~\ref{det-comparitives}).  There are 10 verb/noun
+without them (see Chapter~\ref{det-comparitives}).  There are 10 verb/noun
 pairs that select the trees without determiners, and 18 that select the trees
 with determiners.
 
@@ -774,15 +778,15 @@ with determiners.
 \begin{tabular}{cc}
 \psfig{figure=ps/verb-class-files/alphanx0lVN1Pnx2.ps,height=4.4cm} &
 \psfig{figure=ps/verb-class-files/alphanx0lVnx2N1.ps,height=4.0cm} \\
-$\alpha$nx0lVN1Pnx2 & $\alpha$nx0lVnx2N1 \vspace*{1.2cm}\\
+(a) & (b) \vspace*{1.2cm}\\
 
 
 \psfig{figure=ps/verb-class-files/alphanx0lVdxN1Pnx2.ps,height=4.4cm} &
 \psfig{figure=ps/verb-class-files/alphanx0lVnx2dxN1.ps,height=4.0cm} \\
-$\alpha$nx0lVdxN1Pnx2 & $\alpha$nx0lVnx2dxN1 \\
+(c) & (d) \\
 \end{tabular}
-\caption{Declarative Light Verbs with PP Tree: $\alpha$nx0lVN1Pnx2,
-$\alpha$nx0lVnx2N1, $\alpha$nx0lVdxN1Pnx2 and $\alpha$nx0lVnx2dxN1 }
+\caption{Declarative Light Verbs with PP Tree: $\alpha$nx0lVN1Pnx2~(a),
+$\alpha$nx0lVnx2N1~(b), $\alpha$nx0lVdxN1Pnx2~(c) and $\alpha$nx0lVnx2dxN1~(d)}
 \label{nx0lVN1Pnx2-tree}
 \end{figure}
 
@@ -808,7 +812,7 @@ main verb and  {\it it} as the subject. Together these two items serve
 as a multi-component anchor for the tree family.  This tree family is
 used for it-clefts in which the clefted element is an NP and there are
 no gaps in the clause which follows the NP.  The NP is interpreted as
-an adjunct of the following clause. See section~\ref{it-clefts} for
+an adjunct of the following clause. See Chapter~\ref{it-clefts} for
 additional discussion.
 
 \item[Examples:] {\it it be} \\
@@ -842,7 +846,7 @@ main verb and  {\it it} as the subject. Together these two items serve
 as a multi-component anchor for the tree family.  This tree family is
 used for it-clefts in which the clefted element is an PP and there are
 no gaps in the clause which follows the PP.  The PP is interpreted as
-an adjunct of the following clause. See section~\ref{it-clefts} for
+an adjunct of the following clause. See Chapter~\ref{it-clefts} for
 additional discussion.
 
 \item[Examples:] {\it it be} \\
@@ -875,7 +879,7 @@ main verb and  {\it it} as the subject. Together these two items serve
 as a multi-component anchor for the tree family.  This tree family is
 used for it-clefts in which the clefted element is an adverb and there are
 no gaps in the clause which follows the adverb.  The adverb is interpreted as
-an adjunct of the following clause. See section~\ref{it-clefts} for
+an adjunct of the following clause. See Chapter~\ref{it-clefts} for
 additional discussion.
 
 \item[Examples:] {\it it be} \\
@@ -940,9 +944,9 @@ relative clause on subject, imperative, NP gerund.
 sentential complements.  The sentential complements can be indicative or
 infinitive.  Note that these trees are anchored by adjectives, not verbs.  Most
 adjectives that take the Adjective Small Clause tree family (see
-section~\ref{nx0Ax1-family}) takes this family as well\footnote{No great
+section~\ref{nx0Ax1-family}) take this family as well.\footnote{No great
 attempt has been made to go through and decide which adjectives should actually
-take this family and which should not.}.  Small clauses are explained in much
+take this family and which should not.}  Small clauses are explained in much
 greater detail in section~\ref{sm-clause-xtag-analysis}.  This section is
 presented here for completeness.  3,229 adjectives select this tree family.
 
@@ -976,9 +980,9 @@ relative clause on subject, imperative, NP gerund.
 sentential subjects.  The sentential subjects can be indicative or infinitive.
 Note that these trees are not anchored by adjectives, not verbs.  Most
 adjectives that take the Adjective Small Clause tree family (see
-section~\ref{nx0Ax1-family}) take this family as well\footnote{No great attempt
-has been made to go through and decide which adjectives should actually take
-this family and which should not.}.  Small clauses are explained in much
+section~\ref{nx0Ax1-family}) take this family as well.\footnote{No great
+attempt has been made to go through and decide which adjectives should actually
+take this family and which should not.}  Small clauses are explained in much
 greater detail in section~\ref{sm-clause-xtag-analysis}.  This section is
 presented here for completeness.  3,227 adjectives select this tree family.
 
@@ -1012,7 +1016,7 @@ presented here for completeness.  3,227 adjectives select this tree family.
 \item[Description:]  This tree family is selected only by the verb {\it be}.
 It is distinguished from the predicative NP's (see section~\ref{nx0N1-family})
 in that two NP's are equated, and hence interchangeable (see
-section~\ref{small-clauses} for more discussion on the English copula and
+Chapter~\ref{small-clauses} for more discussion on the English copula and
 predicative sentences).  The XTAG analysis for equative {\it be} is explained
 in greater detail in section~\ref{equative-be-xtag-analysis}.
 
@@ -1042,7 +1046,7 @@ in greater detail in section~\ref{equative-be-xtag-analysis}.
 
 \begin{description}
 
-\item[Description:]  These trees are not anchored by verbs, but by nouns.
+\item[Description:]  The trees in these tree families are not anchored by verbs, but by nouns.
 Because they are anchored by nouns, there are two different tree families
 representing nouns that require determiners and those that occur without them.
 Small clauses are explained in much greater detail in
@@ -1063,9 +1067,10 @@ completeness.  9,915 nouns select the tree family without determiners, and
 \psfig{figure=ps/verb-class-files/alphanx0N1.ps,height=4.0cm} &
 \hspace{1.0in}&
 \psfig{figure=ps/verb-class-files/alphanx0dxN1.ps,height=4.0cm} \\
-$\alpha$nx0N1 && $\alpha$nx0dxN1
+(a) && (b)
 \end{tabular}
-\caption{Declarative NP Small Clause Trees: $\alpha$nx0N1 and $\alpha$nx0dxN1}
+\caption{Declarative NP Small Clause Trees: $\alpha$nx0N1~(a) and
+$\alpha$nx0dxN1~(b)}
 \label{nx0N1-tree}
 \end{figure}
 
@@ -1110,13 +1115,12 @@ clause on object, imperative, NP gerund.
 
 \begin{description}
 
-\item[Description:]  This tree family is selected by the small group of nouns
-that take sentential complements by themselves (see
-section~\ref{NPA}).  The sentential complements can
-be indicative or infinitive, depending on the noun.  Because the trees are
-anchored by nouns, there are two different tree families representing nouns
-that require determiners and those that occur without them.  Small
-clauses in general are explained in much greater detail in the
+\item[Description:]  These tree families are selected by the small group of nouns
+that take sentential complements by themselves (see section~\ref{NPA}).  The
+sentential complements can be indicative or infinitive, depending on the noun.
+Because the trees are anchored by nouns, there are two different tree families
+representing nouns that require determiners and those that occur without them.
+Small clauses in general are explained in much greater detail in the
 section~\ref{sm-clause-xtag-analysis}.  This section is presented here for
 completeness.  216 nouns collectively select these two families.
 
@@ -1133,9 +1137,10 @@ completeness.  216 nouns collectively select these two families.
 \psfig{figure=ps/verb-class-files/alphanx0N1s1.ps,height=4.0cm} &
 \hspace{1.0cm} &
 \psfig{figure=ps/verb-class-files/alphanx0dxN1s1.ps,height=4.7cm} \\
-$\alpha$nx0N1s1 & & $\alpha$nx0dxN1s1
+(a) & & (b)
 \end{tabular}
-\caption{Declarative NP with Sentential Complement Small Clause Tree: $\alpha$nx0N1s1 and $\alpha$nx0dxN1s1}
+\caption{Declarative NP with Sentential Complement Small Clause Tree:
+$\alpha$nx0N1s1~(a) and $\alpha$nx0dxN1s1~(b)}
 \label{nx0N1s1-tree}
 \end{figure}
 
@@ -1151,18 +1156,18 @@ clause on object, imperative, NP gerund.
 
 \begin{description}
 
-\item[Description:]  This tree family is selected by nouns that take 
+\item[Description:]  These tree families are selected by nouns that take 
 sentential subjects.  The sentential subjects can be indicative or infinitive.
 Note that these trees are anchored by nouns, not verbs.  Because they are
 anchored by nouns, there are two different tree families representing nouns
-that require determiners and those that occur without them.  Most
-nouns that take the NP Small Clause tree family (see
-section~\ref{nx0N1-family}) takes this family as well\footnote{No great attempt
-has been made to go through and decide which nouns should actually take this
-family and which should not.}.  Small clauses are explained in much greater
-detail in section~\ref{sm-clause-xtag-analysis}.  This section is presented
-here for completeness.  9,888 nouns select both the tree family
-with determiners and the tree family without determiners.
+that require determiners and those that occur without them.  Most nouns that
+take the NP Small Clause tree family (see section~\ref{nx0N1-family}) take this
+family as well.\footnote{No great attempt has been made to go through and
+decide which nouns should actually take this family and which should not.}
+Small clauses are explained in much greater detail in
+section~\ref{sm-clause-xtag-analysis}.  This section is presented here for
+completeness.  9,888 nouns select both the tree family with determiners and the
+tree family without determiners.
 
 \item[Examples:] {\it dilemma}, {\it insanity}, {\it tragedy} \\
 {\it Whether to keep the job he hates is a dilemma.} \\
@@ -1177,10 +1182,9 @@ with determiners and the tree family without determiners.
 \psfig{figure=ps/verb-class-files/alphas0N1.ps,height=4.0cm} &
 \hspace{1.0cm} &
 \psfig{figure=ps/verb-class-files/alphas0dxN1.ps,height=4.0cm} \\
-$\alpha$s0N1 & & $\alpha$s0dxN1
+(a) & & (b)
 \end{tabular}
-\caption{Declarative NP Small Clause with Sentential Subject Tree: $\alpha$s0N1
-and $\alpha$s0dxN1}
+\caption{Declarative NP Small Clause with Sentential Subject Tree: $\alpha$s0N1~(a) and $\alpha$s0dxN1~(b)}
 \label{s0N1-tree}
 \end{figure}
 
