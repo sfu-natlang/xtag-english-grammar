@@ -226,9 +226,9 @@ Case is assigned in the XTAG English grammar by two lexical categories
 complementizer.  See section \ref{for-complementizer} for more
 details.}
 
-\subsubsubsection{Prepositions}
-\label{prep-case}
-
+\begin{flushleft}
+{\bf Prepositions}
+\end{flushleft}
 
 Prepositions assign accusative case ({\bf acc}) through
 their {\bf $<$assign-case$>$} feature, which is specified in the lexicon.
@@ -266,8 +266,10 @@ accusative case.
 \label{PXPnx-with-case}
 \end{figure}
 
-\subsubsubsection{Verbs}
-\label{case-for-verbs}
+\begin{flushleft}
+{\bf Verbs}
+\end{flushleft}
+
 Verbs are the other part of speech in the XTAG grammar that can assign case.
 Because XTAG does not distinguish INFL and VP nodes, verbs must provide case
 assignment on the subject position in addition to the case assigned to their NP
@@ -401,10 +403,9 @@ complement of an ECM verb, since it will clash with the ECM verb's {\bf
 $<$assign-case$>$=acc} feature. The equations in the PRO trees are given in
 \ex{1} and \ex{2}.
 
-\enumsentence{ {\bf NP$_{subj}$:$\langle$case$\rangle =$ none}}
+\enumsentence{ {\bf NP$_{subj}$:$<$case$>$ = none}}
 
-\enumsentence{ {\bf S_r.b:$\langle$case$\rangle =$
-NP$_{subj}$:$\langle$case$\rangle$}}
+\enumsentence{ {\bf S$_r$.b:$<$case$>$ = NP$_{subj}$:$<$case$>$}}
 
 
 \subsubsection{ECM}
