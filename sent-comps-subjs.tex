@@ -2,10 +2,10 @@
 %being treated the same (at least, sharing a tree family).
 %format for features? angle brackets or no
 
-\section{Sentential Subjects and Sentential Complements}
+\chapter{Sentential Subjects and Sentential Complements}
 \label{scomps-section}
 
-In the LTAG formalism arguments of a lexical item, including
+In the XTAG grammar, arguments of a lexical item, including
 subjects, appear in the initial tree anchored by that lexical item.  A
 sentential argument appears as an S node in the appropriate position
 within an elementary tree anchored by the lexical item that selects
@@ -13,81 +13,78 @@ it. This is the case for sentential complements of verbs, prepositions
 and nouns and for sentential subjects. The distribution of
 complementizers in English is intertwined with the distribution of
 embedded sentences.  A successful analysis of complementizers in
-English must handle both the co-occurrence restrictions between
+English must handle both the cooccurrence restrictions between
 complementizers and various types of clauses, and the distribution of
 the clauses themselves, in both subject and complement positions.
 
-\subsection{S or VP complements?}
+\section{S or VP complements?}
  
 Two comparable grammatical formalisms, Generalized Phrase Structure
-Grammar (GPSG) \cite{gazdar85} and Head-driven Phrase Structure
-Grammar (HPSG) \cite{pollard87}, have rather different treatments of
+Grammar (GPSG) (\cite{gazdar85}) and Head-driven Phrase Structure
+Grammar (HPSG) (\cite{pollard87}), have rather different treatments of
 sentential complements (S-comps).  They both treat embedded sentences
-as VPs with subjects, which generates the correct structures but
-misses the generalization that Ss behave similarly in both matrix and
-embedded environments, and VPs behave quite differently.  Neither
-account has PRO subjects of infinitival clauses-- they have
-subjectless VPs instead.  GPSG has a complete complementizer system,
+as VP's with subjects, which generates the correct structures but
+misses the generalization that S's behave similarly in both matrix and
+embedded environments, and VP's behave quite differently.  Neither
+account has PRO\label{PRO} subjects of infinitival clauses-- they have
+subjectless VP's instead.  GPSG has a complete complementizer system,
 which appears to cover the same range of data as our analysis.  It is
 not clear what sort of complementizer analysis could be implemented in
 HPSG.
 
-Following standard GB approach, the English LTAG grammar does not
+Following standard GB approach, the English XTAG grammar does not
 allow VP complements but treats verb-anchored structures without overt
 subjects as having PRO subjects. Thus, indicative clauses, infinitives
 and gerunds all have a uniform treatment as embedded clauses using the
 same trees under this approach. Furthermore, our analysis is able to
-preserve the selectional and distributional distinction between Ss and
-VPs, in the spirit of GB theories, without having to posit `extra'
-empty categories.\footnote{I.e. empty complementizers. We do have PRO
+preserve the selectional and distributional distinction between S's and
+VP's, in the spirit of GB theories, without having to posit `extra'
+empty categories.\footnote{i.e. empty complementizers. We do have PRO
 and NP traces in the grammar.} Consider the alternation between {\it
 that} and the null complementizer\footnote{Although we will continue
 to refer to `null' complementizers, in our analysis this is actually
-the absence of a complementizer.}, shown in (\ex{1}) and (\ex{2}).
+the absence of a complementizer.}, shown in sentences~(\ex{1}) and (\ex{2}).
 
-\enumsentence{He hopes $\emptyset$ Muriel wins}
+\enumsentence{He hopes $\emptyset$ Muriel wins.}
 \enumsentence{He hopes that Muriel wins.}
 
- In GB both {\it Muriel wins} in (\ex{-1}) and {\it that Muriel wins}
-in (\ex{0}) are CPs even though there is no overt complementizer to
-head the phrase in (\ex{-1}).  Our grammar does not distinguish by
-category label between the the phrases that would be labeled in GB as
-{\it IP\/} and {\it CP\/}.  We label both of these phrases {\it S\/}.
-The difference between these two levels is the presence or absence of
-the complementizer (or extracted {\it WH\/} constituent), and is
-represented in our system as a difference in feature values (here, of
-the {\bf $<$comp$>$} feature), and the presence of the additional structure
-contributed by the complementizer or extracted constituent.  This
-illustrates an important distinction in LTAG, that between features
-and node labels.  Because we have a sophisticated feature system, we
-are able to make fine-grained distinctions between nodes with the same
-label which in another system might have to be realized by
-distinguishing node labels.
+ In GB both {\it Muriel wins} in (\ex{-1}) and {\it that Muriel wins} in
+(\ex{0}) are CPs even though there is no overt complementizer to head the
+phrase in (\ex{-1}).  Our grammar does not distinguish by category label
+between the the phrases that would be labeled in GB as IP and CP.  We label
+both of these phrases S.  The difference between these two levels is the
+presence or absence of the complementizer (or extracted WH constituent), and is
+represented in our system as a difference in feature values (here, of the {\bf
+$<$comp$>$} feature), and the presence of the additional structure contributed
+by the complementizer or extracted constituent.  This illustrates an important
+distinction in XTAG, that between features and node labels.  Because we have a
+sophisticated feature system, we are able to make fine-grained distinctions
+between nodes with the same label which in another system might have to be
+realized by distinguishing node labels.
  
-\subsection{Complementizers and Embedded Clauses in English:  The
+\section{Complementizers and Embedded Clauses in English:  The
 Data}
 \label{data}
 
-Verbs selecting sentential complements (or subjects) place
-restrictions on their complements, in particular, on the form of the
-embedded verb phrase.\footnote{Other considerations, such as the
-relationship between the tense/aspect of the matrix clause and the
-tense/aspect of a complement clause are also important but are not
-currently addressed in the English LTAG.}  Furthermore,
-complementizers are constrained to appear with certain types of
-clauses, again, based primarily on the form of the embedded VP.  For
-example {\it think\/} selects both indicative and infinitival
-complements. With an indicative complement, it may only have {\it
-that\/} or null as possible complementizers; with an infinitival
-complement, it may have either {\it if\/} or {\it whether\/}, but
-never {\it that\/}.  The possible combinations of complementizers and
-clause types is summarized in Table \ref{facts}.
+Verbs selecting sentential complements (or subjects) place restrictions on
+their complements, in particular, on the form of the embedded verb
+phrase.\footnote{Other considerations, such as the relationship between the
+tense/aspect of the matrix clause and the tense/aspect of a complement clause
+are also important but are not currently addressed in the current English XTAG
+grammar.}  Furthermore, complementizers are constrained to appear with certain
+types of clauses, again, based primarily on the form of the embedded VP.  For
+example {\it think\/} selects both indicative and infinitival complements. With
+an indicative complement, it may only have {\it that\/} or null as possible
+complementizers; with an infinitival complement, it may have either {\it if\/}
+or {\it whether\/}, but never {\it that\/}.  The possible combinations of
+complementizers and clause types is summarized in Table \ref{facts}.
 
-\begin{table}[h]
-\begin{tabular}{l|lllllll}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|llllll|} \hline
 Complementizer:&&that&whether&if&for&null\\
 \hline
-Clause type&&&&&&&\\
+Clause type&&&&&&\\
 \hline
 indicative&subject&Yes&Yes&No&No&No\\
 &complement&Yes&Yes&Yes&No&Yes\\
@@ -109,70 +106,69 @@ small clause & complement & No & No & No & No & Yes \\
 \caption{Summary of Complementizer and Clause Combinations}
 \label{facts}
 \end{table}
-\footnotetext{Most gerundive phrases are treated as NPs.  In
-fact, all gerundive subjects are treated as NPs, and the only gerundive
-complements which receive a sentential parse are those for which there
-is no corresponding NP parse.  This was done to reduce duplication of
-parses. See Chapter \ref{gerunds-chapter} for more discussion of gerunds.}
+\footnotetext{Most gerundive phrases are treated as NP's.  In
+fact, all gerundive subjects are treated as NP's, and the only gerundive
+complements which receive a sentential parse are those for which there is no
+corresponding NP parse.  This was done to reduce duplication of parses. See
+section \ref{gerunds-chapter} for further discussion of
+gerunds.\label{gerund-footnote}}
 
 As can be seen in Table \ref{facts}, sentential subjects differ from
 sentential complements in requiring the complementizer {\it that\/}
-for all indicative and subjunctive clauses.  In sentential complements
+for all indicative and subjunctive clauses.  In sentential complements,
 {\it that\/} often varies freely with a null complementizer, as
 illustrated in (\ex{1})-(\ex{6}).
 
-\enumsentence{John hopes that Mary wins.}
-\enumsentence{John hopes Mary wins.}
-\enumsentence{Mary thinks that John is a liar.}
-\enumsentence{Mary thinks John is a liar.}
-\enumsentence{That John won so easily annoyed Max.}
-\enumsentence{$\ast$ John won so easily annoyed Max.}
+\enumsentence{Christy hopes that Mike wins.}
+\enumsentence{Christy hopes Mike wins.}
+\enumsentence{Dania thinks that Newt is a liar.}
+\enumsentence{Dania thinks Newt is a liar.}
+\enumsentence{That Helms won so easily annoyed me.}
+\enumsentence{$\ast$Helms won so easily annoyed me.}
 
-Another fact which must be account for in the  analysis is that in
-infinitival clauses, the complementizer {\it for} must appear with an
-overt subject NP, whereas a complementizer-less infinitival clause never
-has an overt subject, as shown in (\ex{1})-(\ex{4}). (See Section
-\ref{for-complementizer} for more discussion of the case assignment
-issues relating to this construction.)
+Another fact which must be accounted for in the analysis is that in infinitival
+clauses, the complementizer {\it for} must appear with an overt subject NP,
+whereas a complementizer-less infinitival clause never has an overt subject, as
+shown in (\ex{1})-(\ex{4}). (See section~\ref{for-complementizer} for more
+discussion of the case assignment issues relating to this construction.)
 
-\enumsentence{To lose would be awful}
-\enumsentence{For Mary to lose would be awful}
-\enumsentence{$\ast$ For to lose would be awful}
-\enumsentence{$\ast$ Mary to lose would be awful}
+\enumsentence{To lose would be awful.}
+\enumsentence{For Penn to lose would be awful.}
+\enumsentence{$\ast$For to lose would be awful.}
+\enumsentence{$\ast$Penn to lose would be awful.}
 
-In addition, some verbs select {\it wh+} complements (either questions or
-clauses with {\it whether} or {\it if}) \cite{grimshaw90}:
+In addition, some verbs select {\bf $<$wh$>$=+} complements (either questions
+or clauses with {\it whether} or {\it if}) (\cite{grimshaw90}):
 
-\enumsentence{Mary wondered who left}
-\enumsentence{Mary wondered if John left}
-\enumsentence{Mary wondered whether to leave.}
-\enumsentence{Mary wondered whether John left}
-\enumsentence{$\ast$Mary thought who left.}
-\enumsentence{$\ast$Mary thought if John left.}
-\enumsentence{$\ast$Mary thought whether to leave.}
-\enumsentence{$\ast$Mary thought whether John left.}
+\enumsentence{Jesse wondered who left.}
+\enumsentence{Jesse wondered if Barry left.}
+\enumsentence{Jesse wondered whether to leave.}
+\enumsentence{Jesse wondered whether Barry left.}
+\enumsentence{$\ast$Jesse thought who left.}
+\enumsentence{$\ast$Jesse thought if Barry left.}
+\enumsentence{$\ast$Jesse thought whether to leave.}
+\enumsentence{$\ast$Jesse thought whether Barry left.}
 
-\subsection{Features Required}
+\section{Features Required}
 \label{s-features}
 
-As we have seen above, clauses may be {\it wh+} or {\it wh--}, may
-have one of several complementizers or no complementizer, and can be
-of various clause types.  The TAG analysis uses three features to
-capture these possibilities: {\bf $<$comp$>$} for the variation in
-complementizers, {\bf$<$wh$>$} for the question vs.  non-question
-alternation and {\bf $<$mode$>$} for clause types\footnote{{\bf
-$<$Mode$>$} actually conflates several types of information, in
-particular verb form and mood.}.  In addition to these three features,
-the {\bf $<$assign-comp$>$} feature represents complementizer
-requirements of the embedded verb.  More detailed discussion of the
-{\bf $<$assign-comp$>$} feature appears below in the discussions of
-sentential subjects and of infinitives.  The four features and their
-possible values are shown in Table (\ref{feat}).
+As we have seen above, clauses may be {\bf $<$wh$>$=+} or {\bf $<$wh$>$=-},
+may have one of several complementizers or no complementizer, and can be of
+various clause types.  The XTAG analysis uses three features to capture these
+possibilities: {\bf $<$comp$>$} for the variation in complementizers,
+{\bf$<$wh$>$} for the question vs.  non-question alternation and {\bf
+$<$mode$>$} for clause types\footnote{{\bf $<$mode$>$} actually conflates
+several types of information, in particular verb form and mood.}.  In addition
+to these three features, the {\bf $<$assign-comp$>$} feature represents
+complementizer requirements of the embedded verb.  More detailed discussion of
+the {\bf $<$assign-comp$>$} feature appears below in the discussions of
+sentential subjects and of infinitives.  The four features and their possible
+values are shown in Table \ref{feat}.
 
 
-\begin{table}[t]
+\begin{table}[th]
 \centering
-\begin{tabular}{l|c}
+\begin{tabular}{|l|c|} \hline
 Feature&Values\\
 \hline
 {\bf $<$comp$>$}&that, if, whether, for, rel, nil\\
@@ -181,7 +177,7 @@ Feature&Values\\
 \hline
 {\bf$<$assign-comp$>$}&that, if, whether, for, rel, ind\underline{~}nil, inf\underline{~}nil\\
 \hline
-{\bf$<$wh$>$}&$+,-$\\
+{\bf$<$wh$>$}&+,-\\
 \hline
 \end{tabular}
 \caption{Summary of Relevant Features}
@@ -189,52 +185,52 @@ Feature&Values\\
 \end{table}
 
 
-\subsection{Distribution of Complementizers}
-Like other non-arguments, complementizers anchor an auxiliary tree
-(shown in Figure 1) and adjoin to elementary clausal trees.  The
-auxiliary tree for complementizers is the only alternative to having a
-complementizer position `built into' every sentential tree.  The
-latter choice would mean having an empty complementizer substitute for
-every matrix sentence and complementizerless embedded sentence to fill
-the substitution node.  Our choice follows the LTAG principle that
-initial trees consist only of the arguments of the anchor -- the S
-tree does not contain a slot for a complementizer, and the $\beta$COMP
-tree has only one argument, an S with particular features determined by
-the complementizer.  Complementizers select the type of clause to
-which they adjoin through constraints on the {\bf $<$mode$>$} feature of the
-S foot node in the $\beta$COMPs tree shown in Figure
-(\ref{comp-tree}).These features also pass up to the root of
-$\beta$COMP, so that they are `visible' to the tree where the embedded
-sentence adjoins/substitutes.
+\section{Distribution of Complementizers}
+Like other non-arguments, complementizers anchor an auxiliary tree (shown in
+Figure \ref{comp-tree}) and adjoin to elementary clausal trees.  The auxiliary
+tree for complementizers is the only alternative to having a complementizer
+position `built into' every sentential tree.  The latter choice would mean
+having an empty complementizer substitute into every matrix sentence and a
+complementizerless embedded sentence to fill the substitution node.  Our choice
+follows the XTAG principle that initial trees consist only of the arguments of
+the anchor\footnote{See section~\ref{compl-adj} for a discussion of the
+difference between complements and adjuncts in the XTAG grammar.} -- the S tree
+does not contain a slot for a complementizer, and the $\beta$COMP tree has only
+one argument, an S with particular features determined by the complementizer.
+Complementizers select the type of clause to which they adjoin through
+constraints on the {\bf $<$mode$>$} feature of the S foot node in the tree
+shown in Figure~\ref{comp-tree}.  These features also pass up to the root node,
+so that they are `visible' to the tree where the embedded sentence
+adjoins/substitutes.
 
-\begin{figure}[h]
+\begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/betaCOMPs.ps,height=3.0in}
-\caption{Tree $\beta$COMPs, selected by all complementizers}
+\psfig{figure=ps/sent-comps-subjs-files/betaCOMPs_that_.ps,height=8.2cm}
+\caption{Tree $\beta$COMPs, anchored by {\it that}}
 \label{comp-tree}
 \end{figure}
 
 The grammar handles the following complementizers: {\it that\/}, {\it
 whether\/}, {\it if\/}, {\it for\/}, and no complementizer, and the
 clause types: indicative, infinitival, gerundive, past participial,
-subjunctive and small clause ({\bf $<$nom/prep$>$}).  The {\bf
+subjunctive and small clause ({\bf nom/prep}).  The {\bf
 $<$comp$>$} feature in a clausal tree reflects the value of the
 complementizer if one has adjoined to the clause. 
 
 The {\bf $<$comp$>$} and {\bf $<$wh$>$} features receive their root
 node values from the particular complementizer which anchors the tree.
 The $\beta$COMPs tree adjoins to an S node with the feature {\bf
-$<$comp=nil$>$}; this feature indicates that the tree does not already
-\underline{have} a complementizer adjoined to it.\footnote{ Because root Ss
-cannot have complementizers, the parser checks that the roots S has
-{\bf $<$comp=nil$>$} at the end of the derivation, when the S is also
-checked for a tensed verb.} We ensure that there are no stacked
-complementizers by requiring the foot node of $\beta$COMPs to have {\bf
-$<$comp = nil$>$}, as well as using the {\bf $<$sub-conj = nil$>$} feature to
-prevent complementizers from adjoining above subordinating conjunctions.
+$<$comp$>$=nil}; this feature indicates that the tree does not already
+{\bf have} a complementizer adjoined to it.\footnote{ Because root S's
+cannot have complementizers, the parser checks that the root S has {\bf
+$<$comp$>$=nil} at the end of the derivation, when the S is also checked for
+a tensed verb.} We ensure that there are no stacked complementizers by
+requiring the foot node of $\beta$COMPs to have {\bf $<$comp$>$=nil}, as well
+as using the {\bf $<$sub-conj$>$=nil} feature to prevent complementizers from
+adjoining above subordinating conjunctions.
 
-\subsection{Case assignment, {\it for\/} and the two {\it to\/}'s}
+\section{Case assignment, {\it for\/} and the two {\it to\/}'s}
 \label{for-complementizer}
 
 The {\bf $<$assign-comp$>$} feature is used to represent the
@@ -242,191 +238,196 @@ requirements of particular types of clauses for particular
 complementizers.  So while the {\bf $<$comp$>$} feature represents
 constraints originating from the VP dominating the clause, the {\bf
 $<$assign-comp$>$} feature represents constraints originating from the
-highest VP in the clause. {\bf $<$Assign-comp$>$} is used to control the
+highest VP in the clause. {\bf $<$assign-comp$>$} is used to control the
 appearance of subjects in infinitival clauses,  to
 ensure the correct distribution of complementizers in sentential
-subjects, and to block ``that-trace'' violations.
+subjects, and to block `that-trace' violations.
 
-Examples (\ex{2}), (\ex{3}) and (\ex{4}) show that an accusative
+Examples (\ex{3}), (\ex{4}) and (\ex{5}) show that an accusative
 case subject is obligatory in an infinitive clause if the
 complementizer {\it for\/} is present. The infinitive clauses in both
-(\ex{0}) and (\ex{1}) are analyzed in the English LTAG grammar as
+(\ex{1}) and (\ex{2}) are analyzed in the English XTAG grammar as
 having PRO subjects.  The apparent subject of {\it to win\/} in
-(\ex{-4}) is taken to be an object of the verb rather than the subject
+(\ex{1}) is taken to be an object of the verb rather than the subject
 of the infinitive clause. 
 
-\enumsentence{John wants her to win.}
-\enumsentence{John wants to win.}
-\enumsentence{John wants for her to win.}
-\enumsentence{*John wants for she to win.}
-\enumsentence{*John wants for to win.}
+\enumsentence{Mike wants her to pass the exam.}
+\enumsentence{Christy wants to pass the exam.}
+\enumsentence{Mike wants for her to pass the exam.}
+\enumsentence{$\ast$Mike wants for she to pass the exam.}
+\enumsentence{$\ast$Christy wants for to pass the exam.}
  
 The {\it for-to\/} construction is particularly illustrative of the
 difficulties and benefits faced in using a lexicalized grammar.  It is
-commonly accepted that {\it for\/} is behaving as a case-assigning
+commonly accepted that {\it for\/} behaves as a case-assigning
 complementizer in this construction, assigning accusative case to the
 `subject' of the clause since the infinitival verb does not assign
 case to its subject position.  However, in our featurized grammar, the
 absence of a feature licenses anything, so we must have overt null
 case assigned by infinitives to ensure the correct distribution of PRO
-subjects. (See Section \ref{case-assignment} for more discussion of
+subjects. (See section~\ref{case-assignment} for more discussion of
 case assignment.)  This null case assignment clashes with accusative
 case assignment if we simply add {\it for\/} as a standard
-complementizer, since NPs (including PRO) are drawn from the lexicon
+complementizer, since NP's (including PRO) are drawn from the lexicon
 already marked for case.  Thus, we must use the {\bf
-$<$assign-comp$>$} feature, to pass information about the verb up to
+$<$assign-comp$>$} feature to pass information about the verb up to
 the root of the embedded sentence.  To capture these facts, two
 infinitive {\it to}'s are posited. One infinitive {\it to\/} has {\bf
-$<$assign-case=none$>$} which forces a PRO subject, and {\bf
-$<$assign-comp=inf\_nil$>$} which prevents {\it for\/} from
+$<$assign-case$>$=none} which forces a PRO subject, and {\bf
+$<$assign-comp$>$=inf\_nil} which prevents {\it for\/} from
 adjoining. The other infinitive {\it to\/} has no value at all for
-{\bf $<$assign-case$>$} and has {\bf $<$assign-comp=for$>$}, so that
+{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for}, so that
 it can only occur with the complementizer {\it for\/}. In those
 instances {\it for} supplies the {\bf $<$assign-case$>$} value and
 assigns accusative case to the overt subject.
  
-\subsection{Sentential Complement Trees}
-\subsubsection{Sentential Complements of Verbs}
+\section{Sentential Complements of Verbs}
 
-{\sc Tree families}: Tnx0Vs1, Tnx0Vnx1s2, TItVnx1s2, TItVpnx1s2, TItVad1s2,
+{\bf Tree families}: Tnx0Vs1, Tnx0Vnx1s2, TItVnx1s2, TItVpnx1s2, TItVad1s2,
 Tnx0Ax1s2, Tnx0dxN1s1, Tnx0N1s1, Tnx0Pnx1s2, Tnx0Px1s2. 
 
 
-Verbs that select sentential complements select the {\bf $<$mode$>$}
+Verbs that select sentential complements restrict the {\bf $<$mode$>$}
 and {\bf $<$comp$>$} values for those complements. Since with very few
 exceptions\footnote{For example, long distance extraction is not
 possible from the S complement in it-clefts.} long distance extraction
 is possible from sentential complements, the S complement nodes are
 adjunction nodes. Figure \ref{think} shows the declarative tree
-$\beta$nx0Vs1, anchored by {\it think}.  
+for sentential complements, anchored by {\it think}.  
 
-\begin{figure}[h]
+\begin{figure}[hbt]
 \centering
 \hspace{0.0in}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/think.ps,height=2.0in}
-\caption{$\beta$nx0Vs1}
+\psfig{figure=ps/sent-comps-subjs-files/think.ps,height=1.7in}
+\caption{Sentential complement tree: $\beta$nx0Vs1}
 \label{think}
+\label{2;1,10}
 \end{figure}
 
-The need for an adjunction node rather than a substitution node  at
-S$_{1}$ may not be obvious until one considers the derivation of
-sentences with long distance extractions.  For example, the
-declarative in (\ex{1}) is derived by adjoining the tree (b) in Figure
-\ref{aard-emu} to the S$_{1}$ node of tree (a).  Since there are no
-bottom features on S$_{1}$, the same final result could have been
-achieved with a substitution node at S$_{1}$.
+The need for an adjunction node rather than a substitution node at S$_{1}$ may
+not be obvious until one considers the derivation of sentences with long
+distance extractions.  For example, the declarative in (\ex{1}) is derived by
+adjoining the tree in Figure~\ref{aard-emu}(b) to the S$_{1}$ node of the tree
+in Figure~\ref{aard-emu}(a).  Since there are no bottom features on S$_{1}$,
+the same final result could have been achieved with a substitution node at
+S$_{1}$.
 
 \enumsentence{The emu thinks that the aardvark smells terrible.}
 
-\begin{figure}[t]
-\begin{tabular}{cc}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/aard-smells.ps,height=2.5in}&\hspace{0.3in}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/emu-thinks.ps,height=2.5in}\\
-(a)&(b)\\
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=ps/sent-comps-subjs-files/aard-smells.ps,height=1.8in}&
+\hspace{0.3in}&
+\psfig{figure=ps/sent-comps-subjs-files/emu-thinks.ps,height=1.8in}\\
+(a)&&(b)\\
 \end{tabular}
-\caption{Trees for {\it The emu thinks that the aardvark smells terrible}}  
+\caption{Trees for {\it The emu thinks that the aardvark smells terrible.}}  
 \label{aard-emu}
 \end{figure}
 
 However, adjunction is crucial in deriving sentences with
-long distance extraction, such as (\ex{1}).  
+long distance extraction, as in sentences (\ex{1}) and (\ex{2}).  
 
 \enumsentence{Who does the emu think smells terrible?}
 \enumsentence{Who did the elephant think the panda heard the emu say
 smells terrible?} 
 
-This example is derived from the trees for {\it who smells terrible?}
-shown in figure \ref{who-smells} and for {\it the emu thinks} S shown
-in figure \ref{aard-emu}(b), by adjoining the latter at the S$_r$ node of
-the former. (See Section \ref{auxiliaries} for discussion of do-support.) This process is recursive allowing sentences like
-\ex{0}. Such a representation has been shown by Kroch and Joshi
-(1985)\nocite{kj85} to be well-suited for describing unbounded dependencies.
+The example in (\ex{-1}) is derived from the trees for {\it who smells
+terrible?}  shown in Figure ~\ref{who-smells} and {\it the emu thinks} S shown
+in Figure~\ref{aard-emu}(b), by adjoining the latter at the S$_r$ node of the
+former.\footnote{See section \ref{auxiliaries} for a discussion of do-support.}
+This process is recursive allowing sentences like (\ex{0}). Such a
+representation has been shown by \cite{kj85} to be well-suited for describing
+unbounded dependencies.
 
-\begin{figure}[t]
+\begin{figure}[thb]
 \centering
 \hspace{0.0in}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/who-smells.ps,height=3.0in}
+\psfig{figure=ps/sent-comps-subjs-files/who-smells.ps,height=2.0in}
 \caption{Tree for {\it Who smells terrible?}}
 \label{who-smells}
+\label{1;4,14}
 \end{figure}
 
 In English, a complementizer may not appear on a complement with an extracted
-subject (the ``that-trace'' configuration). This phenomenon
-is illustrated in \ex{1}-\ex{3}:
+subject (the `that-trace' configuration). This phenomenon
+is illustrated in (\ex{1})-(\ex{3}):
 
 \enumsentence{Which animal did the giraffe say that he likes?}
-\enumsentence{*Which animal did the giraffe say that likes him?}
+\enumsentence{$\ast$Which animal did the giraffe say that likes him?}
 \enumsentence{Which animal did the giraffe say likes him?}
 
-These sentences are derived in TAG by
-adjoining the tree for {\it did the giraffe say S} at the S$_r$ node
-of the tree for either {\it which animal likes him} (to yield \ex{0})
-or {\it which animal he likes} (to yield \ex{-2}).  That-trace
-violations are blocked by the presence of the feature {\bf $<$assign-comp
-= inf\underline{~}nil/ind\underline{~}nil$>$} feature on the bottom of
-the S$_r$ node of trees with extracted subjects, i.e. those used in
-sentences such as \ex{0} and \ex{-1}.  This blocks (or ``filters'') any
-other values of {\bf $<$assign-comp$>$} projected by the verb, and ensures
-that no complementizer is able to adjoin at this node.
-Complementizers may adjoin normally to object extraction trees such as
-those used in \ex{-2}.
+These sentences are derived in XTAG by adjoining the tree for {\it did the
+giraffe say} S at the S$_r$ node of the tree for either {\it which animal likes
+him} (to yield sentence~(\ex{0})) or {\it which animal he likes} (to yield
+sentence~(\ex{-2})).  That-trace violations are blocked by the presence of the
+feature {\bf $<$assign-comp$>$=inf\underline{~}nil/ind\underline{~}nil}
+feature on the bottom of the S$_r$ node of trees with extracted subjects,
+i.e. those used in sentences such as (\ex{-1}) and (\ex{0}).  This blocks (or
+`filters') any other values of {\bf $<$assign-comp$>$} projected by the verb,
+and ensures that no complementizer is able to adjoin at this node.
+Complementizers may adjoin normally to object extraction trees such as those
+used in sentence~(\ex{-2}).
 
 In the case of indirect questions, subjacency follows from the
 principle that a given tree cannot contain more than one
-wh- element. Extraction out of an indirect question is ruled out
+wh-element. Extraction out of an indirect question is ruled out
 because a sentence like:
 
-\enumsentence{$\ast$ Who$_{i}$ do you wonder who loves e$_{i}$ ?}
+\enumsentence{$\ast$ Who$_{i}$ do you wonder who$_{j}$ e$_{j}$ loves e$_{i}$ ?}
 
 \noindent would have to be derived from the adjunction of {\it do you
-wonder} into {\it who$_{i}$ who loves e$_{i}$}, which is an ill-formed
-elementary tree.\footnote{This does not mean that elementary trees
-with more than one gap should be ruled out across the grammar. Such
-trees might be required for dealing with parasitic gaps or gaps in
-coordinated structures.}
+wonder} into {\it who$_{i}$ who$_{j}$ e$_{j}$ loves e$_{i}$}, which is an
+ill-formed elementary tree.\footnote{This does not mean that elementary trees
+with more than one gap should be ruled out across the grammar. Such trees might
+be required for dealing with parasitic gaps or gaps in coordinated structures.}
 
-\subsection{Sentential Subjects}
+\section{Sentential Subjects}
 \label{sent-subjs}
 
-{\sc Tree families}: Ts0Vnx1, Ts0Ax1, Ts0dxN1, Ts0N1, Ts0Pnx1.
+{\bf Tree families}: Ts0Vnx1, Ts0Ax1, Ts0dxN1, Ts0N1, Ts0Pnx1.
 
 Verbs that select sentential subjects anchor trees that have an S node
-in the subject position rather that an NP node.  Since extraction is
+in the subject position rather than an NP node.  Since extraction is
 not possible from sentential subjects, they are implemented as
-substitution nodes in the English LTAG grammar.  Restrictions on
+substitution nodes in the English XTAG grammar.  Restrictions on
 sentential subjects, such as the required {\it that} complementizer for
 indicatives, are enforced by feature values specified on the S
 substitution node in the elementary tree.  
 
-Sentential subjects behave essentially like sentential complements,
-with a few exceptions.  In general, all verbs which license sentential
-subjects license the same set of clause types. Thus, unlike sentential
-complement verbs which select particular complementizers and clause
-types, the matrix verbs licensing sentential subjects merely license
-the S argument. Information about the complementizer or embedded verb
-is located in the tree features, rather than in the features of each
-verb selecting that tree.  Thus, all sentential subject trees have the
-same {\bf $<$mode$>$}, {\bf $<$comp$>$} and {\bf $<$assign-comp$>$} values shown in Figure
-\ref{comparison}(a).
+Sentential subjects behave essentially like sentential complements, with a few
+exceptions.  In general, all verbs which license sentential subjects license
+the same set of clause types. Thus, unlike sentential complement verbs which
+select particular complementizers and clause types, the matrix verbs licensing
+sentential subjects merely license the S argument. Information about the
+complementizer or embedded verb is located in the tree features, rather than in
+the features of each verb selecting that tree.  Thus, all sentential subject
+trees have the same {\bf $<$mode$>$}, {\bf $<$comp$>$} and {\bf
+$<$assign-comp$>$} values shown in Figure~\ref{comparison}(a).
 
-\begin{figure}[h]
-\begin{tabular}{cc}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/perplexes-feats.ps,height=2.5in}&\hspace{0.3in}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/think-feats.ps,height=2.5in} 
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=ps/sent-comps-subjs-files/perplexes-feats.ps,height=2.2in}&
+\hspace{0.5in}&
+\psfig{figure=ps/sent-comps-subjs-files/think-feats.ps,height=2.4in}\\
+(a)&&(b)\\
 \end{tabular}
 \caption{Comparison of {\bf $<$assign-comp$>$} values for sentential
-subjects (a) and sentential complements (b).}
+subjects: $\alpha$s0Vnx1 (a) and sentential complements: $\beta$nx0Vs1 (b)}
 \label{comparison}
+\label{1;1,16}
 \end{figure}
 
-The major difference in clause types licensed by S-subjs and S-comps
-is that indicative S-subjs obligatorily have a complementizer (see
-examples in section \ref{data}). The {\bf $<$assign-comp$>$} feature is used
-here to license a null complementizer for infinitival but not
-indicative clauses. {\bf $<$Assign-comp$>$} has the same possible values as
-{\bf $<$comp$>$}, with the exception that the {\bf $<$nil$>$} value is `split'
-into {\bf $<$ind-nil$>$} and {\bf $<$inf-nil$>$}.  This difference in feature
-values is illustrated in Figure \ref{comparison}.
+The major difference in clause types licensed by S-subjs and S-comps is that
+indicative S-subjs obligatorily have a complementizer (see examples in
+section~\ref{data}). The {\bf $<$assign-comp$>$} feature is used here to
+license a null complementizer for infinitival but not indicative clauses. {\bf
+$<$assign-comp$>$} has the same possible values as {\bf $<$comp$>$}, with the
+exception that the {\bf nil} value is `split' into {\bf ind-nil} and {\bf
+inf-nil}.  This difference in feature values is illustrated in
+Figure~\ref{comparison}.
 %This allows us to specify precisely which environments license null
 %complementizers. 
 %Intuitively, {\bf $<$assign-comp$>$} passes information about what
@@ -434,36 +435,44 @@ values is illustrated in Figure \ref{comparison}.
 %where it is `visible' to the extra-clausal environment.  
 
 Another minor difference is that {\it whether\/} but not {\it if\/} is
-grammatical with S-subjs (although some speakers also find {\it if\/}
-as a complementizer only marginally grammatical in S-comps). Thus,
-{\bf $<$if$>$} is not among the {\bf $<$comp$>$} values allowed in
-S-subjs. The final difference from S-comps is that there are no
-S-subjs with {\bf $<$mode = ger$>$}. As noted in footnote 4, gerundive
-complements are only allowed when there is no corresponding NP
-parse. In the case of gerundive S-subjs, there is always an NP parse
-available.
+grammatical with S-subjs\footnote{Some speakers also find {\it if\/}
+as a complementizer only marginally grammatical in S-comps.}. Thus, {\bf if} is
+not among the {\bf $<$comp$>$} values allowed in S-subjs. The final difference
+from S-comps is that there are no S-subjs with {\bf $<$mode$>$=ger}. As noted
+in footnote~\ref{gerund-footnote} of this section, gerundive complements are
+only allowed when there is no corresponding NP parse. In the case of gerundive
+S-subjs, there is always an NP parse available.
 
-\subsection{Nouns and Prepositions taking Sentential Complements}
+\section{Nouns and Prepositions taking Sentential Complements}
 \label{NPA}
 
-{\sc Trees}: $\alpha$NXNs, $\alpha$NXdxNs, $\alpha$PXPs, $\beta$vxPs,
+{\bf Trees}: $\alpha$NXNs, $\alpha$NXdxNs, $\alpha$PXPs, $\beta$vxPs,
 $\beta$Pss, $\beta$nxPx.
 
-\begin{figure}[h]
-\begin{tabular}{cc}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/with.ps,height=2.0in}&\hspace{0.3in}
-\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/sent-comps-subjs-files/boast.ps,height=2.5in} 
+\begin{figure}[thb]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=ps/sent-comps-subjs-files/with.ps,height=1.8in}&
+\hspace{0.3in}&
+\psfig{figure=ps/sent-comps-subjs-files/boast.ps,height=1.9in}
+\\
+(a) && (b)\\
 \end{tabular}
-\caption{Sample trees for preposition (a) and noun (b) taking
+\caption{Sample trees for preposition: $\alpha$PXPs (a) and noun: $\beta$NXdxNs (b) taking
 sentential complements}
 \label{nounprep}
 \end{figure}
 
-Prepositions and nouns can also select sentential complements, using
-the trees listed above.  These trees use the {\bf $<$mode$>$} and {\bf
-$<$comp$>$} features as shown in Figure \ref{nounprep}.  For example, the noun {\it
-boast} takes only indicative complements with {\it that}, while the
-preposition {\it with} takes indicative or small clause complements.
+Prepositions and nouns can also select sentential complements, using the trees
+listed above.  These trees use the {\bf $<$mode$>$} and {\bf $<$comp$>$}
+features as shown in Figure~\ref{nounprep}.  For example, the noun {\it boast}
+takes only indicative complements with {\it that}, while the preposition {\it
+with} takes small clause complements, as seen in sentences (\ex{1})-(\ex{4}).
+
+\enumsentence{Beth's boast that Clove was a smart dog....}
+\enumsentence{$\ast$Beth's boast that Clove a smart dog....}
+\enumsentence{Dania wasn't getting any sleep with Doug sick.}
+\enumsentence{$\ast$Dania wasn't getting any sleep with Doug was sick.}
 
 %%Comparative adjs also take s-comps, e.g. the boys easiest to teach.
 %%See Quirk, section 7.20 and others.
