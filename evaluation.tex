@@ -3,17 +3,17 @@
 
 In this appendix we describe various evaluations done of the XTAG
 grammar. Some of these evaluations were done on an earlier version of
-the XTAG grammar (the 1995 release), while other were done more
+the XTAG grammar (the 1995 release), while others were done more
 recently. We will try to indicate in each section which version was
 used. 
 
 \section{Parsing Corpora}
 
-In the XTAG project, we have used corpus analysis in two main ways:
-(1) to measure the performance of the English grammar on a given genre
-and (2) to identify gaps in the grammar. 
+In the XTAG project, we have used corpus analysis in two main ways: (1) to
+identify gaps in the grammar and (2) to measure the performance of the
+English grammar on a given genre.
 
-The second type of evaluation involves performing detailed error
+The first type of evaluation involves performing detailed error
 analysis on the sentences rejected by the parser, and we have done
 this several times on WSJ and Brown data.
 %Lifted directly from TAG+ paper
@@ -40,7 +40,7 @@ Rank & No of errors & Category of error \\ \hline
 \#13  & 1   &     Comparative? \\ \hline
 \#14  & 1    &    Bare infinitive \\ \hline
 \end{tabular}
-\caption{Results of Corpus Based Error Analysis}
+\caption{Results of Corpus Based Error Analysis with XTAG-95}
 \label{errors94}
 \end{table}
 
@@ -78,18 +78,19 @@ complex longer sentences. The problematic cases involved two kinds of
 relative clauses (roughly 40\%) which were not accounted for by the grammar
 developer at the time. The first kind contained examples like {\em A
 frontal system approaching from the west} which included an {\em -ing} form
-in the relative clause predicate, and the other kind contained examples
-like {\it The disturbance south of Nova Scotia early this morning} which
-had a directional noun phrase as the predicate. As a result of these
-shortcomings and also due to the long and complex sentences in this test
-set, we could parse only about 20\% of the test set (10 out of 48
-sentences).  After a recent overhaul of the relative clause analysis in the
-XTAG grammar we wanted to test the updated coverage of the grammar on
-the same test set and evaluate the degree of improvement in performance.
-This was done in \cite{prasadandsarkar00}, where we have obtained a much
-better performance of the XTAG parser on the sentences in the weather
-domain. Of the 48 sentences in the corpus, we were able to parse 43
-sentences (89.6\%). A comprehensive breakdown of the errors is described in
+in the relative clause predicate, and the other contained examples like
+{\it The disturbance south of Nova Scotia early this morning} which had a
+directional noun phrase as the predicate. As a result of these shortcomings
+and also due to the long and complex sentences in this test set, we could
+parse only about 20\% of the test set (10 out of 48 sentences). 
+
+The current version of {\sc XTAG} contains an overhaul of the relative
+clause analysis, which has been updated to extend the coverage of the
+grammar. An evaluation of the current grammar was done in
+\cite{prasadandsarkar00}, which shows a much better performance of the {\sc
+XTAG} parser on the sentences in the weather domain. Of the 48 sentences
+in the corpus, we were able to parse 43 sentences (89.6\%). A comprehensive
+breakdown of the errors is described in
 Table~\ref{tab:weather_analysis}.\footnote{%
 %
 A description of the error types is as follows:\\
@@ -97,6 +98,12 @@ A description of the error types is as follows:\\
 does not select the correct trees.\\
 {\bf R2:} Lexical item does not select the necessary tree or family.\\
 {\bf R3:} Missing analysis for VP coordination in the current grammar.%
+%
+}
+%
+\footnote{We are in the process of extending the parser to handle VP
+coordination (\#9) (See Chapter~\ref{conjunction} on recent work to handle
+VP and other predicative coordination).%
 %
 }
 
@@ -109,20 +116,18 @@ Missing Tree (R2) & 1 & 2.08\% \\ \hline
 No VP coordination (R3) & 3 & 6.25\% \\ \hline
 {\bf Total} & {\bf 5} & {\bf 10.4\%} \\ \hline
 \end{tabular}
-\caption{\label{tab:weather_analysis} Results of Corpus-Based Error Analysis}
+\caption{\label{tab:weather_analysis} Results of Corpus-Based Error
+Analysis with XTAG-98}
 \end{table}
 
-We are in the process of extending the parser to handle VP coordination
-(\#9) (See Section~\ref{conjunction} on recent work to handle VP and other
-predicative coordination). We find that this method of error analysis is
-very useful in focusing grammar development in a productive direction.
-
-To ensure that we are not losing coverage of certain phenomena as we
-extend the grammar, we have a benchmark set of grammatical and
-ungrammatical sentences from this technical report. We parse these
-sentences periodically to ensure that in adding new features and
-constructions to the grammar, we are not blocking previous analyses.
-There are approximately $590$ example sentences in this set.
+We find that this corpus-based method of error analysis is very useful in
+focusing grammar development in a productive direction. Furthermore, to
+ensure that we are not losing coverage of certain phenomena as we extend
+the grammar, we have a benchmark set of grammatical and ungrammatical
+sentences from this technical report. We parse these sentences periodically
+to ensure that in adding new features and constructions to the grammar, we
+are not blocking previous analyses.  There are approximately $590$ example
+sentences in this set.
 
 \section{Parsing Test-Suites}
 
@@ -172,7 +177,13 @@ Table~\ref{tsnlp-table}. As with the error analysis described above,
 we used this information to help direct our grammar development
 efforts. It also highlighted the fact
 that our grammar is heavily slanted toward American English---our
-grammar did not handle {\it dare} or {\it need} as auxiliary verbs,
+grammar did not handle {\it dare} or {\it need} as auxiliary
+verbs\footnote{%
+%
+The current version of the grammar, however, has been extended to handle
+these auxiliaries%
+%
+},
 and there were a number of very British particle constructions,
 e.g. {\it She misses him out}.
 
@@ -180,7 +191,7 @@ e.g. {\it She misses him out}.
 
 In a more recent test-suite based evaluation \cite{prasadandsarkar00}, we
 used the CSLI LKB (Linguistic Knowledge Building) test suite
-\cite{copestake99:_lkb_system}. of the 966 grammatical sentences we were
+\cite{copestake99:_lkb_system}. Of the 966 grammatical sentences we were
 unable to parse 26 (2.7\%). A breakdown of the errors is given in
 Table~\ref{tab:CSLI_analysis}):
 
@@ -195,7 +206,7 @@ No analysis for Ellipsis & 18 & 1.8\% \\ \hline
 Default entry error & 1 & 0.1\% \\ \hline
 {\bf Total} & {\bf 26} & {\bf 2.7\%} \\ \hline
 \end{tabular}
- \caption{\label{tab:CSLI_analysis} Results of CSLI Test-Suite based Evaluation}
+ \caption{\label{tab:CSLI_analysis} Results of CSLI LKB Test-Suite based Evaluation}
 \end{table}
 
 The analysis for ellipsis and inverse predication has not been added yet in
