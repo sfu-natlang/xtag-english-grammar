@@ -634,7 +634,7 @@
 #S_no_scolon	S_1.t:<punct contains scolon>= -, S_f.t:<punct contains scolon>= -!
 #S1_ind-imp-inf	S_1.t:<mode> = ind/imp/inf!
 #S1_ind-imp	S_1.t:<mode> = ind/imp!
-#S1_ind 	S_1.t:<mode> = ind!
+#S1_ind_comma         S_1.t:<mode> = ind!
 #NP_no_colon	NP.t:<punct contains colon> = -!
 #NP_PRON-	NP.t:<pron>=-!	;;used by appositive tree
 #NP_conj1	NP.t:<conj> = and/or/but/nil!

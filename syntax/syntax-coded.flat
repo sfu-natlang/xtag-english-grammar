@@ -45,7 +45,7 @@
 <<INDEX>>,<<ENTRY>>,<<POS>>Punct<<TREES>>nxPUnx<<FEATURES>>#Comma #NP_PRON- #NP_conj1
 <<INDEX>>,<<ENTRY>>,<<POS>>Punct<<TREES>>sPU<<FEATURES>>#Comma #Sf_punct-
 <<INDEX>>,<<ENTRY>>,<<POS>>Punct<<TREES>>sPUnx<<FEATURES>>#Comma
-<<INDEX>>,<<ENTRY>>,<<POS>>Punct<<TREES>>sPUs<<FEATURES>>#Comma #S1_ind #S_no_colon #S_no_scolon #Sf_term_none
+<<INDEX>>,<<ENTRY>>,<<POS>>Punct<<TREES>>sPUs<<FEATURES>>#Comma #S1_ind_comma #S_no_colon #S_no_scolon #Sf_term_none
 <<INDEX>>--<<ENTRY>>--<<POS>>Punct1<<ENTRY>>--<<POS>>Punct2<<TREES>>nxPUnxPU PUpxPUvx<<FEATURES>>#Dash1 #NP_PRON- #NP_conj1
 <<INDEX>>--<<ENTRY>>--<<POS>>Punct<<TREES>>Pu sPU nxPUa vPU pPU<<FEATURES>>#Dash
 <<INDEX>>--<<ENTRY>>--<<POS>>Punct<<TREES>>nxPUnx<<FEATURES>>#Dash #NP_PRON- #NP_conj1
