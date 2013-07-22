@@ -4,7 +4,7 @@
 (defgrammar english
     
   (:default-pathname (setf user::*english-directory*
-			   "/mnt/linc/xtag2/pub/english/")
+			   "/home/zwa47/sfuhome/xtag-english-grammar/")
 		     :pretty-name "XTAG English grammar (Release 02.13.2001)"
 		     :start-feature "<mode> = ind/imp <comp> = nil <wh> = <invlink>  <punct term> = per/qmark/excl <punct struct> = nil")
 
@@ -99,8 +99,8 @@
   (:morphology-files "morph_english"
 
 		     (:default-pathname (concatenate 'string
-						    user::*morphology-directory*
-						     "data/")
+						    user::*english-directory*
+						     "morphology/")
 		      :type "db"))
 
 
