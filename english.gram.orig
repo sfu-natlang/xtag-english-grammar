@@ -96,7 +96,7 @@
 		   :type "db"))
 
 
-  (:morphology-files "morph_english"
+  (:morphology-files "trunc_morph"
 
 		     (:default-pathname (concatenate 'string
 						    user::*english-directory*
