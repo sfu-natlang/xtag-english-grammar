@@ -99,8 +99,8 @@
   (:morphology-files "morph_english"
 
 		     (:default-pathname (concatenate 'string
-						    user::*morphology-directory*
-						     "data/")
+						    user::*english-directory*
+						     "morphology/")
 		      :type "db"))
 
 
