@@ -30,7 +30,7 @@ your system.
 Run INSTALL in the english directory with the full path of the
 directory you have installed the english grammar. For example,
 
-% ./INSTALL /mnt/linc/home/anoop/english/
+% csh INSTALL /mnt/linc/home/anoop/english/
 
 The last / in the directory name is important and should not
 be omitted.
