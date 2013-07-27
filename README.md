@@ -26,9 +26,11 @@ Install instructions:
 
 Execute the following commands:
 
+<pre>
 % gunzip english_gram.tar.gz
 % tar xvf english_gram.tar
 % cd english
+</pre>
 
 Edit the INSTALL script to reflect the location of perl in
 your system.
@@ -36,7 +38,9 @@ your system.
 Run INSTALL in the english directory with the full path of the
 directory you have installed the english grammar. For example,
 
+<pre>
 % csh INSTALL /mnt/linc/home/anoop/english/
+</pre>
 
 The last / in the directory name is important and should not
 be omitted.
