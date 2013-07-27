@@ -1,7 +1,7 @@
 \documentstyle[11pt,alltt]{article}
-\pagestyle{empty}
+
 \begin{document}
-*\vspace{-0.6in}
+
 \begin{alltt}
    Function {\it{}Match} ({\it{}list}\(\sb{lhs}\), {\it{}list}\(\sb{inp}\))
        Let {\it{}MAPPINGS} be the list of all valid mappings from {\it{}list\(\sb{lhs}\)} to {\it{}list}\(\sb{inp}\)
@@ -26,18 +26,16 @@
                       {\it{}sl} be the number of nodes in {\it{}children}\(\sb{lhs}\)
                       {\it{}DESC} be the set of {\it{}sl}-sized lists given by:
                              {\it{}DESC} = \{[{\it{}di}\(\sb{1}\),{\it{}di}\(\sb{2}\),...,{\it{}di}\(\sb{sl}\)] \(\mid\)
-                                   For every \(1\leq\){\it{}k}\(\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is a descendant
+                                       For every \(1\leq\){\it{}k}\(\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is a descendant
                                                of some node in {\it{}Mapping(lhs}\(\sb{j}\))\footnote{It's not necessary to be a proper descendant, i.e., {\it{}di}\(\sb{k}\) may be a node in {\it{}Mapping}({\it{}lhs}\(\sb{j}\))}
-                                   For every \(1\leq\){\it{}k}\(\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is {\it{}to the right of} {\it{}di}\(\sb{k-1}\)\footnote{Recall that a node {\it{}n} is to the right of a node {\it{}m}, if {\it{}n} and {\it{}m} are not descendant of each other, and all the leaves dominated by {\it{}n} are to the right of the leaves dominated by {\it{}m}.} \}.
-                      Make {\it{}matches} = \(\emptyset\)
+                             For every \(1<k\leq\){\it{}sl}, {\it{}di}\(\sb{k}\) is {\it{}to the right of} {\it{}di}\(\sb{k-1}\)\footnote{Recall that a node {\it{}n} is to the right of a node {\it{}m}, if {\it{}n} and {\it{}m} are not descendant of each other, and all the leaves dominated by {\it{}n} are to the right of the leaves dominated by {\it{}m}.}.
                       For every list {\it{}Desc} = [{\it{}di}\(\sb{1}\),{\it{}di}\(\sb{2}\),...,{\it{}di}\(\sb{sl}\)] \(\in\) {\it{}DESC} do: 
-                          Let {\it{}TreeMaterial} be the list of subtrees dominated 
+                          Let {\it{}Tree-Material} be the list of subtrees dominated 
                                    by the nodes in {\it{}Mapping}({\it{}lhs}\(\sb{j}\)), but, with the
-                                   subtrees dominated by the nodes in {\it{}Desc}
+                                   subtrees dominated by the nodes in {\it{}DESC}
                                    cut off from these trees 
-                          Make {\it{}matches} = {\it{}matches} \(\cup\) \{\{({\it{}lhs}\(\sb{j}\), {\it{}TreeMaterial})\}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\)
-                                  {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}Desc})\} 
-                      Make {\it{}Matches} = \{ {\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\) {\it{}m} \(\in\) {\it{}Matches} and {\it{}m}\(\sb{j}\) \(\in\) {\it{}matches} \}
+                          Make {\it{}Matches} = \{ \{({\it{}lhs}\(\sb{j}\), {\it{}Tree-Material})\}\(\cup\){\it{}m}\(\cup\){\it{}m}\(\sb{j}\) \(\mid\)
+                                  {\it{}m} \(\in\) {\it{}Matches} and {\it{}m}\(\sb{j}\) \(\in\) {\it{}Match}({\it{}children}\(\sb{lhs}\), {\it{}Desc})\} 
            Make {\it{}MATCHES} = {\it{}MATCHES} \(\cup\) {\it{}Matches}
        Return {\it{}MATCHES}
 \end{alltt}
