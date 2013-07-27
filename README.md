@@ -3,6 +3,7 @@ xtag-english-grammar
 
 The XTAG English Grammar mirrored from the XTAG page http://www.cis.upenn.edu/~xtag/
 
+<pre>
 Begin
 Title:          XTAG English Grammar
 Version:        5.46
@@ -17,6 +18,7 @@ Primary-site:   ftp://ftp.cis.upenn.edu/pub/xtag/release-2.24.2001/
 Platform:       Data can be read on any platform. Viewer requires Tcl/Tk.
 Copying-policy: GPL
 End             
+</pre>
 
 
 Install instructions:
