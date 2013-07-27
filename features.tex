@@ -1,0 +1,998 @@
+\chapter{Features}
+\label{features}
+
+This appendix consists of short `biographical' sketches of the various
+features currently in use in the XTAG English
+grammar. Table~\ref{feature-table} contains a comprehensive list of the
+features in the XTAG grammar and their possible values.
+
+
+\footnotesize
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+Feature&Value\\
+\hline
+\hline
+$<$agr 3rdsing$>$&$+,-$\\
+$<$agr num$>$&plur,sing\\
+$<$agr pers$>$&1,2,3\\
+$<$agr gen$>$&fem,masc,neuter\\
+$<$assign-case$>$&nom,acc,none\\
+$<$assign-comp$>$&that,whether,if,for,ecm,inf\_nil,ind\_nil,ppart\_nil,none\\
+$<$card$>$&$+,-$\\
+$<$case$>$&nom,acc,gen,none\\
+$<$comp$>$&that,whether,if,for,rel,inf\_nil,ind\_nil,nil\\
+$<$compar$>$&$+,-$\\
+$<$compl$>$&$+,-$\\
+$<$conditional$>$&$+,-$\\
+$<$conj$>$&and,or,but,comma,scolon,to,disc,nil\\
+$<$const$>$&$+,-$\\
+$<$contr$>$&$+,-$\\
+$<$control$>$&no value, indexing only\\
+$<$decreas$>$&$+,-$\\
+$<$definite$>$&$+,-$\\
+$<$equiv$>$&$+,-$\\
+$<$extracted$>$&$+,-$\\
+$<$gen$>$&$+,-$\\
+$<$gerund$>$&$+,-$\\
+$<$inv$>$&$+,-$\\
+$<$invlink$>$&no value, indexing only\\
+$<$irrealis$>$&$+,-$\\
+$<$mainv$>$&$+,-$\\
+$<$mode$>$&base,ger,ind,inf,imp,nom,ppart,prep,sbjunt\\
+$<$neg$>$&$+,-$\\
+$<$nocomp-mode$>$&inf,ger,ppart\\
+$<$passive$>$&$+,-$\\
+$<$perfect$>$&$+,-$\\
+$<$pred$>$&$+,-$\\
+$<$progressive$>$&$+,-$\\
+$<$pron$>$&$+,-$\\
+$<$punct bal$>$&dquote,squote,paren,nil\\
+$<$punct contains colon$>$&$+,-$\\
+$<$punct contains dash$>$&$+,-$\\
+$<$punct contains dquote$>$&$+,-$\\
+$<$punct contains scolon$>$&$+,-$\\
+$<$punct contains squote$>$&$+,-$\\
+$<$punct struct$>$&comma,dash,colon,scolon,nil\\
+$<$punct term$>$&per,qmark,excl,nil\\
+$<$quan$>$&$+,-$\\
+$<$refl$>$&$+,-$\\
+$<$rel-clause$>$&$+,-$\\
+$<$super$>$&$+,-$\\
+$<$tense$>$&pres,past\\
+$<$trace$>$&no value, indexing only\\
+$<$weak$>$&$+,-$\\
+$<$wh$>$&$+,-$\\
+\hline
+\end{tabular}
+\caption{List of features and their possible values}
+\label{feature-table}
+\end{table}
+
+\normalsize
+
+
+\section{Agreement}
+{\bf $\langle$agr$\rangle$} is a complex feature.
+It can have as its subfeatures:\\
+{\bf $\langle$agr 3rdsing$\rangle$}, possible values: {\bf $+/-$ }\\
+{\bf $\langle$agr num$\rangle$}, possible values: {\bf $plur,sing$ }\\
+{\bf $\langle$agr pers$\rangle$}, possible values: {\bf $1,2,3$ }\\
+{\bf $\langle$agr gen$\rangle$}, possible values: {\bf $masc,fem,neut$ }
+
+These features are used to ensure agreement between a verb and its subject.
+
+Where does it occur:\\ Nouns comes specified from the lexicon with
+their {\bf $\langle$agr$\rangle$} features. e.g. {\em books} is {\bf
+$\langle$agr 3rdsing$\rangle$:~--}, {\bf $\langle$agr num$\rangle$:~plur}, and {\bf $\langle$agr pers$\rangle$:~3}. Only pronouns use the
+{\bf $<$gen$>$} (gender) feature.
+
+The {\bf $\langle$agr$\rangle$} features of a noun are transmitted up the 
+NP tree by the following equation:\\
+{\bf NP.b:$\langle$agr$\rangle =$ N.t:$\langle$agr$\rangle$}
+
+Agreement between a verb and its subject is mediated by the following feature
+equations:
+
+\enumsentence{ {\bf NP$_{subj}$:$\langle$agr$\rangle =$ VP.t:$\langle$agr$\rangle$}}
+
+
+\enumsentence{ {\bf VP.b:$\langle$agr$\rangle =$ V.t:$\langle$agr$\rangle$}}
+
+Agreement has to be done as a two step process because whether the
+verb agrees with the subject or not depends upon whether some auxiliary verb
+adjoins in and upon what the {\bf $\langle$agr$\rangle$} specification of 
+the verb is. 
+
+Verbs also come specified from the lexicon with their {\bf
+$\langle$agr$\rangle$} features, e.g. the {\bf $\langle$agr$\rangle$}
+features of the verb {\em sings} are {\bf $\langle$agr
+3rdsing$\rangle$:~+}, {\bf $\langle$agr num$\rangle$:~sing}, and {\bf
+$\langle$agr pers$\rangle$:~3}; Non-finite forms of the verb {\em
+sing} e.g. {\em singing} do not come with an {\bf
+$\langle$agr$\rangle$} feature specification.
+
+\subsection{Agreement and Movement}
+The {\bf $\langle$agr$\rangle$} features of a moved NP and its trace 
+are co-indexed. This captures the fact that movement does not disrupt 
+a pre-existing agreement relationship between an NP and a verb.
+
+\enumsentence{ \ [Which boys]$_{i}$ does John think [t$_{i}$ are/*is intelligent]?}
+
+
+
+\section{Case}
+
+\subsection{Approaches to Case}
+\subsubsection{Case in GB theory}
+
+GB (Government and Binding) theory proposes the following
+`case filter' as a requirement on S-structure.\footnote{There are certain
+problems with applying the case filter as a requirement at the level of
+S-structure.  These issues are not crucial to the discussion of the English
+XTAG implementation of case and so will not be discussed here.  Interested
+readers are referred to
+\cite{lasnik-uriagereka88}.}
+
+\begin{verse}
+\xtagdef{Case Filter:}
+Every overt NP must be assigned abstract case. \cite{haegeman91}
+\end{verse}
+
+Abstract case is taken to be universal.  Languages with rich morphological case
+marking, such as Latin, and languages with very limited morphological case
+marking, like English, are all presumed to have full systems of abstract case
+that differ only in the extent of morphological realization.
+
+In GB, abstract case is argued to be assigned to NP's by various case
+assigners, namely verbs, prepositions, and INFL.  Verbs and
+prepositions are said to assign accusative case to NP's that they
+govern, and INFL assigns nominative case to NP's that it governs.
+These governing categories are constrained as to where they can assign
+case by means of `barriers' based on `minimality conditions', although
+these are relaxed in `exceptional case marking' situations.  The
+details of the GB analysis are beyond the scope of this technical
+report, but see \cite{chomsky86} for the original analysis or
+\cite{haegeman91} for an overview.  Let it suffice for us to say that
+the notion of abstract case and the case filter are useful in
+accounting for a number of phenomena including the distribution of
+nominative and accusative case, and the distribution of overt NP's and
+empty categories (such as PRO).
+
+\subsubsection{Minimalism and Case} 
+
+A major conceptual difference between GB theories and Minimalism is that in
+Minimalism, lexical items carry their features with them rather than being
+assigned their features in the course of the derivation.  For example, nouns
+have a case feature when it comes into the derivation. This feature is
+`checked' in a particular configuration (in SPEC position of AGR$_s$ or
+AGR$_o$) and then deleted. If the feature is not checked
+(deleted), the derivation fails.\cite{chomsky92}
+
+\subsection{Case in XTAG}
+
+The English XTAG grammar adopts the notion of case and the case filter for many
+of the same reasons argued in the GB literature.  However, in some respects the
+English XTAG grammar's implementation of case more closely resembles the
+treatment in Chomsky's Minimalism framework \cite{chomsky92} than the system
+outlined in the GB literature \cite{chomsky86}.  As in Minimalism, nouns in
+the XTAG grammar carry case with them, which is eventually `checked'. However,
+in the XTAG grammar, noun cases are checked against the case values assigned
+by the verb during the unification of the feature structures.  Unlike Chomsky's
+Minimalism, there are no separate AGR nodes; the case checking comes from the
+verbs directly. Case assignment from the verb is more like the GB approach than
+the requirement of a SPEC-head relationship in Minimalism.
+
+There are two features responsible for case-assignment:\\
+{\bf $\langle$case$\rangle$}, possible values: {\bf nom, acc, gen, none}\\
+{\bf $\langle$assign-case$\rangle$}, possible values: {\bf nom, acc, none}
+
+Case assigners (prepositions and verbs) as well as the VP, S and PP
+nodes that dominate them have an {\bf $\langle$assign-case$\rangle$}
+case feature. Phrases and lexical items that have case i.e. Ns and NPs
+have a {\bf $\langle$case$\rangle$} feature.
+
+\subsubsection{Lexical Noun Phrases}
+
+Most nouns in English do not have separate forms for nominative and accusative
+case, and so they are ambiguous between the two.  Pronouns, of course, are
+morphologically marked for case, and each carries the appropriate case in its
+feature.  Figures~\ref{nouns-with-case}(a) and \ref{nouns-with-case}(b) show
+the NP tree anchored by a noun and a pronoun, respectively, along with the
+feature values associated with each word.  Note that {\it books} simply gets
+the default case {\bf nom/acc}, while {\it she} restricts the case to be {\bf
+nom}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphaNXN_books.ps,height=3.0in}}  &
+\hspace*{0.5in} &
+{\psfig{figure=ps/case-files/alphaNXN_she.ps,height=3.2in}} \\
+(a)& \hspace*{0.5in}&(b)\\
+\end{tabular}\\
+\caption{Lexicalized NP trees with case markings}
+\label {nouns-with-case}
+\end{figure}
+
+\subsubsection{Case Assigners}
+
+Case is assigned in the XTAG English grammar by two lexical categories
+- verbs and prepositions.\footnote{{\it For} also assigns case as a
+complementizer.  See section \ref{for-complementizer} for more
+details.}
+
+\begin{flushleft}
+{\bf $\bullet$ Prepositions}
+\end{flushleft}
+
+Prepositions assign accusative case ({\bf acc}) through
+their {\bf $<$assign-case$>$} feature, which is specified in the lexicon.
+
+\enumsentence{ {\bf P.b:$\langle$assign-case$\rangle =$ acc}}
+
+This feature is linked directly to the
+{\bf $<$case$>$} feature of their objects, which is accomplished with 
+the following feature equations:
+
+\enumsentence{ {\bf PP.b:$\langle$assign-case$\rangle =$ P.t:$\langle$assign-case$\rangle$}}
+
+
+\enumsentence{ {\bf NP.t:$\langle$case$\rangle =$ P.t:$\langle$assign-case$\rangle$}}
+
+Figure~\ref{PXPnx-with-case}(a) shows a lexicalized preposition tree,
+while Figure~\ref{PXPnx-with-case}(b) shows the same tree with the NP
+tree from Figure~\ref{nouns-with-case}(a) substituted into the NP
+position.  Figure~\ref{PXPnx-with-case}(c) is the tree in
+Figure~\ref{PXPnx-with-case}(b) after unification has taken place.
+Note that the case ambiguity of {\it books} has been resolved to
+accusative case.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccc}
+{\psfig{figure=ps/case-files/alphaPXPnx_of.ps,height=1.7in}}  &
+&
+{\psfig{figure=ps/case-files/NXN-substituted-into-PXPnx.ps,height=3.5in}} &
+&
+{\psfig{figure=ps/case-files/NXN-substituted-into-PXPnx-unified.ps,height=2.8in}} \\
+(a)& \hspace*{0.05in}&(b)& \hspace*{0.05in}&(c)\\
+\end{tabular}\\
+\caption {Assigning case in prepositional phrases}
+\label{PXPnx-with-case}
+\end{figure}
+
+\begin{flushleft}
+{\bf $\bullet$ Verbs}
+\end{flushleft}
+
+Verbs are the other part of speech in the XTAG grammar that can assign case.
+Because XTAG does not distinguish INFL and VP nodes, verbs must provide case
+assignment on the subject position in addition to the case assigned to their NP
+complements.
+
+Assigning case to NP complements is handled by building the case values of the
+complements directly into the tree that the case assigner (the verb) anchors.
+Figures~\ref{S-tree-with-case}(a) and \ref{S-tree-with-case}(b) show an S
+tree\footnote{Features not pertaining to this discussion have been taken out to
+improve readability and to make the trees easier to fit onto the page.} that
+would be anchored\footnote{The diamond marker ($\diamond$) indicates the
+anchor(s) of a structure if the tree has not yet been lexicalized.} by a
+transitive and ditransitive verb, respectively.  Note that the case assignments
+for the NP complements are already in the tree, even though there is not yet a
+lexical item anchoring the tree.  Since every verb that selects these trees
+(and other trees in each respective subcategorization frame) assigns the same
+case to the complements, building case features into the tree has exactly the
+same result as putting the case feature value in each verb's lexical
+entry. \ex{1} shows the equation used for specifying accusative case on the
+object NP (where {\it object} is replaced by an underscore and the number of
+the argument -- either 1 or 2 -- which is getting accusative case).
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphanx0Vnx1-case-features.ps,height=2.0in}}
+& \hspace*{0.5in} &
+{\psfig{figure=ps/case-files/alphanx0Vnx2nx1-case-features.ps,height=2.0in}} \\
+(a)& \hspace*{0.5in}&(b)\\
+\end{tabular}\\
+\caption {Case assignment to NP arguments}
+\label{S-tree-with-case}
+\label{2;1,1}
+\label{2;1,3}
+\end{figure}
+
+\enumsentence{ {\bf NP$_{object}$.t:$\langle$case$\rangle =$ acc}}
+
+The case assigned to the subject position varies with verb form.  Since the
+XTAG grammar treats the inflected verb as a single unit rather than dividing it
+into INFL and V nodes, case, along with tense and agreement, is expressed in
+the features of verbs, and must be passed in the appropriate manner.  The trees
+in Figure~\ref{lexicalized-S-tree-with-case} show the path of linkages that
+joins the {\bf$<$assign-case$>$} feature of the V to the {\bf $<$case$>$}
+feature of the subject NP.  The morphological form of the verb determines the
+value of the {\bf $<$assign-case$>$} feature.
+Figures~\ref{lexicalized-S-tree-with-case}(a) and
+\ref{lexicalized-S-tree-with-case}(b) show the same tree\footnote{Again, the 
+feature structures shown have been restricted to those that pertain to the V/NP
+interaction.} anchored by different morphological forms of the verb {\it sing},
+which give different values for the {\bf $<$assign-case$>$} feature.
+Tensed verbs assign case {\bf nom}, whereas non-tensed verbs assign no case at
+all; that is, a verb such as {\it singing} has no {\bf $<$assign-case$>$}
+feature. 
+
+Assignment of case to the subject involves the following two equations.
+
+\enumsentence{ {\bf NP$_{subj}$:$\langle$case$\rangle =$ VP.t:$\langle$assign-case$\rangle$}}
+
+\enumsentence{ {\bf VP.b:$\langle$assign-case$\rangle =$ V.t:$\langle$assign-case$\rangle$}}
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/alphanx0Vnx1_sings-case-features.ps,height=3.3in}}  & \hspace*{0.5in}&
+{\psfig{figure=ps/case-files/alphanx0Vnx1_singing_.ps,height=3.0in}} \\
+(a)& \hspace*{0.5in}&(b)\\
+\end{tabular}\\
+\caption {Assigning case according to verb form}
+\label {lexicalized-S-tree-with-case}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/case-files/betaVvx_is-with-case.ps,height=2.6in}}  &
+\hspace*{0.5in} &
+{\psfig{figure=ps/case-files/is-adjoined-into-singing.ps,height=3.0in}} \\
+(a)&\hspace*{0.5in} &(b)\\
+\end{tabular}\\
+\caption {Proper case assignment with auxiliary verbs}
+\label{Vvx-with-case}
+\end{figure}
+
+In the case of a tenseless verb, a tensed auxiliary will adjoin in and assign
+case to the subject, or the subject will be assigned accusative from a higher
+ECM verb.\footnote{Currently, there is nothing in the grammar which acts as a
+Case Filter to rule out sentences with nouns that are not receiving
+case. Thus, sentences such as {\it $\ast$I hope Carlos to be happy} are
+accepted, even though the NP {\it Carlos} does not receive case. We are
+exploring ways of handling this for future releases.}
+Figure~\ref{Vvx-with-case}(a) shows the auxiliary tree for {\it is}, and
+Figure~\ref{Vvx-with-case}(b) shows the result of adjoining {\it is} into the
+transitive tree anchored by {\it singing}. The case feature on the subject NP
+has the value {\bf $<$nom$>$}, which comes from the auxiliary verb {\it is}. 
+
+\subsubsection{PRO}
+
+In GB theory, the null NP element PRO can only appear in positions where it
+does not receive case (and in fact, where it is ungoverned). PRO only appears
+in subject position of tenseless (non-matrix) clauses, where the clause is
+either an adjunct, as in \ex{1}, or a CP infinitival complement clause, as in
+\ex{2}. Since only tensed verbs can assign nominative case, a PRO in the
+subject position of a tenseless clause will not receive nominative case. PRO
+also cannot appear in the complement of an ECM verb, since ECM verbs assign
+accusative case to the subject of their complement clause.
+
+\enumsentence{While PRO talking to Anoop, Carlos drank a coke.}
+\enumsentence{Tonia wants PRO to eat lunch.}
+
+In previous versions of the grammar, the distribution of PRO was controlled by
+case features, similar to its treatment GB theory. PRO anchored an NP initial
+tree and had the case feature {\bf none}. This tree could substitute into NP
+positions, but only unify in a position where either case {\bf none} or no case
+at all was assigned, but not in positions with case {\bf nom} or {\bf acc}.
+
+Currently, however, we have dispensed with PRO as an anchoring element, and
+tenseless verbs no longer have the feature {\bf
+$<$assign-case$>$=none}. Rather than substituting in, PRO is built into the
+subject position of the relevant sentential (and gerund) trees.\footnote{In
+this, we follow the treatment of PRO in the French XTAG project
+\cite{ACK00}.} \footnote{Note that, as of the Spring 2001 release, not all
+the PRO trees had been included in the grammar. Thus, some necessary trees
+are missing.}
+
+The distribution of PRO is still controlled by case features to some degree,
+however. The trees with PRO built-in have an {\bf $<$assign-case$>$=none}
+feature in the root S node (rather than being assigned by the verb). By having
+this feature, we can make sure that the PRO tree cannot appear as the
+complement of an ECM verb, since it will clash with the ECM verb's {\bf
+$<$assign-case$>$=acc} feature. The equations in the PRO trees are given in
+\ex{1} and \ex{2}.
+
+\enumsentence{ {\bf NP$_{subj}$:$<$case$>$ = none}}
+
+\enumsentence{ {\bf S$_r$.b:$<$case$>$ = NP$_{subj}$:$<$case$>$}}
+
+
+\subsubsection{ECM}
+Certain verbs, such as {\em want, believe, consider}, and one complementizer
+({\em for}) are able to assign case to the subject of their complement clause. 
+
+The complementizer {\em for}, like the preposition {\em for}, has the
+{\bf $\langle$assign-case$\rangle$} feature of its complement set to
+{\bf acc}. Since the {\bf $\langle$assign-case$\rangle$} feature of
+the root S$_{r}$ of the complement tree and the {\bf
+$\langle$case$\rangle$} feature of its NP subject are co-indexed, this
+leads to the subject being assigned accusative case.
+
+ECM verbs have the {\bf $\langle$assign-case$\rangle$}  feature of their
+foot S node set to {\bf acc}. The co-indexation between the 
+{\bf $\langle$assign-case$\rangle$} feature of
+the root S$_{r}$ and the {\bf $\langle$case$\rangle$} feature of the NP subject
+leads to the subject being assigned accusative case.
+
+\subsubsection{The Case of Extracted NPs}
+The {\bf $\langle$case$\rangle$} features of a moved NP and its trace 
+are co-indexed. This captures the fact that movement does not disrupt 
+a pre-existing relationship of case-assignment between a verb and an NP.
+
+\enumsentence{ Her$_{i}$/*She$_{i}$, I think that Odo likes t$_{i}$.}
+
+
+\section{Extraction and Inversion}
+
+\subsection{Extraction}
+{\bf $\langle$extracted$\rangle$}, possible vales are {\bf $+/-$}
+
+All sentential trees with extracted components, with the exception of
+relative clauses are marked {\bf S.b$\langle$extracted$\rangle = +$}
+at their top S node. The extracted element may be a {\em wh}-NP or a
+topicalized NP. The {\bf $\langle$extracted$\rangle$} feature 
+is currently used to block embedded topicalizations as exemplified
+by the following example.
+\enumsentence{ * John wants [Bill$_{i}$ [PRO to leave t$_{i}$]] }
+
+\noindent
+{\bf $\langle$trace$\rangle$}: this feature is not assigned any value and
+is used to co-index moved NPs and their traces which are marked by
+$\epsilon$.
+
+\noindent
+{\bf $\langle$wh$\rangle$}: possible values are {\bf $+/-$}\\ NPs like
+{\em who}, {\em what} etc. come marked from the lexicon with a value
+of {\bf $+$} for the feature {\bf $\langle$wh$\rangle$}.  Non {\em
+wh}-NPs have {\bf $-$} as the value of their {\bf
+$\langle$wh$\rangle$} feature. Note that {\bf $\langle$wh$\rangle$ = +
+} NPs are not restricted to occurring in extracted positions, to allow
+for the correct treatment of echo questions.
+
+The {\bf $\langle$wh$\rangle$} feature is propagated up by possessives
+-- e.g. the $+$ {\bf $\langle$wh$\rangle$} feature of the determiner
+{\em which} in {\em which boy} is propagated up to the level of the NP
+so that the value of the {\bf $\langle$wh$\rangle$} feature of the
+entire NP is $+${\bf $\langle$wh$\rangle$}. This process is recursive
+e.g. {\em which boy's mother}, {\em which boy's mother's sister}.
+
+The {\bf $\langle$wh$\rangle$} feature
+is also propagated up PPs. Thus the PP {\em to whom} has $+$ as the value of its 
+{\bf $\langle$wh$\rangle$} feature. 
+
+In trees with extracted NPs, the {\bf $\langle$wh$\rangle$} feature of the
+root node S node is equated with the {\bf $\langle$wh$\rangle$} feature
+of the extracted NPs. 
+
+The {\bf $\langle$wh$\rangle$} feature is used to impose
+subcategorizational constraints.
+Certain verbs like {\em wonder} can
+only take interrogative complements, other verbs such as {\em know}
+can take both interrogative and non-interrogative complements, and yet
+other verbs like {\em think} can only take non-interrogative
+complements (cf. the {\bf $\langle$extracted$\rangle$} and {\bf
+$\langle$mode$\rangle$} features also play a role in imposing 
+subcategorizational constraints).
+
+The {\bf $\langle$wh$\rangle$} feature is also used to get the correct
+inversion patterns.
+
+
+\subsection{Inversion}
+The following three features are used to ensure the correct pattern of
+inversion:\\
+{\bf $\langle$wh$\rangle$}: possible values are {\bf $+/-$}\\
+{\bf $\langle$inv$\rangle$}: possible values are {\bf $+/-$}\\
+{\bf $\langle$invlink$\rangle$}: possible values are {\bf $+/-$}
+
+Facts to be captured:\\
+1. No inversion with topicalization\\
+2. No inversion with matrix extracted subject {\em wh}-questions\\
+3. Inversion with matrix extracted object {\em wh}-questions\\
+4. Inversion with all matrix {\em wh}-questions involving extraction from an
+embedded clause\\
+5. No inversion in embedded questions \\
+6. No matrix subject topicalizations.
+
+Consider a tree with object extraction, where NP is extracted. 
+The following feature equations are used:\\
+
+\enumsentence{ {\bf S$_{q}$.b:$\langle$wh$\rangle =$ NP.t:$\langle$wh$\rangle$}\label{inv1}}
+\enumsentence{ {\bf S$_{q}$.b:$\langle$invlink$\rangle =$  S$_{q}$.b:$\langle$inv$\rangle$}\label{inv2}}
+\enumsentence{ {\bf S$_{q}$.b:$\langle$inv$\rangle =$  S$_{r}$.t:$\langle$inv$\rangle$}\label{inv3}}
+\enumsentence{ {\bf S$_{r}$.b:$\langle$inv$\rangle = -$}\label{inv4}}
+
+\noindent
+{\bf Root restriction}: A restriction is imposed on the final root
+node of any XTAG derivation of a tensed sentence which equates the
+{\bf $\langle$wh$\rangle$} feature and the {\bf
+$\langle$invlink$\rangle$} feature of the final root node.
+
+If the extracted NP is not a {\em wh}-word i.e. its {\bf
+$\langle$wh$\rangle$} feature has the value $-$, at the end of the
+derivation, {\bf S$_{q}$.b:$\langle$wh$\rangle$} will also have the
+value $-$. Because of the root constraint {\bf
+S$_{q}$.b:$\langle$wh$\rangle$} will be equated to {\bf
+S$_{q}$.b:$\langle$invlink$\rangle$} which will also come to have the
+value $-$. Then, by (\ref{inv3}), {\bf
+S$_{r}$.t:$\langle$inv$\rangle$} will acquire the value $-$. This will
+unify with {\bf S$_{r}$.b:$\langle$inv$\rangle$} which has the value
+$-$ (cf. \ref{inv4}). Consequently, no auxiliary verb adjunction will
+be forced. Hence, there will never be inversion in topicalization.
+
+If the extracted NP is a {\em wh}-word i.e. its {\bf $\langle$wh$\rangle$} 
+feature has the value $+$, at the end of the derivation, 
+{\bf S$_{q}$.b:$\langle$wh$\rangle$} will also have the value $+$. Because of
+the root constraint {\bf S$_{q}$.b:$\langle$wh$\rangle$} will be equated 
+to {\bf S$_{q}$.b:$\langle$invlink$\rangle$} which will also come to have
+the value $+$. Then, by (\ref{inv3}), {\bf S$_{r}$.t:$\langle$inv$\rangle$} 
+will acquire the value $+$. This will not unify with {\bf S$_{r}$.b:$\langle$inv$\rangle$}
+which has the value $+$ (cf. \ref{inv4}). Consequently, the adjunction
+of an inverted auxiliary verb is required for the derivation to succeed.
+
+Inversion will still take place even if the extraction is from an embedded
+clause.
+
+\enumsentence{ Who$_{i}$ does Loida think [Miguel likes t$_{i}$]}
+
+This is because the adjoined tree's root node will also have its 
+{\bf S$_{r}$.b:$\langle$inv$\rangle$} set to $-$. 
+
+
+Note that inversion is only forced upon us because S$_{q}$ is the
+final root node and the {\bf Root restriction} applies. In embedded
+environments, the root restriction would not apply and the feature
+clash that forces adjunction would not take place.
+
+The {\bf $\langle$invlink$\rangle$} feature is not present in subject
+extractions.  Consequently there is no inversion in subject questions.
+
+Subject topicalizations are blocked by setting the 
+{\bf $\langle$wh$\rangle$} feature of the extracted NP to $+$ i.e. only
+{\em wh}-phrases can go in this location. 
+
+%\subsection{Inversion, Part 2}
+
+\section{Multi-component Adjoining}
+
+{\bf $\langle$displ-const$\rangle$}:\\ Possible values: {\bf [set1: +], [set1:
+--]}\\ This feature can be used to simulate multi-component
+adjoining\footnote{The {\bf $\langle$displ-const$\rangle$} feature is also used
+in the ECM analysis.} and was previously used this way in the analysis of
+inversion. In the previous analysis, an empty verb trace tree adjoined in
+at VP whenever an auxiliary verb tree adjoined at S.
+However, we have dispensed with the empty verb tree and thus do not require a
+multi-component analysis to account for inversion.
+
+We leave a description of the feature here for possible future analyses of
+phenomena which might require a multi-component analysis, such as
+extraposition, for example. 
+
+%In the previous section, we saw how inversion is
+%triggered using the {\bf $\langle$invlink$\rangle$}, {\bf
+%$\langle$inv$\rangle$}, {\bf $\langle$wh$\rangle$} features. Inversion
+%involves movement of the verb from V to C. This movement process is
+%represented using the {\bf $\langle$displ-const$\rangle$} feature
+%which is used to simulate Multi-Component TAGs.\footnote{The {\bf
+%$\langle$displ-const$\rangle$} feature is also used in the ECM
+%analysis.} The sub-value {\bf set1} indicates the inversion
+%multi-component set; while there are not currently any other uses of
+%this mechanism, it could be expanded with other sets receiving
+%different {\bf set} values.
+%
+The {\bf $\langle$displ-const$\rangle$} feature is used to ensure
+adjunction of two trees.
+% which in this case are the auxiliary
+%tree corresponding to the moved verb (S adjunct) and the auxiliary tree
+%corresponding to the trace of the moved verb (VP adjunct). 
+The following equations are used:
+
+\enumsentence{  {\bf S$_{r}$.b:$\langle$displ-const set1$\rangle = -$}\label{dis1}}
+\enumsentence{  {\bf S.t:$\langle$displ-const set1$\rangle = +$}\label{dis2}}
+\enumsentence{  {\bf VP.b:$\langle$displ-const set1$\rangle =$
+          V.t:$\langle$displ-const set1$\rangle$}\label{dis3}}
+\enumsentence{  {\bf V.b:$\langle$displ-const set1$\rangle = +$}\label{dis4}}
+\enumsentence{  {\bf S$_{r}$.b:$\langle$displ-const set1$\rangle =$ 
+          VP.t:$\langle$displ-const set1$\rangle$}\label{dis5}}
+
+
+\section{Clause Type}
+There are several features that mark clause type.\footnote{We have
+already seen one instance of a feature that marks clause-type: {\bf
+$\langle$extracted$\rangle$}, which marks whether a certain S involves
+extraction or not.} They are:\\ {\bf $\langle$mode$\rangle$}\\ 
+{\bf $\langle$passive$\rangle$}: possible values are {\bf +/--}
+
+\noindent
+{\bf $\langle$mode$\rangle$}: possible values are 
+{\bf base, ger, ind, inf, imp, nom, ppart, prep, sbjnct}\\
+The {\bf $\langle$mode$\rangle$} feature of a verb in its root form is
+{\bf base}. The {\bf $\langle$mode$\rangle$} feature of a verb in its past 
+participial form is {\bf ppart}, the {\bf $\langle$mode$\rangle$} feature of a 
+verb in its progressive/gerundive form is {\bf ger}, 
+the {\bf $\langle$mode$\rangle$} feature of a tensed verb is {\bf ind},
+and the {\bf $\langle$mode$\rangle$} feature of a verb in the imperative 
+is {\bf imp}. 
+
+\noindent
+{\bf nom} is the {\bf $\langle$mode$\rangle$} value of AP/NP
+predicative trees headed by a null copula.  {\bf prep} is the {\bf
+$\langle$mode$\rangle$} value of PP predicative trees headed by a null
+copula.  Only the copula auxiliary tree, some sentential complement
+verbs (such as {\it consider} and raising verb auxiliary trees have
+{\bf nom/prep} as the {\bf $\langle$mode$\rangle$} feature
+specification of their foot node. This allows them, and only them, to
+adjoin onto AP/NP/PP predicative trees with null copulas.
+
+\subsection{Auxiliary Selection}
+The {\bf $\langle$mode$\rangle$} feature is also used to state the
+subcategorizational constraints between an auxiliary verb and its
+complement. We model the following constraints:\\
+{\em have} takes past participial complements\\
+passive {\em be} takes past participial complements\\
+active {\em be} takes progressive complements\\
+modal verbs, {\em do}, and {\em to} take VPs headed by verbs in their
+base form as their complements. 
+
+An auxiliary verb transmits its own mode to its root and imposes its
+subcategorizational restrictions on its complement i.e. on its foot node.
+e.g. the auxiliary {\em have} in its infinitival form involves the
+following equations:
+
+\enumsentence{ {\bf VP$_{r}$.b:$\langle$mode$\rangle =$ 
+          V.t:$\langle$mode$\rangle$}\label{mode1}}
+\enumsentence{ {\bf  V.t:$\langle$mode$\rangle =$ base}\label{mode2}}
+\enumsentence{ {\bf VP.b:$\langle$mode$\rangle =$ ppart}\label{mode3}}
+
+\noindent
+{\bf $\langle$passive$\rangle$}: This feature is used to ensure that
+passives only have {\em be} as their auxiliary. Passive trees start
+out with their {\bf $\langle$passive$\rangle$} feature as {\bf +}.
+This feature starts out at the level of the verb and is percolated up
+to the level of the VP. This ensures that only auxiliary verbs whose
+foot node has {\bf +} as their {\bf $\langle$passive$\rangle$} feature
+can adjoin on a passive. Passive trees have {\bf ppart} as the value
+of their {\bf $\langle$mode$\rangle$} feature. So the only auxiliary
+trees that we really have to worry about blocking are trees whose foot
+nodes have {\bf ppart} as the value of their {\bf
+$\langle$mode$\rangle$} feature. There are two such trees -- the {\em
+be} tree and the {\em have} tree. The {\em be} tree is fine because
+its foot node has {\bf +} as its {\bf $\langle$passive$\rangle$}
+feature, so both the {\bf $\langle$passive$\rangle$} and {\bf
+$\langle$mode$\rangle$} values unify; the {\em have} tree is blocked
+because its foot node has {\bf --} as its {\bf
+$\langle$passive$\rangle$} feature.
+
+
+\section{Complementizer Selection}
+The following features are used to ensure the appropriate distribution
+of complementizers:
+\\
+{\bf $\langle$comp$\rangle$}, possible values: {\bf that, if, whether,
+for, inf\_nil, ind\_nil, nil}\\
+{\bf $\langle$assign-comp$\rangle$}, possible values: {\bf that, if,
+whether, for, ecm, ind\_nil, inf\_nil, none}\\
+{\bf $\langle$mode$\rangle$}, possible values: {\bf ind, inf, sbjnct, ger, base, ppart, 
+nom, prep}\\
+{\bf $\langle$wh$\rangle$}, possible values: {\bf +, --}
+
+The value of the {\bf $\langle$comp$\rangle$} feature tells us what complementizer we 
+are dealing with. The trees which introduce complementizers come 
+specified from the lexicon with their 
+{\bf $\langle$comp$\rangle$} feature and {\bf $\langle$assign-comp$\rangle$} 
+feature. The {\bf $\langle$comp$\rangle$} of the Comp tree regulates 
+what kind of tree goes above the Comp tree, while the 
+{\bf $\langle$assign-comp$\rangle$} feature regulates what kind of tree
+goes below.
+e.g.
+the following equations are used for {\em that}:
+
+\enumsentence{ {\bf S$_{c}$.b:$\langle$comp$\rangle =$ Comp.t:$\langle$comp$\rangle$} }
+\enumsentence{ {\bf S$_{c}$.b:$\langle$wh$\rangle =$ Comp.t:$\langle$wh$\rangle$}}
+\enumsentence{ {\bf S$_{c}$.b:$\langle$mode$\rangle =$ ind/sbjnct}}
+\enumsentence{ {\bf S$_{r}$.t:$\langle$assign-comp$\rangle =$ Comp.t:$\langle$comp$\rangle$}}
+\enumsentence{ {\bf S$_{r}$.b:$\langle$comp$\rangle =$ nil}}
+
+By specifying {\bf S$_{r}$.b:$\langle$comp$\rangle =$ nil}, we ensure that
+complementizers do not adjoin onto other complementizers. The root node
+of a complementizer tree always has its {\bf $\langle$comp$\rangle$} feature
+set to a value other than {\bf nil}.
+
+Trees that take clausal complements specify with the {\bf $\langle$comp$\rangle$} feature
+on their foot node what kind of complementizer(s) they can take. 
+The {\bf $\langle$assign-comp$\rangle$} feature of an S node is determined 
+by the highest VP below the S node and the syntactic configuration
+the S node is in. 
+
+\subsection{Verbs with object sentential complements}
+Finite sentential complements:
+
+\enumsentence{ {\bf S$_{1}$.t:$\langle$comp$\rangle =$ that/whether/if/nil}}
+\enumsentence{{\bf S$_{1}$.t:$\langle$mode$\rangle =$ ind/sbjnct} or {\bf S$_{1}$.t:$\langle$mode$\rangle =$ ind}}
+\enumsentence{ {\bf S$_{1}$.t:$\langle$assign-comp$\rangle =$ ind\_nil/inf\_nil}}
+
+The presence of an overt complementizer is optional.
+
+Non-finite sentential complements, do not permit {\em for}:
+
+\enumsentence{ {\bf S$_{1}$.t:$\langle$comp$\rangle =$ nil}}
+\enumsentence{ {\bf S$_{1}$.t:$\langle$mode$\rangle =$ inf}}
+\enumsentence{ {\bf S$_{1}$.t:$\langle$assign-comp$\rangle =$ ind\_nil/inf\_nil}
+}
+
+Non-finite sentential complements, permit {\em for}:
+
+\enumsentence{ {\bf S$_{1}$.t:$\langle$comp$\rangle =$ for/nil}}
+\enumsentence{ {\bf S$_{1}$.t:$\langle$mode$\rangle =$ inf}}
+\enumsentence{ {\bf S$_{1}$.t:$\langle$assign-comp$\rangle =$ ind\_nil/inf\_nil}}
+
+Cases like `*I want for to win' are independently ruled out due to a 
+case feature clash between the {\bf acc} assigned by {\em for} and the
+intrinsic case feature {\bf none} on the PRO.
+
+Non-finite sentential complements, ECM:
+
+\enumsentence{ {\bf S$_{1}$.t:$\langle$comp$\rangle =$ nil}}
+\enumsentence{ {\bf S$_{1}$.t:$\langle$mode$\rangle =$ inf}}
+\enumsentence{ {\bf S$_{1}$.t:$\langle$assign-comp$\rangle =$ ecm}}
+
+
+\subsection{Verbs with sentential subjects}
+The following contrast involving complementizers surfaces with sentential
+subjects:
+
+\enumsentence{ *(That) John is crazy is likely.}
+
+Indicative sentential subjects obligatorily have complementizers while
+infinitival sentential subjects may or may not have a complementizer. 
+Also {\em if} is possible as the complementizer of an object clause
+but not as the complementizer of a sentential subject. 
+
+\enumsentence{ {\bf S$_{0}$.t:$\langle$comp$\rangle =$ that/whether/for/nil}}
+\enumsentence{ {\bf S$_{0}$.t:$\langle$mode$\rangle =$ inf/ind}}
+\enumsentence{ {\bf S$_{0}$.t:$\langle$assign-comp$\rangle =$ inf\_nil}}
+
+If the sentential subject is finite and a complementizer does
+not adjoin in, the {\bf $\langle$assign-comp$\rangle$} feature of the 
+S$_{0}$ node of the embedding clause and the root node of the
+embedded clause will fail to unify. If a complementizer adjoins in,
+there will be no feature-mismatch because the root of the
+complementizer tree is not specified for the {\bf $\langle$assign-comp$\rangle$} feature.
+
+The {\bf $\langle$comp$\rangle$} feature {\bf nil} is split into two
+{\bf $\langle$assign-comp$\rangle$} features {\bf ind\_nil} and
+{\bf inf\_nil} to capture the fact that there are certain configurations in
+which it is acceptable for an infinitival clause to lack a complementizer
+but not acceptable for an indicative clause to lack a complementizer. 
+
+\subsection{{\em That}-trace and {\em for}-trace effects}
+
+\enumsentence{ Who$_{i}$ do you think (*that) t$_{i}$ ate the apple?}
+
+{\em That} trace violations are blocked by the presence of the following
+equation:
+
+\enumsentence{ {\bf S$_{r}$.b:$\langle$assign-comp$\rangle =$ inf\_nil/ind\_nil/ecm}}
+
+on the bottom of the S$_{r}$ nodes of trees with extracted subjects (W0). 
+The {\bf ind\_nil} feature specification permits the above example
+while the {\bf inf\_nil/ecm} feature specification allows the
+following examples to be derived:
+
+\enumsentence{ Who$_{i}$ do you want [ t$_{i}$ to win the World Cup]?}
+\enumsentence{ Who$_{i}$ do you consider [ t$_{i}$ intelligent]?}
+
+The feature equation that ruled out the {\em that}-trace filter violations
+will also serve to rule out the {\em for}-trace violations above.
+
+\section{Relative Clauses}
+Features that are peculiar to the relative clause system are:\\
+{\bf $<$nocomp-mode$>$}, possible values are {\bf inf/ger/ppart}\\
+{\bf $\langle$rel-clause$\rangle$}, possible values are {\bf +/--}
+
+\begin{itemize}
+\item {\bf $<$nocomp-mode$>$}:
+
+Relative clauses which have subject extraction cannot have a null COMP,
+unless there is an intervening clause or the relative clause is a reduced
+relative ({\bf mode = inf/ppart/ger}). In order to ensure this, the top
+feature set of the root node of the relative clause is specified for {\bf
+$<$nocomp-mode$>$}={\bf inf/ger/ppart} in conjunction with the
+following equations:
+
+\enumsentence{{\bf S$_{r}$.t:$\langle$nocomp-mode$\rangle =$ inf/ger/ppart} (in
+relative clause trees with subject extraction)}
+\enumsentence{{\bf S$_{r}$.b:$\langle$nocomp-mode$\rangle =$
+S$_{r}$.b:$\langle$mode$\rangle$}}
+
+The full set of the equations above is only present in Comp
+substitution trees involving subject extraction. So the following will
+not be ruled out.
+
+\enumsentence{
+the toy [$\epsilon$$_{w}$ [$\epsilon$$_{C}$ [ Dafna likes t$_{i}$ ]]] }
+
+The feature mismatch induced by the above equations is not remedied by
+adjunction of just any S-adjunct because all other S-adjuncts are
+transparent to the {\bf $\langle$nocomp-mode$\rangle$} feature because of the
+following equation:
+
+\enumsentence{
+{\bf S$_{m}$.b:$\langle$nocomp-mode$\rangle =$S$_{f}$.t:$\langle$nocomp-mode$\rangle$}}
+
+\item {\bf $\langle$rel-clause$\rangle$}:
+
+The XTAG analysis forces the adjunction of the determiner below the
+relative clause. This is done by using the {\bf
+$\langle$rel-clause$\rangle$} feature. The relevant equations are:
+
+\enumsentence{ On the root of the Relative clause: {\bf NP$_{r}$.b:$\langle$rel-clause$\rangle = +$}}
+\enumsentence{ On the foot node of the 
+Determiner tree: {\bf NP$_{f}$.t:$\langle$rel-clause$\rangle = -$}}
+
+Relative clauses also use the {\bf $<$mode$>$} and the {\bf $<$comp$>$}
+features in a manner largely parallel to the way they are used in
+sentential complementation. Some of the feature specifications and
+equations that are specific to relative clause formation are discussed
+below:
+
+\item Complementizers (which appear in relative clauses via adjunction)
+can never cooccur with the overt extracted {\bf $+<$wh$>$} NP (cf. *{\it I
+saw the man who$_i$ that Muriel saw $\epsilon$$_{i}$}).  Consequently, the
+auxiliary $\beta$COMPs trees are prevented from adjoining at the {\bf
+S$_r$} node in the relative clause trees by the equation
+
+\enumsentence{{\bf S$_{r}$.t:$\langle$comp$\rangle =$ nil}}
+
+which will always fail to unify with the (non-{\bf nil}) values of the {\bf
+$<$comp$>$} feature in the $\beta$COMPs trees.
+
+\item Relative clause trees that have {\bf NP$_{w}$} as a substitution
+node have the feature equation given below.
+
+\enumsentence{{\bf S$_{r}$.t:$\langle$mode$\rangle =$ind}}
+
+\item Trees with a {\bf PP$_{w}$} substitution node have the feature
+equation:
+
+\enumsentence{{\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}}
+
+\item In relative clauses with covert extracted {\bf $+<$wh$>$ NP}, the
+mode of relative clause varies depending on which argument has been
+extracted. The full set of mode restrictions on the different relative
+clause trees is as follows:
+
+\enumsentence{For all non-passive cases of subject extraction, {\bf
+S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/inf}}
+\enumsentence{For all passive cases of subject extraction, {\bf
+S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/ppart/inf}}
+\enumsentence{For all cases of non-subject extraction, {\bf
+S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}}
+
+\end{itemize}
+
+\section{Determiner ordering}
+{\bf $\langle$card$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$compl$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$const$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$decreas$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$definite$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$gen$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$quan$\rangle$}, possible values are {\bf +, --}
+
+For detailed discussion see Chapter \ref{det-comparitives}.
+
+\section{Punctuation}
+{\bf $\langle$punct$\rangle$} is a complex feature. It has the following
+as its subfeatures:\\
+{\bf $\langle$punct bal$\rangle$}, possible values are {\bf dquote,
+squote, paren, nil}\\
+{\bf $\langle$punct contains colon$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$punct contains dash$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$punct contains dquote$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$punct contains scolon$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$punct contains squote$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$punct struct$\rangle$}, possible values are {\bf comma,
+dash, colon, scolon, none, nil}\\
+{\bf $\langle$punct term$\rangle$}, possible values are {\bf per, qmark, excl, 
+none, nil}
+
+For detailed discussion see Chapter~\ref{punct-chapt}.
+
+
+\section{Conjunction}
+{\bf $\langle$conj$\rangle$}, possible values are {\bf but, and, or,
+comma, scolon, to, disc, nil}\\
+The {\bf $\langle$conj$\rangle$} feature is specified in the lexicon
+for each conjunction and is passed up to the root node 
+of the conjunction tree. If the conjunction is {\em and}, the 
+root {\bf $\langle$agr num$\rangle$} is {\bf $\langle$plural$\rangle$}, no
+matter what the number of the two conjuncts. With {\em or}, the
+the root {\bf $\langle$agr num$\rangle$} is equated to the
+{\bf $\langle$agr num$\rangle$} feature of the right conjunct. 
+
+
+The {\bf $\langle$conj$\rangle$=disc} feature is only used at the root
+of  the
+$\beta$CONJs tree.  It blocks the adjunction of one $\beta$CONJs tree
+on another.  The following equations are used, where S$_{r}$ is
+the substitution node and S$_{c}$ is the root node:
+\enumsentence{ S$_{r}$.t:$\langle$conj$\rangle$ = disc}
+\enumsentence{ S$_{c}$.b:$\langle$conj$\rangle$ = and/or/but/nil}
+
+
+\section{Comparatives}
+{\bf $\langle$compar$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$equiv$\rangle$}, possible values are {\bf +, --}\\
+{\bf $\langle$super$\rangle$}, possible values are {\bf +, --}
+
+For detailed discussion see Chapter~\ref{compars-chapter}.
+
+\section{Control}
+{\bf $\langle$control$\rangle$} has no value and is used only for indexing
+purposes.  The root node of every clausal tree has its {\bf
+$\langle$control$\rangle$} feature coindexed with the control feature of
+its subject.  This allows adjunct control to take place. In addition,
+clauses that take infinitival clausal complements have the control feature
+of their subject/object coindexed with the control feature of their
+complement clause S, depending upon whether they are subject control verbs
+or object control verbs respectively.
+
+
+\section{Other Features}
+{\bf $\langle$neg$\rangle$}, possible values are {\bf +, --}\\
+Used for controlling the interaction of negation and auxiliary verbs.
+
+\noindent
+{\bf $\langle$pred$\rangle$}, possible values are {\bf +, --}\\
+The {\bf $\langle$pred$\rangle$} feature is used in the following tree
+families: Tnx0N1.trees and Tnx0nx1ARB.trees.
+In the Tnx0N1.trees family, the following equations are used:\\
+for $\alpha$W1nx0N1:
+
+\enumsentence{ NP$_{1}$.t:$\langle$pred$\rangle$ = +}
+\enumsentence{ NP$_{1}$.b:$\langle$pred$\rangle$ = +}
+\enumsentence{ NP.t:$\langle$pred$\rangle$ = +}
+\enumsentence{ N.t:$\langle$pred$\rangle$ = NP.b:$\langle$pred$\rangle$}
+
+This is the only tree in this tree family to use the 
+{\bf $\langle$pred$\rangle$} feature.
+
+The other tree family where the {\bf $\langle$pred$\rangle$} feature is
+used is Tnx0nx1ARB.trees.  Within this family, this feature (and the
+following equations) are used only in the $\alpha$W1nx0nx1ARB tree.
+
+\enumsentence{ AdvP$_{1}$.t:$\langle$pred$\rangle$ = +}
+\enumsentence{ AdvP$_{1}$.b:$\langle$pred$\rangle$ = +}
+\enumsentence{ NP.t:$\langle$pred$\rangle$ = +}
+\enumsentence{ AdvP.b:$\langle$pred$\rangle$ = NP.t:$\langle$pred$\rangle$}
+
+\noindent
+{\bf $\langle$pron$\rangle$}, possible values are {\bf +, --}\\
+This feature indicates whether a particular NP is a pronoun or not. 
+Certain constructions which do not permit pronouns use this 
+feature to block pronouns.
+
+\noindent
+{\bf $\langle$tense$\rangle$}, possible values are {\bf pres, past}\\
+It does not seem to be the case that the {\bf $\langle$tense$\rangle$}
+feature interacts with other features/syntactic processes. It 
+comes from the lexicon with the verb and is transmitted up the
+tree in such a way that the root S node ends up with the
+tense feature of the highest verb in the tree. The equations
+used for this purpose are:
+
+\enumsentence{ {\bf S$_{r}$.b:$\langle$tense$\rangle$ = VP.t:$\langle$tense$\rangle$}}
+\enumsentence{ {\bf VP.b:$\langle$tense$\rangle$ = V.t:$\langle$tense$\rangle$}}
+
+
+

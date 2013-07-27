@@ -1,0 +1,444 @@
+\chapter{Conjunction}
+\label{conjunction}
+
+\section{Introduction}
+
+The XTAG system can handle sentences with conjunction of two
+constituents of the same syntactic category. The coordinating
+conjunctions which select the conjunction trees are {\it and}, {\it
+or} and {\it but}.\footnote{We believe that the restriction of {\it
+but} to conjoining only two items is a pragmatic one, and our grammars
+accepts sequences of any number of elements conjoined by {\it but}.}
+There are also multi-word conjunction trees, anchored by {\it either-or}, 
+{\it neither-nor}, {\it both-and}, and {\it as well as}.  There are eight
+syntactic categories that can be coordinated, and in each case an
+auxiliary tree is used to implement the conjunction.  These eight
+categories can be considered as four different cases, as described in
+the following sections.  In all cases the two constituents are
+required to be of the same syntactic category, but there may also be
+some additional constraints, as described below.
+
+
+\section{Adjective, Adverb, Preposition and PP Conjunction}
+
+Each of these four categories has an auxiliary tree that is used for
+conjunction of two constituents of that category.  The auxiliary tree
+adjoins into the left-hand-side component, and the right-hand-side
+component substitutes into the auxiliary tree.  
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/conj-files/betaA1conjA2.ps,height=1in}}&
+\hspace*{0.5in}&
+{\psfig{figure=ps/conj-files/derived-tree-140291.ps,height=2.8in}}\\
+(a) & \hspace*{0.5in}& (b)\\
+\end{tabular}
+\caption{Tree for adjective conjunction: $\beta$a1CONJa2 and a resulting parse tree}
+\label{A1conjA2}
+\end{figure}
+
+Figure~\ref{A1conjA2}(a) shows the auxiliary tree for adjective conjunction,
+and is used, for example, in the derivation of the parse tree for the noun
+phrase {\it the dark and dreary day}, as shown in Figure~\ref{A1conjA2}(b).
+The auxiliary tree adjoins onto the node for the left adjective, and the
+right adjective substitutes into the right hand side node of the auxiliary
+tree. The analysis for adverb, preposition and PP conjunction is exactly the
+same and there is a corresponding auxiliary tree for each of these that is
+identical to that of Figure~\ref{A1conjA2}(a) except, of course, for the node
+labels.
+
+
+\section{Noun Phrase and Noun Conjunction}
+
+The tree for NP conjunction, shown in Figure~\ref{NP1conjNP2}(a), has
+the same basic analysis as in the previous section except that the
+{\bf $<$wh$>$} and {\bf $<$case$>$} features are used to force the two
+noun phrases to have the same {\bf $<$wh$>$} and {\bf $<$case$>$}
+values.  This allows, for example, {\it he and she wrote the book
+together} while disallowing {\it $\ast$he and her wrote the book
+together.}  Agreement is lexicalized, since the various conjunctions
+behave differently. With {\it and}, the root {\bf $<$agr num$>$} value
+is {\bf $<$plural$>$}, no matter what the number of the two
+conjuncts. With {\it or}, however, the root {\bf $<$agr num$>$} is
+co-indexed with the {\bf $<$agr num$>$} feature of the right
+conjunct. This ensures that the entire conjunct will bear the number
+of both conjuncts if they agree (Figure~\ref{NP1conjNP2}(b)), or of
+the most ``recent'' one if they differ ({\it Either the boys or John
+is going to help you.}). There is no rule per se on what the
+agreement should be here, but people tend to make the verb agree with
+the last conjunct (cf. \cite{quirk85}, section 10.41
+for discussion). The tree for N conjunction is identical to that for
+the NP tree except for the node labels. (The multi-word conjunctions
+do not select the N conjunction tree - {\it $^*$the both dogs and
+cats}).
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/conj-files/betaCONJnx1CONJnx2.ps,height=4in}}
+\hspace{0.5cm} &
+{\psfig{figure=ps/conj-files/aardvarks-and-emus.ps,height=4in}}\\
+(a) &  (b)\\
+\end{tabular}
+\caption{Tree for NP conjunction: $\beta$CONJnx1CONJnx2 and a resulting
+parse tree}
+\label{NP1conjNP2}
+\end{figure}
+
+
+\section{Determiner Conjunction}
+
+%CDD,10/31/95:We cannot find any reason for this tree to be different,
+%so it is now like the other conj trees, with the foot on the left.
+%
+%The tree for determiner conjunction, shown in Figure~\ref{DX1conjDX2}, is
+%unlike the other conjunction trees in that the foot node is on the right.  This
+%is because determiner phrases generally build to the left. For the
+%same reason, 
+
+In determiner coordination, all of the determiner feature values are
+taken from the left determiner, and the only requirement is that the
+{\bf $<$wh$>$} feature is the same, while the other features, such as
+{\bf $<$card$>$}, are unconstrained.  For example, {\it which and
+what} and {\it all but one} are both acceptable determiner
+conjunctions, but {\it $\ast$which and all} is not.
+
+\enumsentence{how many and which people camp frequently ?}
+\enumsentence{$^*$some or which people enjoy nature .}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/conj-files/betad1CONJd2.ps,height=5.3in}
+\end{tabular}
+\vspace{-0.25in}
+\caption{Tree for determiner conjunction: $\beta$d1CONJd2.ps}
+\label{DX1conjDX2}
+\end{figure}
+
+\section{Sentential Conjunction}
+
+The tree for sentential conjunction, shown in Figure~\ref{S1conjS2},
+is based on the same analysis as the conjunctions in the previous two
+sections, with a slight difference in features.  The {\bf $<$mode$>$}
+feature\footnote{See section~\ref{s-features} for an explanation of
+the {\bf $<$mode$>$} feature.}  is used to constrain the two sentences
+being conjoined to have the same mode so that {\it the day is dark and
+the phone never rang} is acceptable, but {\it $\ast$the day dark and
+the phone never rang} is not. Similarly, the two sentences must agree
+in their {\bf $<$wh$>$}, {\bf $<$comp$>$} and {\bf $<$extracted$>$}
+features.  Co-indexation of the {\bf $<$comp$>$} feature ensures that
+either both conjuncts have the same complementizer, or there is a
+single complementizer adjoined to the complete conjoined S.  The {\bf
+$<$assign-comp$>$} feature\footnote{See
+section~\ref{for-complementizer} for an explanation of the {\bf
+$<$assign-comp$>$} feature.} feature is used to allow conjunction of
+infinitival sentences, such as {\it to read and to sleep is a good
+life}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/conj-files/betaS1conjS2.ps,height=3.5in}
+\end{tabular}
+\caption{Tree for sentential conjunction: $\beta$s1CONJs2}
+\label{S1conjS2}
+\end{figure}
+
+\section{Comma as a conjunction}
+
+We treat comma as a conjunction in conjoined lists. It anchors the
+same trees as the lexical conjunctions, but is considerably more
+restricted in how it combines with them. The trees anchored by commas
+are prohibited from adjoining to anything but another comma conjoined
+element or a non-coordinate element. (All scope possibilities are
+allowed for elements coordinated with lexical conjunctions.) Thus,
+structures such as Tree
+\ref{Comma-conj}(a) are permitted, with each element stacking
+sequentially on top of the first element of the conjunct, while
+structures such as Tree \ref{Comma-conj}(b) are blocked. 
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/conj-files/good-adj-conj.ps,height=2.75in}}&
+\hspace*{0.5in}&
+{\psfig{figure=ps/conj-files/bad-adj-conj.ps,height=2.75in}}\\
+(a) Valid tree with comma conjunction & \hspace*{0.5in}& (b) Invalid tree\\
+\end{tabular}
+\caption{}
+\label{Comma-conj}
+\end{figure}
+
+This is accomplished by using the {\bf $<$conj$>$} feature, which has the
+values {\bf and/or/but} and {\bf comma} to differentiate the lexical
+conjunctions from commas. The {\bf $<$conj$>$} values for a comma-anchored
+tree and {\it and}-anchored tree are shown in Figure
+\ref{conj-contrast}. The feature {\bf $<$conj$>$ = comma/none} on
+A$_1$ in (a) only allows comma conjoined or non-conjoined elements as
+the left-adjunct, and {\bf $<$conj$>$ = none} on A in (a) allows
+only a non-conjoined element as the right conjunct. We also need the
+feature {\bf $<$conj$>$ = and/or/but/none} on the right conjunct of
+the trees anchored by lexical conjunctions like (b), to block
+comma-conjoined elements from substituting there. Without this
+restriction, we would get multiple parses of the NP in Tree
+\ref{Comma-conj}; with the restrictions we only get the derivation
+with the correct scoping, shown as (a).
+
+Since comma-conjoined lists can appear without a lexical conjunction
+between the final two elements, as shown in example (\ex{1}), we cannot
+force all comma-conjoined sequences to end with a lexical conjunction.
+
+\enumsentence{So it is too with many other spirits which we all know: the
+spirit of Nazism or Communism, school spirit , the spirit of a street
+corner gang or a football team, the spirit of Rotary or the Ku Klux
+Klan. \hfill [Brown cd01]}
+
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/conj-files/adj-comma-conj.ps,height=2.5in}}&
+{\psfig{figure=ps/conj-files/adj-and-conj.ps,height=2.5in}}\\
+\end{tabular}
+\caption{$\beta$a1CONJa2 (a) anchored by comma and (b) anchored by {\it and}}
+\label{conj-contrast}
+\end{figure}
+
+
+\section{{\it But-not}, {\it not-but}, {\it and-not} and  {\it
+$\epsilon$-not}}
+
+We are analyzing conjoined structures such as {\it The women but not
+the men} with a multi-anchor conjunction tree anchored by the
+conjunction plus the adverb {\it not}. The alternative is to allow
+{\it not} to adjoin to any constituent. However, this is the only
+construction where {\it not} can freely occur onto a constituent other
+than a VP or adjective (cf. $\beta$NEGvx and $\beta$NEGa trees). It
+can also adjoin to some determiners, as discussed in Section
+\ref{det-comparitives}. We want to allow sentences like (\ex{1}) and
+rule out those like (\ex{2}). The tree for the good example is shown
+in Figure \ref{but-not}. There are similar trees for {\it and-not} and
+{\it $\epsilon$-not}, where $\epsilon$ is interpretable as either {\it
+and} or {\it but}, and a tree with {\it not} on the first conjunct for
+{\it not-but}.
+
+\enumsentence{Beth grows basil in the house (but) not in the garden .}
+\enumsentence{$^*$Beth grows basil (but) not in the garden .}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/conj-files/but-not.ps,height=2.5in}
+\end{tabular}
+\caption{Tree for conjunction with but-not: $\beta$px1CONJARBpx2}
+\label{but-not}
+\end{figure}
+
+Although these constructions sound a bit odd when the two conjuncts do
+not have the same number, they are sometimes possible. The agreement
+information for such NPs is always that of the non-negated conjunct:
+{\it his sons, and not Bill, are in charge of doing the laundry} or
+{\it not Bill, but his sons, are in charge of doing the laundry}
+(Some people insist on having the commas here, but they are frequently
+absent in corpus data.) The agreement feature from the non-negated
+conjunct in passed to the root NP, as shown in Figure
+\ref{not-but}. Aside from agreement, these constructions behave just
+like their non-negated counterparts.
+
+%"Everyone is going on line and not just the younger generation," said Mal
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/conj-files/not-but.ps,height=4in}
+\end{tabular}
+\caption{Tree for conjunction with not-but: $\beta$ARBnx1CONJnx2} 
+\label{not-but}
+\end{figure}
+
+\section{{\it To} as a Conjunction}
+
+{\it To} can be used as a conjunction for adjectives
+(Fig. \ref{to-conj}) and determiners, when they denote points on a
+scale:
+
+\enumsentence{two to three degrees}
+\enumsentence{high to very high temperatures}
+
+As far as we can tell, when the conjuncts are determiners they must be
+cardinal.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/conj-files/to.ps,height=3.5in}
+\end{tabular}
+\caption{Example of conjunction with {\it to}} 
+\label{to-conj}
+\end{figure}
+
+\section{Predicative Coordination}
+
+This section describes the method for predicative coordination
+(including VP coordination of various kinds) used in XTAG. The
+description is derived from work described in (\cite{anoopjoshi96}).
+It is important to say that this implementation of predicative
+coordination is not part of the XTAG release at the moment due massive
+parsing ambiguities. This is partly because of the current
+implementation and also the inherent ambiguities due to VP
+coordination that cause a combinatorial explosion for the parser. We
+are trying to remedy both of these limitations using a probability
+model for coordination attachments which will be included as part of a
+later XTAG release.
+
+This extended domain of locality in a lexicalized Tree Adjoining
+Grammar causes problems when we consider the coordination of such
+predicates. Consider~(\ex{1}) for instance, the NP {\em the beans that
+  I bought from Alice} in the Right-Node Raising (RNR) construction
+has to be shared by the two elementary trees (which are anchored by
+{\em cooked} and {\em ate} respectively).
+
+\enumsentence{(((Harry cooked) and (Mary ate)) the beans that I bought
+  from Alice)}
+
+We use the standard notion of coordination which is shown in
+Figure~\ref{fig:conj} which maps two constituents of {\em like type},
+but with different interpretations, into a constituent of the same
+type.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \psfig{figure=ps/conj-files/conj.ps,height=1.0in}
+  \end{center}
+  \caption{Coordination schema}
+  \label{fig:conj}
+\end{figure}
+
+We add a new operation to the LTAG formalism (in addition to
+substitution and adjunction) called {\em conjoin} (later we discuss an
+alternative which replaces this operation by the traditional
+operations of substitution and adjunction). While substitution and
+adjunction take two trees to give a derived tree, {\em conjoin\/}
+takes three trees and composes them to give a derived tree.  One of
+the trees is always the tree obtained by specializing the schema in
+Figure~\ref{fig:conj} for a particular category. The tree obtained
+will be a lexicalized tree, with the lexical anchor as the
+conjunction: {\em and}, {\em but}, etc.
+
+The conjoin operation then creates a {\em contraction\/} between nodes
+in the contraction sets of the trees being coordinated.  The term {\em
+  contraction\/} is taken from the graph-theoretic notion of edge
+contraction. In a graph, when an edge joining two vertices is
+contracted, the nodes are merged and the new vertex retains edges to
+the union of the neighbors of the merged vertices. The conjoin
+operation supplies a new edge between each corresponding node in the
+contraction set and then contracts that edge.
+
+For example, applying {\em conjoin\/} to the trees {\em Conj(and)},
+$\alpha(eats)$ and $\alpha(drinks)$ gives us the derivation tree and
+derived structure for the constituent in \ex{1} shown in
+Figure~\ref{fig:vpc}.
+
+\enumsentence{$\ldots$ eats cookies and drinks beer}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \psfig{figure=ps/conj-files/vpc.ps,height=2.0in}
+  \end{center}
+  \caption{An example of the {\em conjoin\/} operation. $\{1\}$
+    denotes a shared dependency.}
+  \label{fig:vpc}
+\end{figure}
+
+Another way of viewing the conjoin operation is as the construction of
+an auxiliary structure from an elementary tree. For example, from the
+elementary tree $\alpha(drinks)$, the conjoin operation would create
+the auxiliary structure $\beta(drinks)$ shown in
+Figure~\ref{fig:aux-conj}. The adjunction operation would now be
+responsible for creating contractions between nodes in the contraction
+sets of the two trees supplied to it. Such an approach is attractive
+for two reasons. First, it uses only the traditional operations of
+substitution and adjunction. Secondly, it treats {\em conj X} as a
+kind of ``modifier'' on the left conjunct {\em X}. This approach
+reduces some of the parsing ambiguities introduced by the predicative
+coordination trees and forms the basis of the XTAG implementation.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \psfig{figure=ps/conj-files/aux-conj.ps,height=3.0in}
+  \end{center}
+  \caption{Coordination as adjunction.}
+  \label{fig:aux-conj}
+\end{figure}
+
+More information about predicative coordination can be found in
+(\cite{anoopjoshi96}), including an extension to handle gapping constructions.
+
+\section{Pseudo-coordination}
+
+The XTAG grammar does handle one sort of verb pseudo-coordination. 
+Semi-idiomatic phrases such as 'try and' and 'up and' (as in 'they might 
+try and come today') are handled as multi-anchor modifiers 
+rather than as true coordination. These items adjoin to a V node, using 
+the $\beta$VCONJv tree. This tree adjoins only to verbs in their base 
+morphological (non-inflected) form. The verb anchor of the $\beta$VCONJv 
+must also be in its base form, as shown in examples 
+(\ex{1})-(\ex{3}). This blocks 3rd-person singular derivations, 
+which are the only person morphologically marked in the present, except when 
+an auxiliary verb is present or the verb is in the infinitive.
+
+\enumsentence{$\ast$He tried and came yesterday.}
+\enumsentence{They try and exercise three times a week.}
+\enumsentence{He wants to try and sell the puppies.}
+
+
+%\section{Other Conjunctions}
+
+%The conjunction analysis described in the previous sections is
+%designed to handle only the most straightforward cases of conjunction.
+%Three types of conjunction that are not handled are:
+
+%\begin{itemize}
+%\item {\bf Incomplete Constituents:} The sentence 
+%{\it John likes and Bill hates bananas} cannot be handled by the
+%current XTAG grammar.  Since {\it likes} anchors a tree that needs
+%both a subject noun phrase and an object noun phrase to be substituted
+%in, the first conjunct would need have an unfilled substitution node
+%after {\it John likes} for the sentence to parse.
+
+%\item {\bf Verb Phrase Conjunction:} Since verbs anchor a tree with a root 
+%node of type S and not VP, there is no straightforward way to implement verb
+%phrase conjunction.  For example, in the sentence {\it John eats cookies and
+%drinks beer}, there is no point in the derivation at which {\it eats cookies}
+%and {\it drinks beer} are available as separate trees ready to be conjoined.
+%They are both only subtrees in their respective S trees.  This could also be
+%considered as a case of incomplete constituents, since {\it drinks beer} is
+%missing a noun phrase.
+
+%\item {\bf Gapping:}
+%Sentences such as {\it John likes apples and Bill pears} are also not
+%handled by the previous analysis.  These could also be considered as a case
+%of incomplete constituents.
+%\end{itemize}
+
+%One grammar formalism that is capable of handling these types of 
+%conjunction is Combinatory Categorial Grammar (CCG) (\cite{steedman90})
+%which relies on a nonstandard notion of a constituent in order to accomplish
+%this.  Proposals have been made (e.g. \cite{joshischabes91}),
+%inspired by the CCG approach, to handle these problematic cases in the
+%FB-LTAG formalism.  Unlike the CCG analysis, however, the traditional notion
+%of constituents and phrase structure is maintained.  Such proposals are
+%as of yet unimplemented.
+
+%%test sentences 
+%%I ran and found a Brickel bush
+%% you and me and the whole world
+%% hook and line and bait
+
+
+

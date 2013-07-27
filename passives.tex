@@ -1,0 +1,61 @@
+\chapter{Passives}
+\label{passives}
+In passive constructions such as (\ex{1}), the subject NP is
+interpreted as having the same role as the direct object NP in the
+corresponding active declarative (\ex{2}).
+
+\enumsentence{{\bf An airline buy-out bill} was approved by the House. (WSJ)}
+\enumsentence{The House approved {\bf an airline buy-out bill}.}
+
+\begin{figure}[hbt]
+\centering
+\begin{tabular}{ccccc}
+\psfig{figure=ps/passives-files/betanx1Vs2-reduced-features.ps,height=6.5cm}&
+\hspace{1.0in}&
+\psfig{figure=ps/passives-files/betanx1Vbynx0s2.ps,height=6.5cm}&
+\hspace{1.0in}&
+\psfig{figure=ps/passives-files/betanx1Vs2bynx0.ps,height=6.5cm}\\
+(a)&&(b)&&(c)
+\end{tabular}
+\caption{Passive trees in the Sentential Complement with NP tree family:
+$\beta$nx1Vs2 (a), $\beta$nx1Vbynx0s2 (b) and $\beta$nx1Vs2bynx0 (c)}
+\label{passive-trees}
+\label{2;2,5}
+\end{figure}
+
+In a movement analysis, the direct object is said to have moved to the subject
+position.  The original declarative subject is either absent in the passive or
+is in a {\it by} headed PP ({\it by} phrase). In the English XTAG grammar,
+passive constructions are handled by having separate trees within the
+appropriate tree families.  Passive trees are found in most tree families that
+have a direct object in the declarative tree (the light verb tree families, for
+instance, do not contain passive trees).  Passive trees occur in pairs - one
+tree with the {\it by} phrase, and another without it.  Variations in the
+location of the {\it by} phrase are possible if a subcategorization includes
+other arguments such as a PP or an indirect object. Additional trees are
+required for these variations.  For example, the Sentential Complement with NP
+tree family has three passive trees, shown in Figure~\ref{passive-trees}: one
+without the {\it by}-phrase (Figure~\ref{passive-trees}(a)), one with the {\it
+by} phrase before the sentential complement (Figure~\ref{passive-trees}(b)),
+and one with the {\it by} phrase after the sentential complement
+(Figure~\ref{passive-trees}(c)).
+
+Figure~\ref{passive-trees}(a) also shows the feature restrictions imposed on
+the anchor\footnote{A reduced set of features are shown for readability.}. Only
+verbs with {\bf $<$mode$>$=ppart} (i.e. verbs with passive morphology) can
+anchor this tree.  The {\bf $<$mode$>$} feature is also responsible for
+requiring that passive {\it be} adjoin into the tree to create a matrix
+sentence.  Since a requirement is imposed that all matrix sentences must have
+{\bf $<$mode$>$=ind/imp}, an auxiliary verb that selects {\bf
+$<$mode$>$=ppart} and {\bf $<$passive$>$=+} (such as {\it was}) must adjoin
+(see Chapter~\ref{auxiliaries} for more information on the auxiliary verb
+system).
+
+ 
+
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+\documentstyle[11pt,titlepage,aaai-named,twoside,lingmacros,graphicx]{xtag-report}
+\title{A  Lexicalized Tree Adjoining Grammar for English}
+\author{The XTAG Research Group \\ \\
+Institute for Research in Cognitive Science\\
+University of Pennsylvania \\
+3401 Walnut St., Suite 400A \\
+Philadelphia, PA 19104-6228 \\ \\
+{\tt http://www.cis.upenn.edu/\~{}xtag}
+}
+%\date{March 9, 1995\\
+\bigskip
+%       tech report version: IRCS 95-03}
+\makeindex
+\oddsidemargin 0.25in
+\evensidemargin 0.25in
+\topmargin 0in
+\textheight 8.5in
+\textwidth 6.25in
+%\typein {do the ``includeonly''}
+
+% Inserted some style files here for latex2html,
+% and removed them from the documentstyle options list
+%
+%\input{leqno}
+%\input{example-numbers}
+%\newcommand{\enumsentence}[1]{%
+%\beginsentences
+%\sitem\mbox{\protect #1}
+%\endsentences%
+%}
+
+% The \ex definition
+%\newcounter{tempcnt}
+
+%\newcommand{\ex}[1]{\setcounter{tempcnt}{\value{sentencectr}}%
+%\addtocounter{tempcnt}{#1}%
+%\arabic{tempcnt}}
+
+
+
+\newcommand{\vertical}[1]{
+\setlength{\unitlength}{0.012500in}%
+%%%\hspace*{6pt}
+\hspace*{2pt}
+\begin{picture}(12,12)(0,0)
+\put(0,0){\makebox(0,0)[lb]{\raisebox{0pt}[0pt][0pt]{\special{ps:gsave currentpoint currentpoint translate
+%%%-90.0 rotate neg exch neg exch translate}\twlrm #1\special{ps:currentpoint
+%%grestore moveto}}}}
+%-90.0 rotate neg exch neg exch translate}\elvrm
+%#1\special{ps:currentpoint grestore moveto}}}}
+-90.0 rotate neg exch neg exch translate}\rm #1\special{ps:currentpoint grestore moveto}}}}
+\end{picture}
+%%\hspace*{-18pt}
+\hspace*{-18pt}
+}
+
+\newcommand{\xtagdef}[1]{{\sc #1}}
+\newcommand{\xtagcheck}{$\surd$}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\begin{document}
+\setcounter{bottomnumber}{20}
+\setcounter{topnumber}{20}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\topfraction}{1}
+\setcounter{totalnumber}{30}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{0}
+\input{psfig}
+\pagestyle{plain}
+
+\maketitle
+\pagenumbering{roman}
+%\newpage\setcounter{page}{0}\mbox{}\newpage
+\include{abstr}
+%\newpage\setcounter{page}{0}\mbox{}\newpage
+\include{authors}
+%\newpage\setcounter{page}{0}\mbox{}\newpage
+\include{acknowledgements}
+%\cleardoublepage
+\tableofcontents
+%\cleardoublepage
+\listoffigures
+\cleardoublepage
+\newpage\setcounter{page}{0}\mbox{}\newpage
+\pagenumbering{arabic}
+\pagestyle{headings}
+\part{General Information}
+\include{getting-around}
+\include{intro}
+\include{overview}
+\include{compl-adj}
+%\include{case}  
+\part{Verb Classes}
+\include{table-intro}
+\include{table}
+\include{verb-class}
+\include{ergatives}
+\include{sent-comps-subjs}
+\include{sm-clause}
+\include{double-obj}
+\include{pp-compl}
+\include{it-clefts}
+\include{resultatives}
+\part{Sentence Types}
+\include{passives}
+\include{extraction}
+\include{rel_clauses}
+\include{sent-adjs-sub-conjs}
+\include{imperatives}
+\include{gerunds}
+\part{Other Constructions}
+\include{det}
+\include{modifiers}
+\include{auxs}
+\include{conj}
+\include{comparatives}
+\include{punct}
+\part{Appendices}
+\include{future-work}
+\include{metarules}
+\include{lexorg}
+\include{tree-naming}
+\include{features}
+\include{evaluation}
+\bibliographystyle{aaai-named}
+\bibliography{xtag}
+
+\end{document}
+
+
+
