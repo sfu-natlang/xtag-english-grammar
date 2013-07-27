@@ -1,0 +1,318 @@
+\chapter{Tree Families and Subcategorization Frames}
+\label{underview}
+
+This chapter is meant to be an introductory look at grammar
+organization in XTAG. It serves as basic information the reader would
+need to read the more detailed information about the grammar in
+subsequent parts of the technical report.
+
+\section{Tree Families and Subcategorization Frames}
+\label{subcat-frames}
+
+Elementary trees for predicative words\footnote{ Such as non-auxiliary
+verbs or predicative nouns. } are used to represent the linguistic
+notion of subcategorization.  The anchor of the elementary tree
+subcategorizes for the other elements that appear in the tree, forming
+a clausal or sentential structure.  Tree families group together trees
+that belong to the same subcategorization frame. Consider the
+following uses of the verb {\it buy}:
+
+\enumsentence{Srini bought a book.}
+\enumsentence{Srini bought Beth a book.}
+
+In sentence (\ex{-1}), the verb {\it buy} subcategorizes for a direct
+object NP.  The elementary tree anchored by {\it buy} is shown in
+Figure~\ref{subcat-trees}(a) and includes nodes for the NP complement
+of {\it buy} and for the NP subject.  In addition to this declarative
+tree structure, the tree family also contains the trees that would be
+related to each other transformationally in a movement based approach,
+i.e passivization, imperatives, wh-questions, relative clauses, and so
+forth.  Each tree family selected by its anchor represents all the
+various syntactic environments that it can appear in.
+
+Sentence (\ex{0}) shows that {\it buy} also subcategorizes for
+a double NP object.  This means that {\it buy} also selects the double
+NP object subcategorization frame, or tree family, with its own set of
+transformationally related sentence structures.
+Figure~\ref{subcat-trees}(b) shows the declarative structure for this
+set of sentence structures.
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/compl-adj-files/alphanx0Vnx1_bought.ps,height=1.8in}} & 
+\hspace*{0.5in} & 
+{\psfig{figure=ps/compl-adj-files/alphanx0Vnx2nx1_bought.ps,height=1.8in}}\\
+(a) & \hspace*{0.5in} & (b) \\ 
+\end{tabular}
+\caption{Different subcategorization frames for the verb {\it buy}}
+\label{subcat-trees}
+\end{figure}
+
+Entire classes of anchors select a tree family. All the transitive
+verbs form a class which selects the transitive tree family. Recall
+that a tree family is a group of trees related by some syntactic
+transformations. Since an entire class of anchors are selecting this
+tree family, the assumption is that these syntactic transformations
+are valid for each member of this class. For instance, wh- extraction
+is a syntactic transformation that will apply regardless of any
+idiosyncratic properties of any particular anchor of the tree family.
+Chapter~\ref{verb-classes} contains more information about
+the different tree families in the grammar.
+
+There are some syntactic transformations, however, that are sensitive
+to the properties of a particular anchor within the same
+subcategorization frame. The ergative (or transitive-inchoative)
+alternation for transitive verbs is one such transformation. Only a
+subset of the transitive verbs can undergo this transformation. A more
+rigorous definition of tree family that accounts for such lexical
+idiosyncrasies within an otherwise homogeneous family is discussed in
+detail in Appendix~\ref{families}.
+
+\section{Tree Families and Lexical Rules}
+\label{families}
+
+In the XTAG English grammar, tree families provide us with a compact
+means to specify the set of trees which a particular lexical anchor
+takes. This set represents all syntactic environments in which this
+anchor appears. One way to represent tree families is to have a
+universal set of trees, with each individual anchor taking some subset
+of that larger set.  However, since syntactic transformations are not
+usually sensitive to the anchor of the tree family, in practice we
+assign a tree family to entire classes of words. 
+
+Chapter~\ref{underview} defines the notion of tree family used in the
+XTAG grammar. In this chapter we discuss in more detail what it means
+for a particular anchor to select several tree families keeping in
+mind that entire classes of words which share the same
+subcategorization are assigned tree families in the syntactic
+database. Also, there are some syntactic transformations that are
+sensitive to the properties of a particular word within the same
+subcategorization frame.
+
+In general, the trees within a particular tree family can be thought
+of as being those which are syntactically or transformationally
+related. The tree in Figure~\ref{trans-base-tree} allows us to parse
+sentences such as (\ex{1}). This tree represents the subcategorization
+of the verb and forms the base for the generation of an entire tree
+family. Each family has one such {\em base tree}. One method for
+generating all the trees in the family that are syntactically related to
+the base tree is to use metarules (see Appendix~\ref{metarules}). One
+such member of the transitive tree family is the tree in
+Figure~\ref{trans-extracted-tree} which is the tree where the object
+of the $\alpha$nx0Vnx1 has been extracted. This new tree
+$\alpha$W1nx0Vnx1 now allows us to parse sentences such as (\ex{2}).
+
+\enumsentence{Susie likes Hobbes.}
+\enumsentence{Who does Susie like?}
+
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+\psfig{figure=ps/verb-class-files/alphanx0Vnx1.ps,height=3.4cm}
+\end{tabular}
+\caption{Declarative Transitive Tree:  $\alpha$nx0Vnx1}
+\label{trans-base-tree}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\mbox{}
+\psfig{figure=ps/extraction-files/alphaW1nx0Vnx1.ps,height=10.0cm}
+\caption{Transitive tree with object extraction: $\alpha$W1nx0Vnx1}
+\label{trans-extracted-tree}
+\end{figure} 
+
+The semantic interpretation of arguments across different trees in a
+family remains constant.  That is, if $\mbox{\em NP}_1$ is the
+recipient argument of the predicate in the base indicative tree, then
+it is the recipient when it is fronted as well.
+
+There are some syntactic transformations, however, that are sensitive to the
+properties of a particular word within the same subcategorization frame. The
+ergative (or transitive-inchoative alternation) for transitive verbs is one
+such transformation. Only a subset of the transitive verbs can undergo this
+transformation. Let us call such transformations {\em lexical rules} to
+distinguish them from more general {\em syntactic transformations} (like
+wh-extraction) which are not lexically idiosyncratic.
+
+To explain how these two different kinds of transformations interact
+let us take the example of the ergative subset of the transitive
+verbs:
+
+Ergative verbs such as {\it melt} undergo the ergative transformation (see
+Chapter~\ref{ergatives}). Such verbs are a subset of the set of transitive
+verbs, which do not all take this transformation; for example verbs like {\it
+borrow} cannot take this transformation. To handle the transitive/ergative
+distinction, we could create a tree family which exclusively handles the
+regular transitives and another one which handles the ergatives.  In doing so,
+however, we would be duplicating structure since the ergative family would
+contain all of the trees found in the transitive family in addition to the
+purely ergative trees.  An alternative is to consider the ergative distinction
+as arising from a {\em lexical rule} which takes the base tree of the
+transitive family ($\alpha$nx0Vnx1) and produces the base tree for a strictly
+ergative family ($\alpha$Enx1V).  Then all of the syntactic transformations
+which are available in the grammar can be applied to that new base tree to form
+the entire ergative tree family.  In this particular instance, the indexation
+on the syntactic object NP of $\alpha$nx0Vnx1 ($\mbox{\em NP}_1$) is retained
+on the syntactic subject of the ergative tree, which has the same semantic role
+in both constructions.
+
+The same problem appears in the ditransitive tree family, in which a subset of
+anchors also undergo the dative-shift transformation. We give an identical
+solution to this case as we do for the ergatives.
+
+Hence, tree families can be related to each other by lexical rules.
+Construing tree families in this way allows us to take advantage of
+shared structure when creating a grammar. Introducing this shallow
+hierarchy in the definition of family allows us to have a more compact
+organization of the grammar. This departs from earlier conceptions of
+tree families which maintained that argument positions in different
+tree families were in no way related; thus, before, if a lexical item
+anchored two different tree families, each anchoring instance was
+considered a different predicate.  Under both the previous and the
+present conceptions, tree families are the exhausitive domain of a
+base tree and the trees generated by syntactic transformations on that
+base.  However, the present conception of tree families provides for a
+new level of distinction -- that of families related by a lexical
+rule. These related families are the exhaustive domain of a particular
+predicate that is affected by a lexical rule.
+
+The XTAG grammar encodes the notion of lexical rules implicitly rather
+than explicitly. It is implicit in the anchorings of certain lexical
+items.  For example, ergative verbs such as {\it melt} anchor both
+Tnx0Vnx1 and TEnx1V, and their lexical family is the set of trees in
+the union of these two tree families.  See the chapters on ergatives
+(see Chapter~\ref{ergatives}) and ditransitives (see
+Chapter~\ref{double-objs}) for more in-depth discussions of particular
+cases of lexical families.
+
+To briefly summarize, we can now give the following definitions:
+
+\begin{description}
+\item[tree family:] the set of trees generated from a base tree by the
+syntactic transformations which are available in the grammar.
+
+\item[lexical family:] the set of tree families generated for a given
+predicate from an initial base tree and the base trees which are
+generated by the lexical rules which are specified for that predicate.
+
+\end{description}
+
+It should be noted, however, that we will continue to refer to tree families
+and lexical families both by the generic name {\it tree family}, unless the
+distinction is crucial to the point we are trying to make.
+
+\section{Complements and Adjuncts}
+\label{compl-adj}
+
+Complements and adjuncts have very different structures in the XTAG grammar.
+Complements are included in the elementary tree anchored by the verb that
+selects them, while adjuncts do not originate in the same elementary tree as
+the verb anchoring the sentence, but are instead added to a structure by
+adjunction.  The contrasts between complements and adjuncts have been
+extensively discussed in the linguistics literature and the classification of a
+given element as one or the other remains a matter of debate (see
+\cite{rizzi90},
+\cite{larson88}, \cite{jackendoff90}, \cite{larson90}, \cite{cinque90}, 
+\cite{obernauer84}, \cite{lasnik-saito84}, and \cite{chomsky86}).  The guiding
+rule used in developing the XTAG grammar is whether or not the sentence is
+ungrammatical without the questioned structure.\footnote{Iteration of a
+structure can also be used as a diagnostic: {\it Srini bought a book at the
+bookstore on Walnut Street for a friend}.} Consider the following
+sentences:
+
+\enumsentence{Srini bought a book.}
+\enumsentence{Srini bought a book at the bookstore.}
+\enumsentence{Fei ventured into the cave.}
+\enumsentence{$\ast$Fei ventured.}
+
+Prepositional phrases are common adjuncts, and when they are used as
+adjuncts they have a tree structure such as that shown in
+Figure~\ref{compl-adjunct}(a).  This adjunction tree would adjoin into
+the tree shown in Figure~\ref{subcat-trees}(a) to generate sentence
+(\ex{-2}).  There are verbs, however, such as {\it venture}, {\it
+hunger} and {\it differentiate}, that take prepositional phrases as
+complements.  Sentences (\ex{-1}) and (\ex{0}) clearly show that the
+prepositional phrase are not optional for {\it venture}.
+% For these
+%sentences, the prepositional phrase will be an initial tree (as shown
+%in Figure~\ref{compl-adjunct}(b)) that substitutes into an elementary
+%tree, such as the one anchored by the verb {\it arrange} in
+%Figure~\ref{compl-adjunct}(c).
+For verbs such as this, the prepositional phrase is articulated within the
+verb's elementary tree, as shown in Figure~\ref{compl-adjunct}(b). The
+preposition and its complement noun phrase are substituted into this elementary
+tree. 
+
+
+\begin{figure}[ht]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/compl-adj-files/betavxPnx_at.ps,height=1.8in}} &
+\hspace{0.5in} &
+%{\psfig{figure=ps/compl-adj-files/alphaPXPnx_for.ps,height=1.3in}} &
+%\hspace{0.5in} & 
+{\psfig{figure=ps/compl-adj-files/alphanx0Vpnx1_ventured_.ps,height=1.8in}}\\
+(a) & \hspace{0.5in} & (b) \\ 
+\end{tabular}
+\caption{Trees illustrating the difference between Complements and Adjuncts}
+\label{compl-adjunct}
+\label{2;1,9}
+\end{figure}
+
+
+Virtually all parts of speech, except for main verbs, function as both
+complements and adjuncts in the grammar.  More information is available in this
+report on various parts of speech as complements: adjectives (e.g. section
+\ref{nx0Vax1-family}), nouns (e.g.  section~\ref{nx0Vnx1-family}), and
+prepositions (e.g. section~\ref{nx0Vpnx1-family}); and as adjuncts: adjectives
+(section~\ref{adj-modifier}), adverbs (section~\ref{adv-modifier}), nouns
+(section~\ref{noun-modifier}), and prepositions (section~\ref{prep-modifier}).
+
+\section{Other assumptions made in grammar development}
+
+The morphological, syntactic, and tree databases together comprise the
+English grammar\footnote{ See Chapter~\ref{overview} for details on
+these levels of representation. }.  A lexical item that is not in the
+databases receives a default tree selection and features for its part
+of speech and morphology.  
+
+In designing the grammar, a decision was made early on to err on the
+side of acceptance whenever there are conflicting opinions as to
+whether or not a construction is grammatical.  In this sense, the XTAG
+English grammar is intended to function primarily as an acceptor
+rather than a generator of English sentences.  The range of syntactic
+phenomena that can be handled is large and includes auxiliaries
+(including inversion), copula, raising and small clause constructions,
+topicalization, relative clauses, infinitives, gerunds, passives,
+adjuncts, it-clefts, wh-clefts, PRO constructions, noun-noun
+modifications, determiner sequences, genitives, negation, noun-verb
+contractions, clausal adjuncts and imperatives.
+
+\subsection{Non-S constituents}
+
+Although sentential trees are generally considered to be special cases
+in any grammar, insofar as they make up a `starting category', it is
+the case that any initial tree constitutes a phrasal constituent.
+These initial trees may have substitution nodes that need to be filled
+(by other initial trees), and may be modified by adjunct trees,
+exactly as the trees rooted in S.  Although grouping is possible
+according to the heads or anchors of these trees, we have not found
+any classification similar to the subcategorization frames for verbs
+that can be used by a lexical entry to create a tree family of the set
+of trees selected by such entries.  These trees are selected one by
+one by each lexical item, according to each lexical item's
+idiosyncrasies.  The grammar described by this technical report places
+them into several files for ease of use, but these files do not
+constitute tree families in the way that the subcategorization frames
+do.
+
+
+
+
+
+
+
+

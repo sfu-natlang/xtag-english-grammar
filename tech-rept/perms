@@ -1,0 +1,3 @@
+find . -type d -print -exec chmod a+x {} \;
+find . -name "*.ps" -print -exec chmod a+r {} \; 
+find . -name "*.eps" -print -exec chmod a+r {} \; 

@@ -1,0 +1,3158 @@
+head	1.24;
+access
+	egedi
+	srini
+	beth
+	cdoran
+	skulick
+	heatherm
+	anoop
+	elhuang
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.24
+date	2001.02.22.10.49.14;	author rjprasad;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2001.02.21.20.09.15;	author rjprasad;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2001.02.21.19.43.19;	author rjprasad;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2000.11.14.03.12.58;	author rjprasad;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2000.10.14.19.34.48;	author tbleam;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	99.01.16.01.34.45;	author anoop;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	99.01.15.20.02.16;	author anoop;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	98.08.30.02.41.29;	author anoop;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	98.08.29.00.50.33;	author anoop;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	98.08.28.20.09.14;	author timf;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	98.08.27.21.41.31;	author timf;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	98.08.27.18.14.30;	author timf;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	98.08.27.16.52.52;	author timf;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	98.08.27.16.48.06;	author timf;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	98.08.27.06.32.02;	author anoop;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	98.08.07.16.49.59;	author timf;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	98.08.04.20.37.00;	author timf;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	98.08.04.19.45.21;	author timf;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	98.07.10.18.58.19;	author cdoran;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	96.10.09.21.48.28;	author skulick;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	96.08.16.20.34.12;	author heatherm;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	96.08.16.19.49.10;	author heatherm;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	96.08.14.23.43.47;	author cdoran;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.01.24.20.58.28;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Table that gives which trees are in which families, along
+with references to page numbers where individual trees can be found.
+The initial version of the result of the big push, and is the
+'almost final' version.
+@
+
+
+1.24
+log
+@reformatted the tables
+@
+text
+@%%Labels/pagerefs are formatted {table-no;row,column}
+%%Rajesh: Add ref to \label{2;Npxnx0Vnx1}--need new rows in tables
+
+%%% pagerefs take the following table to be `table 1'
+%%% {\tiny \pageref{}} 
+
+
+\begin{center}
+\footnotesize
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+\begin{tabular}{|p{2.4in}||*{15}{c|}}
+\cline{2-16}
+\multicolumn{1}{c|}{} & \multicolumn{15}{c|}{Tree families}\\
+\hline
+\vspace*{16em}
+& & & & & & & & & & & & & & & \\
+ &
+\vertical{Intransitive, Tnx0V } &
+\vertical{Transitive Ergative, TEnx1V } &
+\vertical{Transitive, Tnx0Vnx1 } &
+\vertical{Intransitive w/ PP, Tnx0Vpnx1 } &
+\vertical{V,P Pred., Tnx0VPnx1 } &
+\vertical{Ditransitive, Tnx0Vnx2nx1 } &
+\vertical{Ditransitive with PP, Tnx0Vnx1pnx2 } &
+\vertical{V,P Ditr. Pred., Tnx0Vnx1Pnx2 } &
+\vertical{Sent. compl. w/ NP, Tnx0Vnx1s2 } &
+\vertical{Intr. Verb Particle, Tnx0Vpl} &
+\vertical{Trans. Verb Particle, Tnx0Vplnx1 } &
+\vertical{Ditrans. Verb Particle, Tnx0Vplnx2nx1 } &
+\vertical{Sent. compl. , Tnx0Vs1 } &
+\vertical{Intransitive w/ Adj., Tnx0Vax1 } &
+\vertical{Transitive SS., Ts0Vnx1 } \\
+\hline\hline
+%
+%%% columns:
+%
+\vspace*{-2.3em} \centerline{Constructions} \vspace*{0.5em}
+Declarative & \xtagcheck & \xtagcheck & {\tiny \pageref{2;1,1}} & {\tiny \pageref{2;1,9}} & \xtagcheck &
+{\tiny \pageref{2;1,3}} & \xtagcheck & {\tiny \pageref{2;1,2}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny
+\pageref{2;Tnx0Vs1}, \pageref{2;1,10}} & \xtagcheck & {\tiny \pageref{1;1,16}} \\
+\hline
+Passive w/ \& w/o {\it by} phrase & & & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{2;2,5}} & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Wh-moved subject & {\tiny \pageref{1;4,13}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{1;4,14}} & \xtagcheck \\
+\hline
+Wh-mov. NP compl., DO or IO & & & {\tiny \pageref{2;5,1}} & & & {\tiny \pageref{2;5,3}} & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Wh-mov. S compl. & & & & & & & & & \xtagcheck & & & & \xtagcheck & & \\
+\hline
+Wh-mov. Adj. or Ad. compl. & & & & & & & & & & & & & & {\tiny \pageref{1;7,14}} & \\
+\hline
+Wh-mov. object of a mod. & & & & \xtagcheck & \xtagcheck & & {\tiny \pageref{2;8,4}} & \xtagcheck & & & & & & & \\
+\hline
+Wh-mov. PP & & & & \xtagcheck & \xtagcheck & & {\tiny \pageref{2;9,4}} & \xtagcheck & & & & & & & \\
+\hline
+Topic. NP compl. & & & \xtagcheck & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Imperative & \xtagcheck & \xtagcheck & {\tiny \pageref{2;11,1}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Det. gerund & \xtagcheck & \xtagcheck & {\tiny \pageref{2;12,1}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \\
+\hline
+NP gerund & \xtagcheck & \xtagcheck & {\tiny \pageref{2;13,1}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Rel. cl. on subj. w/ NP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Rel. cl. on subj. w/ COMP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ NP & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ COMP & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Rel. cl. on PP compl. w/ pied-piping & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+Rel. cl. on NP object of P w/ NP & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+Rel. cl. on NP object of P w/ COMP & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+Rel. cl. on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Rel. cl. on adjunct w/ COMP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Past part. as arg. Adj. & & & \xtagcheck & & \xtagcheck & & & & & & & & & & \\
+\hline
+Paren. quot. cl. & & & & & & & & & \xtagcheck & & & & \xtagcheck & & \\
+\hline
+Participial NP pre-mod & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. subj. & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+Pass. w/ wh-mov. ind. obj. & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+Pass. w/ wh-mov. obj. of  {\it by} phrase & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+Pass. w/ wh-mov. {\it by} phrase & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+PRO in Decl. & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+PRO in NP ger. & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+PRO subj. in decl. pass. w/ {\it by} phrase & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+PRO subj. in decl. pass. w/o {\it by} phrase & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+PRO subj. in ger. pass. w/ {\it by} phrase & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+PRO subj. in ger. pass. w/o {\it by} phrase & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+%%% from here on into the document
+%%% pagerefs take the following table to be `table 2'
+%%% 
+
+
+\clearpage
+
+\begin{center}
+\footnotesize
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+\begin{tabular}{|p{2.4in}||*{14}{c|}}
+\cline{2-15}
+\multicolumn{1}{c|}{} & \multicolumn{14}{c|}{Tree families}\\
+\hline
+\vspace*{18em}
+& & & & & & & & & & & & & & \\
+ &
+\vertical{Transitive Light Verb, Tnx0lVN1 } &
+\vertical{Ditr. LV. w/ PP, Tnx0lVN1Pnx2 } &
+\vertical{NP It-cleft, TItVnx1s2 } &
+\vertical{PP It-cleft, TItVpnx1s2 } &
+\vertical{Adverb, It-cleft, TItVads2 } &
+\vertical{Adj.. Sm-Cl., Tnx0Ax1 } &
+\vertical{Adj. Sm-Cl. w/ Sent. compl., Tnx0A1s1 } &
+\vertical{Adj. Sm-Cl. w/ SS., Ts0Ax1 } &
+\vertical{Equative BE, Tnx0BEnx1 } &
+\vertical{NP Sm-Cl., Tnx0N1 } &
+\vertical{NP w/ Sent. compl. Sm-Cl., Tnx0N1s1 } &
+\vertical{NP Sm-Cl. w/ SS., Ts0N1 } &
+\vertical{PP Sm-Cl., Tnx0Pnx1 } &
+\vertical{Exh. PP Sm-Cl., Tnx0Px1 } \\
+\hline \hline
+%
+%%% columns:
+%
+\vspace*{-2.3em} \centerline{Constructions} \vspace*{0.5em}
+Declarative & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{1;1,3}} & \xtagcheck & {\tiny \pageref{1;1,4}} & \xtagcheck & \xtagcheck & {\tiny \pageref{1;1,6}} & {\tiny \pageref{1;1,7}} & \xtagcheck & {\tiny \pageref{1;1,9}} & \xtagcheck & \xtagcheck \\
+\hline
+Passive w/ \& w/o {\it by} phrase & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+Y/N quest. & & & \xtagcheck & {\tiny \pageref{1;3,3}} & \xtagcheck & & & & \xtagcheck & & & & & \\
+\hline
+Wh-moved subject & \xtagcheck & \xtagcheck & & & & {\tiny \pageref{1;4,4}} & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Wh-mov. NP compl., DO or IO & & \xtagcheck & \xtagcheck & & & & & & & \xtagcheck & & & \xtagcheck & \\
+\hline
+Wh-mov. Adj. or Ad. compl. & & & \xtagcheck & & \xtagcheck & \xtagcheck & & & & & & & & \\
+\hline
+Wh-mov. object of a mod. & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+Wh-mov. PP & & \xtagcheck & & \xtagcheck & & & & & & & & & & \xtagcheck \\
+\hline
+Topic. NP compl. & & \xtagcheck & & & & & & & & \xtagcheck & & & & \\
+\hline
+Imperative & \xtagcheck & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck \\
+\hline
+Det. gerund & \xtagcheck & \xtagcheck & & & & & & & & & & & & \\
+\hline
+NP gerund & \xtagcheck & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck \\
+\hline
+Rel. cl. on subj. w/ NP & \xtagcheck & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck \\
+\hline
+Rel. cl. on subj. w/ COMP & \xtagcheck & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ NP & & \xtagcheck & & & & & & & & & & & \xtagcheck & \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ COMP & & \xtagcheck & & & & & & & & & & & \xtagcheck & \\
+\hline
+Rel. cl. on PP compl. w/ pied-piping & & \xtagcheck & & & & & & & & & & & \xtagcheck & \\
+\hline
+Rel. cl. on NP object of P w/ NP & & \xtagcheck & & & & & & & & & & & \xtagcheck & \\
+\hline
+Rel. cl. on NP object of P w/ COMP & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+Rel. cl. on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Rel. cl. on adjunct w/ COMP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Pass. w/ wh-mov. ind. obj. & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+PRO in Decl. & \xtagcheck & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck \\
+\hline
+PRO in NP ger. & \xtagcheck & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck \\
+\hline
+PRO subj. in decl. pass. w/ {\it by} phrase & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+PRO subj. in decl. pass. w/o {\it by} phrase & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+PRO subj. in ger. pass. w/ {\it by} phrase & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+PRO subj. in ger. pass. w/o {\it by} phrase & & \xtagcheck & & & & & & & & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\clearpage
+
+\begin{center}
+\footnotesize
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+\begin{tabular}{|p{2.4in}||*{14}{c|}}
+\cline{2-15}
+\multicolumn{1}{c|}{} & \multicolumn{14}{c|}{Tree families}\\
+\hline
+\vspace*{22em}
+& & & & & & & & & & & & & & \\
+ &
+\vertical{PP Sm-Cl. w/ SS., Ts0Pnx1 } &
+\vertical{PP Sm-Cl. w/ Ad,P Pred., Tnx0ARBPnx1 } &
+\vertical{PP Sm-Cl. w/ A,P Pred., Tnx0APnx1 } &
+\vertical{PP Sm-Cl. w/ N,P Pred., Tnx0NPnx1 } & 
+\vertical{PP Sm-Cl. w/ P,P Pred., Tnx0PPnx1 } & 
+\vertical{PP Sm-Cl. w/ P,N Pred., Tnx0PNaPnx1 } & 
+\vertical{PP Sm-Cl. w/ SS., \& Ad,P Pred., Ts0ARBPnx1 } &
+\vertical{PP Sm-Cl. w/ SS., \& A,P Pred., Ts0APnx1 } &
+\vertical{PP Sm-Cl. w/ SS., \& N,P Pred., Ts0NPnx1 } &
+\vertical{PP Sm-Cl. w/ SS., \& P,P Pred., Ts0PPnx1 } & 
+\vertical{PP Sm-Cl. w/ SS., \& P,N Pred., Ts0PNaPnx1 } & 
+\vertical{Intr. SS., Ts0V } &
+\vertical{SS. w/ 'to' compl., Ts0Vtonx1 } &
+\vertical{ECM, TXnx0Vs1 } \\
+\hline \hline
+%
+%%% columns:
+%
+\vspace*{-2.3em} \centerline{Constructions} \vspace*{0.5em}
+Declarative & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck
+& \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{3;1,15}} \\
+\hline
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck
+& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Wh-mov. NP compl., DO or IO & & & \xtagcheck & \xtagcheck & & & & & & & & & & \\
+\hline
+Wh-mov. object of a mod. & & & & & \xtagcheck & \xtagcheck & & & & & & & & \\
+\hline
+Wh-mov. PP & & \xtagcheck & & & \xtagcheck & \xtagcheck & & & & & & & & \\
+\hline
+Imperative & & \xtagcheck & & & \xtagcheck & \xtagcheck & & & & & & & & \xtagcheck \\
+\hline
+NP gerund & & \xtagcheck & & & \xtagcheck & \xtagcheck & & & & & & & & \xtagcheck \\
+\hline
+Rel. cl. on subj. w/ NP & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & & & \xtagcheck \\
+\hline
+Rel. cl. on subj. w/ COMP & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & & & \xtagcheck \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ NP & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & & & & & & \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ COMP & \xtagcheck & & & & & & & & & & & & & \\
+\hline
+Rel. cl. on PP compl. w/ pied-piping & \xtagcheck & & & & \xtagcheck & \xtagcheck & & & & & & & & \\
+\hline
+Rel. cl. on NP object of P w/ NP & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & \\
+\hline
+Rel. cl. on NP object of P w/ COMP & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & \\
+\hline
+Rel. cl. on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Rel. cl. on adjunct w/ COMP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+PRO in Decl. & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & & & \xtagcheck \\
+\hline
+PRO in NP ger. & & \xtagcheck & & & \xtagcheck & \xtagcheck & & & & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\clearpage
+
+%pagerefs take the following table to be 'table 4'
+
+\begin{center}
+\footnotesize
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+\begin{tabular}{|p{2.4in}||*{14}{c|}}
+\cline{2-15}
+\multicolumn{1}{c|}{} & \multicolumn{14}{c|}{Tree families}\\
+\hline
+\vspace*{22em}
+& & & & & & & & & & & & & & \\
+ &
+\vertical{Loc. Sm-Cl. w/ Ad. Pred., Tnx0nx1ARB } &
+\vertical{Idiom w/ V,D,N anchors, Tnx0VDN1 } &
+\vertical{Idiom w/ V,D,A,N anchors, Tnx0VDAN1 } &
+\vertical{Idiom w/ V,N Y anchors, Tnx0VN1 } &
+\vertical{Idiom w/ V,A,N anchors, Tnx0VAN1 } &
+\vertical{Idiom w/ V,D,A,N,P anchors, Tnx0VDAN1Pnx2 } &
+\vertical{Idiom w/ V,A,N,P anchors, Tnx0VAN1Pnx2 } &
+\vertical{Idiom w/ V,N,P anchors, Tnx0VN1Pnx2 } &
+\vertical{Idiom w/ V,D,N,P anchors, Tnx0VDN1Pnx2 } &
+\vertical{Tr/Intr. Res. w/ V,A Pred., TRnx0Vnx1A2 } &
+\vertical{Tr/Intr. Res. w/ V,P Pred., TRnx0Vnx1Pnx2 } &
+\vertical{Erg. Res. w/ V,A Pred., TREnx1VA2 } &
+\vertical{Erg. Res. w/ V,P Pred., TREnx1VPnx2 } &
+\vertical{SS. w/ Sm-Cl. compl., Ts0Vs1 } \\
+\hline \hline
+%
+%%% columns:
+%
+\vspace*{-2.3em} \centerline{Constructions} \vspace*{0.5em}
+Declarative & {\tiny \pageref{3;nx0nx1ARB}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Passive w/ \& w/o {\it by} phrase & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Wh-mov. NP compl., DO or IO & & & & & & & & & & \xtagcheck & & & & \\
+\hline
+Wh-mov. Adj. or Ad. compl. & {\tiny \pageref{3;W1nx0nx1ARB}} & & & & & & & & & & & & & \\
+\hline
+Wh-mov. object of a mod. & & & & & & & & & & \xtagcheck & & \xtagcheck & & \\
+\hline
+Wh-mov. PP & \xtagcheck & & & & & & & & & & \xtagcheck & & \xtagcheck & \\
+\hline
+Imperative & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+NP gerund & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Rel. cl. on subj. w/ NP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Rel. cl. on subj. w/ COMP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ NP & & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Rel. cl. on NP compl., DO, IO w/ COMP & & & & & & & & & & \xtagcheck & \xtagcheck & & \xtagcheck & \\
+\hline
+Rel. cl. on PP compl. w/ pied-piping & & & & & & & & & & \xtagcheck & \xtagcheck & \xtagcheck & & \\
+\hline
+Rel. cl. on NP object of P w/ NP & & & & & & & & & & & \xtagcheck & & & \\
+\hline
+Rel. cl. on NP object of P w/ COMP & & & & & & & & & & & \xtagcheck & & & \\
+\hline
+Rel. cl. on adjunct w/ PP & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Rel. cl. on adjunct w/ COMP & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+\hline
+Participial NP pre-mod & & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Pass. w/ wh-mov. subj. & & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Pass. w/ wh-mov. obj. of  {\it by} phrase & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & \\
+\hline
+Pass. w/ wh-mov. {\it by} phrase & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & \\
+\hline
+PRO in Decl. & \xtagcheck & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+PRO in NP ger. & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in decl. pass. w/ {\it by} phrase & \xtagcheck & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+PRO subj. in decl. pass. w/o {\it by} phrase & & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+PRO subj. in ger. pass. w/ {\it by} phrase & & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+PRO subj. in ger. pass. w/o {\it by} phrase & & & & & & & & & & \xtagcheck & \xtagcheck & & & \\
+\hline
+Outer Pass. w/ and w/o {\it by} phrase & \xtagcheck & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ COMP & \xtagcheck & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ NP & \xtagcheck & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d9 1
+a9 1
+\tiny
+d15 1
+a15 1
+\vspace*{18em}
+d24 1
+a24 1
+\vertical{Ditransitive w/ PP, Tnx0Vnx1pnx2 } &
+d30 1
+a30 1
+\vertical{Sent. compl., Tnx0Vs1 } &
+d38 3
+a40 1
+Declarative & & & & & & & & & & & & & & & \\
+d42 1
+a42 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & & & & & & & \\
+d44 1
+a44 1
+Y/N quest. & & & & & & & & & & & & & & & \\
+d46 1
+a46 1
+Wh-moved subject & & & & & & & & & & & & & & & \\
+d48 1
+a48 1
+Wh-mov. NP compl., DO or IO & & & & & & & & & & & & & & & \\
+d50 1
+a50 1
+Wh-mov. S compl. & & & & & & & & & & & & & & & \\
+d52 1
+a52 1
+Wh-mov. Adj. or Ad. compl. & & & & & & & & & & & & & & & \\
+d54 1
+a54 1
+Wh-mov. object of a mod. & & & & & & & & & & & & & & & \\
+d56 1
+a56 1
+Wh-mov. PP & & & & & & & & & & & & & & & \\
+d58 1
+a58 1
+Topic. NP compl. & & & & & & & & & & & & & & & \\
+d60 1
+a60 1
+Imperative & & & & & & & & & & & & & & & \\
+d62 1
+a62 1
+Det. gerund & & & & & & & & & & & & & & & \\
+d64 1
+a64 1
+NP gerund & & & & & & & & & & & & & & & \\
+d66 1
+a66 1
+Ergative & & & & & & & & & & & & & & & \\
+d68 1
+a68 1
+Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & & \\
+d70 1
+a70 1
+Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & & \\
+d72 1
+a72 1
+Rel. cl. on NP compl., DO, IO w/ NP & & & & & & & & & & & & & & & \\
+d74 1
+a74 1
+Rel. cl. on NP compl., DO, IO w/ COMP & & & & & & & & & & & & & & & \\
+d76 1
+a76 1
+Rel. cl. on PP compl. w/ pied-piping & & & & & & & & & & & & & & & \\
+d78 1
+a78 1
+Rel. cl. on NP object of P w/ NP & & & & & & & & & & & & & & & \\
+d80 1
+a80 1
+Rel. cl. on NP object of P w/ COMP & & & & & & & & & & & & & & & \\
+d82 1
+a82 1
+Rel. cl. on adjunct w/ PP & & & & & & & & & & & & & & & \\
+d84 1
+a84 1
+Rel. cl. on adjunct w/ COMP & & & & & & & & & & & & & & & \\
+d86 1
+a86 1
+Past part. as arg. Adj. & & & & & & & & & & & & & & & \\
+d88 1
+a88 1
+Paren. quot. cl. & & & & & & & & & & & & & & & \\
+d90 1
+a90 1
+Participial NP pre-mod & & & & & & & & & & & & & & & \\
+d92 1
+a92 1
+Pass. w/ wh-mov. subj. & & & & & & & & & & & & & & & \\
+d94 1
+a94 1
+Pass. w/ wh-mov. ind. obj. & & & & & & & & & & & & & & & \\
+d96 1
+a96 1
+Pass. w/ wh-mov. obj. of  {\it by} phrase & & & & & & & & & & & & & & & \\
+d98 1
+a98 1
+Pass. w/ wh-mov. {\it by} phrase & & & & & & & & & & & & & & & \\
+d100 1
+a100 1
+PRO in Decl. & & & & & & & & & & & & & & & \\
+d102 1
+a102 1
+PRO in NP ger. & & & & & & & & & & & & & & & \\
+d104 1
+a104 1
+PRO subj. in decl. pass. w/ {\it by} phrase & & & & & & & & & & & & & & & \\
+d106 1
+a106 1
+PRO subj. in decl. pass. w/o {\it by} phrase & & & & & & & & & & & & & & & \\
+a107 10
+PRO subj. in ger. pass. w/ {\it by} phrase & & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in ger. pass. w/o {\it by} phrase & & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ and w/o {\it by} phrase & & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & & \\
+\hline
+d120 1
+a120 1
+\tiny
+d133 2
+a134 2
+\vertical{Ad., It-cleft, TItVads2 } &
+\vertical{Adj. Sm-Cl., Tnx0Ax1 } &
+d148 1
+a148 1
+Declarative & & & & & & & & & & & & & & \\
+d150 1
+a150 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & & & & & & \\
+d152 1
+a152 1
+Y/N quest. & & & & & & & & & & & & & & \\
+d154 1
+a154 1
+Wh-moved subject & & & & & & & & & & & & & & \\
+d156 1
+a156 1
+Wh-mov. NP compl., DO or IO & & & & & & & & & & & & & & \\
+d158 1
+a158 1
+Wh-mov. S compl. & & & & & & & & & & & & & & \\
+d160 1
+a160 1
+Wh-mov. Adj. or Ad. compl. & & & & & & & & & & & & & & \\
+d162 1
+a162 1
+Wh-mov. object of a mod. & & & & & & & & & & & & & & \\
+d164 1
+a164 1
+Wh-mov. PP & & & & & & & & & & & & & & \\
+d166 1
+a166 1
+Topic. NP compl. & & & & & & & & & & & & & & \\
+d168 1
+a168 1
+Imperative & & & & & & & & & & & & & & \\
+d170 1
+a170 1
+Det. gerund & & & & & & & & & & & & & & \\
+d172 1
+a172 1
+NP gerund & & & & & & & & & & & & & & \\
+d174 1
+a174 1
+Ergative & & & & & & & & & & & & & & \\
+d176 1
+a176 1
+Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & \\
+d178 1
+a178 1
+Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & \\
+d180 1
+a180 1
+Rel. cl. on NP compl., DO, IO w/ NP & & & & & & & & & & & & & & \\
+d182 1
+a182 1
+Rel. cl. on NP compl., DO, IO w/ COMP & & & & & & & & & & & & & & \\
+d184 1
+a184 1
+Rel. cl. on PP compl. w/ pied-piping & & & & & & & & & & & & & & \\
+d186 1
+a186 1
+Rel. cl. on NP object of P w/ NP & & & & & & & & & & & & & & \\
+d188 1
+a188 1
+Rel. cl. on NP object of P w/ COMP & & & & & & & & & & & & & & \\
+d190 1
+a190 1
+Rel. cl. on adjunct w/ PP & & & & & & & & & & & & & & \\
+d192 1
+a192 1
+Rel. cl. on adjunct w/ COMP & & & & & & & & & & & & & & \\
+d194 1
+a194 1
+Past part. as arg. Adj. & & & & & & & & & & & & & & \\
+d196 1
+a196 1
+Paren. quot. cl. & & & & & & & & & & & & & & \\
+d198 1
+a198 1
+Participial NP pre-mod & & & & & & & & & & & & & & \\
+d200 1
+a200 1
+Pass. w/ wh-mov. subj. & & & & & & & & & & & & & & \\
+d202 1
+a202 1
+Pass. w/ wh-mov. ind. obj. & & & & & & & & & & & & & & \\
+a203 22
+Pass. w/ wh-mov. obj. of  {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO in Decl. & & & & & & & & & & & & & & \\
+\hline
+PRO in NP ger. & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in decl. pass. w/ {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in decl. pass. w/o {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in ger. pass. w/ {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in ger. pass. w/o {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ and w/o {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & \\
+\hline
+a206 7
+
+
+
+%%% pagerefs take the following table to be `table 3'
+%%% 
+
+
+d210 1
+a210 1
+\tiny
+d216 1
+a216 1
+\vspace*{18em}
+d232 1
+a232 1
+\vertical{ECM., TXnx0Vs1 } \\
+d238 3
+a240 1
+Declarative & & & & & & & & & & & & & & \\
+d242 3
+a244 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & & & & & & \\
+d246 1
+a246 1
+Y/N quest. & & & & & & & & & & & & & & \\
+d248 1
+a248 1
+Wh-moved subject & & & & & & & & & & & & & & \\
+d250 1
+a250 1
+Wh-mov. NP compl., DO or IO & & & & & & & & & & & & & & \\
+d252 1
+a252 1
+Wh-mov. S compl. & & & & & & & & & & & & & & \\
+d254 1
+a254 1
+Wh-mov. Adj. or Ad. compl. & & & & & & & & & & & & & & \\
+d256 1
+a256 1
+Wh-mov. object of a mod. & & & & & & & & & & & & & & \\
+d258 1
+a258 1
+Wh-mov. PP & & & & & & & & & & & & & & \\
+d260 1
+a260 1
+Topic. NP compl. & & & & & & & & & & & & & & \\
+d262 1
+a262 1
+Imperative & & & & & & & & & & & & & & \\
+d264 1
+a264 1
+Det. gerund & & & & & & & & & & & & & & \\
+d266 1
+a266 1
+NP gerund & & & & & & & & & & & & & & \\
+d268 1
+a268 1
+Ergative & & & & & & & & & & & & & & \\
+d270 1
+a270 1
+Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & \\
+d272 1
+a272 1
+Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & \\
+d274 1
+a274 1
+Rel. cl. on NP compl., DO, IO w/ NP & & & & & & & & & & & & & & \\
+d276 1
+a276 1
+Rel. cl. on NP compl., DO, IO w/ COMP & & & & & & & & & & & & & & \\
+a277 42
+Rel. cl. on PP compl. w/ pied-piping & & & & & & & & & & & & & & \\
+\hline
+Rel. cl. on NP object of P w/ NP & & & & & & & & & & & & & & \\
+\hline
+Rel. cl. on NP object of P w/ COMP & & & & & & & & & & & & & & \\
+\hline
+Rel. cl. on adjunct w/ PP & & & & & & & & & & & & & & \\
+\hline
+Rel. cl. on adjunct w/ COMP & & & & & & & & & & & & & & \\
+\hline
+Past part. as arg. Adj. & & & & & & & & & & & & & & \\
+\hline
+Paren. quot. cl. & & & & & & & & & & & & & & \\
+\hline
+Participial NP pre-mod & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. subj. & & & & & & & & & & & & & & \\
+\hline
+Pass w/ wh-mov ind. obj. & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. obj. of  {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO in Decl. & & & & & & & & & & & & & & \\
+\hline
+PRO in NP ger. & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in decl. pass. w/ {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in decl. pass. w/o {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in ger. pass. w/ {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO subj. in ger. pass. w/o {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ and w/o {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & \\
+\hline
+Outer Pass. w/ Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & \\
+\hline
+d286 1
+a286 1
+\tiny
+d292 1
+a292 1
+\vspace*{18em}
+d296 8
+a303 8
+\vertical{Idiom w/ V,D,N Pred., Tnx0VDN1 } &
+\vertical{Idiom w/ V,D,A,N Pred., Tnx0VDAN1 } &
+\vertical{Idiom w/ V,N Pred., Tnx0VN1 } &
+\vertical{Idiom w/ V,A,N Pred., Tnx0VAN1 } &
+\vertical{Idiom w/ V,D,A,N,P Pred., Tnx0VDAN1Pnx2 } &
+\vertical{Idiom w/ V,A,N,P Pred., Tnx0VAN1Pnx2 } &
+\vertical{Idiom w/ V,N,P Pred., Tnx0VN1Pnx2 } &
+\vertical{Idiom w/ V,D,N,P Pred., Tnx0VDN1Pnx2 } &
+d314 1
+a314 1
+Declarative & & & & & & & & & & & & & & \\
+d316 1
+a316 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & & & & & & \\
+d318 1
+a318 1
+Y/N quest. & & & & & & & & & & & & & & \\
+d320 1
+a320 1
+Wh-moved subject & & & & & & & & & & & & & & \\
+d322 1
+a322 1
+Wh-mov. NP compl., DO or IO & & & & & & & & & & & & & & \\
+d324 1
+a324 1
+Wh-mov. S compl. & & & & & & & & & & & & & & \\
+d326 1
+a326 1
+Wh-mov. Adj. or Ad. compl. & & & & & & & & & & & & & & \\
+d328 1
+a328 1
+Wh-mov. object of a mod. & & & & & & & & & & & & & & \\
+d330 1
+a330 1
+Wh-mov. PP & & & & & & & & & & & & & & \\
+d332 1
+a332 1
+Topic. NP compl. & & & & & & & & & & & & & & \\
+d334 1
+a334 1
+Imperative & & & & & & & & & & & & & & \\
+d336 1
+a336 1
+Det. gerund & & & & & & & & & & & & & & \\
+d338 1
+a338 1
+NP gerund & & & & & & & & & & & & & & \\
+d340 1
+a340 1
+Ergative & & & & & & & & & & & & & & \\
+d342 1
+a342 1
+Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & \\
+d344 1
+a344 1
+Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & \\
+d346 1
+a346 1
+Rel. cl. on NP compl., DO, IO w/ NP & & & & & & & & & & & & & & \\
+d348 1
+a348 1
+Rel. cl. on NP compl., DO, IO w/ COMP & & & & & & & & & & & & & & \\
+d350 1
+a350 1
+Rel. cl. on PP compl. w/ pied-piping & & & & & & & & & & & & & & \\
+d352 1
+a352 1
+Rel. cl. on NP object of P w/ NP & & & & & & & & & & & & & & \\
+d354 1
+a354 1
+Rel. cl. on NP object of P w/ COMP & & & & & & & & & & & & & & \\
+d356 1
+a356 1
+Rel. cl. on adjunct w/ PP & & & & & & & & & & & & & & \\
+d358 1
+a358 1
+Rel. cl. on adjunct w/ COMP & & & & & & & & & & & & & & \\
+a359 16
+Past part. as arg. Adj. & & & & & & & & & & & & & & \\
+\hline
+Paren. quot. cl. & & & & & & & & & & & & & & \\
+\hline
+Participial NP pre-mod & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. subj. & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. ind. obj. & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. obj. of  {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+Pass. w/ wh-mov. {\it by} phrase & & & & & & & & & & & & & & \\
+\hline
+PRO in Decl. & & & & & & & & & & & & & & \\
+\hline
+d362 1
+a362 1
+PRO subj. in decl. pass. w/ {\it by} phrase & & & & & & & & & & & & & & \\
+d364 1
+a364 1
+PRO subj. in decl. pass. w/o {\it by} phrase & & & & & & & & & & & & & & \\
+d366 1
+a366 1
+PRO subj. in ger. pass. w/ {\it by} phrase & & & & & & & & & & & & & & \\
+d368 1
+a368 1
+PRO subj. in ger. pass. w/o {\it by} phrase & & & & & & & & & & & & & & \\
+d370 1
+a370 1
+Outer Pass. w/ and w/o {\it by} phrase & & & & & & & & & & & & & & \\
+d372 1
+a372 1
+Outer Pass. w/ Rel. cl. on subj. w/ COMP & & & & & & & & & & & & & & \\
+d374 1
+a374 1
+Outer Pass. w/ Rel. cl. on subj. w/ NP & & & & & & & & & & & & & & \\
+@
+
+
+1.22
+log
+@modified table
+@
+text
+@a6 1
+\tiny
+d9 1
+d127 1
+a128 2
+
+\begin{center}
+d246 1
+a247 2
+
+\begin{center}
+d360 1
+a361 2
+
+\begin{center}
+@
+
+
+1.21
+log
+@added entries for PRO, prenominal participial modifiers
+@
+text
+@d4 2
+a5 2
+%%% pagerefs take the following table to be `table 3'
+%%% 
+d7 2
+d11 3
+a13 3
+\begin{tabular}{|p{2.4in}||*{16}{c|}}
+\cline{2-17}
+\multicolumn{1}{c||}{} & \multicolumn{16}{c|}{Tree families}\\
+d15 2
+a16 2
+\vspace*{10em}
+& & & & & & & & & & & & & & & & \\
+d18 15
+a32 16
+\vertical{Transitive Ergative } &
+\vertical{Intransitive Sentential Subj } &
+\vertical{Sent. Subj. w. to } & %s0Vtonx1 
+\vertical{Pred. Mult-wd. ARB, P } &
+\vertical{Pred. Mult-wd. A, P } &
+\vertical{Pred. Mult-wd. N, P } &
+\vertical{Pred. Mult-wd. P, P } &
+\vertical{Pred. Mult-wd. no int. mod. } &
+\vertical{Pred. Sent. Subj., ARB, P } &
+\vertical{Pred. Sent. Subj., A, P } &
+\vertical{Pred. Sent. Subj., N, P } &
+\vertical{Pred. Sent. Subj., P, P } &
+\vertical{Pred. Sent. Subj., no int-mod } &
+\vertical{ECM}  & %TXnx0Vs1 
+\vertical{Pred. Locative} &  %Tnx0nx1ARB
+\vertical{Sent. Subj. w. Sm. Cl. Comp.} \\
+d38 1
+a38 4
+Declarative & \xtagcheck & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck&
+\xtagcheck &\xtagcheck &\xtagcheck & {\tiny \pageref{3;1,15}}  &
+{\tiny \pageref{3;nx0nx1ARB}} & \xtagcheck \\
+d40 1
+a40 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & &  & & & & & &\\
+d42 1
+a42 1
+Y/N quest. & & & &  &  &  & &  & & & & & & & & \\
+d44 1
+a44 4
+Wh-moved subject & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck & \xtagcheck
+& \xtagcheck &  \xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &
+\xtagcheck \\
+d46 1
+a46 1
+Wh-mov.\ NP complement, DO or IO & & & & & & & & & & & & & & & & \\
+d48 1
+a48 1
+Wh-mov.\ S comp. & & & & & & & & & & & & & & & & \\
+d50 1
+a50 4
+Wh-mov.\ Adj. or Adv.\ comp. & & & & & & & & & & & & & & & {\tiny \pageref{3;W1nx0nx1ARB}} & \\
+        \hline
+Wh-mov.\ object of a mod. & & & & \xtagcheck & \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & & & & & & & \xtagcheck & \\
+d52 1
+a52 1
+Wh-mov.\ PP & & & & \xtagcheck & &  & \xtagcheck & \xtagcheck & & & & & & & & \\
+d54 1
+a54 1
+Topic.\ NP comp. & & & & & & & & & & & & & & & & \\
+d56 1
+a56 2
+Imperative & \xtagcheck & & & \xtagcheck & & & \xtagcheck & \xtagcheck  & & & & & &
+\xtagcheck  & \xtagcheck  & \\
+d58 1
+a58 1
+Det.\ gerund & \xtagcheck & & & & & & & & & & & & & & & \\
+d60 1
+a60 2
+NP gerund & \xtagcheck & & & \xtagcheck & & & \xtagcheck & \xtagcheck  & & & & &
+& \xtagcheck & \xtagcheck &\\ 
+d62 1
+a62 1
+Rel.\ cl.\ on subj. w/ NP  & \xtagcheck & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & \xtagcheck & \xtagcheck &\\
+d64 1
+a64 1
+Rel.\ cl.\ on subj. w/ overt wh-NP  & \xtagcheck & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & \xtagcheck & \xtagcheck &\\
+d66 1
+a66 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & & & & & & & & & \\
+d68 1
+a68 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & & & & & & & & & \\
+d70 1
+a70 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & \xtagcheck & \xtagcheck &  &  & & & & & & \\
+d72 1
+a72 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & &\\
+d74 1
+a74 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & \xtagcheck & \xtagcheck & & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & &\\
+d76 1
+a76 4
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &
+\xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & &
+\xtagcheck \\
+d78 1
+a78 4
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &
+\xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & &
+\xtagcheck \\
+d80 1
+a80 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & & \\
+d82 1
+a82 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & & & \\
+d84 1
+a84 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase & & & & & & & & & & & & & & & & \\
+d86 1
+a86 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase & & & & & & & & & & & & & & & & \\
+d88 1
+a88 1
+Participial NP pre-mod & \xtagcheck & & & & & & & & & & & & & & & \\
+d90 1
+a90 1
+PRO in Decl. & \xtagcheck & & & & & & & & & & & & & & & \\
+d92 1
+a92 1
+PRO in NP ger. & \xtagcheck & & & & & & & & & & & & & & & \\
+d94 22
+a115 8
+PRO subj. in decl. pass. w.\ {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in decl. pass. w.\o {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in ger. pass. w.\ {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in ger. pass. w.\o {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+a118 1
+\clearpage
+a123 1
+\vspace*{-0.5in}
+d125 4
+d131 3
+a133 3
+\begin{tabular}{|p{2.4in}||*{16}{c|}}
+\cline{2-17}
+\multicolumn{1}{c||}{} & \multicolumn{16}{c|}{Tree families}\\
+d135 2
+a136 1
+\vspace*{12em} & & & & & & & & & & & & & & & & \\
+d138 15
+a152 17
+\vertical{Transitive} &
+\vertical{Ditransitive w/ PP w/ P co-anchor} &
+\vertical{Ditransitive} &
+\vertical{Ditransitive with PP} &
+\vertical{Sentential Complement with NP} &
+\vertical{Intransitive Verb Particle} &
+\vertical{Transitive Verb Particle} &
+\vertical{Ditransitive Verb Particle} &
+\vertical{Intransitive with PP} &
+\vertical{Sentential Complement} &
+\vertical{Transitive Light Verbs} &
+\vertical{Ditransitive Light Verbs} &
+\vertical{Adj.\ Sm.\ Cl.\ w.\ Sentential Subj.} &
+\vertical{NP Sm.\ Cl.\ w.\ Sentential Subj.} &
+\vertical{PP Sm.\ Cl.\ w.\ Sentential Subj.} &
+\vertical{Pred.\ Mult.\ wd. V, P} \\
+
+a155 1
+\hline\hline
+d157 1
+a157 1
+Declarative &{\tiny \pageref{2;1,1}} & {\tiny \pageref{2;1,2}} & {\tiny \pageref{2;1,3}}& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &{\tiny \pageref{2;1,9}}&{\tiny \pageref{2;Tnx0Vs1},\pageref{2;1,10}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &\xtagcheck \\
+d159 1
+a159 1
+Passive w/ \& w/o {\it by} phrase &\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{2;2,5}} & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & &\xtagcheck\\
+d161 1
+a161 1
+Y/N quest.\ & & & & & & & & & & & & & & & &\\
+d163 1
+a163 1
+Wh-moved subject & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck  &\xtagcheck & &\xtagcheck & \xtagcheck& \xtagcheck &\xtagcheck \\
+d165 1
+a165 1
+Wh-mov.\ NP complement, DO or IO  &{\tiny \pageref{2;5,1}}&\xtagcheck &{\tiny \pageref{2;5,3}}&\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck & & & & & & & & \\
+d167 1
+a167 1
+Wh-mov.\ S comp.\ & & & & & \xtagcheck & & & & & \xtagcheck & & & & & & \\
+d169 1
+a169 1
+Wh-mov.\ Adj. or Adv.\ comp.  & & & & & & & & & & & & & \xtagcheck & & & \\
+d171 1
+a171 1
+Wh-mov.\ object of a mod.  & &\xtagcheck & &{\tiny \pageref{2;8,4}}& & & & &\xtagcheck & & &\xtagcheck & & & &\xtagcheck  \\
+d173 1
+a173 2
+Wh-mov.\ PP  & &\xtagcheck & &{\tiny \pageref{2;9,4}}& & & &
+&\xtagcheck & & &\xtagcheck & & & & \xtagcheck \\
+d175 1
+a175 1
+Topic.\ NP comp.  &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck & & & & & & & & \\
+d177 1
+a177 1
+Imperative &{\tiny \pageref{2;11,1}}&\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & & &  &\xtagcheck \\
+d179 1
+a179 1
+Det.\ gerund &{\tiny \pageref{2;12,1}}&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & & & &\xtagcheck  \\
+d181 1
+a181 1
+NP gerund &{\tiny \pageref{2;13,1}}&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck &\xtagcheck &\xtagcheck & & &  &\xtagcheck \\
+d183 1
+a183 1
+Ergative &{\tiny \pageref{2;14,1}}& & & & & & & & & & & & & & & \\
+d185 1
+a185 1
+Rel.\ cl.\ on subj. w/ NP  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & &\xtagcheck \\
+d187 1
+a187 1
+Rel.\ cl.\ on subj. w/ Comp  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  & & &\xtagcheck \\
+d189 1
+a189 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & & & \xtagcheck & & &  & \\
+d191 1
+a191 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & & & \xtagcheck & & &  & \\
+d193 1
+a193 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & \xtagcheck & & & \xtagcheck & & & \xtagcheck &\\
+d195 1
+a195 1
+Rel.\ cl.\ on NP object of P w/ NP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & & \xtagcheck & & \xtagcheck & & & \xtagcheck & & & \xtagcheck  &\xtagcheck \\
+d197 1
+a197 1
+Rel.\ cl.\ on NP object of P w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & & \xtagcheck & & \xtagcheck & & & \xtagcheck & & &  \xtagcheck  &\xtagcheck \\
+d199 1
+a199 1
+Rel.\ cl.\ on adjunct w/ PP &  \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck &\xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck  &\xtagcheck  \\
+d201 1
+a201 1
+Rel.\ cl.\ on adjunct w/ Comp &  \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck &\xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck  &\xtagcheck \\
+d203 1
+a203 6
+Parenthetical quoting clause &   &   &   &   & \xtagcheck & &   &   &
+& \xtagcheck & &   & & & & \\
+\hline %alpha_AV
+Past-participal as arg Adj & \xtagcheck   &   &   &   &  & &   &   & & & &   & & &  &\xtagcheck  \\
+\hline %betaVtransn
+Past-participial NP pre-mod  & \xtagcheck   &   &   &   & & &   &   & & & &   & & &  &\xtagcheck  \\
+d205 1
+a205 2
+Pass.\ w.\ wh-mov.\ subj. &\xtagcheck &\xtagcheck &\xtagcheck
+&\xtagcheck &\xtagcheck & & \xtagcheck&\xtagcheck & & & &  & & & &\xtagcheck  \\
+d207 1
+a207 2
+Pass.\ w.\ wh-mov.\ ind.\ obj. & & \xtagcheck& \xtagcheck& \xtagcheck&
+\xtagcheck& & &\xtagcheck & & & & & & & & \\
+d209 1
+a209 1
+Pass.\ w.\ wh-mov.\ obj. of {\it by} phrase & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & &  & & & &\xtagcheck  \\
+d211 1
+a211 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck & \xtagcheck& &\xtagcheck &\xtagcheck & & & & & & &  &\xtagcheck \\
+d213 1
+a213 1
+PRO in Decl. & \xtagcheck & & & & & & & & & & & & & & & \\
+d215 1
+a215 1
+PRO in NP ger. & \xtagcheck & & & & & & & & & & & & & & & \\
+d217 18
+a234 8
+PRO subj. in decl. pass. w.\ {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in decl. pass. w.\o {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in ger. pass. w.\ {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in ger. pass. w.\o {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+a237 1
+\clearpage
+d239 3
+a241 1
+%%% pagerefs take the following table to be `table 1'
+d244 5
+d251 3
+a253 3
+\begin{tabular}{|p{2.4in}||*{13}{c|}}
+\cline{2-14}
+\multicolumn{1}{c||}{} & \multicolumn{13}{c|}{Tree families}\\
+d255 2
+a256 2
+\vspace*{10em}
+& & & & & & & & & & & & & \\
+d258 15
+a272 13
+\vertical{Adverb It-Cleft } &
+\vertical{NP It-Cleft } &
+\vertical{PP It-Cleft } &
+\vertical{Adjective Small Clause } &
+\vertical{Adj.\ Sm.\ Cl.\ w.\ Sent.\ Comp.} &
+\vertical{Equative {\it BE} } &
+\vertical{NP Small Clause } &
+\vertical{NP Sm.\ Cl.\ w.\ Sent.\ Comp.} &
+\vertical{PP Small Clause} &
+\vertical{Exhaustive PP Sm. Cl. } &
+\vertical{Intransitive} &
+\vertical{Intransitive with Adjective} &
+\vertical{Transitive Sentential Subject} \\
+a275 1
+\hline\hline
+d277 1
+a277 1
+Declarative &\xtagcheck & \xtagcheck &{\tiny \pageref{1;1,3}}&{\tiny \pageref{1;1,4}}& \xtagcheck & {\tiny \pageref{1;1,6}} &{\tiny \pageref{1;1,7}}& \xtagcheck &{\tiny \pageref{1;1,9}}  & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{1;1,16}} \\
+d279 1
+a279 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & &  & & & & \\
+d281 1
+a281 1
+Y/N quest. & \xtagcheck & \xtagcheck & {\tiny \pageref{1;3,3}} & & & \xtagcheck & & &  & & & & \\
+d283 1
+a283 1
+Wh-moved subject & & & &{\tiny \pageref{1;4,4}} & \xtagcheck& &\xtagcheck &\xtagcheck &\xtagcheck  &\xtagcheck &{\tiny \pageref{1;4,13}}& {\tiny \pageref{1;4,14}} & \\
+d285 1
+a285 2
+Wh-mov.\ NP complement, DO or IO & &\xtagcheck & & & & &\xtagcheck & &
+ & & & & \xtagcheck \\
+d287 1
+a287 1
+Wh-mov.\ S comp. & & & & & & & & &  & & & & \\
+d289 1
+a289 2
+Wh-mov.\ Adj. or Adv.\ comp. &\xtagcheck & & &\xtagcheck & & & & & 
+& \xtagcheck &  & {\tiny \pageref{1;7,14}} & \\
+d291 1
+a291 1
+Wh-mov.\ object of a mod. & & & & & & & & & \xtagcheck  & & & & \\
+d293 1
+a293 1
+Wh-mov.\ PP & & &\xtagcheck & & & & & &\xtagcheck  & & & & \\
+d295 1
+a295 2
+Topic.\ NP comp. & &\xtagcheck & & & & & \xtagcheck& &  & & & &
+\xtagcheck \\
+d297 1
+a297 1
+Imperative & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck  &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d299 1
+a299 1
+Det.\ gerund & & & & & & & & &  & & \xtagcheck & & \\
+d301 1
+a301 1
+NP gerund & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck  &\xtagcheck &\xtagcheck &\xtagcheck &  \\
+d303 1
+a303 1
+Ergative & & & & & & & & &  & & & & \\
+d305 1
+a305 1
+Rel.\ cl.\ on subj. w/ NP  & & & & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck   & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d307 1
+a307 1
+Rel.\ cl.\ on subj. w/ Comp  & & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d309 1
+a309 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & &  & & & & \\
+d311 1
+a311 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & &  & & & & \\
+d313 1
+a313 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & & \xtagcheck  & & & & \\
+d315 1
+a315 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & & &  & & & \xtagcheck  & & & &\\
+d317 1
+a317 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & &  & & & \xtagcheck  & & & &\\
+d319 1
+a319 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck   &  \xtagcheck & \xtagcheck  & \xtagcheck &  \xtagcheck \\
+d321 1
+a321 3
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck   &  \xtagcheck & \xtagcheck  & \xtagcheck &  \xtagcheck\\
+\hline %beta_Vintransn
+Participial  NP pre-mod  & & & & & & & & &  & & \xtagcheck & & \\
+d323 1
+a323 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & &  & & & & \\
+d325 1
+a325 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & &  & & & & \\
+d327 1
+a327 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase  & & & & & & & & &  & & & & \\
+d329 1
+a329 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase  & & & & & & & & &  & & & & \\
+d331 1
+a331 1
+PRO in Decl. & \xtagcheck & & & & & & & & & & & & & & & \\
+d333 1
+a333 1
+PRO in NP ger. & \xtagcheck & & & & & & & & & & & & & & & \\
+d335 20
+a354 8
+PRO subj. in decl. pass. w.\ {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in decl. pass. w.\o {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in ger. pass. w.\ {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+PRO subj. in ger. pass. w.\o {\it by} phrase & & & & & & & & & & & & & & &
+\\ \hline
+d358 1
+a358 1
+%\clearpage
+d360 4
+d365 4
+a368 4
+\hspace*{-0.75in} % the table is too wide and center doesn't work
+\begin{tabular}{|p{2.4in}||*{12}{c|}}
+\cline{2-13}
+\multicolumn{1}{c||}{} & \multicolumn{12}{c|}{Tree families}\\
+d370 2
+a371 2
+\vspace*{10em}
+& & & & & & & & & & & &\\
+d373 18
+a390 16
+\vertical{Idiom with V, D, N } &
+\vertical{Idiom with V, D, A, N } &
+\vertical{Idiom with V, N } &
+\vertical{Idiom with V, A, N} &
+\vertical{Idiom with V, D, N, P } &
+\vertical{Idiom with V, D, A, N, P } &
+\vertical{Idiom with V, N, P } &
+\vertical{Idiom with V, A, N, P} &
+\vertical{Tr/In. Resultative. with A.} &
+\vertical{Tr/In. Resultative. with P.} &
+\vertical{Erg. Resultative. with A.} &
+\vertical{Erg. Resultative. with P.} \\
+
+%columns:
+
+\hline\hline
+d392 1
+a392 2
+Declarative & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck \\
+d394 1
+a394 1
+Passive w/ \& w/o {\it by} phrase &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+d396 1
+a396 1
+Y/N quest. & & & & & & & & \\
+d398 1
+a398 1
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck& \xtagcheck \\
+d400 1
+a400 1
+Wh-mov.\ NP complement, DO or IO & & & & & & & & \\
+d402 1
+a402 1
+Wh-mov.\ S comp. & & & & & & & & \\
+d404 1
+a404 1
+Wh-mov.\ Adj. or Adv.\ comp. & & & & & & & & \\
+d406 1
+a406 1
+Wh-mov.\ object of a mod. & & & & & & & & \\
+d408 1
+a408 1
+Wh-mov.\ PP & & & & & & & & \\
+d410 1
+a410 1
+Topic.\ NP comp. & & & & & & & & \\
+d412 1
+a412 1
+Imperative &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+d414 1
+a414 1
+Det.\ gerund & & & & & & & & \\
+d416 1
+a416 1
+NP gerund &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+d418 1
+a418 1
+Ergative & & & & & & & & \\
+d420 1
+a420 1
+Rel.\ cl.\ on subj. w/ NP & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+d422 1
+a422 1
+Rel.\ cl.\ on subj. w/ Comp  &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+d424 1
+a424 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & \\
+d426 1
+a426 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & \\
+d428 1
+a428 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & \\
+d430 1
+a430 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & & & & & \\
+d432 1
+a432 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & & & & \\
+d434 1
+a434 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck \\
+d436 1
+a436 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck \\
+d438 1
+a438 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & \\
+d440 1
+a440 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & \\
+d442 1
+a442 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+d444 1
+a444 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+d446 1
+a446 1
+Outer Pass.\ w.\ and wo.\ {\it by} phrase & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d448 1
+a448 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ Comp  & \xtagcheck & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d450 1
+a450 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ NP  & \xtagcheck & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d452 1
+a452 1
+PRO in Decl. & & & & & & & & & & & \xtagcheck & & \\
+d454 16
+a469 2
+PRO in NP ger. & & & & & & & & & & & \xtagcheck & & \\
+
+a471 6
+
+\clearpage
+
+
+
+
+@
+
+
+1.20
+log
+@changed "Ditransitive with PP shift" to "Ditransitive w/PP w/ P co-anchor".
+@
+text
+@d31 1
+a31 1
+\vertical{Pred. A Sent. Subj., Comp.} \\
+d67 1
+a67 1
+Det.\ gerund & & & & & & & & & & & & & & & & \\
+a71 2
+Ergative & & & & & & & & & & & & & & & & \\
+\hline
+d74 1
+a74 1
+Rel.\ cl.\ on subj. w/ Comp  & \xtagcheck & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & \xtagcheck & \xtagcheck &\\
+d104 14
+d141 1
+a141 1
+\vertical{Sentential Comp.\ with NP} &
+d147 2
+a148 2
+\vertical{Trans. Light Vs} &
+\vertical{Ditrans.\ Light Vs} &
+d223 12
+d255 1
+a255 1
+\vertical{Adj. Small Clause } &
+d264 1
+a264 1
+\vertical{Transitive Sentential Subj} \\
+d329 12
+d348 3
+a350 3
+\begin{tabular}{|p{2.4in}||*{8}{c|}}
+\cline{2-9}
+\multicolumn{1}{c||}{} & \multicolumn{8}{c|}{Tree families}\\
+d353 1
+a353 1
+& & & & & & & & \\
+d362 5
+a366 1
+\vertical{Idiom with V, A, N, P} \\
+d433 4
+@
+
+
+1.19
+log
+@added TEnx1V to the table
+@
+text
+@d126 1
+a126 1
+\vertical{Ditransitive with PP shift} &
+@
+
+
+1.18
+log
+@updated table to reflect changes in grammar
+@
+text
+@d9 3
+a11 3
+\begin{tabular}{|p{2.4in}||*{15}{c|}}
+\cline{2-16}
+\multicolumn{1}{c||}{} & \multicolumn{15}{c|}{Tree families}\\
+d14 1
+a14 1
+& & & & & & & & & & & & & & & \\
+d16 1
+d32 1
+a35 1
+\hline\hline
+d37 1
+a37 1
+Declarative & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck
+d42 1
+a42 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & &  & & & & & &\\
+d44 1
+a44 1
+Y/N quest. & & &  &  &  & &  & & & & & & & & \\
+d46 1
+a46 1
+Wh-moved subject & \xtagcheck &  \xtagcheck & \xtagcheck & \xtagcheck
+d51 1
+a51 1
+Wh-mov.\ NP complement, DO or IO & & & & & & & & & & & & & & & \\
+d53 1
+a53 1
+Wh-mov.\ S comp. & & & & & & & & & & & & & & & \\
+d55 1
+a55 1
+Wh-mov.\ Adj. or Adv.\ comp. & & & & & & & & & & & & & & {\tiny \pageref{3;W1nx0nx1ARB}} & \\
+d57 1
+a57 1
+Wh-mov.\ object of a mod. & & & \xtagcheck & \xtagcheck & \xtagcheck &
+d60 1
+a60 1
+Wh-mov.\ PP & & & \xtagcheck & &  & \xtagcheck & \xtagcheck & & & & & & & & \\
+d62 1
+a62 1
+Topic.\ NP comp.& & & & & & & & & & & & & & & \\
+d64 1
+a64 1
+Imperative & & & \xtagcheck & & & \xtagcheck & \xtagcheck  & & & & & &
+d67 1
+a67 1
+Det.\ gerund & & & & & & & & & & & & & & & \\
+d69 2
+a70 1
+NP gerund & & & \xtagcheck & & & \xtagcheck & \xtagcheck  & & & & & & \xtagcheck & \xtagcheck &\\
+d72 1
+a72 1
+Ergative & & & & & & & & & & & & & & & \\
+d74 1
+a74 1
+Rel.\ cl.\ on subj. w/ NP  & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & \xtagcheck & \xtagcheck &\\
+d76 1
+a76 1
+Rel.\ cl.\ on subj. w/ Comp  & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & \xtagcheck & \xtagcheck &\\
+d78 1
+a78 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & & & & & & & & \\
+d80 1
+a80 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & & & & & & & & \\
+d82 1
+a82 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & \xtagcheck & \xtagcheck &  &  & & & & & & \\
+d84 1
+a84 1
+Rel.\ cl.\ on NP object of P w/ NP & & & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & &\\
+d86 1
+a86 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & \xtagcheck & \xtagcheck & & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & &\\
+d88 1
+a88 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck &
+d93 1
+a93 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck &
+d98 1
+a98 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & \\
+d100 1
+a100 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & & \\
+d102 1
+a102 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase  & & & & & & & & & & & & & & & \\
+d104 1
+a104 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase  & & & & & & & & & & & & & & & \\
+d266 2
+a267 1
+Topic.\ NP comp. & &\xtagcheck & & & & & \xtagcheck& &  & & & & \\
+@
+
+
+1.17
+log
+@made table, table-intro and verb-classes consistent
+with each other and the current XTAG grammar
+removed non-existent entries from the table
+@
+text
+@d38 2
+a39 1
+\xtagcheck &\xtagcheck &\xtagcheck & {\tiny \pageref{3;1,15}}  & {\tiny \pageref{3;nx0nx1ARB}} &\\
+d41 1
+a41 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & &  & & & & {\tiny \pageref{3;2,15}} & &\\
+d56 2
+a57 1
+Wh-mov.\ object of a P & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & & & \\
+d68 1
+a68 1
+NP gerund & & & \xtagcheck & & & & \xtagcheck  & & & & & & \xtagcheck & \xtagcheck &\\
+d159 1
+a159 1
+Wh-mov.\ object of a P  & &\xtagcheck & &{\tiny \pageref{2;8,4}}& & & & &\xtagcheck & & &\xtagcheck & & & &\xtagcheck  \\
+d161 2
+a162 1
+Wh-mov.\ PP  & &\xtagcheck & &{\tiny \pageref{2;9,4}}& & & & &\xtagcheck & & &\xtagcheck & & & & \\
+d199 2
+a200 1
+Pass.\ w.\ wh-mov.\ subj. &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & & \xtagcheck&\xtagcheck & & & &\xtagcheck & & & &\xtagcheck  \\
+d203 1
+a203 1
+\xtagcheck& & &\xtagcheck & & & & \xtagcheck& & & & \\
+d205 1
+a205 1
+Pass.\ w.\ wh-mov.\ obj. of {\it by} phrase & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & &\xtagcheck  \\
+d250 1
+a250 1
+Wh-moved subject & & & &{\tiny \pageref{1;4,4}} & \xtagcheck& &\xtagcheck &\xtagcheck &\xtagcheck  &\xtagcheck &{\tiny \pageref{1;4,13}}& {\tiny \pageref{1;4,14}} &\xtagcheck \\
+d258 1
+a258 1
+& &  & {\tiny \pageref{1;7,14}} & \\
+d260 1
+a260 1
+Wh-mov.\ object of a P & & & & & & & & & \xtagcheck  & & & & \\
+d268 1
+a268 1
+Det.\ gerund & & & & & & & & &  & & & & \\
+d344 1
+a344 1
+Wh-mov.\ object of a P & & & & & & & & \\
+@
+
+
+1.16
+log
+@fixed table with extra ghost entry
+@
+text
+@d131 2
+a132 2
+\vertical{Trans. Light Vs (w \& w/o Dets)} &
+\vertical{Ditrans.\ Light Vs (w \& w/o Dets)} &
+d215 3
+a217 3
+\begin{tabular}{|p{2.4in}||*{14}{c|}}
+\cline{2-15}
+\multicolumn{1}{c||}{} & \multicolumn{14}{c|}{Tree families}\\
+d220 1
+a220 1
+& & & & & & & & & & & & & & \\
+a230 1
+\vertical{Pred.\ N w.\ Sent.\ Subj.} &
+d240 1
+a240 1
+Declarative &\xtagcheck & \xtagcheck &{\tiny \pageref{1;1,3}}&{\tiny \pageref{1;1,4}}& \xtagcheck & {\tiny \pageref{1;1,6}} &{\tiny \pageref{1;1,7}}& \xtagcheck &{\tiny \pageref{1;1,9}}& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{1;1,16}} \\
+d242 1
+a242 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & & & & & & \\
+d244 1
+a244 1
+Y/N quest. & \xtagcheck & \xtagcheck & {\tiny \pageref{1;3,3}} & & & \xtagcheck & & & & & & & & \\
+d246 1
+a246 1
+Wh-moved subject & & & &{\tiny \pageref{1;4,4}} & \xtagcheck& &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &{\tiny \pageref{1;4,13}}& {\tiny \pageref{1;4,14}} &\xtagcheck \\
+d249 1
+a249 1
+& & & & & \xtagcheck \\
+d251 1
+a251 1
+Wh-mov.\ S comp. & & & & & & & & & & & & & & \\
+d253 1
+a253 1
+Wh-mov.\ Adj. or Adv.\ comp. &\xtagcheck & & &\xtagcheck & & & & & &
+d256 1
+a256 1
+Wh-mov.\ object of a P & & & & & & & & & \xtagcheck & & & & & \\
+d258 1
+a258 1
+Wh-mov.\ PP & & &\xtagcheck & & & & & &\xtagcheck & & & & & \\
+d260 1
+a260 1
+Topic.\ NP comp. & &\xtagcheck & & & & & \xtagcheck& & & & & & & \\
+d262 1
+a262 1
+Imperative & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d264 1
+a264 1
+Det.\ gerund & & & & & & & & & & & & & & \\
+d266 1
+a266 1
+NP gerund & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck &  \\
+d268 1
+a268 1
+Ergative & & & & & & & & & & & & & & \\
+d270 1
+a270 1
+Rel.\ cl.\ on subj. w/ NP  & & & & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d272 1
+a272 1
+Rel.\ cl.\ on subj. w/ Comp  & & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d274 1
+a274 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & & &\xtagcheck & & & & \\
+d276 1
+a276 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & & & & & & & \\
+d278 1
+a278 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & & \xtagcheck & & & & & \\
+d280 1
+a280 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & & &  & & & \xtagcheck & & & & &\\
+d282 1
+a282 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & &  & & & \xtagcheck & & & & &\\
+d284 1
+a284 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck &  \xtagcheck \\
+d286 1
+a286 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck &  \xtagcheck\\
+d288 1
+a288 1
+Participial  NP pre-mod  & & & & & & & & & & & & \xtagcheck & & \\
+d290 1
+a290 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & \\
+d292 1
+a292 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & \\
+d294 1
+a294 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase  & & & & & & & & & & & & & & \\
+d296 1
+a296 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase  & & & & & & & & & & & & & & \\
+d312 8
+a319 8
+\vertical{Trans. Idiom with D, N } &
+\vertical{Trans. Idiom with D, A, N } &
+\vertical{Trans. Idiom with N } &
+\vertical{Trans. Idiom with A, N} &
+\vertical{Trans. Idiom with D, N, P } &
+\vertical{Trans. Idiom with D, A, N, P } &
+\vertical{Trans. Idiom with N, P } &
+\vertical{Trans. Idiom with A, N, P} \\
+d382 1
+a382 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ Comp  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d384 1
+a384 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ NP  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+@
+
+
+1.15
+log
+@Fixed tables.
+@
+text
+@d215 3
+a217 3
+\begin{tabular}{|p{2.4in}||*{15}{c|}}
+\cline{2-16}
+\multicolumn{1}{c||}{} & \multicolumn{15}{c|}{Tree families}\\
+d220 1
+a220 1
+& & & & & & & & & & & & & & & \\
+d241 1
+a241 1
+Declarative &\xtagcheck & \xtagcheck &{\tiny \pageref{1;1,3}}&{\tiny \pageref{1;1,4}}& \xtagcheck & {\tiny \pageref{1;1,6}} &{\tiny \pageref{1;1,7}}& \xtagcheck &{\tiny \pageref{1;1,9}}& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{1;1,16}} \\
+d243 1
+a243 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & & & & & & & \\
+d245 1
+a245 1
+Y/N quest. & \xtagcheck & \xtagcheck & {\tiny \pageref{1;3,3}} & & & \xtagcheck & & & & & & & & & \\
+d247 1
+a247 1
+Wh-moved subject & & & &{\tiny \pageref{1;4,4}} & \xtagcheck& &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &{\tiny \pageref{1;4,13}}& {\tiny \pageref{1;4,14}} &\xtagcheck & \xtagcheck \\
+d250 1
+a250 1
+& & & & & & \xtagcheck \\
+d252 1
+a252 1
+Wh-mov.\ S comp. & & & & & & & & & & & & & &  & \\
+d255 1
+a255 1
+& &  & {\tiny \pageref{1;7,14}} & & \\
+d257 1
+a257 1
+Wh-mov.\ object of a P & & & & & & & & & \xtagcheck & & & & & & \\
+d259 1
+a259 1
+Wh-mov.\ PP & & &\xtagcheck & & & & & &\xtagcheck & & & & & & \\
+d261 1
+a261 1
+Topic.\ NP comp. & &\xtagcheck & & & & & \xtagcheck& & & & & & & & \\
+d263 1
+a263 1
+Imperative & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck & \\
+d265 1
+a265 1
+Det.\ gerund & & & & & & & & & & & & & & & \\
+d267 1
+a267 1
+NP gerund & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck &  &  \\
+d269 1
+a269 1
+Ergative & & & & & & & & & & & & & & & \\
+d271 1
+a271 1
+Rel.\ cl.\ on subj. w/ NP  & & & & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \\
+d273 1
+a273 1
+Rel.\ cl.\ on subj. w/ Comp  & & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d275 1
+a275 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & & &\xtagcheck & & & & & \\
+d277 1
+a277 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & & & & & & & & \\
+d279 1
+a279 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & & \xtagcheck & & & & & & \\
+d281 1
+a281 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & & &  & & & \xtagcheck & & & & & &\\
+d283 1
+a283 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & &  & & & \xtagcheck & & & & & &\\
+d285 1
+a285 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck \\
+d287 1
+a287 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck\\
+d289 1
+a289 1
+Participial  NP pre-mod  & & & & & & & & & & & & \xtagcheck & & & \\
+d291 1
+a291 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & \\
+d293 1
+a293 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & & \\
+d295 1
+a295 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase  & & & & & & & & & & & & & & & \\
+d297 1
+a297 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase  & & & & & & & & & & & & & & & \\
+d302 1
+a302 1
+\clearpage
+a303 1
+
+d305 1
+a305 1
+%\hspace*{-0.75in} % the table is too wide and center doesn't work
+d313 8
+a320 8
+\vertical{Transitive Idiom with D, N } &
+\vertical{Transitive Idiom with D, A, N } &
+\vertical{Transitive Idiom with N } &
+\vertical{Transitive Idiom with A, N} &
+\vertical{Transitive Idiom with D, N, P } &
+\vertical{Transitive Idiom with D, A, N, P } &
+\vertical{Transitive Idiom with N, P } &
+\vertical{Transitive Idiom with A, N, P} \\
+@
+
+
+1.14
+log
+@Attempted to fix idiom table.
+@
+text
+@d115 3
+a117 3
+\begin{tabular}{|p{2.4in}||*{15}{c|}}
+\cline{2-16}
+\multicolumn{1}{c||}{} & \multicolumn{15}{c|}{Tree families}\\
+d119 1
+a119 1
+\vspace*{12em} & & & & & & & & & & & & & & & \\
+d135 3
+a137 1
+\vertical{PP Sm.\ Cl.\ w.\ Sentential Subj.} \\
+d143 1
+a143 1
+Declarative &{\tiny \pageref{2;1,1}} & {\tiny \pageref{2;1,2}} & {\tiny \pageref{2;1,3}}& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &{\tiny \pageref{2;1,9}}&{\tiny \pageref{2;Tnx0Vs1},\pageref{2;1,10}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d145 1
+a145 1
+Passive w/ \& w/o {\it by} phrase &\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{2;2,5}} & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d147 1
+a147 1
+Y/N quest.\ & & & & & & & & & & & & & & & \\
+d149 1
+a149 1
+Wh-moved subject & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck  &\xtagcheck & &\xtagcheck & \xtagcheck& \xtagcheck\\
+d151 1
+a151 1
+Wh-mov.\ NP complement, DO or IO  &{\tiny \pageref{2;5,1}}&\xtagcheck &{\tiny \pageref{2;5,3}}&\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck & & & & & & & \\
+d153 1
+a153 1
+Wh-mov.\ S comp.\ & & & & & \xtagcheck & & & & & \xtagcheck & & & & & \\
+d155 1
+a155 1
+Wh-mov.\ Adj. or Adv.\ comp.  & & & & & & & & & & & & & \xtagcheck & & \\
+d157 1
+a157 1
+Wh-mov.\ object of a P  & &\xtagcheck & &{\tiny \pageref{2;8,4}}& & & & &\xtagcheck & & &\xtagcheck & & & \\
+d159 1
+a159 1
+Wh-mov.\ PP  & &\xtagcheck & &{\tiny \pageref{2;9,4}}& & & & &\xtagcheck & & &\xtagcheck & & & \\
+d161 1
+a161 1
+Topic.\ NP comp.  &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck & & & & & & & \\
+d163 1
+a163 1
+Imperative &{\tiny \pageref{2;11,1}}&\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & & & \\
+d165 1
+a165 1
+Det.\ gerund &{\tiny \pageref{2;12,1}}&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & & & \\
+d167 1
+a167 1
+NP gerund &{\tiny \pageref{2;13,1}}&\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck &\xtagcheck &\xtagcheck & & & \\
+d169 1
+a169 1
+Ergative &{\tiny \pageref{2;14,1}}& & & & & & & & & & & & & & \\
+d171 1
+a171 1
+Rel.\ cl.\ on subj. w/ NP  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & &\\
+d173 1
+a173 1
+Rel.\ cl.\ on subj. w/ Comp  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  & &\\
+d175 1
+a175 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & & & \xtagcheck & & & \\
+d177 1
+a177 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & & & \xtagcheck & & & \\
+d179 1
+a179 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & & \xtagcheck & & & \xtagcheck & & & \xtagcheck \\
+d181 1
+a181 1
+Rel.\ cl.\ on NP object of P w/ NP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & & \xtagcheck & & \xtagcheck & & & \xtagcheck & & & \xtagcheck \\
+d183 1
+a183 1
+Rel.\ cl.\ on NP object of P w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & & \xtagcheck & & \xtagcheck & & & \xtagcheck & & &  \xtagcheck \\
+d185 1
+a185 1
+Rel.\ cl.\ on adjunct w/ PP &  \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck &\xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck  \\
+d187 1
+a187 1
+Rel.\ cl.\ on adjunct w/ Comp &  \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck &\xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck \\
+d190 1
+a190 1
+& \xtagcheck & &   & & & \\
+d192 1
+a192 1
+Past-participal as arg Adj & \xtagcheck   &   &   &   &  & &   &   & & & &   & & &  \\
+d194 1
+a194 1
+Past-participial NP pre-mod  & \xtagcheck   &   &   &   & & &   &   & & & &   & & &  \\
+d196 1
+a196 1
+Pass.\ w.\ wh-mov.\ subj. &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & & \xtagcheck&\xtagcheck & & & &\xtagcheck & & & \\
+d198 2
+a199 1
+Pass.\ w.\ wh-mov.\ ind.\ obj. & & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& & &\xtagcheck & & & & \xtagcheck& & & \\
+d201 1
+a201 1
+Pass.\ w.\ wh-mov.\ obj. of {\it by} phrase & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d203 1
+a203 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck & \xtagcheck& &\xtagcheck &\xtagcheck & & & & & & & \\
+d215 3
+a217 3
+\begin{tabular}{|p{2.4in}||*{16}{c|}}
+\cline{2-17}
+\multicolumn{1}{c||}{} & \multicolumn{16}{c|}{Tree families}\\
+d220 1
+a220 1
+& & & & & & & & & & & & & & & & \\
+d231 1
+a231 1
+\vertical{PP Sm.\ Cl.\ w.\ Sent.\ Comp.} &
+a232 2
+\vertical{Exhaustive PP Small Clause}
+\vertical{with Sent. Comp. } &
+d241 1
+a241 2
+Declarative &\xtagcheck & \xtagcheck &{\tiny \pageref{1;1,3}}&{\tiny \pageref{1;1,4}}& \xtagcheck & {\tiny \pageref{1;1,6}} &{\tiny \pageref{1;1,7}}& \xtagcheck &{\tiny \pageref{1;1,9}}& \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{1;1,16}} \\
+d243 1
+a243 1
+Passive w/ \& w/o {\it by} phrase & & & & & & & & & & & & & & & & \\
+d245 1
+a245 1
+Y/N quest. & \xtagcheck & \xtagcheck & {\tiny \pageref{1;3,3}} & & & \xtagcheck & & & & & & & & & & \\
+d247 1
+a247 1
+Wh-moved subject & & & &{\tiny \pageref{1;4,4}} & \xtagcheck& &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &{\tiny \pageref{1;4,13}}& {\tiny \pageref{1;4,14}} &\xtagcheck & \xtagcheck \\
+d250 1
+a250 1
+& & & & & & & \xtagcheck \\
+d252 1
+a252 1
+Wh-mov.\ S comp. & & & & & & & & & & & & & & &  & \\
+d255 1
+a255 1
+& & &  & {\tiny \pageref{1;7,14}} & & \\
+d257 1
+a257 1
+Wh-mov.\ object of a P & & & & & & & & & \xtagcheck &\xtagcheck  & &  & & & & \\
+d259 1
+a259 1
+Wh-mov.\ PP & & &\xtagcheck & & & & & &\xtagcheck &\xtagcheck & \xtagcheck &\xtagcheck & & & & \\
+d261 1
+a261 1
+Topic.\ NP comp.& &\xtagcheck & & & & & \xtagcheck& & & & & & & & & \\
+d263 1
+a263 1
+Imperative & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck & \xtagcheck & \\
+d265 1
+a265 1
+Det.\ gerund & & & & & & & & & & & & & & & & \\
+d267 1
+a267 1
+NP gerund & & & &\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck &  &  \\
+d269 1
+a269 1
+Ergative & & & & & & & & & & & & & & & & \\
+d271 1
+a271 1
+Rel.\ cl.\ on subj. w/ NP  & & & & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck & \\
+d273 1
+a273 1
+Rel.\ cl.\ on subj. w/ Comp  & & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d275 1
+a275 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & & & & & & & & & \\
+d277 1
+a277 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & & & & & & & & & \\
+d279 1
+a279 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & & \xtagcheck & \xtagcheck & & & & & & \\
+d281 1
+a281 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & & &  & & & \xtagcheck & \xtagcheck & & & & & &\\
+d283 1
+a283 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & &  & & & \xtagcheck & \xtagcheck &  & & & & &\\
+d285 1
+a285 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck \\
+d287 1
+a287 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &  \xtagcheck\\
+d289 1
+a289 1
+Participial  NP pre-mod  & & & & & & & & & & & & & \xtagcheck   & & & \\
+d291 1
+a291 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & & \\
+d293 1
+a293 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & & & \\
+d295 1
+a295 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase  & & & & & & & & & & & & & & & & \\
+d297 1
+a297 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase  & & & & & & & & & & & & & & & & \\
+d311 1
+a311 1
+%\vspace*{10em}
+d321 2
+a322 2
+\vertical{Transitive Idiom with A, N, P} &
+\vertical{\mbox{}} \\
+@
+
+
+1.13
+log
+@Fixed idiom table.
+@
+text
+@a3 89
+\begin{center}
+\hspace*{-0.75in} % the table is too wide and center doesn't work
+\begin{tabular}{|p{2.4in}||*{8}{c|}}
+\cline{2-9}
+\multicolumn{1}{c||}{} & \multicolumn{8}{c|}{Tree families}\\
+\hline
+\vspace*{10em}
+& & & & & & & & \\
+ &
+\vertical{Transitive Idiom with D, N } &
+\vertical{Transitive Idiom with D, A, N } &
+\vertical{Transitive Idiom with N } &
+\vertical{Transitive Idiom with A, N} &
+\vertical{Transitive Idiom with D, N, P } &
+\vertical{Transitive Idiom with D, A, N, P } &
+\vertical{Transitive Idiom with N, P } &
+\vertical{Transitive Idiom with A, N, P} 
+\vertical{\mbox{}} \\
+
+%columns:
+
+\hline\hline
+\vspace*{-2.3em} \centerline{Constructions} \vspace*{0.5em}
+Declarative & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck \\
+\hline
+Passive w/ \& w/o {\it by} phrase &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Y/N quest. & & & & & & & & \\
+\hline
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck& \xtagcheck \\
+\hline
+Wh-mov.\ NP complement, DO or IO & & & & & & & & \\
+\hline
+Wh-mov.\ S comp. & & & & & & & & \\
+\hline
+Wh-mov.\ Adj. or Adv.\ comp. & & & & & & & & \\
+	\hline
+Wh-mov.\ object of a P & & & & & & & & \\
+\hline
+Wh-mov.\ PP & & & & & & & & \\
+\hline
+Topic.\ NP comp. & & & & & & & & \\
+\hline
+Imperative &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Det.\ gerund & & & & & & & & \\
+\hline
+NP gerund &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Ergative & & & & & & & & \\
+\hline
+Rel.\ cl.\ on subj. w/ NP & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Rel.\ cl.\ on subj. w/ Comp  &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & \\
+\hline
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP object of P w/ NP & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & & & & \\
+\hline
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck \\
+\hline
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck \\
+\hline
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Pass.\ w.\ wh-mov.\ {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Outer Pass.\ w.\ and wo.\ {\it by} phrase & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ Comp  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ NP  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+\end{tabular}
+\end{center}
+
+\clearpage
+
+d300 89
+@
+
+
+1.12
+log
+@Removed old idiom table entry.
+@
+text
+@a3 1
+
+d5 1
+a5 1
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+d11 1
+a11 1
+& & & & & & & & & & & & & & & \\
+d20 1
+a20 1
+\vertical{Transitive Idiom with A, N, P} &
+d22 3
+a24 3
+%
+%%% columns:
+%
+d28 1
+a28 1
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \\
+d30 1
+a30 1
+Passive w/ \& w/o {\it by} phrase &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d32 1
+a32 1
+Y/N quest. & & & & & & & & & \\
+d34 1
+a34 1
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck& \xtagcheck& \\
+d36 1
+a36 1
+Wh-mov.\ NP complement, DO or IO & & & & & & & & & \\
+d38 1
+a38 1
+Wh-mov.\ S comp. & & & & & & & & & \\
+d40 1
+a40 1
+Wh-mov.\ Adj. or Adv.\ comp. & & & & & & & & & \\
+d42 1
+a42 1
+Wh-mov.\ object of a P & & & & & & & & & \\
+d44 1
+a44 1
+Wh-mov.\ PP & & & & & & & & & \\
+d46 1
+a46 1
+Topic.\ NP comp. & & & & & & & & & \\
+d48 1
+a48 1
+Imperative &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d50 1
+a50 1
+Det.\ gerund & & & & & & & & & & & & & & & \\
+d52 1
+a52 1
+NP gerund &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d54 1
+a54 1
+Ergative & & & & & & & & & & & & & & & \\
+d56 1
+a56 1
+Rel.\ cl.\ on subj. w/ NP & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d58 1
+a58 1
+Rel.\ cl.\ on subj. w/ Comp  &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d60 1
+a60 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & & & & & & & & \\
+d62 1
+a62 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & & & & & & & & \\
+d64 1
+a64 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & & \\
+d66 1
+a66 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & & & & & & \\
+d68 1
+a68 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & & & & & \\
+d70 1
+a70 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \\
+d72 1
+a72 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \\
+d74 1
+a74 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & \\
+d76 1
+a76 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & & \\
+d78 1
+a78 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d80 1
+a80 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d82 1
+a82 1
+Outer Pass.\ w.\ and wo.\ {\it by} phrase & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d84 1
+a84 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ Comp  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d86 1
+a86 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ NP  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+@
+
+
+1.11
+log
+@Added table for new idiom families.
+@
+text
+@a323 1
+\vertical{Transitive Idioms} &
+@
+
+
+1.10
+log
+@added Ts0A1s1 family
+@
+text
+@d5 89
+@
+
+
+1.9
+log
+@Restored old version with changes that had somehow eluded the RCS.
+@
+text
+@d18 1
+a18 1
+\vertical{Sent. Subj. w. to } &	%s0Vtonx1 
+d31 1
+a31 1
+\vertical{\mbox{}} \\
+d45 4
+a48 1
+Wh-moved subject & \xtagcheck &  \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck &\\
+d55 1
+a55 1
+	\hline
+d85 4
+a88 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & &\\
+d90 4
+a93 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & &\\
+@
+
+
+1.8
+log
+@Fixed new idiom table.
+@
+text
+@a4 87
+\begin{center}
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+\begin{tabular}{|p{2.4in}||*{8}{c|}}
+\cline{2-9}
+\multicolumn{1}{c||}{} & \multicolumn{8}{c|}{Tree families}\\
+\hline
+\vspace*{10em}
+& & & & & & & & \\
+ &
+\vertical{Transitive Idiom with D, N } &
+\vertical{Transitive Idiom with D, A, N } &
+\vertical{Transitive Idiom with N } &
+\vertical{Transitive Idiom with A, N} &
+\vertical{Transitive Idiom with D, N, P } &
+\vertical{Transitive Idiom with D, A, N, P } &
+\vertical{Transitive Idiom with N, P } &
+\vertical{Transitive Idiom with A, N, P} 
+\vertical{\mbox{}} \\
+%
+%%% columns:
+%
+\hline\hline
+\vspace*{-2.3em} \centerline{Constructions} \vspace*{0.5em}
+Declarative & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck \\
+\hline
+Passive w/ \& w/o {\it by} phrase &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Y/N quest. & & & & & & & & \\
+\hline
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck& \xtagcheck \\
+\hline
+Wh-mov.\ NP complement, DO or IO & & & & & & & & \\
+\hline
+Wh-mov.\ S comp. & & & & & & & & \\
+\hline
+Wh-mov.\ Adj. or Adv.\ comp. & & & & & & & & \\
+	\hline
+Wh-mov.\ object of a P & & & & & & & & \\
+\hline
+Wh-mov.\ PP & & & & & & & & \\
+\hline
+Topic.\ NP comp. & & & & & & & & \\
+\hline
+Imperative &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Det.\ gerund & & & & & & & & \\
+\hline
+NP gerund &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Ergative & & & & & & & & \\
+\hline
+Rel.\ cl.\ on subj. w/ NP & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Rel.\ cl.\ on subj. w/ Comp  &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & \\
+\hline
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP object of P w/ NP & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & & & & \\
+\hline
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck \\
+\hline
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck \\
+\hline
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Pass.\ w.\ wh-mov.\ {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck \\
+\hline
+Outer Pass.\ w.\ and wo.\ {\it by} phrase & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ Comp  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ NP  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+\end{tabular}
+\end{center}
+
+d68 1
+a68 1
+Rel.\ cl.\ on subj.  & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & & & & & \xtagcheck & \xtagcheck &\\
+d70 1
+a70 1
+Rel.\ cl.\ on NP comp., DO or IO & & & & & & & & & & & & & & & \\
+d72 1
+a72 1
+Rel.\ cl.\ on PP comp. & & & & & & & & & & & & & & & \\
+d74 1
+a74 1
+Rel.\ cl.\ on NP object of P & & & \xtagcheck & \xtagcheck &  \xtagcheck &\xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & &\\
+d76 1
+a76 1
+xxx &   &  &   &   &  &   &   &   &   &   &   &   &   & & \\
+d78 1
+a78 1
+xxx &   &  &   &   &  &   &   &   &   &   &   &   &   & & \\
+d80 1
+a80 1
+xxx & & & & & & & & & & & & & & & \\
+d82 1
+a82 1
+xxx & & & & & & & & & & & & & & & \\
+d84 1
+a84 1
+xxx & & & & & & & & & & & & & & & \\
+a85 2
+xxx & & & & & & & & & & & & & & & \\
+\hline
+d161 1
+a161 3
+Rel.\ cl.\ on subj. &{\tiny \pageref{2;15,1}}&\xtagcheck &\xtagcheck
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck&
+\xtagcheck& \xtagcheck &\xtagcheck &\xtagcheck & & & \\
+d163 1
+a163 3
+Rel.\ cl.\ on NP comp., DO or IO &{\tiny \pageref{2;16,1}}&
+\xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& & \xtagcheck&
+\xtagcheck& & & & \xtagcheck & & & \xtagcheck\\
+d165 1
+a165 1
+Rel.\ cl.\ on PP comp. & &\xtagcheck & & \xtagcheck& \xtagcheck& & & &\xtagcheck & & & & & & \\
+d167 1
+a167 1
+Rel.\ cl.\ on NP object of P & &\xtagcheck & &\xtagcheck &\xtagcheck & & & &\xtagcheck & & &\xtagcheck & & & \\
+d169 1
+a169 1
+xxx & &   &   &   & &   &   &   &   & &  &   &   &   &   \\
+d171 1
+a171 1
+xxx &   &   &   &   & & &   &   & & & &   & & & \\
+d173 1
+a173 1
+xxx &   &   &   &   & & &   &   & & & &   & & & \\
+d175 1
+a175 1
+xxx &   &   &   &   & & &   &   & & & &   & & & \\
+d177 1
+a177 1
+xxx &   &   &   &   & & &   &   & & & &   & & & \\
+a178 2
+xxx &   &   &   &   & & &   &   & & & &   & & & \\
+\hline
+d264 1
+a264 1
+Rel.\ cl.\ on subj. & & & & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d266 1
+a266 1
+Rel.\ cl.\ on NP comp., DO or IO & & & & & & & & & & & & & & & & \\
+d268 1
+a268 1
+Rel.\ cl.\ on PP comp. & & & & & & & & & \xtagcheck & \xtagcheck & &  & & & & \\
+d270 1
+a270 1
+Rel.\ cl.\ on NP object of P & & & & & & & & & \xtagcheck & \xtagcheck & &  & & & & \\
+d272 1
+a272 1
+xxx &   &   &   &   &  &   &   &  &   &  &   &  &   &   &   &   \\
+d274 1
+a274 1
+xxx &   &   &   &   & &   &   & &   &  &   &  &   &   &   &   \\
+d276 1
+a276 1
+xxx & & & & & & & & & & & & & & & & \\
+d278 1
+a278 1
+xxx & & & & & & & & & & & & & & & & \\
+d280 1
+a280 1
+xxx & & & & & & & & & & & & & & & & \\
+@
+
+
+1.7
+log
+@Made new table section for new idiom trees.
+@
+text
+@d7 3
+a9 3
+\begin{tabular}{|p{2.4in}||*{15}{c|}}
+\cline{2-16}
+\multicolumn{1}{c||}{} & \multicolumn{15}{c|}{Tree families}\\
+d12 1
+a12 1
+& & & & & & & & & & & & & & & \\
+d21 1
+a21 1
+\vertical{Transitive Idiom with A, N, P} &
+d29 1
+a29 1
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \\
+d31 1
+a31 1
+Passive w/ \& w/o {\it by} phrase &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d33 1
+a33 1
+Y/N quest. & & & & & & & & & \\
+d35 1
+a35 1
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck& \xtagcheck& \\
+d37 1
+a37 1
+Wh-mov.\ NP complement, DO or IO & & & & & & & & & \\
+d39 1
+a39 1
+Wh-mov.\ S comp. & & & & & & & & & \\
+d41 1
+a41 1
+Wh-mov.\ Adj. or Adv.\ comp. & & & & & & & & & \\
+d43 1
+a43 1
+Wh-mov.\ object of a P & & & & & & & & & \\
+d45 1
+a45 1
+Wh-mov.\ PP & & & & & & & & & \\
+d47 1
+a47 1
+Topic.\ NP comp. & & & & & & & & & \\
+d49 1
+a49 1
+Imperative &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d51 1
+a51 1
+Det.\ gerund & & & & & & & & & \\
+d53 1
+a53 1
+NP gerund &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d55 1
+a55 1
+Ergative & & & & & & & & & \\
+d57 1
+a57 1
+Rel.\ cl.\ on subj. w/ NP & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d59 1
+a59 1
+Rel.\ cl.\ on subj. w/ Comp  &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d61 1
+a61 1
+Rel.\ cl.\ on NP comp., DO, IO w/ NP & & & & & & & & & \\
+d63 1
+a63 1
+Rel.\ cl.\ on NP comp., DO, IO w/ Comp & & & & & & & & & \\
+d65 1
+a65 1
+Rel.\ cl.\ on PP comp. w/ pied-piping  & & & & & & & & & \\
+d67 1
+a67 1
+Rel.\ cl.\ on NP object of P w/ NP & & & & & & & & & \\
+d69 1
+a69 1
+Rel.\ cl.\ on NP object of P w/ Comp & & & & & & & & & \\
+d71 1
+a71 1
+Rel.\ cl.\ on adjunct w/ PP & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \\
+d73 1
+a73 1
+Rel.\ cl.\ on adjunct w/ Comp & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck  & \xtagcheck & \xtagcheck & \\
+d75 1
+a75 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & \\
+d77 1
+a77 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & \\
+d79 1
+a79 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d81 1
+a81 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \\
+d83 1
+a83 1
+Outer Pass.\ w.\ and wo.\ {\it by} phrase & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d85 1
+a85 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ Comp  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d87 1
+a87 1
+Outer Pass.\ w.\ Rel.\ cl.\ on subj.\ w.\ NP  & & & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+@
+
+
+1.6
+log
+@Updated all aspects of the table: columns, rows and entries.
+.
+@
+text
+@d5 87
+@
+
+
+1.5
+log
+@Added references for ECM declarative and passive
+@
+text
+@d1 4
+a20 1
+\vertical{Pred. Mult-wd. Conj, P } &
+a25 1
+\vertical{Pred. Sent. Subj., Conj, P } &
+d29 3
+a31 1
+\vertical{ECM} \\ %TXnx0Vs1
+d37 3
+a39 1
+Declarative & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & {\tiny \pageref{3;1,15}}  \\
+d41 1
+a41 1
+Passive & & & & & & & & & & & & & & & {\tiny \pageref{3;2,15}} \\
+d43 1
+a43 1
+Y/N quest. & & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck&  \xtagcheck & & & & & & & \xtagcheck \\
+d45 1
+a45 1
+Wh-moved subject & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck  & \xtagcheck \\
+d47 1
+a47 1
+Wh-mov.\ NP complement & & & & & & & & & & & & & & & \\
+d51 3
+a53 1
+Wh-mov.\ Adj.\ comp. & & & & & & & & & & & & & & & \\
+d55 1
+a55 1
+Wh-mov.\ object of a P & & & & & & & & & & & & & & & \\
+a56 2
+Wh-mov.\ PP & & & \xtagcheck & &  \xtagcheck &  & \xtagcheck & \xtagcheck & & & & & & & \\
+\hline
+d59 2
+a60 1
+Imperative & & & \xtagcheck & & & & \xtagcheck & \xtagcheck  & & & & & & & \xtagcheck \\
+d64 1
+a64 1
+NP gerund & & & \xtagcheck & & & & & \xtagcheck  & & & & & & & \xtagcheck \\
+d68 1
+a68 1
+Rel.\ cl.\ on subj.  & & & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & & & & & \xtagcheck \\
+d70 1
+a70 1
+Rel.\ cl.\ on NP comp. & & & & & & & & & & & & & & & \\
+d74 1
+a74 1
+Rel.\ cl.\ on NP object of P & & & \xtagcheck & \xtagcheck & \xtagcheck &  &\xtagcheck  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d76 1
+a76 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & \\
+d78 1
+a78 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & & \\
+d80 1
+a80 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase  & & & & & & & & & & & & & & & \\
+d82 1
+a82 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase  & & & & & & & & & & & & & & & \\
+d84 1
+a84 1
+Cl.\ S mod.\ (decl.) &\xtagcheck  &\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d86 1
+a86 1
+Cl.\ VP mod.\ (decl.) &\xtagcheck  &\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &  & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \\
+d88 1
+a88 1
+Cl.\ S mod.\ (pass. w. {\it by} phrase) & & & & & & & & & & & & & & & \\
+d90 1
+a90 1
+Cl.\ VP mod.\ (pass. w. {\it by} phrase) & & & & & & & & & & & & & & & \\
+d92 1
+a92 1
+Cl.\ S mod.\ (pass. wo. {\it by} phrase) & & & & & & & & & & & & & & & \\
+d94 1
+a94 1
+Cl.\ VP mod.\ (pass. wo. {\it by} phrase) & & & & & & & & & & & & & & & \\
+d125 2
+a126 2
+\vertical{Light Verbs} &
+\vertical{Ditrans.\ Light Verbs w.\ PP Shift} &
+d135 1
+a135 1
+Declarative &{\tiny \pageref{2;1,1}} & {\tiny \pageref{2;1,2}} & {\tiny \pageref{2;1,3}}& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &{\tiny \pageref{2;1,9}}&{\tiny \pageref{2;1,10}} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d137 1
+a137 1
+Passive &\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & {\tiny \pageref{2;2,5}} & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d143 1
+a143 1
+Wh-mov.\ NP complement  &{\tiny \pageref{2;5,1}}&\xtagcheck &{\tiny \pageref{2;5,3}}&\xtagcheck &\xtagcheck & &\xtagcheck &\xtagcheck & & & & & & & \\
+d147 1
+a147 1
+Wh-mov.\ Adj.\ comp.  & & & & & & & & & & & &\xtagcheck & & & \\
+d163 3
+a165 1
+Rel.\ cl.\ on subj. &{\tiny \pageref{2;15,1}}&\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& &\xtagcheck &\xtagcheck & & & \\
+d167 3
+a169 1
+Rel.\ cl.\ on NP comp. &{\tiny \pageref{2;16,1}}& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& & \xtagcheck& \xtagcheck& & & & & & & \xtagcheck\\
+d175 1
+a175 1
+Pass.\ w.\ wh-mov.\ subj. &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & & \xtagcheck&\xtagcheck & & & &\xtagcheck & & & \\
+d177 1
+a177 1
+Pass.\ w.\ wh-mov.\ ind.\ obj. & & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& & &\xtagcheck & & & & \xtagcheck& & & \\
+d179 1
+a179 1
+Pass.\ w.\ wh-mov.\ obj. of {\it by} phrase & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d181 1
+a181 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck & \xtagcheck& &\xtagcheck &\xtagcheck & & & & & & & \\
+d183 1
+a183 4
+Cl.\ S mod.\ (decl.) &{\tiny \pageref{2;23,1}}&\xtagcheck &\xtagcheck
+&\xtagcheck & & \xtagcheck& \xtagcheck& \xtagcheck&
+\xtagcheck& &\xtagcheck &\xtagcheck &\xtagcheck &
+\xtagcheck &\xtagcheck \\
+d185 1
+a185 1
+Cl.\ VP mod.\ (decl.) &{\tiny \pageref{2;24,1}}& \xtagcheck & \xtagcheck & \xtagcheck & & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & &\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d187 6
+a192 1
+Cl.\ S mod.\ (pass. w. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck& & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d194 1
+a194 1
+Cl.\ VP mod.\ (pass. w. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck& & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d196 1
+a196 1
+Cl.\ S mod.\ (pass. wo. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck&  & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & &  \\
+d198 1
+a198 1
+Cl.\ VP mod.\ (pass. wo. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck& & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & &  \\
+d200 2
+d244 1
+a244 1
+Passive & & & & & & & & & & & & & & & & \\
+d246 1
+a246 1
+Y/N quest. & \xtagcheck & \xtagcheck & {\tiny \pageref{1;3,3}} & & & & & & & & & & & & & \\
+d248 1
+a248 1
+Wh-moved subject & & & &\xtagcheck & \xtagcheck& &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &{\tiny \pageref{1;4,13}}& {\tiny \pageref{1;4,14}} &\xtagcheck & \xtagcheck \\
+d250 2
+a251 1
+Wh-mov.\ NP complement & &\xtagcheck & & & & &\xtagcheck & & & & & & & & & \\
+d253 1
+a253 1
+Wh-mov.\ S comp. & & & & & & & & & & & & & & & \xtagcheck & \\
+d255 2
+a256 1
+Wh-mov.\ Adj.\ comp. &\xtagcheck & & &\xtagcheck &\xtagcheck & & & & & & & & {\tiny \pageref{1;7,14}} & & & \\
+d258 1
+a258 1
+Wh-mov.\ object of a P & & & & & & & & & &\xtagcheck  & &\xtagcheck  & & & & \\
+d260 1
+a260 1
+Wh-mov.\ PP & & &\xtagcheck & & & & & &\xtagcheck &\xtagcheck & &\xtagcheck & & & & \\
+d264 1
+a264 1
+Imperative &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck & \xtagcheck & \\
+d266 1
+a266 1
+Det.\ gerund &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck & & \\
+d268 1
+a268 1
+NP gerund &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck &\xtagcheck & \xtagcheck &  \\
+d274 1
+a274 1
+Rel.\ cl.\ on NP comp. & & & & & & & & & & & & & & & & \\
+d276 1
+a276 1
+Rel.\ cl.\ on PP comp. & & & & & & & & & & & & & & & & \\
+d278 1
+a278 1
+Rel.\ cl.\ on NP object of P & & & & & & & & & \xtagcheck & \xtagcheck & & \xtagcheck & & & & \\
+d280 1
+a280 1
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & & \\
+d282 1
+a282 1
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ & & & & & & & & & & & & & & & & \\
+d284 1
+a284 1
+Pass.\ w.\ wh-mov.\ obj. of  {\it by} phrase  & & & & & & & & & & & & & & & & \\
+d286 1
+a286 1
+Pass.\ w.\ wh-mov.\ {\it by} phrase  & & & & & & & & & & & & & & & & \\
+d288 3
+a290 1
+Cl.\ S mod.\ (decl.) &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  &  & \xtagcheck &\xtagcheck  &  & \xtagcheck &  &\xtagcheck  &  &\xtagcheck  &\xtagcheck  & \xtagcheck & \xtagcheck \\
+d292 1
+a292 1
+Cl.\ VP mod.\ (decl.) &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  & & \xtagcheck &\xtagcheck  & & \xtagcheck &  &\xtagcheck  &  &\xtagcheck  &\xtagcheck  & \xtagcheck & \xtagcheck \\
+d294 1
+a294 1
+Cl.\ S mod.\ (pass. w. {\it by} phrase) & & & & & & & & & & & & & & & & \\
+d296 1
+a296 1
+Cl.\ VP mod.\ (pass. w. {\it by} phrase) & & & & & & & & & & & & & & & & \\
+d298 1
+a298 1
+Cl.\ S mod.\ (pass. wo. {\it by} phrase) & & & & & & & & & & & & & & & & \\
+a299 2
+Cl.\ VP mod.\ (pass. wo. {\it by} phrase) & & & & & & & & & & & & & & & & \\
+\hline
+@
+
+
+1.4
+log
+@shortened PP names
+@
+text
+@d33 1
+a33 1
+Declarative & \xtagcheck & \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck \\
+d35 1
+a35 1
+Passive & & & & & & & & & & & & & & & \xtagcheck \\
+@
+
+
+1.3
+log
+@added the multi-word preposition entries, suitable cryptic
+@
+text
+@d15 12
+a26 12
+\vertical{Pred. Multi-wd. PP w. ARB, P } &
+\vertical{Pred. Multi-wd. PP w. A, P } &
+\vertical{Pred. Multi-wd. PP w. Conj, P } &
+\vertical{Pred. Multi-wd. PP w. N, P } &
+\vertical{Pred. Multi-wd. PP w. P, P } &
+\vertical{Pred. Multi-wd. PP w. no int. mod. } &
+\vertical{Pred. PP w. Sent. Subj., ARB, P } &
+\vertical{Pred. PP w. Sent. Subj., A, P } &
+\vertical{Pred. PP w. Sent. Subj., Conj, P } &
+\vertical{Pred. PP w. Sent. Subj., N, P } &
+\vertical{Pred. PP w. Sent. Subj., P, P } &
+\vertical{Pred. PP w. Sent. Subj., no int. mod. } &
+@
+
+
+1.2
+log
+@Added an entire page to the table for the new tree families added.
+@
+text
+@d15 12
+a26 12
+\vertical{nx0ARBPnx1 } &
+\vertical{nx0APnx1 } &
+\vertical{nx0CONJPnx1 } &
+\vertical{nx0NPnx1 } &
+\vertical{nx0PPnx1 } &
+\vertical{nx0PNaPnx1 } &
+\vertical{s0ARBPnx1 } &
+\vertical{s0APnx1 } &
+\vertical{s0CONJPnx1 } &
+\vertical{s0NPnx1 } &
+\vertical{s0PPnx1 } &
+\vertical{s0PNaPnx1 } &
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 93
+a94 1
+
+a117 1
+%\vertical{Ditrans.\ Light Verbs w.\ PP Shift} &
+d173 3
+a175 2
+&\xtagcheck & \xtagcheck& \xtagcheck& \xtagcheck& \xtagcheck&
+\xtagcheck& \xtagcheck &\xtagcheck &\xtagcheck &\xtagcheck & \xtagcheck&\xtagcheck \\
+d177 1
+a177 1
+Cl.\ VP mod.\ (decl.) &{\tiny \pageref{2;24,1}}& \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+d179 1
+a179 1
+Cl.\ S mod.\ (pass. w. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck& \xtagcheck & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d181 1
+a181 1
+Cl.\ VP mod.\ (pass. w. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck& \xtagcheck & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & & \\
+d183 1
+a183 1
+Cl.\ S mod.\ (pass. wo. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck& \xtagcheck & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & &  \\
+d185 1
+a185 1
+Cl.\ VP mod.\ (pass. wo. {\it by} phrase) & \xtagcheck & \xtagcheck & \xtagcheck &  \xtagcheck& \xtagcheck & & \xtagcheck & \xtagcheck & & & & \xtagcheck & & &  \\
+a207 1
+%%%\vertical{Adjective Small Clause with Sentential Complement} &
+a210 1
+%%%\vertical{NP Small Clauses with Sent. Comp. } &
+a212 1
+%%%\vertical{PP Small Clause with Sentential Complement} &
+a214 1
+%%%\vertical{Exhaustive PP Small Clause with Sent. Comp. } &
+d220 1
+a220 1
+\vertical{Sentential Subject} \\
+d271 1
+a271 1
+Cl.\ S mod.\ (decl.) &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  & \xtagcheck &\xtagcheck  &\xtagcheck  & \xtagcheck &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  & \xtagcheck & \xtagcheck \\
+d273 1
+a273 1
+Cl.\ VP mod.\ (decl.) &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  & \xtagcheck &\xtagcheck  &\xtagcheck  & \xtagcheck &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  &\xtagcheck  & \xtagcheck & \\
+@

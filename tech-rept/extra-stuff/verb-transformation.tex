@@ -1,0 +1,342 @@
+\section{Verb Transformations}
+\label{verb-transformations}
+
+The verbs classes described in Section \ref{verb-classes} each have a number of
+trees associated with them.  These trees are the various related forms
+(transformations) of sentences that verbs in that class can undergo.  This
+section describes the basic structure and functionality of each of these
+transformations.  Example trees will be given, although they will, of course,
+need to be extrapolated for any other tree family.
+
+\subsection{declarative}
+The declarative tree is in some sense the most basic. It has no
+extracted positions. It also has what we treat as the cannonical order
+of constituents for a given subcategorization. For example, in a
+declarative tree the subject will be called NP$_{0}$ or S$_{0}$, the
+indirect object NP$_{1}$, the indirect object NP$_{2}$ etc. Other
+constructions such as passive are treated as having reordered
+constituents relative to the declarative. The declarative tree is used for
+simple declarative sentences such as (\ex{1})-(\ex{2}) and for simple embedded
+sentences such as (\ex{3})-(\ex{4}). 
+
+\enumsentence{Beth Ann gave Clove a treat.}
+\enumsentence{Dogs howl.}
+\enumsentence{Jim thinks Beth Ann gave Clove a treat.}
+\enumsentence{Everyone knows that dogs howl.}
+
+The declarative tree is also used in forming yes-no questions (see
+section?? below and Section~\ref{yes/no-question} for more details) and 
+wh-questions on adjuncts (See Section~\ref{adv-modifier}). Figure (\ref{alphanx0Vnx1}) is the
+declarative tree for the transitive tree family.
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphanx0Vnx1.ps,height=10.0cm}
+\caption{ \label{alphanx0Vnx1} Tree:  $\alpha$nx0Vnx1}
+}
+\end{figure}
+
+
+
+\subsection{Passive (with and without by-phrase)}
+
+In passive constructions such as (\ex{1} ) the subject NP is
+interpreted as having the same role as the direct object NP in the
+corresponding declarative (e.g. (\ex{2}).
+
+\enumsentence{{\bf An airline buy-out bill} was approved by the House.
+(WSJ)}
+\enumsentence{The House approved {\bf an airline buy-out bill}.}
+
+ In a movement analysis, the direct object is said to have moved to
+the subject position.  The original declarative subject is either
+absent in the passive or is in a {\it by}-headed
+PP (by-phrase). Passive trees are found in all tree families that have
+a direct object in the declarative tree. Each of these tree families
+has at least a passive tree with and one without the
+by-phrase. Variations in the location of the by-phrase may require
+additional trees.  For example the tree family Tnx0Vnx1s2 will have
+the passive trees shown in figures (\ref{passive1})-
+(\ref{passive3}). Figure (\ref{passive1}) shows typical features for
+the passive. The V node is required to have {\bf $<$passive$>=+$} which
+has the effect of forcing adjunction of the passive {\it be}.  The
+other feature requirement on the V is that {\bf $,$mode$>=$ppart}
+which has the effect of requiring passive morphology.  Figures
+(\ref{passive2}) and (\ref{passive3}) show variants in the location of
+the by-phrase.
+
+ 
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/betanx1Vs2.ps,height=10.0cm}
+\caption{ \label{passive1} Tree:  $\beta$nx1Vs2}
+}
+\end{figure}
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/betanx1Vbynx0s2.ps,height=10.0cm}
+\caption{ \label{passive2} Tree:  $\beta$nx1Vbynx0s2}
+}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/betanx1Vs2bynx0.ps,height=10.0cm}
+\caption{ \label{passive3} Tree:  $\beta$nx1Vs2bynx0}
+}
+\end{figure}
+
+
+\subsection{Yes/No questions}
+
+Yes/No questions are formed by the adjunction of an auxiliary verb to the left
+side of the S node of the declarative or passive trees.  This mechanism is
+described in more detail in the section on auxiliary verbs
+(Section~\ref{yes/no-question}).
+
+\subsection{Wh-moved subject}
+
+The wh-moved subject tree provides for sentences such as {\it Who left?}, {\it
+Who wrote the paper?}, and {\it Who was happy?}, depending on the tree family
+with which it is associated.  Because wh+ subject does not require an auxiliary
+verb, it is difficult to tell whether the subject has moved out of position or
+not (see \ref{heycock/kroch93-gagl} for arguments for and against moved subject).  However,
+we find that the wh+ subjects pattern like other wh+ elements that explicitly
+move to the beginning of the sentence, and unlike wh+ elements that stay at
+their place of origin (as in echo-questions, such as {\it John likes
+*who*?}\footnote{The word surrounded by the *'s is intended to be read as
+highly stressed.}).  This becomes apparent when looking at embedded sentences,
+which are generally not allowed to have wh-moved elements ($\ast${\it John
+thought that who$_i$ Mary loved t$_i$}), with the exception of specific verbs
+which require it (John wondered who Mary loved).  This pattern switches with
+regard to echo questions ({\it John thought that Mary loved *who*?} vs
+$\ast${\it John wondered *who* Mary loved}).  Wh+ subjects pattern like other
+wh-moved elements ($\ast$ {\it John thought that who$_i$ T$_i$ loved
+Mary}\footnote{No emphasis on {\it who}, which would change it into an
+echo-question reading} {\it John wondered who loved Mary}.  Accordingly, the
+tree for the wh+ subject has the NP node extracted to a higher level, and is
+contrained to be {\bf $<$wh$>$ = +}.  In addition, the highest S node is marked
+{\bf $<$extracted$>$ = +}.  It is this extracted value that is used to regulate
+the occurance of these trees in embedded sentences.
+
+
+
+
+\subsection{Wh-moved NP complement}
+Wh-questions can be formed on every NP object or indirect object that
+appears in the declarative tree or in the passive trees.  A tree
+family will contain one tree for each of these possible NP complement positions
+. A tree of this type for a
+Di-transitive tree family is shown in figure (\ref{alphaW1nx0Vnx1nx2}) with wh-extraction of the
+direct object. 
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphaW1nx0Vnx1nx2.ps,height=10.0cm}
+\caption{ \label{alphaW1nx0Vnx1nx2} Tree:  $\alpha$W1nx0Vnx1nx2}
+}
+\end{figure}
+
+An extraction from  a passive in the
+same tree family is shown in (\ref{alphaW2nx1Vnx2bynx0}).  
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphaW0nx1Vpnx2bynx0.ps,height=10.0cm}
+\caption{ \label{{alphaW0nx1Vpnx2bynx0} Tree:  $\alpha$W0nx1Vpnx2bynx0}
+}
+\end{figure}
+
+The important features
+of this type of tree are:
+\begin{enumerate}
+\item The subtree that has S$_{r}$ as its root is identical to the
+declarative tree or a non-extracted passive tree, except for having
+one NP position in the VP filled by $\epsilon$.
+\item The root S node is S$_{q}$ which dominates NP and S$_{r}$
+\item The trace feature of the $\epsilon$ filled NP is coindexed with
+the trace feature of the NP daughter of S$_{q}$.
+\item The inv feature of S$_{r}$ is coindexed to the wh feature of NP
+in order to force subject-auxiliary inversion where needed (see the
+section on Topicalization for more discussion of the inv-wh coindexing
+and the use of these trees for topicalization).
+\end{enumerate}
+
+\subsection{Wh-moved S complement}
+Except for the node label on the extracted position, the trees for
+wh-questions on S complements look exactly like the trees for
+wh-questions on NP's in the same positions. This is because there is
+no separate wh-lexical item for clauses in English, so the item {\it
+what} is ambiguous between representing a clause or an NP.  To
+illustrate this ambiguity notice that the question in (\ex{1}) could
+be answered by either a clause as in (\ex{2}) or an NP as in (\ex{3}).
+
+\enumsentence{what does Clove want?}
+\enumsentence{Beth Ann to play frisbee with her}
+\enumsentence{a biscuit}
+
+Figure (\ref{wh-s-extr}) is an example of a tree for a wh-question on
+a S complement from the tree family Tnx0Vs1.
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/betaW1nx0Vs1.ps,height=10.0cm}
+\caption{ \label{betaW1nx0Vs1} Tree:  $\beta$W1nx0Vs1}
+}
+\end{figure}
+
+
+\subsection{Wh-moved Adjective complement}
+In subcategorizations that select an adjective complement that
+complement can be questioned in a wh-question such as (\ex{1}).
+
+\enumsentence{how$_{i}$ did he feel $\epsilon_{i}$}
+
+The tree families with adjective complements include trees for such
+adjective extractions that are very similar to the wh-extraction trees
+for other categories of complements.  The adjective position in the VP
+is filled by an $\epsilon$ and the trace feature of the adjective
+complement and of the adjective daughter of S$_{q}$ are coindexed.  An
+example of this type of tree is shown in Figure (\ref{wh-adj-extr})
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/betaWA1nx0Va1.ps,height=10.0cm}
+\caption{ \label{betaWA1nx0Va1} Tree:  $\beta$WA1nx0Va1}
+}
+\end{figure}
+
+\subsection{Wh-moved object of a P}
+Wh-questions can be formed on the NP object of a complement PP as in
+(\ex{1}).
+
+\enumsentence{[Which dog]$_{i}$ did Beth Ann give a bone to $\epsilon_{i}$?
+
+The by-phrases of passives behave like complements and can undergo the
+same type of extraction (\ex{1}).
+
+\enumsentence{Which dog was the frisbee caught by?}
+
+Tree structures for this type of sentence are very similar to those
+for the wh-extraction of NP complements discussed in Section \ref and
+have the identical important features related to tree structure and
+trace and inversion features.
+
+The tree $\alpha$W2nx0Vnx1pnx2 in figure \ref{alphaW2nx0Vnx1pnx2} is
+an example of this type of tree.
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphaW2nx0Vnx1pnx2.ps,height=10.0cm}
+\caption{ \label{{alphaW2nx0Vnx1pnx2} Tree:  $\alpha$W2nx0Vnx1pnx2}
+}
+\end{figure}
+
+\subsection{Wh-moved PP}
+Like NP complements PP complements can be extracted to form
+wh-questions as in (\ex{1}).
+
+\enumsentence{[To which dog]$_{i}$ did Beth Ann throw the frisbee $\epsilon_{i}$?}
+
+As can be seen in the tree $\alpha$pW2nx0Vnx1pnx2 in figure
+\ref{alphapW2nx0Vnx1pnx2} extraction of PP complements is very similar
+to extraction of NP complements from the same positions.  
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphapW2nx0Vnx1pnx2.ps,height=10.0cm}
+\caption{ \label{{alphapW2nx0Vnx1pnx2} Tree:  $\alpha$pW2nx0Vnx1pnx2}
+}
+\end{figure}
+
+
+The PP extraction trees differ from NP extraction trees in having a PP
+rather than an NP left daughter node under S$-{q}$ and in having the
+$\epsilon$ fill a PP rather than an NP position in the VP. In other
+respects these PP extraction structures behave like the NP extractions
+including being used for Topicalization.
+
+\subsection{Topicalized NP complement}
+Our analysis of topicalization uses the same trees as wh-extraction.
+For any NP complement position a single tree is used for wh-questions
+and for topicalization on that position. Wh-questions have
+subject-auxiliary inversion and topicalizations do not.  This
+difference between the constructions is captured by equating the
+values of the S$_{r}$'s inv feature and the extracted NP's wh feature.
+This means that if the extracted item is a wh-expression, as in
+wh-questions, the value of inv will be $+$ and an inverted auxiliary
+will be forced to adjoin. If the extracted item is a non-wh, inv will
+be $-$ and no auxiliary adjunction will be required. For example, the
+tree $\alpha$W1nx0Vnx1 in figure (\ref{2alphaW1nx0Vnx1}) is used to derive both (\ex{1]) and (\ex{2})
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphaW1nx0Vnx1.ps,height=10.0cm}
+\caption{ \label{{2alphaW1nx0Vnx1} Tree:  $\alpha$W1nx0Vnx1}
+}
+\end{figure}
+
+\ennumsentence{John, I like.}
+\ennumsentence{Who do you like?}
+
+For the question (\ex{0}) {\it Who do you like?}, the extracted item {\it who}
+has $<$wh$>=+$  so the value of the inv feature on VP is also $+$ and
+{\it do} is forced to adjoin.  For the topicalization (\ex{-1}) the values
+for {\it John}`s wh feature and for S$_[q}$'s inv feature are both $-$ and no
+auxiliary adjoins. Topicalization of PP complements is handled in a
+similar way using the same trees as wh-questions on PP complement
+positions. 
+
+\subsection{Imperative}
+Imperatives in English do not have overt subjects, and the subject
+role is always interpreted as being second person, i.e. {\it you}.
+The imperative trees in English LTAG grammar are identical to the
+declarative tree except that the NP$_{0}$ subject position is filled by an
+$\epsilon$ and the NP$_{0}$ agr-pers feature is set in the tree to the
+value 2. Figure \ref{alphaInx0Vnx1} is the imperative tree for the transitive tree
+family.
+
+\begin{figure}[htbp]
+\center{
+\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/alphaInx0Vnx1.ps,height=10.0cm}
+\caption{ \label{{alphaInx0Vnx1} Tree:  $\alpha$Inx0Vnx1}
+}
+\end{figure}}
+
+\subsection{Determiner gerund}
+\subsection{NP gerund}
+\subsection{Relative clause on subject}
+
+\enumsentence{the dog that caught the frisbee}
+\enumsentence{dealers trading for their own account (WSJ)}
+
+\subsection{Relative clause on NP complement}
+
+\enumsentence{frisbees dogs like}
+\enumsentence{political prisoners who had incurred his displeasure
+(Brown Corpus)}
+\enumsentence{less good news to report (WSJ)}
+
+
+\subsection{Passive with wh-moved subject (with and without {\it by}
+phrase)}
+
+
+\subsection{Passive with wh-moved indirect object (with and without {\it by} phrase)}
+\subsection{Passive with wh-moved object of the {\it by} phrase}
+\subsection{Passive with wh-moved {\it by} phrase}
+
+
+
+
+
+%TODO:
+% for each section:
+%	1) description
+%	2) examples
+%	3) trees
+%Try latexing
+
+

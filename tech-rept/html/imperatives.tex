@@ -1,0 +1,348 @@
+ 
+\chapter{Imperatives} 
+\label{imperatives} 
+ 
+\section{Agreement, mode, and the optional subject} 
+ 
+Imperatives in English do not require overt subjects.  The subject in 
+imperatives is in general second person, i.e.\ {\it you}, whether it is 
+overt or not, as is clear from the verbal agreement and the interpretation. 
+The imperatives in which the subject is not overt are handled by the 
+imperative trees discussed in this section.  Imperatives with overt 
+subjects are not handled currently.  More discussion on imperatives with 
+overt subjects is given in Sections \ref{sec:vocative} and 
+\ref{sec:overt-subject}. 
+ 
+The imperative trees in each tree family in the English XTAG grammar are 
+identical to the declarative tree of that family except that the NP$_{0}$ 
+subject position is filled by an $\epsilon$, the NP$_{0}$ {\bf $<$agr~pers$>$} feature is set to the value {\bf 2nd} and the {\bf $<$mode$>$} feature on the root node has the value {\bf imp} (see equations 
+\ref{ex:291} -- \ref{ex:292}). Hardwiring the {\bf $<$agr~pers$>$} feature into the 
+tree ensures the proper verbal agreement for an imperative.  The {\bf $<$mode$>$} value of {\bf imp} on the root node is recognized as a valid 
+mode for a matrix clause.\footnote{% % The other valid {\bf $<$mode$>$} for a matrix clause is {\bf ind}.% % } The {\bf imp} value for {\bf $<$mode$>$} also prevents imperatives from 
+appearing as embedded clauses.  Figure \ref{alphaInx0Vnx1} shows the 
+imperative tree in the transitive tree family. 
+ 
+\beginsentences
+\sitem{{\bf NP$_0$.t:$<$agr~pers$>$ = 2}}\label{ex:291} 
+\sitem{{\bf S$_r$.b:$<$mode$>$ = imp}}\label{ex:292} 
+\endsentences
+
+ 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering{ \begin{tabular}{c} \htmladdimg{ps/imperatives-files/alphaInx0Vnx1.ps.gif} \end{tabular} } 
+\begin{rawhtml} <dl> <dt>{Transitive imperative tree: $\alpha$Inx0Vnx1 <p> </dl> \end{rawhtml}
+\label{alphaInx0Vnx1} 
+\label{2;11,1} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+Moreover, the {\bf $<$mode$>$} feature on the anchor is unspecified, and 
+the {\bf $<$mode$>$} feature on the top feature structure associated with 
+the VP has the value {\bf base} (see equation in \ref{ex:293}). 
+ 
+\beginsentences
+\sitem{{\bf VP.t:$<$mode$>$ = base}}\label{ex:293} 
+\endsentences
+
+ 
+This allows the lexical verb of the imperative to be any type of verbs, as 
+long as the left-most verb has {\bf $<$mode$>$ = base}.  For instance, in a 
+simple transitive imperative as in \ref{ex:294}, the verb {\it eat}, which is 
+specified with {\bf $<$mode$>$ = base}, anchors the imperative tree, 
+unifying with {\bf VP.t:$<$mode$>$ = base}.  In an imperative with 
+auxiliary {\it be} as in \ref{ex:295}, the verb {\it waiting}, which is specified 
+with {\bf $<$mode$>$ = ger}, anchors the imperative tree, and the auxiliary 
+{\it be}, which is specified with {\bf $<$mode$>$ = base}, adjoins onto the 
+VP, unifying with {\bf VP.t:$<$mode$>$ = base}. 
+ 
+\beginsentences
+\sitem{Eat the cake!}\label{ex:294} 
+\sitem{Be waiting for me!}\label{ex:295} 
+\endsentences
+
+ 
+ 
+\section{Negative Imperatives} 
+\label{neg-imp} 
+ 
+\subsection{{\it Don't} imperatives} 
+ 
+All Negative imperatives in English require {\it do}-support, even those 
+that are formed with {\it be} and auxiliary {\it have}. 
+ 
+\beginsentences
+\sitem{Dont' leave!}\label{ex:296} 
+\sitem{*Not leave!}\label{ex:297} 
+\endsentences
+
+ 
+\beginsentences
+\sitem{Do not open the window!}\label{ex:298} 
+\sitem{*Not open the window!}\label{ex:299} 
+\endsentences
+
+ 
+\beginsentences
+\sitem{Do not be talking so loud!}\label{ex:300} 
+\sitem{*Not be talking so loud!}\label{ex:301} 
+\endsentences
+
+ 
+\beginsentences
+\sitem{Don't have eaten everything before the guests arrive!}\label{ex:302} 
+\sitem{*Not have eaten everything before the guests arrive!}\label{ex:303} 
+\endsentences
+
+ 
+In English XTAG grammar, negative imperatives receive a similar structural analysis 
+to {\it yes-no} questions, as in \cite{potsdamdiss97} and \cite{handiss}. 
+That is, {\it do} and {\it don't} in negative imperatives are treated as an 
+instance of {\it do}-support and adjoin to a clause.  The crucial 
+strucural evidence for our analysis is that when there is an overt subject 
+in negative imperatives formed with {\it don't}, the subject must follow 
+{\it don't}, just as it does in {\it yes-no} questions. 
+ 
+\beginsentences
+\sitem{Don't you worry!}\label{ex:304} 
+\sitem{Don't you move!}\label{ex:305} 
+\endsentences
+
+ 
+\beginsentences
+\sitem{Don't you like carrots?}\label{ex:306} 
+\sitem{Didn't you finish your paper yet?}\label{ex:307} 
+\endsentences
+
+ 
+{\it Do}-support in negative imperatives is handled by the elementary tree 
+$\beta$IVs anchored by {\it do} and {\it don't}, as shown in Figure 
+\ref{fig:doimp}.  This tree adjoins onto the root node of the imperative 
+tree.  The feature {\bf $<$mode$>$ =imp} on the S foot node restricts this 
+tree to adjoin only to imperative trees. Furthermore, the S root node of 
+$\beta$IVs is specified with {\bf $<$mode$>$ =imp}, which prevents 
+imperatives with {\it do}-support from appearing as embedded clauses. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{ccc} 
+{\htmladdimg{ps/imperatives-files/betaIVs-do.ps.gif}} & 
+{\ } & 
+{\htmladdimg{ps/imperatives-files/betaIVs-dont.ps.gif}} \\ 
+$\beta$IVs[do] & {\ } & $\beta$IVs[don't] 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Trees anchored by  do and  don't <p> </dl> \end{rawhtml}
+\label{fig:doimp} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+In negative imperatives formed with {\it don't}, the $\beta$IVs[don't] tree in 
+Figure \ref{fig:doimp} adjoins to the root node of the imperative tree. The 
+derived tree for the negative imperative {\it Don't leave!} is given in 
+Figure \ref{fig:dont-leave}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+  \begin{center} \leavevmode \htmladdimg{ps/imperatives-files/dont-leave.ps.gif} 
+  \end{center} 
+  \begin{rawhtml} <dl> <dt>{Derived tree for  Don't leave! <p> </dl> \end{rawhtml}
+\label{fig:dont-leave} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\subsection{{\it Do not} imperatives} 
+ 
+In negative imperatives formed with {\it do not}, the $\beta$IVs[do] tree 
+in Figure \ref{fig:doimp} adjoins to the root node of the imperative tree 
+and the $\beta$NEGvx tree that anchors {\it not} as represented in Figure 
+\ref{fig:not} adjoins to the VP node of the imperative tree. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+  \begin{center} \leavevmode 
+\htmladdimg{ps/imperatives-files/betaNEGvx-not.ps.gif} 
+  \end{center} 
+  \begin{rawhtml} <dl> <dt>{Tree anchored by  not <p> </dl> \end{rawhtml}
+\label{fig:not} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+The  derived tree for the negative imperative {\it Do not eat the cake!} are 
+given in Figure \ref{fig:do-not-leave}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\begin{center} \leavevmode 
+{\htmladdimg{ps/imperatives-files/do-not-leave1.ps.gif}} 
+\end{center} 
+\begin{rawhtml} <dl> <dt>{Derived trees for  Do not eat the cake! <p> </dl> \end{rawhtml}
+\label{fig:do-not-leave} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+Note that trees in Figure \ref{fig:dont-leave} and Figure 
+\ref{fig:do-not-leave} have an empty verb.  This is due to the feature {\bf $<$displ-const$>$} in $\beta$IVs.\footnote{% % The other possibility of adjoining {\it not} above the VP that projects from the empty verb is ruled out because {\it not} is made to select a VP with the following equation: {\bf $<$displ-const set1=-$>$}.  Since the empty verb tree has {\bf $<$displ-const set1=+$>$}, {\it not} cannot adjoin onto the VP that projects from it.% % } This feature ensures that when $\beta$IVs is adjoined to an elementary 
+tree, $\beta$Vvx that anchors an empty verb must also adjoin onto the VP of 
+that same elementary tree.  This tree is represented in Figure 
+\ref{fig:epsilon}.  The empty verb represents the originating position of 
+{\it do} and {\it don't}.  This mechanism is also used in interrogatives 
+that have subject-verb inversion to simulate auxiliary verb movement.  For 
+more on this, see Chapter~\ref{auxiliaries} on {\it do}-support and 
+inversion. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+  \begin{center} \leavevmode \htmladdimg{ps/imperatives-files/betaVvx-epsilon.ps.gif} 
+  \end{center} 
+  \begin{rawhtml} <dl> <dt>{$\beta$Vvx[$\epsilon$] <p> </dl> \end{rawhtml}
+\label{fig:epsilon} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+If {\it do} in negative imperatives is in the same position as {\it do} in 
+{\it yes-no} questions, the fact that an overt subject cannot intervene 
+between {\it do} and {\it not} is puzzling. 
+ 
+\beginsentences
+\sitem{Do not open the window!}\label{ex:308} 
+\sitem{*Do you not open the window!}\label{ex:309} 
+\endsentences
+
+ 
+We adopt the account given in \cite{akmajian84} that this fact is not due 
+to syntax but due to an intonational constraint in imperatives.  He argues 
+that (i) when an imperative sentence has an overt subject, the subject must be 
+the only intonation center preceding the verb phrase and (ii) that in 
+negative imperatives with {\it do} and {\it not}, either {\it do} or {\it not} must be the intonation center.  These two contraints conspire to rule 
+out {\it do not} imperatives with an overt subject. 
+ 
+\subsection{Negative Imperatives with {\it be} and {\it have}} 
+ 
+Another puzzling fact that needs to be explained  is that in negative 
+imperatives even {\it be} and auxiliary {\it have} require {\it do}-support, while it is prohibited in negative declaratives and negative 
+questions.  
+ 
+\beginsentences
+\sitem{He isn't talking loud.}\label{ex:310} 
+\sitem{*He doesn't be talking loud.}\label{ex:311} 
+\endsentences
+
+ 
+\beginsentences
+\sitem{Isn't he talking loud?}\label{ex:312} 
+\sitem{*Doesn't he be talking loud?}\label{ex:313} 
+\endsentences
+
+ 
+This fact does not pose a problem for the XTAG analysis of negative 
+imperatives if we adopt the line of approach given in \cite{handiss}.  She 
+points out that while declaratives and questions are tensed, imperatives 
+are not, and argues that this is exactly why negative imperatives require 
+{\it do}-support even for {\it be} and auxiliary {\it have}.  Assuming a 
+clause structure in which CP dominates IP and IP dominates VP (for 
+expository purposes), she argues that it is the tense features in I$^0$ 
+that attract {\it be} and auxiliary {\it have} in declaratives and 
+questions.  In declaratives, {\it be} or auxiliary {\it have} moves to and 
+stays in I$^0$, and in questions, once {\it be} or auxiliary {\it have} 
+moves to I$^0$, they further move to C$^0$.  Moreover, main verbs cannot 
+move at all to I$^0$ in the overt syntax.  Instead, they undergo movement 
+at LF.  But negation blocks LF movement and so as a last resort {\it do} is 
+inserted in I$^0$ to support INFL.  In imperatives, I$^0$ does not have 
+tense features and so it cannot attract {\it be} and auxiliary {\it have}. 
+Thus, {\it be} and auxiliary {\it have} as well as main verbs undergo 
+movement at LF in imperatives.  And so in negative imperatives, since 
+negation blocks LF verb movement, {\it do} is inserted in I$^0$ as a last 
+resort device even for {\it be} and auxiliary {\it have} and it further 
+moves to C$^0$ in the overt syntax. 
+ 
+\section{Emphatic Imperatives} 
+ 
+Another case where imperatives have {\it do}-support is emphatic 
+imperatives. 
+ 
+\beginsentences
+\sitem{Do open the window!}\label{ex:314} 
+\sitem{Do show up for the lecture!}\label{ex:315} 
+\endsentences
+
+ 
+In English XTAG grammar, {\it do} in emphatic imperatives is treated just 
+as {\it do} in negative imperatives.  It is adjoined to an imperative 
+clause with an empty subject.  Again, the crucial evidence for this 
+analysis comes from word order facts.  When emphatic imperatives have an 
+overt subject, it must follow {\it do}. 
+ 
+\beginsentences
+\sitem{Do somebody bring me some water!}\label{ex:316} 
+\sitem{Do at least some of you show up for the lecture!}\label{ex:317} 
+\endsentences
+
+ 
+\section{Cases not handled} 
+ 
+\subsection{Overt subjects before {\it do/don't}} 
+\label{sec:vocative} 
+ 
+Given our analsis of negative imperatives, if the subject precedes {\it do} 
+or {\it don't}, we are forced to treat it as a vocative and not a 
+sentential subject.  Vocatives are considered to be outside the clause 
+structure and does not have any structural relation with any element in the 
+clause. 
+ 
+\beginsentences
+\sitem{You don't drink the water. = (You! Don't drink the water!)}\label{ex:318} 
+\sitem{You do not leave the room. = (You! Do not leave the room!)}\label{ex:319} 
+\endsentences
+
+ 
+Given the fact that the imperatives in \ref{ex:318} and \ref{ex:319} seem to be 
+degraded unless there is an intonational break between {\it you} and the 
+rest of the sentence, treating {\it you} as a vocative seems to be the 
+correct approach.  Currently, XTAG grammar does not handle vocatives. 
+ 
+\subsection{Overt subjects after {\it do/don't}} 
+\label{sec:overt-subject} 
+ 
+One remaining task for imperatives is to handle those with overt subjects 
+such as \ref{ex:316} and \ref{ex:317}. 
+The type of overt subjects allowed in imperatives are restricted: 2nd 
+person pronouns and some quantified noun phrases. Currently, the English 
+XTAG grammar only has imperative trees with empty subjects.  
+ 
+\subsection{Passive Imperatives} 
+ 
+Passive imperatives like \ref{ex:320} are currently not handled. 
+ 
+\beginsentences
+\sitem{Don't be defeated at the race today!}\label{ex:320} 
+\endsentences
+
+ 
+Accounting for them would probably involve making separate passive trees in 
+each tree family, as is done for the declaratives and other clause types in 
+each family.\footnote{% % A simpler way to allow for passive imperatives would be remove the equation {\bf V.t:$<$passive$>$ = -} from the imperative trees. However, this option may affect the consistency of treatment of the passives. A decision in this respect will have to be made before implementing the imperative passives.% % } 
+ 
+\subsection{Overgeneration} 
+ 
+As was discussed above, imperatives can also be formed with auxiliaries 
+like {\it have} and {\it be}, as in \ref{ex:321}, \ref{ex:322} and \ref{ex:323}: 
+ 
+\beginsentences
+\sitem{Be waiting for me when I return!}\label{ex:321} 
+\sitem{Don't be sleeping while reading your book!}\label{ex:322} 
+\sitem{Don't have fallen asleep when I come back!}\label{ex:323} 
+\endsentences
+
+ 
+The auxiliary {\it be} can form affirmative as well as negative 
+imperatives. However, {\it have} can only form a negative imperative, as 
+can be seen from \ref{ex:323} and the ungrammaticality of \ref{ex:324}: 
+ 
+\beginsentences
+\sitem{* have eaten your meal by the time I return!}\label{ex:324} 
+\endsentences
+
+ 
+The current analysis of imperatives, however, does not rule out \ref{ex:324}. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

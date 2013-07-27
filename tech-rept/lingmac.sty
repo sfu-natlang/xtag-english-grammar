@@ -1,0 +1,212 @@
+%------------------------
+% Lingmacros
+% include
+% \enumsentence, \eenumsentence, \ex
+% \smalltree
+% \shortex, \shortexdt, \shortexnt
+% \outerfs
+
+% this file created 1/23/89 by Emma Pease, CSLI
+
+%Note (for those who use jbmacros):
+%  (a) the enumsentence macro is very similar to the \example command
+% in jbmacros; however, it does not have the annoying habit of leaving
+% the example number on one page and the example on the next (some
+% jbmacros don't have this problem). The eenumsentence macro is very
+% similar to the \examples macro.
+%  (b) \ex may be different
+
+% the enumsentence macro.
+%
+% \enumsentence{This is an example}
+% produces
+%  (1) This is an example
+% while
+% \enumsentence[(a)]{This is another example}
+% produces
+%  (a) This is another example
+% 
+% A related macros is 
+% \eenumsentence{\item[a.] A third example
+%                  \item[b.] A fourth example}
+% which produces
+%  (2) a. A third example
+%      b. A fourth example
+% 
+% other macro is \ex{1} which PRODUCES THE NUMBER OF THE FOLLOWING
+% enumsentence (\ex{0} produces number of preceeding enumsentence and
+% so on.)
+
+% the \enumsentence counter.  Add [chapter] if using report style
+\newcounter{enums}
+
+\def\enumsentence{\@ifnextchar[{\@enumsentence}% %]
+{\refstepcounter{enums}\@enumsentence[(\theenums)]}}
+
+\long\def\@enumsentence[#1]#2{\begin{list}{}{}
+\item[#1] #2
+\end{list}}
+
+% The \ex definition
+\newcounter{tempcnt}
+
+\newcommand{\ex}[1]{\setcounter{tempcnt}{\value{enums}}%
+\addtocounter{tempcnt}{#1}%
+\arabic{tempcnt}}
+
+% modified \@item command \unhbox\@tempboxa replaces \makelabel{#1}
+% Used to get \eenumsentence to work correctly
+\def\@item[#1]{\if@noparitem \@donoparitem
+  \else \if@inlabel \indent \par \fi
+         \ifhmode \unskip\unskip \par \fi 
+         \if@newlist \if@nobreak \@nbitem \else
+                        \addpenalty\@beginparpenalty
+                        \addvspace\@topsep \addvspace{-\parskip}\fi
+           \else \addpenalty\@itempenalty \addvspace\itemsep 
+          \fi 
+    \global\@inlabeltrue 
+\fi
+\everypar{\global\@minipagefalse\global\@newlistfalse 
+          \if@inlabel\global\@inlabelfalse \hskip -\parindent \box\@labels
+             \penalty\z@ \fi
+          \everypar{}}\global\@nobreakfalse
+\if@noitemarg \@noitemargfalse \if@nmbrlist \refstepcounter{\@listctr}\fi \fi
+\setbox\@tempboxa\hbox{\makelabel{#1}}%
+\global\setbox\@labels
+ \hbox{\unhbox\@labels \hskip \itemindent
+       \hskip -\labelwidth \hskip -\labelsep 
+       \ifdim \wd\@tempboxa >\labelwidth 
+                \box\@tempboxa
+          \else \hbox to\labelwidth {\unhbox\@tempboxa}\fi
+       \hskip \labelsep}\ignorespaces}
+
+% for enumerated enumsentences. Internal enumeration is alpha if not
+% otherwise defined.  
+
+% counter for items within \eenumsentence. (might use enumi instead?)
+\newcounter{enumsi}
+
+\def\@mklab#1{\hfil#1}
+\def\enummklab#1{\hfil(\eelabel)\hbox to 15pt{\hfil#1}}
+\def\enummakelabel#1{\enummklab{#1}\global\let\makelabel=\@mklab}
+
+\def\eenumsentence{\@ifnextchar[{\@eenumsentence}% %]
+{\refstepcounter{enums}\@eenumsentence[\theenums]}}
+
+\long\def\@eenumsentence[#1]#2{\def\eelabel{#1}%
+\begin{list}{\alph{enumsi}.}{\usecounter{enumsi}%
+\advance\leftmargin by 15pt\advance\labelwidth by 15pt%
+\let\makelabel=\enummakelabel}
+#2
+\end{list}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% smalltree
+% use
+% \smalltree{&a\\ b&&c\\ d&e&f}
+% produces
+%          a
+%        b   c
+%      d   e   f
+
+
+\long\def\smalltree#1{\leavevmode{\def\\{\cr\noalign{\vskip12pt}}%
+\def\mc##1##2{\multispan{##1}{\hfil##2\hfil}}%
+\tabskip=1em%
+\hbox{\vtop{\halign{&\hfil##\hfil\cr
+#1\crcr}}}}}
+
+% modsmalltree
+% use 
+% \modsmalltree{3}{&a\\ b&&c\\ d&e&f}
+% and produces the same output
+% \mc{n}{item} within either will produce item centered across n
+% number of columns
+
+\def\modsmalltree{\@ifnextchar[{\@modsmalltree}{\@modsmalltree[2]}}
+
+\long\def\@modsmalltree[#1]#2#3{{\def\mc##1##2{%
+\multicolumn{##1}{c}{\def\arraystretch{1}##2}}%
+\def\arraystretch{#1}%
+\def\ns{\def\arraystretch{1}}%
+\setbox0=\hbox{\begin{tabular}[t]{@{}*{#2}{c}@{}}
+#3
+\end{tabular}}%
+\dimen0=\ht0
+\advance\dimen0 by -\arraystretch \ht\strutbox
+\advance\dimen0 by \ht\strutbox
+\ht0=\dimen0
+\dimen0=\dp0
+\advance\dimen0 by -\arraystretch \dp\strutbox
+\advance\dimen0 by \dp\strutbox
+\dp0=\dimen0
+\leavevmode\box0}}
+
+% center lap creates a box of 0 width centered on the point
+\def\clap#1{\hbox to 0pt{\hss#1\hss}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% need to be modified?
+
+%  Format
+% \shortex{4}{a & b & c & d}
+%            {z & y & x & w}
+%            {mnop}
+% produces
+%   a  b  c  d
+%   z  y  x  w
+%   mnop
+%
+%  \shortexdt  takes two gloss lines
+%  \shortexnt takes no gloss lines
+
+\def\shortex#1#2#3#4{\begin{tabular}[t]{@{}*{#1}{l@{\ }}}
+#2\\ #3\\ \multicolumn{#1}{@{}l@{}}{#4}
+\end{tabular}}
+
+\def\shortexdt#1#2#3#4#5{\begin{tabular}[t]{@{}*{#1}{l@{\ }}}
+#2\\ #3\\ \multicolumn{#1}{@{}l@{}}{#4}\\
+\multicolumn{#1}{@{}l@{}}{#5}
+\end{tabular}}
+
+\def\shortexnt#1#2#3{\begin{tabular}[t]{@{}*{#1}{l@{\ }}}
+#2\\ #3
+\end{tabular}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% need to create equivalent of AVM structures.
+
+% Structure is 
+% \outerfs{alpha & beta\\ gamma & delta}
+% produces
+% __              __
+% | alpha    beta  |
+% | gamma    delta |
+% --              --
+% 
+% \outerfs can be nested.
+% inside of enumsentence use with \evnup[2pt]{\outerfs{. . .}}
+% to ensure that top of fs structure lines up with the number
+%
+%  Note that you can use \\[1ex] to increase the space between
+%  individual lines
+
+\def\outerfs#1{$\left[\begin{tabular}{ll}#1\end{tabular}\right]$}
+
+% \evnup is used to line up the enumsentence number and an entry along
+% the top.  It can take an argument to improve lining up.
+\def\evnup{\@ifnextchar[{\@evnup}{\@evnup[0pt]}}
+
+\def\@evnup[#1]#2{\setbox1=\hbox{#2}%
+\dimen1=\ht1 \advance\dimen1 by -.5\baselineskip%
+\advance\dimen1 by -#1%
+\leavevmode\lower\dimen1\box1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   End of main lingmacros
+%
+

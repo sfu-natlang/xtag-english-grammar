@@ -1,0 +1,399 @@
+\chapter{Extraction} 
+\label{extraction} 
+ 
+The discussion in this chapter covers constructions that are analyzed 
+as having wh-movement in GB, in particular, wh-questions and 
+topicalization. Relative clauses, which could also be considered 
+extractions, are discussed in Chapter~\ref{rel_clauses}. 
+ 
+Extraction involves a constituent appearing in a linear position to the left of 
+the clause with which it is interpreted. One clause argument position is 
+empty. For example, the position filled by {\it frisbee} in the declarative in 
+sentence~(\ref{ex:164}) is empty in sentence~(\ref{ex:165}). The wh-item {\it what} in 
+sentence~(\ref{ex:165}) is of the same syntactic category as {\it frisbee} in 
+sentence~(\ref{ex:164}) and fills the same role with respect to the 
+subcategorization. 
+ 
+\beginsentences
+\sitem{Clove caught a frisbee.}\label{ex:164} 
+\sitem{What$_{i}$ did Clove catch $\epsilon_{i}$?}\label{ex:165} 
+\endsentences
+
+ 
+ 
+The English XTAG grammar represents the connection between the extracted 
+element and the empty position with co-indexing (as does GB).  The {\bf $<$trace$>$} feature is used to implement the co-indexing.  In extraction trees 
+in XTAG, the `empty' position is filled with an {\it $\epsilon$}.  The 
+extracted item always appears in these trees as a sister to the S$_{r}$ 
+tree, with both dominated by a S$_{q}$ root node.  The S$_{r}$ subtrees in 
+extraction trees have the same structure as the declarative tree in the same 
+tree family.  The additional structure in extraction trees of the S$_{q}$ and 
+NP nodes roughly corresponds to the CP and Spec of CP positions in GB. 
+ 
+All sentential trees with extracted components (this does not include relative 
+clause trees) are marked {\bf $<$extracted$>$=+} at the top S node, while 
+sentential trees with no extracted components are marked {\bf $<$extracted$>$=--}.  Items that take embedded sentences, such as nouns, verbs 
+and some prepositions can place restrictions on whether the embedded sentence 
+is allowed to be extracted or not.  For instance, sentential subjects and 
+sentential complements of nouns and prepositions are not allowed to be 
+extracted, while certain verbs may allow extracted sentential complements and 
+others may not (e.g. sentences (\ref{ex:166})-(\ref{ex:169})). 
+ 
+\beginsentences
+\sitem{The jury wondered [who killed Nicole].}\label{ex:166} 
+\sitem{The jury wondered [who Simpson killed].}\label{ex:167} 
+\sitem{The jury thought [Simpson killed Nicole].}\label{ex:168} 
+\sitem{$\ast$The jury thought [who did Simpson kill]?}\label{ex:169} 
+\endsentences
+
+The {\bf $<$extracted$>$} feature is also used to block embedded topicalization 
+in infinitival complement clauses as exemplified in (\ref{ex:170}). 
+\beginsentences
+\sitem{* John wants [ Bill$_{i}$ [PRO to see t$_{i}$]]}\label{ex:170} 
+\endsentences
+
+Verbs such as {\em want} that take non-{\em wh} infinitival complements 
+specify that the {\bf $<$extracted$>$} feature of their complement clause 
+(i.e. of the foot S node) 
+is {\bf --}. Clauses that involve topicalization have {\bf +} as the value 
+of their {\bf $<$extracted$>$} feature (i.e. of the root S node). 
+Sentences like (\ref{ex:170}) are thus ruled out.  
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\mbox{} 
+\htmladdimg{ps/extraction-files/alphaW1nx0Vnx1.ps.gif} 
+\begin{rawhtml} <dl> <dt>{Transitive tree with object extraction: $\alpha$W1nx0Vnx1 <p> </dl> \end{rawhtml}
+\label{alphaW1nx0Vnx1} 
+\label{2;5,1} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+The tree that is used to derive the embedded sentence in (\ref{ex:168}) in 
+the English XTAG grammar is shown in 
+Figure~\ref{alphaW1nx0Vnx1}\footnote{Features not pertaining to this   discussion have been taken out to improve readability.}.  The 
+important features of extracted trees are: 
+ 
+\begin{itemize} 
+\item The subtree that has S$_{r}$ as its root is identical to the 
+  declarative tree or a non-extracted passive tree, except for having 
+  one NP position in the VP filled by $\epsilon$. 
+ 
+\item The root S node is S$_{q}$, which dominates NP and S$_{r}$. 
+  
+\item The {\bf $<$trace$>$} feature of the $\epsilon$ filled NP is 
+  co-indexed with the {\bf $<$trace$>$} feature of the NP daughter of 
+  S$_{q}$. 
+ 
+\item The {\bf $<$case$>$} and {\bf $<$agr$>$} features are passed 
+  from the empty NP to the extracted NP.  This is particularly 
+  important for extractions from subject NP's, since {\bf $<$case$>$} 
+  can continue to be assigned from the verb to the subject NP 
+  position, and from there be passed to the extracted NP. 
+  
+\item The {\bf $<$inv$>$} feature of S$_{r}$ is co-indexed to the {\bf     $<$wh$>$} feature of NP through the use of the {\bf $<$invlink$>$} 
+  feature in order to force subject-auxiliary inversion where needed 
+  (see section~\ref{topicalization} for more discussion of the {\bf     $<$inv$>$}/{\bf$<$wh$>$} co-indexing and the use of these trees 
+  for topicalization). 
+ 
+\end{itemize} 
+ 
+ 
+ 
+\section{Topicalization and the value of the {\bf $<$inv$>$} feature} 
+\label{topicalization} 
+ 
+Our analysis of topicalization uses the same trees as wh-extraction.  For any 
+NP complement position a single tree is used for both wh-questions and for 
+topicalization from that position. Wh-questions have subject-auxiliary 
+inversion and topicalizations do not.  This difference between the 
+constructions is captured by equating the values of the S$_{r}$'s {\bf $<$inv$>$} feature and the extracted NP's {\bf $<$wh$>$} feature.  This means 
+that if the extracted item is a wh-expression, as in wh-questions, the value of 
+{\bf $<$inv$>$} will be {\bf +} and an inverted auxiliary will be forced to 
+adjoin. If the extracted item is a non-wh, {\bf $<$inv$>$} will be {\bf --} 
+and no auxiliary adjunction will occur. An additional complication is that 
+inversion only occurs in matrix clauses, so the values of {\bf $<$inv$>$} and 
+{\bf $<$wh$>$} should only be equated in matrix clauses and not in embedded 
+clauses.  In the English XTAG grammar, appropriate equating of the {\bf $<$inv$>$} and {\bf $<$wh$>$} features is accomplished using the {\bf $<$invlink$>$} feature and a restriction imposed on the root S of a 
+derivation. In particular, in extraction trees that are used for both 
+wh-questions and topicalizations, the value of the {\bf $<$inv$>$} feature for 
+the top of the S$_{r}$ node is co-indexed to the value of the {\bf $<$inv$>$} 
+feature on the bottom of the S$_{q}$ node.  On the bottom of the S$_{q}$ node 
+the {\bf $<$inv$>$} feature is co-indexed to the {\bf $<$invlink$>$} feature. 
+The {\bf $<$wh$>$} feature of the extracted NP node is co-indexed to the value 
+of the {\bf $<$wh$>$} feature on the bottom of S$_{q}$. The linking between the 
+value of the S$_{q}$ {\bf $<$wh$>$} and the {\bf $<$invlink$>$} features is 
+imposed by a condition on the final root node of a derivation (i.e. the top S 
+node of a matrix clause) requires that {\bf $<$invlink$>$=$<$wh$>$}.  For 
+example, the tree in Figure~\ref{alphaW1nx0Vnx1} is used to 
+derive both (\ref{ex:171}) and (\ref{ex:172}). 
+ 
+ 
+\beginsentences
+\sitem{John, I like.}\label{ex:171} 
+\sitem{Who do you like?}\label{ex:172} 
+\endsentences
+
+ 
+For the question in (\ref{ex:172}), the extracted item {\it who} has the feature 
+value {\bf $<$wh$>$=+}, so the value of the {\bf $<$inv$>$} feature on VP is 
+also $+$ and an auxiliary, in this case {\it do}, is forced to adjoin.  For the 
+topicalization (\ref{ex:171}) the values for {\it John}'s {\bf $<$wh$>$} feature and 
+for S$_{q}$'s {\bf $<$inv$>$} feature are both {\bf --} and no auxiliary 
+adjoins. 
+ 
+ 
+ 
+\section{Extracted subjects} 
+\label{subject-extraction} 
+ 
+The extracted subject trees provide for sentences like (\ref{ex:173})-(\ref{ex:175}), 
+depending on the tree family with which it is associated. 
+ 
+\beginsentences
+\sitem{Who left?}\label{ex:173} 
+\sitem{Who wrote the paper?}\label{ex:174} 
+\sitem{Who was happy?}\label{ex:175} 
+\endsentences
+
+ 
+Wh-questions on subjects differ from other argument extractions in 
+not having subject-auxiliary inversion.  This means that in subject 
+wh-questions the linear order of the constituents is the same as in 
+declaratives so it is difficult to tell whether the subject has moved 
+out of position or not (see \cite{heycock/kroch93gagl} for arguments 
+for and against moved subject). 
+ 
+The English XTAG treatment of subject extractions assumes the 
+following: 
+ 
+\begin{itemize} 
+\item Syntactic subject topicalizations don't exist; and 
+\item Subjects in wh-questions are extracted rather than in situ. 
+\end{itemize} 
+ 
+The assumption that there is no syntactic subject topicalization is reasonable 
+in English since there is no convincing syntactic evidence and since the 
+interpretability of subjects as topics seems to be mainly affected by discourse 
+and intonational factors rather than syntactic structure. As for the assumption 
+that wh-question subjects are extracted, these questions seem to have more 
+similarities to other extractions than to the two cases in English that have 
+been considered in situ wh: multiple wh questions and echo questions. In 
+multiple wh questions such as sentence~(\ref{ex:176}), one of the wh-items is blocked 
+from moving sentence initially because the first wh-item already occupies the 
+location to which it would move. 
+ 
+\beginsentences
+\sitem{Who ate what?}\label{ex:176} 
+\endsentences
+
+ 
+This type of `blocking' account is not applicable to 
+subject wh-questions because there is no obvious candidate to do the 
+blocking.  Similarity between subject wh-questions and echo questions 
+is also lacking.  At least one account of echo questions 
+(\cite{hockey94}) argues that echo questions are not ordinary 
+wh-questions at all, but rather focus constructions in which the 
+wh-item is the focus. Clearly, this is not applicable to subject 
+wh-questions. So it seems that treating subject wh-questions similarly 
+to other wh-extractions is more justified than an in situ treatment. 
+ 
+Given these assumptions, there must be separate trees in each tree family for 
+subject extractions. The declarative tree cannot be used even though the linear 
+order is the same because the structure is different. Since topicalizations are 
+not allowed, the {\bf $<$wh$>$} feature for the extracted NP node is set in 
+these trees to {\bf +}.  The lack of subject-auxiliary inversion is handled 
+by the absence of the {\bf $<$invlink$>$} feature.  Without the presence of 
+this feature, the {\bf $<$wh$>$} and {\bf $<$inv$>$} are never linked, so 
+inversion can not occur.  Like other wh-extractions, the S$_{q}$ node is marked 
+{\bf $<$extracted$>$=+} to constrain the occurrence of these trees in 
+embedded sentences. The tree in Figure~\ref{alphaW0nx0V} is an example of a 
+subject wh-question tree. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{c} 
+\htmladdimg{ps/extraction-files/alphaW0nx0V.ps.gif} 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Intransitive tree with subject extraction: $\alpha$W0nx0V <p> </dl> \end{rawhtml}
+\label{alphaW0nx0V} 
+\label{1;4,13} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+ 
+\section{Wh-moved NP complement} 
+\label{NP-extr} 
+ 
+Wh-questions can be formed on every NP object or indirect object that appears 
+in the declarative tree or in the passive trees, as seen in sentences 
+(\ref{ex:177})-(\ref{ex:182}).  A tree family will contain one tree for 
+each of these possible NP complement positions. 
+Figure~\ref{ditrans-extractions} shows the two extraction trees from the 
+ditransitive tree family for the extraction of the direct 
+(Figure~\ref{ditrans-extractions}(a)) and indirect object 
+(Figure~\ref{ditrans-extractions}(b)). 
+ 
+\beginsentences
+\sitem{Dania asked Beth a question.}\label{ex:177} 
+\sitem{Who$_{i}$ did Dania ask $\epsilon_{i}$ a question?}\label{ex:178} 
+\sitem{What$_{i}$ did Dania ask Beth $\epsilon_{i}$?}\label{ex:179} 
+\sitem{Beth was asked a question by Dania.}\label{ex:180} 
+\sitem{Who$_{i}$ was Beth asked a question by $\epsilon_{i}$??}\label{ex:181} 
+\sitem{What$_{i}$ was Beth asked $\epsilon_{i}$? by Dania?}\label{ex:182} 
+\endsentences
+
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{ccc} 
+\htmladdimg{ps/extraction-files/alphaW2nx0Vnx2nx1.ps.gif}& 
+\hspace{1.0in}& 
+\htmladdimg{ps/extraction-files/alphaW1nx0Vnx2nx1.ps.gif}\\ 
+(a)&&(b) 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Ditransitive trees with direct object: $\alpha$W2nx0Vnx2nx1 (a) and indirect object extraction: $\alpha$W1nx0Vnx2nx1 (b) <p> </dl> \end{rawhtml}
+\label{ditrans-extractions} 
+\label{2;5,3} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+%%\begin{rawhtml} <p> \end{rawhtml}
+%%\centering 
+%%\mbox{} 
+%%\htmladdimg{ps/extraction-files/alphaW0nx1Vpnx2bynx0.ps.gif} 
+%%\begin{rawhtml} <dl> <dt>{Tree:  $\alpha$W0nx1Vpnx2bynx0 <p> </dl> \end{rawhtml}
+%%\label{alphaW0nx1Vpnx2bynx0} 
+%%\label{2;21,4} 
+%%\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+\section{Wh-moved object of a P} 
+Wh-questions can be formed on the NP object of a complement PP as in 
+sentence~(\ref{ex:183}). 
+ 
+\beginsentences
+\sitem{$[$Which dog$]_{i}$ did Beth Ann give a bone to $\epsilon_{i}$?}\label{ex:183} 
+\endsentences
+
+ 
+The {\it by} phrases of passives behave like complements and can undergo the 
+same type of extraction, as in (\ref{ex:184}). 
+ 
+\beginsentences
+\sitem{$[$Which dog$]_{i}$ was the frisbee caught by $\epsilon_{i}$?}\label{ex:184} 
+\endsentences
+
+ 
+Tree structures for this type of sentence are very similar to those for the 
+wh-extraction of NP complements discussed in section~\ref{NP-extr} and have the 
+identical important features related to tree structure and trace and inversion 
+features.  The tree in Figure~\ref{alphaW2nx0Vnx1pnx2} is an example of this 
+type of tree.  Topicalization of NP objects of prepositions is handled the same 
+way as topicalization of complement NP's. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\mbox{} 
+\htmladdimg{ps/extraction-files/alphaW2nx0Vnx1pnx2.ps.gif} 
+\begin{rawhtml} <dl> <dt>{Ditransitive with PP tree with the object of the PP extracted: $\alpha$W2nx0Vnx1pnx2 <p> </dl> \end{rawhtml}
+\label{alphaW2nx0Vnx1pnx2} 
+\label{2;8,4} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+ 
+\section{Wh-moved PP} 
+Like NP complements, PP complements can be extracted to form 
+wh-questions, as in sentence (\ref{ex:185}). 
+ 
+\beginsentences
+\sitem{[To which dog]$_{i}$ did Beth Ann throw the frisbee $\epsilon_{i}$?}\label{ex:185} 
+\endsentences
+
+ 
+As can be seen in the tree in Figure~\ref{alphapW2nx0Vnx1pnx2}, extraction of 
+PP complements is very similar to extraction of NP complements from the same 
+positions. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\mbox{} 
+\htmladdimg{ps/extraction-files/alphapW2nx0Vnx1pnx2.ps.gif} 
+\begin{rawhtml} <dl> <dt>{Ditransitive with PP with PP extraction tree: $\alpha$pW2nx0Vnx1pnx2 <p> </dl> \end{rawhtml}
+\label{alphapW2nx0Vnx1pnx2} 
+\label{2;9,4} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+The PP extraction trees differ from NP extraction trees in having a PP 
+rather than an NP left daughter node under S$_{q}$ and in having the 
+$\epsilon$ fill a PP rather than an NP position in the VP. In other 
+respects these PP extraction structures behave like the NP extractions, 
+including being used for topicalization. 
+ 
+ 
+ 
+\section{Wh-moved S complement} 
+ 
+Except for the node label on the extracted position, the trees for wh-questions 
+on S complements look exactly like the trees for wh-questions on NP's in the 
+same positions.  This is because there is no separate wh-lexical item for 
+clauses in English, so the item {\it what} is ambiguous between representing a 
+clause or an NP.  To illustrate this ambiguity notice that the question in 
+(\ref{ex:186}) could be answered by either a clause as in (\ref{ex:187}) or an NP as in 
+(\ref{ex:188}).  The extracted NP in these trees is constrained to be {\bf $<$wh$>$=+}, since sentential complements can not be topicalized. 
+ 
+\beginsentences
+\sitem{What does Clove want?}\label{ex:186} 
+\sitem{for Beth Ann to play frisbee with her}\label{ex:187} 
+\sitem{a biscuit}\label{ex:188} 
+\endsentences
+
+ 
+%%\begin{rawhtml} <p> \end{rawhtml}
+%%\centering 
+%%\mbox{} 
+%%\htmladdimg{ps/extraction-files/betaW1nx0Vs1.ps.gif} 
+%%\begin{rawhtml} <dl> <dt>{Tree:  $\beta$W1nx0Vs1 <p> </dl> \end{rawhtml}
+%%\label{wh-s-extr} 
+%%\label{2;6,10} 
+%%\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+ 
+\section{Wh-moved Adjective complement} 
+In subcategorizations that select an adjective complement, that 
+complement can be questioned in a wh-question, as in sentence~(\ref{ex:189}). 
+ 
+\beginsentences
+\sitem{How$_{i}$ did he feel $\epsilon_{i}$?}\label{ex:189} 
+\endsentences
+
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\mbox{} 
+\htmladdimg{ps/extraction-files/alphaWA1nx0Vax1.ps.gif} 
+\begin{rawhtml} <dl> <dt>{Predicative Adjective tree with extracted adjective: $\alpha$WA1nx0Vax1 <p> </dl> \end{rawhtml}
+\label{wh-adj-extr} 
+\label{1;7,14} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+The tree families with adjective complements include trees for such adjective 
+extractions that are very similar to the wh-extraction trees for other 
+categories of complements.  The adjective position in the VP is filled by an 
+{\it $\epsilon$} and the trace feature of the adjective complement and of the 
+adjective daughter of S$_{q}$ are co-indexed.  The extracted adjective is 
+required to be {\bf $<$wh$>$=+}\footnote{{\it How} is the only {\bf $<$wh$>$=+} adjective currently in the XTAG English grammar.}, so no 
+topicalizations are allowed.  An example of this type of tree is shown in 
+Figure~\ref{wh-adj-extr}. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

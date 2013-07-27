@@ -1,0 +1,447 @@
+\begin{itemize}
+\begin {enumerate}
+   \item Roughly speaking, adverbs can be in sentence-intial, medial and
+final positions.  How do we account for the order-variation of adverbs? 
+     \begin{verse}
+      (Now) he is (now) living in N.Y. (now).\\
+      (Bravely), Frank (bravely) had (bravely) fought in Spain (bravely).\\
+      (Here), you can (here) see the symptom (here).
+     \end{verse}
+   \item Do we need a trace for wh-adverbs (eg. where, when, why, how)?
+     \begin{verse}
+      Where/when/how/why did you see the Unicorn?
+     \end{verse}
+  \end{enumerate}
+ \item Implementational Issues 
+  \begin{enumerate}
+   \item What are the tree sets for adverbs?
+   \item TAG treatment of Wh-adverbs
+   \item Adverb lexicon
+  \end{enumerate}
+ \item General Question: What are the criteria deciding
+the subclasses of adverbs? For instance, what are S-adverbs, what are
+VP-adverbs, and what are both, and is there any way of dividing
+automatically? 
+\end{itemize}
+
+\subsection{Order Variation of Adverbs}
+
+\subsubsection{Kinds of Adverbs: [Quirk et al]}
+
+\begin{itemize}
+ \item Time-adverbials ({\em when})
+  \begin{enumerate}
+   \item Time-when adverbials denote a point or period of time, and/or
+imply the point from which that time is measured.
+     \begin{verse}
+      Do come and see again.\\
+      The meeting starts tomorrow \\
+      I'm just finishing my homework.({\em just\/} always in mid-position)\\
+      (Then) he (then) has (then) lived in N.Y.(then).\\
+      (Recently) they (recently) had an accident (recently)
+     \end{verse}
+   \item Time duration adverbials denote (1) length of time or (2) duration
+         from some preceding point of time. 
+     \begin{verse}
+      They always/temorarily out of work.
+     \end{verse}
+   \item Time frequency adverbials denote either (1) definite
+         frequency, or (2) indefinte frequency. They can occur any of
+         the three positions. eg. {\em weekly, generally, normally,
+         always, regulary, sometimes, rarely, etc.}
+  \end{enumerate}
+ \item Place adverbials ({\em where\/})
+     \begin{verse}
+      (Outside), the boys were jumping and skipping (outside).\\
+      (In the nursery) the children were playing happily but noisily.\\
+      The children were playing happily but noisily (in the nursery).
+     \end{verse}
+ \item Manner adverbs ({\em how\/}) are assumed to modify VP's.
+     \begin{verse}
+      They live frugally.\\
+      They examined the specimen microscopically.\\
+      He put the point well/*He well put the point \\
+      The point was put well/The point was well-put.
+     \end{verse}     
+ \item Sentence adverbs are periphral to the sentence structure, and have
+       a wide range of possible structures:  
+     \begin{verse}
+      Frankly, he hasn't got a chance.\\
+      in all frankness \\
+      to be frank/to speak fankly/to put it frankly \\
+      frankly speaking/putting it frankly \\
+      put frankly \\
+      if I may be frank/if I can speak frankly/if I can put it frankly
+     \end{verse}
+       More sentence adverbs are
+       {\em admittedly, certainly, definitely, indeed, surely, perhaps,
+          possibly; in fact, actually, really; officially,
+          superficially, technically, theoretically; fortunately,
+          hopefully, luckily, naturally, preferably, strangely,
+          surprisingly, etc.}
+          Many other sentence adverbials (eg. however, therefore,
+          moreover) have a connective role.
+Many adverbs can function as both manner and sentence adverbs,
+depending on the position of the adverb. 
+\end{itemize}
+
+\subsubsection{How do We Explain the Order Variation of Adverbs?}
+
+\subsubsection{Transformational Approach}
+
+\begin{itemize}
+ \item Emonds(76): assumes all adverbs are derived from adjectives,
+the problems of which I do not discuss here.
+  \begin{enumerate}
+   \item For manner adverbs, he assumes the end position to be the
+base position and derive other positions by a transformation.
+     \begin{verse}
+      Sam would toot his trumpet {\em loudly\/} \\
+      $\rightarrow$ Transformation \\
+      Sam would {\em loudly\/} toot his trumpet.
+     \end{verse}
+   \item He motivates a second base position immediately
+preceding the main verb to account for the following contrast:
+     \begin{verse}
+      Harold {\em merely/scarecely\/} finished his breakfast.\\
+      *Harold finished his breakfast {\em merely/scarecely\/}.\\
+      VP $\rightarrow$ (AP) - V - ...
+     \end{verse}
+   \item There is a third base position accounting for the case of
+{\em merely\/}, {\em scarecely\/}, etc. before various auxiliaries.
+     \begin{verse}
+      Rover {\em merely\/} would have been put outside.\\
+      Rover would {\em merely\/} have been put outside.\\
+      Rover would have {\em merely\/} been put outside.\\
+      Rover would have been {\em merely\/} put outside.\\
+      S $\rightarrow$ COMP - NP - (AP) - M - ...
+     \end{verse}
+   \item Two transformations for factives: {\bf adverb dislocation}
+moves them to sentence-final position and another root transformation
+moves them to sentence-initial position.
+     \begin{verse}
+      Joe {\em certainly\/} made a mess of this.\\
+      {\em Certainly\/}, Joe made a mess of this.\\
+      Joe made a mess of this, {\em certainly\/}.
+     \end{verse}
+    \end{enumerate}
+In summary, Emonds(76) has two base rules and a postverbal base
+position (ie. three base positions). Transformation will move adverbs
+right before the verb, and will move factives to the end or the
+beginning of the sentence. Interpretation is affected before these
+transformations, ie. at deep structure.
+ \item Jackendoff(72)
+  \begin{enumerate}
+   \item His analysis begins with a preliminary set-up of six
+subclasses of adverbs, according to their pattern of occurrence, and
+meaning in sentence intial position, in the AuxRange, and in sentence
+final position. 
+     \begin{itemize}
+      \item All three positions, with change of meaning:
+agent-oriented {\em cleverly\/}, discourse-oriented {\em frankly\/},
+evaluative {\em happily\/}
+      \item All three positions with the same meaning: frequency {\em
+often\/}, time {\em soon\/}, aspect-manner {\em slowly\/},
+mental-attitude {\em reluctantly\/}
+      \item All three positions with obligatory pause in final
+position: epistemic {\em evidently\/}, evaluative {\em fortunately\/}
+      \item Auxiliary and final position only: degree {\em
+completely\/}, manner {\em mortally\/}, mental-attitude {\em purposefully\/}
+      \item Final position only (mostly non-{\em ly\/} adverbs): degree {\em
+more\/}, time {\em early\/}, place {\em downstairs\/}, aspect-manner
+{\em slow\/}
+      \item Auxiliary position only: SD {\em merely\/}, intensifiers
+{\em simply\/}, B-adverbs {\em scarecely\/}, degree {\em utterly\/}
+     \end{itemize}
+     \begin{verse}
+      ({\em Cleverly\/}), he ({\em cleverly\/}) answered the questions ({\em cleverly\/}).\\
+      ({\em Often\/}), she ({\em often\/}) comes late ({\em often\/}).\\
+      ({\em Evidently\/}), Casey ({\em evidently\/}) thinks that there are left-wing\\
+       guerrillas camped inthe rose garden ({\em evidently\/}).\\ 
+      (*{\em Completely\/}), the Senator from North Carolina ({\em completely\/}) alienated
+        his colleagues ({\em completely\/}).\\
+      (*{\em Early\/}), he (*{\em early\/}) arrived ({\em early\/}).\\
+      (*{\em Merely\/}), Feckenstein ({\em merely\/}) falsified a few papers here\\
+        and there ({\em merely\/}). 
+     \end{verse}
+   \item Syntax for Adverbs
+     \begin{itemize}
+      \item Base-positions generated by the following PS rules:
+       \begin{verse}
+        PP $\rightarrow$ P - (NP) \\
+        VP $\rightarrow$ (have-en)(be-ing)(Adv) - V - (NP) - (Adv/PP)$^{*}$\\
+        S $\rightarrow$ NP - Aux - VP - (Adv/PP/S)$^{*}$
+       \end{verse}
+      \item Transformation to move Degree Adverbs from the first adverb node
+            in the second base rule to a position before Aux;
+     \end{itemize}
+    To account for sentence-initial and auxiliary position he invokes
+    Keyser's (1968) `Transportability' convention. Keyser suggested
+    that adverbs could be marked [+transportable], and then, by the convention,
+    moved anywhere as long as they preserved sister relationships.
+    That is, an adverb dominated by S could move to any other position dominated
+    by S, and if dominated by VP could move to any position if still
+    dominated by VP -- Another way of expressing Transformation.
+  \end{enumerate}
+\end{itemize}
+
+We need a number of different transformations (primarily) depending on the
+semantics of the adverbs. That is, we have to resort to semantics to
+formulate the right kind of transformation.  Task to be performed is
+to find out a systematic way of categorizing the adverbs which undergo
+the same kind of transformation.
+
+
+\subsection{Adverb Trace}
+
+\subsubsection{Syntactic Consideration: cf. Lasnik\&Saito 84}
+ 
+The motivation of having gaps in a transformational analysis of
+extraction construction like wh-question, topicalization, etc. is
+based on the consideration that these constructions behave
+as though there is a node of the appropriate type in the position of
+the extraction site (cf. Jacobson 82). The following are some
+empirical evidence supporting this consideration:
+
+\begin{itemize}
+ \item Subcategorization of P and V: Transitive verbs and prepositions 
+cannot, in general, occur without a following NP, but they can occur in 
+these constructions.
+  \begin{verse}
+   Which do you think your father put in the garage?\\
+   $*$My father put in the garage.\\
+   Who did you talk with?\\
+   $*$I talked with.
+  \end{verse}
+ \item In some dialect nominal wh-phrases make a clear case-marking
+distinction with regard to the position of the extraction site.
+  \begin{verse}
+   *Who/Whom did John see?\\
+   Who/*Whom did John say was coming.
+  \end{verse}
+ \item person/number agreement:
+  \begin{verse}
+     {\em Which boy\/} might he say {\em likes\/} Mary?\\
+     $*${\em Which boy\/} might he say {\em like\/} Mary?\\
+     {\em Which boys\/} might he say {\em like\/} Mary?\\
+     $*${\em Which boys\/} might he say {\em likes\/} Mary?
+  \end{verse}
+ \item {\em wanna\/} contraction:
+  \begin{verse}
+   I wanna go to a movie.\\
+   Who do you wanna go to the movie with?\\
+   $*$Who do you wanna go to the movie with Chris?
+  \end{verse}
+\end{itemize}
+
+If we follow the line of reasoning above in positing a trace for
+wh-phrases, there is no reason to posit a trace for adverbial
+wh-phrases: Adverbials are not subcategorized for by verbs or
+prepositions. There is no overt morphological evidence to identify the
+position of the extraction site of adverbs. 
+
+
+ 
+
+
+\subsection{TAG Treatment of Adverbs}
+
+\subsubsection{Tree Sets for Adverbs}
+
+Besides the adverbs discussed in 2.1, which can be categorized as
+VP-/S-modifying adverbs, there are adverbs of other category as listed
+below:\footnote{This categorization is taken from {\em A Communicative
+Grammar of English\/} [Leech and Svartvik 75].}
+
+\begin{itemize}
+ \item modify an adjective: {\em exteremely\/} good, {\em rather\/} tall,
+       rich {\em enough\/} 
+ \item modify an adverb: oddly {\em enough\/}, {\em very\/} well
+ \item modify a PP: {\em right\/} through the wall
+ \item modify a determiner, pronoun, numeral: He has {\em hardly\/} any 
+       friends, {\em over\/} two hundred deaths 
+ \item modify an NP: {\em rather/quite\/} a mess, {\em such\/} a funny story
+ \item modify a noun: his journey {\em home\/}, the {\em above\/} statement, 
+       the sentence {\em below\/}
+\end{itemize}  
+
+We have separate trees for each of the categories, except for the
+fourth item, for which we consider the adverbs to modify an NP rather
+than a determiner, pronoun, or numerals.  The trees are auxiliary
+trees $\beta$adX, $\beta$Xad, where X is a variable over S, VP, NP, A,
+Ad, PP, and an initial tree $\alpha$Ad.
+
+\subsubsection{Order Variation of Adverbs}
+
+\subsubsection{General Remark In the Frame of Subj - Main Verb - Obj}
+
+Order variation of an adverb is represented by different trees. For
+instance, if an adverb can occur in sentence initial, preverbal and
+sentence final positions as shown in (8) and (9), it can represented by
+four different trees $\beta$adS, $\beta$adVP, $\beta$VPad, and
+$\beta$Sad.
+
+\begin{verse}
+(8) ({\em Cleverly\/}) he ({\em cleverly\/}) answered the questions
+({\em cleverly\/}).\\
+(9) My car does not start on the first trial everyday.
+\end{verse}
+
+We assign two trees $\beta$VPad and $\beta$Sad to sentence final
+adverbs since it can be interpreted as modifying the VP or the whole
+S: e.g. (8) with the adverb {\em cleverly\/} in sentence final
+position has two interpretations (a) It was clever that he answered
+the question (S-modifying), (b) He answered question in a clever
+manner (VP-modifying).\footnote{This line of reasoning, that
+sentence-final adverbs could be represented by either $\beta$VPad and
+$\beta$Sad depending on their interpretation, is inconsistent with the
+reasoning given in 3.3 with regard to the syntax/semantics mapping. To
+make the story consistent, we can represent all sentence final adverbs
+as $\beta$Sad which can modify either the S or VP.} (9) also has two
+interpretations: (a) For everyday, it is not the case that my car
+starts on the first trial, where the adverb {\em everyday\/} takes the
+scope over the whole sentence (S-modifying), (b) It is not the case
+that my car starts on the first trial everyday, where {\em everyday\/}
+takes the scope over the VP (VP-modifying).
+
+The kind of treatment we give to adverbs here is very much in line
+with the base-generation approach proposed by [Ernst 84], which
+assumes all positions where an adverb can occur to be base-generated,
+and the general type of content semantics of the adverbs specifies a
+range of possible positions occupied by each adverb.
+
+\subsubsection{Sentences with Auxiliaries}
+
+In the previous section, we explained how order variation of adverbs
+is represented. Roughly speaking, S-modifying adverbs occurring in
+both sentence initial and final positions are represented by two
+auxiliary trees $\beta$adS and $\beta$Sad.  However, S-modifying
+adverbs can occur not only in sentence initial and final positions,
+but also in any positions among auxiliaries (including the post
+subject and pre main verb positions) as shown below:
+
+\begin{verse}
+(10) John ({\em probably\/}) has ({\em probably\/}) been ({\em
+probably\/}) helping the homeless for years.\\
+(11) He ({\em surely\/}) will ({\em surely\/}) pass the exam.\\
+(12) John ({\em cleverly\/}) answered the questions.\footnote{In (12), 
+the intended meaning is `It was clever that John answered the
+questions,' although it has another interpretation `John answered the
+question in a clever manner.'}
+\end{verse}
+
+In the current TAG system, we represent all the positions occupied by
+the adverbs in (10) through (12) by the auxiliary tree
+$\beta$adVP,\footnote{This treatment of adverbs among auxiliaries is
+primarily based on the treatment of auxiliaries in the existing
+system.} consequently S-modifying adverbs being assigned three
+auxiliary tree sets, i.e.  $\beta$adS, $\beta$adVP, and $\beta$Sad.
+For example, the sentence {\em John can probably drive a car\/} has
+the derived tree (13):
+
+\begin{verbatim}
+(13)
+                        S
+                      /   \
+                    NP     VP
+                    |     /  \
+                 John   V     VP*NA
+                        |   /   \
+                       can Ad    VP
+                           |    /  \
+                      probably V    NP
+                               |    |
+                             drive a car
+\end{verbatim}
+
+\noindent
+Notice that the position occupied by the adverb {\em probably\/} in
+(13) can also be occupied by a VP-modifying adverb. The ambiguity
+becomes clear with the example (12), and the current system does not
+give any structural way of disambiguating between the two readings,
+unlike the case of sentence final adverbs, for which structural
+distinction between VP-modifying and S-modifying reading is
+made possible. I will discuss the inconsistency of treating adverbs in
+the current system in the final section.
+
+One thing, which we might have to consider but is not reflected in the
+current system, is a (possible) restriction on the adjunction site of
+VP-modifying adverbs. Consider examples in (14):
+
+\begin{tabbing}
+(14) \= a. \= I would have carefully driven the car \kill
+     \> a. \> I would have carefully driven the car.\\
+     \> b. \> *I would carefully have driven the car.
+\end{tabbing}
+
+\noindent
+If the contrast between (14a) and (14b) must be ascribed to the
+different property of VP- and S-modifying adverbs -- namely,
+VP-modifying adverbs cannot occur among auxiliaries (except for
+the pre-verbal position) while S-modifying adverbs can occur any of
+the inter auxiliary position -- and the reason why (14b) is
+unacceptable is because {\em carefully\/} which is a VP-modifying
+adverb is between the two auxiliaries {\em would\/} and {\em have\/},
+then we need a restriction on the adjunction to prevent the
+ungrammatical tree (15d) from being derived:
+
+\begin{verbatim}
+(15)
+    a.       S            b.      S
+           /   \                /   \
+         NP     VP            NP     VPr
+         |     /  \           |     /  \
+         I    V    NP         I   V     VP*NA
+              |    |              |    /  \
+           driven the car       have  V    NP
+                                      |    |
+                                    driven the car
+
+    c.       S               d.      S
+           /   \                   /   \
+         NP     VP               NP     VP
+         |     /  \              |     /  \
+         I   Ad    VP*NA         I   V     VP*NA
+             |    /  \               |    /  \
+       carefully V     VP*NA      would Ad     VP*NA
+                 |    /  \              |     /  \
+               have  V    NP       carefully V    VP*NA
+                     |    |                  |   /  \
+                  driven the car           have V    NP
+                                                |    |
+                                            driven the car
+\end{verbatim}
+
+\noindent
+We could take one of the following two options: The tree $\beta$adVP
+with the feature [+vp]\footnote{This is a hypothetical feature in case
+we really need the distinction.} is either obligatorily adjoined to
+the main VP dominating V (and NP), or not adjoined to any of the aux
+trees which dominate V and non-adjoinable VP. At the moment, the first
+option seems to be easier to implement since the root node of VP tree
+including a main verb is specified as VPr (as opposed to VP for aux
+verbs) in the current system.
+
+
+
+
+%\begin{thebibliography}{Lee}
+%
+%bibitem[Abeille, Bishop, Cote \& Schabes 90]{ann90} A Lexicalized
+%Tree Adjoining Grammar in English. Technical Report MS-CIS-90-24.
+%University of Pennsylvania.
+
+%\bibitem[Cresswell, M.J. 85]{cre85} {\em Adverbial Modification\/}.
+%Reidel Publishing Companay.
+
+%\bibitem[Ernst 84]{ern} {\em English Adverbs\/}. PhD dissertation. Indiana University.
+
+%\bibitem[Householder, F.W. 65]{hou65} A Preliminary Classification of
+%Adverbs in English. Linguistics Research Project. Indiana University.
+
+%\bibitem[Kroch, Tony 89]{kro89} Asymmetries in Long-Distance
+%Extraction in a Tree-Adjoining Grammar. 
+
+%\bibitem[McCawley 89]{mac89} {\em ???}
+
+%\end{thebibliography}

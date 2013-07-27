@@ -1,0 +1,299 @@
+%talk about ECM and object control verbs 
+%being treated the same (at least, sharing a tree family). 
+%format for features? angle brackets or no 
+ 
+\chapter{Sentential Subjects and Sentential Complements} 
+\label{scomps-section} 
+ 
+In the XTAG grammar, arguments of a lexical item, including 
+subjects, appear in the elementary tree anchored by that lexical item.  A 
+sentential argument appears as an S node in the appropriate position 
+within an elementary tree anchored by the lexical item that selects 
+it. This is the case for sentential complements of verbs, prepositions 
+and nouns and for sentential subjects. The distribution of 
+complementizers in English is intertwined with the distribution of 
+embedded sentences.  A successful analysis of complementizers in 
+English must handle both the cooccurrence restrictions between 
+complementizers and various types of clauses, and the distribution of 
+the clauses themselves, in both subject and complement positions. 
+ 
+\section{S or VP complements?} 
+ 
+Two comparable grammatical formalisms, Generalized Phrase Structure 
+Grammar (GPSG) \cite{gazdar85} and Head-driven Phrase Structure 
+Grammar (HPSG) \cite{PollardSag94:BK}, have rather different 
+treatments of sentential complements (S-comps).  They both treat 
+embedded sentences as VP's with subjects, which generates the correct 
+structures but misses the generalization that S's behave similarly in 
+both matrix and embedded environments, and VP's behave quite 
+differently.  Neither account has PRO\label{PRO} subjects of 
+infinitival clauses-- they have subjectless VP's instead.  GPSG has a 
+complete complementizer system, which appears to cover the same range 
+of data as our analysis.  It is not clear what sort of complementizer 
+analysis could be implemented in HPSG. 
+ 
+Following the standard GB approach, the English XTAG grammar does not 
+allow VP complements but treats verb-anchored structures without overt 
+subjects as having PRO subjects. Thus, indicative clauses, infinitives 
+and gerunds all have a uniform treatment as embedded clauses using the 
+same trees under this approach. Furthermore, our analysis is able to 
+preserve the selectional and distributional distinction between S's and 
+VP's, in the spirit of GB theories, but without having to posit `extra' 
+empty categories, such as empty complementizers.\footnote{We do have PRO and NP traces in the grammar.} Consider the alternation between {\it that} and the null complementizer,\footnote{Although we will continue to refer to `null' complementizers, in our analysis this is actually the absence of a complementizer.} shown in sentences \ref{ex:555} and \ref{ex:556}. 
+ 
+\beginsentences
+\sitem{He hopes $\emptyset$ Muriel wins .}\label{ex:555} 
+\sitem{He hopes that Muriel wins .}\label{ex:556} 
+\endsentences
+
+ 
+ In GB both {\it Muriel wins} in \ref{ex:555} and {\it that Muriel wins} in 
+\ref{ex:556} are CPs even though there is no overt complementizer to head the 
+phrase in \ref{ex:555}.  Our grammar does not distinguish by category label 
+between the phrases that would be labeled in GB as IP and CP.  We label 
+both of these phrases S.  The difference between these two levels is the 
+presence or absence of the complementizer (or extracted WH constituent), and is 
+represented in our system as a difference in feature values (here, of the {\bf $<$comp$>$} feature), and the presence of the additional structure contributed 
+by the complementizer or extracted constituent.  This illustrates an important 
+distinction in XTAG, that between features and node labels.  Because we have a 
+sophisticated feature system, we are able to make fine-grained distinctions 
+between nodes with the same label which in another system might have to be 
+realized by using distinguishing node labels. 
+ 
+\section{Complementizers and Embedded Clauses in English:  The Data} 
+\label{data} 
+ 
+Verbs selecting sentential complements place restrictions on 
+their complements, in particular, on the form of the embedded verb 
+phrase.\footnote{Other considerations, such as the relationship between the tense/aspect of the matrix clause and the tense/aspect of a complement clause are also important but are not currently addressed in the current English XTAG grammar.}  Furthermore, complementizers are constrained to appear with certain 
+types of clauses, again, based primarily on the form of the embedded VP.  For 
+example, {\it hope\/} selects both indicative and infinitival complements. With 
+an indicative complement, it may only have {\it that\/} or null as possible 
+complementizers; with an infinitival complement, it may only have a null 
+complementizer.  Verbs that allow wh+ complementizers, such as {\it ask}, can 
+take {\it whether} and {\it if} as complementizers.  The possible combinations 
+of complementizers and clause types is summarized in Table \ref{facts}. 
+ 
+As can be seen in Table \ref{facts}, sentential subjects differ from 
+sentential complements in requiring the complementizer {\it that\/} 
+for all indicative and subjunctive clauses.  In sentential complements, 
+{\it that\/} often varies freely with a null complementizer, as 
+illustrated in \ref{ex:557}-\ref{ex:562}. 
+ 
+\beginsentences
+\sitem{Christy hopes that Mike wins .}\label{ex:557} 
+\sitem{Christy hopes Mike wins .}\label{ex:558} 
+\sitem{Dania thinks that Newt is a liar .}\label{ex:559} 
+\sitem{Dania thinks Newt is a liar .}\label{ex:560} 
+\sitem{That Helms won so easily annoyed me .}\label{ex:561} 
+\sitem{$\ast$Helms won so easily annoyed me .}\label{ex:562} 
+\endsentences
+
+ 
+ 
+\begin{table}[ht] 
+\centering 
+\begin{tabular}{|l|llllll|} \hline 
+Complementizer:&&that&whether&if&for&null\\ 
+\hline 
+Clause type&&&&&&\\ 
+\hline 
+indicative&subject&Yes&Yes&No&No&No\\ 
+&complement&Yes&Yes&Yes&No&Yes\\ 
+\hline 
+infinitive&subject&No&Yes&No&Yes&Yes\\ 
+&complement&No&Yes&No&Yes&Yes\\ 
+\hline 
+subjunctive&subject&Yes&No&No&No&No\\ 
+&complement&Yes&No&No&No&Yes\\ 
+\hline 
+gerundive\footnotemark\ &complement&No&No&No&No&Yes\\ 
+\hline 
+base & complement & No & No & No & No & Yes \\ 
+\hline 
+small clause & complement & No & No & No & No & Yes \\ 
+\hline 
+\end{tabular} 
+\vspace{.2in} 
+\begin{rawhtml} <dl> <dt>{Summary of Complementizer and Clause Combinations <p> </dl> \end{rawhtml}
+\label{facts} 
+\end{table} 
+\footnotetext{Most gerundive phrases are treated as NP's.  In fact, all gerundive subjects are treated as NP's, and the only gerundive complements which receive a sentential parse are those for which there is no corresponding NP parse.  This was done to reduce duplication of parses. See Chapter~\ref{gerunds-chapter} for further discussion of gerunds.\label{gerund-footnote}} 
+ 
+ 
+Another fact which must be accounted for in the analysis is that in infinitival 
+clauses, the complementizer {\it for} must appear with an overt subject NP, 
+whereas a complementizer-less infinitival clause never has an overt subject, as 
+shown in \ref{ex:563}-\ref{ex:566}. (See section~\ref{for-complementizer} for more 
+discussion of the case assignment issues relating to this construction.) 
+ 
+\beginsentences
+\sitem{To lose would be awful .}\label{ex:563} 
+\sitem{For Penn to lose would be awful .}\label{ex:564} 
+\sitem{$\ast$For to lose would be awful .}\label{ex:565} 
+\sitem{$\ast$Penn to lose would be awful .}\label{ex:566} 
+\endsentences
+
+ 
+In addition, some verbs select {\bf $<$wh$>$=+} complements (either questions 
+or clauses with {\it whether} or {\it if}) \cite{grimshaw90}: 
+ 
+\beginsentences
+\sitem{Jesse wondered who left .}\label{ex:567} 
+\sitem{Jesse wondered if Barry left .}\label{ex:568} 
+\sitem{Jesse wondered whether to leave .}\label{ex:569} 
+\sitem{Jesse wondered whether Barry left .}\label{ex:570} 
+\sitem{$\ast$Jesse thought who left .}\label{ex:571} 
+\sitem{$\ast$Jesse thought if Barry left .}\label{ex:572} 
+\sitem{$\ast$Jesse thought whether to leave .}\label{ex:573} 
+\sitem{$\ast$Jesse thought whether Barry left .}\label{ex:574} 
+\endsentences
+
+ 
+\section{Features Required} 
+\label{s-features} 
+ 
+As we have seen above, clauses may be {\bf $<$wh$>$=+} or {\bf $<$wh$>$=--}, 
+may have one of several complementizers or no complementizer, and can be of 
+various clause types.  The XTAG analysis uses three features to capture these 
+possibilities: {\bf $<$comp$>$} for the variation in complementizers, 
+{\bf$<$wh$>$} for the question vs.  non-question alternation and {\bf $<$mode$>$}\footnote{{\bf $<$mode$>$} actually conflates several types of information, in particular verb form and mood.} for clause types.  In addition 
+to these three features, the {\bf $<$assign-comp$>$} feature represents 
+complementizer requirements of the embedded verb.  More detailed discussion of 
+the {\bf $<$assign-comp$>$} feature appears below in the discussions of 
+sentential subjects and of infinitives.  The four features and their possible 
+values are shown in Table \ref{feat}. 
+ 
+ 
+\begin{table}[th] 
+\centering 
+\begin{tabular}{|l|c|} \hline 
+Feature&Values\\ 
+\hline 
+{\bf $<$comp$>$}&that, if, whether, for, rel, nil\\ 
+\hline 
+{\bf$<$mode$>$}&ind, inf, subjnt, ger, base, ppart, nom/prep\\ 
+\hline 
+{\bf$<$assign-comp$>$}&that, if, whether, for, rel, ind\underline{~}nil, inf\underline{~}nil\\ 
+\hline 
+{\bf$<$wh$>$}&+,--\\ 
+\hline 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Summary of Relevant Features <p> </dl> \end{rawhtml}
+\label{feat} 
+\end{table} 
+ 
+ 
+\section{Distribution of Complementizers} 
+\label{comp-distr} 
+ 
+Like other non-arguments, complementizers anchor an auxiliary tree (shown in 
+Figure \ref{comp-tree}) and adjoin to elementary clausal trees.  The auxiliary 
+tree for complementizers is the only alternative to having a complementizer 
+position `built into' every sentential tree.  The latter choice would mean 
+having an empty complementizer substitute into every matrix sentence and a 
+complementizerless embedded sentence to fill the substitution node.  Our choice 
+follows the XTAG principle that initial trees consist only of the arguments of 
+the anchor\footnote{See section~\ref{compl-adj} for a discussion of the difference between complements and adjuncts in the XTAG grammar.} -- the S tree 
+does not contain a slot for a complementizer, and the $\beta$COMP tree has only 
+one argument, an S with particular features determined by the complementizer. 
+Complementizers select the type of clause to which they adjoin through 
+constraints on the {\bf $<$mode$>$} feature of the S foot node in the tree 
+shown in Figure~\ref{comp-tree}.  These features also pass up to the root node, 
+so that they are `visible' to the tree where the embedded sentence 
+adjoins/substitutes. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\hspace{0.0in} 
+\htmladdimg{ps/sent-comps-subjs-files/betaCOMPs_that_.ps.gif} 
+\begin{rawhtml} <dl> <dt>{Tree $\beta$COMPs, anchored by  that <p> </dl> \end{rawhtml}
+\label{comp-tree} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+The grammar handles the following complementizers: {\it that\/}, {\it whether\/}, {\it if\/}, {\it for\/}, and no complementizer, and the 
+clause types: indicative, infinitival, gerundive, past participial, 
+subjunctive and small clause ({\bf nom/prep}).  The {\bf $<$comp$>$} feature in a clausal tree reflects the value of the 
+complementizer if one has adjoined to the clause. 
+ 
+The {\bf $<$comp$>$} and {\bf $<$wh$>$} features receive their root 
+node values from the particular complementizer which anchors the tree. 
+The $\beta$COMPs tree adjoins to an S node with the feature {\bf $<$comp$>$=nil}; this feature indicates that the tree does not already 
+{\bf have} a complementizer adjoined to it.\footnote{ Because root S's cannot have complementizers, the parser checks that the root S has {\bf $<$comp$>$=nil} at the end of the derivation, when the S is also checked for a tensed verb.} We ensure that there are no stacked complementizers by 
+requiring the foot node of $\beta$COMPs to have {\bf $<$comp$>$=nil}. 
+ 
+% as well 
+%as using the {\bf $<$conj$>$=nil} feature to prevent complementizers from 
+%adjoining above subordinating conjunctions. 
+ 
+\section{Complementizer {\it for\/} and Case Assignment of the Subject} 
+\label{for-complementizer} 
+ 
+The {\bf $<$assign-comp$>$} feature is used to represent the 
+requirements of particular types of clauses for particular 
+complementizers.  So while the {\bf $<$comp$>$} feature represents 
+constraints originating from the VP dominating the clause, the {\bf $<$assign-comp$>$} feature represents constraints originating from the 
+highest VP in the clause. {\bf $<$assign-comp$>$} is used to control 
+%appearance of subjects in infinitival clauses,  to 
+%ensure the correct distribution of complementizers in sentential 
+%subjects, and to block `that-trace' violations. 
+the appearance of subjects in infinitival clauses (see discussion of 
+ECM constructions in \ref{ecm-verbs}), to block bare indicative 
+sentential subjects (bare infinitival subjects are allowed), and to 
+block `that-trace' violations. 
+ 
+Examples \ref{ex:576}, \ref{ex:577} and \ref{ex:578} show that an accusative 
+case subject is obligatory in an infinitive clause if the 
+complementizer {\it for\/} is present. The infinitive clause in 
+\ref{ex:575} is analyzed in the English XTAG grammar as 
+having a PRO subject.  
+ 
+%The apparent subject of {\it to win\/} in 
+%(\ref{ex:575}) is taken to be an object of the verb rather than the subject 
+%of the infinitive clause. 
+%\enumsentence{Mike wants her to pass the exam.} 
+%Note: I (Seth) took out this sentence, since the tech report 
+%claims it gets an object-control analysis, while it in fact gets an 
+% ECM analysis.  It may be the case that it *should* get an ECM analysis, 
+% but for now I took it out, because it doesn't seem to have anything to 
+% do anyway with the point of this section. 
+ 
+\beginsentences
+\sitem{Christy wants to pass the exam .}\label{ex:575} 
+\sitem{Mike wants for her to pass the exam .}\label{ex:576} 
+\sitem{$\ast$Mike wants for she to pass the exam .}\label{ex:577} 
+\sitem{$\ast$Christy wants for to pass the exam .}\label{ex:578} 
+\endsentences
+
+ 
+%The {\it for-to\/} construction is particularly illustrative of the 
+%difficulties and benefits faced in using a lexicalized grammar.  
+ 
+It is commonly accepted that {\it for\/} behaves as a case-assigning 
+complementizer in this construction. It can assign accusative case to the 
+embedded subject since the infinitival verb can not assign 
+(nominative) case to this position.  
+%However, in our featurized grammar, the 
+%absence of a feature licenses anything, so we must have overt null 
+%case assigned by infinitives to ensure the correct distribution of PRO 
+%subjects. (See section~\ref{case-assignment} for more discussion of 
+%case assignment.)  This null case assignment clashes with accusative 
+%case assignment if we simply add {\it for\/} as a standard 
+%complementizer, since NP's (including PRO) are drawn from the lexicon 
+%already marked for case.  
+In \ref{ex:577} there is a feature clash between the nominative case subject {\it she} and the accusative case assigning complementizer, thus accounting for its 
+ungrammaticality. Similarly, the sentence in \ref{ex:578} is ruled out because PRO 
+has a feature {\bf $<$case$>$=none} which is coindexed with with the {\bf $<$assign-case$>$} feature on S. This feature clashes with the {\bf $<$assign-case$>$=acc} feature in the {\it for} auxiliary tree. 
+ 
+ 
+%Thus, we must use the {\bf %$<$assign-comp$>$} feature to pass information about the verb up to 
+%the root of the embedded sentence.  To capture these facts, two 
+%infinitive {\it to}'s are posited. One infinitive {\it to\/} has {\bf %$<$assign-case$>$=none} which forces a PRO subject, and {\bf %$<$assign-comp$>$=inf\_nil} which prevents {\it for\/} from 
+%adjoining. The other infinitive {\it to\/} has no value at all for 
+%{\bf $<$assign-case$>$} and has {\bf $<$assign-comp$>$=for/ecm}, so that 
+%it can only occur either with the complementizer {\it for\/} or with 
+%ECM constructions. In those 
+%instances either {\it for} or the ECM verb 
+%supplies the {\bf $<$assign-case$>$} value, assigning 
+% accusative case to the overt subject. 
+%% 

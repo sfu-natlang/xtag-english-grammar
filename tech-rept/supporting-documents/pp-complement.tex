@@ -1,0 +1,221 @@
+\chaptert{\Large PP Complement Verbs}
+\label{pp-complement-chapter}
+
+Just as some verbs require noun phrase complements, others require
+preposition phrase complements.  For an intransitive verb like {\it
+sleep}, a PP which follows it is an adjunct, as can be seen in
+(\ex{1}) and (\ex{2}), but for a verb such as {\it venture}, the PP is
+required, as the ungrammaticality of (\ex{4}) attests.
+
+\enumsentence{The spelunker slept in the cave .}
+\enumsentence{The spelunker slept .}
+\enumsentence{The spelunker ventured into the cave .}
+\enumsentence{*The spelunker ventured .}
+
+\noindent
+We will call verbs such as {\it venture} transitive PP
+complement verbs.  There are also ditransitive PP complement
+verbs, such as {\it put}.
+
+\enumsentence{Bill put the cigar on the table .}
+\enumsentence{*Bill put the cigar .}
+
+
+Because the PP is an argument of the verb, PP complement verbs must
+provide a substitution site for the PP. Two structures are available
+to do this: the PP substitution node structure (shown in
+Figure~\ref{two-pp-comp-analyses}a) and the expanded PP structure
+(shown in Figure~\ref{two-pp-comp-analyses}b).
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/pp-complement-files/PP-subst.ps,height=0.3in}}  &
+\hspace{0.6in}
+{\psfig{figure=ps/pp-complement-files/PP-expanded.ps,height=1.0in}} \\
+(a) PP substitition& \qquad(b) Expanded PP \\
+\end{tabular}\\
+\caption {Two analyses of the PP complement}
+\label {two-pp-comp-analyses}
+\end{figure}
+
+We have chosen the expanded PP structre for two reasons.  One is that
+it is possible to extract the NP object of the P, as shown in
+(\ex{1}).  Expanding the PP allows the NP node to be available to
+metarules which create the trees for the extraction.
+
+\enumsentence{What did Bill put the cigar on ?}
+
+\noindent
+Another reason is semantic in nature.  The elementary tree is the
+domain in which a verb's inherent semantics is represented, and we
+have decided at present to regard the NP object of the P as an
+argument of the main predicate, rather than the whole PP itself.  In
+order to have access to that NP for the semantic representation, it
+must be explicitly represented in the elementary tree.
+
+However, exhaustive prepositions such as {\it there}, {\it somewhere},
+and {\it where} do present a problem for expanding the PP in this way.
+It does not give us a way to substitute a whole PP in at once, which
+is what these elements require.  Since our decision is to expand the
+PP, we currently cannot parse sentences such as (\ex{1}).
+
+\enumsentence{Bill put the cigar there .}
+
+There is another class of PP complement verbs for which the question
+of expansion does not arise.  These are the verbs which require a
+particular preposition to head their PP complement, examples of which
+are given in the following:
+
+\enumsentence{Calvin depends on Hobbes .}
+\enumsentence{*Calvin depends with Hobbes .}
+\enumsentence{Calvin thought of the transmogrifier .}
+\enumsentence{*Calvin thought on the transmogrifier .\footnote{This
+is fine as an adjunct, but not as a complement.}}
+\enumsentence{The expedition leader geared the hikers for the trip .}
+\enumsentence{*The expedition leader geared the hikers into the trip .}
+\enumsentence{The speaker subjected the audience to his dull wit .}
+
+\noindent
+For such verbs, the preposition is intrinsic to the construction.
+Note that sentence (\ex{-4}) is ambiguous between two interpretations,
+one in which the PP is an adjunct and the other in which it is a
+complement.  The adjunct interpretation of this sentence is something
+like ``Calvin was thinking and the topic of this thoughts was the
+transmogrifier'' while the complement interpretation is ``Calvin
+created the idea for the transmogrifier''.  The preposition correlated
+with the verb thus conveys a noncompositional meaning, which motivates
+us to analyze these constructions as being multiply-anchored by a verb
+and a corresponding preposition.  Having the P as one of the anchors
+necessitates the expansion of the PP complement for these
+constructions.
+
+We have thus determined one important question of the basic structure
+of PP complement verbs.  Another important aspect of these verbs is
+that certain adjuncts may come between the verb and the PP complement,
+unlike the case of NP complements.  Note that this is different from
+NP complements, which cannot be separated from the verb by modifiers
+unless they are heavy.
+
+\enumsentence{*Bill borrowed quickly the car .}
+\enumsentence{*Bill borrowed for many days the car .}
+\enumsentence{Bill borrowed for many days the car which his father had
+bought from his uncle two weeks ago .}
+\enumsentence{*John gave Mary often the book .}
+
+PP complements, on the other hand, allow several types of adjuncts in
+this position.  For example, adverbs are able to intercede the verb
+and the preposition:
+
+\enumsentence{John depends heavily on his staff .}
+\enumsentence{John thinks often of new ideas .}
+\enumsentence{John bases his opinions extensively on public attitudes .}
+
+\noindent Certain prepositional phrases can too:
+
+\enumsentence{John depends in many ways on his staff .}
+\enumsentence{John thought for many hours of new ideas .}
+\enumsentence{John based his opinions for more than ten years on public attitudes .}
+
+\noindent However, the type of PP is quite restricted.  The locative
+PP's in the following examples cannot intervene.
+
+\enumsentence{*John depends from Honolulu on his staff .}
+\enumsentence{*John thought in the kitchen of new ideas .}
+\enumsentence{*John based his opinions in Honolulu on public attitudes .}
+
+\noindent 
+Nominal adjuncts are possible:
+
+\enumsentence{John depends quite a bit on his staff .}
+\enumsentence{John thought all the time of new ideas .}
+\enumsentence{John bases his opinions a good deal on public attitudes .}
+
+\noindent
+Adjunct clauses are bad:
+
+\enumsentence{*John depends because he needs help on his wonderful and caring staff .}
+\enumsentence{*John thought because he was so creative of new ideas that
+provided the basis of many present technologies .}
+\enumsentence{*John bases his opinions because he cannot think for himself on
+the public attitudes that prevail today .}
+
+There are several ways in which we could handle these adjuncts.  One
+of these is to allow certain things to adjoin to V.  However, this is
+unappealing because it would cause right-edge ambiguities (V vs. VP
+adjunction), and it simply fails because it cannot handle examples
+like (\ex{-12}), (\ex{-9}), (\ex{-6}), and (\ex{-3}) since there is
+an NP intervening between the verb and the preposition in these cases.
+
+Another option is to make the claim that the adjuncts get into the
+intervening position because of heavy-shift.  Then, the structures of
+the trees for prepositional complements should not provide a site for
+adjunction between the verb and the preposition.  However, there is no
+sense of heaviness in the examples (\ex{-14}-\ex{-3}), and we would
+expect (\ex{-2}),(\ex{-1}), and (\ex{0}) to be fine since the PP's are
+quite heavy in those cases.
+
+The analysis we provide is structural, and is given in
+Figure~\ref{pp-comp-trees} for the multi-anchor PP complement verbs.
+The analysis suggests short verb movement, and is reminiscent of
+Larsonian shells.  However, the most important aspect of these trees
+for the purposes of the English XTAG grammar is that it provides a
+site for left adjunction to VP that intervenes between the verb and
+the preposition.  This immediately rules out the adjunct clauses as
+desired, since such clauses only right adjoin to VP in the grammar.
+Most prepositional phrases are not good in the intervening position
+either, and this works nicely with the fact that the grammar does not
+have left VP adjoining prepositional phrases.  For the restricted
+class of prepositions which are permitted in the intervening position,
+we currently do not parse them, but entries with the left adjoining
+possibility can be added at some later date if we wish to be able to
+do so.  Adverbs, on the other hand, already left adjoin to VP's in the
+present grammar, so the structure accomodates that possibility without
+need of further modifications to the grammar.
+
+The comparatives are also an excellent indication that providing a VP
+for left adjunction is the right idea.  Comparativized adverbs such as
+{\it more heavily} may either left or right adjoin, so that portion of
+a comparative can adjoin to the intervening position.  However, the
+{\it than}-clause portion of a comparative can only right adjoin, and
+together, these two adjoining behaviors work with our PP complement
+analysis to correctly capture that distinctions in the following
+examples:
+
+\enumsentence{John depends more heavily on his staff than Mary .}
+\enumsentence{John depends on his staff more heavily than Mary .}
+\enumsentence{*John depends more heavily than Mary on his staff .}
+
+\noindent
+In (\ex{-2}), the comparativized adverb has left adjoined to the lower
+VP and the {\it than}-clause has right adjoined.  Both right adjoin in
+(\ex{-1}).  However, in (\ex{0}) the {\it than}-clause cannot adjoin
+since there is no right-adjoinable VP available between the verb and
+the preposition.
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/pp-complement-files/alphanx0VPnx1.ps,height=3.0in}}  &
+\hspace{0.6in}
+{\psfig{figure=ps/pp-complement-files/alphanx0Vnx1Pnx2.ps,height=3.0in}} \\
+(a) $\alpha$nx0VPnx1 & \qquad(b) $\alpha$nx0Vnx1Pnx2\\
+\end{tabular}\\
+\caption {Declarative trees for multi-anchor PP complement families}
+\label {pp-comp-trees}
+\end{figure}
+
+This basic schema of short verb movement for PP complement families
+captures the adjunction possibilities directly and appears to partion
+the different types of adjoining elements in the appropriate way, with
+very little modification to the grammar.  This analysis is operative
+in the families Tnx0Vpnx1, Tnx0Vnx1pnx2, Tnx0VPnx1, and Tnx0Vnx1Pnx2.
+
+Notice that having two VP nodes along the right spine of the trees
+will engender right edge ambiguities.  This arises in other
+structures, and right adjoiners to VP have the restriction {\bf mainv
+= +} on their footnodes to avoid right edge ambiguities in sentences
+which have auxiliaries.  This extends nicely to the present case.  We
+restrict right VP adjunction to occur at the higher VP by letting {\bf
+mainv} be negative in the lower VP, and thus we do not get right edge
+ambiguities.

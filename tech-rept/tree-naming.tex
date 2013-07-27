@@ -1,0 +1,216 @@
+\chapter{Tree Naming conventions}
+\label{tree-naming}
+
+The various trees within the XTAG grammar are named more or less according to
+the following tree naming conventions.  Although these naming conventions are
+generally followed, there are occasional trees that do not strictly follow
+these conventions.
+
+\section{Tree Nodes}
+In the description of a tree, nodes are named as a pair $(l,s)$
+(also represented as $l_s$ in the graphic representation of its structure
+and $l\_s$ in the feature equations description),
+where $l$ is the label or grammar symbol assigned to the node and $s$ is a 
+subscript whose primary purpose is to make a node name unique for any given 
+tree. Typical examples are: $S_r$, $VP$, $NP_0$, $NP_1$. Notice that the
+subscript may be empty as in $VP$. 
+There are several conventions generally
+followed for the use of subscripts, as naming $S_r$ the node immediately 
+dominating the subject position in a verb tree. 
+We will not exhaustively describe them here,
+except a few, which are used for naming the trees. They
+should give the user an idea of what the tree is about. 
+
+Anchors are generally assigned a null subscript, unless the tree has more than
+on anchor with the same label, in which case each receive numeric 
+subscripts $1$, $2$, etc. The main consistency condition here is that 
+these subscripts have to match the multi-anchor entries in the syntactic 
+lexicon that select the tree.
+ 
+Arguments in verbal trees are assigned subscripts according to their 
+thematic roles. The main
+idea is that the subscript for a certain argument should be preserved across 
+the trees in the grammar, whenever it is seen that these trees are 
+transformationally related (the arguments should be at the same position in
+the logical form). 
+For instance, the subscript for the NP subject of
+a passive tree should be the same as for the NP in the corresponding 
+declarative tree that has been passivized. 
+Additionally, the general convention is that the subscript $0$
+is assigned to the underlying subject of a tree, $1$ to the first object,
+and so on. Notable exceptions arise when a certain family is also used
+as a part of the subcategorization description of a class of verbs. For
+instance, dative verbs take two families: one having $NP_1$
+and $PP_2$ as arguments (actually a multi-anchor tree where $P$ is an 
+anchor); the other being the double object family, for the
+dative shift. In order to maintain the relation that the leftmost object
+in the dative shift tree is logically related to the $PP_2$, it also
+receives the subscript $2$.
+Another example is that
+subjects in the ergative family have the 
+same subscript, $1$, as the object in the base transitive tree.
+
+When a verb argument is also the anchor of a tree, 
+as in the predicative families, light verbs and some multi-anchor idioms,
+the projection of the argument as well as its own arguments (e.g. PP and NP
+for a P anchor,) 
+should generally also take the subscript corresponding to its position w.r.t.
+to the verb, which will be generally diferent from the anchor that carries
+no subscript as a role.
+Trees for wh-moved objects have no subscript in the extracted site. 
+The original subscript is used for the landing site. 
+Relative clause trees on the other hand 
+preserve the subscript in the original position and use 
+the subscript $w$ for the
+landing site. 
+
+\section{Tree Families}
+Tree families are named according to the basic declarative tree structure in
+the tree family (see section~\ref{family-trees}), but with a T as the first
+character instead of an $\alpha$ or $\beta$.
+
+\section{Trees within tree families}
+\label{family-trees}
+
+Each tree begins with either an $\alpha$ (alpha) or a $\beta$ (beta) symbol,
+indicating whether it is an initial or auxiliary tree, respectively.  Following
+an $\alpha$ or a $\beta$ the name may additionally contain one of the 
+following depending on the family:
+
+\begin{description}
+\item\begin{tabular}{ll}
+E& trees in the Ergative family\\
+R& trees in a Resultative family\\
+RE& trees in a Resultative family for Ergatives\\
+X&ECM trees (eXceptional case marking)\\
+\end{tabular}
+\end{description}
+
+\noindent Next, the name may contain one of the following,
+the digit corresponding to the subscript of the node moved in the
+tree. In Nc, Npx the absence of digit means relativized adjunct.
+
+\begin{description}
+\item\begin{tabular}{ll}
+I&imperative\\
+W0,W1,W2&wh-NP extraction\\
+pW0,pW1,pW2&wh-PP extraction\\
+N0,N1,N2&relative clause, NP argument relativized, wh-word \\
+Nc,Nc0,Nc1,Nc2&relative clause, NP argument relativized, no wh-word \\
+Npx,Npx1,Npx2&relative clause, PP relativized \\
+Nby& relative clause, by-clause relativized in passive constructions\\
+G&NP gerund\\
+D&Determiner gerund\\
+Inv&Inverted arguments (for equative BE and It-clefts)
+\end{tabular}
+\end{description}
+
+% \noindent Numbers are assigned according to the position of the argument in the
+% declarative tree, as follows:
+
+% \begin{description}
+% \item\begin{tabular}{ll}
+% 0&subject position\\
+% 1&first argument (e.g. direct object)\\
+% 2&second argument (e.g. indirect object)\\
+% \end{tabular}
+% \end{description}
+
+% \noindent The body of the name consists of a string of the following 
+% components, which corresponds to the leaves of the tree.  The anchor(s) of the
+% trees is(are) indicated by capitalizing the part of speech corresponding to the
+% anchor.
+
+\noindent The rest of the name consists of a string where each component
+correspond to one leaf of the tree from the left to right. The formation
+of a component is as follows: start with one of the elements in the table
+below that corresponds to the leaf being translated: in lower case if the
+node is a substitution or foot node;
+ or upper case if it is an anchor. Then add 
+``x'' if the node is a projection (or ``X'' if an anchor and a projection). 
+Finally add the subscript at the node if any.
+Notice that empty elements ($\epsilon$) are generally ignored and their
+dominating node is used instead, except in the case of $PRO$, which by the
+way is capitalized.
+
+\begin{description}
+\item\begin{tabular}{ll}
+s&sentence\\
+a&adjective\\
+arb&adverb\\
+be&{\it be}\\
+% c&relative complementizer\\
+% x&phrasal category\\
+d&determiner\\
+v&verb\\
+lv&light verb\\
+conj&conjunction\\
+comp&complementizer\\
+it&{\it it}\\
+n&noun\\
+p&preposition\\
+PRO&a PRO subject \\
+% to&{\it to}\\
+pl&particle\\
+by&{\it by}\\
+neg&negation\\
+\end{tabular}
+\end{description}
+
+\noindent As an example, the transitive declarative tree consists of a subject
+NP, followed by a verb (which is the anchor), followed by the object NP.  This
+translates into $\alpha$nx0Vnx1.  If the subject NP had been extracted, then
+the tree would be $\alpha$W0nx0Vnx1.  A passive tree with the {\it by} phrase
+in the same tree family would be $\alpha$nx1Vbynx0.  Note that even though the
+object NP has moved to the subject position, it retains the object encoding
+(nx1). 
+
+\section{Assorted Initial Trees}
+
+Trees that are not part of the tree families are generally gathered into
+several files for convenience.  The various initial trees are located in {\tt
+lex.trees}.  All the trees in this file should begin with an $\alpha$,
+indicating that they are initial trees.  This is followed by the root category
+which follows the naming conventions in the previous section (e.g. n for noun,
+x for phrasal category).  The root category is in all capital letters.  After
+the root category, the node leaves are named, beginning from the left, with the
+anchor of the tree also being capitalized.  As an example, the $\alpha$NXN
+tree is rooted by an NP node (NX) and anchored by a noun (N).
+
+\section{Assorted Auxiliary Trees}
+
+The auxiliary trees are mostly located in the buffers {\tt
+prepositions.trees}, {\tt conjunctions.trees}, {\tt
+determiners.trees}, {\tt advs-adjs.trees}, and {\tt modifiers.trees},
+although a couple of other files also contain auxiliary trees.  The
+auxiliary trees follow a slightly different naming convention from the
+initial trees.  Since the root and foot nodes must be the same for the
+auxiliary trees, the root nodes are not explicitly mentioned in the
+names of auxiliary trees.  The trees are named according to the leaf
+nodes, starting from the left, and capitalizing the anchor node.  All
+auxiliary trees begin with a $\beta$, of course.  For example,
+$\beta$ARBs, indicates a tree anchored by an adverb (ARB), that
+adjoins onto the left of an S node (Note that S must be the foot node,
+and therefore also the root node).
+
+% \subsection{Relative Clause Trees}
+% For relative clause trees, the following naming conventions have been
+% adopted: if the {\em wh}-moved NP is overt, it is not explicitly
+% represented. Instead the index of the site of movement
+% (0 for subject, 1 for object, 2 for indirect object) is appended to the
+% N. So $\beta$N0nx0Vnx1 is a subject
+% extraction relative clause with {\bf NP$_{w}$} substitution
+% and $\beta$N1nx0Vnx1 is an object extraction
+% relative clause. If the {\em wh}-moved NP is covert and Comp substitutes
+% in, the Comp node is represented by {\em c} in the tree name and the
+% index of the extraction site follows {\em c}. Thus
+% $\beta$Nc0nx0Vnx1 is a subject extraction
+% relative clause with Comp substitution. Adjunct trees are similar, except
+% that since the extracted material is not co-indexed to a trace, no index
+% is specified (cf. $\beta$Npxnx0Vnx1, which is an adjunct relative clause with
+% PP pied-piping, and $\beta$Ncnx0Vnx1, which is an adjunct relative clause
+% with Comp substitution). Cases of pied-piping, in which the pied-piped
+% material is part of the anchor have the anchor capitalized or spelled-out
+% (cf. $\beta$Nbynx0nx1Vbynx0 which is a relative clause with {\em by}-phrase
+% pied-piping and {\bf NP$_{w}$} substitution.).
+

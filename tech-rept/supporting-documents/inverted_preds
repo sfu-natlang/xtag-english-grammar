@@ -1,0 +1,12 @@
+The family Ts0N1 handles sentences such as "That you eat spam is the
+problem", where the noun is considered the predicate (and is thus the
+anchor).  However, it did not have any trees to handle sentences in
+which the order is inverted, eg "The problem is that you eat spam."  I
+saw no need to do anything elaborate and simply added the tree
+alpha_N1s0 to the family, thus permitting these sentences.  I didn't
+try to represent any movements, instead opting to just take the tree
+alpha_s0N1 and swap the S substition site with the NP anchored by N.
+
+---------------
+Jason Baldridge
+Nov 21, 1998

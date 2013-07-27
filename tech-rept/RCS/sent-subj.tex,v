@@ -1,0 +1,45 @@
+head	1.2;
+access
+	egedi
+	beth
+	cdoran
+	srini;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.2
+date	94.07.20.19.33.34;	author cdoran;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	93.12.13.15.48.05;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Section on sentential subjects
+@
+
+
+1.2
+log
+@This file is no longer in use; it's contents are in sent-comps-subjs.tex.
+@
+text
+@\subsection{Sentential Subjects}
+
+Verbs that select sentential subjects anchor trees that have an S node in the subject position rather that an NP node.  Since extraction is not possible from sentential subjects, they are implemented as substitution nodes in the English LTAG grammar.  Restrictions on sentential subjects such as the required "that" complementizer for indicatives, are enforced by feature values specified on the S substitution node in the elementary tree.  
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@@

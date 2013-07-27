@@ -1,0 +1,310 @@
+\documentstyle[11pt]{article}
+
+\oddsidemargin 0.25in
+\topmargin 0in
+\textheight 8.5in
+\textwidth 6.25in
+
+%%%-----------------------------------------------------------------------------
+%%% into the startup file
+
+\newcommand{\vertical}[1]{
+\setlength{\unitlength}{0.012500in}%
+%%%\hspace*{6pt}
+\hspace*{2pt}
+\begin{picture}(12,12)(0,0)
+\put(0,0){\makebox(0,0)[lb]{\raisebox{0pt}[0pt][0pt]{\special{ps:gsave currentpoint currentpoint translate
+%%%-90.0 rotate neg exch neg exch translate}\twlrm #1\special{ps:currentpoint
+%%%grestore moveto}}}}
+-90.0 rotate neg exch neg exch translate}\elvrm #1\special{ps:currentpoint grestore moveto}}}}
+\end{picture}
+%%%\hspace*{-18pt}
+\hspace*{-18pt}
+}
+
+\newcommand{\xtagcheck}{$\surd$}
+%%%-----------------------------------------------------------------------------
+
+
+\input{psfig}
+
+\begin{document}
+
+\raggedright
+
+%%%This is a line of text before the table.
+
+%%%\vspace*{30em}
+
+%%%\begin{figure}[hbt]
+%%%\begin{tabular}{|l|c|c|}
+%%% & 
+%%%\vertical{Phenomenon one}
+%%%\vertical{has}
+%%%\vertical{four}
+%%%\vertical{lines} &
+%%%\vertical{Linguistic phenomenon Number Two is pretty long...}
+%%%\vertical{}\\
+%%%\hline
+%%%Tree familiy I & 3.2.3 & 4.3.1 \\
+%%%Family IIa     &       & 3.2
+%%%\end{tabular}
+%%%\caption{This is a test for the big table.}
+%%%\end{figure}
+
+%%%This is a line of text after the table.
+
+%%%rows:
+
+
+%%% The vspace is needed for the vertical text
+%%%\vspace*{4em}
+
+%%%-----------------------------------------------------------------------------
+%%% from here on into the document
+
+\begin{center}
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+\begin{tabular}{|p{2.2in}||*{16}{c|}}
+\cline{2-16}
+\multicolumn{1}{c||}{} & \multicolumn{15}{c|}{Tree families}\\
+\hline
+\vspace*{10em}
+& & & & & & & & & & & & & & & \\
+ &
+\vertical{Adverb It-Cleft} &
+\vertical{NP It-Cleft} &
+\vertical{PP It-Cleft} &
+\vertical{Adjective Small Clause Tree} &
+%%%\vertical{Adjective Small Clause with Sentential Complement} &
+\vertical{Adj.\ Sm.\ Cl.\ w.\ Sent.\ Comp.} &
+\vertical{Equative {\it BE}} &
+\vertical{NP Small Clauses} &
+%%%\vertical{NP Small Clauses with Sentential Complement} &
+\vertical{NP Sm.\ Cl.\ w.\ Sent.\ Comp.} &
+\vertical{PP Small Clause} &
+%%%\vertical{PP Small Clause with Sentential Complement} &
+\vertical{PP Sm.\ Cl.\ w.\ Sent.\ Comp.} &
+\vertical{Exhaustive PP Small Clause} &
+%%%\vertical{Exhaustive PP Small Clause with Sentential Complement} &
+\vertical{Exhaustive PP Small Clause}
+\vertical{with Sentential Complement} &
+\vertical{Intransitive} &
+\vertical{Intransitive with Adjective} &
+\vertical{Transitive Idioms} \\
+%
+%%% columns:
+%
+\hline\hline
+\vspace*{-2.3em} \centerline{Construction} \vspace*{0.5em}
+Declarative & {\tiny 144} & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Passive\footnote{with and without by-phrase} & & & & & & & & & & & & & & & \\
+\hline
+Y/N quest. & & & & & & & & & & & & & & & \\
+\hline
+Wh-moved subject & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ NP complement & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ S comp. & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ Adj.\ comp. & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ object of a P & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ PP & & & & & & & & & & & & & & & \\
+\hline
+Topic.\ NP comp. & & & & & & & & & & & & & & & \\
+\hline
+Imperative & & & & & & & & & & & & & & & \\
+\hline
+Det.\ gerund & & & & & & & & & & & & & & & \\
+\hline
+NP gerund & & & & & & & & & & & & & & & \\
+\hline
+Ergative & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on subj. & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP comp. & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on PP comp. & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP object of P & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ subj.\ & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ ind.\ obj.\ (6.24) & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ obj. of the {\it by phrase} & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ {\it by phrase} & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ S mod.\ (decl.) & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ VP mod.\ (decl.) & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ S mod.\ (pass., w.\ by phrase) & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ VP mod.\ (pass., w.\ by phrase) & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ S mod.\ (pass., w.out by phrase) & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ VP mod.\ (pass., w.out by phrase) & & & & & & & & & & & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\clearpage
+
+\vspace*{-0.5in}
+
+\begin{center}
+\hspace*{-0.75in}  %%% the table is too wide and center doesn't work
+\begin{tabular}{|p{2.2in}||*{17}{c|}}
+\cline{2-17}
+\multicolumn{1}{c||}{} & \multicolumn{16}{c|}{Tree families}\\
+\hline
+\vspace*{12em} & & & & & & & & & & & & & & & & \\
+ &
+\vertical{Transitive} &
+\vertical{Ditransitive with PP shift} &
+\vertical{Ditransitive} &
+\vertical{Ditransitive with PP} &
+\vertical{Sentential Comp.\ with NP} &
+\vertical{Intransitive Verb Particle} &
+\vertical{Transitive Verb Particle} &
+\vertical{Ditransitive Verb Particle} &
+\vertical{Intransitive with PP} &
+\vertical{Sentential Complement} &
+\vertical{Ditrans.\ Light Verbs w.\ PP Shift} &
+\vertical{Light Verbs} &
+\vertical{Ditrans.\ Light Verbs w.\ PP Shift} &
+\vertical{Adj.\ Sm.\ Cl.\ w.\ Sentential Subj.} &
+\vertical{NP Sm.\ Cl.\ w.\ Sentential Subj.} &
+\vertical{PP Sm.\ Cl.\ w.\ Sentential Subj.} \\
+%
+%%% columns:
+%
+\hline\hline
+\vspace*{-2.3em} \centerline{Construction} \vspace*{0.5em}
+Declarative & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck &
+\xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck & \xtagcheck \\
+\hline
+Passive\footnote{with and without by-phrase} & & & & & & & & & & & & & & & & \\
+\hline
+Y/N quest. & & & & & & & & & & & & & & & & \\
+\hline
+Wh-moved subject & & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ NP complement & & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ S comp. & & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ Adj.\ comp. & & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ object of a P & & & & & & & & & & & & & & & & \\
+\hline
+Wh-mov.\ PP & & & & & & & & & & & & & & & & \\
+\hline
+Topic.\ NP comp. & & & & & & & & & & & & & & & & \\
+\hline
+Imperative & & & & & & & & & & & & & & & & \\
+\hline
+Det.\ gerund & & & & & & & & & & & & & & & & \\
+\hline
+NP gerund & & & & & & & & & & & & & & & & \\
+\hline
+Ergative & & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on subj. & & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP comp. & & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on PP comp. & & & & & & & & & & & & & & & & \\
+\hline
+Rel.\ cl.\ on NP object of P & & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ subj.\footnote{with and without {\it by phrase}} & & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ ind.\ obj.\footnote{with and without {\it by phrase}} & & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ obj. of the {\it by phrase} & & & & & & & & & & & & & & & & \\
+\hline
+Pass.\ w.\ wh-mov.\ {\it by phrase} & & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ S mod.\ (decl.) & & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ VP mod.\ (decl.) & & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ S mod.\ (pass., w.\ by phrase) & & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ VP mod.\ (pass., w.\ by phrase) & & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ S mod.\ (pass., w.out by phrase) & & & & & & & & & & & & & & & & \\
+\hline
+Cl.\ VP mod.\ (pass., w.out by phrase) & & & & & & & & & & & & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\clearpage
+
+\footnotesize
+
+\begin{verbatim}
+
+%%% column names:
+Transitive
+Di-transitive with PP shift
+Di-transitive
+Di-transitive with PP
+Sentential Complement with NP
+Intransitive Verb Particle
+Transitive Verb Particle
+Ditransitive Verb Particle
+Intransitive with PP
+Sentential Complement
+Ditransitive Light Verbs with PP Shift
+Light Verbs
+Ditransitive Light Verbs with PP Shift
+Adjective Small Clause with Sentential Subject
+NP Small Clause with Sentential Subject
+PP Small Clause with Sentential Subject
+
+%%% row names:
+Declarative & 3.1 & 2.3 & 
+Passive (with and without by-phrase) 
+Yes/No question 
+Wh-moved subject 
+Wh-moved NP complement 
+Wh-moved S complement 
+Wh-moved Adjective complement 
+Wh-moved object of a P 
+Wh-moved PP 
+Topicalized NP complement 
+Imperative 
+Determiner gerund 
+NP gerund 
+Ergative 
+Relative clause on subject 
+Relative clause on NP complement 
+Relative clause on PP complement 
+Relative clause on NP object of P 
+Passive with wh-moved subject (with and without {\it by phrase} 
+Passive with wh-moved indirect object (with and without {\it by phrase}) 
+Passive with wh-moved object of the {\it by phrase} 
+Passive with wh-moved {\it by phrase} 
+Clausal S modifier (declarative) 
+Clausal VP modifier (declarative) 
+Clausal S modifier (passive, with by phrase) 
+Clausal VP modifier (passive, with by phrase) 
+Clausal S modifier (passive, without by phrase) 
+Clausal VP modifie
+\end{verbatim}
+
+
+\end{document}
+

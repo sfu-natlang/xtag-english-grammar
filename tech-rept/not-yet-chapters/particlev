@@ -1,0 +1,56 @@
+Particle verbs are another construction that is analyzed in the
+English LTAG grammar with multicomponent anchors. The verb and particle act as a unit and their meaning is non-compositional.  
+
+
+\enumsentence{They looked  up the number.} 
+\enumsentence{They looked the number up.}
+\enumsentence{They looked up the cliff.}
+\enumsentence{*They looked the cliff up.}
+
+Sentences (\ex{-3}) and (\ex{-2}) show the possibility of both base position and particle movement fro verb-particle constructions. Lexical items that serve
+as particles can often also be used as prepositions with the same verbs. The verb-prepositional phrase  and verb-particle uses
+have distinct interpretations and the prepositions cannot be moved as
+shown in (\ex{-1}) and (\ex{0}). The english LTAG analysis has both the verb and the
+particle as anchors. Tree families for transitive (and
+di-transitive) particle verbs, include a tree with the particle
+adjacent to the verb and one for each possible moved position for the
+basic tree and each relevant extraction. So for example, the tree family for {\it call
+up}, Tnx0Vplnx1, includes the following trees:
+\begin{description}
+\item nx0Vnx1pl
+\item nx0Vplnx1
+\item W0nx0Vplnx1
+\item W0nx0Vnx1pl
+\item Inx0Vnx1pl
+\item Inx0Vplnx1
+\item R0nx0Vnx1pl
+\item R0nx0Vplnx1
+\item W1nx0Vplnx1
+\item R1nx0Vplnx1
+\item N0nx0Vplnx1
+\item N0nx0Vnx1pl
+\item N1nx0Vplnx1
+\item Gnx0Vplnx1
+\item Gnx0Vnx1pl
+\item Dnx0Vplnx1
+\item nx1Vplbynx0
+\item W0nx1Vplbynx0
+\item pW0nx1Vplbynx0
+\item W1nx1Vplbynx0
+\item R0nx1Vplbynx0
+\item pR0nx1Vplbynx0
+\item N0nx1Vplbynx0
+\item R1nx1Vplbynx0
+\item N1nx1Vplbynx0
+\end{description}
+
+While particle movement provides an easy diagnostic for transitive
+particle verbs, detecting intransive particle verbs is largely
+dependent on semantic criteria. In intransitive constructions the
+ambiguity between prepostions and particles is eliminated because of
+the absence of an NP to complete the PP but there can still be ambiguity
+with locative or directional adverbs as shown in (\ex{1}) and (\ex{2}).   
+
+\enumsentence{The fire burned out before much damage was done.}
+\enumsentence{The fire burned out toward the town.}
+

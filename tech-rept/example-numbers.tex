@@ -1,0 +1,79 @@
+%%% Robert Rubinoff - Mar 3 1986
+%%% sentences - an environment for producing numbered sentence example lists.
+%%% you enter it with \beginsentences
+%%% finish with \endsentences
+%%%     (1) This kind is produced by \sitem
+%%%     (2)i. This kind is produced by \smainitem
+%%%       ii. This kind (i.e. subsequent subitems) is produced by \ssubitem
+%%%  The sentences are numbered using \sentencectr and \sentencesubctr
+%%%
+%%% some formatting control provided via:
+%%%     \smainform - controls format of main number - default is \arabic
+%%%     \ssubform  - controls format of sub number - default is \roman
+%%%     \ssubpunc  - controls punctuation after sub number - default is "."
+%%% these can be changed via \renewcommand
+%%% 
+%%% you can also generate cross-reference labels via \label; this gives
+%%% you the main counter and (when appropriate) the subcounter.  To get
+%%% a label of just the main item number when in a \smainitem or \ssubitem,
+%%% use \smainlabel; to get just the sublabel, use \ssublabel
+
+\newcounter{sentencectr}
+\newcounter{sentencesubctr}
+
+\renewcommand{\thesentencectr}{(\smainform{sentencectr})}
+\renewcommand{\thesentencesubctr}{\thesentencectr\ssubform{sentencesubctr}}
+
+\newcommand{\smainform}{\arabic}
+\newcommand{\ssubform}{\alph}
+\newcommand{\ssubpunc}{.{}}
+
+\newcommand{\beginsentences}{ %
+\pagebreak[3] %
+\begin{list}{(\thesentencectr)}
+   {\usecounter{sentencesubctr}
+%The next line controls how much space to put around examples.  The
+%value I have here is for tight spaces.  Take it out when things
+%aren't so desparate.
+%    \setlength{\topsep}{0ex}			
+%This following line is 0.5ex by default.  The 1ex spacing looks good in single
+%spaced examples,  How about in space and a half?
+    \setlength{\topsep}{1ex}			
+    \setlength{\itemsep}{0 in}
+    \setlength{\labelwidth}{0.5 in}
+%Previous line increases width so we don't get problem with indented
+%subitems once we have 2 digit example numbers. -- bf
+%    \addtolength{\leftmargin}{25 pt}
+%    \setlength{\leftmargin}{.6in}
+% This next line makes indentation of examples the same as in LI which
+% looks pretty good, I think.
+%    \addtolength{\leftmargin}{8ex}
+    \addtolength{\leftmargin}{4ex}
+    \setlength{\labelsep}{.05in}
+    \setlength{\parsep}{0 in}}}
+\def\endsentences{\end{list}}
+
+\newcommand{\sitem}{\renewcommand{\thesentencesubctr}{(\smainform{sentencectr}}
+                    \refstepcounter{sentencectr}
+     \item[(\smainform{sentencectr})\hfill]}
+\newcommand{\smainitem}{\renewcommand{\thesentencesubctr
+                                    }{\thesentencectr\ssubform{sentencesubctr}}
+                        \setcounter{sentencesubctr}{0}
+                        \refstepcounter{sentencectr}
+                        \refstepcounter{sentencesubctr}
+     \item[\thesentencectr\hfill\ssubform{sentencesubctr}\ssubpunc]}
+\newcommand{\ssubitem}{\refstepcounter{sentencesubctr}
+     \item[\hfill\ssubform{sentencesubctr}\ssubpunc]}
+
+\makeatletter            
+\newcommand{\smainlabel}[1]{{%  the extra braces make the change local
+\renewcommand{\@currentlabel}{\thesentencectr}\label{#1}}}
+
+\newcommand{\ssublabel}[1]{{%  the extra braces make the change local
+\renewcommand{\@currentlabel}{\ssubform{sentencesubctr}}\label{#1}}}
+\makeatother
+
+
+
+\makeatother
+

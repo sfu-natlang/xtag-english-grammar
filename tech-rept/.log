@@ -1,0 +1,119 @@
+This is TeX, Version 3.14159 (C version 6.1) (format=latex 97.3.2)  31 OCT 2000 14:15
+**tech-report
+(tech-report.tex
+LaTeX2e <1996/12/01> patch level 1
+Babel <v3.6h> and hyphenation patterns for english, german, loaded.
+(/pkg/tetex/texmf/tex/latex/base/latex209.def
+File: latex209.def 1996/05/21 v0.51 Standard LaTeX file
+
+Entering LaTeX 2.09 compatibility mode.
+\footheight=\dimen102
+\@maxsep=\dimen103
+\@dblmaxsep=\dimen104
+\@cla=\count79
+\@clb=\count80
+\mscount=\count81
+(/pkg/tetex/texmf/tex/latex/base/tracefnt.sty
+Package: tracefnt 1996/07/26 v3.0i Standard LaTeX package (font tracing)
+\tracingfonts=\count82
+LaTeX Info: Redefining \selectfont on input line 139.
+)
+\symbold=\mathgroup4
+\symsans=\mathgroup5
+\symtypewriter=\mathgroup6
+\symitalic=\mathgroup7
+\symsmallcaps=\mathgroup8
+\symslanted=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 306.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 307.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 308.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 314.
+LaTeX Info: Redefining \em on input line 324.
+
+(/pkg/tetex/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1996/11/20 v2.2d Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 85.
+)
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 388.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 390.
+LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 392.
+
+(/pkg/tetex/texmf/tex/latex/config/latex209.cfg
+(/pkg/tetex/texmf/tex/latex/tools/rawfonts.sty
+Compatibility mode: package `' requested, but `rawfonts' provided.
+Package: rawfonts 1994/05/08 Low-level LaTeX 2.09 font compatibility
+
+(/pkg/tetex/texmf/tex/latex/tools/somedefs.sty
+Package: somedefs 1994/06/01 Toolkit for optional definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 36.
+
+(/pkg/tetex/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1996/11/20 v2.2dLaTeX symbol font definitions
+))))
+Compatibility mode: loading xtag-report.sty rather than xtag-report.cls.
+ (xtag-report.sty
+Document Style `report' <13 Nov 89>.
+(/pkg/tetex/texmf/tex/latex209/base/rep11.sty)
+\descriptionmargin=\dimen105
+\c@part=\count83
+\c@chapter=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\c@figure=\count90
+\c@table=\count91
+
+(/pkg/tetex/texmf.local.post/tex/latex209/misc/titlepage.sty))
+(/pkg/tetex/texmf.local.post/tex/latex209/misc/titlepage.sty) (aaai-named.sty)
+(/mnt/linc/home/rjprasad/texstyles/lingmacros.sty
+\c@enums=\count92
+\widelabel=\dimen106
+\c@tempcnt=\count93
+\c@enumsi=\count94
+\eeindent=\dimen107
+)
+\@indexfile=\write3
+
+! I can't write on file `tech-report.idx'.
+\makeindex ...\openout \@indexfile =\jobname .idx 
+                                                  \def \index {\@bsphack \be...
+l.13 \makeindex
+               
+Please type another output file name: 
+Writing index file tech-report.idx
+(tech-report.aux (abstr.aux) (acknowledgements.aux) (getting-around.aux)
+(intro.aux) (overview.aux) (compl-adj.aux) (table-intro.aux) (table.aux)
+(verb-class.aux) (ergatives.aux) (sent-comps-subjs.aux) (sm-clause.aux)
+(double-obj.aux) (pp-compl.aux) (it-clefts.aux) (resultatives.aux)
+(passives.aux) (extraction.aux) (rel_clauses.aux) (sent-adjs-sub-conjs.aux)
+(imperatives.aux) (gerunds.aux) (det.aux) (modifiers.aux) (auxs.aux) (conj.aux)
+(comparatives.aux) (punct.aux) (future-work.aux) (families.aux) (metarules.aux)
+(lexorg.aux) (tree-naming.aux) (features.aux) (evaluation.aux))
+! I can't write on file `tech-report.aux'.
+\document ...ate \openout \@mainaux \jobname .aux 
+                                                  \immediate \write \@mainau...
+l.63 \begin{document}
+                     
+Please type another output file name: 
+! Emergency stop.
+\document ...ate \openout \@mainaux \jobname .aux 
+                                                  \immediate \write \@mainau...
+l.63 \begin{document}
+                     
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 1217 strings out of 10908
+ 13360 string characters out of 72294
+ 62809 words of memory out of 262141
+ 3911 multiletter control sequences out of 9500
+ 18987 words of font info for 72 fonts, out of 150000 for 255
+ 14 hyphenation exceptions out of 607
+ 21i,0n,23p,481b,503s stack positions out of 300i,40n,60p,3000b,4000s
+No pages of output.

@@ -1,0 +1,606 @@
+head	1.4;
+access
+	egedi
+	beth
+	cdoran
+	srini;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.4
+date	94.12.13.21.14.52;	author cdoran;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	94.08.22.17.22.05;	author egedi;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	94.05.31.16.09.08;	author beth;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	93.12.13.15.43.27;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Section on determiners
+@
+
+
+1.4
+log
+@Corrected cross-references and labels so that document would compile.
+@
+text
+@\section{Determiners}
+\subsection{Introduction}
+
+  We set out to provide an implementable syntactic theory of determiners over
+the entire class.  We place emphasis on the word syntactic, since much work
+has been done on the semantics of a small set of determiners, specifically
+quantifier scoping.  By concentrating on the syntactic form, we hope to be able
+to present a theory on how the class of determiners order with respect to each
+other, thereby forcing semantics (and scoping operations) to conform to the
+realities of the language.  Even segmented in this way, it is not an easy task,
+and we have not completely covered all the phenomena to be found in the very
+rich determiner system of English.  We do, however, cover a large portion of
+the system both in terms of phenomena handled and especially in terms of corpus
+coverage.
+
+%Dania, can we get some kind of statistics on corpus coverage to present?
+
+\subsection{Types of Determiners}
+
+It is generally accepted that there are several subclasses of determiners.  We
+recognize three subclasses of full determiners : predeterminers, determiners,
+and postdeterminers.  By 'full' determiner, we mean that each word in this
+class can modify a 3rdsing non-mass noun that requires a determiner to make a
+full Noun Phrase.  All three subclasses are considered to be full determiners,
+In addition to the full determiners, we also recognize a class of words that we
+call determiner adverbs.  These are words which are generally considered to be
+determiners, but which can not stand alone as a determiner phrase.  They do,
+however, interact with other determiners to form Determiner Phrases.  We also
+consider in our theory larger determiner constructions: genitive and partitive
+constructions, and numbers.
+
+\subsection{Predeterminers, determiners, and postdeterminers}
+
+\subsubsection{Subclasses}
+Since the class of determiners is closed, it is possible to give a list of the
+determiners that we place in each subclass.  The subclasses are
+purely syntactically motivated.  Pre-determiners precede determiners, which
+preceded postdeterminers.
+
+\begin{tabular}{lll}
+
+\underline{Predeterminers}&\underline{Determiners}&\underline{Postdeterminers}\\
+&&\\
+both&these&few\\
+all&those&many\\
+&them&several\\
+&this&various\\
+&that&sundry\\
+&the&some\\
+&what&no\\
+&which&neither\\
+&whatever&wheen\\
+&whichever&yon\\
+&every&yond\\
+&each&yonder\\
+&a&PARTIVE\\
+&an&CARDINAL NUMBERS\\
+&some&\\
+&any&\\
+&another&\\
+&GENITIVES&\\
+\end{tabular}
+			
+\vspace{.5cm}
+Although these classes order as shown above, it is not the case that one can
+blindly choose any word from each of the above categories and expect that to be
+a valid determiner phrase.  Each of the words above has both features
+associated with the word itself, and features that determine what determiners
+it can modify.
+
+\subsubsection{Trees}
+
+In our TAG grammar, the $\alpha$NXdxN tree is one of two basic NP trees.  It is the
+tree used when a determiner is required or provided.  There are other
+constructions in which the $\alpha$NXdxN tree does not substitute in, but is already
+built into the tree, but in these cases, the structure looks the same.
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/alphaNXdxN.ps,height=4.0cm}
+\caption{ Tree:  $\alpha$NXdxN}
+\end{figure}
+
+For all of these uses of Determiners Phrases, the DetP substitutes in.  It is
+also necessary, though, to have the determiners build up by having them adjoin
+onto each other.  Because of this, we have two basic determiner trees for the
+full determiners, one that substitutes and one that adjoins.  Since any one of
+the full determiners can function as a determiner alone, each of the
+determiners listed above will get the substitution tree.  The predeterminer and
+determiner subclasses will also get the auxiliary tree, since they can modify
+other determiners.  Since the postdeterminers only go onto nouns, none of the
+postdeterminers get the auxiliary tree.
+
+
+\begin{figure}[ht]
+\begin{tabular}{cc}
+{\psfig{figure=ps/determiners-files/alphaDXD.ps}} & {\psfig{figure=ps/determiners-files/betaDdx.ps}}\\
+%{\psfig{figure=ps/determiners-files/alphaDXD.ps}} & {\psfig{figure=ps/determiners-files/betaDds.ps}} \\
+\end{tabular}
+\end{figure}
+
+
+\subsubsection{Features}
+
+\vspace{0.5in}
+\noindent
+{\bf Internal Features}
+\vspace{0.25in}
+
+The features are the most critical part in getting the determiner ordering
+correct.  We have identified 8 features as being sufficient to order the
+determiners that we have looked at.  These features and their range of values
+are given in table \ref{det-features}:
+
+\begin{tabular}{lll}
+\underline{feature}&\underline{values}&\underline{property}\\
+predet&$+-$&Predeterminer\\
+definite&$+-$&Definite\\
+quan&$+-$&Quantifier\\
+card&$+-$&Cardinal number\\
+gen&$+-$&Genitive\\
+wh&$+-$&wh element\\
+decreasing&$+-$&Decreasing\\
+agr&3sg, 3pl, 3sgpl&Agreement\\
+\end{tabular}
+\label{det-features}
+
+%Beth, perhaps we should give a brief explanation of each feature here and
+%why each is linguistically motivated (and where they 'came from')?  
+
+We do forward ordering on the determiners, which means that each determiner, in
+addition to having features describing its own values, also has features
+describing what kinds of determiners it can modify.  Note that the
+postdeterminers, since they select only the substitution tree, have only the
+self-describing features.  We also looked at the possibility of doing
+backward ordering, so that each determiner described what kinds of determiners
+could modify it, but we found that this required making distinctions that were
+not linguistically motivated.
+
+The following chart gives the features for each determiner and the features for
+the determiners that it can go on.
+
+\begin{tabular}{lll}
+\underline{Determiner}&\underline{Features}&\underline{Modifies}\\
+both&predet+,definite+,quan-,card-,gen-,3pl&[predet-,definite+,quan-,card-,wh-]\\
+all&predet+,definite+,quan-,card-,gen-,3pl&[predet-,definite+,quan-,card-,wh- ] or card+\\
+&&\\
+these&predet-,definite+,quan-,card-,gen-,3pl&card+ or[quan+,decreasing+,definite-,wh-]\\
+those&predet-,definite+,quan-,card-,gen-,3pl&card+ or [quan+,decreasing+,definite-,wh-]\\
+them&predet-,definite+,quan-,card-,gen-,3pl&card+ or [quan+,decreasing+,definite-,wh-]\\
+this&predet-,definite+,quan-,card-,gen-,3sg&card+ or [quan+,decreasing+,definite-,wh-]\\
+that&predet-,definite+,quan-,card-,gen-,3sg&card+ or [quan+,decreasing+,definite-,wh-]\\
+&&\\
+yon&predet-,definite+,quan-,card-,gen-,3sg&only nouns\\
+yond&predet-,definite+,quan-,card-,gen-,3sg&only nouns\\
+yonder&predet-,definite+,quan-,card-,gen-,3pl&only nouns\\
+&&\\
+what&predet-,definite+,quan-,card-,gen-,wh+,3sgpl&card+ or [quan+,decreasing+,definite-,wh-]\\
+whatever&predet-,definite+,quan-,card-,gen-,wh+,3sgpl&card+ or [quan+,decreasing+,definite-,wh-]\\
+which&predet-,definite+,quan-,card-,gen-,wh+,3sgpl&card+ or [quan+,decreasing+,definite-,wh-]\\
+whichever&predet-,definite+,quan-,card-,gen-,wh+,3sgpl&card+ or [quan+,decreasing+,definite-,wh-]\\
+&&\\
+the&predet-,definite+,quan-,card-,gen-,3sgpl&card+ or [quan+,definite-,wh-]\\
+&&\\
+every&predet-,definite+,quan+,card-,gen-,3sg&card+ or [quan+,decreasing+,definite-,wh-]\\
+each&predet-,definite+,quan+,card-,gen-,3sg&card+ or [quan+,decreasing+,definite-,wh-]\\
+any&predet-,definite-,quan+,card-,gen-,3sgpl&card+ or [quan+,decreasing+,definite-,wh-]\\
+another&predet-,definite-,quan+,card-,gen-,3sg&card+ or [quan+,decreasing+,definite-,wh-]\\
+&&\\
+GEN&predet-,definite+,quan-,card-,gen+,unspec.&card+ or [quan+,definite-,wh-]\\
+&&\\
+a&predet-,definite-,quan-,card-,gen-,3sg&[quan+,decreasing+,definite-,wh-]\\
+an&predet-,definite-,quan-,card-,gen-,3sg&[quan+,decreasing+,definite-,wh-]\\
+some&predet-,definite-,quan-,card-,gen-,3sgpl&[quan+,decreasing+,definite-,wh-]\\
+&&\\
+CARD&predet-,definite+,quan-,card+,gen-,one=3sg;rest=3pl&only nouns\\
+&&\\
+PART&predet-,definite-,quan-,card-,gen-,unspec.&anything wh- \\
+&&\\
+few&predet-,definite-,quan+,card-,decreasing+,3pl&only nouns\\
+wheen&predet-,definite-,quan+,card-,decreasing+,3pl&only nouns\\
+many&predet-,definite-,quan+,card-,decreasing-,3pl&only nouns\\
+several&predet-,definite-,quan+,card-,decreasing-,3pl&only nouns\\
+various&predet-,definite-,quan+,card-,decreasing-,3pl&only nouns\\
+sundry&predet-,definite-,quan+,card-,decreasing-,3pl&only nouns\\
+some&predet-,definite-,quan+,card-,decreasing-,3pl&only nouns\\
+no&predet-,definite+,quan+,card-,decreasing+,3sgpl&only nouns\\
+neither&predet-,definite+,quan+,card-,decreasing+,3sgpl&only nouns\\
+\end{tabular}
+
+The passing of the features within the trees is fairly simple.  The top DetP
+node inherits the feature of the leftmost DetP, with the exception of the agr
+feature, which is discussed in the next section.  The lexical entry for each
+determiner instantiates the features which are passed up to the root DetP for
+that tree, as well as specifying certain values which must be unified with in
+the foot node of the adjoining tree.
+
+
+%Figure of alphaDXD-features here
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/alphaDXD.ps,height=3.0cm}
+\caption{ \label{DXD} Tree:  $\alpha$DXD}
+\end{figure}
+
+%Figure of betaDdx-features here
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/betaDdx.ps,height=3.0cm}
+\caption{\label{Ddx-features} Tree:  $\beta$Ddx}
+\end{figure}
+
+
+%Figure of betaDdx_both_.ps here
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/betaDdx_both_.ps,height=8.0cm}
+\caption{ \label{Ddx_both} Tree:  $\beta$Ddx}
+\end{figure}
+
+
+The {\bf wh} feature does not do anything special with the determiner system, since
+no predeterminers can adjoin onto it, it is always the left-most determiner.
+Thereby, as described above, the entire DetP wil inherit its wh value, even if
+it occurs with other determiners (i.e {\it which few men}).  The {\bf agr} feature, on
+the other hand, is a little more complicated.  You may notice in Figure \ref{Ddx-features} that the agr feature is the only feature not passed from
+the D node to the root DetP, but is instead passed from the foot DetP to the
+root DetP.  In the determiner system, the {\bf agr} feature generally comes from the
+rightmost determiner, although some adjoining determiners also require that
+they agree with the rightmost determiner.  
+
+%Beth - is this part of the scoping problem.  
+
+We have captured this distinction easily be simply having each
+lexical item specify whether they are require to agree or not by allowing each
+determiner to explicitly pass (or not) its agreement feature to the root DetP.
+In Figure \ref{Ddx_both}, the {\it both} determiner requires that it
+agree with the determiner it modifies (both these men, *both this man).  In
+comparison, the {\it another} determiner does not require that it agree with the
+determiner that it modified (e.g. {\it another few men, another man}).  
+
+%Figure of alphaDdx_another_.ps here 
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/betaDdx_another_.ps,height=8.0cm}
+\caption{ Tree:  $\alpha$Ddx}
+\label{Ddx}
+\end{figure}
+
+\subsection{Adverbial Determiners}
+
+There are a number of words that have generally been considered to be in the
+class of determiners, but which do not function as determiners on their own.
+This class includes words such as hardly, even, most, virtually, scarcely,
+such, almost, and only.  Although we know that we want these words to adjoin
+into Determiner Phrases, we have not built a theory as to exactly what
+determiners the various adverbial determiner should adjoin onto.  Because of
+this incompleteness, we have not implemented this part at all.  We anticipate
+that the tree for these determiners will look similar to the Ddx tree in Figure\ref{Ddx}  we may find it necessary to have a tree that adjoins onto the
+right side of a determiner as well.  We are including what we have worked out in Table \ref{det-adv}
+in anticipation of this section being implemented in the near future.
+
+\begin{tabular}{lll}[ht]
+hardly&NA&a/any/another/every\\
+only&NA&[predet-,quan-,wh-]\\
+even&NA&[predet-,quan-,wh-]\\
+almost&NA&any/every/a/an\\
+most&NA&any/every\\
+virtually&NA&all/any/every/the/that/this\\
+scarely&NA&any/another/a/an\\
+\end{tabular}
+\label{det-adv}
+
+
+\subsection{Genitive Constructions}
+
+The genitive construction functions as a full determiner, and interacts with
+other determiners in the system.  The features for the genitive are the same as
+for full determiners (except that all genitives are marked gen$+$, as opposed to
+all other determiners), so we will not repeat that information here.  We will
+mention, in accordance with the discussion of the {\bf agr} feature in section
+**3.3.2**, that gentive's are not required to agree with either the
+determiners or the nouns that they modify.  
+
+There are two kinds of genitive contructions: genitive pronouns, which carry
+the genitive marker internally, and genitive NPs, which have an explicit
+genitive marker ('s) associated with them.
+
+\subsubsection{Genitive Pronouns}
+
+It is clear the genitive pronouns function as determiners as seen from examples
+such as 'her dog was run over' vs '*dog was run over'.  In our determiner
+system, they interact fully with the rest of the determiners, as can be seen in
+Chart **X**.  Accordingly, there are two trees associated with the genitive
+pronouns that correspond to the two determiner trees.  They are identical to
+the trees for the full determiners, except for the category of the anchor.
+
+
+%Figure of alphaDXG-features here 
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/alphaDXG-features.ps,height=8.0cm}
+\caption{ Tree:  }
+\end{figure}
+
+%Figure of betaGdx-features here 
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/betaGdx-features.ps,height=8.0cm}
+\caption{ Tree:  }
+\end{figure}
+
+\subsubsection{Genitive NPs}
+
+Genitive NP's are interesting in that they are potentially recursive
+structures.  Here, entire structures of NP can be embedded in a determiner
+phrase.  Note the following examples:
+
+  
+\enumsentence{[The man]'s mother came to town.}
+\enumsentence{[The man with the telescope]'s mother came to town.}
+\enumsentence{[[John]'s friend]'s mother came to town.}
+\enumsentence{[[[John]'s friend]'s uncle]'s mother came to town.}
+
+There are two things of note in the above examples.  One is that in embedded
+NP's, the genitive marker comes at the end of the NP phrase, even if the head
+of the NP is earlier.  The other thing to note is that the determiner of the NP
+can also be a genitive NP, hence the possibility of recursive structures.  
+
+In Xtag, the genitive marker is separated out from the lexical item that it is
+attached to and given its own category (G).  In this way, we can allow the full
+complexity of NP's to come from the existing NP system, including any recursive
+structures.  The two trees below demonstrate how easily the complexity of
+genitive NP's can be captured in TAGs.  The two trees, again, correspond to the two
+determiner trees presented above.
+
+%Figure of alphaDXnxG-features here
+
+%Figure of betanxGdx-features here 
+
+
+\subsection{Partitive Constructions}
+
+Partitive constructions (e.g. {\it  some kind of}, {\it all of\/}) were placed in the category
+of determiner constructions due to the agreement features.  If the partitive
+constructions were analyzed as an NP with a PP adjoined on, then we would
+expect to get agreement with the head of the NP (the left N).  If, on the other hand, we
+analyze them as a determiner construction on a N, then we would expect to get
+agreement with the right N.
+
+\enumsentence{[a certain kind of] these machines are prone to failure.}
+\enumsentence{$\ast$[a certain kind of] these machines is prone to failure.}
+
+This is certainly not to say that one can't get a (NP PP) reading out of these
+constructions, just that the partitive construction does exist, and that the
+distinguishing caracteristic is with which noun the agreement occurs.  This,
+of course, concurs with intuition of which NP should head the clause.
+
+\enumsentence{some parts [of this machine] are worn-out.}
+\enumsentence{$\ast$some parts [of this machine] is worn-out.}
+
+As a full determiner construction, partitive constructions interact with other
+determiners.  They can modify the noun itself (a certain kind of machine), or
+modify other determiners, as seen in the examples above.  Accordingly, these
+partive construction has the two trees as we have seen in all the other full
+determiner constructions.
+
+%Figure of alphaDXnxP-features here
+
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/alphaDXnxP-features.ps,height=8.0cm}
+\caption{ Tree: }
+\end{figure}
+
+%Figure of betanxPdx-features here 
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/betanxPdx-features.ps,height=8.0cm}
+\caption{ Tree:  }
+\end{figure}
+
+Note that the P (Preposition) anchors these trees.  There is only 1 Preposition
+({\it of}) that selects for these trees.  It should be noted as well that the NP in
+these constructions should be restricted semantically to a small class of
+nouns, such as {\it sort}, {\it form}, {\it kind}, and {\it type}.  They do not function as
+full NP as in the genitive constructions, although since the embedded NP can
+have its own determiner, recursive structures are available here as well.
+
+
+\subsection{Comparative Constructions}
+
+We beleive that comparative constructions such as {\it more than\/} or
+{\it other than\/}
+will fit into the determiner phrase category, although some very
+similar constructions may be better analyzed  as adjective phrases.
+
+\enumsentence{[More than one] person was chosen.	(DetP?)}
+\enumsentence{John was [bigger than a mountain].  (AdjP?)}
+    
+In any case, we do not currently have an analysis for these kinds of
+determiners.
+
+\subsection{Conjunction of determiners}
+
+Determiner conjunction in English seems to be  fairly unconstrained in English.  It allows conjunction of 'unlike'
+determiners, such as {\it one and all}, where {\it one\/} is a post-determiner
+and {\it all\/}
+is a predeterminer.  Determiners are not required to agree with each other,
+except in the case of the wh feature ({\it who and which}, {\it $\ast$who and some}).  We
+take the determiner features of the leftmost determiner as the values for the
+root DetP.
+
+%Figure beataDX1conjDX2-features.ps
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/betaDX1conjDX2-features.ps,height=8.0cm}
+\caption{ Tree:  }
+\end{figure}
+
+\subsection{Numbers}
+
+The number system has a complexity all its own outside of its interaction with
+the determiner system.  Number lists, such as address or telephone numbers, are
+easily handled, albeit outside of the determiner system.  In part, this is
+because we have found no evidence that they are actually functioning as
+determiners in these situations.  The set of numbers, in addition to being
+determiners, are also nouns, and we handle noun noun compounds quite easily.
+In addition to handling address and telephone numbers, this also allows us to
+handle dates and other compounds where numbers are interspersed with other nouns.
+
+More difficult is to get the correct behavior for number sequences
+such as {\it one
+thousand four hundred and twenty two}.  In contrast to the number lists, these
+do seem to function as determiners (e.g. {\it twenty two men\/}), and as such, we would like
+to handle them. 
+
+The basic determiner system does handle some of these numbers already.  While
+the one through cardinal numbers get only the standard determiner substitution
+tree, the other numbers (such as twenty, thirty, etc), get the auxiliary tree
+as well, but they are constrained to only go on other cardinal numbers.  This
+handles determiners such as {\it thirty-one}.  
+
+To handle numbers such as {\it one thousand four hundred and twenty two}, we need
+to introduce two new determiner trees.  These trees are selected for by the
+cardinal numbers ({\it one\/} through {\it ten}, {\it twenty}, {\it thirty}, etc).  They take a D
+tree as a subsitution node, and that D tree corresponds to the set of lexical
+items such as {\it hundred}, {\it thousand}, {\it million\/} etc.  The two types of tree
+should be familiar by now, one is the subsitution tree, and the other the
+auxiliary tree.  Note the this auxiliary tree can only go onto card+
+determiners.
+
+%Figure of alpha-DXDd here
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/alphaDXDd-features.ps,height=8.0cm}
+\caption{ Tree:  }
+\end{figure}
+
+%Figure of beta-Dddx here 
+\begin{figure}[ht]
+\centering
+\psfig{figure=ps/determiners-files/betaDddx-features.ps,height=8.0cm}
+\caption{ Tree: }
+\end{figure}
+
+%%\subsection{Special and Problem determiners???}
+%%
+%%Beth,  could you say something about 'some' somewhere in here?  We have it
+%%twice, because it functions differently, but I don't remember exactly how that
+%%worked, and you seemed pretty clear on it when it came up.  It doesn't have to
+%%be in this section.  Perhaps when you discuss the features in the second
+%%section?
+
+			
+
+
+@
+
+
+1.3
+log
+@Cahnged the pathnames for the figures, and commented out the
+Special and Problem Determiners sections.
+@
+text
+@d126 1
+d212 1
+a212 1
+\caption{\label{Dds-features} Tree:  $\beta$Ddx}
+d251 1
+d276 1
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d80 1
+a80 1
+\psfig{figure=ps/alphaNXdxN.ps,height=4.0cm}
+d97 2
+a98 2
+{\psfig{figure=ps/alphaDXD.ps}} & {\psfig{figure=ps/betaDdx.ps}}\\
+%{\psfig{figure=ps/alphaDXD.ps}} & {\psfig{figure=ps/betaDds.ps}} \\
+d202 1
+a202 1
+\psfig{figure=ps/alphaDXD.ps,height=3.0cm}
+d210 1
+a210 1
+\psfig{figure=ps/betaDdx.ps,height=3.0cm}
+d219 1
+a219 1
+\psfig{figure=ps/betaDdx_both_.ps,height=8.0cm}
+d248 1
+a248 1
+\psfig{figure=ps/betaDdx_another_.ps,height=8.0cm}
+d304 1
+a304 1
+\psfig{figure=ps/alphaDXG-features.ps,height=8.0cm}
+d312 1
+a312 1
+\psfig{figure=ps/betaGdx-features.ps,height=8.0cm}
+d375 1
+a375 1
+\psfig{figure=ps/alphaDXnxP-features.ps,height=8.0cm}
+d382 1
+a382 1
+\psfig{figure=ps/betanxPdx-features.ps,height=8.0cm}
+d420 1
+a420 1
+\psfig{figure=ps/betaDX1conjDX2-features.ps,height=8.0cm}
+d459 1
+a459 1
+\psfig{figure=ps/alphaDXDd-features.ps,height=8.0cm}
+d466 1
+a466 1
+\psfig{figure=ps/betaDddx-features.ps,height=8.0cm}
+d470 7
+a476 7
+\subsection{Special and Problem determiners???}
+
+Beth,  could you say something about 'some' somewhere in here?  We have it
+twice, because it functions differently, but I don't remember exactly how that
+worked, and you seemed pretty clear on it when it came up.  It doesn't have to
+be in this section.  Perhaps when you discuss the features in the second
+section?
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@@

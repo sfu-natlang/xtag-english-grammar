@@ -1,0 +1,335 @@
+head	1.11;
+access
+	egedi
+	srini
+	cdoran
+	beth
+	skulick
+	anoop
+	elhuang
+	heatherm
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks
+	rjprasad:1.11; strict;
+comment	@% @;
+
+
+1.11
+date	2001.02.22.20.43.14;	author anoop;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2000.10.31.14.49.31;	author rjprasad;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2000.10.14.18.56.14;	author tbleam;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	99.10.22.05.50.42;	author rjprasad;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	98.08.30.02.19.58;	author anoop;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	98.08.27.16.34.05;	author cdoran;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	98.07.20.19.09.00;	author cdoran;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	98.02.05.23.16.36;	author anoop;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	95.03.09.20.56.07;	author egedi;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	95.03.09.16.53.35;	author egedi;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.01.23.21.59.52;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Contains the acknowledgements section of the tech report.
+@
+
+
+1.11
+log
+@added authors.tex. subsequent modifs
+@
+text
+@\pagestyle{plain}
+\null\vfil
+\begin{center}
+{\bf Acknowledgements}
+\end{center}
+\setcounter{page}{0}
+
+We are immensely grateful to Aravind Joshi for supporting this
+project. 
+
+The following people have been grammar developers in previous releases
+of the XTAG English Grammar: Anne Abeille, Jason Baldridge, Rajesh
+Bhatt, Kathleen Bishop, Tonia Bleam, Raman Chandrasekar, Sharon Cote,
+Beatrice Daille, Christine Doran, Dania Egedi, Tim Farrington, Matthew
+Feldman, Jason Frank, Chung-Hye Han, Caroline Heycock, Beth Ann
+Hockey, Roumyana Izvorski, Martin Kappus, Karin Kipper, Daniel Karp,
+Seth Kulick, Young-Suk Lee, Heather Matayek, Patrick Martin, Megan
+Moser, Virginie Nanta, Sabine Petillon, Rashmi Prasad, Laura Siegel,
+Yves Schabes, Victoria Tredinnick and Raffaella Zanuttini.
+
+The Common Lisp version of the XTAG system and the morphological and
+syntactic database system were developed and maintained by: Tilman
+Becker, Richard Billington, Andrew Chalnick, Dania Egedi, Devtosh
+Khare, Moses Kimanzi, Eric Kowey, Albert Lee, David Magerman, Alex
+Mallet, Patrick Paroubek, Rich Pito, Gilles Prigent, Carlos Prolo,
+Anoop Sarkar, Yves Schabes, William Schuler, B. Srinivas, Fei Xia,
+Yuji Yoshiie and Martin Zaidel.
+
+We would also like to thank Michael Hegarty, Lauri Karttunen, Anthony
+Kroch, Mitchell Marcus, Martha Palmer, Owen Rambow, Philip Resnik,
+Maribel Romero, Beatrice Santorini and Mark Steedman.
+
+In addition, Jeff Aaronson, John Batzel, Rahul Dave, Douglas DeCarlo,
+Mark-Jason Dominus, Mark Foster, Gaylord Holder, David Magerman, Ken
+Noble, Steven Shapiro, Kristofor Varhus and Ira Winston have provided
+technical support.  Adminstrative support was provided by Laurel
+Sweeney, Ann Bies, Nicole Bolden, Susan Deysher, Carolyn Elken, Jodi
+Kerper, Christine Sandy and Trisha Yannuzzi.
+
+This work was partially supported by  NSF Grant SBR8920230 and ARO Grant
+DAAH0404-94-G-0426. 
+
+\newpage
+
+@
+
+
+1.10
+log
+@for new release: added names for system development (Eric Kowey and Moses Kimanzi)
+@
+text
+@d11 9
+a19 8
+The following people have contributed to the development of grammars in the
+project: Anne Abeille, Jason Baldridge, Rajesh Bhatt, Kathleen Bishop, Tonia
+Bleam, Raman Chandrasekar, Sharon Cote, Beatrice Daille, Christine Doran, Dania
+Egedi, Tim Farrington, Matthew Feldman, Jason Frank, Chung-Hye Han, Caroline
+Heycock, Beth Ann Hockey, Roumyana Izvorski, Martin Kappus, Karin Kipper,
+Daniel Karp, Seth Kulick, Young-Suk Lee, Heather Matayek, Patrick Martin, Megan
+Moser, Virginie Nanta, Sabine Petillon, Rashmi Prasad, Laura Siegel, Yves
+Schabes, Victoria Tredinnick and Raffaella Zanuttini.
+d21 7
+a27 5
+The XTAG system has been developed by: Tilman Becker, Richard Billington,
+Andrew Chalnick, Dania Egedi, Devtosh Khare, Moses Kimanzi, Eric Kowey,
+Albert Lee, David Magerman, Alex Mallet, Patrick Paroubek, Rich Pito,
+Gilles Prigent, Carlos Prolo, Anoop Sarkar, Yves Schabes, William Schuler,
+B. Srinivas, Fei Xia, Yuji Yoshiie and Martin Zaidel.
+d31 1
+a31 1
+Beatrice Santorini and Mark Steedman.
+d33 6
+a38 5
+In addition, Jeff Aaronson, Douglas DeCarlo, Mark-Jason Dominus, Mark
+Foster, Gaylord Holder, David Magerman, Ken Noble, Steven Shapiro and
+Ira Winston have provided technical support.  Adminstrative support
+was provided by Susan Deysher, Carolyn Elken, Jodi Kerper, Christine
+Sandy and Trisha Yannuzzi.
+@
+
+
+1.9
+log
+@added Tonia Bleam and Matt Feldman to list of contributors to the grammar.
+l
+@
+text
+@d20 4
+a23 4
+The XTAG system has been developed by: Tilman Becker, Richard
+Billington, Andrew Chalnick, Dania Egedi, Devtosh Khare, Albert Lee,
+David Magerman, Alex Mallet, Patrick Paroubek, Rich Pito, Gilles
+Prigent, Carlos Prolo, Anoop Sarkar, Yves Schabes, William Schuler,
+@
+
+
+1.8
+log
+@added Chung-Hye Han, Virginie Nanta, and Martin Kappus to the list contributors to the grammar development.
+@
+text
+@d12 7
+a18 7
+project: Anne Abeille, Jason Baldridge, Rajesh Bhatt, Kathleen Bishop,
+Raman Chandrasekar, Sharon Cote, Beatrice Daille, Christine Doran, Dania
+Egedi, Tim Farrington, Jason Frank, Chung-Hye Han, Caroline Heycock, Beth
+Ann Hockey, Roumyana Izvorski, Martin Kappus, Karin Kipper, Daniel Karp,
+Seth Kulick, Young-Suk Lee, Heather Matayek, Patrick Martin, Megan Moser,
+Virginie Nanta, Sabine Petillon, Rashmi Prasad, Laura Siegel, Yves Schabes,
+Victoria Tredinnick and Raffaella Zanuttini.
+@
+
+
+1.7
+log
+@minor typo
+@
+text
+@d11 8
+a18 8
+The following people have contributed to the development of grammars
+in the project: Anne Abeille, Jason Baldridge, Rajesh Bhatt, Kathleen
+Bishop, Raman Chandrasekar, Sharon Cote, Beatrice Daille, Christine
+Doran, Dania Egedi, Tim Farrington, Jason Frank, Caroline Heycock,
+Beth Ann Hockey, Roumyana Izvorski, Karin Kipper, Daniel Karp, Seth
+Kulick, Young-Suk Lee, Heather Matayek, Patrick Martin, Megan Moser,
+Sabine Petillon, Rashmi Prasad, Laura Siegel, Yves Schabes, Victoria
+Tredinnick and Raffaella Zanuttini.
+@
+
+
+1.6
+log
+@Corrected one typo, updated grant numbers.
+@
+text
+@d27 1
+a27 1
+Kroch, Mitchell Marcus, Martha Palmer, Owen Rambow, Phillip Resnik,
+@
+
+
+1.5
+log
+@Updated acknowledgements.
+@
+text
+@d31 1
+a31 1
+Foster, Gaylord Holder, David Mageman, Ken Noble, Steven Shapiro and
+d36 2
+a37 3
+This work was partially supported by ARO grant DAAL03-89-0031, ARPA
+grant N00014-90-J-1863, NSF STC grant DIR-8920230, and Ben Franklin
+Partnership Program (PA) grant 93S.3078C-6. 
+@
+
+
+1.4
+log
+@added Mickey
+@
+text
+@a10 4
+The principal authors of the current document are: Tilman Becker,
+Christine Doran, Dania Egedi, Beth Ann Hockey, Seth Kulick and B.
+Srinivas. We are also grateful to Rajesh Bhatt for editorial help.
+
+d12 7
+a18 5
+in the project: Anne Abeille, Rajesh Bhatt, Kathleen Bishop, Raman
+Chandrasekar, Sharon Cote, Beatrice Daille, Christine Doran, Dania
+Egedi, Jason Frank, Caroline Heycock, Beth Ann Hockey, Daniel Karp,
+Seth Kulick, Young-Suk Lee, Patrick Martin, Megan Moser, Sabine
+Petillon, Yves Schabes, Victoria Tredinnick and Raffaella Zanuttini.
+d23 2
+a24 2
+Prigent, Anoop Sarkar, Yves Schabes, B. Srinivas, Yuji Yoshiie and
+Martin Zaidel. 
+d33 2
+a34 2
+was provided by Carolyn Elken, Jodi Kerper, Christine Sandy and Trisha
+Yannuzzi.
+@
+
+
+1.3
+log
+@Mispelled Yuji and Vicky's name.
+@
+text
+@d12 2
+a13 2
+Christine Doran, Dania Egedi, Beth Ann Hockey, Seth Kulick and
+B. Srinivas. We are also grateful to Rajesh Bhatt for editorial help.
+d16 5
+a20 5
+in the project: Anne Abeille, Rajesh Bhatt, Kathleen Bishop, Sharon
+Cote, Beatrice Daille, Christine Doran, Dania Egedi, Jason Frank,
+Caroline Heycock, Beth Ann Hockey, Daniel Karp, Seth Kulick, Young-Suk
+Lee, Patrick Martin, Megan Moser, Sabine Petillon, Yves Schabes,
+Victoria Tredinnick and Raffaella Zanuttini.
+d28 3
+a30 3
+We would also like to thank Michael Hegarty, Lauri Karttunen, Anthony Kroch,
+Mitchell Marcus, Martha Palmer, Owen Rambow, Phillip Resnik, Beatrice Santorini
+and Mark Steedman.
+d32 5
+a36 4
+In addition, Jeff Aaronson, Douglas DeCarlo, Mark-Jason Dominus, Mark Foster,
+Gaylord Holder, David Mageman, Ken Noble, Steven Shapiro and Ira Winston have
+provided technical support.  Adminstrative support was provided by Carolyn
+Elken, Jodi Kerper, Christine Sandy and Trisha Yannuzzi.  
+@
+
+
+1.2
+log
+@Added Phillip Resnik, Owen Rambow, Martha Palmer, Chris Sandy,
+Carolyn, Trisha, Chris and Jodi.
+@
+text
+@d20 1
+a20 1
+Victoria Treddinnick and Raffaella Zanuttini.
+d25 1
+a25 1
+Prigent, Anoop Sarkar, Yves Schabes, B. Srinivas, Yugi Yoshiie and
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d28 3
+a30 2
+We would also like to thank  Michael Hegarty, Lauri Karttunen, Anthony
+Kroch, Mitchell Marcus, Beatrice Santorini and Mark Steedman.
+d32 4
+a35 3
+In addition, Jeff Aaronson, Douglas DeCarlo, Mark-Jason Dominus, Mark
+Foster, Gaylor Holder, David Mageman, Ken Noble, Steven Shapiro and
+Ira Winston have provided technical support.
+@

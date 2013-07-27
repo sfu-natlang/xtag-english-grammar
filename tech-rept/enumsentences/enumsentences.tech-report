@@ -1,0 +1,241 @@
+auxs.tex:\enumsentence{The music should have been being played [when the president arrived].}
+auxs.tex:\enumsentence {John does not want a car.}
+auxs.tex:\enumsentence {$\ast$John not wants a car.}
+auxs.tex:\enumsentence {John will not want a car.}
+auxs.tex:\enumsentence {Do you want to leave home?}
+auxs.tex:\enumsentence {$\ast$Want you to leave home?}
+auxs.tex:\enumsentence {Will you want to leave home?}
+auxs.tex:\enumsentence {$\ast$We will have do bought a sleeping bag.}
+auxs.tex:\enumsentence {$\ast$We do will have bought a sleeping bag.}
+auxs.tex:\enumsentence {You {\bf do} have a backpack, don't you?}
+auxs.tex:\enumsentence {I {\bf do} want to go!}
+auxs.tex:\enumsentence {$\ast$You {\bf do} can have a backpack, don't you?}
+auxs.tex:\enumsentence {$\ast$I {\bf did} have had a backpack!}
+auxs.tex:\enumsentence {John will have had a backpack.}
+auxs.tex:\enumsentence {$\ast$John not will have had a backpack.}
+auxs.tex:\enumsentence {John will not have had a backpack.}
+auxs.tex:\enumsentence {John will have not had a backpack.}
+auxs.tex:\enumsentence {Do you want to leave home?}
+auxs.tex:\enumsentence {$\ast$Want you to leave home?}
+auxs.tex:\enumsentence {Will you want to leave home?}
+auxs.tex:\enumsentence {$\ast$Do you will want to leave home?}
+auxs.tex:\enumsentence {John wants to have a backpack.}
+auxs.tex:\enumsentence {John wants Mary to have a backpack.}
+auxs.tex:\enumsentence {John wants for Mary to have a backpack.}
+compl-adj.tex:\enumsentence{Srini bought a book.}
+compl-adj.tex:\enumsentence{Srini bought Beth a book.}
+compl-adj.tex:\enumsentence{Srini bought a book.}
+compl-adj.tex:\enumsentence{Srini bought a book at the bookstore.}
+compl-adj.tex:\enumsentence{Srini arranged for a ride.}
+compl-adj.tex:\enumsentence{$\ast$Srini arranged.}
+det.tex:\enumsentence{[[[John]'s friend from high school]'s uncle]'s mother came to town.}
+double-obj.tex:\enumsentence{Christy gave a cannoli to Beth Ann.}
+double-obj.tex:\enumsentence{$\ast$Christy gave Beth Ann.}
+double-obj.tex:\enumsentence{Christy put a cannoli in the refrigerator.} 
+double-obj.tex:\enumsentence{$\ast$Christy put a cannoli.}
+double-obj.tex:\enumsentence{Christy gave Beth Ann a cannoli}
+double-obj.tex:\enumsentence{$\ast$Christy put the refrigerator the cannoli.}
+double-obj.tex:\enumsentence{Beth Ann asked Srini a question.}
+double-obj.tex:\enumsentence{$\ast$Beth Ann asked a question to Srini.}
+double-obj.tex:\enumsentence{Beth Ann baked Dusty a biscuit.}
+double-obj.tex:\enumsentence{Beth Ann baked a biscuit for Dusty.}
+double-obj.tex:\enumsentence{Beth Ann gave dinner to Clove.}
+double-obj.tex:\enumsentence{Clove was given dinner (by Beth Ann).}
+double-obj.tex:\enumsentence{Beth Ann made dinner for Clove.}
+double-obj.tex:\enumsentence{$\ast$Clove was made dinner (by Beth Ann).} 
+double-obj.tex:\enumsentence{Beth Ann made dinner.}
+double-obj.tex:\enumsentence{$\ast$Beth Ann gave dinner.}
+ergatives.tex:\enumsentence{{\it The sun melted the ice.}\\
+ergatives.tex:%%\enumsentence{The leaves fell.}
+ergatives.tex:%%\enumsentence{$\ast$The wind fell the leaves.}
+ergatives.tex:\enumsentence{The sun melted the ice cream.}
+ergatives.tex:\enumsentence{The ice cream melted.}
+ergatives.tex:\enumsentence{Elmo borrowed a book.}
+ergatives.tex:\enumsentence{$\ast$A book borrowed.}
+extraction.tex:\enumsentence{Clove caught a frisbee.}
+extraction.tex:\enumsentence{What$_{i}$ did Clove catch $\epsilon_{i}$?} 
+extraction.tex:\enumsentence{The jury wondered [who killed Nicole].}
+extraction.tex:\enumsentence{The jury wondered [whether Simpson killed Nicole].}
+extraction.tex:\enumsentence{The jury thought [Simpson killed Nicole].}
+extraction.tex:\enumsentence{$\ast$The jury thought [who did Simpson kill]?}
+extraction.tex:\enumsentence{John, I like.}
+extraction.tex:\enumsentence{Who do you like?}
+extraction.tex:\enumsentence{Who left?}
+extraction.tex:\enumsentence{Who wrote the paper?}
+extraction.tex:\enumsentence{Who was happy?}
+extraction.tex:\enumsentence{Who ate what?}
+extraction.tex:\enumsentence{Dania asked Beth a question.}
+extraction.tex:\enumsentence{Who$_{i}$ did Dania ask $\epsilon_{i}$ a question?}
+extraction.tex:\enumsentence{What$_{i}$ did Dania ask Beth $\epsilon_{i}$?}
+extraction.tex:\enumsentence{Beth was asked a question by Dania.}
+extraction.tex:\enumsentence{Who$_{i}$ was Beth asked a question by $\epsilon_{i}$??}
+extraction.tex:\enumsentence{What$_{i}$ was Beth asked $\epsilon_{i}$? by Dania?}
+extraction.tex:\enumsentence{$[$Which dog$]_{i}$ did Beth Ann give a bone to $\epsilon_{i}$?}
+extraction.tex:\enumsentence{$[$Which dog$]_{i}$ was the frisbee caught by $\epsilon_{i}$?}
+extraction.tex:\enumsentence{[To which dog]$_{i}$ did Beth Ann throw the frisbee $\epsilon_{i}$?}
+extraction.tex:\enumsentence{What does Clove want?}
+extraction.tex:\enumsentence{Beth Ann to play frisbee with her}
+extraction.tex:\enumsentence{a biscuit}
+extraction.tex:\enumsentence{How$_{i}$ did he feel $\epsilon_{i}$?}
+future-work.tex:\enumsentence{big green bugs}
+future-work.tex:\enumsentence{big green ideas}
+future-work.tex:\enumsentence{colorless green ideas}
+future-work.tex:\enumsentence{$\ast$green big ideas}
+future-work.tex:\enumsentence{{\bf Hardly} any attempt was made at restitution.}
+future-work.tex:\enumsentence{{\bf Only} Albert would say such a thing.}
+future-work.tex:\enumsentence{{\bf Almost} all the people had left by 5pm.}
+future-work.tex:\enumsentence{[Just][half the people]}
+future-work.tex:\enumsentence{[Approximately half][the people]}
+future-work.tex:\enumsentence{Cats have {\bf fewer than} nine lives.}
+future-work.tex:\enumsentence{I went to Kentucky last month/$\ast$big cat.}
+future-work.tex:\enumsentence{This morning/$\ast$Big cat, we practiced juggling four balls.}
+future-work.tex:\enumsentence{The murdered man was a doctoral student at UPenn.}
+future-work.tex:\enumsentence{The man died.}
+future-work.tex:\enumsentence{The dying man pleaded for his life.}
+future-work.tex:\enumsentence{The brilliant, funny and timeless comedian had his 99th birthday
+future-work.tex:\enumsentence{NP's, PP's and VP's are all adjunction sites.}
+future-work.tex:\enumsentence{Jan$_i$ promised Maria [PRO$_i$ to go].}
+future-work.tex:\enumsentence{Jan persuaded Maria$_i$ [PRO$_i$ to go].}
+future-work.tex:\enumsentence{[PRO$_{arb}$ to dance] is important.}
+future-work.tex:\enumsentence{\#Survivors walked of the street.}
+future-work.tex:\enumsentence{\#The man about the earthquake survived.}
+future-work.tex:\enumsentence{\#The president arranged on a meeting.}
+gerunds.tex:\enumsentence{And {\bf avoiding such losses} will take a monumental
+gerunds.tex:\enumsentence{{\bf Mr. Nolen's nocturnal wandering} doesn't make him a
+gerunds.tex:\enumsentence{Is this a case where private markets are approving of
+gerunds.tex:\enumsentence{Some think {\bf the rapid selling of bonds} has a way to go.}
+gerunds.tex:\enumsentence{?[$_{NP}$John's repairing$_{NP}$] ran.}
+gerunds.tex:\enumsentence{[$_{NP}$John's tinkering$_{NP}$] worked.}
+it-clefts.tex:\enumsentence{It is [$_{XP}$ these demands$_{XP}$] [$_{S}$ to which
+it-clefts.tex:\enumsentence{It is [$_{XP}$ spirit$_{XP}$]  [$_{S}$ which gives life
+it-clefts.tex:\enumsentence{It is [$_{XP}$ here$_{XP}$]  [$_{S}$ that the ecumenical
+it-clefts.tex:\enumsentence{It was  [$_{XP}$ there$_{XP}$]  [$_{S}$ that she would
+it-clefts.tex:\enumsentence{Was it in the forest that the wolf talked to Little Red
+modifiers.tex:\enumsentence{[$_{ADV}$ Certainly $_{ADV}$], the October 13 sell-off
+modifiers.tex:\enumsentence{Mr. Bakes [$_{ADV}$ previously $_{ADV}$] had a turn at running
+modifiers.tex:\enumsentence{Most [$_{ADJ}$ foreign $_{ADJ}$] [$_{N}$ government
+modifiers.tex:\enumsentence{big green bugs}
+modifiers.tex:\enumsentence{big green ideas}
+modifiers.tex:\enumsentence{colorless green ideas}
+modifiers.tex:\enumsentence{$\ast$green big ideas}
+modifiers.tex:\enumsentence{Cats actually have fewer than nine lives.}
+modifiers.tex:\enumsentence{[$_{N}$ big [$_{N}$ blue design $_{N}$]$_{N}$]}
+modifiers.tex:\enumsentence{[$_{N}$ computer [$_{N}$ furniture design $_{N}$]$_{N}$]\\
+modifiers.tex:\enumsentence{[$_{PP}$ With Clove healthy $_{PP}$], the veterinarian's
+modifiers.tex:\enumsentence{The frisbee [$_{PP}$ in the brambles $_{PP}$] was hidden.
+modifiers.tex:\enumsentence{Clove played frisbee [$_{PP}$ outside $_{PP}$]. 
+modifiers.tex:\enumsentence{Clove played frisbee [$_{PP}$ outside of the house $_{PP}$].
+modifiers.tex:\enumsentence{{\bf extremely} good}
+modifiers.tex:\enumsentence{{\bf rather} tall}
+modifiers.tex:\enumsentence{rich {\bf enough}}
+modifiers.tex:\enumsentence{oddly {\bf enough}} 
+modifiers.tex:\enumsentence{{\bf very} well}
+modifiers.tex:\enumsentence{{\bf right} through the wall}
+modifiers.tex:\enumsentence{He has {\bf hardly} any friends}
+modifiers.tex:\enumsentence{{\bf just} two hundred deaths}
+modifiers.tex:\enumsentence{How quickly the time passed.}
+modifiers.tex:\enumsentence{How did you fall?}
+passives.tex:\enumsentence{{\bf An airline buy-out bill} was approved by the House. (WSJ)}
+passives.tex:\enumsentence{The House approved {\bf an airline buy-out bill}.}
+rel_clauses.tex:\enumsentence{export exhibitions that included high-tech items}
+rel_clauses.tex:\enumsentence{the man that Muriel likes}
+rel_clauses.tex:\enumsentence{the man who Muriel likes}
+rel_clauses.tex:\enumsentence{the man Muriel likes}
+rel_clauses.tex:\enumsentence{what Muriel likes}
+rel_clauses.tex:\enumsentence{the book for Muriel to read}
+rel_clauses.tex:\enumsentence{the man reading the book}
+sent-adjs-sub-conjs.tex:\enumsentence{Unless she$_i$ hurries, Mary$_i$ will be late for the meeting.}
+sent-adjs-sub-conjs.tex:\enumsentence{$\ast$She$_i$ will be late for the meeting unless Mary$_i$ hurries.}
+sent-adjs-sub-conjs.tex:\enumsentence{Mary$_i$ will be late for the meeting unless she$_i$ hurries.}
+sent-adjs-sub-conjs.tex:\enumsentence{ [Destroyed by the fire], the building still stood for many years.}
+sent-adjs-sub-conjs.tex:\enumsentence{The fire raged for days [destroying the building].}
+sent-adjs-sub-conjs.tex:\enumsentence{$\ast$[That destroyed by the fire], the building
+sent-adjs-sub-conjs.tex:\enumsentence{Harriet bought a Mustang [to impress Eugene].}
+sent-adjs-sub-conjs.tex:\enumsentence{[To impress Harriet], Eugene dyed his hair.}
+sent-adjs-sub-conjs.tex:\enumsentence{Traffic stopped [for Harriet to cross the street].}
+sent-adjs-sub-conjs.tex:\enumsentence{He died [that others may live].}
+sent-adjs-sub-conjs.tex:\enumsentence{$\ast$He died [others may live].}
+sent-adjs-sub-conjs.tex:\enumsentence{{\it as recently/quickly}/etc. {\it as} + indicative complement}
+sent-adjs-sub-conjs.tex:\enumsentence{{\it as soon as} + participial complement}
+sent-adjs-sub-conjs.tex:\enumsentence{And Truffula trees are what everyone needs! \cite{seuss71}}
+sent-comps-subjs.tex:\enumsentence{He hopes $\emptyset$ Muriel wins.}
+sent-comps-subjs.tex:\enumsentence{He hopes that Muriel wins.}
+sent-comps-subjs.tex:\enumsentence{Christy hopes that Mike wins.}
+sent-comps-subjs.tex:\enumsentence{Christy hopes Mike wins.}
+sent-comps-subjs.tex:\enumsentence{Dania thinks that Newt is a liar.}
+sent-comps-subjs.tex:\enumsentence{Dania thinks Newt is a liar.}
+sent-comps-subjs.tex:\enumsentence{That Helms won so easily annoyed me.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Helms won so easily annoyed me.}
+sent-comps-subjs.tex:\enumsentence{To lose would be awful.}
+sent-comps-subjs.tex:\enumsentence{For Penn to lose would be awful.}
+sent-comps-subjs.tex:\enumsentence{$\ast$For to lose would be awful.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Penn to lose would be awful.}
+sent-comps-subjs.tex:\enumsentence{Jesse wondered who left.}
+sent-comps-subjs.tex:\enumsentence{Jesse wondered if Barry left.}
+sent-comps-subjs.tex:\enumsentence{Jesse wondered whether to leave.}
+sent-comps-subjs.tex:\enumsentence{Jesse wondered whether Barry left.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Jesse thought who left.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Jesse thought if Barry left.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Jesse thought whether to leave.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Jesse thought whether Barry left.}
+sent-comps-subjs.tex:\enumsentence{Mike wants her to pass the exam.}
+sent-comps-subjs.tex:\enumsentence{Christy wants to pass the exam.}
+sent-comps-subjs.tex:\enumsentence{Mike wants for her to pass the exam.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Mike wants for she to pass the exam.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Christy wants for to pass the exam.}
+sent-comps-subjs.tex:\enumsentence{The emu thinks that the aardvark smells terrible.}
+sent-comps-subjs.tex:\enumsentence{Who does the emu think smells terrible?}
+sent-comps-subjs.tex:\enumsentence{Who did the elephant think the panda heard the emu say
+sent-comps-subjs.tex:\enumsentence{Which animal did the giraffe say that he likes?}
+sent-comps-subjs.tex:\enumsentence{$\ast$Which animal did the giraffe say that likes him?}
+sent-comps-subjs.tex:\enumsentence{Which animal did the giraffe say likes him?}
+sent-comps-subjs.tex:\enumsentence{$\ast$ Who$_{i}$ do you wonder who$_{j}$ e$_{j}$ loves e$_{i}$ ?}
+sent-comps-subjs.tex:\enumsentence{Beth's boast that Clove was a smart dog....}
+sent-comps-subjs.tex:\enumsentence{$\ast$Beth's boast that Clove a smart dog....}
+sent-comps-subjs.tex:\enumsentence{Dania wasn't getting any sleep with Doug sick.}
+sent-comps-subjs.tex:\enumsentence{$\ast$Dania wasn't getting any sleep with Doug was sick.}
+sm-clause.tex:\enumsentence{Carl is a jerk.}
+sm-clause.tex:\enumsentence{Carl is upset.}
+sm-clause.tex:\enumsentence{Carl is in a foul mood.}
+sm-clause.tex:\enumsentence{Is Beth writing her dissertation?\\
+sm-clause.tex:\enumsentence{Beth is not writing her dissertation.\\
+sm-clause.tex:\enumsentence{Beth isn't writing her dissertation.\\
+sm-clause.tex:\enumsentence{She's writing her dissertation.\\
+sm-clause.tex:\enumsentence{Beth is often writing her dissertation.\\
+sm-clause.tex:\enumsentence{The bartender was garrulous.}
+sm-clause.tex:\enumsentence{?The cliff was garrulous.}
+sm-clause.tex:\enumsentence{Carl seems a jerk.\\
+sm-clause.tex:\enumsentence{Carl appears a jerk.\\
+sm-clause.tex:\enumsentence{Carl seems to be a jerk.\\
+sm-clause.tex:\enumsentence{$\ast$Seems Carl to be a jerk?\\
+sm-clause.tex:\enumsentence{Carl often seems to be upset.\\
+sm-clause.tex:\enumsentence{I consider [Carl a jerk].\\
+sm-clause.tex:\enumsentence{$\ast$I prefer [Carl a jerk].\\
+sm-clause.tex:\enumsentence{Carl became a jerk.}
+sm-clause.tex:\enumsentence{Carl became upset.}
+sm-clause.tex:\enumsentence{$\ast$Carl became in a foul mood.}
+sm-clause.tex:\enumsentence{John$_{i}$ is [$_{AgrP}$ $t_{i}$ the culprit ].}
+sm-clause.tex:\enumsentence{The culprit$_{i}$ is [$_{AgrP}$ John $t_{i}$ ].}
+sm-clause.tex:\enumsentence{I consider [$_{AgrP}$ John the culprit].}
+sm-clause.tex:\enumsentence{$\ast$I consider the culprit John.}
+sm-clause.tex:\enumsentence{I consider [John$_{i}$ to be [$_{AgrP}$ $t_{i}$ the culprit ]].}
+sm-clause.tex:\enumsentence{I consider [the culprit$_{i}$ to be [$_{AgrP}$ John $t_{i}$ ]].}
+sm-clause.tex:\enumsentence{[$_{S}$ NP [$_{VP}$  N \ldots ]]}
+sm-clause.tex:\enumsentence{[$_{S}$ NP [$_{VP}$  A \ldots ]]}
+sm-clause.tex:\enumsentence{[$_{S}$ NP [$_{VP}$  P \ldots ]]}
+sm-clause.tex:\enumsentence{She considers Carl a jerk.\\
+sm-clause.tex:\enumsentence{$\ast$She prefers Carl a jerk.\\
+sm-clause.tex:\enumsentence{$\ast$She feels Carl a jerk.\\
+sm-clause.tex:\enumsentence{My teacher is Mrs. Wayman.}
+sm-clause.tex:\enumsentence{Doug is the man with the glasses.}
+sm-clause.tex:\enumsentence{$\ast$My teacher seems Mrs. Wayman.}
+sm-clause.tex:\enumsentence{$\ast$Doug appears the man with the glasses.}
+sm-clause.tex:\enumsentence{$\ast$I consider [my teacher Mrs. Wayman].}
+sm-clause.tex:\enumsentence{$\ast$I prefer [Doug the man with the glasses].}
+sm-clause.tex:\enumsentence{The man with the glasses is Doug.}
+sm-clause.tex:\enumsentence{Doug is a programmer.}
+sm-clause.tex:\enumsentence{$\ast$A programmer is Doug.}
+sm-clause.tex:\enumsentence{The challenger is to provide a non-stipulative solution.\\
+sm-clause.tex:\enumsentence{The challenge is to provide a non-stipulative solution.\\
+sm-clause.tex:\enumsentence{Is my teacher Mrs. Wayman?}
+sm-clause.tex:\enumsentence{Doug isn't the man with the glasses.} 

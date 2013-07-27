@@ -1,0 +1,17 @@
+the/Det stopped/V truck/N
+(("NXdxN[truck]" NIL) (("Vn[stopped]" (2))) (("DXD[the]" (1))))
+
+a/Det certain/A kind/N of/Prep machineN
+(("NXdxN[machine]" NIL) (("DXnxP[of]" (1)) (("NXdxN[kind]" (1 1)) (("An[certain]" (2))) (("DXD[a]" (1))))))
+
+some/Det parts/N of/Prep these/Det machines/N
+(("NXdxN[machines]" NIL) (("DXD[these]" (1)) (("nxPdx[of]" NIL) (("NXdxN[parts]" (1 1)) (("DXD[some]" (1)))))))
+
+which/Det and/Conj what/Det
+(("DXD[what]" NIL) (("DX1conjDX2[and]" NIL) (("DXD[which]" (1)))))
+
+all/Det but/Conj one/Det
+(("DXD[one]" NIL) (("DX1conjDX2[but]" NIL) (("DXD[all]" (1)))))
+
+the/Det dark/A and/Conj dreary/A day/N
+(("NXdxN[day]" NIL) (("An[dark]" (2)) (("A1conjA2[and]" (1)) (("A[dreary]" (3))))) (("DXD[the]" (1))))

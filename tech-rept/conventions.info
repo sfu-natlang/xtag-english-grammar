@@ -1,0 +1,48 @@
+Definitions are given in small caps (\xtag-def).
+
+Features should be in bold face (\bf), with angle brackets around the name of
+the feature.
+
+Lexical items should be italized (\it).
+
+Figure and Table should be capitalized.  section, chapter, sentence, and
+appendix should not.
+
+Be careful to distinguish between the FB-LTAG formalmism vs the XTAG grammar.
+
+Parts of speech should not be capitalized, but acronyms (e.g. NP, VP) are.
+
+Be careful about the distinction between e.g. (for example) and i.e. (that is).
+
+XTAG should always be entirely in caps.
+
+Some spellings: co-index, foot node, root node, {\it by} phrase
+
+To highlight lexical items in an enumsentence, use boldface (\bf).
+
+Citations should either be part of the text or in parentheses.
+
+References to \enumsentence should be in parentheses.
+
+Figure numbers should not be in parentheses, but subfigures should (e.g Figure 40(b)).
+
+No spaces when using a dash for a range (e.g. (4)-(6)).
+
+Use $\ast$ for starring bad sentences.
+
+All figures should have tree names (when appropriate) indicated in the caption
+(this is for the list of figures at the beginning of the report).
+
+All figures should be (at least) [hbt].
+
+Plural of NP, VP, PP, etc should be NP's, VP's, PP's, etc.
+
+There should be no spaces in the equation for feature structures
+(e.g. <case>=acc).
+
+Use the math mode only for the angle brackets in the feature structures.  Using
+it for the =,+,- negates the \bf instruction (e.g. $<$const$>$=+).
+
+No figures should be stranded by themselves at the end of a chapter.
+
+No shortcites on references.

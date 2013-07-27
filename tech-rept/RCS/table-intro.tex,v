@@ -1,0 +1,893 @@
+head	1.20;
+access
+	egedi
+	srini
+	beth
+	cdoran
+	skulick
+	heatherm
+	anoop
+	elhuang
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.20
+date	2001.02.22.10.49.27;	author rjprasad;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2001.02.21.19.43.37;	author rjprasad;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2000.11.14.02.28.39;	author rjprasad;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2000.10.14.19.29.57;	author tbleam;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	99.01.16.01.34.22;	author anoop;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	99.01.15.20.02.30;	author anoop;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	99.01.13.20.58.12;	author anoop;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	99.01.13.19.02.27;	author fxia;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	98.08.30.02.40.51;	author anoop;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	98.08.29.00.50.14;	author anoop;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	98.08.28.19.11.08;	author anoop;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	98.08.28.18.27.40;	author anoop;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	98.08.27.06.31.46;	author anoop;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	98.07.10.18.45.48;	author cdoran;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	98.06.25.20.19.38;	author cdoran;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	96.08.16.20.34.00;	author heatherm;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	96.08.16.19.49.34;	author heatherm;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	96.08.14.23.40.43;	author cdoran;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	95.01.26.21.07.21;	author egedi;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.01.24.20.56.40;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Introduction to table that give which trees are in which families.
+This is the 'almost final' version.
+@
+
+
+1.20
+log
+@got rid of one table (which is included in table in table.tex)
+@
+text
+@\chapter{Where to Find What}
+\label{table-intro}
+
+The two tables that follow give an overview of what types of trees occur in
+various tree families, with pointers to discussion in this report.  The
+first table gives the expansion of abbreviations in the headers of the
+second table. The abbeviations and their expansions can be matched in the
+second table in the order in which they appear - first for the column
+headers (left-right) and second for the row header (top-down). Notice that
+the non-abbreviated headers will not be seen in this table, so they should
+be skipped when following the order of appearance. The second table
+contains two kinds of information related to the XTAG grammar. Firstly, the
+column headers give the list all the tree families in the grammar (along
+with the XTAG names for them). These can be also be referenced in the more
+detailed decsriptions of each tree family in
+Chapter~\ref{verb-classes}. Secondly, each column, corresponding to a tree
+family, contains a list of the constructions available for that tree family
+so that the row headers gives the constructions available in the grammar
+across the tree families. An entry in a cell of the table indicates that
+the tree(s) for the construction named in the row header are included in
+the tree family named in the column header. Entries are of two types.  If
+the particular tree(s) are displayed and/or discussed in this report the
+entry gives a page number reference to the relevant discussion or
+figure.\footnote{Since Chapter~\ref{verb-classes} has a brief discussion
+and a declarative tree for every tree family, page references are given
+only for other sections in which discussion or tree diagrams appear.}
+Otherwise, a \xtagcheck \space indicates inclusion in the tree family but
+no figure or discussion related specifically to that tree in this report.
+Blank cells indicate that there are no trees for the construction named in
+the row header in the tree family named in the column header.
+
+%The second table gives the name given to each tree family in the actual
+%XTAG grammar. This makes it easier to find the description of each tree
+%family in Chapter~\ref{verb-classes} and to compare the description with
+%the online XTAG grammar.
+
+\vspace{0.3in}
+
+\footnotesize
+\begin{tabular}{ll}
+Abbreviation&Full Name\\
+\hline
+{\bf COLUMN HEADERS} &\\
+\hline
+V,P Pred. & Predicative Multi-word with Verb, Prep anchors \\
+V,P Ditr. Pred. & Ditransitive with PP with Verb and Prep anchors\\
+Sent. compl. w/ NP & Sentential complement with NP \\
+Intr. Verb Particle & Intransitive verb particle \\
+Trans. Verb Particle & Transitive verb particle \\
+Ditrans. Verb Particle & Ditransitive verb particle \\
+Sent. compl. & Sentential complement \\
+Intransitive w/ Adj. & Intransitive with adjective \\
+Transitive SS. & Transitive sentential subject \\
+Ditr. LV. w/ PP & Ditransitive light verb with PP \\
+Adj.. Sm-Cl. & Adjective small clause \\
+Adj. Sm-Cl. w/ Sent. compl. & Adjective small clause with sentential
+complement \\
+Adj. Sm-Cl. w/ SS. & Adjective small clause with sentential
+subject \\
+NP Sm-Cl. & NP small clause \\
+PP Sm-Cl. & PP small clause \\
+Exh. PP Sm-Cl. & Exhaustive PP small clause \\
+PP Sm-Cl. w/ SS. & PP small clause with sentential subject \\
+PP Sm-Cl. w/ Ad,P Pred. & PP small clause with Adv and Prep anchors \\
+PP Sm-Cl. w/ A,P Pred. & PP small clause with Adjective and Prep anchors \\
+PP Sm-Cl. w/ N,P Pred. & PP small clause with Noun and Prep anchors \\
+PP Sm-Cl. w/ P,P Pred. & PP small clause with two Prep anchors \\
+PP Sm-Cl. w/ P,N Pred. & PP small clause with Prep and Noun anchors \\
+PP Sm-Cl. w/ SS., \& Ad,P Pred. & PP small clause with sentential subject
+and Adverb and Prep anchors \\
+PP Sm-Cl. w/ SS., \& A,P Pred. & PP small clause with sentential subject
+and Adjective and Prep anchors \\
+PP Sm-Cl. w/ SS., \& N,P Pred. & PP small clause with sentential subject
+and Noun and Prep anchors \\
+PP Sm-Cl. w/ SS., \& P,P Pred. & PP small clause with sentential subject
+and Prep anchors \\
+PP Sm-Cl. w/ SS., \& P,N Pred. & PP small clause with sentential subject
+and Prep and Noun anchors \\
+Intr. SS. & Intransitive sentential subject \\
+SS. w/ 'to' compl. & Sentential subject with ``to'' complement \\
+Loc. Sm-Cl. w/ Ad. Pred. & Locative small clause with adverb anchor \\
+Tr/Intr. Res. w/ V,A Pred. & (transitive/intransitive) resultatives with verb and adjective anchors
+\\
+Tr/Intr. Res. w/ V,P Pred. & (transitive/intransitive) resultatives with verb and prep anchors
+\\
+Erg. Res. w/ V,A Pred. & Ergative resultatives with verb and adjective
+anchors \\
+Erg. Res. w/ V,P Pred. & Ergative resultatives with verb and prep
+anchors \\
+SS. w/ Sm-Cl. compl. & Sentential subject with small clause complement \\
+\hline
+{\bf ROW HEADERS} & \\
+\hline
+Y/N quest.&Yes/No question \\
+Wh-mov. S compl.&Wh-moved Sentential complement \\
+Wh-mov. Adj or Ad compl.&Wh-moved Adjective or adverb complement \\
+Wh-mov. object of a mod.&Wh-moved object of a modifier \\
+Wh-mov. PP&Wh-moved PP \\
+Topic. NP complement&Topicalized NP complement \\
+Det. gerund&Determiner gerund \\
+Rel. cl. on NP compl.&Relative clause on NP complement \\
+Rel. cl. on PP compl.& Relative clause on PP complement\\
+Rel. cl. on NP object of P& Relative clause on NP object of Prep\\
+Pass. with wh-moved subj.&Passive with wh-moved subject (with and without {\it by} phrase) \\
+Pass. w. wh-mov. ind. obj.&Passive with wh-moved indirect object (with and without {\it by} phrase) \\
+Pass. w. wh-mov. obj. of the {\it {\it by} phrase}&Passive with wh-moved object of the {\it by} phrase \\
+Pass. w. wh-mov. {\it by} phrase&Passive with wh-moved {\it by} phrase \\
+Trans. Idiom with V, D and N & Transitive Idiom with Verb, Det and
+Noun anchors\\
+
+\end{tabular}
+\normalsize
+
+%\footnotesize
+%\begin{tabular}{ll}
+%Full Name&XTAG Name\\
+%\hline
+%Transitive Ergative  &  TEnx1V\\
+%Intransitive Sentential Subject &  Ts0V\\
+%Sentential Subject with `to' complement &  Ts0Vtonx1\\
+%PP Small Clause, with Adv and Prep anchors & Tnx0ARBPnx1\\
+%PP Small Clause, with Adj and Prep anchors & Tnx0APnx1\\
+%PP Small Clause, with Noun and Prep anchors & Tnx0NPnx1\\
+%PP Small Clause, with Prep anchors & Tnx0PPnx1\\
+%PP Small Clause, with Prep and Noun anchors & Tnx0PNaPnx1\\
+%PP Small Clause with Sentential Subject, and Adv and Prep anchors & Ts0ARBPnx1\\
+%PP Small Clause with Sentential Subject, and Adj and Prep anchors & Ts0APnx1\\
+%PP Small Clause with Sentential Subject, and Noun and Prep anchors & Ts0NPnx1\\
+%PP Small Clause with Sentential Subject, and Prep anchors & Ts0PPnx1\\
+%PP Small Clause with Sentential Subject, and Prep and Noun anchors & Ts0PNaPnx1\\
+%Exceptional Case Marking & TXnx0Vs1\\
+%Locative Small Clause with Ad anchor & Tnx0nx1ARB\\
+%Sentential Subject with Small Clause Complement & Ts0Vs1\\
+%Transitive & Tnx0Vnx1\\
+%Ditransitive with PP (where Prep is co-anchor) & Tnx0Vnx1Pnx2\\
+%Ditransitive & Tnx0Vnx2nx1\\
+%Ditransitive with PP & Tnx0Vnx1pnx2\\
+%Sentential Complement with NP & Tnx0Vnx1s2\\
+%Intransitive Verb Particle & Tnx0Vpl\\
+%Transitive Verb Particle & Tnx0Vplnx1\\
+%Ditransitive Verb Particle & Tnx0Vplnx2nx1\\
+%Intransitive with PP & Tnx0Vpnx1\\
+%Sentential Complement & Tnx0Vs1\\
+%Transitive Light Verbs & Tnx0lVN1\\
+%Ditransitive Light Verbs with PP & Tnx0lVN1Pnx2\\
+%Adjective Small Clause with Sentential Subject & Ts0Ax1\\
+%NP Small Clause with Sentential Subject &  Ts0N1\\
+%PP Small Clause with Sentential Subject & Ts0Pnx1\\
+%Predicative Multi-word with Verb, Prep anchors & Tnx0VPnx1\\
+%Adverb It-Cleft & TItVad1s2\\
+%NP It-Cleft & TItVnx1s2\\
+%PP It-Cleft & TItVpnx1s2\\
+%Adjective Small Clause Tree & Tnx0Ax1\\
+%Adjective Small Clause with Sentential Complement & Tnx0A1s1\\
+%Equative {\it BE} & Tnx0BEnx1\\
+%NP Small Clause & Tnx0N1\\
+%NP with Sentential Complement Small Clause & Tnx0N1s1\\
+%PP Small Clause & Tnx0Pnx1\\
+%Exhaustive PP Small Clause & Tnx0Px1\\
+%Intransitive & Tnx0V\\
+%Intransitive with Adjective & Tnx0Vax1\\
+%Transitive Sentential Subject &  Ts0Vnx1\\
+%Idiom with V, D and N & Tnx0VDN1\\
+%Idiom with V, D, A, and N anchors & Tnx0VDAN1\\
+%Idiom with V and N anchors & Tnx0VN1\\
+%Idiom with V, A, and N anchors & Tnx0VAN1\\
+%Idiom with V, D, N, and Prep anchors & Tnx0VDN1Pnx2\\
+%Idiom with V, D, A, N, and Prep anchors & Tnx0VDAN1Pnx2\\
+%Idiom with V, N, and Prep anchors & Tnx0VN1Pnx2\\
+%Idiom with V, A, N, and Prep anchors & Tnx0VAN1Pnx2\\
+%Tr/Intr Resultative with V-Adj anchors & TRnx0Vnx1A2\\
+%Tr/Intr Resultative with V-Prep anchors & TRnx0Vnx1Pnx2\\
+%Ergative Resultative with V-Adj anchors & TREnx1VA2\\
+%Ergative Resultative with V-Prep anchors & TREnx1VPnx2\\
+%\end{tabular}
+%\normalsize
+
+%\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@
+
+
+1.19
+log
+@modified as per additions to grammar
+@
+text
+@d14 2
+a15 2
+with the {\sc Xtag} names for them). These can be also be referenced in the
+more detailed decsriptions of each tree family in
+d17 6
+a22 6
+family, contains a listing of the constructions available for that tree
+family so that the row headers gives the constructions available in the
+grammar across the tree families. An entry in a cell of the table indicates
+that the tree(s) for the construction named in the row header are included
+in the tree family named in the column header. Entries are of two types.
+If the particular tree(s) are displayed and/or discussed in this report the
+a36 2
+
+
+d45 46
+a90 51
+Intr. Sent. Subj. & Intransitive Sentential Subject
+Sent. Subj. w. {\it to} \& Sentential Subject with {\it to} PP complement \\
+Pred. Mult-wd. ARB, P & Predicative Multi-word PP with Adv, Prep anchors\\
+Pred. Mult-wd. A, P & Predicative Multi-word PP with Adj, Prep anchors\\
+Pred. Mult-wd. N, P & Predicative Multi-word PP with Noun, Prep
+anchors\\
+Pred. Mult-wd. P, P & Predicative Multi-word PP with two Prep
+anchors\\
+Pred. Mult-wd. no int. mod. & Predicative Multi-word PP with no internal
+modification\\
+Pred. Sent. Subj., ARB, P & Predicative PP with Sentential Subject, and
+Adv, Prep anchors\\
+Pred. Sent. Subj., A, P & Predicative PP with Sentential Subject, and
+Adj, Prep anchors\\
+Pred. Sent. Subj., N, P & Predicative PP with Sentential Subject, and
+Noun, Prep anchors\\
+Pred. Sent. Subj., P, P & Predicative PP with Sentential Subject, and two
+Prep anchors\\
+Pred. Sent. Subj., no int-mod & Predicative PP with Sentential Subject,
+no internal modification\\
+ECM & Exceptional Case Marking\\
+Pred. Locative & Predicative anchored by a Locative Adverb\\
+Sent. Subj. w. Sm. Cl. Comp. & Sentential Subject with Small Clause
+Complement\\
+Ditransitive w/ PP w/ P co-anchor & Ditransitive with PP with Verb and Prep
+anchors\\
+Adj. Sm. Cl. w. Sentential Subj. & Adjective Small Clause with Sentential Subject\\
+NP Sm. Clause w. Sentential Subj. & NP Small Clause with Sentential Subject\\
+PP Sm. Clause w. Sentential Subj. & PP Small Clause with Sentential Subject\\
+Pred. Mult wd. V, P & Predicative Multi-word with Verb, Prep anchors \\
+Adj. Sm. Cl. w. Sent. Comp.&Adjective Small Clause with Sentential
+Complement\\
+NP Sm. Cl. w. Sent. Comp.&NP Small Clause with Sentential Complement\\
+Exhaustive PP Sm. Cl.&Exhaustive PP Small Clause\\
+Idiom with V, D, N & Idiom with V, D, and N anchors \\
+Idiom with V, D, A, N & Idiom with V, D, A, and N anchors \\
+Idiom with V, N & Idiom with V, and N anchor \\
+Idiom with V, A, N & Idiom with V, A, and N anchors \\
+Idiom with V, D, N, P & Idiom with V, D, N, and Prep anchors \\
+Idiom with V, D, A, N, P & Idiom with V, D, A, N, and Prep anchors \\
+Idiom with V, N, P & Idiom with V, N, and Prep anchors \\
+Idiom with V, A, N, P & Idiom with V, A, N, and Prep anchors \\
+Tr/In. Resultative with A. & Transitive and Intranstive verbs with Adj
+resultative predicate\\
+Tr/In. Resultative with P. & Transitive and Intranstive verbs with Prep
+resultative predicate\\
+Erg. Resultative with A. & Ergative verbs with Adj
+resultative predicate\\
+Erg. Resultative with P. & Ergative verbs with Prep
+resultative predicate\\
+& \\
+d94 3
+a96 4
+Y/N question&Yes/No question \\
+Wh-mov. NP complement&Wh-moved NP complement \\
+Wh-mov. S comp.&Wh-moved S complement \\
+Wh-mov. Adj comp.&Wh-moved Adjective complement \\
+d101 3
+a103 3
+Rel. cl. on NP comp.&Relative clause on NP complement \\
+Rel. cl. on PP comp.& Relative clause on PP complement\\
+Rel. cl. on NP object of P& Relative clause on NP object of P\\
+d114 63
+a176 63
+\footnotesize
+\begin{tabular}{ll}
+Full Name&XTAG Name\\
+\hline
+Transitive Ergative  &  TEnx1V\\
+Intransitive Sentential Subject &  Ts0V\\
+Sentential Subject with `to' complement &  Ts0Vtonx1\\
+PP Small Clause, with Adv and Prep anchors & Tnx0ARBPnx1\\
+PP Small Clause, with Adj and Prep anchors & Tnx0APnx1\\
+PP Small Clause, with Noun and Prep anchors & Tnx0NPnx1\\
+PP Small Clause, with Prep anchors & Tnx0PPnx1\\
+PP Small Clause, with Prep and Noun anchors & Tnx0PNaPnx1\\
+PP Small Clause with Sentential Subject, and Adv and Prep anchors & Ts0ARBPnx1\\
+PP Small Clause with Sentential Subject, and Adj and Prep anchors & Ts0APnx1\\
+PP Small Clause with Sentential Subject, and Noun and Prep anchors & Ts0NPnx1\\
+PP Small Clause with Sentential Subject, and Prep anchors & Ts0PPnx1\\
+PP Small Clause with Sentential Subject, and Prep and Noun anchors & Ts0PNaPnx1\\
+Exceptional Case Marking & TXnx0Vs1\\
+Locative Small Clause with Ad anchor & Tnx0nx1ARB\\
+Sentential Subject with Small Clause Complement & Ts0Vs1\\
+Transitive & Tnx0Vnx1\\
+Ditransitive with PP (where Prep is co-anchor) & Tnx0Vnx1Pnx2\\
+Ditransitive & Tnx0Vnx2nx1\\
+Ditransitive with PP & Tnx0Vnx1pnx2\\
+Sentential Complement with NP & Tnx0Vnx1s2\\
+Intransitive Verb Particle & Tnx0Vpl\\
+Transitive Verb Particle & Tnx0Vplnx1\\
+Ditransitive Verb Particle & Tnx0Vplnx2nx1\\
+Intransitive with PP & Tnx0Vpnx1\\
+Sentential Complement & Tnx0Vs1\\
+Transitive Light Verbs & Tnx0lVN1\\
+Ditransitive Light Verbs with PP & Tnx0lVN1Pnx2\\
+Adjective Small Clause with Sentential Subject & Ts0Ax1\\
+NP Small Clause with Sentential Subject &  Ts0N1\\
+PP Small Clause with Sentential Subject & Ts0Pnx1\\
+Predicative Multi-word with Verb, Prep anchors & Tnx0VPnx1\\
+Adverb It-Cleft & TItVad1s2\\
+NP It-Cleft & TItVnx1s2\\
+PP It-Cleft & TItVpnx1s2\\
+Adjective Small Clause Tree & Tnx0Ax1\\
+Adjective Small Clause with Sentential Complement & Tnx0A1s1\\
+Equative {\it BE} & Tnx0BEnx1\\
+NP Small Clause & Tnx0N1\\
+NP with Sentential Complement Small Clause & Tnx0N1s1\\
+PP Small Clause & Tnx0Pnx1\\
+Exhaustive PP Small Clause & Tnx0Px1\\
+Intransitive & Tnx0V\\
+Intransitive with Adjective & Tnx0Vax1\\
+Transitive Sentential Subject &  Ts0Vnx1\\
+Idiom with V, D and N & Tnx0VDN1\\
+Idiom with V, D, A, and N anchors & Tnx0VDAN1\\
+Idiom with V and N anchors & Tnx0VN1\\
+Idiom with V, A, and N anchors & Tnx0VAN1\\
+Idiom with V, D, N, and Prep anchors & Tnx0VDN1Pnx2\\
+Idiom with V, D, A, N, and Prep anchors & Tnx0VDAN1Pnx2\\
+Idiom with V, N, and Prep anchors & Tnx0VN1Pnx2\\
+Idiom with V, A, N, and Prep anchors & Tnx0VAN1Pnx2\\
+Tr/Intr Resultative with V-Adj anchors & TRnx0Vnx1A2\\
+Tr/Intr Resultative with V-Prep anchors & TRnx0Vnx1Pnx2\\
+Ergative Resultative with V-Adj anchors & TREnx1VA2\\
+Ergative Resultative with V-Prep anchors & TREnx1VPnx2\\
+\end{tabular}
+\normalsize
+d178 1
+a178 1
+\clearpage
+@
+
+
+1.18
+log
+@added names and family label for the four new resultative families. also changed some of the text at the beginning
+@
+text
+@d4 27
+a30 23
+The two page table that follows gives an overview of what types of trees
+occur in various tree families with pointers to discussion in this report.
+An entry in a cell of the table indicates that the tree(s) for the
+construction named in the row header are included in the tree family named
+in the column header. Entries are of two types.  If the particular tree(s)
+are displayed and/or discussed in this report the entry gives a page number
+reference to the relevant discussion or figure.\footnote{Since
+Chapter~\ref{verb-classes} has a brief discussion and a declarative tree
+for every tree family, page references are given only for other sections in
+which discussion or tree diagrams appear.}  Otherwise, a \xtagcheck \space
+indicates inclusion in the tree family but no figure or discussion related
+specifically to that tree in this report.  Blank cells indicate that there
+are no trees for the construction named in the row header in the tree
+family named in the column header.  Two tables are given below.  The first
+one gives the expansion of abbreviations in the table headers. The
+abbeviations can be matched in the table in the order in which they appear
+- first for the column headers (left-right) and second for the row header
+(top-down). Notice that the non-abbreviated headers will not be seen in
+this table, so they should be skipped when following the order of
+appearance. The second table gives the name given to each tree family in
+the actual XTAG grammar. This makes it easier to find the description of
+each tree family in Chapter~\ref{verb-classes} and to compare the
+description with the online XTAG grammar.
+d32 7
+d41 1
+a41 1
+\small
+a44 1
+& \\
+d46 3
+a48 2
+& \\
+Sent. Subj. w. {\it to} & Sentential Subject with {\it to} PP complement \\
+d98 1
+d100 1
+a100 1
+& \\
+@
+
+
+1.17
+log
+@changed instances of "with PP shift" (as in Ditrans. Light Verb w/ PP shift) to just "with PP" since our analysis has changed as to with construction is "underlying".
+@
+text
+@d4 22
+a25 19
+The two page table that follows gives an overview of what types of
+trees occur in various tree families with pointers to discussion in
+this report.  An entry in a cell of the table indicates that the
+tree(s) for the construction named in the row header are included in
+the tree family named in the column header. Entries are of two types.
+If the particular tree(s) are displayed and/or discussed in this
+report the entry gives a page number reference to the relevant
+discussion or figure.\footnote{Since Chapter~\ref{verb-classes} has a
+  brief discussion and a declarative tree for every tree family, page
+  references are given only for other sections in which discussion or
+  tree diagrams appear.}  Otherwise, a \xtagcheck \space indicates
+inclusion in the tree family but no figure or discussion related
+specifically to that tree in this report.  Blank cells indicate that
+there are no trees for the construction named in the row header in the
+tree family named in the column header.  Two tables are given below.
+The first one gives the expansion of abbreviations in the table
+headers. The second table gives the name given to each tree family in
+the actual XTAG grammar. This makes it easier to find the description
+of each tree family in Chapter~\ref{verb-classes} and to compare the
+d34 3
+a36 1
+Trans. Erg. & Transitive Ergative \\
+a49 2
+Pred. Sent. Subj., Conj, P & Predicative PP with Sentential Subject, and
+Conj, Prep anchors\\
+d56 1
+d58 7
+a64 3
+Pred. A Sent. Subj., Comp. & Predicative Adjective with Sentential
+Subject and Complement\\
+Sentential Comp. with NP&Sentential Complement with NP\\
+a65 4
+Adj. Sm. Cl. w. Sentential Subj.&Adjective Small Clause with Sentential Subject\\
+NP Sm. Clause w. Sentential Subj.&NP Small Clause with Sentential Subject\\
+PP Sm. Clause w. Sentential Subj.&PP Small Clause with Sentential Subject\\
+NP Sm. Cl. w. Sent. Comp.&NP Small Clause with Sentential Complement\\
+d68 1
+d70 19
+a88 2
+Ditrans. Light Verbs w. PP&Ditransitive Light Verbs with PP\\
+Ditrans. Light Verbs w/o PP&Ditransitive Light Verbs with Dative Shift\\
+d106 1
+a106 8
+Idiom with V, D, N & Idiom with V, D, and N anchors \\
+Idiom with V, D, A, N & Idiom with V, D, A, and N anchors \\
+Idiom with V, N & Idiom with V, and N anchor \\
+Idiom with V, A, N & Idiom with V, A, and N anchors \\
+Idiom with V, D, N, P & Idiom with V, D, N, and Prep anchors \\
+Idiom with V, D, A, N, P & Idiom with V, D, A, N, and Prep anchors \\
+Idiom with V, N, P & Idiom with V, N, and Prep anchors \\
+Idiom with V, A, N, P & Idiom with V, A, N, and Prep anchors 
+d129 1
+a129 1
+Predicative Adjective with Sentential Subject and Complement & Ts0A1s1\\
+d137 1
+a137 1
+Ditransitive Verb Particle & Tnx0Vplnx1nx2\\
+d140 1
+a140 1
+Light Verbs & Tnx0lVN1\\
+d166 5
+a170 1
+Idiom with V, A, N, and Prep anchors & Tnx0VAN1Pnx2
+@
+
+
+1.16
+log
+@added TEnx1V to the lists
+@
+text
+@d65 2
+a66 2
+Ditrans. Light Verbs w. PP Shift&Ditransitive Light Verbs with PP Shift\\
+Ditrans. Light Verbs w/o PP Shift&Ditransitive Light Verbs without PP Shift\\
+d116 1
+a116 1
+Ditransitive with PP shift (and verbs that take Prep complements) & Tnx0Vnx1Pnx2\\
+d126 1
+a126 1
+Ditransitive Light Verbs with PP Shift & Tnx0lVN1Pnx2\\
+@
+
+
+1.15
+log
+@updated table to reflect changes in grammar
+@
+text
+@d31 1
+d95 1
+a95 1
+\small
+d99 1
+d116 1
+a116 1
+Ditransitive with PP shift & Tnx0Vnx1Pnx2\\
+@
+
+
+1.14
+log
+@changed instance of Tnx0Vnx1tonx2 to Tnx0Vnx1Pnx2
+@
+text
+@d70 1
+a70 1
+Wh-mov. object of a P&Wh-moved object of a P \\
+@
+
+
+1.13
+log
+@replace "Tnx0Vnx1nx2" with "Tnx0Vnx2nx1"
+@
+text
+@d114 1
+a114 2
+% Fei: needs to be changed.
+Ditransitive with PP shift & Tnx0Vnx1tonx2\\
+@
+
+
+1.12
+log
+@made table, table-intro and verb-classes consistent
+with each other and the current XTAG grammar
+added table with corresponding XTAG name for each full name
+in the table
+@
+text
+@d114 1
+d116 1
+a116 1
+Ditransitive & Tnx0Vnx1nx2\\
+@
+
+
+1.11
+log
+@added abbrevs for idiom tree families
+@
+text
+@d4 20
+a23 14
+The two page table that follows gives an overview of what types of trees occur
+in various tree families with pointers to discussion in this report.  An
+entry in a cell of the table indicates that the tree(s) for the construction
+named in the row header are included in the tree family named in the column
+header. Entries are of two types.  If the particular tree(s) are displayed
+and/or discussed in this report the entry gives a page number reference to the
+relevant discussion or figure.\footnote{Since Chapter~\ref{verb-classes} has a
+brief discussion and a declarative tree for every tree family, page references
+are given only for other sections in which discussion or tree diagrams appear.}
+Otherwise, a \xtagcheck \space indicates inclusion in the tree family but no
+figure or discussion related specifically to that tree in this report.  Blank
+cells indicate that there are no trees for the construction named in the row
+header in the tree family named in the column header.  The table below gives
+the expansion of abbreviations in the table headers.
+a30 24
+Sentential Comp. with NP&Sentential Complement with NP\\
+Ditrans. Light Verbs w. PP Shift&Ditransitive Light Verbs with PP Shift\\
+Ditrans. Light Verbs w/o PP Shift&Ditransitive Light Verbs without PP Shift\\
+Adj. Sm. Cl. w. Sentential Subj.&Adjective Small Clause with Sentential Subject\\
+NP Sm. Clause w. Sentential Subj.&NP Small Clause with Sentential Subject\\
+PP Sm. Clause w. Sentential Subj.&PP Small Clause with Sentential Subject\\
+Y/N question&Yes/No question \\
+Wh-mov. NP complement&Wh-moved NP complement \\
+Wh-mov. S comp.&Wh-moved S complement \\
+Wh-mov. Adj comp.&Wh-moved Adjective complement \\
+Wh-mov. object of a P&Wh-moved object of a P \\
+Wh-mov. PP&Wh-moved PP \\
+Topic. NP complement&Topicalized NP complement \\
+Det. gerund&Determiner gerund \\
+Rel. cl. on NP comp.&Relative clause on NP complement \\
+Rel. cl. on PP comp.& Relative clause on PP complement\\
+Rel. cl. on NP object of P& Relative clause on NP object of P\\
+Pass. with wh-moved subj.&Passive with wh-moved subject (with and without {\it by} phrase) \\
+Pass. w. wh-mov. ind. obj.&Passive with wh-moved indirect object (with and without {\it by} phrase) \\
+Pass. w. wh-mov. obj. of the {\it {\it by} phrase}&Passive with wh-moved object of the {\it by} phrase \\
+Pass. w. wh-mov. {\it by} phrase&Passive with wh-moved {\it by} phrase \\
+Adj. Sm. Cl. w. Sent. Comp.&Adjective Small Clause with Sentential
+Complement\\
+NP Sm. Cl. w. Sent. Comp.&NP Small Clause with Sentential Complement\\
+d55 36
+a90 10
+ Pred. N w. Sent. Subj. & N predicative tree with sentential subject \\
+ Pred. Mult wd. V, P & Predicative Multi-word with Verb, Prep anchors \\
+Trans. Idiom with D, N & Transitive Idiom with Det, Noun anchors \\
+Trans. Idiom with D, A, N & Transitive Idiom with Det, Adj, Noun anchors \\
+Trans. Idiom with N & Transitive Idiom with Noun anchor \\
+Trans. Idiom with A, N & Transitive Idiom with Adj, Noun anchors \\
+Trans. Idiom with D, N, P & Transitive Idiom with Det, Noun, Prep anchors \\
+Trans. Idiom with D, A, N, P & Transitive Idiom with Det, Adj, Noun, Prep anchors \\
+Trans. Idiom with N, P & Transitive Idiom with Noun, Prep anchors \\
+Trans. Idiom with A, N, P & Transitive Idiom with Adj, Noun, Prep anchors 
+d94 58
+d153 1
+d155 1
+@
+
+
+1.10
+log
+@minor typo
+@
+text
+@d74 9
+a82 1
+ Pred. Mult wd. V, P & Predicative Multi-word V, P 
+@
+
+
+1.9
+log
+@added entry for Ts0N1 (N predicative tree with sentential subject)
+removed entry for PP Small Clause with Sentential Complement
+@
+text
+@d73 2
+a74 2
+ N predicative tree with sentential subject & Pred. N w/ Sent. Subj.\\
+ Predicative Multi-word V, P & Pred. Mult wd. V, P
+@
+
+
+1.8
+log
+@added Ts0A1s1 family
+@
+text
+@a48 1
+PP Sm. Cl. w. Sent. Comp.&PP Small Clause with Sentential Complement\\
+d72 3
+a74 1
+Subject and Complement
+@
+
+
+1.7
+log
+@Updated list of tree families.
+@
+text
+@d71 3
+a73 2
+Pred. Locative & Predicative anchored by a Locative Adverb
+
+@
+
+
+1.6
+log
+@Removed listings for clausal adjunct trees, as these are now anchored
+by subordinating conjunctions and are not in the tree families.
+@
+text
+@a52 2
+Pred. Mult-wd. Conj, P & Predicative Multi-word PP with Conj, Prep
+anchors\\
+d71 2
+@
+
+
+1.5
+log
+@shortened PP names
+@
+text
+@a45 8
+Cl. S mod. (decl.)&Clausal S modifier (declarative) \\
+Cl. VP mod. (decl.)&Clausal VP modifier (declarative) \\
+Cl. S mod. (pass., w. {\it by} phrase)&Clausal S modifier (passive, with {\it by} phrase) \\
+Cl. VP mod. (pass., w. {\it by} phrase)&Clausal VP modifier (passive, with
+{\it by} phrase)\\
+Cl. S mod. (pass., w.out {\it by} phrase)&Clausal S modifier (passive, without
+{\it by} phrase) \\
+Cl. VP mod.&Clausal VP modifier\\
+@
+
+
+1.4
+log
+@added the mutli-word preposition entries`
+@
+text
+@d59 3
+a61 3
+Pred. Multi-wd. PP w. ARB, P & Predicative Multi-word PP with Adv, Prep anchors\\
+Pred. Multi-wd. PP w. A, P & Predicative Multi-word PP with Adj, Prep anchors\\
+Pred. Multi-wd. PP w. Conj, P & Predicative Multi-word PP with Conj, Prep
+d63 1
+a63 1
+Pred. Multi-wd. PP w. N, P & Predicative Multi-word PP with Noun, Prep
+d65 1
+a65 1
+Pred. Multi-wd. PP w. P, P & Predicative Multi-word PP with two Prep
+d67 1
+a67 1
+Pred. Multi-wd. PP w. no int. mod. & Predicative Multi-word PP with no internal
+d69 1
+a69 1
+Pred. PP w. Sent. Subj., ARB, P & Predicative PP with Sentential Subject, and
+d71 1
+a71 1
+Pred. PP w. Sent. Subj., A, P & Predicative PP with Sentential Subject, and
+d73 1
+a73 1
+Pred. PP w. Sent. Subj., Conj, P & Predicative PP with Sentential Subject, and
+d75 1
+a75 1
+Pred. PP w. Sent. Subj., N, P & Predicative PP with Sentential Subject, and
+d77 1
+a77 1
+Pred. PP w. Sent. Subj., P, P & Predicative PP with Sentential Subject, and two
+d79 1
+a79 1
+Pred. PP w. Sent. Subj., no int. mod. & Predicative PP with Sentential Subject,
+@
+
+
+1.3
+log
+@Added one tree name abbreviation.
+@
+text
+@d59 22
+d85 12
+@
+
+
+1.2
+log
+@Changes from Tilman's proofread
+@
+text
+@d58 1
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d5 1
+a5 1
+in various tree families with pointers to discussion in the tech report.  An
+d10 1
+a10 1
+relevant discussion or figure.\footnote{Since section~\ref{verb-classes} has a
+d42 1
+a42 1
+Pass. with wh-moved subj.&Passive with wh-moved subject (with and without {\it by} phrase \\
+@

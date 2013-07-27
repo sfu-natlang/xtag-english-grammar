@@ -1,0 +1,86 @@
+head	1.1;
+access
+	egedi
+	srini
+	beth
+	cdoran
+	seth;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.1
+date	94.08.22.17.31.59;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Information about the parser to go in an appendix section (written by Srini)
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@Words in a lexicalized grammar are associated with structures that
+they anchor. This property naturally suggests a two pass parsing
+strategy for lexicalized grammars. Given an input sentence to parse,
+the parser, in its first pass, needs to only select the relevant
+subset of the grammar; the structures associated with the lexical
+items of the sentence; instead of the entire grammar. This first pass
+also allows the parser to utilize bottom-up information such as the
+position of a lexical item in the input, to filter the selected subset
+of the grammar. The second pass then combines the selected structures
+using the operations of the formalism. It must be noted that the fewer
+the selected structures by the first pass, the faster the second pass
+performs.
+
+The XTAG system uses a similar two-pass parsing strategy. The first
+pass, tree-selection pass, uses the syntactic database entry for each
+lexical item in the sentence to select a set of elementary trees from
+the tree database. The second pass, the tree-grafting pass combines
+the selected trees using substitution and adjunction operations and
+performs unification of features associated with the trees to obtain
+the parse of the sentence. It uses an Earley-style parsing algorithm
+that has been extended to handle feature structures \cite{schabes90}.
+The parser produces two structures -- a {\bf derived} tree and a {\bf
+derivation} tree. The derived tree represents the surface constituent
+structure, while the derivation tree represents the derivation history
+of the parse.
+
+%The nodes of the
+%derivation tree are the names of the elementary trees that are
+%anchored by the lexical items of the input.  The arcs of the
+%derivation tree indicate the type of the combining operation; a dashed
+%line for substitution and a bold line for adjunction.  The number
+%beside each tree name is the address of the node at which the
+%operation took place.  The derivation tree can also be interpreted as
+%a dependency graph with unlabeled arcs between words of the sentence.
+
+\subsection{Tree Selection}
+
+- selection of trees from the db.
+- heuristics to prune the set.
+
+\subsection{Tree Grafting}
+
+In this section, we present the working of the Earley-style parsing
+using an example. A more formal presentation is given in
+\cite{schabes90}.
+
+Consider the sentence {\it John left quickly}. Figure~\ref{blah} shows
+the trees anchored by the three words to be combined for the parse of
+the sentence.
+
+\begin{figure}
+
+Insert 3 trees with 
+\end{figure}
+
+-information in the parser state.
+
+The parser begins @

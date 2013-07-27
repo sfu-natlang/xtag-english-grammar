@@ -1,0 +1,358 @@
+ 
+%\documentstyle[11pt]{article} 
+%\documentstyle[11pt]{article} 
+ 
+\chapter{Lexical Organization} 
+\label{lexorg} 
+ 
+ 
+%\input{psfig} 
+ 
+ 
+%\begin{document} 
+ 
+%\bibliographystyle{acl} 
+ 
+ 
+\section{Introduction} 
+ 
+% problem 
+ 
+An important characteristic of an 
+FB-LTAG is that it is lexicalized, i.e., each lexical item is anchored to a 
+tree structure that encodes subcategorization information.  Trees with the same 
+canonical subcategorizations are grouped into tree families.  The reuse of tree 
+substructures, such as wh-movement, 
+ in many different trees 
+creates redundancy, which poses a problem for grammar development 
+and maintenance \cite{vijay-schabes92}.  To consistently implement a change in 
+some general aspect of the design of the grammar, all the relevant trees 
+currently must be inspected and edited.  Vijay Shanker and Schabes suggested 
+the use of hierarchical organization and of tree descriptions to specify 
+substructures that would be present in several elementary trees of a grammar. 
+Since then, in addition to ourselves, 
+Becker, \cite{becker94}, Evans et al. \cite{Evans95}, and 
+Candito\cite{Candito96} have 
+developed systems for organizing trees of a TAG which could be used for 
+developing and maintaining grammars. 
+ 
+ Our system is based 
+on the ideas expressed in Vijay-Shanker and Schabes, \cite{vijay-schabes92}, to 
+use partial-tree descriptions in specifying a grammar by separately defining 
+pieces of tree structures to encode independent syntactic principles. Various 
+individual specifications are then combined to form the elementary trees of the 
+grammar. The chapter begins with a description of 
+our grammar development system, and its implementation. We will then 
+show the main results of using this tool to generate 
+the Penn English grammar as well as a Chinese 
+TAG.  We describe the significant properties of both grammars, pointing out the 
+major differences between them, and the methods by which our system is informed 
+about these language-specific properties.  The chapter ends with the conclusion 
+and future work. 
+ 
+ 
+ 
+ 
+\section{System Overview} 
+ 
+In our approach,  
+three types of components -- subcategorization frames, blocks and 
+lexical redistribution rules -- are used to describe lexical and 
+syntactic information. 
+%Lexical Redistribution Rule (LRR). 
+Actual trees are generated automatically from these abstract descriptions, 
+as shown in Figure \ref{system-overview}. 
+In maintaining the grammar only the abstract 
+descriptions need ever be manipulated; the tree descriptions and the 
+actual trees which they subsume are computed deterministically from these 
+high-level descriptions. 
+ 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/overview.eps.gif}} 
+\begin{rawhtml} <dl> <dt>{Lexical Organization: System Overview <p> </dl> \end{rawhtml}
+\label{system-overview} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\subsection{Subcategorization frames} 
+Subcategorization frames specify 
+the category of the main anchor, 
+the number of  arguments, 
+each argument's category and position with respect to the anchor, 
+and other information 
+such as feature equations or node expansions. 
+Each tree family has one canonical subcategorization frame. 
+ 
+\subsection{Blocks} 
+ 
+Blocks are used to represent the tree substructures that are reused 
+in different trees, i.e. blocks 
+subsume classes of trees. Each block includes 
+a set of nodes, dominance relation, parent relation, 
+precedence relation between nodes, 
+and feature equations. This follows the definition of the tree 
+descriptions specified in a logical language patterned after Rogers and 
+Vijay-Shanker\cite{rogers-vijay94}. 
+ 
+Blocks are divided into two types according to their functions: 
+subcategorization  blocks 
+and transformation blocks. 
+The former describes structural configurations incorporating 
+the various information in a subcategorization frame. 
+For example, some of the subcategorization blocks 
+used in the 
+development of the English grammar are shown in Figure 
+\ref{subcat-blocks}.\footnote{ In order to focus on the use of tree descriptions and to make the figures less cumbersome, we show only the structural aspects and do not show the feature value specification. The parent, (immediate dominance), relationship is illustrated by a plain line and the dominance relationship by a dotted line. The arc between nodes shows the precedence order of the nodes are unspecified. The nodes' categories are enclosed in parentheses.} 
+ 
+When the subcategorization frame for a  verb is given 
+ by the grammar 
+developer, the system will automatically create a new block (of code) by 
+essentially selecting the appropriate primitive subcategorization blocks 
+corresponding to the argument information specified in that verb 
+frame. 
+ 
+The transformation blocks are used for various transformations such as 
+wh-movement. These transformation blocks do not encode 
+rules for modifying trees, but rather describe 
+ the properties of a particular syntactic construction. 
+ Figure \ref{trans-blocks} depicts 
+our representation of phrasal extraction. 
+This can be specialized to give the 
+blocks for wh-movement, topicalization, relative clause formation, etc.  
+For example, the 
+wh-movement block is defined by further specifying that the ExtractionRoot is 
+labeled S, the NewSite 
+has a +wh feature, and so on. 
+ 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/demosub.eps.gif}} 
+\begin{rawhtml} <dl> <dt>{Some subcategorization blocks <p> </dl> \end{rawhtml}
+\label{subcat-blocks} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/extract.eps.gif}} 
+\begin{rawhtml} <dl> <dt>{Transformation blocks for extraction <p> </dl> \end{rawhtml}
+\label{trans-blocks} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+\subsection{Lexical Redistribution Rules (LRRs)} 
+The third type of machinery available for a grammar developer is the 
+Lexical Redistribution Rule (LRR). An LRR is a pair 
+($r_{l}$, $r_{r}$) of subcategorization frames, 
+which produces a new frame when applied to a subcategorization frame s, 
+by first {\it matching}\footnote{Matching occurs successfully when frame s is compatible with $r_{l}$ in the type of anchors, the number of arguments, their positions, categories and features. In other words, incompatible features etc. will block certain LRRs from being applied.} 
+ the 
+left frame $r_{l}$ of r to s, then 
+combining information in $r_{r}$ and s. 
+LRRs are introduced to incorporate 
+the connection between subcategorization frames. For example, 
+most transitive verbs have a frame for active(a subject and an object) 
+and another frame for passive, where the object in the former frame becomes 
+the subject in the latter. An LRR, denoted as  passive LRR, 
+is built to produce the passive subcategorization frame from 
+the active one. 
+Similarly, applying dative-shift LRR to the frame with 
+one NP subject and two NP objects will produce 
+a frame with an NP subject and an PP object. 
+ 
+ 
+Besides the distinct content, LRRs and blocks also differ in several 
+aspects: 
+\begin{itemize} 
+  \item They have different functionalities: Blocks represent 
+    the substructures that are reused in different trees. They 
+    are used to reduce the redundancy among trees; LRRs are introduced 
+    to incorporate the connections between the closely 
+     related subcategorization 
+    frames. 
+  \item Blocks are strictly additive and can be added in any order. 
+       LRRs, on the other hand, 
+    produce different results depending on the order they are applied in, 
+    and 
+    are allowed to be non-additive, i.e., to remove information from 
+    the subcategorization frame they are being applied to, as in 
+    the procedure of passive from active. 
+\end{itemize} 
+    
+ 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/newelem.eps.gif}} 
+\begin{rawhtml} <dl> <dt>{Elementary trees generated from combining blocks <p> </dl> \end{rawhtml}
+\label{elem} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+ 
+\subsection{Tree generation} 
+To generate elementary trees, 
+ we begin with a canonical subcategorization frame. 
+The system will first generate 
+related subcategorization frames 
+by applying LRRs, then select 
+subcategorization blocks corresponding to the information in 
+the subcategorization frames, next 
+the combinations of these blocks 
+are further combined with the blocks corresponding to 
+ various transformations, finally,  a set of trees are generated 
+from those combined blocks, and they are 
+the tree family for this subcategorization frame. 
+Figure \ref{elem} shows some 
+of the trees produced in this way.  For instance, the last tree is obtained by 
+incorporating information from the ditransitive verb subcategorization frame, 
+applying the dative-shift and passive LRRs, and then combining them with the 
+wh-non-subject extraction block. 
+Besides, in our system the hierarchy for subcategorization frames is implicit 
+as shown in Figure \ref{lattice}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/frame.eps.gif}} 
+\begin{rawhtml} <dl> <dt>{Partial inheritance lattice in English <p> </dl> \end{rawhtml}
+\label{lattice} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+ 
+ 
+\section{Implementation} 
+ 
+The input of our system is the description of the language, which includes 
+the subcategorization frame list, LRR list, subcategorization block 
+list and transformation lists. The output  is a list of 
+trees generated automatically by the system, as shown in Figure 
+\ref{impl}. The tree generation module is written in Prolog, and 
+the rest part is in C. We also have a graphic interface to input 
+the language description. Figure \ref{interface-firstlevel} and 
+\ref{interface-block} are two snapshots of the interface. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/impl.eps.gif}} 
+\begin{rawhtml} <dl> <dt>{Implementation of the system <p> </dl> \end{rawhtml}
+\label{impl} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/java.interface.ps.gif}} 
+\begin{rawhtml} <dl> <dt>{Interface for creating a grammar <p> </dl> \end{rawhtml}
+\label{interface-firstlevel} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centerline{\htmladdimg{ps/lexorg/java.block.ps.gif}} 
+\vspace{0.4in} 
+\begin{rawhtml} <dl> <dt>{Part of the Interface for creating blocks <p> </dl> \end{rawhtml}
+\label{interface-block} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+\section{Generating grammars} 
+ 
+We have used our tool to specify a grammar for English in order to produce 
+the trees used in the current English XTAG grammar. 
+We have also used our tool 
+to generate a large grammar for Chinese. 
+In designing these 
+grammars, we have tried to specify the grammars to reflect the similarities and 
+the differences between the languages. The major features of our specification 
+of these two grammars\footnote{Both grammars are still under development, so the contents of these two tables might change a lot in the future according to the analyses we choose for certain phenomenon. For example, the majority of work on Chinese grammar treat ba-construction as some kind of object-fronting where the character {\it ba} is either an object marker or a preposition. According to this analysis, an LRR rule for ba-construction is used in our grammar to generate the preverbal-object frame from the postverbal frame. However, there has been some argument for treating {\it ba} as a verb. If we later choose that analysis, the main verbs in the patterns ``NP0 VP'' and ``NP0 ba NP1 VP'' will be different, therefore no LRR will be needed for it. As a result, the numbers of LRRs, subcat frames and tree generated will change accordingly.} 
+ are summarized in Table \ref{table} and \ref{table2}. 
+ 
+\begin{table}[ht] 
+\centering 
+\begin{tabular}{|l|l|l|}     \hline 
+         & English & Chinese \\ \hline 
+examples     & passive       & bei-construction  \\ 
+of LRRs         & dative-shift  & object fronting  \\ 
+         & ergative  & ba-construction   \\ \hline 
+examples  & wh-question  & topicalization  \\ 
+of transformation         & relativization & relativization \\ 
+blocks         & declarative & argument-drop \\ \hline 
+\#  LRRs &   6     & 12  \\ \hline 
+\#  subcat blocks & 34 & 24 \\ \hline 
+\#  trans  blocks & 8  & 15 \\ \hline 
+\#  subcat frames  & 43 & 23 \\ \hline 
+\#  trees generated   & 638 & 280 \\ \hline 
+\end{tabular}  \\ 
+\begin{rawhtml} <dl> <dt>{Major features of English and Chinese grammars <p> </dl> \end{rawhtml}
+\label{table} 
+\end{table} 
+ 
+\begin{table}[ht] 
+\centering 
+\begin{tabular}{|l|l|l|l|}     \hline 
+         & both grammars & English & Chinese \\ \hline 
+         & causative & long passive &  VO-inversion \\ 
+LRRs     & short passive & ergative  & ba-const \\ 
+         &               & dative-shift  &       \\  \hline 
+         & topicalization  &  &   \\ 
+trans blocks    & relativization & gerund & argument-drop \\ 
+        & declarative &  &  \\ \hline 
+        & NP/S subject &  &  zero-subject \\ 
+ subcat blocks & S/NP/PP object & PL object & preverbal object \\ 
+               & V predicate &  prep predicate & \\ \hline 
+\end{tabular}  \\ 
+\begin{rawhtml} <dl> <dt>{Comparison of the two grammars <p> </dl> \end{rawhtml}
+\label{table2} 
+\end{table} 
+ 
+ 
+ 
+By focusing on the specification of individual grammatical information, we 
+have been able to generate nearly all of the trees from the tree families 
+used in the current English grammar developed at Penn\footnote{We have not yet attempted to extend our coverage to include punctuation, it-clefts, and a few idiosyncratic analyses.}. 
+ Our approach, has also exposed certain gaps in the Penn grammar. 
+%in \ref{envgram97}.  
+We are encouraged with the utility of our tool and the ease with which this 
+large-scale grammar was developed. 
+ 
+ 
+We are currently working on expanding the contents of 
+subcategorization frame to include 
+trees for other categories of words. For example, 
+a frame which has no specifier and one NP complement 
+and whose predicate is a preposition will correspond to 
+PP $\rightarrow$ P NP tree. We'll also introduce a modifier field 
+and semantic features, so that the head features will propagate 
+from modifiee to modified node, while non-head features from 
+the predicate as the head of the modifier will be passed to 
+the modified node. 
+ 
+% insert figures here 
+ 
+ 
+ 
+ 
+ 
+ 
+\section{Summary} 
+ 
+We have described a tool for grammar development in which tree descriptions are 
+used to provide an abstract specification of the linguistic phenomena relevant 
+to a particular language.  In grammar development and maintenance, only the 
+abstract specifications need to be edited, and any changes or corrections will 
+automatically be proliferated throughout the grammar.  In addition to 
+lightening the more tedious aspects of grammar maintenance, this approach also 
+allows a unique perspective on the general characteristics of a language. 
+Defining hierarchical blocks for the grammar both necessitates and facilitates 
+an examination of the linguistic assumptions that have been made with regard to 
+feature specification and tree-family definition. This can be very useful for 
+gaining an overview of the theory that is being implemented and exposing gaps 
+that remain unmotivated and need to be investigated.  The type of gaps that can 
+be exposed could include a missing subcategorization frame that might arise 
+from the automatic combination of blocks and which would correspond to an 
+entire tree family, a missing tree which would represent a particular type of 
+transformation for a subcategorization frame, or inconsistent feature 
+equations.  By focusing on syntactic properties at a higher level, our 
+approach allows new opportunities for the investigation of how languages relate 
+to themselves and to each other. 
+ 
+ 
+ 
+%\bibliography{/mnt/linc/home/fxia/paper/mpaper/ACL98/ACL98} 
+ 
+%\end{document} 

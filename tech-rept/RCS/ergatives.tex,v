@@ -1,0 +1,527 @@
+head	1.12;
+access
+	egedi
+	srini
+	cdoran
+	beth
+	skulick
+	anoop
+	elhuang
+	heatherm
+	rjprasad
+	timf
+	prolo
+	bhatt
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.12
+date	2000.10.31.15.54.35;	author rjprasad;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	99.01.14.01.30.34;	author tbleam;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	99.01.14.00.17.55;	author tbleam;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	99.01.13.22.00.10;	author tbleam;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	99.01.13.05.59.35;	author anoop;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	98.12.14.16.58.17;	author jason2;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	98.08.28.18.38.58;	author bhatt;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	98.07.20.19.50.41;	author timf;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	98.07.20.18.32.59;	author timf;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	97.07.01.17.36.04;	author elhuang;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	95.01.31.21.00.01;	author egedi;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.01.24.20.14.00;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Ergatives tech report file.  The initial version is the 'almost final' version.
+@
+
+
+1.12
+log
+@for new release: organizational - added sections
+@
+text
+@\chapter{Ergatives}
+\label{ergatives}
+
+Verbs in English that we will call {\it ergative} \footnote {The terminology is
+from \cite{Burzio86}. See also \cite{Perlmutter78} and \cite{Rosen81} for
+discussion within the Relational Grammar framework.} display the kind of
+alternation shown in the sentences in \ex{1} and \ex{2} below.
+
+\enumsentence{The sun melted the ice .}
+\enumsentence{The ice melted .}
+
+The object of the transitive sentence in \ex{-1} corresponds to the subject
+of the intransitive sentence in \ex{0}. 
+
+\section{Various Approaches}
+
+The literature discussing such pairs as \ex{-1} and \ex{0} is based largely
+on syntactic models that involve movement, particularly GB.  Within that
+framework two basic approaches are discussed:
+
+\begin{itemize}
+\item {\bf Derived Intransitive}\\ The intransitive member of the
+ergative pair is derived through processes of movement and deletion from an
+underlying transitive structure \cite{Burzio86,HaleKeyser86,HaleKeyser87}.
+
+\item {\bf Pure Intransitive}\\ The intransitive member is intransitive at all levels of the
+syntax and the lexicon and is not related to the transitive member
+syntactically or lexically \cite{Napoli88}.
+\end{itemize}
+
+\section{Xtag Analysis}
+
+Although XTAG does not have derivational movement, the relationships
+between the two arguments can be translated into the FB-LTAG framework.  In
+the XTAG grammar the difference between these two approaches is not a
+matter of movement but rather a question of tree family selection.  The
+relation between sentences represented in terms of movement in other
+frameworks is represented in XTAG by membership in the same tree family or
+selection of multiple families which preserve the argument relations across
+families. Wh-questions and their indicative counterparts are one example of
+the former, whereas ergatives and ditransitives with PP shift exemplify the
+latter.  Adopting the Pure Intransitive approach suggested by
+\cite{Napoli88} would mean placing the intransitive ergatives in a tree
+family with other intransitive verbs and separate from the transitive
+variants of the same verbs.  This would result in a grammar that
+represented intransitive ergatives as more closely related to other
+intransitives than to their transitive counterparts.  The only hint of the
+relation between the intransitive ergatives and the transitive ergatives
+would be that ergative verbs would select both tree families. While this is
+a workable solution, it is an unattractive one for the English XTAG grammar
+because semantic coherence is lost.  In particular, constancy in thematic
+role is represented by constancy in node names across sentence types within
+a tree family. For example, if the object of a declarative tree is NP$_{1}$
+the subject of the passive tree(s) in that family will also be NP$_{1}$.
+
+The analysis that has been implemented in the English XTAG grammar is
+an adaptation of the Derived Intransitive approach.  The ergatives
+select the two families Tnx0Vnx1 and TEnx1V.  TEnx1V is quite similar
+to the regular intransitive family Tnx0V, except that it encodes a
+different type of semantic function---the syntactic subject of TEnx1V
+is given the index of `1' to represent that it is the logical object
+of the verb.  The two families Tnx0Vnx1 and TEnx1V create the two
+possibilities needed to account for the data.
+
+\begin{itemize}
+\item {\bf intransitive ergative/transitive alternation.}  These verbs have
+transitive and intransitive variants as shown in sentences~\ex{1} and
+\ex{2}.
+
+\enumsentence{The sun melted the ice .}
+\enumsentence{The ice melted .}
+
+In the English XTAG grammar, verbs with this behavior select family
+\{Tnx0Vnx1 $\cup$ TEnx1V\}.  The first family in the union handles
+sentences such as \ex{-1} and the second covers \ex{0}.
+
+\item {\bf transitive only.}  Verbs of this type do not allow the
+intransitive ergative variants, as can be seen in the pattern shown in
+sentences~\ex{1} and \ex{2}.
+
+\enumsentence{Elmo borrowed a book .}
+\enumsentence{$\ast$A book borrowed .}
+
+Such verbs select only the family Tnx0Vnx1, and thus do not have the
+ergative trees in TEnx1V available to them.
+
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\mbox{}
+\psfig{figure=ps/erg-files/alphaEnx1V.ps,height=4.0cm}
+\caption{Ergative Tree: $\alpha$Enx1V}
+\label{decl-erg-tree}
+\label{2;14,1}
+\end{figure}
+
+The declarative ergative tree is shown in Figure~\ref{decl-erg-tree}.
+Note that the index of the subject NP indicates that it originated as
+the object of the verb.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@
+
+
+1.11
+log
+@fixed wrong cite.
+@
+text
+@d4 1
+a4 1
+Verbs in English that we will call{\it ergative} \footnote {The terminology is
+d7 1
+a7 1
+alternation shown in the sentences in (\ex{1}) and (\ex{2}) below.
+d12 2
+a13 4
+The object of the transitive sentence in (\ex{-1}) corresponds to the subject
+of the intransitive sentence in (\ex{0}). The literature discussing such pairs
+is based largely on syntactic models that involve movement, particularly GB.
+Within that framework two basic approaches are discussed:
+d15 6
+d31 1
+a31 24
+Although XTAG does not have derivational movement, the relationships between
+the two arguments can be translated to the FB-LTAG framework.  In the XTAG
+grammar the difference between these two approaches is not a matter of movement
+but rather a question of tree family selection.  The relation between sentences
+represented in terms of movement in other frameworks is represented in XTAG by
+membership in the same tree family or selection of multiple families which
+preserve the argument relations across families. Wh-questions and their
+indicative counterparts are one example of the former, whereas ergatives and
+ditransitives with PP shift exemplify the latter.  Adopting the Pure
+Intransitive approach suggested by
+\cite{Napoli88} would mean placing the intransitive ergatives in a
+tree family with other intransitive verbs and separate from the
+transitive variants of the same verbs.  This would result in a grammar
+that represented intransitive ergatives as more closely related to
+other intransitives than to their transitive counterparts.  The only
+hint of the relation between the intransitive ergatives and the
+transitive ergatives would be that ergative verbs would select both
+tree families. While this is a workable solution, it is an
+unattractive one for the English XTAG grammar because semantic
+coherence is lost.  In particular, constancy in thematic role is
+represented by constancy in node names across sentence types within a
+tree family. For example, if the object of a declarative tree is
+NP$_{1}$ the subject of the passive tree(s) in that family will also
+be NP$_{1}$.  
+d33 23
+d66 3
+a68 3
+\item {\bf intransitive ergative/transitive alternation.}  These verbs
+have transitive and intransitive variants as shown in sentences~(\ex{1}) and
+(\ex{2}).
+d75 1
+a75 1
+sentences such as (\ex{-1}) and the second covers (\ex{0}).
+d79 1
+a79 1
+sentences~(\ex{1}) and (\ex{2}).
+@
+
+
+1.10
+log
+@put in correct citations for perlmutter and rosen, and condensed the explanation of the derived intransitive hypothesis. (really burzio and hale and Keyser are the same).
+@
+text
+@d5 1
+a5 1
+from \cite{Burzio86}. See also \cite{Perlmutter83} and \cite{Rosen81} for
+@
+
+
+1.9
+log
+@changed some wording and added citations for Relational Grammar lit.
+@
+text
+@d5 2
+a6 2
+from \cite{Burzio86}. See also Perlmutter 1983 and Rosen 1981 for discussion in
+the Relational Grammar framework.} display the kind of
+d19 2
+a20 5
+ergative pair is derived through processes of movement and deletion from:
+\begin{itemize}
+\item a transitive D-structure \cite{Burzio86}; or	
+\item transitive lexical structure \cite{HaleKeyser86,HaleKeyser87}
+\end{itemize}
+d28 1
+a28 1
+these arguments can be translated to the FB-LTAG framework.  In the XTAG
+@
+
+
+1.8
+log
+@fixed label bug
+@
+text
+@d4 3
+a6 1
+Verbs in English that are termed ergative display the kind of
+d12 3
+a14 4
+The pattern of ergative pairs as seen in (\ex{-1}) and (\ex{0}) is 
+for the object of the transitive sentence to be the subject of the 
+intransitive sentence.  The literature discussing such pairs is based 
+largely on syntactic models that involve movement, particularly GB.  
+d30 10
+a39 13
+
+The Derived Intransitive approach's notions of movement in the lexicon
+or in the grammar are not represented as such in the XTAG grammar.
+However, distinctions drawn in these arguments can be translated to
+the FB-LTAG framework.  In the XTAG grammar the difference between
+these two approaches is not a matter of movement but rather a question
+of tree family selection.  The relation between sentences represented
+in terms of movement in other frameworks is represented in XTAG by
+membership in the same tree family or selection of multiple families
+which preserve the argument relations across families. Wh-questions
+and their indicative counterparts are one example of the former,
+whereas ergatives and ditransitives with PP shift exemplify the
+latter.  Adopting the Pure Intransitive approach suggested by
+@
+
+
+1.7
+log
+@updated the ergative chapter for the new conception of tree families
+@
+text
+@d5 1
+a5 1
+alternation shown in the sentences in (\ex{1}) below.
+d7 2
+a8 2
+\enumsentence{The sun melted the ice .\\
+The ice melted .}
+d10 5
+a14 5
+The pattern of ergative pairs as seen in (\ex{0}) is for the object of the
+transitive sentence to be the subject of the intransitive sentence.
+The literature discussing such pairs is based largely on syntactic
+models that involve movement, particularly GB.  Within that framework
+two basic approaches are discussed:
+a87 9
+%%\item {\bf intransitive ergative only.} These verbs have the feature
+%%value  {\bf$<$trans$>$=--}, so they can unify only with the
+%%intransitive trees within Tnx0Vnx1. This correctly captures the
+%%pattern shown in (\ex{1}) and (\ex{2}).
+%%
+%%\enumsentence{The leaves fell.}
+%%\enumsentence{$\ast$The wind fell the leaves .}
+%%
+
+@
+
+
+1.6
+log
+@made a minor change.
+@
+text
+@d30 26
+a55 21
+The Derived Intransitive approach's notions of movement in the
+lexicon or in the grammar are not represented as such in the XTAG grammar.
+However, distinctions drawn in these arguments can be translated to the FB-LTAG
+framework.  In the XTAG grammar the difference between these two approaches is
+not a matter of movement but rather a question of tree family membership.  The
+relation between sentences represented in terms of movement in other frameworks
+is represented in XTAG by membership in the same tree family. Wh-questions and
+their indicative counterparts are one example of this.  Adopting the Pure
+Intransitive approach suggested by \cite{Napoli88} would mean placing the
+intransitive ergatives in a tree family with other intransitive verbs and
+separate from the transitive variants of the same verbs.  This would result in
+a grammar that represented intransitive ergatives as more closely related to
+other intransitives than to their transitive counterparts.  The only hint of
+the relation between the intransitive ergatives and the transitive ergatives
+would be that ergative verbs would select both tree families. While
+this is a workable solution, it is an unattractive one for the English XTAG
+grammar because semantic coherence is implicitly associated with tree families
+in our analysis of other constructions.  In particular, constancy in thematic
+role is represented by constancy in node names across sentence types within a
+tree family. For example, if the object of a declarative tree is NP$_{1}$ the
+subject of the passive tree(s) in that family will also be NP$_{1}$.
+d57 8
+a64 6
+The analysis that has been implemented in the English XTAG grammar is an
+adaptation of the Derived Intransitive approach. The ergative verbs select one
+family, Tnx0Vnx1, that contains both transitive and intransitive trees.  The
+{\bf$<$trans$>$} feature appears on the intransitive ergative trees with the
+value {\bf --} and on the transitive trees with the value {\bf +}.  This
+creates the two possibilities needed to account for the data.
+a66 8
+%%\item {\bf intransitive ergative only.} These verbs have the feature
+%%value  {\bf$<$trans$>$=--}, so they can unify only with the
+%%intransitive trees within Tnx0Vnx1. This correctly captures the
+%%pattern shown in (\ex{1}) and (\ex{2}).
+%%
+%%\enumsentence{The leaves fell .}
+%%\enumsentence{$\ast$The wind fell the leaves .}
+%%
+d71 2
+a72 2
+\enumsentence{The sun melted the ice cream .}
+\enumsentence{The ice cream melted .}
+d74 3
+d78 3
+a80 5
+In the English XTAG grammar, verbs with this behavior are left unspecified as
+to value for the {\bf$<$trans$>$} feature.  This lack of specification allows
+these verbs to anchor either type of tree in the Tnx0Vnx1 tree family because
+the unspecified {\bf$<$trans$>$} value of the verb can unify with either {\bf
++} or {\bf --} values in the trees.
+a81 4
+\item {\bf transitive only.}  Verbs of this type select only the
+transitive trees and do not allow intransitive ergative variants as in
+the pattern show in sentences~(\ex{1}) and (\ex{2}).
+
+d85 12
+a96 2
+The restriction to selecting only transitive trees is accomplished by
+setting the {\bf$<$trans$>$} feature value to {\bf +} for these verbs.
+d108 3
+a110 3
+The declarative ergative tree is shown in Figure~\ref{decl-erg-tree} with the
+{\bf $<$trans$>$} feature displayed.  Note that the index of the subject NP
+indicates that it originated as the object of the verb.
+@
+
+
+1.5
+log
+@Fixed citation typo.
+@
+text
+@d30 2
+a31 2
+Obviously, the Derived Intransitive approach's notions of movement in the
+lexicon or in the grammar cannot be represented as such in lexicalized tag.
+@
+
+
+1.4
+log
+@Removed extraneous citation parentheses.
+@
+text
+@d20 1
+a20 1
+\item a transitive D-structure \cite{Burzio86); or	
+@
+
+
+1.3
+log
+@put spaces before punctuation in example sentences, removed capital letters from example sentences to format the examples as input to the parser.
+@
+text
+@d20 2
+a21 2
+\item a transitive D-structure (\cite{Burzio86}); or	
+\item transitive lexical structure (\cite{HaleKeyser86,HaleKeyser87})
+d26 1
+a26 1
+syntactically or lexically (\cite{Napoli88}).
+@
+
+
+1.2
+log
+@Changed the - in the feature values to --, to give a longer minus sign.
+@
+text
+@d7 2
+a8 2
+\enumsentence{The sun melted the ice.\\
+The ice melted.}
+d65 2
+a66 2
+%%\enumsentence{The leaves fell.}
+%%\enumsentence{$\ast$The wind fell the leaves.}
+d72 2
+a73 2
+\enumsentence{The sun melted the ice cream.}
+\enumsentence{The ice cream melted.}
+d86 2
+a87 2
+\enumsentence{Elmo borrowed a book.}
+\enumsentence{$\ast$A book borrowed.}
+d107 21
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d56 1
+a56 1
+value {\bf -} and on the transitive trees with the value {\bf +}.  This
+d61 1
+a61 1
+%%value  {\bf$<$trans$>$=-}, so they can unify only with the
+d80 1
+a80 1
++} or {\bf -} values in the trees.
+@

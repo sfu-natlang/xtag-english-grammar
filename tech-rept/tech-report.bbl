@@ -1,0 +1,642 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Abeill\'{e} and Schabes, }1989]{AS89}
+Anne Abeill\'{e} and Yves Schabes.
+\newblock {Parsing Idioms in Lexicalized TAGs}.
+\newblock In {\em Proceedings of EACL '89}, pages 161--65, 1989.
+
+\bibitem[\protect\citename{Abeill\'{e} \bgroup \em et al.\egroup ,
+  }2000]{ACK00}
+Anne Abeill\'{e}, Marie-H\'{e}l\`{e}ne Candito, and Alexandra Kinyon.
+\newblock {The Current Status of FTAG}.
+\newblock In {\em Fifth International Workshop on Tree Adjoining Grammars and
+  Related Formalisms}, 2000.
+
+\bibitem[\protect\citename{Abeill\'{e}, }1990]{Abeille90:TAG}
+Anne Abeill\'{e}.
+\newblock French and english determiners: Interaction of morphology, syntax,
+  and semantics in lexicalized tree adjoining grammars.
+\newblock In {\em Tree Adjoining Grammar,First International Workshop on TAGs:
+  Formal Theory and Applications (abstracts)}, Shloss Dagstuhl,
+  Sarrbr\"{u}cken, 1990.
+
+\bibitem[\protect\citename{Abney, }1987]{Abney87}
+Steven Abney.
+\newblock {\em The English Noun Phrase in its Sentential Aspects}.
+\newblock PhD thesis, MIT, 1987.
+
+\bibitem[\protect\citename{Abney, }1991]{abney91}
+Steven Abney.
+\newblock Parsing by chunks.
+\newblock In Robert Berwick, Steven Abney, and Carol Tenny, editors, {\em
+  Principle-based parsing}. Kluwer Academic Publishers, 1991.
+
+\bibitem[\protect\citename{Akmajian, }1970]{Akmajian70}
+A.~Akmajian.
+\newblock {On deriving cleft sentences from pseudo-cleft sentences}.
+\newblock {\em Linguistic Inquiry}, 1:149--168, 1970.
+
+\bibitem[\protect\citename{Akmajian, }1984]{akmajian84}
+Adrian Akmajian.
+\newblock Sentence types and the form-function fit.
+\newblock {\em Natural Language and Linguistic Theory}, 2:1--23, 1984.
+
+\bibitem[\protect\citename{Alshawi \bgroup \em et al.\egroup ,
+  }1992]{clare-report92}
+Hiyan Alshawi, David Carter, Richard Crouch, Steve Pullman, Manny Rayner, and
+  Arnold Smith.
+\newblock {\em {CLARE -- A Contextual Reasoning and Cooperative Response
+  Framework for the Core Language Engine}}.
+\newblock SRI International, {Cambridge, England}, 1992.
+
+\bibitem[\protect\citename{Ball, }1991]{Ball91}
+Catherine~N. Ball.
+\newblock {\em The historical development of the it-cleft}.
+\newblock PhD thesis, University of Pennsylvania, 1991.
+
+\bibitem[\protect\citename{Baltin, }1989]{Baltin}
+Mark Baltin.
+\newblock Heads and projections.
+\newblock In Mark Baltin and Anthony~S. Kroch, editors, {\em Alternative
+  conceptions of phrase structure}, pages 1--16. University of Chicago Press,
+  Chicago, Illinois, 1989.
+
+\bibitem[\protect\citename{Barwise and Cooper, }1981]{BarwiseCooper81:LP}
+John Barwise and Robin Cooper.
+\newblock {Generalized Quantifiers and Natural Language}.
+\newblock {\em Linguistics and Philosophy}, 4, 1981.
+
+\bibitem[\protect\citename{Becker, }1993]{becker93}
+Tilman Becker.
+\newblock {\em HyTAG: A new Type of Tree Adjoining Grammars for Hybrid
+  Syntactic Representation of Free Word Order Languages}.
+\newblock PhD thesis, Universit{\"a}t des Saarlandes, 1993.
+
+\bibitem[\protect\citename{Becker, }1994]{becker94}
+Tilman Becker.
+\newblock Patterns in metarules.
+\newblock In {\em Proceedings of the 3rd TAG+ Conference}, Paris, France, 1994.
+
+\bibitem[\protect\citename{Bhatt, }1994]{bhatt94}
+Rajesh Bhatt.
+\newblock Pro-control in tags.
+\newblock Unpublished paper, University of Pennsylvania, 1994.
+
+\bibitem[\protect\citename{Browning, }1987]{Browning87}
+Marguerite Browning.
+\newblock {\em {Null Operator Constructions}}.
+\newblock PhD thesis, MIT, 1987.
+
+\bibitem[\protect\citename{Burzio, }1986]{Burzio86}
+Luigi Burzio.
+\newblock {\em {Italian syntax. A Government-Binding approach}}.
+\newblock Studies in natural language and linguistic theory. Reidel,
+  Dor\-drecht, 1986.
+
+\bibitem[\protect\citename{Candito, }1996]{Candito96}
+Marie-Helene Candito.
+\newblock {A Principle-Based Hierarchical Representation of LTAGs}.
+\newblock In {\em Proceedings of COLING-96}, Copenhagen, Denmark, 1996.
+
+\bibitem[\protect\citename{Carrier and Randall, }1992]{carrier92}
+Jill Carrier and Janet~H. Randall.
+\newblock The argument structure and syntactic structure of resultatives.
+\newblock {\em Linguistic Inquiry}, 23:173--234, 1992.
+
+\bibitem[\protect\citename{Carroll, }1993]{Carroll93}
+John Carroll.
+\newblock {\em Practical Unification-based Parsing of Natural Language}.
+\newblock University of Cambridge, Computer Laboratory, {Cambridge, England},
+  1993.
+
+\bibitem[\protect\citename{Chomsky, }1965]{chomsky65}
+Noam Chomsky.
+\newblock {\em {Aspects of the Theory of Syntax}}.
+\newblock MIT Press, {Cambridge, Massachusetts}, 1965.
+
+\bibitem[\protect\citename{Chomsky, }1970]{chomsky70}
+Noam Chomsky.
+\newblock {Remarks on Nominalization}.
+\newblock In {\em Readings in English Transformational Grammar}, pages
+  184--221. Ginn and Company, {Waltham, Massachusetts}, 1970.
+
+\bibitem[\protect\citename{Chomsky, }1986]{chomsky86}
+Noam Chomsky.
+\newblock {\em Barriers}.
+\newblock MIT Press, {Cambridge, Massachusetts}, 1986.
+
+\bibitem[\protect\citename{Chomsky, }1992]{chomsky92}
+Noam Chomsky.
+\newblock {A Minimalist Approach to Linguistic Theory}.
+\newblock {\em MIT Working Papers in Linguistics}, Occasional Papers in
+  Linguistics No. 1, 1992.
+
+\bibitem[\protect\citename{Church, }1988]{kwc88}
+Kenneth~Ward Church.
+\newblock {A Stochastic Parts Program and Noun Phrase Parser for Unrestricted
+  Text}.
+\newblock In {\em 2nd Applied Natural Language Processing Conference}, {Austin,
+  Texas}, 1988.
+
+\bibitem[\protect\citename{Cinque, }1990]{cinque90}
+G.~Cinque.
+\newblock {\em {Types of A-bar-Dependencies}}.
+\newblock MIT Press, {Cambridge, Massachusetts}; {London, England}, 1990.
+
+\bibitem[\protect\citename{Copestake, }1999]{copestake99:_lkb_system}
+A.~Copestake.
+\newblock {\em The (new) LKB System}.
+\newblock CSLI, Stanford University, 1999.
+
+\bibitem[\protect\citename{Cowie and Mackin, }1975]{cie75}
+A.~P. Cowie and R.~Mackin, editors.
+\newblock {\em {Oxford Dictionary of Current Idiomatic English}}, volume~1.
+\newblock Oxford University Press, London, England, 1975.
+
+\bibitem[\protect\citename{Delahunty, }1984]{Delahunty84}
+Gerald~P. Delahunty.
+\newblock {The Analysis of English Cleft Sentences}.
+\newblock {\em Linguistic Analysis}, 13(2):63--113, 1984.
+
+\bibitem[\protect\citename{Delin, }1989]{Delin89}
+Judy~L. Delin.
+\newblock {\em {Cleft Constructions in Discourse}}.
+\newblock PhD thesis, University of Edinburgh, 1989.
+
+\bibitem[\protect\citename{Doran \bgroup \em et al.\egroup , }1994]{xtag-notes}
+Christy Doran, Dania Egedi, Beth~Ann Hockey, B.~Srinivas, and Martin Zaidel.
+\newblock {XTAG System - A Wide Coverage Grammar for English}.
+\newblock In {\em {Proceedings of the $17^{th}$ International Conference on
+  Computational Linguistics (COLING '94)}}, {Kyoto, Japan}, August 1994.
+
+\bibitem[\protect\citename{Doran \bgroup \em et al.\egroup ,
+  }1997]{c.97:_maint_xtag}
+C.~Doran, B.~Hockey, P.~Hopely, J.~Rosenzweig, A.~Sarkar, B.~Srinivas, F.~Xia,
+  A.~Nasr, and O.~Rambow.
+\newblock {Maintaining the Forest and Burning out the Underbrush in {\sc
+  XTAG}}.
+\newblock In {\em {Workshop on Computational Environments for Grammar
+  Development and Language Engineering (ENVGRAM)}}, Madrid, Spain, July 1997.
+
+\bibitem[\protect\citename{Doran, }1998]{doran-diss}
+Christine Doran.
+\newblock {\em {Incorporating Punctuation into the Sentence Grammar: A
+  Lexicalized Tree Adjoining Grammar Perspective}}.
+\newblock PhD thesis, University of Pennsylvania, 1998.
+
+\bibitem[\protect\citename{Egedi and Martin, }1994]{EgediMartin94}
+Dania Egedi and Patrick Martin.
+\newblock {A Freely Available Syntactic Lexicon for English}.
+\newblock In {\em {Proceedings of the International Workshop on Sharable
+  Natural Language Resources}}, {Nara, Japan}, August 1994.
+
+\bibitem[\protect\citename{Emonds, }1970]{Emonds70}
+J.~Emonds.
+\newblock {\em {Root and structure-preserving transformations}}.
+\newblock PhD thesis, Massachusetts Institute of Technology, 1970.
+
+\bibitem[\protect\citename{Ernst, }1983]{Ernst84}
+T.~Ernst.
+\newblock {More on Adverbs and Stressed Auxiliaries}.
+\newblock {\em Linguistic Inquiry 13}, pages 542--48, 1983.
+
+\bibitem[\protect\citename{Evans \bgroup \em et al.\egroup , }1995]{Evans95}
+Roger Evans, Gerald Gazdar, and David Weir.
+\newblock {Encoding Lexicalized Tree Adjoining Grammars with a Nonmonotonic
+  Inheritance Hierarchy}.
+\newblock In {\em Proceedings of the 33rd Annual Meeting of the Association for
+  Computational Linguistics}, Cambridge, MA, 1995.
+
+\bibitem[\protect\citename{Frank, }2000]{frank00:_tag_book}
+Robert Frank.
+\newblock {\em Phrase Structure Composition and Syntactic Dependencies}.
+\newblock MIT Press, Cambridge, MA, 2000.
+
+\bibitem[\protect\citename{Gazdar \bgroup \em et al.\egroup , }1985]{gazdar85}
+G.~Gazdar, E.~Klein, G.~Pullum, and I.~Sag.
+\newblock {\em {Generalized Phrase Structure Grammar}}.
+\newblock Harvard University Press, {Cambridge, Massachusetts}, 1985.
+
+\bibitem[\protect\citename{Grimshaw, }1990]{grimshaw90}
+Jane Grimshaw.
+\newblock {\em {Argument Structure}}.
+\newblock MIT Press, Cambridge, Massachusetts, 1990.
+
+\bibitem[\protect\citename{Haegeman, }1991]{haegeman91}
+Liliane Haegeman.
+\newblock {\em {Introduction to Government and Binding Theory}}.
+\newblock Blackwell Publishers, {Cambridge, Massachusetts}, {Oxford, U.K.},
+  1991.
+
+\bibitem[\protect\citename{Hale and Keyser, }1986]{HaleKeyser86}
+Ken Hale and Samuel~Jay Keyser.
+\newblock Some transitivity alternations in {English}.
+\newblock Technical Report \#7, MITCCS, July 1986.
+
+\bibitem[\protect\citename{Hale and Keyser, }1987]{HaleKeyser87}
+Ken Hale and Samuel~Jay Keyser.
+\newblock A view from the middle.
+\newblock Technical Report \#10, MITCCS, January 1987.
+
+\bibitem[\protect\citename{Han, }1999]{handiss}
+Chung-Hye Han.
+\newblock {\em The Structure and interpretation of imperatives: mood and force
+  in universal grammar}.
+\newblock PhD thesis, University of Pennsylvania, 1999.
+
+\bibitem[\protect\citename{Hanks, }1979]{ced79}
+Patrick Hanks, editor.
+\newblock {\em {Collins Dictionary of the English Language}}.
+\newblock Collins, London, England, 1979.
+
+\bibitem[\protect\citename{Heycock and Kroch, }1993]{heycock/kroch93gagl}
+Caroline Heycock and Anthony~S. Kroch.
+\newblock {Verb movement and the status of subjects: implications for the
+  theory of licensing}.
+\newblock {\em GAGL}, 36:75--102, 1993.
+
+\bibitem[\protect\citename{Heycock, }1991]{heycock91}
+Caroline Heycock.
+\newblock {Progress Report: The English Copula in a LTAG}.
+\newblock Internal XTAG project report, University of Pennsylvania, Summer
+  1991.
+
+\bibitem[\protect\citename{Hockey and Mateyak, }1998]{ircs:det98}
+Beth~Ann Hockey and Heather Mateyak.
+\newblock Determining determiner sequencing: A syntactic analysis for english.
+\newblock Technical Report 98-10, Institute for Research in Cognitive Science,
+  University of Pennsylvania, 1998.
+
+\bibitem[\protect\citename{Hockey, }1994]{hockey94}
+Beth~Ann Hockey.
+\newblock {Echo questions, intonation and focus}.
+\newblock In {\em {Proceedings of the Interdisciplinary Conference on Focus and
+  Natural Language Processing in Celebration of the 10$^{th}$ anniversary of
+  the Journal of Semantics}}, Eschwege, Germany, 1994.
+
+\bibitem[\protect\citename{Hoekstra, }1988]{hoekstra88}
+Teun Hoekstra.
+\newblock Small clause results.
+\newblock {\em Lingua}, 74:101--139, 1988.
+
+\bibitem[\protect\citename{Hornby, }1974]{oald74}
+A.~S. Hornby, editor.
+\newblock {\em {Oxford Advanced Learner's Dictionary of Current English}}.
+\newblock Oxford University Press, London, England, third edition, 1974.
+
+\bibitem[\protect\citename{Iatridou, }1991]{iatridou91}
+Sabine Iatridou.
+\newblock {\em {Topics in Conditionals}}.
+\newblock PhD thesis, MIT, 1991.
+
+\bibitem[\protect\citename{Jackendoff, }1972]{jackendoff72}
+R.~Jackendoff.
+\newblock {\em {Semantic Interpretation in Generative Grammar}}.
+\newblock MIT Press, {Cambridge, Massachusetts}, 1972.
+
+\bibitem[\protect\citename{Jackendoff, }1990]{jackendoff90}
+R.~Jackendoff.
+\newblock {On Larson's Analysis of the Double Object Construction}.
+\newblock {\em Linguistic Inquiry}, 21:427--456, 1990.
+
+\bibitem[\protect\citename{Jelinek \bgroup \em et al.\egroup ,
+  }1994]{jelineketal94}
+Fred Jelinek, John Lafferty, David~M. Magerman, Robert Mercer, Adwait
+  Ratnaparkhi, and Salim Roukos.
+\newblock {Decision Tree Parsing using a Hidden Derivation Model}.
+\newblock In {\em Proceedings from the ARPA Workshop on Human Language
+  Technology Workshop}, March 1994.
+
+\bibitem[\protect\citename{Joshi and Kulick, }1997]{JoshiKulick97}
+Aravind Joshi and Seth Kulick.
+\newblock Partial proof trees as building blocks for a categorial grammar.
+\newblock {\em Linguistics and Philosophy}, 20:637--667, 1997.
+\newblock To appear.
+
+\bibitem[\protect\citename{Joshi and Schabes, }1996]{joshischabes96}
+Aravind Joshi and Yves Schabes.
+\newblock {\em Handbook of Formal Lanaguages and Automata}, chapter
+  Tree-Adjoining Grammars.
+\newblock Springer-Verlag, Berlin, 1996.
+
+\bibitem[\protect\citename{Joshi and Vijay-Shanker,
+  }1999]{joshi99:_compos_ltag}
+A.~K. Joshi and K.~Vijay-Shanker.
+\newblock Compositional semantics with lexicalized tree-adjoining grammar
+  (ltag): How much underspecification is necessary?
+\newblock In {\em Proceedings of the Third International Workshop on
+  Computational Semantics (IWCS-3)}, pages 131--145, Tilburg, 1999.
+
+\bibitem[\protect\citename{Joshi \bgroup \em et al.\egroup , }1975]{joshi75}
+Aravind~K. Joshi, L.~Levy, and M.~Takahashi.
+\newblock {Tree Adjunct Grammars}.
+\newblock {\em Journal of Computer and System Sciences}, 1975.
+
+\bibitem[\protect\citename{Joshi \bgroup \em et al.\egroup ,
+  }1999]{joshi99:_proof_trees}
+Aravind Joshi, Seth Kulick, and Natasha Kurtonina.
+\newblock Semantic composition for partial proof trees.
+\newblock In {\em Proc. of the Twelfth Amsterdam Colloquium}, pages 169--174,
+  University of Amsterdam, Amsterdam, 1999.
+
+\bibitem[\protect\citename{Joshi, }1985]{joshi85}
+Aravind~K. Joshi.
+\newblock {Tree Adjoining Grammars: How much context Sensitivity is required to
+  provide a reasonable structural description}.
+\newblock In D.~Dowty, I.~Karttunen, and A.~Zwicky, editors, {\em {Natural
+  Language Parsing}}, pages 206--250. Cambridge University Press, {Cambridge,
+  U.K.}, 1985.
+
+\bibitem[\protect\citename{Joshi, }1990]{joshi90}
+Aravind~K Joshi.
+\newblock Processing crossed and nested dependencies: an automaton perspective
+  on psycholinguisitc results.
+\newblock {\em Language and Cognitive Processes}, 5(1), 1990.
+
+\bibitem[\protect\citename{Karp \bgroup \em et al.\egroup , }1992]{karp92}
+Daniel Karp, Yves Schabes, Martin Zaidel, and Dania Egedi.
+\newblock {A Freely Available Wide Coverage Morphological Analyzer for
+  English}.
+\newblock In {\em {Proceedings of the $15^{th}$ International Conference on
+  Computational Linguistics (COLING '92)}}, {Nantes, France}, August 1992.
+
+\bibitem[\protect\citename{Keenan and Stavi, }1986]{KeenanStavi86:LP}
+E.~L. Keenan and J.~Stavi.
+\newblock {A Semantic Characterization of Natural Language Determiners}.
+\newblock {\em Linguistics and Philosophy}, 9, August 1986.
+
+\bibitem[\protect\citename{Knowles, }1986]{Knowles86}
+John Knowles.
+\newblock {The Cleft Sentence: A Base-Generated Perspective}.
+\newblock {\em Lingua: International Review of General Linguistics},
+  69(4):295--317, August 1986.
+
+\bibitem[\protect\citename{Kroch and Joshi, }1985]{kj85}
+Anthony~S. Kroch and Aravind~K. Joshi.
+\newblock {The Linguistic Relevance of Tree Adjoining Grammars}.
+\newblock Technical Report MS-CIS-85-16, Department of Computer and Information
+  Science, University of Pennsylvania, 1985.
+
+\bibitem[\protect\citename{Kroch and Joshi, }1987]{kj87}
+Anthony~S. Kroch and Aravind~K. Joshi.
+\newblock {Analyzing Extraposition in a Tree Adjoining Grammar}.
+\newblock In G.~Huck and A.~Ojeda, editors, {\em {Discontinuous Constituents,
+  Syntax and Semantics}}, volume~20. Academic Press, 1987.
+
+\bibitem[\protect\citename{Lapointe, }1980]{lapointe80}
+S.~Lapointe.
+\newblock {A lexical analysis of the English auxiliary verb system}.
+\newblock In T.~Hoekstra et~al, editor, {\em {Lexical Grammar}}, pages
+  215--254. {Foris, Dordrecht}, 1980.
+
+\bibitem[\protect\citename{Larson, }1988]{larson88}
+R.~Larson.
+\newblock {On the Double Object construction}.
+\newblock {\em Linguistic Inquiry}, 19:335--391, 1988.
+
+\bibitem[\protect\citename{Larson, }1990]{larson90}
+R.~Larson.
+\newblock {Double Objects Revisited: Reply to Jackendoff}.
+\newblock {\em Linguistic Inquiry}, 21:589--612, 1990.
+
+\bibitem[\protect\citename{Lasnik and Saito, }1984]{lasnik-saito84}
+H.~Lasnik and M.~Saito.
+\newblock {On the Nature of Proper Government}.
+\newblock {\em Linguistic Inquiry}, 15:235--289, 1984.
+
+\bibitem[\protect\citename{Lasnik and Uriagereka, }1988]{lasnik-uriagereka88}
+H.~Lasnik and J.~Uriagereka.
+\newblock {\em {A Course in GB Syntax}}.
+\newblock MIT Press, {Cambridge, Massachusetts}, 1988.
+
+\bibitem[\protect\citename{Lees, }1960]{Lees60}
+Robert~B. Lees.
+\newblock {\em The Grammar of English Nominalizations}.
+\newblock Indiana University Research Center in Anthropology, Folklore, and
+  Linguistics, Indiana University, Bloomington, Indiana, 1960.
+
+\bibitem[\protect\citename{Lehmann \bgroup \em et al.\egroup ,
+  }1996]{Lehmann96}
+Sabine Lehmann, Stephan Oepen, Sylvie Regnier-Prost, Klaus Netter, Veronika
+  Lux, Judith Klein, Kirsten Falkedal, Frederik Fouvry, Dominique Estival, Eva
+  Dauphin, Herv{\'e} Compagnion, Judith Baur, Lorna Balkan, and Doug Arnold.
+\newblock {{\sc tsnlp} --- Test Suites for Natural Language Processing}.
+\newblock In {\em Proceedings of COLING 1996}, Kopenhagen, 1996.
+
+\bibitem[\protect\citename{Liberman, }1989]{liberman89}
+Mark Liberman.
+\newblock {Tex on tap: the {ACL} Data Collection Initiative}.
+\newblock In {\em {Proceedings of the DARPA Workshop on Speech and Natural
+  Language Processing}}. Morgan Kaufman, 1989.
+
+\bibitem[\protect\citename{Marcus \bgroup \em et al.\egroup , }1993]{marcus93}
+Mitchell~M. Marcus, Beatrice Santorini, and Mary~Ann Marcinkiewicz.
+\newblock {Building a Large Annotated Corpus of English: The Penn Treebank}.
+\newblock {\em Computational Linguistics}, 19.2:313--330, June 1993.
+
+\bibitem[\protect\citename{Mateyak, }1997]{Mateyak97}
+Heather Mateyak.
+\newblock Negation of noun phrases with {\it not}.
+\newblock Technical Report 97-18, UPENN-IRCS, October 1997.
+
+\bibitem[\protect\citename{McCawley, }1988]{mccawley88}
+James~D. McCawley.
+\newblock {\em {The Syntactic Phenomena of English}}.
+\newblock The University of Chicago Press, {Chicago, Illinois}, 1988.
+
+\bibitem[\protect\citename{Moro, }1990]{moro90}
+A.~Moro.
+\newblock {{\it There} as a Raised Predicate}.
+\newblock Paper presented at GLOW, 1990.
+
+\bibitem[\protect\citename{Napoli, }1988]{Napoli88}
+Donna~Jo Napoli.
+\newblock {Ergative Verbs in English}.
+\newblock {\em Journal of the Linguistic Society of America (Language)},
+  64:1(1):130--142, March 1988.
+
+\bibitem[\protect\citename{Obernauer, }1984]{obernauer84}
+H.~Obernauer.
+\newblock {On the Identification of Empty Categories}.
+\newblock {\em Linguistic Review 4}, 2:153--202, 1984.
+
+\bibitem[\protect\citename{Paroubek \bgroup \em et al.\egroup , }1992]{PSJ92}
+Patrick Paroubek, Yves Schabes, and Aravind~K. Joshi.
+\newblock Xtag -- a graphical workbench for developing tree-adjoining grammars.
+\newblock In {\em Third Conference on Applied Natural Language Processing},
+  {Trento, Italy}, 1992.
+
+\bibitem[\protect\citename{Partee \bgroup \em et al.\egroup ,
+  }1990]{Partee90:BK}
+Barbara Partee, Alice ter Meulen, and Robert~E. Wall.
+\newblock {\em {Mathematical Methods in Linguistics}}.
+\newblock Kluwer Academic Publishers, 1990.
+
+\bibitem[\protect\citename{Perlmutter, }1978]{Perlmutter78}
+David Perlmutter.
+\newblock Impersonal passives and the unaccusative hypothesis.
+\newblock In {\em Proceedings of the Fourth Annual Meeting of the Berkeley
+  Linguistics Society}, 1978.
+
+\bibitem[\protect\citename{Pollard and Sag, }1994]{PollardSag94:BK}
+Carl Pollard and Ivan~A. Sag.
+\newblock {\em {Head-Driven Phrase Structure Grammar}}.
+\newblock CSLI, 1994.
+
+\bibitem[\protect\citename{Pollock, }1989]{pollack89}
+J-Y. Pollock.
+\newblock {Verb Movement, UG, and the Structure of IP}.
+\newblock {\em Linguistic Inquiry}, 20.3:365--424, 1989.
+
+\bibitem[\protect\citename{Potsdam, }1997]{potsdamdiss97}
+Eric Potsdam.
+\newblock {\em Syntactic issues in the English imperative}.
+\newblock PhD thesis, University of California at Santa Cruz, 1997.
+
+\bibitem[\protect\citename{Prasad and Sarkar, }2000]{prasadandsarkar00}
+Rashmi Prasad and Anoop Sarkar.
+\newblock Comparing test-suite based evaluation and corpus-based evalation of a
+  wide-coverage grammar for english.
+\newblock In {\em Proceedings, Workshop on Using Evaluation within HLT
+  Programs: Results and Trends LREC 2000, Athens, Greece}, 2000.
+
+\bibitem[\protect\citename{Quirk \bgroup \em et al.\egroup , }1985]{quirk85}
+Randolph Quirk, Sidney Greenbaum, Geoffrey Leech, and Jan Svartvik.
+\newblock {\em {A Comprehensive Grammar of the English Language}}.
+\newblock Longman, London, 1985.
+
+\bibitem[\protect\citename{Ramshaw and Marcus, }1995]{lance&mitch95}
+Lance Ramshaw and Mitchell~P. Marcus.
+\newblock Text chunking using transformation-based learning.
+\newblock In {\em Proceedings of the Third Workshop on Very Large Corpora},
+  MIT, Cambridge, Boston, 1995.
+
+\bibitem[\protect\citename{Rizzi, }1990]{rizzi90}
+Luigi Rizzi.
+\newblock {\em {Relativized Minimality}}.
+\newblock MIT Press, {Cambridge, Massachusetts}; {London, England}, 1990.
+
+\bibitem[\protect\citename{Rogers and Vijay-Shankar, }1994]{rogers-vijay94}
+James Rogers and K.~Vijay-Shankar.
+\newblock {Obtaining Trees from their Descriptions: An Application to Tree
+  Adjoining Grammars}.
+\newblock {\em Computational Intelligence}, 10(4), 1994.
+
+\bibitem[\protect\citename{Rosen, }1981]{Rosen81}
+Carol Rosen.
+\newblock {\em The Relational Structure of Reflexive Clauses: Evidence from
+  Italian}.
+\newblock PhD thesis, Harvard, 1981.
+
+\bibitem[\protect\citename{Rosenbaum, }1967]{Rosenbaum67}
+Peter~S. Rosenbaum.
+\newblock {\em {The grammar of English predicate complement constructions}}.
+\newblock MIT press, Cambridge, Massachusetts, 1967.
+
+\bibitem[\protect\citename{Sag \bgroup \em et al.\egroup , }1985]{sag85}
+I.~Sag, G.~Gazdar, T.~Wasow, and S.~Weisler.
+\newblock {Coordination and How to distinguish categories}.
+\newblock {\em Natural Language and Linguistic Theory}, 3:117--171, 1985.
+
+\bibitem[\protect\citename{Sarkar and Joshi, }1996]{anoopjoshi96}
+Anoop Sarkar and Aravind Joshi.
+\newblock {Coordination in Tree Adjoining Grammars: Formalization and
+  Implementation}.
+\newblock In {\em {Proceedings of the $18^{th}$ International Conference on
+  Computational Linguistics (COLING '94)}}, {Copenhagen, Denmark}, August 1996.
+
+\bibitem[\protect\citename{Schabes and Joshi, }1988]{schabesjoshi88}
+Yves Schabes and Aravind~K. Joshi.
+\newblock {An Early-Type Parsing Algorithm for Tree Adjoining Grammars}.
+\newblock In {\em {Proceedings of the $26^{th}$ Meeting of the Association for
+  Computational Linguistics}}, {Buffalo}, June 1988.
+
+\bibitem[\protect\citename{Schabes \bgroup \em et al.\egroup ,
+  }1988]{schabes88}
+Yves Schabes, Anne Abeill\'{e}, and Aravind~K. Joshi.
+\newblock {Parsing strategies with `lexicalized' grammars: Application to Tree
+  Adjoining Grammars}.
+\newblock In {\em {Proceedings of the $12^{th}$ International Conference on
+  Computational Linguistics (COLING'88)}}, {Budapest, Hungary}, August 1988.
+
+\bibitem[\protect\citename{Schabes, }1990]{schabes90}
+Yves Schabes.
+\newblock {\em {Mathematical and Computational Aspects of Lexicalized
+  Grammars}}.
+\newblock PhD thesis, Computer Science Department, University of Pennsylvania,
+  1990.
+
+\bibitem[\protect\citename{Seuss, }1971]{seuss71}
+Dr. Seuss.
+\newblock {\em {The Lorax}}.
+\newblock Random House, New York, New York, 1971.
+
+\bibitem[\protect\citename{Soong and Huang, }1990]{soong90}
+Frank~K. Soong and Eng-Fong Huang.
+\newblock {Fast Tree-Trellis Search for Finding the N-Best Sentence Hypothesis
+  in Continuous Speech Recognition}.
+\newblock {\em {Journal of Acoustic Society, AM.}}, May 1990.
+
+\bibitem[\protect\citename{Sornicola, }1988]{Sornicola88}
+R.~Sornicola.
+\newblock {IT-clefts and WH-clefts: two awkward sentence types}.
+\newblock {\em Journal of Linguistics}, 24:343--379, 1988.
+
+\bibitem[\protect\citename{Srinivas \bgroup \em et al.\egroup , }1994]{srini94}
+B.~Srinivas, D.~Egedi, C.~Doran, and T.~Becker.
+\newblock Lexicalization and grammar development.
+\newblock In {\em Proceedings of KONVENS '94}, pages 310--9, Vienna, Austria,
+  1994.
+
+\bibitem[\protect\citename{Srinivas \bgroup \em et al.\egroup ,
+  }1995]{srinietal95}
+B.~Srinivas, Christine Doran, and Seth Kulick.
+\newblock Heuristics and parse ranking.
+\newblock In {\em {Proceedings of the $4^{th}$ Annual International Workshop on
+  Parsing Technologies}}, {Prague}, September 1995.
+
+\bibitem[\protect\citename{Srinivas, }1997a]{srini97diss}
+B.~Srinivas.
+\newblock {\em Complexity of Lexical Descriptions and its Relevance to Partial
+  Parsing}.
+\newblock PhD thesis, University of Pennsylvania, Philadelphia, PA, August
+  1997.
+
+\bibitem[\protect\citename{Srinivas, }1997b]{srini97iwpt}
+B.~Srinivas.
+\newblock {Performance Evaluation of Supertagging for Partial~Parsing}.
+\newblock In {\em {Proceedings of Fifth International Workshop on Parsing
+  Technology}}, {Boston, USA}, September 1997.
+
+\bibitem[\protect\citename{Vijay-Shanker and Joshi, }1991]{vijay91}
+K.~Vijay-Shanker and Aravind~K. Joshi.
+\newblock {Unification Based Tree Adjoining Grammars}.
+\newblock In J.~Wedekind, editor, {\em {Unification-based Grammars}}. MIT
+  Press, {Cambridge, Massachusetts}, 1991.
+
+\bibitem[\protect\citename{Vijay-Shanker and Schabes, }1992]{vijay-schabes92}
+K.~Vijay-Shanker and Yves Schabes.
+\newblock Structure sharing in lexicalized tree adjoining grammar.
+\newblock In {\em Proceedings of the $15^{th}$ International Conference on
+  Computational Linguistics (COLING '92)}, {Nantes, France}, August 1992.
+
+\bibitem[\protect\citename{Vijay-Shanker, }1987]{vijay87}
+K.~Vijay-Shanker.
+\newblock {\em {A Study of Tree Adjoining Grammars}}.
+\newblock PhD thesis, Department of Computer and Information Science,
+  University of Pennsylvania, 1987.
+
+\bibitem[\protect\citename{Webber \bgroup \em et al.\egroup ,
+  }1999]{webber99:_discourse_tag}
+Bonnie Webber, Aravind~K. Joshi, Alistair Knott, and Matthew Stone.
+\newblock What are little texts made of? a structural and presuppositional
+  account using lexicalized tag.
+\newblock In {\em Proceedings of the International Workshop on Levels of
+  Representation in Discourse (LORID '99)}, pages 151--156, Edinburgh, 1999.
+
+\bibitem[\protect\citename{{XTAG-Group}, }1998]{tech-rept98}
+The {XTAG-Group}.
+\newblock {A Lexicalized Tree Adjoining Grammar for English}.
+\newblock Technical Report IRCS 98-18, University of Pennsylvania, 1998.
+
+\end{thebibliography}

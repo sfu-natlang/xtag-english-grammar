@@ -1,0 +1,26 @@
+This is a simple documentation standard FOR THE ANALYSIS AND
+IMPELEMENTATION OF VARIOUS LINGUISTIC PHENOMENA that tech-report writers
+must follow. Other chapters of the report are obviously not subject to
+these rules:
+
+
+*** section 1: introduction of the phenomena itself, however simple it may
+    seem to you. This will also involve presentation of the data.
+
+*** section 2: if a survey of the linguistic literature has been done with
+    respect to what kind of structure/analysis the relevant construction
+    should get, then do the survey (not necessarily detailed and full of
+    jargon - you should skim through other chapters at this point to see as
+    to what extent and depth surveys of lietrature are given), otherwise,
+    skip to section 3.
+
+*** section 3: describe the implementation. Be sure to give a precise
+    description of all the important details and the interactions that are
+    relevant to the coverage of the phenomenon.
+
+*** section 4: Cases not handled (if any)
+
+
+You can add subsections within each of the sections if necessary.
+
+

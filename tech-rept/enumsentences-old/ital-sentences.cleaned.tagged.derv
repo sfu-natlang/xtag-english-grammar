@@ -1,0 +1,102 @@
+1" ""John/PropN wants/V to/V love/V Mary/PropN"
+(("nx0V[wants]" NIL) (("vxnx0Vnx1[love]" (2)) (("NXN[Mary]" (2 2 2))) (("Vvx[to]" (2 2))) (("NX[PRO]" (2 1)))) (("NXN[John]" (1))))
+1" ""John/PropN wants/V to/V love/V Mary/PropN"
+(("nx0Vnx1[love]" NIL) (("NXN[Mary]" (2 2))) (("Vvx[to]" (2))) (("NX[PRO]" (1))) (("nx0Vs1[wants]" NIL) (("NXN[John]" (1)))))
+2" ""I/Pron had/V a/Det map/N yesterday/Adv"
+(("nx0Vnx1[had]" NIL) (("NXdxN[map]" (2 2)) (("DXD[a]" (1)))) (("vxARB[yesterday]" (2))) (("NXN[I]" (1))))
+2" ""I/Pron had/V a/Det map/N yesterday/Adv"
+(("nx0Vnx1[had]" NIL) (("NXdxN[map]" (2 2)) (("DXD[a]" (1)))) (("NXN[I]" (1))) (("sARB[yesterday]" NIL)))
+1" ""he/Pron kicked/V the/Det bucket/N"
+(("nx0Vnx1[kicked]" NIL) (("NXdxN[bucket]" (2 2)) (("DXD[the]" (1)))) (("NXN[he]" (1))))
+2" ""John/PropN kicked/V the/Det bucket/N"
+(("nx0Vnx1[kicked]" NIL) (("NXdxN[bucket]" (2 2)) (("DXD[the]" (1)))) (("NXN[John]" (1))))
+3" ""John/PropN baked/V a/Det cake/N for/Prep Mary/PropN"
+(("nx0Vnx1[baked]" NIL) (("NXdxN[cake]" (2 2)) (("DXD[a]" (1)))) (("vxPnx[for]" (2)) (("NXN[Mary]" (2 2)))) (("NXN[John]" (1))))
+3" ""John/PropN baked/V a/Det cake/N for/Prep Mary/PropN"
+(("nx0Vnx1[baked]" NIL) (("NXdxN[cake]" (2 2)) (("DXD[a]" (1))) (("nxPnx[for]" NIL) (("NXN[Mary]" (2 2))))) (("NXN[John]" (1))))
+4" ""John/PropN baked/V a/Det cake/N"
+(("nx0Vnx1[baked]" NIL) (("NXdxN[cake]" (2 2)) (("DXD[a]" (1)))) (("NXN[John]" (1))))
+5" ""what/Pron did/V Bill/PropN tell/V Mary/PropN that/Comp John/PropN said/V"
+(("W1nx0Vs1[said]" NIL) (("NXN[John]" (2 1))) (("COMPs[that]" (2)) (("nx0Vnx1s2[tell]" NIL) (("NXN[Mary]" (2 2))) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL)))) (("NXN[what]" (1))))
+5" ""what/Pron did/V Bill/PropN tell/V Mary/PropN that/Comp John/PropN said/V"
+(("W1nx0Vs1[said]" NIL) (("NXN[John]" (2 1))) (("nx0Vnx1s2[tell]" (2)) (("COMPs[that]" (2 3))) (("NXN[Mary]" (2 2))) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL))) (("NXN[what]" (1))))
+5" ""what/Pron did/V Bill/PropN tell/V Mary/PropN that/Comp John/PropN said/V"
+(("W1nx0Vnx1[said]" NIL) (("NXN[John]" (2 1))) (("COMPs[that]" (2)) (("nx0Vnx1s2[tell]" NIL) (("NXN[Mary]" (2 2))) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL)))) (("NXN[what]" (1))))
+5" ""what/Pron did/V Bill/PropN tell/V Mary/PropN that/Comp John/PropN said/V"
+(("W1nx0Vnx1[said]" NIL) (("NXN[John]" (2 1))) (("nx0Vnx1s2[tell]" (2)) (("COMPs[that]" (2 3))) (("NXN[Mary]" (2 2))) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL))) (("NXN[what]" (1))))
+5" ""what/Pron did/V Bill/PropN tell/V Mary/PropN that/Comp John/PropN said/V"
+(("W2nx0Vnx1s2[tell]" NIL) (("NXN[Mary]" (2 2 2)) (("N1nx0Vnx1[said]" NIL) (("NXN[John]" (2 1))) (("COMPs[that]" (2))))) (("Vvx[]" (2 2))) (("NXN[Bill]" (2 1))) (("Vs[did]" (2))) (("NXN[what]" (1))))
+5" ""what/Pron did/V Bill/PropN tell/V Mary/PropN that/Comp John/PropN said/V"
+(("W2nx0Vnx2nx1[tell]" NIL) (("NXN[Mary]" (2 2 3)) (("N1nx0Vnx1[said]" NIL) (("NXN[John]" (2 1))) (("COMPs[that]" (2))))) (("Vvx[]" (2 2))) (("NXN[Bill]" (2 1))) (("Vs[did]" (2))) (("NXN[what]" (1))))
+5" ""what/Pron did/V Bill/PropN tell/V Mary/PropN that/Comp John/PropN said/V"
+(("W1nx0Vnx2nx1[tell]" NIL) (("NXN[Mary]" (2 2 2)) (("N1nx0Vnx1[said]" NIL) (("NXN[John]" (2 1))) (("COMPs[that]" (2))))) (("Vvx[]" (2 2))) (("NXN[Bill]" (2 1))) (("Vs[did]" (2))) (("NXN[what]" (1))))
+1" ""what/Pron did/V Bill/PropN think/V that/Comp John/PropN said/V"
+(("W1nx0Vs1[said]" NIL) (("NXN[John]" (2 1))) (("nx0Vs1[think]" (2)) (("COMPs[that]" (2 2))) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL))) (("NXN[what]" (1))))
+1" ""what/Pron did/V Bill/PropN think/V that/Comp John/PropN said/V"
+(("W1nx0Vs1[said]" NIL) (("NXN[John]" (2 1))) (("COMPs[that]" (2)) (("nx0Vs1[think]" NIL) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL)))) (("NXN[what]" (1))))
+1" ""what/Pron did/V Bill/PropN think/V that/Comp John/PropN said/V"
+(("W1nx0Vnx1[said]" NIL) (("NXN[John]" (2 1))) (("nx0Vs1[think]" (2)) (("COMPs[that]" (2 2))) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL))) (("NXN[what]" (1))))
+1" ""what/Pron did/V Bill/PropN think/V that/Comp John/PropN said/V"
+(("W1nx0Vnx1[said]" NIL) (("NXN[John]" (2 1))) (("COMPs[that]" (2)) (("nx0Vs1[think]" NIL) (("Vvx[]" (2))) (("NXN[Bill]" (1))) (("Vs[did]" NIL)))) (("NXN[what]" (1))))
+2" ""the/Det man/N took/V a/Det walk/N"
+(("nx0Vnx1[took]" NIL) (("NXdxN[walk]" (2 2)) (("DXD[a]" (1)))) (("NXdxN[man]" (1)) (("DXD[the]" (1)))))
+2" ""the/Det man/N took/V a/Det walk/N"
+(("nx0lVdxN1[took-walk]" NIL) (("DXD[a]" (2 2 1))) (("NXdxN[man]" (1)) (("DXD[the]" (1)))))
+3" ""the/Det man/N took/V a/Det radio/N"
+(("nx0Vnx1[took]" NIL) (("NXdxN[radio]" (2 2)) (("DXD[a]" (1)))) (("NXdxN[man]" (1)) (("DXD[the]" (1)))))
+4" ""Dania/PropN made/V Srini/PropN a/Det cake/N"
+(("nx0Vnx1nx2[made]" NIL) (("NXN[Srini]" (2 2))) (("NXdxN[cake]" (2 3)) (("DXD[a]" (1)))) (("NXN[Dania]" (1))))
+4" ""Dania/PropN made/V Srini/PropN a/Det cake/N"
+(("nx0dxN1[cake]" NIL) (("DXD[a]" (2 2 1))) (("NXN[Srini]" (1))) (("nx0Vs1[made]" NIL) (("NXN[Dania]" (1)))))
+4" ""Dania/PropN made/V Srini/PropN a/Det cake/N"
+(("W1nx0dxN1[Srini]" NIL) (("NXdxN[cake]" (2 1)) (("DXD[a]" (1)))) (("nx0Vs1[made]" NIL) (("NXN[Dania]" (1)))))
+4" ""Dania/PropN made/V Srini/PropN a/Det cake/N"
+(("W1nx0N1[Srini]" NIL) (("NXdxN[cake]" (2 1)) (("DXD[a]" (1)))) (("nx0Vs1[made]" NIL) (("NXN[Dania]" (1)))))
+5" ""Dania/PropN made/V Srini/PropN a/Det loan/N"
+(("nx0Vnx1nx2[made]" NIL) (("NXN[Srini]" (2 2))) (("NXdxN[loan]" (2 3)) (("DXD[a]" (1)))) (("NXN[Dania]" (1))))
+5" ""Dania/PropN made/V Srini/PropN a/Det loan/N"
+(("nx0dxN1[loan]" NIL) (("DXD[a]" (2 2 1))) (("NXN[Srini]" (1))) (("nx0Vs1[made]" NIL) (("NXN[Dania]" (1)))))
+5" ""Dania/PropN made/V Srini/PropN a/Det loan/N"
+(("W1nx0dxN1[Srini]" NIL) (("NXdxN[loan]" (2 1)) (("DXD[a]" (1)))) (("nx0Vs1[made]" NIL) (("NXN[Dania]" (1)))))
+5" ""Dania/PropN made/V Srini/PropN a/Det loan/N"
+(("W1nx0N1[Srini]" NIL) (("NXdxN[loan]" (2 1)) (("DXD[a]" (1)))) (("nx0Vs1[made]" NIL) (("NXN[Dania]" (1)))))
+6" ""the/Det ice/N melted/V"
+(("Enx1V[melted]" NIL) (("NXdxN[ice]" (1)) (("DXD[the]" (1)))))
+6" ""the/Det ice/N melted/V"
+(("nx0V[melted]" NIL) (("NXdxN[ice]" (1)) (("DXD[the]" (1)))))
+7" ""who/Pron smells/V terrible/A"
+(("W0nx0Va1[smells]" NIL) (("A[terrible]" (2 2 2))) (("NXN[who]" (1))))
+8" ""is/V Beth/PropN upset/A"
+(("nx0Ax1[upset]" NIL) (("Vvx[]" (2))) (("NXN[Beth]" (1))) (("Vs[is]" NIL)))
+10" ""Beth/PropN isn't/V upset/A"
+(("nx0Ax1[upset]" NIL) (("Vvx[isn't]" (2))) (("NXN[Beth]" (1))))
+11" ""she's/N upset/A"
+(("nx0Ax1[upset]" NIL) (("Vvx[be]" (2))) (("NXN[she]" (1))))
+13" ""they/Pron are/V firemen/N"
+(("nx0N1[firemen]" NIL) (("Vvx[are]" (2))) (("NXN[they]" (1))))
+13" ""they/Pron are/V firemen/N"
+(("nx0BEnx1[are]" NIL) (("NXN[firemen]" (2 2 2))) (("NXN[they]" (1))))
+14" ""the/Det workers/N are/V below/Prep"
+(("nx0Px1[below]" NIL) (("Vvx[are]" (2))) (("NXdxN[workers]" (1)) (("DXD[the]" (1)))))
+16" ""Seth/PropN felt/V happy/A"
+(("nx0Va1[felt]" NIL) (("A[happy]" (2 2))) (("NXN[Seth]" (1))))
+19" ""the/Det music/N should/V have/V been/V being/V played/V"
+(("nx1V[played]" NIL) (("Vvx[being]" (2)) (("Vvx[been]" NIL) (("Vvx[have]" NIL) (("Vvx[should]" NIL))))) (("NXdxN[music]" (1)) (("DXD[the]" (1)))))
+20" ""will/V John/PropN buy/V a/Det backpack/N"
+(("nx0Vnx1[buy]" NIL) (("NXdxN[backpack]" (2 2)) (("DXD[a]" (1)))) (("NXN[John]" (1))) (("Inx0Vs1[will]" NIL)))
+20" ""will/V John/PropN buy/V a/Det backpack/N"
+(("nx0Vnx1[buy]" NIL) (("NXdxN[backpack]" (2 2)) (("DXD[a]" (1)))) (("Vvx[]" (2))) (("NXN[John]" (1))) (("Vs[will]" NIL)))
+21" ""he/Pron and/V she/Pron wrote/V the/Det book/N together/Adv"
+(("nx0Vnx1[wrote]" NIL) (("NXdxN[book]" (2 2)) (("DXD[the]" (1)))) (("vxARB[together]" (2))) (("NXN[he]" (1)) (("N1conjN2[and]" (1)) (("N[she]" (3))))))
+21" ""he/Pron and/V she/Pron wrote/V the/Det book/N together/Adv"
+(("nx0Vnx1[wrote]" NIL) (("NXdxN[book]" (2 2)) (("DXD[the]" (1)))) (("vxARB[together]" (2))) (("NXN[he]" (1)) (("NP1conjNP2[and]" NIL) (("NXN[she]" (3))))))
+22" ""the/Det day/N is/V dark/A and/Conj the/Det phone/N never/Adv rang/V"
+(("nx0Ax1[dark]" NIL) (("vxnx0V[rang]" (2)) (("ARBvx[never]" (2 2))) (("NXdxN[phone]" (2 1)) (("DXD[the]" (1)))) (("CONJs[and]" (2))) (("Vvx[is]" NIL))) (("NXdxN[day]" (1)) (("DXD[the]" (1)))))
+22" ""the/Det day/N is/V dark/A and/Conj the/Det phone/N never/Adv rang/V"
+(("nx0Ax1[dark]" NIL) (("vxnx0V[rang]" (2)) (("ARBvx[never]" (2 2))) (("NXdxN[phone]" (2 1)) (("DXD[the]" (1)))) (("CONJs[and]" (2))) (("Vvx[is]" (1)))) (("NXdxN[day]" (1)) (("DXD[the]" (1)))))
+22" ""the/Det day/N is/V dark/A and/Conj the/Det phone/N never/Adv rang/V"
+(("nx0Ax1[dark]" NIL) (("Vvx[is]" (2)) (("vxnx0V[rang]" NIL) (("ARBvx[never]" (2 2))) (("NXdxN[phone]" (2 1)) (("DXD[the]" (1)))) (("CONJs[and]" (2))))) (("NXdxN[day]" (1)) (("DXD[the]" (1)))))
+22" ""the/Det day/N is/V dark/A and/Conj the/Det phone/N never/Adv rang/V"
+(("nx0Ax1[dark]" NIL) (("Vvx[is]" (2))) (("NXdxN[day]" (1)) (("DXD[the]" (1)))) (("S1conjS2[and]" NIL) (("nx0V[rang]" (3)) (("ARBvx[never]" (2))) (("NXdxN[phone]" (1)) (("DXD[the]" (1)))))))
+23" ""to/V read/V and/Conj to/V sleep/V is/V a/Det good/A life/N"
+(("s0dxN1[life]" NIL) (("An[good]" (2 2 2))) (("DXD[a]" (2 2 1))) (("Vvx[is]" (2))) (("nx0V[read]" (1)) (("Vvx[to]" (2))) (("NX[PRO]" (1))) (("S1conjS2[and]" NIL) (("nx0V[sleep]" (3)) (("Vvx[to]" (2))) (("NX[PRO]" (1)))))))

@@ -1,0 +1,4 @@
+(load "/mnt/linc/xtag/work/xtag/src/dbparser/new-stuff.l")
+(load "/mnt/linc/xtag/work/xtag/src/dbparser/patch.l")
+(setf *dervfile* "/mnt/linc/xtag/work/doc/tech-rept/zebulon/enumsentences.hand-derivations")
+(setf *dervfile* "/mnt/linc/xtag/work/doc/tech-rept/zebulon/ital-sentences.hand-derivations")

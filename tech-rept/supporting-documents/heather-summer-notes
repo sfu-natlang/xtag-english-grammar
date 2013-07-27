@@ -1,0 +1,752 @@
+29 August 1996
+
+		The Summer of t3 and Multi-Word Constructions 
+
+I. Multi-word Prepositions
+
+	I began the summer with the task of completing the multi-word
+preposition project.  I focused on testing and correcting the many trees that
+had been constructed at the end of last summer, but that had not been
+successfully implemented at that time.  Along the way, several unforseen
+problems arose, and I was forced to make several changes and construct a few
+additional trees.  
+
+A. Additions to Prepositions.trees
+
+	The following trees were added to the grammar under prepositions.trees:
+
+	(1)	B_nxARBPnx, B_vxARBPnx, B_ARBPnxs, B_nxAPnx, B_vxAPnx, B_APnxs,
+		B_vxCONJPnx, B_CONJPnxs, B_nxPPnx, B_vxPPnx, B_PPnxs, B_vxNPnx,
+		B_NPnxs, B_nxPNPnx, B_vxPNPnx, B_PNPnxs, B_PDNPnxs, B_nxPDNPnx,
+		B_vxPDNPnx, B_nxPNaPnx, B_vxPnaPnx, B_PNaPnxs
+
+The upper case portions of the tree names signify the anchors.  The two-word
+preposition cases are straightforward; both components of the preposition are
+designated as anchors, retaining the name of their ordinary function (note: In
+the past, only one other multi-word constituent type had been added into the
+grammar.  These were multi-word conjunctions, where neither of the components
+of the conjunction were actually conjunctions themselves.  Therefore, they were
+called UCONJ, for unanalyzed conjunction, so the constituents' part of speech
+do not appear in those tree names.  However, every multi-word preposition
+contains at least one preposition, thus the ordinary part of speech for the
+components appear in the tree names.)  
+	
+	In all of the multi-word preposition trees, the anchors are immediately
+dominated by a P node.  The three-word preposition trees containing the 
+sequence 'PNaP' do not permit internal modification of the noun constituent of
+the preposition. The 'a' signifies that the noun node is marked for null 
+adjunction.  The trees that contain the sequence 'PDNP' are four-anchor 
+preposition sequences, where the internal noun is modified by a determiner.  
+However, the particular determiner that modifies the internal noun is frozen 
+in all cases.  Thus, the determiner is also an anchor of the preposition.  The
+trees that countain the sequence 'PNP' allow for internal modification of the 
+noun.  These trees are chosen by preposition sequences such as 'in need of', 
+where the noun 'need' can be sensibly modified by adjectives such as 
+'desparate'.  I have noted in the past that the set of adjectives that can 
+modify the internal nouns in these prepositions seems to be limited to 
+adjectives of a 'drastic' or 'intensifying' nature.  However, since we only 
+handle syntactic behavior within the system, the adjectives that can adjoin to
+the internal noun are not restricted.  The following is a list (not necessarily
+complete) of these adjectives:
+
+	(2)	strict, direct, dire, desparate, undying, utmost, loving,
+		valiant, insufferable
+
+	Neither the 'PDNP' nor the 'PNP' trees have been successfully tested,
+although the trees listed in (1) have been added to the grammar.  Currently,
+there is a spanning heuristic in the XTAG system that prevents the testing of
+these forms.  For example, the 'PDNP' items are indexed on the noun in the
+sequence; however, the heuristic requires the object of the preposition within
+a certain span of words.  This has been shown to be the only current obstacle
+to using these trees; when we purposefully sidetracked the heuristic, the trees
+worked fine.  Once a solution for this problem is reached, both of these sets
+of trees should pose no problem.  The 'PNP' trees have been shown to work
+without adjective modification.  There is a distinct possibility that some
+other obstacle exists (aside from the spanning heuristic) for the modification
+of the noun anchor by an adjective.  One also might want to consider that the
+preposition sequences that CAN be internally modified may not rightfully form a
+constituent, and thus should not be handled in like manner to the other
+multi-word prepositions.  However, if one attempts to show that the preposition
+can be broken up into meaningful constituents, one fails miserably.  The
+standard tests for constituency (such as It-clefts) do not seem to apply here
+since the aforementioned prepositions do not seem to be grammatical in an
+It-cleft construction.  Thus, I have left open the question of whether or not 
+these prepositions should rightfully be treated as multi-word constituents,
+although there is good motivation in Quirk (1985) for treating these
+prepositions as single constituents.
+
+B. Additions to lex.trees
+
+	Toward the completion of the multi-word preposition project, it came to
+my attention that some of these prepositions could be used as arguments of
+verbs.  For example, witness the sentence in (3).
+
+	(3)	He put the large snake right in front of me.
+
+Thus, I had to construct argument trees for some of the multi-word
+prepositions.  The trees in (4) were added to lex.trees.
+
+	(4)	A_PXAPnx, A_PXARBPnx, A_PXPPnx, A_PXPNaPnx
+
+The corresponding trees for the PDNP and PNP prepositions now reside at the
+pathname in (5).  Once the aforementioned spanning heuristic problem is
+remedied, these trees can then be added to the grammar.
+
+	(5)	/mnt/linc/xtag/work/heather/prep/prep-to-be-completed/
+		lex-add.trees
+		
+C. New Tree Families
+	
+	Several (million) tree families have been successfully tested and added
+to the grammar for the multi-word prepositions.  The major family categories 
+are predicative prepositions with noun phrase subjects and predicative 
+prepositions with sentential subjects.  The characteristics of the given types
+of prepositions described above carry over into the treatment of the 
+prepositions in the tree families.  The following tree families have been added
+to the grammar:
+
+	(6)	Tnx0APnx1, Tnx0ARBPnx1, Tnx0CONJPnx1, Tnx0NPnx1, Tnx0PPnx1,
+		Tnx0PNaPnx1, Ts0APnx1, Ts0ARBPnx1, Ts0CONJPnx1, Ts0NPnx1, 
+		Ts0PPnx1, Ts0PNaPnx1
+
+The tree families for the PDNP and PNP prepositions are located at the address
+in (7).
+	
+	(7)	/mnt/linc/xtag/work/heather/prep/prep-to-be-completed/
+
+		Tnx0PDNPnx1.trees, Ts0PDNPnx1.trees, Tnx0PNPnx1.trees,
+		Ts0PNPnx1.trees
+
+	Only one problem remains with these families.  Toward the end of the
+summer, we noticed that a tree for extraction of the object of the preposition
+was missing from not only all of my tree families, but also from the already
+instantiated tree family Tnx0Pnx1.trees.  I attempted to remedy this absence,
+but I am currently having difficulties getting any of the new trees to work.
+We have performed extensive testing of the A_W1nx0Pnx1 tree.  Christy
+successfully built a tree by hand, having had no problems with the unification
+of features.  Thus, we have narrowed the problem down to something associated
+with the parser.  These trees have not been entered into the grammar at this
+point, and they currently reside at the following address under their
+respective tree family names:
+
+	(8)	/mnt/linc/xtag/work/heather/prep/prep-to-be-completed/
+
+D. What Remains 
+
+	All of the material described above has been added to the tech report.
+The only sections missing are the tree family descriptions for the PDNP and PNP
+tree families.  These documents have been prepared and are located at the
+address in (9).
+
+	(9)	/mnt/linc/xtag/work/heather/prep/tech-rpt/LaTex/
+
+		Tnx0PDNPnx1.tex, Tnx0PNPnx1.tex, Ts0PDNPnx1.tex, Ts0PNPnx1.tex
+
+There are several examples of the many constructions with multi-word
+prepositions in the comments of the different trees.  
+
+	The following is a summary of the small tasks left to perform to
+successfully complete the implementation of the multi-word prepositions:
+
+	(10)	a.	Fix the span heuristic problem
+		b.	Test the following trees and tree families: nxPDNPnx,
+			vxPDNPnx, PDNPnxs, nxPNPnx, vxPNPnx, PNPnxs, PXPDNPnx,
+			PXPNPnx, Tnx0PDNPnx1.trees, Tnx0PNPnx1.trees, 
+			Ts0PDNPnx1.trees, Ts0PNPnx1.trees ((5) & (7))
+		c.	Add the trees and families in b. to the grammar
+		d.	Add the tech report documents for the tree families in
+			b. to the tech report ((9))
+		e.	Test the extraction of PP object trees for all the
+			multi-word preposition families, in addition to the
+			tree for the Tnx0Pnx1.trees family ((8))
+		f.	Add these trees to the grammar in their respective
+			tree families 
+
+II.  Multi-Word Adverbs
+
+A.  'at least', 'at most' & 'up to'
+
+	During the course of the clean-up of the Wall Street Journal corpus,
+we ran across several instances of the two-word sequence 'at least'.  It came
+to my attention that this might possibly be a multi-word constituent.  In
+consultation with the whole team, we decided that 'at least' should be analyzed
+as a multi-word adverb.  Considering the fact that 'at' retains absolutely none
+of its preposition properties, it seems reasonable to analyze the sequence as a
+single constituent.  We decided that it should be a focus adverb because it 
+behaves similarly to the other focus adverbs 'even' and 'only'.  For example,
+'even' and 'only' can adjoin to practically any constituent, and the same is 
+true for 'at least'.  The following trees have been added to the grammar in 
+the advs-adjs.trees file:
+
+	(11)	PARBd, PARBnx, PARBs, PARBarb, PARBvx, vxPARB
+
+'at least' selects all of the trees listed in (11), while 'at most' and 'up to'
+only select the tree that modifies a determiner (PARBd).  The determiner-
+modifying adverbs are restricted to adjoining to +cardinal determiners,
+while the noun phrase modifying adverbs are restricted to adjoing to -cardinal
+noun phrases.  We decided that when the noun phrase contains a cardinal 
+determiner, the adverb in fact modifies the determiner (Keenan and Stavi, 1986,
+list 'at least n' and 'at most n' as determiners in their laundry lists of 
+determiners).  However, in all other cases, the adverb modifies the whole noun
+phrase.  The other trees in (11) are not restricted in their adjunction.  
+
+	The sentence in (12) is an example of a problem raised by Christy in
+her exploration of determiner conjunction:
+
+	(12)	Many, or at least some, people came to the party.
+
+On one reading, 'at least' is modifying the non-cardinal determiner 'some',
+which can not be handled by the current implementation.  One might also suggest
+that there is some sort of ellipsis occuring, and that our system may be right
+in parsing the NP in (12) as a conjunction of the NPs 'many' and 'at least some
+people'.  In a sentence like (13), one can readily see that 'at least' is
+behaving as a focus particle, offering three possible interpretations ('at
+least' adjoined to the determiner, noun phrase, or sentence).  Thus, it seems
+that the distinction between the three interpretations is ripe material for the
+semantics to handle.
+
+	(13)	At least some people came.
+
+We have decided to forgo solving the problem in (12) by allowing it to
+parse as a conjunction of NPs, and also we have decided to allow only the noun
+phrase and sentential modifying readings of (13).  The two main motivations
+for not allowing 'at least' to adjoin to non-cardinal determiners are the
+multiple derivations that will result every time it modifies at the NP or 
+sub-NP level, as well as the fact that the most common usage of 'at least'
+is in modifying cardinal determiners.  It is conceivable that there are
+determiners that are not listed as pronouns in the grammar that will appear in
+sentences like (12), and so these examples will fail.  At this point, we are 
+not inclined to suffer multiple derivations for the common uses of 'at 
+least' for very infrequent usages such as those in (12).  I must also note that
+it seems that 'some' is peculiar as a determiner because it is the only
+non-cardinal determiner that permits modification by adverbs. 
+
+	It was also decided that phrases such as 'at the least' or 'at the very
+least' should still be handled as a preposition with a noun phrase object.
+These phrases are always used as sentential-level modifiers, and thus
+may be providing a glimpse of the development of this phrase into its current
+broad usage as the focus particle 'at least'.  It is fairly clear that 
+although these phrases ('at the least' and 'at least') are no doubt related, 
+giving them different analyses is not an unwise decision.  In the case of 'at 
+the least', the preposition characteristics of 'at' are still recognizable, 
+which is not the case with 'at least'.  Additionally, as I mentioned above, 'at
+least' is a focus particle, while 'at the least' can only modify at the
+sentential level.
+
+	I have added material describing the treatment of 'at least', `up to' 
+and 'at most', along with a description of the treatment of other focus adverbs
+(even, only, etc) to the tech report.  In the process of adding this material 
+to the tech report, I ended up making a few changes to the treatment of the 
+focus adverbs.  I changed the entries for 'only', 'even', and 'just' so that 
+they can modify cardinal determiners and non-cardinal noun phrases.  
+Previously, they were not allowed to modify determiners, and they were allowed 
+to modify at the noun level.  The only remaining task for this project is to 
+test the 'at most' and 'up to' entries.  All of the trees that have been added
+for 'at least' have been successfully tested.  Due to a current problem with 
+the system, I am unable to successfully parse sentences with 'at most' since 
+a morphology change was made in order to allow this entry to work.
+
+B. As-As Constructions
+
+	Another problem came into focus during the cleaning of the Wall Street
+Journal Corpus.   Srini noticed the frequency of as-as constructions, where
+constituents ranging from adverbs to adjectives to determiners could be found
+between the two instances of 'as'.  These phrases are comparative-like in
+nature, although their uses are quite varied.  The examples listed in (14)
+display the different observed behavior for these as-as constructions.  
+
+	(14)	a.	Function: Adverb modifying cardinal determiner
+			Index:    Adjective
+			EX:       A pact with GM may emerge in as little as
+				  two weeks.
+		
+		b.	Function: Adverb modifying cardinal determiner
+			Index:    Determiner
+			EX:       As many as two hundered people came.
+
+		c.	Function: Predicative
+			Index:	  Adjective
+			EX:	  A lot of taxpayers out there aren't as 
+				  paranoid as one might think.
+		
+		d.	Function: Modifies VP
+			Index:	  Adverb
+			EX:	  Major shippers say they expect freight rates
+				  to rise at least as fast as inflation.
+		
+		e.	Function: Conjunction (PP, NP, VP, S, AP, ARB, A)
+			Index:	  Adverb (namely, 'well')
+			EX:	  Dogs, as well as cats, make good pets.
+		
+		f.	Function: Preposition
+			Index:	  Adverb
+			EX:	  As recently as Tuesday, we were not close to
+				  being finished the project.
+
+B.1.  as-as constructions modifying cardinal determiners
+
+	The behavior in (14a) and (14b) has been handled by creating the 
+following trees:
+
+	(15)	B_CONJaCONJd and B_CONJDCONJd  
+
+Both of these trees are restricted to adjoining to cardinal determiners.  Since
+its behavior is similar to the two-word adverbs that modify cardinal
+determiners, it was decided that the behavior displayed by the as-as
+construction in (14a) and (14b) is that of an adverb.  The first tree handles 
+the cases where an adjective substitutes in between the two occurrences of 
+'as'.  The types of adjectives that can substitute there have not been 
+restricted in any way, although it seems clear that only adjectives of size or
+amount are appropriate.  The second tree handles the phrases 'as many as' and 
+'as much as' when they are use to modify cardinal determiners.  It was decided
+that 'many' and 'much' are determiners.  Since not just any determiner can be 
+a part of this kind of construction, the determiner node was deemed an anchor 
+of the tree.  In both trees, both of the occurences of 'as' are anchors.  These
+trees have been thoroughly tested, and descriptions have been added to the 
+tech report in the modifiers section on adverbs.  
+
+B.2.  as-as constructions as conjunctions - 'as well as'
+
+	The behavior displayed in (14d) has also been handled.  I have created
+the following trees listed in (16), and these trees now reside at the address
+in (17).  
+
+	(16)	B_nx1CONJARBCONJnx2, B_a1CONJARBCONJa2, B_px1CONJARBCONJpx2,
+		B_arb1CONJARBCONJarb2, B_p1CONJARBCONJp2, B_ax1CONJARBCONJax2
+
+	(17)	/mnt/linc/xtag/work/heather/as-as/as-as.trees
+
+Examples displaying each of these uses are listed in the comments section of
+these trees.  The only entry that chooses these trees is 'as well as', which
+seems to display behavior very similar to 'and'.  Presumably, there should also
+be a tree for VP conjunction (ex. That could widen the yield spread between
+Treasurys and asset-backed securities, as well as make it tougher to unload
+the latter), but this tree has not yet been created.  We are still awaiting the
+results of Anoop's work on VP conjunction.  Multi-word conjunction trees to
+handle sentential level conjunction were created previously by Christy.  At
+the sentential level of conjunction, several different adverbs other than 
+'well' can substitute between the two occurences of 'as'.
+
+	Most of the trees in (16) have been successfully tested; the only trees
+that remain to succeed are B_ax1CONJARBCONJax2 and B_arb1CONJARBCONJarb2.  The
+material describing these trees has not been added to the tech report since the
+trees have not yet been added to the grammar.  
+
+B.3.  as-as constructions as preposition - `as well as' and `as recently as'
+
+	I have also constructed trees to handle the example listed in (14e).
+Although it seems that 'as recently as' most often takes a time NP complement,
+Christy pointed out that as long as the NP makes reference to some time span,
+then it can work with 'as recently as'.  Note the example in (18) below.
+
+	(18)	As recently as Reagan, our economy has been stuck in an 
+		economic downturn.
+
+The following trees have been created to handle the expressions 'as well as'
+and 'as recently as' when they behave as prepositions:
+
+	(19)	B_PARBPnxs, B_vxPARBPnx
+
+Both of the occurences of 'as' and the adverb are designated anchors, since 
+'recently' and 'well' seem to be the only adverbs that occur between the
+two occurences of 'as' and, as a part of this construction, act as a
+preposition.  (However, it has come to my attention that 'early' works equally
+well in this position.  Because of the tenuous nature of the system at this 
+point, I am choosing not to add 'as early as' to the prepositions.text file.  
+Hopefully, whoever comes across this note will add this entry.) These trees 
+have not yet been tested, and also no material has been added to the tech 
+report.  Most likely, it will not be necessary to add material on these trees 
+to the tech report, since there is already a brief note about multi-word 
+prepositions.
+
+B.4.  Ellipsis problems with the as-as constructions
+
+	Sentences (14c) and (14d) are examples of ellipsis using the as-as
+constructions.  There are many different types of ellipsis constructions using
+the as-as sequence; I have begun an attempt to make sense of these
+constructions.  In (20), I list several different examples of ellipsis
+constructions.  
+
+	(20)	a.  Our team is as good as their team.  
+		b.  His report is not as outlandish as I thought.
+		c.  Major shippers say they expect freight rates to rise at
+		    least as fast as inflation.
+		d.  The system was developing as rapidly as they had hoped.
+		e.  We will perform the task as soon as possible.
+		f.  They were paying as many claims as it could right on the
+		    spot.
+		g.  While not as brand loyal as in the past, consumers today
+		    don't buy products capriciously, either.
+		h.  Voyager's photos will be as clear as Galileo's.
+
+It seems that basic sentences like (20a), (20b), (20c), and (20d) might be able
+to be handled by the system at some point.  I will begin with a thorough 
+explanation of what I have come across thus far about these constructions, and 
+then I will outline a few preliminary plans for a solution.  
+
+	In sentences like (20a), an adjectival as-as construction is used to
+relate two NPs in terms of the property described by the adjective within the
+as-as construction.  It is likely that (20a) is a shortened version of the
+following sentence in (21):
+	
+	(21)  Our team is good, as their team is good.
+
+A tree for this sentence appears on the attached page.  I must say that my
+knowledge is limiting my ability to describe what I am trying to communicate at
+this point.  I apologize if the wording and the technical aspects of the syntax
+are crude.  Deciding how to move from the sentence in (21) to the sentence in
+(20a) may provide the key to coming up for a solution to this problem.  Most
+likely, in the final version of the tree for (20a), we would like to see a
+predicative construction, especially since it seems that this type of relation
+is at the base meaning of this sentence.  The biggest road blocks are in
+deciding what to label the as-adjective-as sequence and whether or not to
+display the ellipsis.  
+
+	Before I confuse both you and myself, let's look at another tree, a
+tree that might display the next step after the tree for sentence (21).  The
+next tree on the attached page (22b) demonstrates a structure for the 
+un-ellipsed version of (20a), which is shown in (22) below.
+
+	(22)	Our team is as good as their team is good.
+
+There are many different ways to construct the tree for (22).  First, what do
+we call the phrase 'as good as'?  It most likely should not properly be
+labelled an adjective, since it's function is clearly more complex.  The phrase
+seems to retain some of the conjunction properties of 'as', while at the same
+time retaining the properties of the adjective.  Let's attempt to trace the
+development of this phrase.  I'm suggesting that it might be possible that the
+node Su in tree (21b) becomes the complement of the adjective 'good'.  Since
+'good' does not normally take sentential complements on its own, it combines
+with the conjunctions to create a monster that can take a sentential
+complement.  Once the sentence moves down to be the complement of the
+adjective-as-monster, then stating the adjectival predicate a second time
+becomes redundant and is therefore ellipsed.  The result is in tree (22c), a
+tree one might want to call alphanx0Ax1s2e, a tree based on the present tree
+alphanx0Ax1s2, but marked with an 'e' to indicate that ellipsis has taken
+place.  We might want to further specialize the name to alphanx0Ax1s2eAx2 to
+indicate that it's the second adjectival phrase that is ellipsed.  The question
+of what to call the as-adj-as phrase remains open; for now, I have left it
+labelled as an adjective.
+
+	So, how do we know that it's the adjectival phrase that's being
+ellipsed?  A glance at (20b) shows that we cannot assume that whenever the
+index of the as-adj-as phrase is an adjective, it is the adjectival phrase
+that's being ellipsed.  The key to the problem lies in what comes after the
+as-adj-as sequence.  If the following group of words is a noun phrase, then the
+only choice for a tree is the tree in (22c).  Next you may ask, "Well, what
+about features?"  Frankly, I just do not know enough about the feature system
+to offer an in-depth description of how to handle this situation.  We want the
+adjective in the as-as construction and the empty adjective to be coindexed or
+related in some way.  However, do we want the ellipsed adjective to be marked
+with an epsilon?  What about case and other features?  These are questions I'd
+love to be able to answer.  My purpose in offering this preliminary solution is
+just that -- to take a first shot at the problem.  I do not claim this would
+ever work, but I'm hoping that people who understand these things better than I
+do can come up with a working solution.
+
+	There is one other type of ellipsed as-as construction that I have
+come across that has an adjective as the index of the multi-word construction.
+The sentence in (20b) demonstrates that more than an AP can be ellipsed when an
+adjective is the index of the as-as construction.  In these types of sentences,
+it seems that an NP and a sentence are being related in an equivalent sense
+with respect to the property denoted by the adjective in the as-adj-as
+sequence.  In (20b), the report and the speaker's state of mind with respect to
+the report are being related in terms of their outlandish-ness.  Again, I might
+want to say that the sentence in (20b) results from a wordier sentence, a 
+sentence with more words and less complicated syntax, like the sentence in 
+(23).
+
+	(23)	His report was not outlandish, as I thought his report would
+		be outlandish.  
+
+The tree for (23) is displayed in (23b) on the attached page.  To move from
+(23) to the sentence in (20b), there are many grammatical and socially
+acceptable stops along the way.  But first let's take a closer look at what is
+happening from (23) to (20b).
+
+	As mentioned previously, I would proffer that in moving to the 
+syntactically more complex form, the adjective takes the sentence Su as a
+complement.  Again, since most adjectives do not generally take sentential
+complements, the adjective combines with the conjunction 'as' to create a
+creature that can support sentential arguments.  Since the entire complement of
+the 'lower' verb 'thought' is repeated information, this material is ripe for
+ellipsis.  Now, we begin to run into a rather large problem.  What do we show
+as being the ellipsed items?  It will be somewhat elegant to just have an
+epsilon S node as the complement of 'thought', and coindex that node with the
+Sr node.  However, as is readily apparent in our example, the two S nodes do
+not have equivalent subtrees.  In fact, it might even be true that the S nodes
+are always equivalent except for the adjoined auxiliary trees -- negatives,
+differing auxiliary verbs, other adverbs, etc.  So, how do we handle this
+problem?  It does not seem in anyway correct to just show that the S node is
+ellipsed.  An example of a tree using this method is in (23c).  We can see that
+the way I have drawn the tree prohibits us from coindexing the sentential node,
+since the sentential node that includes the 'first' predicative statement
+includes the 'second' statement as well.  Let's look at the tree in (23d) to
+see if this solution is at all satisfactory.  In (23d), I have expanded the
+empty S node to show the 'original' structure of the ellipsed segment.  We
+might want to call this tree something like alphanx0Ax1s2es3, where the 'es3'
+portion stands for the ellipsis of the sentential complement of the verb in
+'s2'.  
+
+	We run into the problem of deciding what part of the sentence has been
+ellipsed, in fact, we run into this problem again and again.  However, let's
+try to make a point with the current example.  If one could somehow just
+determine what comes after the as-adj-as sequence, the task might not be that
+difficult (although I have no real concept of how difficult these things are).
+For example, in the case of (20b), we see that after the as-adj-as creature,
+there is an NP and a V that normally takes a sentential complement.  The case
+seems straightforward thus far.  However, consider the sentences in (24).
+
+	(24)	a.  His report was not as outlandish as I thought it would be.
+		b.  ???His report was not as outlandish as I thought it.
+ 
+(24a) is definitely acceptable, and (24b) is marginally acceptable.  For (24a)
+we would have to construct a tree for the cases where the sentence complement
+of the as-adj-as contains a verb that takes a sentential complement, and then
+the adjectival phrase of the sentential complement is ellipsed.  Would we ever
+be able to tell that it's the adjectival phrase that's being ellipsed?  Again,
+I really have no concept of the difficulty involved in this matter.  In (24b),
+the whole predicative adjectival phrase is ellipsed, similar to (20a).  Also, 
+I have made no mention of the feature problem.  Most likely, using the tree in
+(23d) as a guide, we would want to coreference NP0 and NP1, and A0 and A1.  
+
+	Before leaving the as-adj-as type constructions, let's take a brief
+glance at the tree in (20h).  I would say that there are two separate types of
+ellipsis going on here.  The first type would be the kind I described above,
+where two NPs are being related in an equivalent sense with respect to the
+property denoted by the adjective in the as-adj-as sequence.  The other
+ellipsis is the ellipsis that can occur with NPs when the genitive construction
+is used twice in similar circumstances within the same discourse segment.  This
+second ellipsis seems to be extremely difficult to capture, considering the
+fact that usually there are several NPs in the sentence.  Could one rely on the
+fact that usually the ellipsed NP is the same as the previous NP that is
+preceded by a genitive?  These are issues that I have not thought about, and
+presumably someone else has or will.  I am merely saying that examples like
+(20h) are doubly difficult in terms of ellipsis.  
+
+	We might also want to ask before leaving the as-adj-as sequences
+whether or not any other constituent can squeeze its way in between any of the
+parts of the as-adj-as sequence.  In example (20b), we see that when the
+adjective is negated, the negation remain outside the as-adj-as construction.
+We see that insertion fails is we attempt to use other adverbs -- *is as 
+really happy as, *is as very red as, *is as so tired as, etc.  A preliminary
+guess would be that nothing can adjoin in between the as-adj-as construction.  
+   
+	The next two types of as-as constructions, (20c) and (20d), are closely
+related to the examples discussed above.  The main difference between those
+mentioned above and the examples in (20c) and (20d) is that the ones with
+adjectives as indeces are always predicative, while the ones with adverbs as
+indeces relate two events.  In (20c), the relation is established by the 
+adverb, and the things being related are the same events with different actors.
+In (20d), the adverb is relating the action in the first phrase to the actor 
+in the second phrase's hopes about the action.  These examples are definitely
+more difficult than examples (20a) and (20b).  For example, in (20c), we know
+that we are relating two events with different subjects, but which event are we
+relating?  Are we ellipsing the verb 'say', 'expect', or 'rise'?  Would it
+capture all different types of examples similar to (20c) to say that the lowest
+level verb in the first sentence is the event that is being related by the
+adverb, and therefore is ellipsed?  The question could be answered if I knew
+for sure that adverbs that modify verbs tend to have minimal attachment.  I
+would say that usually the adverb is going to be modifying the verb it's
+closest to, so we could predict that that verb is the verb that is ellipsed.
+However, the sentence in (24) is conceivable.
+
+	(24)	Major shippers say they expect freight rates to rise at least
+		as much as the government does.
+
+In (24), the as-as construction is relating two different agent's expecting
+actions.  
+
+	Now that we have described the ugliness in its full splendor, let's
+assume that we are living in a simple world in terms of examples (20c) and
+(20d).  Consider the sentences in (25), which may be semantically equivalent to
+(20c) and (20d), but syntactically less complex, lexically more complex.  Trees
+for these sentences appear in (25c) and (25d) on the attached page.
+
+	(25)	a.	Major shippers say they expect freight rates to rise
+			fast, at least as inflation rises fast.  
+		b.	The system was developing rapidly, as they had hoped
+			the system was developing rapidly.
+
+As in the adjectival index examples, the second phrase becomes a sentential
+complement to the as-adv-as construction (although its part of speech is quite
+questionable - both the conjunction and adverb properties seem to remain).
+There are a few other questions about this sentence.  In (25a) (and the tree in
+25c), would the correct semantically equivalent sentence contain 'fast' in 
+'inflation rises fast' or is it just 'inflation rises', meaning, is there 
+ellipsis of the whole VP with adverb?  The tree in (25d) displays an example
+where the verb in the second phrase subcategorizes for a sentential complement.
+In these cases, we would most likely say that the ellipsed sentential
+complement is the lowest full S that the adverb is attached to.  Two possible
+trees for (20c) and (20d) are shown in (25e) and (25f).  Most likely, we would
+want to somehow coindex the ellipsed verb with 'rise' in (25e) and the ellipsed
+adverb with 'fast'.  Similarly, we would like to somehow relate the parts of
+the ellipsed sentence to the appropriate lowest sentence to which the adverb
+was originally attached.  Again, I am leaving many questions unanswered (and 
+perhaps many questions un-asked), but I am merely attempting to lay out a good
+overview of the problem.  
+
+	In summary, basically one first needs to look at what I call the index
+of the as-as construction.  If it's an adjective, then we are dealing with a
+predicative situation.  The next thing we look at is what comes after the
+as-adj-as constituent.  If it's NP, we can make a pretty good bet that the
+ellipsed portion is the adjectival phrase.  If it's an S that contains a verb
+that subcategorizes for an S complement, then we know that it's the first
+clause that's been ellipsed.  On the other hand, if the index is an adverb,
+then we are dealing with a case of verbal modification by a
+conjunction-adverb-like constituent.  If what's following the as-as constituent
+is an NP, then the lowest verb and the adverb in the as-as constituent are
+the things that are ellipsed.  If a sentence containing a verb that 
+subcategorizes for an S follows the as-as construction, then the lowest 
+sentence the adverb could attach to is the ellipsed portion.  I am asserting 
+these points, however the reader is to understand that I am stating this 
+summary in light of a limited amount of data.  I am almost certain that more 
+complicated examples exist, however, I think this is a good start at a 
+characterization of the simpler data.
+
+	There are many other points of interest within this problem area.
+First, there are a few other as-adv-as constructions.  For example, 'I'm
+finishing up at Penn as rapidly as I can', where we could key in on the fact
+there's an adverb index.  We can also recognize that if there's an auxiliary,
+then the main verb in the lowest clause the adverb could be attached to is the
+verb that is ellipsed along with the adverb.  There are also the sentences in
+(20e), (20f), and (20g).  In (20e) we face the problem of, "What on earth is
+'possible' anyway?"  In (20f), we see that at times, NPs can come between the
+two occurences of 'as'.  These cases probably aren't too much more mysterious
+than the cases we have discussed, however I do not have the time to do more
+than offer a really brief thought.  The case of (20f) is similar to the
+sentence I offered as an example at the top of this paragraph.  If we find that
+the as-as construction contains an NP, at least in this case, we can look at
+the phrase that comes after the as-as and see that it ends in an auxiliary.
+Then, the verb in the lowest clause the as-as phrase attaches to is ellipsed,
+its object being the NP trapped between the two occurences of 'as'.  This is
+only an explanation specific to (20f), and I just don't have enough of a mind
+left to see if it could even possibly be a good generalization.  Cases like
+(20g) are really beautiful mysteries.  With (20g), we have a case where the
+things that are being ellipsed come after the place where they were ellipsed.
+I have no semblance of insight into examples like (20g).  
+
+	There are several spots in Quirk (1985) where these phenomena are
+discussed.  Also, I have collected approximately 130 sentences containing as-as
+constructions.  These two pieces of information are listed below in (26) and
+(27).
+
+	(26)	Quirk (1985) pp. p.360, p.468, Sec.7-74, Sec. 15.71
+
+	(27)	/mnt/linc/xtag/work/heather/as-as/as-commentary
+
+C.  Other Multi-Word Adverbs
+
+	While perusing Quirk (1985) in the adverb section (notably p.445-454),
+I noticed that there were several other multi-word adverbs, aside from those 
+listed under A. and B. above.  Since I have very little time left in the 
+summer, I will merely list the other multi-word adverbs here, and I will posit
+what trees the entries would select (However, these tree names look a little
+silly.  Perhaps something better could be devised).
+
+	(28)	a.	a bit:		UAdUAda, UAdUAdarb
+		b.	a little:	UAdUAda, UAdUAdarb
+		c.	sort of:	UAdUAda, UAdUAdarb
+		d.	kind of:	UAdUAda, UAdUAdarb
+		e.	a little bit:   UAdUAdUAda, UAdUAdUAdarb
+		f.	more than:	UAdUAdd, UAdUAda
+		g.	less than:	UAdUAdd, UAdUAda
+					
+	(29)	a.	a bit dull; he is moving a bit fast
+		b.	a little extravagant; he is running a little too slowly
+		c.	he is sort of clever; he moved sort of quickly
+		d.	she is kind of smart; she spoke kind of proudly
+		e.	he is a little bit tired; he walks a little bit slowly
+		f.	I would be more than happy to help you; more than five
+		        people came
+		g.	He was less than pleased; less than ten people showed 
+			up
+
+There are also three word sequences that end in 'of' and always take a noun
+phrase that begins with the determiner 'a':  a bit of a shock, a heck of a good
+time, a hell of a good time.  These adverbs modify noun phrases.
+
+III.  		        The 'Not' that Wouldn't Die:
+		          Negation of Noun Phrases 
+
+	In English, certain noun phrases can be negated with the negative item
+'not'.  The split between those noun phrases that can be negated and those that
+cannot does not seem semantically motivated, at least on the surface.  As
+Barwise and Cooper (1981) note, "...this distribution cannot be explained
+purely in terms of the semantics of quantifiers" (p.197).  They offer the
+following contrast as witness to this assertion:
+
+	(1)  Not every man left.
+	(2)  Not all men left.
+	(3) *Not each man left.
+				(B&C, 1981)
+
+In this brief account of the phenomenon, I offer an explanation of the
+distribution of 'not', as well as a possible method of implementing
+its behavior into the XTAG system.
+
+	To begin our investigation, let's explore the range of examples.  In
+(4), there is a list of the types of determiners that, when part of a noun
+phrase, allow negation of that noun phrase.  Also in (4), I have listed a few
+noun phrases that also allow negation (note that these noun phrases essentially
+have incorporated a 'negation-acceptable' determiner).  In (5), I offer a list
+of the determiners that do not allow negation of the noun phrase of which they
+are a member.  Noun phrases that do not allow negation are also listed in (5).
+
+	(4)  every, all, a, one, many, any, more than n, one of the, all of
+	     the, many of the, any of the, everyone, everybody, everything, 
+	     anyone, anything, much
+
+	(5)  each, some, the, few, most, several, no, somebody, someone, 
+	     something, proper names, cardinals (aside from 'one')
+
+Sentences that exemplify the behavior with 'not' are listed below in (6) and
+(7).
+
+	(6)	a.  Not every company expects to report increased earnings. 
+		    (WSJ)
+		b.  Not all of NASA's space-science work will be so auspicious,
+		    though.  (WSJ)
+		c.  Not a peso is offered.  (WSJ)
+		d.  Not one thing in the house is where it is supposed to be.
+		    (WSJ)
+		e.  Not many people came to the meeting last week.
+		f.  Not any person can just walk right in there and get what
+		    they want.
+		g.  Not more than half of the team showed up last Friday.
+		h.  Not everyone is so pessimistic.  (WSJ)
+		i.  Not anyone is allowed in the library - only those with 
+		    proper ID.
+	
+	(7)	a. *Not each company expects to report increased earnings.
+		b. *Not some pesos are offered.
+		c. *Not most people came to the meeting last week.
+		d. *Not several people came to the meeting last week.
+	    
+It is interesting to note that many of the determiners that are usually grouped
+together in terms of semantic behavior (e.g., every/all/each, a/some,
+many/most/several), behave quite differently with respect to negation.  
+
+	After much research alone, and intense discussion among the XTAG group,
+I have arrived at a generalization that captures an intuition about which NPs
+can be negated.  The intuition has to do with the set(s) that the negation of
+the noun phrase denotes.  In the case of those noun phrases that can be
+negated, the negation of the noun phrase with 'not' is unambiguous in that it
+denotes a single defined set.  On the other hand, those noun phrases that
+cannot be sensibly negated by 'not' are ambiguous in that there are two
+possible sets denoted by the negation of the noun phrase.  I have worked out a
+thorough explanation for all of the cases, however I am planning to complete
+this discussion at a later date.  I do not have the time now to do the topic
+justice.  I have taken extensive notes on this matter, and plan to continue
+work on it during the semester.  I also hope to end up with a successful
+implementation of my work by the end of the semester.
+
+IV.  Corpus Clean-up
+
+	In addition to the above projects concerning the grammar, I also had a
+chance to write a few simple perl scripts to assist in the cleaning of the t3
+corpus.  Among the constructions on which I fixed the tags are the multi-word
+prepositions, 'at least', nouns missupertagged as verbs, noun phrases mistagged
+as a noun-noun compound, relative clauses with 'that', multi-word adverbs on
+determiners, and several other small changes.
+

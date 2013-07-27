@@ -1,0 +1,120 @@
+head	1.2;
+access
+	egedi
+	beth
+	cdoran
+	srini;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.2
+date	94.08.22.13.41.18;	author egedi;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	93.12.13.15.41.37;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Ajectival passives section
+@
+
+
+1.2
+log
+@Combined this file with what I assume to be a start at writing this info
+up for the new tech report.  (adject-pass.tex)
+@
+text
+@NOTE:  The following text was contained in a different file, but is directly
+related to this file.  It looks as if someone started redoing this information
+for inclusion in teh new tech report.
+
+In (\ex{1}) and (\ex{2}) the items {\it encoded\/} and {\it
+infected} appear in positions where adjective normally occur but display verbal
+morpology. 
+
+\enumsentence{Only transmit encoded/accurate data}
+\enumsentence{All the local rodents became infected/agressive}
+
+These type of modifiers are called adjectival passives in the
+linguistic literature (e.g. \cite{LevinRap}).  Most of the analysis of
+these constructions centers around what thematic roles the noun can
+have with respect to its modifying verb.  In \cite{LevinRap} it is
+argued that the nouns can have any role that could have been assigned
+to the direct object of the verb.
+
+NOTE:  End inclusion
+
+
+  The items {\it  encoded} and {\it infected} in (\ex{1}) and (\ex{2}) are passive participles that display adjectival behavior.  
+
+\enumsentence{Store only encoded data.}
+\enumsentence{The local rodents remain infected.}
+
+These have been termed adjectival passives in the linguistics literature.  Major issues in accounting for adjectival passives include. 
+
+\begin{enumerate}
+\item  the relation of adjectival passives to verbal passives
+\item  the nature of restrictions on nouns which adjectival passives modify or are predicated of
+\item  what passive participals can be adjectival passives
+\end{enumerate}
+
+Most generative accounts argue that the adjective form is derived by some rule of adjectival passive formation from the verb (e.g. \cite{Seigel73},\cite{Wasow77}, \cite{Williams81}, \cite{Bresnan82}, \cite{LevinRap}).  Our adaptatation of this in the LTAG formalism is to have the the verb select trees that look just like adjective trees except that they are anchored by verbs.  These trees are included in the appropriate tree family in the same way as other sentence or phrasal types  that would be related transformationally in a movement based theory.   The tree in figure \ref{adj-pass-adjunc} shows an auxilliary tree for adjectival passives which allows passive participle forms to be premodifiers of nouns.  The initial tree in figure \ref{adj-pass-subst} is used in substitution nodes as in the complement of verbs like {\it remain}.
+
+\begin{figure}[h]
+%aux tree for adj-pass
+\end{figure}
+
+\begin{figure}[h]
+%init tree for adj-pass
+\end{figure}
+
+The questions of possible restrictions on nouns modified by adjectival passives and restrictions on what verbs can form adjectival passives, translate into the English LTAG grammar as questions of what features to implement and what tree families should include adjectival passive trees.  On these questions we draw on insights from \cite{LevinRap}.  They argue against the claim (\cite{Wasow80}, \cite{Williams81}, {Bresnan82}) that nouns which are modified by adjectival passives or of which adjectival passives are predicated must carry the role {\bf theme}.  Examples (\ex{1})-(\ex{6}) from \cite{LevinRap} show a case in which only the goal argument can occur with the adjectival passive.  
+
+\enumsentence{Feed some creal to the baby}
+\enumsentence{Feed the baby some cereal}
+\enumsentence{$\ast$Feed some cereal}
+\enumsentence{Feed the baby}
+\enumsentence{$\ast$unfed cereal}
+\enumsentence{unfed baby}
+
+Levin and Rappaport point out that the argument {\it baby\/} can appear both in the adjectival passive in (\ex{0}) and as the sole argument of the {\it feed\/} in (\ex{-2}), while the argument {\it cereal\/} is ungrammatical in either an adjectival passive or as a sole complement (\ex{-1}) and (\ex{-3}).  The observation holds for other ditransitives and leads  Levin and Rappaport propose the {\it Sole Complement Generalization}:
+
+\begin{quote}
+{\it Sole Complement Generalization (SCG)}\\
+an argument that may stand as sole NP complement to a verb can be externalized by Adjectival Passive Formation
+\end{quote}
+
+For the English LTAG grammar the SCG means that adjectival passive trees do not need to be included in any ditransitive tree families.  Any ditransitive verb that can have a sole complement will also have to select the transitive tree family.  Consequently, putting adjectival passive trees only in the transitive tree family will be sufficient.  One remaining question for the LTAG account is whether the ergative verbs, which also select the transitive tree family, form acceptable adjectival passives.  Intransitives in general do not form grammatical adjectival passives as shown in (\ex{1})-(\ex{3})
+
+\enumsentence{$\ast$slept bed}
+\enumsentence{$\ast$laughed clown}
+\enumsentence{$\ast$coughed patient}
+
+However,  ergative intransitives make fine adjectival passives a shown in (\ex{1})-(\ex{3}).
+
+\enumsentence{fallen leaves}
+\enumsentence{sprouted wheat}
+\enumsentence{wilted lettuce}
+
+
+On either \cite{LevinRap}'s account which is based on ergative subjects being internal arguments, or \cite{Bresnan82}' account which is based on the subjects of ergative verbs having the{\it theme} role, the subjects of ergative verbs are more like the objects of transitive verbs than like other subjects.  This accords well with the English LTAG treatment of adjectival passives as strictly a transitive tree family phenomenon.  Since the transitive tree family is selected by transitives, ergatives, and ditransitives that allow a sole complement, the range of allowable adjectival passives is captured by having the adjectival trees implemented in only the transitive tree family.
+
+
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 21
+@

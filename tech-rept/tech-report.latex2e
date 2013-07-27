@@ -1,0 +1,92 @@
+\documentclass{report}
+\usepackage{lingmacros}
+\usepackage{graphicx}
+\title{A  Lexicalized Tree Adjoining Grammar for English}
+\author{The XTAG Research Group \\ \\
+Institute for Research in Cognitive Science\\
+University of Pennsylvania \\
+3401 Walnut St., Suite 400A \\
+Philadelphia, PA 19104-6228 \\ \\
+{\tt http://www.cis.upenn.edu/\~{}xtag}
+}
+
+\newcommand{\vertical}[1]{#1}
+
+\newcommand{\xtagdef}[1]{{\sc #1}}
+\newcommand{\xtagcheck}{$\surd$}
+
+% Inserted some style files here for latex2html,
+% and removed them from the documentstyle options list
+%
+
+\begin{document}
+
+\setcounter{bottomnumber}{20}
+\setcounter{topnumber}{20}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\topfraction}{1}
+\setcounter{totalnumber}{30}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{0}
+\input{example-numbers}
+
+\pagestyle{plain}
+
+\maketitle
+\pagenumbering{roman}
+\newpage\setcounter{page}{0}\mbox{}\newpage
+\tableofcontents
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\input{abstr}
+\newpage\setcounter{page}{0}\mbox{}\newpage
+\input{acknowledgements}
+\newpage\setcounter{page}{0}\mbox{}\newpage
+\pagenumbering{arabic}
+\pagestyle{headings}
+\part{General Information}
+\include{getting-around}
+\include{intro}
+\include{overview}
+\include{compl-adj}
+% \include{case}  This is now included from the compl-adj file.
+\part{Verb Classes}
+\include{table-intro}
+\include{table}
+\include{verb-class}
+\include{ergatives}
+\include{sent-comps-subjs}
+\include{sm-clause}
+\include{double-obj}
+\include{pp-compl}
+\include{it-clefts}
+\part{Sentence Types}
+\include{passives}
+\include{extraction}
+\include{rel_clauses}
+\include{sent-adjs-sub-conjs}
+\include{imperatives}
+\include{gerunds}
+\part{Other Constructions}
+\include{det}
+\include{modifiers}
+\include{auxs}
+\include{conj}
+\include{comparatives}
+\include{punct}
+\part{Appendices}
+\include{future-work}
+\include{families}
+\include{metarules}
+\include{lexorg}
+\include{tree-naming}
+\include{features}
+\include{evaluation}
+\bibliographystyle{plain}
+\bibliography{xtag}
+
+\end{document}
+
+
+

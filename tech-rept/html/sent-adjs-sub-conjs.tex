@@ -1,0 +1,175 @@
+\chapter{Adjunct Clauses} 
+\label{adjunct-cls} 
+\label{sub-conj} 
+ 
+Adjunct clauses include subordinate clauses (i.e. those with overt 
+subordinating conjunctions), purpose clauses and participial adjuncts. 
+ 
+Subordinating conjunctions each select four trees, allowing them to 
+appear in four different positions relative to the matrix clause.  The 
+positions are (1) before the matrix clause, (2) after the matrix 
+clause, (3) before the VP, surrounded by two punctuation marks, and 
+(4) after the matrix clause, separated by a punctuation mark. Each of 
+these trees is shown in Figure \ref{sub-conj-trees}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{cccc} 
+\htmladdimg{ps/sent-adjs-files/Pss.ps.gif}& 
+\htmladdimg{ps/sent-adjs-files/vxPNs.ps.gif}& 
+\htmladdimg{ps/sent-adjs-files/puPPpuvx.ps.gif}& 
+\htmladdimg{ps/sent-adjs-files/spuPs.ps.gif}\\ 
+(1) $\beta$Pss & (2) $\beta$vxPNs & (3) $\beta$puPPspuvx & (4) $\beta$spuPs \\ 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Auxiliary Trees for Subordinating Conjunctions <p> </dl> \end{rawhtml}
+\label{sub-conj-trees} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+Sentence-initial adjuncts adjoin at the root S of the matrix clause, 
+while sentence-final adjuncts adjoin at a VP node. In this, the XTAG 
+analysis follows the findings on the attachment sites of adjunct 
+clauses for conditional clauses (\cite{iatridou91}) and for 
+infinitival clauses (\cite{Browning87}). One compelling argument is 
+based on Binding Condition C effects.  As can be seen from examples 
+(\ref{ex:539})-(\ref{ex:541}) below, no Binding Condition violation occurs when 
+the adjunct is sentence initial, but the subject of the matrix clause 
+clearly governs the adjunct clause when it is in sentence final 
+position and co-indexation of the pronoun with the subject of the 
+adjunct clause is impossible. 
+ 
+\beginsentences
+\sitem{Unless she$_i$ hurries, Mary$_i$ will be late for the meeting.}\label{ex:539} 
+\sitem{$\ast$She$_i$ will be late for the meeting unless Mary$_i$ hurries.}\label{ex:540} 
+\sitem{Mary$_i$ will be late for the meeting unless she$_i$ hurries.}\label{ex:541} 
+\endsentences
+
+ 
+%Tree families with direct objects also contain a pair for the passive trees, 
+%and the transitive family (Tnx0Vnx1) contains a pair for the ergative 
+%trees. All of these trees are anchored by the main verb of the adjunct clause, 
+%and adjoin either at S or VP to the matrix clause.  Subordinating conjunctions 
+%adjoin to these sentential adjunct trees, as described in section 
+%\ref{sub-conj} below.  If no conjunction adjoins, only certain modes are 
+%licensed for the adjunct clause.  These are described immediately below. 
+ 
+We had previously treated subordinating conjunctions as a subclass of 
+{\em conjunction}, but are now assigning them the POS {\em preposition}, as there is such clear overlap between words that 
+function as prepositions (taking NP complements) and subordinating 
+conjunctions (taking clausal complements). While there are some 
+prepositions which only take NP complements and some which only take 
+clausal complements, many take both as shown in examples 
+(\ref{ex:542})-(\ref{ex:545}), and it seems to be artificial to assign them two 
+different parts-of-speech. 
+ 
+\beginsentences
+\sitem{Helen left before the party.}\label{ex:542} 
+\sitem{Helen left before the party began.}\label{ex:543} 
+\sitem{Since the election, Bill has been elated.}\label{ex:544} 
+\sitem{Since winning the election, Bill has been elated.}\label{ex:545} 
+\endsentences
+
+ 
+Each subordinating conjunction selects the values of the {\bf $<$mode$>$} and {\bf $<$comp$>$} features of the subordinated S. The 
+{\bf $<$mode$>$} value constrains the types of clauses the 
+subordinating conjunction may appear with and the {\bf $<$comp$>$} 
+value constrains the complementizers which may adjoin to that 
+clause. For instance, indicative subordinate clauses may appear with 
+the complementizer {\it that} as in (\ref{ex:546}), while participial 
+clauses may not have any complementizers (\ref{ex:547}). 
+ 
+\beginsentences
+\sitem{Midge left that car so that Sam could drive to work.}\label{ex:546} 
+\sitem{*Since that seeing the new VW, Midge could think of nothing else.}\label{ex:547} 
+\endsentences
+
+ 
+\subsection{Multi-word Subordinating Conjunctions} 
+ 
+We extracted a list of multi-word conjunctions, such as {\it as if}, 
+{\it in order}, and {\it for all (that)}, from \cite{quirk85}. For the 
+most part, the components of the complex are all anchors, as shown in 
+Figures~\ref{conjs}(a). In one case, {\it as ADV as}, there is a great 
+deal of latitude in the choice of adverb, so this is a substitution 
+site (Figures~\ref{conjs}(b)). This multi-anchor treatment is very 
+similar to that proposed for idioms in \cite{AS89}, and the analysis 
+of light verbs in the XTAG grammar (see section~\ref{nx0lVN1-family}). 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{ccc} 
+\htmladdimg{ps/sent-adjs-files/vxPARBPs.ps.gif}& 
+\hspace*{0.5in} & 
+\htmladdimg{ps/sent-adjs-files/vxParbPs.ps.gif}\\ 
+(a)&\hspace*{0.5in} &(b)\\ 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Trees Anchored by Subordinating Conjunctions:  $\beta$vxPARBPs and $\beta$vxParbPs <p> </dl> \end{rawhtml}
+\label{conjs} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\section{``Bare'' Adjunct Clauses} 
+ 
+``Bare'' adjunct clauses do not have an overt subordinating 
+conjunction, but are typically parallel in meaning to clauses with 
+subordinating conjunctions. For this reason, we have elected to handle 
+them using the same trees shown above, but with null anchors. They are 
+selected at the same time and in the same way the {\it PRO} tree is, 
+as they all have {\it PRO} subjects.  Three values of {\bf $<$mode$>$} 
+are licensed: {\bf inf} (infinitive), {\bf ger} (gerundive) and {\bf ppart} (past participal).\footnote{We considered allowing bare indicative clauses, such as {\it He died that others may live}, but these were considered too archaic to be worth the additional ambiguity they would add to the grammar.} They interact with complementizers as 
+follows: 
+ 
+\begin{itemize} 
+\item Participial complements do not license any 
+complementizers:\footnote{While these sound a bit like extraposed relative clauses (see \cite{kj87}), those move only to the right and adjoin to S; as these clauses are equally grammatical both sentence-initially and sentence-finally, we are analyzing them as adjunct clauses.} 
+ 
+\beginsentences
+\sitem{[Destroyed by the fire], the building still stood.}\label{ex:548} 
+\sitem{The fire raged for days [destroying the building].}\label{ex:549} 
+\sitem{$\ast$[That destroyed by the fire], the building still stood.}\label{ex:550} 
+\endsentences
+
+%what about: if destroyed by fire, the building would have been rebuilt? 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\begin{tabular}{cc} 
+\htmladdimg{ps/sent-adjs-files/destroyed-by-fire.ps.gif}& 
+\htmladdimg{ps/sent-adjs-files/destroying-the-building.ps.gif}\\ 
+(a)&(b) 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Sample Participial Adjuncts <p> </dl> \end{rawhtml}
+\label{destroyed} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\item Infinitival adjuncts, including purpose clauses, are licensed both with and without the complementizer 
+{\it for}. 
+\beginsentences
+\sitem{Harriet bought a Mustang [to impress Eugene].}\label{ex:551} 
+\sitem{[To impress Harriet], Eugene dyed his hair.}\label{ex:552} 
+\sitem{Traffic stopped [for Harriet to cross the street].}\label{ex:553} 
+\endsentences
+
+\end{itemize} 
+ 
+\section{Discourse Conjunction} 
+ 
+The CONJs auxiliary tree is used to handle `discourse' conjunction, 
+as in sentence (\ref{ex:554}).  Only the coordinating conjunctions ({\it and, or} and {\it but}) are allowed to adjoin to the roots of 
+matrix sentences. Discourse conjunction with {\it and} is shown in the 
+derived tree in Figure~\ref{seuss-sentence}. 
+ 
+\beginsentences
+\sitem{And Truffula trees are what everyone needs! \cite{seuss71}}\label{ex:554} 
+\endsentences
+
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\hspace{0in} 
+\htmladdimg{ps/sent-adjs-files/disc-conj.ps.gif} 
+\begin{rawhtml} <dl> <dt>{Example of discourse conjunction, from Seuss'  The Lorax\protect\nocite{seuss71 <p> </dl> \end{rawhtml}
+\label{seuss-sentence} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+ 
+ 
+ 

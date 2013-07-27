@@ -1,0 +1,104 @@
+head	1.2;
+access
+	rjprasad;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.2
+date	2001.02.23.19.40.51;	author rjprasad;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2001.02.22.20.43.07;	author anoop;	state Exp;
+branches;
+next	;
+
+
+desc
+@author list
+@
+
+
+1.2
+log
+@formatting
+@
+text
+@\pagestyle{plain}
+\null\vfil
+\begin{center}
+{\bf Authors}
+\end{center}
+\setcounter{page}{0}
+
+The contributors to this release of the XTAG English Grammar are as
+follows.
+
+\begin{itemize}
+\item
+{\bf Authors of the Technical Report:} \\
+Tonia Bleam {\tt $\langle$tbleam@@linc.cis.upenn.edu$\rangle$} \\
+Chung-hye Han \\ 
+Rashmi Prasad {\tt $\langle$rjprasad@@linc.cis.upenn.edu$\rangle$} \\ 
+Carlos Prolo \\ 
+Anoop Sarkar
+
+\item
+{\bf Grammar Developers:} \\
+Tonia Bleam \\ 
+Matt Feldman \\ 
+Chung-hye Han \\
+Martin Kappus \\ 
+Seth Kulick \\
+Virginie Nanta \\
+Rashmi Prasad \\
+Carlos Prolo
+
+\item
+{\bf System Developers:} \\
+Moses Kimanzi \\
+Eric Kowey \\
+Carlos Prolo \\
+Anoop Sarkar \\
+William Schuler \\
+Fei Xia
+
+\end{itemize}
+
+This work was done under the supervision of Prof. Aravind Joshi.
+
+\newpage
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d11 8
+a18 6
+\begin{description}
+\item[Authors of the Technical Report]
+Tonia Bleam {\tt $\langle$tbleam@@linc.cis.upenn.edu$\rangle$},
+Chung-hye Han, Rashmi Prasad {\tt
+$\langle$rjprasad@@linc.cis.upenn.edu$\rangle$}, Carlos Prolo, Anoop
+Sarkar. 
+d20 10
+a29 3
+\item[Grammar Developers]
+Tonia Bleam, Matt Feldman, Chung-hye Han, Martin Kappus, Seth
+Kulick, Virginie Nanta, Rashmi Prasad, Carlos Prolo.
+d31 8
+a38 3
+\item[System Developers]
+Moses Kimanzi, Eric Kowey, Carlos Prolo, Anoop Sarkar, William
+Schuler, Fei Xia.
+d40 1
+a40 1
+\end{description}
+@

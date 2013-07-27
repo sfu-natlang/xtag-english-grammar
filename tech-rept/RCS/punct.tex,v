@@ -1,0 +1,994 @@
+head	1.8;
+access
+	anoop
+	beth
+	cdoran
+	srini
+	elhuang
+	heatherm
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.8
+date	98.09.14.15.41.42;	author anoop;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	98.08.28.22.06.37;	author anoop;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	98.08.28.20.52.30;	author cdoran;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	98.07.16.20.41.35;	author cdoran;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	98.06.25.19.54.22;	author cdoran;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	97.07.01.19.31.28;	author elhuang;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.06.18.22.10.16;	author cdoran;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.06.18.22.06.15;	author cdoran;	state Exp;
+branches;
+next	;
+
+
+desc
+@This section documents the punctuation trees.
+@
+
+
+1.8
+log
+@minor typo in example
+@
+text
+@
+\chapter{Punctuation Marks}
+\label{punct-chapt}
+
+Many parsers require that punctuation be stripped out of the
+input. Since punctuation is often optional, this sometimes has no
+effect. However, there are a number of constructions which must
+obligatorily contain punctuation and adding analyses of these to the
+grammar without the punctuation would lead to severe
+overgeneration. An especially common example is noun
+appositives. Without access to punctuation, one would have to allow
+every combinatorial possibility of NPs in noun sequences, which is
+clearly undesirable (especially since there is already unavoidable
+noun-noun compounding ambiguity). Aside from coverage issues, it is
+also preferable to take input ``as is'' and do as little editing as
+possible. With the addition of punctuation to the XTAG grammar, we
+need only do/assume the conversion of certain sequences of punctuation
+into the ``British'' order (this is discussed in more detail below in
+Section \ref{bal}).
+
+The XTAG POS tagger currently tags every punctuation mark as
+itself. These tags are all converted to the POS tag {\it Punct} before
+parsing. This allows us to treat the punctuation marks as a single POS
+class. They then have features which distinguish amongst them.
+Wherever possible we have the punctuation marks as anchors, to
+facilitate early filtering.
+
+The full set of punctuation marks is separated into three classes:
+balanced, separating and terminal. The balanced punctuation marks are
+quotes and parentheses, separating are commas, dashes, semi-colons and
+colons, and terminal are periods, exclamation points and question
+marks. Thus, the {\bf $<$punct$>$} feature is complex (like the {\bf
+$<$agr$>$} feature), yielding feature equations like {\bf $<$Punct bal
+= paren$>$} or {\bf $<$Punct term = excl$>$}. Separating and terminal
+punctuation marks do not occur adjacent to other members of the same
+class, but may occasionally occur adjacent to members of the other
+class, e.g. a question mark on a clause which is separated by a dash
+from a second clause. Balanced punctuation marks are sometimes adjacent
+to one another, e.g. quotes immediately inside of parentheses. The
+{\bf $<$punct$>$} feature allows us to control these local
+interactions.
+
+We also need to control non-local interaction of punctuation
+marks. Two cases of this are so-called quote alternation, wherein
+embedded quotation marks must alternate between single and double, and
+the impossibility of embedding an item containing a colon inside of
+another item containing a colon. Thus, we have a fourth value for {\bf
+$<$punct$>$}, {\bf $<$contains colon/dquote/etc. +/-$>$}, which
+indicates whether or not a constituent contains a particular
+punctuation mark. This feature is percolated through all auxiliary
+trees.  Things which may not embed are: colons under colons,
+semi-colons, dashes or commas; semi-colons under semi-colon or commas.
+Although it is rare, parentheses may appear inside of parentheses, say
+with a bibliographic reference inside a parenthesized sentence.
+ 
+%Embedded appositives are fine:`noted Simon Briscoe, UK economist for Midland
+%Montagu, a unit of Midland Bank PLC.'
+
+%if we want to be absolutely meticulous it should be
+%percolated everywhere, since, for instance, an argument (say NP) might
+%be enclosed in single quotes and the larger constituent (say S) be
+%enclosed in a second set of quotes. We would currently not be able to
+%force the outer quotes to be double.
+
+\section{Appositives, parentheticals and vocatives}
+
+These trees handle constructions where additional lexical material is
+only licensed in conjunction with particular punctuation marks. Since
+the lexical material is unconstrained (virtually any noun can occur as
+an appositive), the punctuation marks are anchors and the other nodes
+are substitution sites. There are cases where the lexical material is
+restricted, as with parenthetical adverbs like {\it however}, and in
+those cases we have the adverb as the anchor and the punctuation marks
+as substitution sites.
+
+When these constructions can appear inside of clauses
+(non-peripherally), they must be separated by punctuation marks on
+both sides. However, when they occur peripherally they have either a
+preceding or following punctuation mark. We handle this by having
+both peripheral and non-peripheral trees for the relevant
+constructions. The alternative is to insert the second (following)
+punctuation mark in the tokenization process (i.e. insert a comma
+before the period when an appositive appears on the last NP of a
+sentence). However, this is very difficult to do accurately.
+
+\subsection{$\beta$nxPUnxPU}
+
+The symmetric (non-peripheral) tree for NP appositives, anchored by:
+comma, dash or parentheses. It is shown in Figure \ref{nxPUnxPU} anchored by
+parentheses. 
+
+\enumsentence{The music here , Russell Smith's ``Tetrameron '' ,
+sounded good . [Brown:cc09]}
+\enumsentence{...cost 2 million pounds (3 million dollars)}
+\enumsentence{Sen. David Boren (D., Okla.)...}
+
+\enumsentence{
+...some analysts believe the two recent natural
+disasters -- Hurricane Hugo and the San Francisco earthquake -- will
+carry economic ramifications.... [WSJ]
+}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/nxPUnxPU.ps,height=3.0in}
+\caption{The $\beta$nxPUnxPU tree, anchored by parentheses}
+\label{nxPUnxPU}
+\end{figure}
+
+
+The punctuation marks are the anchors and the appositive NP is
+substituted. The appositive can be conjoined, but only with a lexical
+conjunction (not with a comma). Appositives with commas or dashes
+cannot be pronouns, although they may be conjuncts containing
+pronouns.  When used with
+parentheses this tree actually presents an alternative rather than an
+appositive, so a pronoun is possible. Finally, the appositive position
+is restricted to having nominative or accusative case to block PRO
+from appearing here.
+
+%Mickey says he has a counter-example w/stacking, something with
+%``Thomson-CSF'' 
+Appositives can be embedded, as in (\ex{1}), but do not seem to be
+able to stack on a single NP. In this they are more like restrictive
+relatives than appositive relatives, which typically can stack.
+
+\enumsentence{...noted Simon Briscoe, UK economist for Midland
+Montagu, a unit of Midland Bank PLC.}
+
+\subsection{$\beta$nPUnxPU}
+
+The symmetric (non-peripheral) tree for N-level NP appositives, is
+anchored by comma. The modifier is typically an address.  It is clear
+from examples such as (\ex{1}) that these are attached at N, rather
+than NP. {\it Carrier } is not an appositive on {\it Menlo Park}, as it
+would be if these were simply stacked appositives. Rather, {\it
+Calif.} modifies {\it Menlo Park}, and that entire complex is
+compounded with {\it carrier}, as shown in the correct derivation in
+Figure \ref{nPUnx}. Because this distinction is less clear when the
+modifier is peripheral (e.g. ends the sentence), and it would be
+difficult to distinguish between NP and N attachment, we do not
+currently allow a peripheral N-level attachment.
+
+\enumsentence{An official at Consolidated Freightways Inc., a Menlo
+Park, Calif., less-than-truckload carrier , said...}
+\enumsentence{Rep. Ronnie Flippo (D., Ala.), of the delegation,
+says...}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/nPUnx.ps,height=4.0in}
+\caption{An N-level modifier, using the $\beta$nPUnx tree}
+\label{nPUnx}
+\end{figure}
+
+\subsection{$\beta$nxPUnx}
+
+This tree, which can be anchored by a comma, dash or colon, handles
+asymmetric (peripheral) NP appositives and NP colon expansions of
+NPs. Figure \ref{nxPUnx} shows this tree anchored by a dash and a
+colon. Like the symmetric appositive tree, $\beta$nxPUnxpu, the
+asymmetric appositive cannot be a pronoun, while the colon expansion
+can. Thus, this constraint comes from the syntactic entry in both
+cases rather than being built into the tree.
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\begin{tabular}{cc}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/nxPUnx.ps,height=3.0in}
+& \psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/colon-exp.ps,height=4.5in}
+\\
+(a) & (b) \\
+\end{tabular}
+\caption{The derived trees for an NP with (a) a peripheral, dash-separated
+appositive and (b) an NP colon expansion (uttered by the Mouse in
+\protect{\it Alice's Adventures in Wonderland})}
+\label{nxPUnx}
+\end{figure}
+
+\enumsentence{the bank's 90\% shareholder -- Petroliam Nasional Bhd. [Brown]}
+
+\enumsentence{...said Chris Dillow, senior U.K. economist at Nomura
+Research Institute .}
+
+\enumsentence{...qualities that are seldom found in one work: Scrupulous
+scholarship, a fund of personal experience,... [Brown:cc06]}
+\enumsentence{I had eyes for only one person : him .}
+
+The colon expansion cannot itself contain a colon, so the foot $S$ has the
+feature NP.t:$<punct contains colon> = -$. 
+
+\subsection{$\beta$PUpxPUvx}
+
+Tree for pre-VP parenthetical PP, anchored by commas or dashes - 
+
+\enumsentence{John , in a fit of anger , broke the vase}
+\enumsentence{Mary , just within the last year , has totalled two cars}
+
+\noindent
+These are clearly not NP modifiers. 
+
+Figures \ref{betaPUpxPUvx} and \ref{PUpxPUvx-anger} show this tree
+alone and as part of the parse for (\ex{-1}).
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/betaPUpxPUvx.ps,height=2.0in}
+\caption{The $\beta$PUpxPUvx tree, anchored by commas}
+\label{betaPUpxPUvx}
+\end{figure}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/betaPUpxPUvx-anger.ps,height=4.0in}
+\caption{Tree illustrating the use of $\beta$PUpxPUvx}
+\label{PUpxPUvx-anger}
+\end{figure}
+
+\subsection{$\beta$puARBpuvx}
+\label{par-adverb}
+
+Parenthetical adverbs - {\it however}, {\it though}, etc. Since the
+class of adverbs is highly restricted, this tree is anchored by the
+adverb and the punctuation marks substitute.  The punctuation marks
+may be either commas or dashes.  Like the parenthetical PP above,
+these are clearly not NP modifiers.
+
+\enumsentence{The new argument over the notification
+guideline , however , could sour any atmosphere of cooperation that
+existed . \hfill [WSJ]}
+
+\subsection{$\beta$sPUnx}
+
+Sentence final vocative, anchored by comma:  
+ 
+\enumsentence{You were there , Stanley/my boy .}
+
+Also, when anchored by colon, NP expansion on S. These often appear to
+be extraposed modifiers of some internal NP. The NP must be quite
+heavy, and is usually a list:
+
+\enumsentence{Of the major expansions in 1960, three were financed
+under the R. I. Industrial Building Authority's 100\% guaranteed
+mortgage plan: Collyer Wire, Leesona Corporation, and American Tube \&
+Controls.}
+
+A simplified version of this sentence is shown in figure
+\ref{sPUnx}. The NP cannot be a pronoun in either of these cases.
+Both vocatives and colon expansions are restricted to appear on tensed
+clauses (indicative or imperative).
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/sPUnx-colon.ps,height=4.0in}
+\caption{A tree illustrating the use of sPUnx for a colon expansion
+attached at S.}
+\label{sPUnx}
+\end{figure}
+
+
+\subsection{$\beta$nxPUs}
+
+Tree for sentence initial vocatives, anchored by a comma: 
+
+\enumsentence{Stanley/my boy , you were there .}
+
+The noun phrase may be anything but a pronoun, although it is most
+commonly a proper noun. The clause adjoined to must be indicative or
+imperative.
+
+\section{Bracketing punctuation}
+\label{bal}
+
+\subsection{Simple bracketing}
+
+Trees: $\beta$PUsPU, $\beta$PUnxPU, $\beta$PUnPU, $\beta$PUvxPU, $\beta$PUvPU,
+$\beta$PUarbPU, $\beta$PUaPU, $\beta$PUdPU, $\beta$PUpxPU,
+$\beta$PUpPU
+
+\noindent
+These trees are selected by parentheses and quotes and can adjoin onto
+any node type, whether a head or a phrasal constituent.  This handles
+things in parentheses or quotes which are syntactically integrated
+into the surrounding context. Figure \ref{bal-trees} shows the $\beta$PUsPU
+anchored by parentheses, and this tree along with $\beta$PUnxPU in a
+derived tree.
+
+\enumsentence{Dick Carroll and his accordion (which we now refer to
+as ``Freida'') held over at Bahia Cabana where ``Sir'' Judson
+Smith brings in his calypso capers Oct. 13 .\hfill [Brown:ca31]}
+
+\enumsentence{...noted that the term ``teacher-employee'' (as
+opposed to, e.g., ``maintenance employee'') was a not inapt
+description. \hfill [Brown:ca35]}
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\begin{tabular}{cc}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/PUsPU-paren.ps,height=2.0in}
+& %\hspace{0.5in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/bal-parse.ps,height=4in}
+\\
+(a) & (b) \\
+\end{tabular}
+\caption{$\beta$PUsPU anchored by parentheses, and in a derivation,
+along with  $\beta$PUnxPU}
+\label{bal-trees}
+\end{figure}
+
+There is a convention in English that quotes embedded in quotes
+alternate between single and double; in American English the outermost
+are double quotes, while in British English they are single.  The {\bf
+contains} feature is used to control this alternation. The trees
+anchored by double quotation marks have the feature {\bf punct
+contains dquote = -} on the foot node and the feature {\bf punct
+contains dquote = +} on the root. All adjunction trees are transparent
+to the {\bf contains} feature, so if any tree below the double
+quote is itself enclosed in double quotes the derivation will
+fail. Likewise with the trees anchored by single quotes. The quote
+trees in effect ``toggle'' the {\bf contains Xquote}
+feature. Immediate proximity is handled by the {\bf punct balanced}
+feature, which allows quotes inside of parentheses, but not vice-versa.
+
+In addition, American English typically places/moves periods (and
+commas) inside of quotation marks when they would logically occur
+outside, as in example
+\ex{1}. The comma in the first part of the quote is not part of the
+quote, but rather part of the parenthetical quoting clause. However,
+by convention it is shifted inside the quote, as is the final
+period. British English does not do this. We assume here that the
+input has already been tokenized into the ``British'' format.
+
+\enumsentence{``You can't do this to us ,'' Diane screamed .  ``We are
+Americans.''}
+
+The $\beta$PUsPU can handle quotation marks around multiple sentences,
+since the sPUs tree allows us to join two sentences with a period,
+exclamation point or question mark. Currently, however, we cannot
+handle the style where only an open quote appears at the beginning of
+a paragraph when the quotation extends over multiple
+paragraphs. We could allow a lone open quote to select the $\beta$PUs
+tree, if this is deemed desirable.
+
+Also, the $\beta$PUsPU is selected by a pair of commas to handle
+non-peripheral appositive relative clauses, such as in example
+(\ex{1}). Restrictive and appositive relative clauses are not
+syntactically differentiated in the XTAG grammar
+(cf. Chapter \ref{rel_clauses}).
+
+\enumsentence{This news , announced by Jerome Toobin , the orchestra's
+administrative director , brought applause ...  [Brown:cc09]}
+
+The trees discussed in this section will only allow balanced
+punctuation marks to adjoin to constituents. We will not get them
+around non-constituents, as in (\ex{1}).
+
+\enumsentence{Mary asked him to leave (and  he left)}
+
+\subsection{$\beta$sPUsPU}
+
+This tree allows a parenthesized clause to adjoin onto a
+non-parenthesized clause.
+
+\enumsentence{Innumerable motels from Tucson to New York boast
+swimming pools ( `` swim at your own risk '' is the hospitable sign
+poised at the brink of most pools ) . \hfill [Brown:ca17]}
+
+\section{Punctuation trees containing no lexical material}
+
+\subsection{$\alpha$PU}
+
+This is the elementary tree for substitution of punctuation
+marks. This tree is used in the quoted speech trees, where including
+the punctuation mark as an anchor along with the verb of saying would
+require a new entry for every tree selecting the relevant tree
+families. It is also used in the tree for parenthetical adverbs
+($\beta$puARBpuvx), and for S-adjoined PPs and adverbs ($\beta$spuARB
+and $\beta$spuPnx).
+
+\subsection{$\beta$PUs}
+
+Anchored by comma: allows comma-separated clause initial adjuncts,
+(\ex{1}-\ex{2}).
+
+\enumsentence{Here , as in ``Journal'' , Mr. Louis has given himself
+the lion's share of the dancing... \hfill [Brown:cc09]}
+
+\enumsentence{Choreographed by Mr. Nagrin, the work filled the second
+half of a program}
+
+To keep this tree from appearing on root Ss (i.e. {\it , sentence}),
+we have a root constraint that {\bf $<$punct struct = nil$>$} (similar
+to the requirement that root Ss be tensed, i.e. {\bf $<$mode~=~ind/imp$>$}).  The {\bf $<$punct struct$>$ = nil} feature on the foot
+blocks stacking of multiple punctuation marks. This feature is shown
+in the tree in Figure \ref{PUs}.
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/PUs.ps,height=5.5in}
+\caption{$\beta$PUs, with features displayed}
+\label{PUs}
+\end{figure}
+
+This tree can be also used by adjuncts on embedded clauses:
+
+\enumsentence{One might expect that in a poetic career of seventy-odd
+years, some changes in style and method would have occurred, some
+development taken place. \hfill [Brown:cj65]}
+
+These adjuncts sometimes have commas on both sides of the adjunct, or,
+like (\ex{0}), only have them at the end of the adjunct.
+
+Finally, this tree is also used for peripheral appositive relative
+clauses.
+
+\enumsentence{Interest may remain limited into tomorrow's U.K. trade figures,
+which the market will be watching closely to see if there is any
+improvement after disappointing numbers in the previous two months.}
+
+%Don't need to block BELOW comps: Mary said that, in her experience,
+%cats sleep a lot.  Don't want comp=nil on bottom of foot, because
+%this would block "his explanation was this: that he couldn't stay in
+%his present job\", or sub-conj=nil there bec it blocks \"Mary
+%sneezed, because Bill blew pepper in her face\".
+
+\subsection{$\beta$sPUs}
+\label{sPUs}
+
+This tree handles clausal ``coordination'' with comma, dash, colon,
+semi-colon or any of the terminal punctuation marks. The first clause
+must be either indicative or imperative. The second may also be
+infinitival with the separating punctuation marks, but must be
+indicative or imperative with the terminal marks; with a comma, it may
+only be indicative. The two clauses need not share the same mode. NB:
+Allowing the terminal punctuation marks to anchor this tree allows us
+to parse sequences of multiple sentences. This is not the usual mode
+of parsing; if it were, this sort of sequencing might be better
+handled by a higher level of processing.
+
+\enumsentence{For critics , Hardy has had no poetic periods -- one does
+not speak of early Hardy or late Hardy , or of the London or Max Gate
+period....}
+
+\enumsentence{Then there was exercise , boating and hiking , which was
+not only good for you but also made you more virile : the thought of
+strenuous activity left him exhausted.}
+
+This construction is one of the few where two non-bracketing
+punctuation marks can be adjacent. It is possible (if rare) for the
+first clause to end with a question mark or exclamation point, when
+the two clauses are conjoined with a semi-colon, colon or
+dash. Features on the foot node, as shown in Figure \ref{sPUs-tree}, control
+this interaction.
+
+\begin{figure}[hbt]
+\centering
+\hspace{0.0in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/sPUs.ps,height=4.5in}
+\caption{$\beta$sPUs, with features displayed}
+\label{sPUs-tree}
+\end{figure}
+
+%This will need to change with the reanal of sub-conjs.
+Complementizers are not permitted on either conjunct. Subordinating
+conjunctions sometimes appear on the right conjunct, but seem to be
+impossible on the left:
+        
+\enumsentence{Killpath would just have to go out and drag Gun back by
+the heels once an hour ; because he'd be damned if he was going to
+be a mid-watch pencil-pusher . [Brown:cl17]}
+
+\enumsentence{The best rule of thumb for detecting corked wine
+(provided the eye has not already spotted it) is to smell the wet end
+of the cork after pulling it : if it smells of wine , the bottle is
+probably all right ; if it smells of cork , one has grounds for
+suspicion.      [Brown:cf27]}
+
+%       ?Max left -- he was very tired -- he needed some sleep .
+%       Max left ; he was very tired ; he needed some sleep .
+%       Max left ; (after work) he was very tired (today) ; he needed
+%               some sleep .
+
+%**Do I want to allow ambiguous scopes here? Or force right-branching?
+
+\subsection{$\beta$sPU}
+
+This tree handles the sentence final punctuation marks when selected
+by a question mark, exclamation point or period. One could also
+require a final punctuation mark for all clauses, but such an approach
+would not allow non-periods to occur internally, for instance before a
+semi-colon or dash as noted above in Section \ref{sPUs}. This tree
+currently only adjoins to indicative or imperative (root) clauses.
+
+\enumsentence{He left !}
+\enumsentence{Get lost .}
+\enumsentence{Get lost ?}
+
+The feature {\bf punct bal= nil} on the foot node ensures that this
+tree only adjoins inside of parentheses or quotes completely enclosing
+a sentence (\ex{1}), but does not restrict it from adjoining to clause
+which ends with balanced punctuation if only the end of the clause is
+contained in the parentheses or quotes (\ex{2}).
+
+\enumsentence{(John then left .)} 
+\enumsentence{(John then left) .}
+\enumsentence{Mary asked him to leave (immediately) .}
+
+This tree is also selected by the colon to handle a colon expansion
+after adjunct clause --
+
+\enumsentence{Expressed differently : if the price for becoming a
+faithful follower... \hfill [Brown:cd02]}
+
+\enumsentence{Expressing it differently : if the price for becoming a
+faithful follower... }
+
+\enumsentence{To express it differently : if the price for becoming a
+faithful follower... \hfill [Brown:cd02]}
+
+This tree is only used after adjunct (untensed) clauses, which adjoin
+to the tensed clause using the adjunct clause trees (cf Section
+\ref{adjunct-cls} ); the {\bf mode} of the complete clause is that of
+the matrix rather than the adjunct. Indicative or imperative
+(i.e. root) clauses separated by a colon use the $\beta$sPUs tree
+(Section \ref{sPUs}).
+
+\subsection{$\beta$vPU}
+
+%PROB: get adjunction at e in pred trees. Laura will fix.
+
+This tree is anchored by a colon or a dash, and occurs between a verb
+and its complement. These typically are lists.
+
+\enumsentence{Printed material Available , on request , from U.S. Department of
+Agriculture , Washington 25 , D.C. , are : Cooperative Farm Credit Can
+Assist......\hfill [Brown:ch01]}
+
+\subsection{$\beta$pPU}
+
+This tree is anchored by a colon or a dash, and occurs between a
+preposition and its complement. It typically occurs with a sequence
+of complements. As with the tree above, this typically occurs with a
+conjoined complement.
+
+\enumsentence{...and utilization such as : (A) the protection of forage...}
+\enumsentence{...can be represented as : Af.}
+
+\section{Other trees}
+
+\subsection{$\beta$spuARB}
+\label{post-adverb}
+
+In general, we attach post-clausal modifiers at the VP node, as you
+typically get scope ambiguity effects with negation ({\it John didn't
+leave today} -- did he leave or not?). However, with post-sentential,
+comma-separated adverbs, there is no ambiguity - in {\it John didn't
+leave, today} he definitely did not leave. Since this tree is only
+selected by a subset of the adverbs (namely, those which can appear
+pre-sententially, without a punctuation mark), it is anchored by the
+adverb.
+
+\enumsentence{The names of some of these products don't suggest the 
+risk involved in buying them , either . \hfill [WSJ]}
+
+%It should not be forgotten that wines mature fastest in half-bottles,
+%less fast in full bottles, slowly in Magnums -- and slower yet in
+%Tregnums, double Magnums, Jeroboams, Methuselahs, and Imperiales,
+%respectively.
+%There is an interesting issue here about where 'respectively'
+%attaches - is it to the lowest point of the sequence, or the highest
+%(S)? Currently we will only get S, but there is an interesting
+%research issue here.
+
+\subsection{$\beta$spuPnx}
+\label{post-PP}
+
+Clause-final PP separated by a comma. Like the adverbs described
+above, these differ from VP adjoined PPs in taking widest scope.
+
+\enumsentence{...gold for current delivery settled at \$367.30 an
+ounce , up 20 cents .} 
+
+\enumsentence{It increases employee commitment to the company , with
+all that means for efficiency and quality control .}
+
+\subsection{$\beta$nxPUa}
+
+Anchored by colon or dash, allows for post-modification of NPs by
+adjectives.
+        
+\enumsentence{Make no mistake , this Gorky Studio drama is a
+respectable import -- aptly grave , carefully written , performed and
+directed . }
+
+%Vocatives:Quirk discusses these, says they can go where adverbs
+%can - initial, medial or final.
+
+%STILL DON'T HANDLE: parentheticals - of course
+
+%The Usage Panel now has respected linguist  Geoffrey 
+% Nunberg --not the fervent Edwin Newman of television fame--as its
+%chair, and its composition, they proudly tell us, is closer to
+%mainstream America: 112 men, 61 women, an average age of 61 (as
+%opposed to 68 in previous editions).  From:The American Heritage
+%Dictionary of the English Language, 3d ed.-book reviews, The Christian
+%Century, 5/12/1993, Vol 11,no 16
+
+%Add entry for PUpxPU w/commas and dashes, appositive use (like
+%relative clauses)
+ 
+% LocalWords:  bal paren excl punct dquote
+@
+
+
+1.7
+log
+@minor typos
+@
+text
+@d248 1
+a248 1
+under the R. I. Industrial Building Authority's 100% guaranteed
+@
+
+
+1.6
+log
+@Added Mickey's revisions.
+@
+text
+@d324 1
+a324 1
+to the the {\bf contains} feature, so if any tree below the double
+d475 1
+a475 1
+	
+d484 1
+a484 1
+suspicion.	[Brown:cf27]}
+d486 4
+a489 4
+%	?Max left -- he was very tired -- he needed some sleep .
+%	Max left ; he was very tired ; he needed some sleep .
+%	Max left ; (after work) he was very tired (today) ; he needed
+%		some sleep .
+d598 1
+a598 1
+	
+@
+
+
+1.5
+log
+@Added chapter label.
+@
+text
+@d22 1
+a22 1
+itself. These tags are all converted to the POS tag "Punct" before
+d25 1
+a25 1
+Wherever possible, we have the punctuation marks as anchors, to
+d28 1
+a28 1
+The full set of punctuation marks are separated into three classes:
+d54 1
+a54 1
+with an academic reference inside a parenthesized sentence.
+d79 1
+a79 1
+preceeding or following punctuation mark. We handle this by having
+d93 1
+a93 1
+sounded good . [cc09]}
+d99 2
+a100 2
+disasters -- Hurrican Hugo and the San Francisco earthquake -- will
+carry economic ramifications.... [wsj]
+d116 1
+a116 1
+pronouns; likewise, they cannot modify pronouns.  When used with
+d122 2
+d163 1
+a163 1
+colon. Like the symmetric appostive tree, $\beta$nxPUnxpu, the
+d183 1
+a183 1
+\enumsentence{the bank's 90\% shareholder -- Petroliam Nasional Bhd. [brown]}
+d189 1
+a189 1
+scholarship, a fund of personal experience,... [cc06]}
+d271 1
+a271 1
+\enumsentence{Stanley/my boy , you were there}
+d280 2
+d296 1
+a296 1
+Smith brings in his calypso capers Oct. 13 .\hfill [brown:ca31]}
+d300 1
+a300 1
+description. \hfill [brown:ca35]}
+d352 2
+a353 2
+non-peripheral appositive relative clauses, such as
+\ex{1}. Restrictive and appositive relative clauses are not
+d355 1
+a355 1
+(cf. \ref{rel_clauses}).
+d358 1
+a358 1
+administrative director , brought applause ...  [brown:cc09]}
+d366 9
+d383 1
+a383 1
+families. It is also used in the tree for parethetical adverbs
+d393 1
+a393 1
+the lion's share of the dancing... \hfill [cc09]}
+d400 1
+a400 2
+to the requirement that root Ss be tensed, i.e. {\bf $<$mode =
+ind/imp$>$}).  The {\bf $<$punct struct$>$ = nil} feature on the foot
+d416 1
+a416 1
+development taken place. \hfill [cj65]}
+d418 1
+a418 1
+These adjucts sometimes have commas on both sides of the adjunct, or,
+d478 1
+a478 1
+be a mid-watch pencil-pusher . [Brown, cl17]}
+d484 1
+a484 1
+suspicion.	[cf27]}
+d520 1
+a520 1
+faithful follower... \hfill [cd02]}
+d526 1
+a526 1
+faithful follower... \hfill [cd02]}
+d531 2
+a532 2
+the matrix rather than the adjunct. Indicative or imperatative
+(i.e. root) clauses separated by a colon use the $\beta$spus tree
+d543 2
+a544 2
+Agriculture , Washington 25, D.C. , are : Cooperative Farm Credit Can
+Assist......\hfill [Brown ch01]}
+d563 1
+a563 1
+leave today} - did he leave or not?). However, with post-sentential,
+d571 1
+a571 1
+risk involved in buying them , either . \hfill [wsj]}
+d619 1
+@
+
+
+1.4
+log
+@Increased sizes of figures, added one figure and corrected a typo.
+@
+text
+@d3 1
+@
+
+
+1.3
+log
+@edited example sentences- put spaces before periods and removed some capital letters.
+@
+text
+@d51 3
+a53 4
+semi-colons, dashes or commas; semi-colons under semi-colon or commas;
+NOT SURE about dash separated things.  Although it is rare,
+parentheses may appear inside of parentheses, say with an academic
+reference inside a parenthesized sentence.
+d150 1
+a150 1
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/nPUnx.ps,height=3.0in}
+d170 1
+a170 3
+& \hspace{0.5in}
+insert tree
+%\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/nxPUnx-colon.ps,height=3.0in}
+d174 3
+a176 2
+\caption{The derived trees for an NP with (a) an peripheral, dash-separated
+appositive and (b) an NP colon expansion}
+d216 1
+a216 1
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/betaPUpxPUvx-anger.ps,height=3.0in}
+d257 1
+a257 1
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/sPUnx-colon.ps,height=3.0in}
+d302 2
+a303 2
+& \hspace{0.5in}
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/bal-parse.ps,height=3.5in}
+d394 1
+a394 1
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/PUs.ps,height=3.5in}
+d453 1
+a453 1
+\psfig{figure=/mnt/linc/xtag/work/doc/tech-rept/ps/punct-files/sPUs.ps,height=3.5in}
+@
+
+
+1.2
+log
+@Corrected duplicate labels.
+@
+text
+@d93 1
+a93 1
+sounded good. [cc09]}
+d185 1
+a185 1
+Research Institute.}
+d189 1
+a189 1
+\enumsentence{I had eyes for only one person: him.}
+d198 2
+a199 2
+\enumsentence{John, in a fit of anger, broke the vase}
+\enumsentence{Mary, just within the last year, has totalled two cars}
+d233 2
+a234 2
+guideline, however, could sour any atmosphere of cooperation that
+existed. \hfill [WSJ]}
+d240 1
+a240 1
+\enumsentence{You were there, Stanley/my boy.}
+d270 1
+a270 1
+\enumsentence{Stanley/my boy, you were there}
+d337 1
+a337 1
+\enumsentence{``You can't do this to us,'' Diane screamed.  ``We are
+d354 2
+a355 2
+\enumsentence{This news, announced by Jerome Toobin, the orchestra's
+administrative director, brought applause ...  [brown:cc09]}
+d380 1
+a380 1
+\enumsentence{Here, as in ``Journal'', Mr. Louis has given himself
+d437 2
+a438 2
+\enumsentence{For critics, Hardy has had no poetic periods -- one does
+not speak of early Hardy or late Hardy, or of the London or Max Gate
+d441 2
+a442 2
+\enumsentence{Then there was exercise, boating and hiking, which was
+not only good for you but also made you more virile: the thought of
+d467 1
+a467 1
+be a mid-watch pencil-pusher. [Brown, cl17]}
+d471 2
+a472 2
+of the cork after pulling it: if it smells of wine , the bottle is
+probably all right; if it smells of cork , one has grounds for
+d475 4
+a478 4
+%	?Max left -- he was very tired -- he needed some sleep.
+%	Max left; he was very tired; he needed some sleep.
+%	Max left; (after work) he was very tired (today) ; he needed
+%		some sleep.
+d491 3
+a493 3
+\enumsentence{He left!}
+\enumsentence{Get lost.}
+\enumsentence{Get lost?}
+d501 3
+a503 3
+\enumsentence{(John then left.)} 
+\enumsentence{(John then left).}
+\enumsentence{Mary asked him to leave (immediately).}
+d531 2
+a532 2
+\enumsentence{Printed material Available, on request, from U.S. Department of
+Agriculture, Washington 25, D.C., are: Cooperative Farm Credit Can
+d542 2
+a543 2
+\enumsentence{...and utilization such as: (A) the protection of forage...}
+\enumsentence{...can be represented as: Af.}
+d560 1
+a560 1
+risk involved in buying them, either. \hfill [wsj]}
+d578 1
+a578 1
+ounce, up 20 cents.} 
+d580 2
+a581 2
+\enumsentence{It increases employee commitment to the company, with
+all that means for efficiency and quality control.}
+d588 3
+a590 3
+\enumsentence{Make no mistake, this Gorky Studio drama is a
+respectable import -- aptly grave, carefully written, performed and
+directed. }
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d449 1
+a449 1
+dash. Features on the foot node, as shown in Figure \ref{sPUs}, control
+d457 1
+a457 1
+\label{sPUs}
+@

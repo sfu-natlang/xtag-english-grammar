@@ -1,0 +1,2086 @@
+head	1.33;
+access
+	anoop
+	cdoran
+	elhuang
+	heatherm
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.33
+date	2001.02.23.16.35.29;	author rjprasad;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2001.02.22.20.24.32;	author rjprasad;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2001.02.22.05.16.37;	author rjprasad;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2000.11.12.01.27.20;	author rjprasad;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2000.11.11.22.10.17;	author rjprasad;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	99.01.14.22.26.10;	author anoop;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	98.08.29.18.00.15;	author anoop;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	98.08.21.14.23.32;	author cdoran;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	98.08.03.18.21.11;	author timf;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	98.06.30.17.30.16;	author timf;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	98.06.26.18.22.31;	author timf;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	98.06.26.17.51.23;	author timf;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	98.06.26.16.03.08;	author timf;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	98.06.23.19.30.26;	author cdoran;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	98.06.12.21.48.13;	author cdoran;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	98.06.05.21.14.40;	author anoop;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	98.02.05.23.00.12;	author anoop;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	97.08.14.19.13.43;	author heatherm;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	97.08.06.21.08.28;	author heatherm;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	97.07.07.20.26.32;	author elhuang;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	97.06.27.20.43.11;	author elhuang;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	97.02.24.22.42.12;	author cdoran;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	96.08.29.21.42.36;	author heatherm;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	96.08.23.15.45.57;	author heatherm;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	96.08.22.19.20.37;	author heatherm;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	96.08.22.18.34.11;	author heatherm;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	95.08.31.20.46.13;	author cdoran;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	95.08.16.21.27.03;	author cdoran;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	95.03.08.17.00.51;	author egedi;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	95.02.24.23.32.48;	author egedi;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	95.02.02.20.56.53;	author egedi;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	95.01.24.20.36.11;	author egedi;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	94.12.20.17.45.58;	author beth;	state Exp;
+branches;
+next	;
+
+
+desc
+@editing
+@
+
+
+1.33
+log
+@minor editing - corrected latex errors
+@
+text
+@\chapter{Modifiers}
+\label{modifiers}
+
+This chapter covers various types of modifiers: adverbs, prepositions,
+adjectives, and noun modifiers in noun-noun compounds.\footnote{Relative
+clauses are discussed in Chapter~\ref{rel_clauses}.}  These categories
+optionally modify other lexical items and phrases by adjoining onto them.  In
+their modifier function these items are adjuncts; they are not part of the
+subcategorization frame of the items they modify.  Examples of some of these
+modifiers are shown in (\ex{1})-(\ex{3}).
+
+\enumsentence{[$_{ADV}$ certainly $_{ADV}$], the October 13 sell-off
+didn't settle any stomachs . (WSJ)}
+
+\enumsentence{Mr. Bakes [$_{ADV}$ previously $_{ADV}$] had a turn at running
+Continental . (WSJ)}
+
+\enumsentence{most [$_{ADJ}$ foreign $_{ADJ}$] [$_{N}$ government
+$_{N}$] [$_{N}$ bond $_{N}$] prices rose [$_{PP}$ during the week
+$_{PP}$]. }
+
+The trees used for the various modifiers are quite similar in form.
+The modifier anchors the tree and the root and foot nodes of the tree
+are of the category that the particular anchor modifies. Some
+modifiers, e.g. prepositions, select for their own arguments and those
+are also included in the tree.  The foot node may be to the right or
+the left of the anchoring modifier (and its arguments) depending on
+whether that modifier occurs before or after the category it
+modifies. For example, almost all adjectives appear to the left of the
+nouns they modify, while prepositions appear to the right when
+modifying nouns.
+
+
+\section{Adjectives}
+\label{adj-modifier}
+
+In addition to being modifiers, adjectives in the XTAG English grammar can be
+also anchor clauses (see Adjective Small Clauses in
+Chapter~\ref{small-clauses}).  There is also one tree family, Intransitive with
+Adjective (Tnx0Vax1), that has an adjective as an argument and is used for
+sentences such as {\it Seth felt happy}. In that tree family the adjective
+substitutes into the tree rather than adjoining as is the case for modifiers.
+
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/modifiers-files/betaAn-features.ps,height=6.5in}}
+\end{tabular}\\
+\caption {Standard Tree for Adjective modifying a Noun: $\beta$An}
+\label {An-tree}
+\end{figure}
+
+As modifiers, adjectives anchor the tree shown in
+Figure~\ref{An-tree}.  The features of the N node onto which the
+$\beta$An tree adjoins are passed through to the top node of the
+resulting N.  The null adjunction marker (NA) on the N foot node
+imposes right binary branching such that each subsequent adjective
+must adjoin on top of the leftmost adjective that has already
+adjoined.  Due to the NA constraint, a sequence of adjectives will
+have only one derivation in the XTAG grammar. The adjective's
+morphological features such as superlative or comparative are
+instantiated by the morphological analyzer. See
+Chapter~\ref{compars-chapter} for a description of how we handle
+comparatives.  At this point, the treatment of adjectives in the XTAG
+English grammar does not include selectional or ordering
+restrictions. Consequently, any adjective can adjoin onto any noun and
+on top of any other adjective already modifying a noun. All of the
+modified noun phrases shown in (\ex{1})-(\ex{4}) currently parse with
+the same structure shown for {\it colorless green ideas\/} in Figure
+\ref{colorless-green-adj}.
+
+\enumsentence{big green bugs}
+\enumsentence{big green ideas}
+\enumsentence{colorless green ideas}
+\enumsentence{?green big ideas}
+
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/modifiers-files/colorless-green-ideas.ps,height=3in}}
+\end{tabular}\\
+\caption {Multiple adjectives modifying a noun}
+\label {colorless-green-adj}
+\end{figure}
+
+
+While (\ex{-2})-(\ex{0}) are all semantically anomalous, (\ex{0}) also
+suffers from an ordering problem that makes it seem ungrammatical in
+the absence of any licensing context. One could argue that the grammar
+should accept (\ex{-3})-(\ex{-1}) but not (\ex{0}).  One of the future
+goals for the grammar is to develop a treatment of adjective ordering
+similar to that developed by
+\cite{ircs:det98} for determiners\footnote{See
+Chapter~\ref{det-comparitives} or \cite{ircs:det98} for details of the
+determiner analysis.}. An adequate implementation of ordering
+restrictions for adjectives would rule out (\ex{0}).
+
+\section{Adjectival Passives and Adjectival Gerunds as Noun Modifiers}
+
+XTAG has an analysis of adjectival passives ({\it $-$ed}) (\ex{1}-\ex{2})
+as well as adjectival gerunds ({\it $-$ing}) (\ex{3}-\ex{4}). The former
+are treated as derived from transitive verbs and are thus part of the
+transitive tree family Figure~\ref{verb-modifiers}(a). The latter
+are derived from intransitives Figure~\ref{verb-modifiers}(b)
+and ergatives (Figure~\ref{ergative-verb-modifier})and thus have a tree in
+both the families.
+
+\enumsentence{the murdered man .}
+\enumsentence{the devoured meal .}
+
+\enumsentence{the drinking man .}
+\enumsentence{the melting ice .}
+
+The feature equations {\bf $<$mode$>$=ppart} in the $\beta$Vtransn tree and
+the equation {\bf $<$mode$>$=ger} in the $\beta$Vintransn and the
+$\beta$Vergativen trees forces only passive forms to be derived from the
+transitive verbs and only gerundive forms to be derived from the
+intransitive and ergative verbs.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{cc}
+{\psfig{figure=ps/modifiers-files/betaVtransn.ps,height=2.5in}} 
+& {\psfig{figure=ps/modifiers-files/betaVintransn.ps,height=2.5in}}
+\end{tabular}\\
+\caption {(a) $\beta$Vtransn: Adjectival Passive Noun Modifiers (b)
+$\beta$Vintransn: Adjectival Gerund Noun Modifiers}
+\label {verb-modifiers}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/modifiers-files/betaVergativen.ps,height=2.5in}}
+\end{tabular}\\
+\caption {$\beta$Vergativen: Adjectival Gerund Noun Modifiers}
+\label {ergative-verb-modifier}
+\end{figure}
+
+
+
+
+\section{Noun-Noun Modifiers}
+\label{noun-modifier}
+
+Noun-noun compounding in the English XTAG grammar is very similar to
+adjective-noun modification.  The noun modifier tree, shown in
+Figure~\ref{noun-compound-tree}, has essentially the same structure as the
+adjective modifier tree in Figure~\ref{An-tree}, except for the syntactic
+category label of the anchor.  
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/modifiers-files/betaNn.ps,height=4.5in}}
+\end{tabular}
+\caption {Noun-noun compounding tree: $\beta$Nn (not all features displayed)}
+\label {noun-compound-tree}
+\end{figure}
+
+
+Noun compounds have a variety of scope possibilities not available to
+adjectives, as illustrated by the single bracketing possibility in (\ex{1}) and
+the two possibilities for (\ex{2}).  This ambiguity is manifested in the XTAG
+grammar by the two possible adjunction sites in the noun-noun compound tree
+itself.  Subsequent modifying nouns can adjoin either onto the N$_r$ node or
+onto the N anchor node of that tree, which results in exactly the two
+bracketing possibilities shown in (\ex{2}).  This inherent structural ambiguity
+results in noun-noun compounds regularly having multiple derivations. However,
+the multiple derivations are not a defect in the grammar because they are
+necessary to correctly represent the genuine ambiguity of these phrases.
+
+\enumsentence{[$_{N}$ big [$_{N}$ green design $_{N}$]$_{N}$]}
+
+\enumsentence{[$_{N}$ computer [$_{N}$ furniture design $_{N}$]$_{N}$]\\
+\/~~[$_{N}$ [$_{N}$ computer furniture $_{N}$] design $_{N}$]}
+
+Noun-noun compounds have no restriction on number.  XTAG allows nouns to be either singular or plural as in (\ex{1})-(\ex{3}).
+\enumsentence{Hyun is taking an algorithms course .}
+\enumsentence{waffles are in the frozen foods section .}
+\enumsentence{I enjoy the dog shows .}
+
+\section{Time Noun Phrases}
+\label{timenps}
+
+%% \subsection{Introduction}
+
+
+Although in general NPs cannot modify clauses or other NPs, there is a
+class of NPs, with meanings that relate to time, that can do
+so.\footnote{ There may be other classes of NPs, such as directional
+phrases, such as {\em north, south} etc., which behave similarly. We
+have not yet analyzed these phrases.} We call this class of NPs
+``Time~NPs''.  Time~NPs behave essentially like PPs. Like PPs,
+time~NPs can adjoin at four places: to the right of an NP, to the
+right and left of a VP, and to the left of an~S.
+
+Time~NPs may include determiners, as in {\em this week} in example
+(\ex{1}), or may be single lexical items as in {\em today} in example
+(\ex{2}).  Like other NPs, time~NPs can also include adjectives, as in
+example (\ex{6}).
+
+\enumsentence{Elvis left the building \underline{this week}}
+\enumsentence{Elvis left the building \underline{today}}
+\enumsentence{It has no bearing on our work force \underline{today} (WSJ)}
+\enumsentence{The fire \underline{yesterday} claimed two lives}
+%% In early trading in Tokyo Tuesday, the Nikkei index rose 35.28
+%% points to 35452.72.
+%% \enumsentence{It has no bearing \underline{today} on our work force}
+\enumsentence{\underline{Today} it has no bearing on our work force}
+\enumsentence{Michael \underline{late yesterday} announced a buy-back program}
+%% Michael late yesterday announced a $ 3.8 million stock buy-back program .
+
+The XTAG analysis for time~NPs is fairly simple, requiring only the
+creation of proper NP auxiliary trees.  Only nouns that can be part of
+time~NPs will select the relevant auxiliary trees, and so only these
+type of NPs will behave like PPs under the XTAG analysis.
+Currently, about 60 words select Time~NP trees, but since these
+words can form NPs that include determiners and adjectives, a large
+number of phrases are covered by this class of modifiers.
+
+Corresponding to the four positions listed above, time~NPs
+can select one of the four trees shown in Figure~\ref{timenp-trees}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/timenp-files/betaNs.ps,height=1.5in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/timenp-files/betaNvx.ps,height=1.5in}}
+&  \hspace{.5in} &
+{\psfig{figure=ps/timenp-files/betavxN.ps,height=1.5in}}
+&  \hspace{.5in} &
+{\psfig{figure=ps/timenp-files//betanxN.ps,height=1.5in}}\\
+$\beta$Ns&&$\beta$Nvx&&$\beta$vxN&&$\beta$nxN\\
+\end{tabular}
+\caption{Time Phrase Modifier trees: $\beta$Ns, $\beta$Nvx, $\beta$vxN, $\beta$nxN}
+\label{timenp-trees}
+\end{figure}
+
+Determiners can be added to time~NPs by adjunction in
+the same way that they are added to NPs in other
+positions. The trees in Figure~\ref{everymonth} show that the
+structures of examples (\ex{-5}) and (\ex{-4}) differ only in the
+adjunction of  {\em this} to the time~NP in example (\ex{-5}).
+
+\begin{figure}[htb] 
+\centering 
+\begin{tabular}{ccc}
+\psfig{figure=ps/timenp-files/elvis-thisweek.ps,height=3.5in}
+& \hspace{.5in} &
+\psfig{figure=ps/timenp-files/elvis-today.ps,height=3.5in} \\
+\end{tabular}\\
+\caption{Time~NPs with and without a determiner} 
+\label{everymonth}
+\end{figure}
+
+
+The sentence 
+\enumsentence{Esso said the Whiting field started production Tuesday (WSJ)} 
+has (at least) two different interpretations, depending on whether
+{\em Tuesday} attaches to {\em said} or to {\em started}. 
+Valid time~NP analyses are available for both these interpretations and 
+are shown in Figure~\ref{esso}.
+
+\begin{figure}[htb] \centering \begin{tabular}{ccc}
+{\psfig{figure=ps/timenp-files/EssoSaidTuesday.ps,height=3.5in}} & \hspace{.5in} &
+{\psfig{figure=ps/timenp-files/EssoStartedTuesday.ps,height=3.5in}} \\ \end{tabular}\\
+\caption {Time~NP trees: Two different attachments} \label{esso}
+\end{figure}
+
+Derived tree structures for examples (\ex{-4}) -- (\ex{-1}), which
+show the four possible time~NP positions are shown in
+Figures~\ref{bearingtrees} and \ref{lateyesterday}.  The derivation
+tree for example (\ex{-1}) is also shown in
+Figure~\ref{lateyesterday}.
+
+\begin{figure}[htb] \centering \begin{tabular}{ccc}
+{\psfig{figure=ps/timenp-files/bearingENDtoday.ps,height=3.5in}} & 
+{\psfig{figure=ps/timenp-files/thefireyesterday.ps,height=2.7in}} &  
+%% {\psfig{figure=ps/timenp-files/bearingtoday.ps,height=3.0in}}
+\hspace*{-.55in} {\psfig{figure=ps/timenp-files/todaybearing.ps,height=3.5in}} \\ \end{tabular}\\
+\caption {Time~NPs in different positions
+($\beta$vxN, $\beta$nxN and $\beta$Ns)} \label {bearingtrees}
+\end{figure}
+
+\begin{figure}[htb] 
+\centering
+\begin{tabular}{cc}
+\psfig{figure=ps/timenp-files/lateyesterday.ps,height=4in} &
+\hspace{-1in} \raisebox{2.5in}{\psfig{figure=ps/timenp-files/DERIVlateyesterday.ps,height=1.25in}} \\
+\end{tabular}
+\caption {Time~NPs: Derived tree and Derivation ($\beta$Nvx position)} 
+\label{lateyesterday} 
+\end{figure}
+
+
+\section{Prepositions}
+\label{prep-modifier}
+
+There are three basic types of prepositional phrases, and three places
+at which they can adjoin.  The three types of prepositional phrases
+are: Preposition with NP Complement, Preposition with Sentential
+Complement, and Exhaustive Preposition.  The three places are to the
+right of an NP, to the right of a VP, and to the left of an S.  Each
+of the three types of PP can adjoin at each of these three places, for
+a total of nine PP modifier trees. Table \ref{prep-summary} gives the
+tree family names for the various combinations of type and
+location. (See Section \ref{post-PP} for discussion of the
+$\beta$spuPnx, which handles post-sentential comma-separated PPs.)
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l||c|c|c|}
+\hline
+\multicolumn{1}{|c||}{}&\multicolumn{3}{c|}{position and category modified}\\
+\cline{2-4}
+\multicolumn{1}{|c||}{}&pre-sentential&post-NP&post-VP\\
+\multicolumn{1}{|c||}{Complement type}&S modifier&NP modifier&VP modifier\\
+\hline
+\hline
+S-complement&$\beta$Pss&$\beta$nxPs&$\beta$vxPs\\
+\hline
+NP-complement&$\beta$Pnxs&$\beta$nxPnx&$\beta$vxPnx\\
+\hline
+no complement&$\beta$Ps&$\beta$nxP&$\beta$vxP\\
+(exhaustive)&&&\\
+\hline
+\end{tabular}
+\caption{Preposition Anchored Modifiers}
+\label{prep-summary}
+\end{table}
+
+The subset of preposition anchored modifier trees in Figure~\ref{prep-trees}
+illustrates the locations and the four PP types.  Example sentences using the 
+trees in Figure \ref{prep-trees} are shown in (\ex{1})-(\ex{4}). There are also
+more trees with multi-word prepositions as anchors. Examples of these are: 
+{\it ahead of}, {\it contrary to}, {\it at variance with} and {\it as recently
+as}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/modifiers-files/betaPss.ps,height=1.5in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betanxPnx.ps,height=1.5in}}
+&  \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betavxP.ps,height=1.5in}}
+&  \hspace{.5in} &
+{\psfig{figure=ps/betavxPPnx.ps,height=1.75in}}
+\\
+$\beta$Pss&&$\beta$nxPnx&&$\beta$vxP&&$\beta$vxPPnx\\
+\end{tabular}\\
+\caption {Selected Prepositional Phrase Modifier trees:
+$\beta$Pss, $\beta$nxPnx, $\beta$vxP and $\beta$vxPPnx}
+\label {prep-trees}
+\end{figure}
+
+\enumsentence{[$_{PP}$ with Clove healthy $_{PP}$], the veterinarian's
+bill will be more affordable . ($\beta$Pss\footnote{{\it Clove healthy} is an adjective small clause})}
+\enumsentence{The frisbee [$_{PP}$ in the brambles $_{PP}$] was hidden .
+($\beta$nxPnx)}
+\enumsentence{Clove played frisbee [$_{PP}$ outside $_{PP}$] . ($\beta$vxP)}
+\enumsentence{Clove played frisbee [$_{PP}$ outside of the house
+$_{PP}$] . ($\beta$vxPPnx)}
+
+Prepositions that take NP complements assign accusative case to those
+complements. Most prepositions take NP complements.  Subordinating
+conjunctions are analyzed in XTAG as Preps (see Section~\ref{adjunct-cls}
+for details). Additionally, a few non-conjunction prepositions take S
+complements (see Section~\ref{NPA} for details).
+
+
+\section{Adverbs}
+\label{adv-modifier}
+
+In the English XTAG grammar, VP and S-modifying adverbs anchor the
+auxiliary trees $\beta$vxARB and $\beta$ARBvx, $\beta$ARBs,
+$\beta$sARB,\footnote{In the naming conventions for the XTAG trees,
+ARB is used for {\underline a}dve{\underline {rb}}s.  Because the
+letters in A, Ad, and Adv are all used for other parts of speech
+({\underline a}djective, {\underline d}eterminer and {\underline
+v}erb), ARB was chosen to eliminate ambiguity.
+Appendix~\ref{tree-naming} contains a full explanation of naming
+conventions.}  allowing pre and post modification of S's and VP's.
+Besides the VP and S-modifying adverbs, the grammar includes adverbs
+that modify other categories. Examples of adverbs modifying an
+adjective, an adverb, a PP, an NP, and a determiner are shown in
+(\ex{1})-(\ex{8}). (See Sections \ref{par-adverb} and
+\ref{post-adverb} for discussion of the $\beta$puARBpuvx and
+$\beta$spuARB, which handle pre-verbal parenthetical adverbs and
+post-sentential comma-separated adverbs.)
+
+\begin{itemize}
+\item{Modifying an adjective}
+\enumsentence{{\bf extremely} good}
+\enumsentence{{\bf rather} tall}
+\enumsentence{rich {\bf enough}}
+
+\item{Modifying an adverb}
+\enumsentence{oddly {\bf enough}} 
+\enumsentence{{\bf very} well}
+
+\item{Modifying a PP}
+\enumsentence{{\bf right} through the wall}
+
+\item{Modifying a NP}
+\enumsentence{{\bf quite} some time}
+
+\item{Modifying a determiner}
+\enumsentence{{\bf exactly} five men}
+
+\end{itemize}
+
+XTAG has separate trees for each of the modified categories and for pre and
+post modification where needed.  The kind of treatment given to adverbs here is
+very much in line with the base-generation approach proposed by \cite{Ernst84},
+which assumes all positions where an adverb can occur to be base-generated, and
+that the semantics of the adverb specifies a range of possible positions
+occupied by each adverb. While the relevant semantic features of the adverbs
+are not currently implemented, implementation of semantic features is scheduled
+for future work.  The trees for adverb anchored modifiers are very similar in
+form to the adjective anchored modifier trees.  Examples of two of the basic
+adverb modifier trees are shown in Figure~\ref{adv-trees}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+{\psfig{figure=ps/modifiers-files/betaARBs.ps,height=5in}}&
+\hspace*{1.0in}&
+{\psfig{figure=ps/modifiers-files/betavxARB.ps,height=4.5in}}\\
+(a)&&(b)\\
+\end{tabular}
+\caption {Adverb Trees for pre-modification of S: $\beta$ARBs (a) and
+post-modification of a VP: $\beta$vxARB (b)}
+\label{adv-trees}
+\end{figure}
+
+\newpage
+
+Like the adjective anchored trees, these trees also have the NA
+constraint on the foot node to restrict the number of derivations
+produced for a sequence of adverbs.  Features of the modified category
+are passed from the foot node to the root node, reflecting correctly
+that these types of properties are unaffected by the adjunction of an
+adverb.  A summary of the categories modified and the position of
+adverbs is given in Table \ref{adv-summary}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c||c|c|}
+\hline
+&\multicolumn{2}{c|}{Position with respect to item modified}\\
+\cline{2-3}
+Category Modified&Pre&Post\\
+\hline
+\hline
+S&$\beta$ARBs&$\beta$sARB\\
+\hline
+VP&$\beta$ARBvx,$\beta$puARBpuvx&$\beta$vxARB\\
+\hline
+A&$\beta$ARBa&$\beta$aARB\\
+\hline
+PP&$\beta$ARBpx&$\beta$pxARB\\
+\hline
+ADV&$\beta$ARBarb&$\beta$arbARB\\
+\hline
+NP&$\beta$ARBnx&\\
+\hline
+Det&$\beta$ARBd&\\
+\hline
+\end{tabular}
+\caption{Simple Adverb Anchored Modifiers}
+\label{adv-summary}
+\end{table}
+
+
+In the English XTAG grammar, no traces are posited for wh-adverbs, in-line with
+the base-generation approach (\cite{Ernst84}) for various positions of
+adverbs. Since convincing arguments have been made against traces for adjuncts
+of other types (e.g. \cite{Baltin}), and since the reasons for wanting traces
+do not seem to apply to adjuncts, we make the general assumption in our grammar
+that adjuncts do not leave traces.  Sentence initial wh-adverbs select the same
+auxiliary tree used for other sentence initial adverbs ($\beta$ARBs) with the
+feature {\bf $<$wh$>$=+}.  Under this treatment, the derived tree for the
+sentence {\it How did you fall?} is as in Figure (\ref{how-did-you-fall}), with
+no trace for the adverb.
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/modifiers-files/how-did-you-fall.ps,height=3.5in}}
+\end{tabular}
+\caption {Derived tree for {\it How did you fall?}}
+\label {how-did-you-fall}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{c}
+{\psfig{figure=ps/modifiers-files/betaARBarbs.ps,height=6.0in}}
+\end{tabular}
+\caption {Complex adverb phrase modifier: $\beta$ARBarbs}
+\label{weird-adv-tree}
+\end{figure}
+
+There is one more adverb modifier tree in the grammar which is not included in
+Table \ref{adv-summary}.  This tree, shown in Figure~\ref{weird-adv-tree}, has
+a complex adverb phrase and is used for wh+ two-adverb phrases that occur
+sentence initially, such as in sentence (\ex{1}).  Since {\it how} is the only
+wh+ adverb, it is the only adverb that can anchor this tree.
+
+\enumsentence{how quickly did Srini fix the problem ?}
+
+Focus adverbs such as {\it only}, {\it even}, {\it just} and {\it at least} 
+are also handled by the system.  Since the syntax allows focus adverbs to 
+appear in practically any position, these adverbs select most of the trees 
+listed in Table \ref{adv-summary}.  It is left up to the semantics or 
+pragmatics to decide the correct scope for the focus adverb for a given 
+instance.  In terms of the ability of the focus adverbs to modify at different
+levels of a noun phrase, the focus adverbs can modify either cardinal 
+determiners or noun-cardinal noun phrases, and cannot modify at the level of 
+noun.  The tree for adverbial modification of noun phrases is in shown
+Figure~\ref{other-adv-trees}(a). 
+
+In addition to {\it at least}, the system handles the other two-word
+adverbs, {\it at most} and {\it up to}, and the three-word {\it as-as}
+adverb constructions, where an adjective substitutes between the two
+occurrences of {\it as}.  An example of a three-word {\it as-as} adverb
+is {\it as little as}.  Except for the ability of {\it at least} to
+modify many different types of constituents as noted above, the
+multi-word adverbs are restricted to modifying cardinal determiners.
+Example sentences using the trees in Figure~\ref{other-adv-trees} are
+shown in (\ex{1})-(\ex{5}).
+
+\begin{itemize}
+\item{Focus Adverb modifying an NP}
+\enumsentence{{\bf only} a member of our crazy family could pull off that kind
+of a stunt .}
+\enumsentence{{\bf even} a flying saucer sighting would seem interesting in
+comparison \\ with your story .}
+\enumsentence{The report includes a proposal for {\bf at least} a partial 
+impasse in negotiations .}
+
+\item{Multi-word adverbs modifying cardinal determiners}
+\enumsentence{{\bf at most} ten people came to the party .} 
+\enumsentence{They gave monetary gifts of {\bf as little as} five dollars .}
+
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/modifiers-files/betaARBnx.ps,height=1.1in}}
+&  \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betaPaPd.ps,height=1.75in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betaPARBd.ps,height=1.75in}}\\
+
+$\beta$ARBnx&&$\beta$PaPd&&$\beta$PARBd&&\\
+(a)&&(b)&&(c)\\
+\end{tabular}\\
+\caption {Selected Focus and Multi-word Adverb Modifier trees:
+$\beta$ARBnx, $\beta$PaPd and $\beta$PARBd }
+\label {other-adv-trees}
+\end{figure}
+
+The grammar also includes auxiliary trees anchored by multi-word adverbs
+like {\it a little}, {\it a bit}, {\it a mite}, {\it sort of}, {\it kind
+of}, etc.. 
+
+Multi-word adverbs like {\it sort of} and {\it kind of} can pre- modify
+almost any non-clausal category. The only strict constraint on their
+occurrence is that they can't modify nouns (in which case an adjectival
+interpretation would obtain)\footnote{Note that there are semantic/lexical
+constraints even for the categories that these adverbs {\it can} modify,
+and no doubt invite a more in-depth analysis.}. The category which they
+scope over can be directly determined from their position, except for when
+they occur sentence finally in which case they are assumed to modify
+VP's. The complete list of auxiliary trees anchored by these adverbs are as
+follows: $\beta$NPax, $\beta$NPpx, $\beta$NPnx, $\beta$NPvx, $\beta$vxNP,
+$\beta$NParb. Selected trees are shown in Figure~\ref{sortof-adv-tree}, and
+some examples are given in (\ex{1})-(\ex{4}).
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/modifiers-files/betaNPax.ps,height=1.5in}}
+& \hspace{.5in} & 
+{\psfig{figure=ps/modifiers-files/betaNPvx.ps,height=1.5in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betavxNP.ps,height=1.5in}}
+\\
+$\beta$NPax&&$\beta$NPvx&&$\beta$vxNP&&\\
+(a)&&(b)&&(c)&&\\
+\end{tabular}\\
+\caption{Selected Multi-word Adverb Modifier trees (for adverbs like {\it
+sort of}, {\it kind of}): $\beta$NPax, $\beta$NPvx, $\beta$vxNP.}
+\label{sortof-adv-tree}
+\end{figure}  
+
+\enumsentence{John is {\bf sort of} [$_{AP}$ tired].}
+\enumsentence{John is {\bf sort of} [$_{PP}$ to the right].}
+\enumsentence{John could have been {\bf sort of} [$_{VP}$ eating the cake].} 
+\enumsentence{John has been eating his cake {\bf sort of} [$_{ADV}$ slowly].}
+
+There are some multi-word adverbs that are, however, not so free in their
+distribution. Adverbs like {\it a little}, {\it a bit}, {\it a mite} modify
+AP's in predicative constructions (sentences with the copula and small
+clauses, AP complements in sentences with raising verbs, and AP's when they
+are subcategorized for by certain verbs (e.g., {\it John felt angry}). They
+can also post-modify VP's and PP's, though not as freely as
+AP's\footnote{They can also appear before NP's, as in, ``John wants {\it a
+little} sugar''. However, here they function as multi-word determiners and
+should not be analyzed as adverbs.}. Finally, they also function as
+downtoners for almost all adverbials\footnote{It is to be noted that this
+analysis, which allows these multiword adverbs to modify adjectival phrases
+as well as adverbials, will yield (not necessarily desirable) multiple
+derivations for a sentence like {\it John is a little unecessarily
+stupid}. In one derivation, {\it a little} modifies the AP and in the other
+case, it modifies the adverb.}. Some examples are provided in
+(\ex{1})-(\ex{4}).
+
+
+\enumsentence{Mickey is {\bf a little} [$_{AP}$ tired].}
+
+\enumsentence{The medicine [$_{VP}$ has eased John's pain] {\bf a little}.}
+
+\enumsentence{John is {\bf a little} [$_{PP}$ to the right].}
+
+\enumsentence{John has been reading his book {\bf a little} [$_{ADV}$ loudly].}
+
+Following their behavior as described above, the auxiliary trees they
+anchor are $\beta$DAax, $\beta$DApx, $\beta$vxDA, $\beta$DAarb,
+$\beta$DNax, $\beta$DNpx, $\beta$vxDN, $\beta$DNarb. Selected trees are
+shown in Figure~\ref{alittle-adv-tree}).
+
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/modifiers-files/betavxDA.ps,height=1.5in}}
+& \hspace{.5in} & 
+{\psfig{figure=ps/modifiers-files/betaDAax.ps,height=1.5in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betaDNpx.ps,height=1.5in}}
+\\
+$\beta$vxDA&&$\beta$DAax&&$\beta$DNpx&&\\
+(a)&&(b)&&(c)&&\\
+\end{tabular}\\
+\caption{Selected Multi-word Adverb Modifier trees (for adverbs like {\it
+a little}, {\it a bit}): $\beta$vxDA, $\beta$DAax, $\beta$DNpx.}
+\label{alittle-adv-tree}
+\end{figure}
+
+
+
+
+\section{Locative Adverbial Phrases}
+\label{locatives}
+
+Locative adverbial phrases are multi-word adverbial modifiers whose 
+meanings relate to spatial location. Locatives consist of a locative adverb 
+(such as {\it ahead} or {\it downstream}) preceded by an NP, an adverb, or 
+nothing, as in Examples (\ex{1})--(\ex{3}) respectively. The modifier as a 
+whole describes a position relative to one previously 
+specified in the discourse. The nature of the relation, which is usually
+a direction, is specified by the anchoring locative adverb({\em behind, 
+east}). If an NP or a second adverb is present in the phrase, it specifies the 
+degree of the relation (for example: {\it three city blocks, many meters,} 
+and {\it far}).
+
+\enumsentence{The accident {\it three blocks ahead} stopped traffic}
+\enumsentence{The ship sank {\it far offshore}}
+\enumsentence{The trouble {\it ahead} distresses me}
+
+Locatives can modify NPs, VPs and Ss. They modify NPs only by right-adjoining 
+post-positively, as in Example (\ex{-2}). Post-positive is also the more 
+common position when a locative modifies either of the other categories. 
+Locatives pre-modify VPs only when separated by balanced punctuation 
+(commas or dashes). The trees locatives select when modifying NPs are shown 
+in Figure~\ref{loc-np-trees}.
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=ps/modifiers-files/betanxnxARB.ps,height=4.0cm}
+& \hspace{0.5in} &
+\psfig{figure=ps/modifiers-files/betanxARB.ps,height=4.0cm}
+\end{tabular}
+\caption{Locative Modifier Trees: $\beta$nxnxARB, $\beta$nxARB}
+\label{loc-np-trees}
+\end{figure}
+  
+When the locative phrase consists of only the anchoring locative adverb, as in
+Example (\ex{-1}), it uses the $\beta$nxARB tree, shown in 
+Figure~\ref{loc-np-trees}, and its VP analogue, $\beta$vxARB. In 
+addition, these are the trees selected when the locative anchor is 
+modified by an adverb expressing degree, as in Example \ex{-1}. The 
+degree adverb adjoins on to the anchor using the $\beta$ARBarb tree, 
+which is described in Section~\ref{adv-modifier}. Figure~\ref{toupees} 
+shows an example of these trees in action. 
+
+%Though there is a tree 
+%for a pre-sentential locative phrase, $\beta$nxARBs, there is no 
+%corresponding post-sentential tree, as it is highly debatable whether 
+%the post-sentential version actually has the entire sentence or just 
+%the preceding verb phrase as its scope. Thus, in accordance with XTAG 
+%practice, which considers ambiguous post-sentential modifiers to be 
+%VP-modifiers rather than S-modifiers, there is only a $\beta$vxnxARB 
+%tree, as shown in Figure~\ref{toupees}. 
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccc}
+\psfig{figure=ps/modifiers-files/toupee_np.ps,height=7.0cm}
+& \hspace{0.5in} &
+\psfig{figure=ps/modifiers-files/toupee_ad.ps,height=7.0cm}
+\end{tabular}
+\caption{Locative Phrases featuring NP and Adverb Degree Specifications}
+\label{toupees}
+\end{figure}
+
+One possible analysis of locative phrases with NPs might maintain that 
+the NP is the head, with the locative adverb modifying the NP. This is 
+initially attractive because of the similarity to time NPs, which also 
+feature NPs that can modify clauses. This analysis seems insufficient, 
+however, in light of the fact that virtually any NP can occur in 
+locative phrases, as in example (\ex{1}). Therefore, in the XTAG analysis 
+the locative adverb anchors the locative phrase trees. A complete summary 
+of all trees selected by locatives is contained in Table~\ref{loc-summary}. 
+26\footnote{Though nearly all of these adverbs are spatial in nature, 
+this number also includes a few temporal adverbs, such as {\it ago}, 
+that also select these trees.} adverbs select the locative trees.
+
+\enumsentence{I left my toupee and putter {\it three holes back}}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l||c|c|}
+\hline
+\multicolumn{1}{|c||}{}&
+\multicolumn{2}{|c|}{Degree Phrase Type}\\
+\cline{2-3}
+\multicolumn{1}{|c||}{Category Modified}&NP&Ad/None\\
+\hline
+\hline
+NP&$\beta$nxnxARB&$\beta$nxARB\\
+\hline
+VP (post)&$\beta$vxnxARB&$\beta$vxARB\\
+\hline
+VP (pre, punct-separated)&$\beta$punxARBpuvx&$\beta$puARBpuvx\\
+\hline
+S&$\beta$nxARBs&$\beta$ARBs\\
+\hline
+\end{tabular}
+\caption{Locative Modifiers}
+\label{loc-summary}
+\end{table}
+
+
+
+
+
+
+@
+
+
+1.32
+log
+@minor editing
+@
+text
+@d428 1
+a428 1
+\begin{figure}[hb]
+@
+
+
+1.31
+log
+@minor changes
+@
+text
+@d370 4
+a373 4
+complements (see section~\ref{prep-case} for details).  Most prepositions take
+NP complements.  Subordinating conjunctions are analyzed in XTAG as Preps 
+(see Section~\ref{adjunct-cls} for details). Additionally, a few non-conjunction 
+prepositions take S complements (see Section~\ref{NPA} for details).
+@
+
+
+1.30
+log
+@added section about -ed and -ing derived adjectives
+@
+text
+@d105 2
+a106 2
+transitive tree family (Figure~\ref{transitive-verb-modifier}). The latter
+are derived from intransitives (Figure~\ref{intransitive-verb-modifier})
+d130 1
+a130 1
+\label {intransitive-verb-modifier}
+@
+
+
+1.29
+log
+@the section on multiword adverbs was not really there and was getting inputted (!) from another file. I included it and deleted the other file.
+@
+text
+@d100 45
+@
+
+
+1.28
+log
+@removed reference to there being no tree betasnxARB in
+the grammar which currently exists.
+@
+text
+@d527 3
+a529 1
+\input{multiword-advs}
+d531 87
+@
+
+
+1.27
+log
+@fixed figure scaling
+@
+text
+@d19 1
+a19 1
+$_{N}$] [$_{N}$ bond $_{N}$] [prices] rose [$_{PP}$ during the week
+d155 1
+a155 1
+Time~NPs may include determiners, as in {\em this month} in example
+a159 2
+%% \enumsentence{I go there {\ul every month}}
+%% \enumsentence{I am free {\ul today}}
+d335 2
+a336 2
+auxiliary trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and
+$\beta$ARBvx,\footnote{In the naming conventions for the XTAG trees,
+d523 1
+a523 1
+$\beta$ARBnx, $\beta$PARBd and $\beta$PaPd}
+d572 1
+a572 8
+shows an example of these trees in action. Though there is a tree 
+for a pre-sentential locative phrase, $\beta$nxARBs, there is no 
+corresponding post-sentential tree, as it is highly debatable whether 
+the post-sentential version actually has the entire sentence or just 
+the preceding verb phrase as its scope. Thus, in accordance with XTAG 
+practice, which considers ambiguous post-sentential modifiers to be 
+VP-modifiers rather than S-modifiers, there is only a $\beta$vxnxARB 
+tree, as shown in Figure~\ref{toupees}. 
+d574 9
+@
+
+
+1.26
+log
+@Added parens to some example references. Corrected some spelling inconsistencies.
+@
+text
+@d449 1
+a449 1
+\begin{figure}[h]
+d459 1
+a459 1
+\begin{figure}[h]
+@
+
+
+1.25
+log
+@Made preposition section consistent with analysis of subordinating
+conjunctions as Preps.
+@
+text
+@d17 1
+a17 1
+pp
+d22 10
+a31 9
+The trees used for the various modifiers are quite similar in form.  The
+modifier anchors the tree and the root and foot nodes of the tree are of the
+category that the particular anchor modifies. Some modifiers,
+e.g. prepositions, have arguments that are also included in the tree.  The foot
+node may be to the right or the left of the anchoring modifier (and its
+arguments) depending on whether that modifier occurs before or after the
+category it modifies. For example, almost all adjectives appear to the left of
+the nouns they modify, while prepositions appear to the right when modifying
+nouns.
+d54 17
+a70 13
+As modifiers, adjectives anchor the tree shown in Figure~\ref{An-tree}.  The
+features of the N node onto which the $\beta$An tree adjoins are passed through
+to the top node of the resulting N.  The null adjunction marker (NA) on the N
+foot node imposes right binary branching such that each subsequent adjective
+must adjoin on top of the leftmost adjective that has already adjoined.  Due to
+the NA constraint, a sequence of adjectives will have only one derivation in
+the XTAG grammar. The adjective's morphological features such as superlative or
+comparative are not currently used in the tree.  At this point, the treatment
+of adjectives in the XTAG English grammar does not include selectional or
+ordering restrictions. Consequently, any adjective can adjoin onto any noun and
+on top of any other adjective already modifying a noun. All of the modified
+noun phrases shown in (\ex{1})-(\ex{4}) currently parse with the same structure
+shown for {\it colorless green ideas\/} in Figure
+d76 1
+a76 1
+\enumsentence{$\ast$green big ideas}
+d89 10
+a98 10
+While (\ex{-2})-(\ex{0}) are all semantically anomalous, (\ex{0}) also suffers
+from an ordering problem that makes it seem ungrammatical as
+well.\footnote{This is, in fact, the point of the famous linguistic example in
+(\ex{-1}).} We would argue that the grammar should accept (\ex{-3})-(\ex{-1})
+but not (\ex{0}).  One of the future goals for the grammar is to develop a
+treatment of adjective ordering similar to that developed by
+\cite{HockeyEgedi94} for determiners\footnote{See
+Chapter~\ref{det-comparitives} or \cite{HockeyEgedi94} for details of the
+determiner analysis.}. An adequate implementation of ordering restrictions for
+adjectives would rule out (\ex{0}).
+a99 10
+Another area in which we plan to have future grammar development is
+comparatives.  Comparatives that involve ellipsis will require a general
+solution of the problem of representing ellipsis.  Simpler comparatives without
+ellipsis, such as {\it fewer than nine\/} in (\ex{1}), should be amenable to
+analysis as complex determiners.
+
+
+\enumsentence{cats actually have fewer than nine lives .}
+
+
+d114 1
+a114 1
+\caption {Noun-noun compounding tree: $\beta$Nn}
+d146 8
+a153 8
+Although in general NPs cannot modify clauses, there is a class of
+NPs, with meanings that relate to time, that can do so.\footnote{
+  There may be other classes of NPs, such as directional phrases, such
+  as {\em north, south} etc., which behave similarly. We have not yet
+  analysed these phrases.} We call this class of NPs ``Time~NPs''.
+Time~NPs behave essentially like PPs. Like PPs, time~NPs can adjoin at
+four places: to the right of an NP, to the right and left of a VP, and
+to the left of an~S.
+a230 4
+Example (\ex{0}) shows that there are cases of genuine ambiguity that will
+be properly represented with multiple valid parses under our
+analysis. 
+
+d487 9
+a495 8
+In addition to {\it at least}, the system handles the other two-word adverbs, 
+{\it at most} and {\it up to}, and the three-word {\it as-as} adverb
+constructions, where an adjective substitutes between the two occurences of 
+{\it as}.  An example of a three-word as-as adverb is {\it as little as}.  
+Except for the ability of {\it at least} to modify many different types of 
+constituents as noted above, the multi-word adverbs are restricted to 
+modifying cardinal determiners.  Example sentences using the trees in 
+Figure~\ref{other-adv-trees} are shown in (\ex{1})-(\ex{5}).
+d502 1
+a502 1
+comparison with your story .}
+d537 1
+a537 1
+nothing, as in Examples \ex{1}--\ex{3} respectively. The modifier as a 
+d550 1
+a550 1
+postpositively, as in Example \ex{-2}. Postpositive is also the more 
+d552 1
+a552 1
+Locatives premodify VPs only when separated by balanced punctuation 
+d568 1
+a568 1
+Example \ex{-1}, it uses the $\beta$nxARB tree, shown in 
+d575 3
+a577 3
+for a presentential locative phrase, $\beta$nxARBs, there is no 
+corresponding postsentential tree, as it is highly debatable whether 
+the postsentential version actually has the entire sentence or just 
+d579 1
+a579 1
+practice, which considers ambiguous postsentential modifiers to be 
+d599 1
+a599 1
+locative phrases, as in example \ex{1}. Therefore, in the XTAG analysis 
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d337 3
+a339 2
+NP complements.  There are just a few prepositions that take sentential
+complements (see section~\ref{NPA}).
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d39 1
+a39 1
+Adjective (Tnx0Va1), that has an adjective as an argument and is used for
+@
+
+
+1.22
+log
+@Changed pathnames for locatives ps files.
+@
+text
+@d561 1
+a561 1
+in Figure \ref{loc-np-trees}.
+d575 14
+a588 13
+Example \ex{-1}, it uses the $\beta$nxARB tree, shown in Figure 
+\ref{loc-np-trees}, and its VP analogue, $\beta$vxARB. In addition, these 
+are the trees selected when the locative anchor is modified by an adverb 
+expressing degree, as in Example \ex{-1}. The degree adverb adjoins on to 
+the anchor using the $\beta$ARBarb tree, which is described in Section 
+\ref{adv-modifier}. Figure \ref{toupees} shows an example of these trees in 
+action. Though there is a tree for a presentential locative phrase, 
+$\beta$nxARBs, there is no corresponding postsentential tree, as it is highly 
+debatable whether the postsentential version actually has the entire 
+sentence or just the preceding verb phrase as its scope. Thus, in 
+accordance with XTAG practice, which considers ambiguous postsentential 
+modifiers to be VP-modifiers rather than S-modifiers, there is only a 
+$\beta$vxnxARB tree, as shown in Figure \ref{toupees}. 
+d608 1
+a608 1
+of all trees selected by locatives is contained in Table \ref{loc-summary}. 
+@
+
+
+1.21
+log
+@Added locative section.
+@
+text
+@d566 1
+a566 1
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/betanxnxARB.ps,height=4.0cm}
+d568 1
+a568 1
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/betanxARB.ps,height=4.0cm}
+d592 1
+a592 1
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/toupee_np.ps,height=7.0cm}
+d594 1
+a594 1
+\psfig{figure=/mnt/linc/xtag/work/timf/ps/toupee_ad.ps,height=7.0cm}
+@
+
+
+1.20
+log
+@Increased sizes of trees.
+@
+text
+@d538 2
+d541 10
+d552 86
+@
+
+
+1.19
+log
+@Inserted time-NP section; before it had been included (\include).
+@
+text
+@d47 1
+a47 1
+{\psfig{figure=ps/modifiers-files/betaAn-features.ps,height=3.5in}}
+d77 1
+a77 1
+{\psfig{figure=ps/modifiers-files/colorless-green-ideas.ps,height=2.3in}}
+d117 1
+a117 1
+{\psfig{figure=ps/modifiers-files/betaNn.ps,height=3.5in}}
+d214 1
+a214 1
+\psfig{figure=ps/timenp-files/elvis-thisweek.ps,height=3in}
+d216 1
+a216 1
+\psfig{figure=ps/timenp-files/elvis-today.ps,height=3in} \\
+d231 2
+a232 2
+{\psfig{figure=ps/timenp-files/EssoSaidTuesday.ps,height=3.0in}} & \hspace{.5in} &
+{\psfig{figure=ps/timenp-files/EssoStartedTuesday.ps,height=3.0in}} \\ \end{tabular}\\
+d246 5
+a250 5
+\begin{figure}[htb] \centering \begin{tabular}{ccccc}
+{\psfig{figure=ps/timenp-files/bearingENDtoday.ps,height=3.0in}} & \hspace{.1in} &
+{\psfig{figure=ps/timenp-files/thefireyesterday.ps,height=2.2in}} &  \hspace{.1in} &
+%% {\psfig{figure=ps/timenp-files/bearingtoday.ps,height=3.0in}} &  \hspace{.1in} &
+{\psfig{figure=ps/timenp-files/todaybearing.ps,height=3.0in}} \\ \end{tabular}\\
+d257 3
+a259 4
+\begin{tabular}{ccc}
+\psfig{figure=ps/timenp-files/lateyesterday.ps,height=3in} &
+\hspace{.02in} &
+\psfig{figure=ps/timenp-files/DERIVlateyesterday.ps,height=1.25in} \\
+d396 1
+a396 1
+{\psfig{figure=ps/modifiers-files/betaARBs.ps,height=4.5in}}&
+d398 1
+a398 1
+{\psfig{figure=ps/modifiers-files/betavxARB.ps,height=4in}}\\
+d523 2
+d526 3
+a528 5
+{\psfig{figure=ps/modifiers-files/betaPARBd.ps,height=1.5in}}
+&  \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betaPaPd.ps,height=1.5in}}
+\\
+$\beta$ARBnx&&$\beta$PARBd&&$\beta$PaPd&&\\
+@
+
+
+1.18
+log
+@added multiword adverbs documentation
+@
+text
+@d145 2
+a146 1
+\include{timenp}
+d148 119
+@
+
+
+1.17
+log
+@added timenp section
+@
+text
+@d403 1
+a403 1
+{\psfig{figure=ps/modifiers-files/betaARBnx.ps,height=1.5in}}
+d417 1
+a419 1
+
+@
+
+
+1.16
+log
+@Changed the tree betaCONJaCONJd to be betaPaPd, consistent with the change from 'as' being a conjunction to its being a preposition.  This has already been changed in the grammar.
+@
+text
+@d145 2
+@
+
+
+1.15
+log
+@added "as recently as" to list of multi-wd preps
+@
+text
+@d405 1
+a405 1
+{\psfig{figure=ps/modifiers-files/betaCONJaCONJd.ps,height=1.5in}}
+d407 1
+a407 1
+$\beta$ARBnx&&$\beta$PARBd&&$\beta$CONJaCONJd&&\\
+d411 1
+a411 1
+$\beta$ARBnx, $\beta$PARBd and $\beta$CONJaCONJd}
+@
+
+
+1.14
+log
+@Changed example sentence "Most government bond prices rose in light trading" to "most government bond prices rose during the week" because the former would not parse.  Also removed the citing of Wall Street Journal on that example sentence
+because of that modification.
+Modified example sentences by removing capital letters and putting spaces before punctuation.
+@
+text
+@d185 2
+a186 2
+{\it ahead of}, {\it contrary to}, {\it at variance with} and {\it in line 
+with}.
+@
+
+
+1.13
+log
+@added to noun-noun modifiers section, stated that the nouns in a compound can be either singular or plural (Hyun is taking an algorithms course).
+@
+text
+@d12 2
+a13 2
+\enumsentence{[$_{ADV}$ Certainly $_{ADV}$], the October 13 sell-off
+didn't settle any stomachs. (WSJ)}
+d16 5
+a20 1
+Continental. (WSJ)}
+a21 4
+\enumsentence{Most [$_{ADJ}$ foreign $_{ADJ}$] [$_{N}$ government
+$_{N}$] [$_{N}$ bond $_{N}$] [prices] rose [$_{PP}$ in light
+trading $_{PP}$]. (WSJ)}
+
+d102 1
+a102 1
+\enumsentence{Cats actually have fewer than nine lives.}
+d141 3
+a143 3
+\enumsentence{Hyun is taking an algorithms course.}
+\enumsentence{Waffles are in the frozen foods section.}
+\enumsentence{I enjoy the dog shows.}
+d206 3
+a208 3
+\enumsentence{[$_{PP}$ With Clove healthy $_{PP}$], the veterinarian's
+bill will be more affordable. ($\beta$Pss\footnote{{\it Clove healthy} is an adjective small clause})}
+\enumsentence{The frisbee [$_{PP}$ in the brambles $_{PP}$] was hidden.
+d210 1
+a210 1
+\enumsentence{Clove played frisbee [$_{PP}$ outside $_{PP}$]. ($\beta$vxP)}
+d212 1
+a212 1
+$_{PP}$]. ($\beta$vxPPnx)}
+d361 1
+a361 1
+\enumsentence{How quickly did Srini fix the problem?}
+d385 4
+a388 4
+\enumsentence{{\bf Only} a member of our crazy family could pull off that kind
+of a stunt.}
+\enumsentence{{\bf Even} a flying saucer sighting would seem interesting in
+comparison with your story.}
+d390 1
+a390 1
+impasse in negotiations.}
+d393 2
+a394 2
+\enumsentence{{\bf At most} ten people came to the party.} 
+\enumsentence{They gave monetary gifts of {\bf as little as} five dollars.}
+@
+
+
+1.12
+log
+@Added cross-reference to chapter on punctuation for modifier trees with
+punct. marks built in.
+@
+text
+@d140 4
+a144 1
+
+@
+
+
+1.11
+log
+@made some little editing modifications
+@
+text
+@d145 10
+a154 8
+There are three basic types of prepositional phrases, and three places at
+which they can adjoin.  The three types of prepositional phrases are:
+Preposition with NP Complement, Preposition with Sentential Complement, and
+Exhaustive Preposition.  The three places are to the right of an NP, to the
+right of a VP, and to the left of an S.  Each of the three types of PP can
+adjoin at each of these three places, for a total of nine PP modifier
+trees. Table \ref{prep-summary} gives the tree family names for the
+various combinations of type and location.
+d220 16
+a235 11
+In the English XTAG grammar, VP and S-modifying adverbs anchor the auxiliary
+trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx,\footnote{In the
+naming conventions for the XTAG trees, ARB is used for {\underline
+a}dve{\underline {rb}}s.  Because the letters in A, Ad, and Adv are all used
+for other parts of speech ({\underline a}djective, {\underline d}eterminer and
+{\underline v}erb), ARB was chosen to eliminate ambiguity.
+Appendix~\ref{tree-naming} contains a full explanation of naming conventions.}
+allowing pre and post modification of S's and VP's.  Besides the VP and
+S-modifying adverbs, the grammar includes adverbs that modify other
+categories. Examples of adverbs modifying an adjective, an adverb, a
+PP, an NP, and a determiner are shown in (\ex{1})-(\ex{8}).  
+d303 1
+a303 1
+VP&$\beta$ARBvx&$\beta$vxARB\\
+@
+
+
+1.10
+log
+@made editorial changes to the focus adverb section
+made changes to table 19.2 (deleted ARBn, added ARBnx, changed ARBdx to ARBd)
+added an extra example in the beginning of the section to demonstrate a
+noun phrase being modified by an adverb
+@
+text
+@d177 5
+a181 1
+illustrates the three locations and the three PP types.
+a200 6
+
+Example sentences using the trees in Figure \ref{prep-trees} are shown
+in (\ex{1})-(\ex{3}). There are also identical trees which have
+multi-word prepositions as anchors. Examples of these are: {\it ahead
+of}, {\it contrary to}, {\it at variance with} and {\it in line with}. 
+
+d361 2
+a362 2
+noun.  The tree for adverbial modification of noun phrases is in 
+Figure~\ref{other-adv-trees}. 
+d369 3
+a371 3
+constituents, the multi-word adverbs are restricted to modifying cardinal 
+determiners.  Example sentences using the trees in Figure~\ref{other-adv-trees}
+are shown in (\ex{1})-(\ex{5}).
+d398 1
+@
+
+
+1.9
+log
+@fixed typos
+@
+text
+@d230 1
+a230 1
+PP and a determiner are shown in (\ex{1})-(\ex{7}).
+d245 3
+d306 1
+a306 1
+N&$\beta$ARBn&\\
+d308 1
+a308 1
+Det&$\beta$ARBdx&\\
+d355 4
+a358 5
+Focus adverbs such as {\it only}, {\it even}, and {\it at least} are also
+handled by the system.  Since the syntax allows focus adverbs to appear in
+practically any position, these adverbs select all of the trees listed in Table
+\ref{adv-summary}, as well as a tree for adverbial modification of noun phrases
+(see Figure~\ref{other-adv-trees}).  It is left up to the semantics or 
+d360 5
+a364 6
+instance.  In addition to {\it at least}, the system handles other multi-word 
+adverbs such as {\it at most} and {\it as-as} constructions like {\it as 
+little as}, where an adjective substitutes between the two occurences of 
+{\it as}.  These adverbs can only modify cardinal determiners.  Example 
+sentences using the trees in Figure~\ref{other-adv-trees} are shown in
+(\ex{8})-(\ex{12}).
+d366 9
+@
+
+
+1.8
+log
+@Added a description of focus advers and multi-word adverbs
+@
+text
+@d389 1
+a389 1
+$\beta$ARBnx&&$\beta$PARBd&&$\beta$CONJaCONJd&&$\\
+@
+
+
+1.7
+log
+@Added descriptions and an example of multi-word prepositions.
+@
+text
+@d230 1
+a230 2
+PP and a determiner are
+shown in (\ex{1})-(\ex{7}).
+d352 12
+d365 8
+d374 3
+d378 19
+@
+
+
+1.6
+log
+@Added information about ARBdx tree, which is used by adverbs
+modifying determiners, such as "exactly five men", "approximately
+seventy five dogs"
+@
+text
+@d181 5
+a185 5
+\begin{tabular}{ccccc}
+{\psfig{figure=ps/modifiers-files/betaPss.ps,height=1.5in}}&
+\hspace*{0.75in}&
+{\psfig{figure=ps/modifiers-files/betanxPnx.ps,height=1.5in}}&
+\hspace*{0.75in}&
+d187 2
+d190 1
+a190 1
+$\beta$Pss&&$\beta$nxPnx&&$\beta$vxP\\
+d193 1
+a193 1
+$\beta$Pss, $\beta$nxPnx and $\beta$vxP}
+d199 3
+a201 1
+in (\ex{1})-(\ex{3}).
+d208 2
+a210 1
+
+a214 1
+
+@
+
+
+1.5
+log
+@Changes to make ARBarbs larger, since it has a new version of that
+tree now.  Then changes to make the rest of the formatting look
+nice as well.
+@
+text
+@d225 3
+a227 2
+categories. Examples of adverbs modifying an adjective, an adverb, and a PP are
+shown in (\ex{1})-(\ex{6}).
+d242 3
+d258 1
+a258 1
+\begin{figure}[htb]
+d261 1
+a261 1
+{\psfig{figure=ps/modifiers-files/betaARBs.ps,height=4.7in}}&
+d271 2
+d281 1
+a281 1
+\begin{table}[htb]
+d302 2
+d321 2
+a322 1
+\begin{figure}[htb]
+d331 2
+a332 1
+\begin{figure}[htb]
+@
+
+
+1.4
+log
+@Took out the stuff about modifying a determiner because it is in
+the Future Work section.  Also rearranged the section regarding
+ARBarbs so that it matched the grammar (ARBarbs is for wh+ only,
+and doesn't parse the sentence that was originally given).
+The sentence doesn't parse yet though.  A change has to be made
+to the morphology.
+@
+text
+@d301 1
+d309 3
+a311 3
+feature {\bf $<$wh$>$=+}.  Under this treatment, the derived tree of the
+sentence in (\ex{1}) is as in Figure (\ref{how-did-you-fall}), with no trace
+for the adverb.
+a312 2
+\enumsentence{How did you fall?}
+
+d325 1
+a325 1
+{\psfig{figure=ps/modifiers-files/betaARBarbs.ps,height=3.0in}}
+d334 2
+a335 1
+sentence initially, such as in sentence (\ex{1}).
+d337 1
+a337 1
+\enumsentence{How quickly did the time pass.}
+@
+
+
+1.3
+log
+@Changes from Tilman's proof-read
+@
+text
+@d217 2
+a218 2
+trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx,\footnote{In
+the naming conventions for the XTAG trees, ARB is used for {\underline
+d225 2
+a226 2
+categories. Examples of adverbs modifying an adjective, an adverb, a PP and a
+determiner are shown in (\ex{1})-(\ex{8}).
+a240 4
+\item{Modifying a determiner}
+\enumsentence{He has {\bf hardly} any friends}
+\enumsentence{{\bf just} two hundred deaths}
+
+d243 10
+a252 12
+We have separate trees for each of the modified categories and for
+pre and post modification where needed.  The kind of treatment we
+give to adverbs here is very much in line with the base-generation
+approach proposed by \cite{Ernst84}, which assumes all positions where
+an adverb can occur to be base-generated, and that the semantics of
+the adverb specifies a range of possible positions occupied by each
+adverb. While the relevant semantic features of the adverbs are not
+currently implemented, implementation of semantic features is
+scheduled for future work.  The trees for adverb anchored modifiers
+are very similar in form to the adjective anchored modifier trees.
+Examples of two of the basic adverb modifier trees are shown in
+Figure~\ref{adv-trees}.
+a295 2
+Det&$\beta$ARBdx&\\
+\hline
+d301 13
+d317 1
+a317 1
+{\psfig{figure=ps/modifiers-files/betaARBarbs.ps,height=3.0in}}
+d319 2
+a320 2
+\caption {Complex adverb phrase modifier: $\beta$ARBarbs}
+\label{weird-adv-tree}
+a322 8
+
+The one tree in the grammar that has a complex adverb phrase, $\beta$ARBarbs,
+is not included in Table \ref{adv-summary}. This tree shown in
+Figure~\ref{weird-adv-tree} and is used for two-adverb phrases that occur
+sentence initially, such as in sentence (\ex{1}).
+
+\enumsentence{How quickly the time passed.}
+
+d326 1
+a326 1
+{\psfig{figure=ps/modifiers-files/how-did-you-fall.ps,height=3.5in}}
+d328 2
+a329 2
+\caption {Derived tree for {\it How did you fall?}}
+\label {how-did-you-fall}
+d332 4
+a335 10
+In the English XTAG grammar, no traces are posited for wh-adverbs, in-line with
+the base-generation approach (\cite{Ernst84}) for various positions of
+adverbs. Since convincing arguments have been made against traces for adjuncts
+of other types (e.g. \cite{Baltin}), and since the reasons for wanting traces
+do not seem to apply to adjuncts, we make the general assumption in our grammar
+that adjuncts do not leave traces.  Sentence initial wh-adverbs select the same
+auxiliary tree used for other sentence initial adverbs ($\beta$ARBs) with the
+feature {\bf $<$wh$>$=+}.  Under this treatment, the derived tree of the
+sentence in (\ex{1}) is as in Figure (\ref{how-did-you-fall}), with no trace
+for the adverb.
+d337 1
+a337 1
+\enumsentence{How did you fall?}
+@
+
+
+1.2
+log
+@This is the result of the final push.
+This is the 'almost final' version.
+@
+text
+@d4 5
+a8 5
+This section covers various types of modifiers: adverbs, prepositions,
+adjectives, and noun modifiers in noun-noun compounds\footnote{Relative clauses
+are discussed in section~\ref{rel_clauses}.}.  These categories optionally
+modify other lexical items and phrases by adjoining onto them.  In their
+modifier function these items are adjuncts; they are not part of the
+d38 1
+a38 1
+section~\ref{small-clauses}).  There is also one tree family, Intransitive with
+d85 9
+a93 8
+from an ordering problem that makes it seem ungrammatical as well\footnote{This
+is, in fact, the point of the famous linguistic example in (\ex{-1}).}. We
+would argue that the grammar should accept (\ex{-3})-(\ex{-1}) but not
+(\ex{0}).  One of the future goals for the grammar is to develop a treatment of
+adjective ordering similar to that developed by \cite{HockeyEgedi94} for
+determiners\footnote{See section~\ref{det-comparitives} or \cite{HockeyEgedi94}
+for details of the determiner analysis.}. An adequate implementation of
+ordering restrictions for adjectives would rule out (\ex{0}).
+d135 1
+a135 1
+\enumsentence{[$_{N}$ big [$_{N}$ blue design $_{N}$]$_{N}$]}
+d217 1
+a217 1
+trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx trees\footnote{In
+d222 1
+a222 1
+Appendix~\ref{tree-naming} contains a full explanation of naming conventions.},
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 2
+a2 1
+\section{Modifiers}
+d4 7
+a10 6
+This section covers a various types of modifiers:  adverbs, prepositions,
+adjectives, and noun modifiers in noun-noun compounds.  These categories
+ optionally modify other lexical items and phrases by adjoining
+onto them.  In their modifier function these items are adjuncts; they
+are not part of the subcategorization frame of the items they modify.
+Examples of some of these modifiers are shown in (\ex{1})-(\ex{3}).
+d12 6
+a17 3
+\enumsentence{[$_{ADV}$ Certainly $_{ADV}$], the Oct. 13 sell-off
+didn't settle any stomachs.(WSJ)}
+\enumsentence{Mr. Bakes [$_{ADV}$ previously $_{ADV}$] had a turn at running Continental.(WSJ)}
+d19 2
+a20 1
+$_{N}$] [$_{N}$ bond $_{N}$] [$_{N}$ prices $_{N}$] rose [$_{PP}$ in light trading $_{PP}$.(WSJ)}
+d22 9
+a30 9
+The trees used for the various modifiers are quite similar in form.
+The modifier anchors the tree and the root and foot nodes of the tree are
+of the category that the particular anchor modifies. Some modifiers, for
+example prepositions, have arguments that are also included in the
+tree.  The footnode may be to the right or the left of the anchoring
+modifier (and its arguments) depending on whether that modifier occurs
+before or after the category it modifies. For example, almost all
+adjectives appear to the left of the nouns they modify, while
+prepositions appear to the right when modifying nouns. 
+d33 1
+a33 1
+\subsection{Adjectives}
+d36 6
+a41 6
+In addition to being modifiers, adjectives in the FBLTAG English
+grammar can be predicative and anchor clauses (see
+Section~\ref{small-clauses}). \label{2;2,14} There is also one tree family, Tnx0Va,
+that has an adjective as an argument and is used for sentences such as 
+{\it Seth felt happy}. In this tree family the adjective substitutes
+into the tree rather than adjoining as is the case for modifiers.
+a42 1
+As modifiers, adjectives anchor the tree $\beta$An shown in Figure \ref{An-tree}.
+d44 1
+a44 1
+\begin{figure}[ht]
+d47 1
+a47 1
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/modifiers-files/betaAn.ps,height=1.5in}}
+d49 1
+a49 1
+\caption {Standard Tree for Adjective modifying a Noun}
+d53 13
+a65 14
+As can be seen in Figure \ref{An-tree}, the features of the N onto
+which $\beta$An tree adjoins are passed to the top node of the
+resulting N.  The null adjunction marker (NA) on the N footnode
+imposes right binary branching such that each subsequent adjective
+must adjoin on top of the leftmost adjective that has already
+adjoined.  Due to the NA constraint, a sequence of adjectives will
+have only one derivation in our grammar. The adjective's morphological
+features such as superlative or comparitive are not currently used in the tree.
+At this point, the treatment of adjectives in the FBLATG English grammar does
+not include selectional or ordering restrictions. Consequently, any
+adjective can adjoin onto any noun and on top of any other adjective
+already modifying a noun. All of the modified noun phrases shown in
+(\ex{1})-(\ex{4}) currently parse with the same structure shown
+for {\it colorless green ideas\/} in Figure
+d74 1
+a74 1
+\begin{figure}[ht]
+d77 1
+a77 1
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/cant-get-to-dir-stuff/colorless-green-ideas.ps,height=4in}}
+d79 1
+a79 1
+\caption {multiple adjectives modifying an N}
+d84 8
+a91 9
+While (\ex{-2})-(\ex{0}) are all semantically anomalous, (\ex{0}) also
+suffers from an ordering problem that makes it seem ungrammatical as
+well. We would argue that the grammar should accept (\ex{-2}) and
+(\ex{-1})\footnote{This is, in fact, the point of the famous
+linguistic example in (\ex{-1})} but not (\ex{0}).  One of the future
+goals for the grammar is to develop a treatment of adjective ordering
+similar to that developed by Hockey and Egedi \shortcite{HockeyEgedi94} for determiners\footnote{See
+\ref{det} or
+\cite{HockeyEgedi94} for details of the determiner analysis}. An adequate implementation of
+d95 4
+a98 6
+comparatives.  Comparatives that involve ellipsis will require a
+general solution of the problem of representing ellipsis.  Simpler
+comparatives without ellipsis, such as {\it fewer than nine\/} in
+(\ex{1}), should be amenable to analysis as complex determiners (see
+Section \ref{det-comparitives} for brief discussion of how this might
+be done).
+d100 1
+a102 10
+%\begin{figure}[ht]
+%\centering
+%\rule[.1in]{3.5in}{0.01in} \\
+%\begin{tabular}{c}
+%{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/modifiers-files/beta%An.ps,height=1.5in}}
+%\end{tabular}\\
+%\caption {Beginning attempt at simple comparitives}
+%\rule[.1in]{3.5in}{0.01in}
+%\label {Apnx-tree}
+%\end{figure}
+d104 2
+a105 2
+\subsection{Noun-Noun Modifiers}
+\label{noun-modifer}
+d107 5
+a111 13
+Noun-noun compounding in the English FBLTAG grammar is very similar to
+adjective-noun modification.  The noun modifier tree, $\beta$Nn which
+is shown in Figure \ref{noun-compound-tree}, has essentially
+the same structure as the adjective modifier tree, $beta$An, in Figure
+\ref{An-tree}. There are two differences between the trees, the syntactic
+category label of the anchor and the NA constraint on the footnode,
+which appears only in the adjective modifier tree.  Noun compounds
+have a variety of scope possiblities not availible to adjectives,
+consequently the NA constraint on the footnode would incorrectly
+restrict noun-noun compounding. The difference in scope possiblities
+for noun modifiers and adjective modifiers is illustrated by the
+single bracking possibility in (\ex{1}) and the two possibilies for
+(\ex{2}).
+d113 1
+a113 12
+\enumsentence{ [$_{N}$ big [$_{N}$ blue design $_{N}$]$_{N}$]}
+\eenumsentence{\item[a.] [$_{N}$computer [$_{N}$furniture
+design$_{N}$]$_{N}$]
+\item[b.]  [$_{N}$ [$_{N}$ computer furniture $_{N}$] design $_{N}$]}
+
+This lack of restriction results in noun-noun compounds regularly
+having mulitple derivations. However, the multiple derivations are not
+a defect in the grammar, because they are neccesary to correctly
+represent the genuine ambiguity of these phrases.
+
+
+\begin{figure}[ht]
+d115 4
+a118 4
+\begin{tabular}{cc}
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/cant-get-to-dir-stuff/betaNn.ps,height=4in}}
+\end{tabular}\\
+\caption {multiple adjectives modifying a N}
+d123 10
+d134 1
+d136 6
+a141 1
+\subsection{Prepositions}
+d146 1
+a146 1
+Preposition with NP complement, Preposition with Sentential Complement, and
+d153 1
+a153 1
+\begin{table}
+d175 2
+a176 3
+The subset of preposition anchored modifier trees in Figure
+\ref{prep-trees} illustrates the three locations and the three PP
+types.
+d178 1
+a178 1
+\begin{figure}[ht]
+d180 6
+a185 4
+\begin{tabular}{ccc}
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/modifiers-files/betaPss.ps,height=1.5in}}  &
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/modifiers-files/betanxPnx.ps,height=1.5in}}  &
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/modifiers-files/betavxP.ps,height=1.5in}}
+d187 1
+a187 1
+$\beta$Pss&$\beta$nxPnx&$\beta$vxP\\
+d189 2
+a190 1
+\caption {Selected Prepositional Phrase Modifier trees}
+d196 1
+a196 1
+in (\ex{1})-(\ex{2}).\\
+d198 2
+a199 2
+
+\enumsentence{[$_{PP}$ With Clove healthy $_{PP}$], the veteranarian's bill will be more affordable. ($\beta$Pss)}
+d202 1
+a202 1
+\enumsentence{Clove played frisbee [$_{PP}$ in the morning $_{PP}$]. ($\beta$vx)}
+d205 4
+a208 3
+Prepositions that take NP complements assign case to those complements (see
+Section \ref{prep-case} for details).  Most prepositions take NP complements.
+There are just a few prepositions that take sentential complements. (see Section \ref{NPA}).
+d212 1
+a212 1
+\subsection{Adverbs}
+d215 11
+a225 5
+In the English FBLTAG grammar VP and S-modifying adverbs anchor the
+auxiliary trees $\beta$ARBs, $\beta$sARB, $\beta$vxARB and $\beta$ARBvx.
+Besides the VP and S-modifying adverbs, the English FBLTAG grammar includes
+adverbs that modify other categories. Examples of adverbs modifying
+an adjective, an adverb, a PP and a determiner are shown in (\ex{1})-(\ex{4}). 
+d227 5
+a231 6
+\enumsentence{modifying an adjective:\\ {\em extremely\/} good\\
+{\em rather\/} tall\\rich {\em enough\/} }
+\enumsentence{modifying an adverb:\\ oddly {\em enough\/}\\ {\em very\/} well}
+\enumsentence{ modifying a PP:\\ {\em right\/} through the wall}
+\enumsentence{modifying a determiner: \\He has {\em hardly\/} any
+friends\\ {\em over\/} two hundred deaths}
+d233 13
+d247 1
+a247 1
+pre- and post-modification where needed.  The kind of treatment we
+d257 1
+a257 1
+\ref{adv-trees}.
+d259 1
+a259 1
+\begin{figure}[ht]
+d261 5
+a265 5
+\begin{tabular}{cc}
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/cant-get-to-dir-stuff/betaARBs.ps,height=4in}}&
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/cant-get-to-dir-stuff/betavxARB.ps,height=4in}}\\
+$\beta$ARBs&$\beta$vxARB\\
+(a)&(b)
+d267 3
+a269 2
+\caption {Adverb Trees}
+\label {prep-trees}
+d273 1
+a273 1
+constraint on the footnode to restrict the number of derivations
+d275 1
+a275 1
+are passed from the footnode to the rootnode, reflecting correctly
+d280 1
+a280 1
+\begin{table}
+d308 1
+a308 6
+The one tree in the grammar that has a complex adverb phrase,
+$\beta$ARBarbs, is not included in Table \ref{adv-summary}. This tree
+shown in Figure \ref{weird-adv-tree} and is used for two adverb
+phrases that occur sentence initially such as in (\ex{1}).
+
+\begin{figure}[ht]
+d310 5
+a314 3
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/cant-get-to-dir-stuff/betaARBarbs.ps,height=4in}}
+\caption {Complex adverb phrase modifier}
+\label {prep-trees}
+d317 6
+d325 8
+a332 9
+In the English FBLTAG grammar, no traces are posited for wh-adverbs in
+line with the base-generation approach \cite{Ernst84} for various
+positions of adverbs. Since convincing arguments have been made
+against traces for adjuncts of other types (e.g. \cite{Baltin}), and
+since reasons for wanting traces do not seem to apply to adjuncts, we
+make the general assumption in our grammar that adjuncts do not leave
+traces.  Sentence initial wh-adverbs select the same auxiliary tree
+used for other sentence initial adverbs ($\beta$adS) with the feature
+<{\bf +wh}> added on the {\em ad\/} anchor node.
+d334 10
+a343 2
+Under this treatment, the derived tree of the sentence in (\ex{1}) is
+as in \ref{how-did-you-fall}, with no trace.
+d345 1
+a345 1
+\enumsentence{\em How did you fall?\/}
+a347 6
+\begin{figure}[ht]
+\centering
+{\psfig{figure=/mnt/linc/extra/xtag/work/doc/tech-rept/ps/cant-get-to-dir-stuff/how-did-you-fall.ps,height=4.5in}}
+\caption {Derived Tree for {\it How did you fall?}}
+\label {how-did-you-fall}
+\end{figure}
+@

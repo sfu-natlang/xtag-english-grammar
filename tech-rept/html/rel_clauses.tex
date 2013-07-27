@@ -1,0 +1,556 @@
+\chapter{Relative Clauses} 
+\label{rel_clauses} 
+ 
+Relative clauses are NP modifiers, which involve extraction of 
+an argument or an adjunct. The NP head (the 
+portion of the NP being modified by the relative clause) is 
+not directly related to the extracted element. 
+For example in (\ref{ex:465}), {\it the person} is the head NP 
+and is modified by the relative clause {\it whose mother $\epsilon$ likes Chris}. {\em The person} is not interpreted as the subject of the 
+relative clause which is missing an overt subject. In other cases, such 
+as (\ref{ex:466}), the relationship between the head NP {\em export exhibitions} 
+may seem to be more direct but even there we assume that there are two 
+independent relationships: one between the entire relative clause 
+and the NP it modifies, and another between the extracted element 
+and its trace. The extracted element may be an overt {\em wh}-phrase 
+as in (\ref{ex:465}) or a covert element as in (\ref{ex:466}). 
+ 
+\beginsentences
+\sitem{the person whose mother likes Chris}\label{ex:465} 
+\sitem{export exhibitions that included high-tech items}\label{ex:466} 
+\endsentences
+
+ 
+Relative clauses are represented in the English XTAG grammar by auxiliary trees 
+that adjoin to NP's. These trees are anchored by the verb in the clause and 
+appear in the appropriate tree families for the various verb 
+subcategorizations. Within a tree family there will be groups of relative 
+clause trees based on the declarative tree and each passive tree. Within each 
+of these groups, there is a separate relative clause tree corresponding to each 
+possible argument that can be extracted from the clause. There is 
+no  relationship between the extracted position and the head NP. 
+The relationship between the relative clause and the head NP is treated 
+as a semantic relationship which will be provided by any reasonable 
+compositional theory. The relationship between the extracted element 
+(which can be covert) is captured by co-indexing the 
+{\bf $<$trace$>$} features of the extracted NP and the NP$_{w}$ node in the 
+relative clause tree. If for example, it is {\bf NP$_{0}$} that is extracted, 
+we have the following feature equations:\\ 
+{\bf NP$_{w}$.t:$\langle$ trace $\rangle =$NP$_{0}$.t:$\langle$ trace $\rangle$}\\ 
+{\bf NP$_{w}$.t:$\langle$ case $\rangle =$NP$_{0}$.t:$\langle$ case $\rangle$}\\ 
+{\bf NP$_{w}$.t:$\langle$ agr $\rangle =$NP$_{0}$.t:$\langle$ agr $\rangle$} 
+\footnote{ No adjunct traces are represented in the XTAG analysis of adjunct extraction. Relative clauses on adjuncts do not have traces and consequently feature equations of the kind shown here are not present.} 
+ 
+Representative examples from the transitive tree family 
+are shown with a relevant subset of their features in 
+Figures~\ref{trans-rel-clause-trees}(a) and \ref{trans-rel-clause-trees}(b). 
+Figure~\ref{trans-rel-clause-trees}(a) involves a relative clause with a 
+covert extracted element, while figure~\ref{trans-rel-clause-trees}(b) 
+involves a relative clause with an overt {\em wh}-phrase.\footnote{ The convention followed in naming relative clause trees is outlined in Appendix~\ref{tree-naming}.} 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\begin{tabular}{cc} 
+\htmladdimg{ps/rel_clauses-files/NbetaNc1nx0Vnx1.ps.gif}& 
+\htmladdimg{ps/rel_clauses-files/NbetaN0nx0Vnx1.ps.gif}\\ 
+(a)&(b) 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Relative clause trees in the transitive tree family: $\beta$Nc1nx0Vnx1 (a) and $\beta$N0nx0Vnx1 (b) <p> </dl> \end{rawhtml}
+\label{trans-rel-clause-trees} 
+\label{2;16,1} 
+\label{2;15,1} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+The above analysis is essentially identical to the GB analysis of 
+relative clauses. One aspect of its implementation is that 
+an covert {\bf $+<$wh$>$} NP and a covert Comp have to be introduced. 
+See  (\ref{ex:467}) and (\ref{ex:468}) for example. 
+ 
+\beginsentences
+\sitem{export exhibitions [ [$_{NP_{w}}$$\epsilon$]$_{i}$ [ that [ $\epsilon$$_{i}$ included high-tech items]]]}\label{ex:467} 
+\sitem{the export exhibition [ [$_{NP_{w}}$$\epsilon$]$_{i}$ [ $\epsilon$$_{C}$ [Muriel planned  $\epsilon$$_{i}$]]]}\label{ex:468} 
+\endsentences
+
+ 
+The lexicalized nature of XTAG makes it problematic to have trees headed by 
+null strings. Of the two null trees, NP$_{w}$ and Comp, that we could postulate, 
+the former is definitely more undesirable because it would lead to 
+massive overgeneration, as can be seen in (\ref{ex:469}) and (\ref{ex:470}). 
+ 
+\beginsentences
+\sitem{* [$_{NP_{w}}$$\epsilon$] did John eat the apple? (as a {\em wh}-question)}\label{ex:469} 
+\sitem{* I wonder [[$_{NP_{w}}$$\epsilon$] Mary likes John](as an indirect question)}\label{ex:470} 
+\endsentences
+
+ 
+The presence of an initial headed by a null Comp does not lead to 
+problems of overgeneration because relative clauses are the only 
+environment with a Comp substitution node. \footnote{Complementizers in clausal complementation are introduced by adjunction. See section \ref{comp-distr}.} 
+ 
+Consequently. our treatment of relative clauses has different 
+trees to handle relative clauses with an overt extracted {\em wh}-NP 
+and relative clauses with a covert extracted {\em wh}-NP. Relative 
+clauses with an overt extracted {\em wh}-NP involve substitution 
+of a $+${\bf $<$wh$>$} NP into the NP$_{w}$ node 
+\footnote{The feature equation used is {\bf NP$_{w}$.t:$<$wh$> = +$}. Examples of NPs that could substitute under NP$_{w}$ are {\em whose mother}, {\em who}, {\em whom}, and also {\em which} but not {\em when} and {\em where} which are treated as exhaustive $+${\em wh} PPs. } 
+and have a Comp node headed 
+by $\epsilon$$_{C}$ built in. Relative clauses with a covert extracted 
+{\em wh}-NP have a NP$_{w}$ node headed by $\epsilon$$_{w}$ built in and 
+involve substitution into the Comp node. The Comp node that is introduced 
+by substitution can be the $\epsilon$$_{C}$ (null complementizer), {\em that}, 
+and {\em for}. 
+ 
+For example, the tree shown in 
+Figure~\ref{trans-rel-clause-trees}(b) is used for the relative 
+clauses shown in sentences (\ref{ex:471})-(\ref{ex:472}), while the tree shown 
+in Figure~\ref{trans-rel-clause-trees}(a) is used for the relative 
+clauses in sentences (\ref{ex:473})-(\ref{ex:476}). 
+ 
+ 
+\beginsentences
+\sitem{the man who Muriel likes}\label{ex:471} 
+\sitem{the man whose mother Muriel likes}\label{ex:472} 
+\endsentences
+
+%\enumsentence{what Muriel likes} 
+\beginsentences
+\sitem{the man Muriel likes}\label{ex:473} 
+\sitem{the book for Muriel to read}\label{ex:474} 
+\sitem{the man that Muriel likes}\label{ex:475} 
+\sitem{the book Muriel is reading}\label{ex:476} 
+\endsentences
+
+ 
+Cases of PP pied-piping (cf. \ref{ex:477}) are handled in a similar fashion 
+ by building in a PP$_{w}$ node. 
+\beginsentences
+\sitem{the demon by whom Muriel was chased}\label{ex:477} 
+\endsentences
+
+See the tree in Figure~\ref{trans-rel-clause-trees2}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\begin{tabular}{cc} 
+\centerline{\htmladdimg{ps/rel_clauses-files/NbetaNpxnx0Vnx1.ps.gif}} 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Adjunct relative clause tree with PP-pied-piping in the transitive tree family: $\beta$Npxnx0Vnx1 <p> </dl> \end{rawhtml}
+\label{trans-rel-clause-trees2} 
+\label{2;Npxnx0Vnx1} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\section{Complementizers and clauses} 
+The co-occurrence constraints that exist between various Comps 
+and the clause type of the clause they occur with are 
+implemented through combinations of different 
+clause types using the {\bf $<$mode$>$} feature, the {\bf $<$select-mode$>$} 
+feature, and the {\bf $<$rel-pron$>$} feature. 
+ 
+Clauses are specified for the {\bf $<$mode$>$} feature which indicates 
+the clause type of that clause. Possible values for the {\bf $<$mode$>$} 
+feature are {\bf ind, inf, ppart, ger} etc. 
+ 
+Comps are lexically specified for a feature named {\bf $<$select-mode$>$}. 
+In addition, the {\bf $<$select-mode$>$} feature of the Comp is 
+equated with the  {\bf $<$mode$>$} feature of its complement S by the following equation:\\ 
+{\bf S$_{r}$.t:$\langle$mode$\rangle =$ Comp.t:$\langle$select-mode$\rangle$} 
+ 
+The lexical specifications of the Comps are shown below: 
+\begin{itemize} 
+\item $\epsilon$$_{C}$, {\bf Comp.t:$\langle$select-mode$\rangle =$ind/inf/ger/ppart} 
+\item {\em that}, {\bf Comp.t:$\langle$select-mode$\rangle =$ind} 
+\item {\em for}, {\bf Comp.t:$\langle$select-mode$\rangle =$inf} 
+\end{itemize} 
+ 
+The following examples display the co-occurence constraints which 
+the {\bf $<$select-mode$>$} specifications assigned above implement. 
+ 
+For $\epsilon$$_{C}$: 
+\beginsentences
+\sitem{the book Muriel likes ({\bf S.t:$<$mode$> =$ ind})}\label{ex:478} 
+\sitem{a book to like ({\bf S.t:$<$mode$> =$ inf})}\label{ex:479} 
+\sitem{the girl reading the book ({\bf S.t:$<$mode$> =$ ger})}\label{ex:480} 
+\sitem{the book read by Muriel ({\bf S.t:$<$mode$> =$ ppart})}\label{ex:481} 
+\endsentences
+
+ 
+For {\em for}: 
+\beginsentences
+\sitem{*the book for Muriel likes ({\bf S.t:$<$mode$> =$ ind})}\label{ex:482} 
+\sitem{a book for Mary to like ({\bf S.t:$<$mode$> =$ inf})}\label{ex:483} 
+\sitem{*the girl for reading the book ({\bf S.t:$<$mode$> =$ ger})}\label{ex:484} 
+\sitem{*the book for read by Muriel ({\bf S.t:$<$mode$> =$ ppart})}\label{ex:485} 
+\endsentences
+
+ 
+For {\em that}: 
+\beginsentences
+\sitem{the book that Muriel likes ({\bf S.t:$<$mode$> =$ ind})}\label{ex:486} 
+\sitem{*a book that (Muriel) to like ({\bf S.t:$<$mode$> =$ inf})}\label{ex:487} 
+\sitem{*the girl that reading the book ({\bf S.t:$<$mode$> =$ ger})}\label{ex:488} 
+\sitem{*the book that read by Muriel ({\bf S.t:$<$mode$> =$ ppart})}\label{ex:489} 
+\endsentences
+
+ 
+Relative clause trees that have substitution of {\bf NP$_{w}$} have 
+the following feature equations:\\ 
+{\bf S$_{r}$.t:$\langle$mode$\rangle =$ NP$_{w}$.t:$\langle$select-mode$\rangle$}\\ 
+{\bf NP$_{w}$.t:$\langle$select-mode$\rangle =$ind} 
+ 
+The examples that follow are intended to provide the rationale for 
+the above setting of features. 
+\beginsentences
+\sitem{ the boy whose mother chased the cat ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}\label{ex:490} 
+\sitem{ *the boy whose mother to chase the cat ({\bf S$_{r}$.t:$\langle$mode$\rangle = $inf})}\label{ex:491} 
+\sitem{ *the boy whose mother eaten the cake ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ppart})}\label{ex:492} 
+\sitem{ *the boy whose mother chasing the cat ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ ger})}\label{ex:493} 
+\sitem{ the boy [whose mother]$_{i}$ Bill believes $\epsilon$$_{i}$ to chase the cat\\ ({\bf S$_{r}$.t: $\langle$mode$\rangle =$ind})}\label{ex:494} 
+\endsentences
+
+ 
+The feature equations that appear in trees which have substitution of 
+{\bf PP$_{w}$} are:\\ 
+{\bf S$_{r}$.t:$\langle$mode$\rangle =$ PP$_{w}$.t:$\langle$select-mode$\rangle$}\\ 
+{\bf PP$_{w}$.t:$\langle$mode$\rangle =$ind/inf} \footnote{As is the case for {\bf NP$_{w}$} substitution, any  $+${\bf wh}-PP can substitute under PP$_{w}$. This is implemented by the following equation:\\ {\bf PP$_{w}$.t:$\langle$wh$\rangle = +$}  Not all cases of pied-piping involve substitution of {\bf PP$_{w}$}. In some cases, the P may be built in. In cases where part of the pied-piped PP is part of the anchor, it continues to function as an anchor even after pied-piping i.e. the P node and the {\bf NP$_{w}$} nodes are represented separately. } 
+ 
+Examples that justify the above feature setting follow. 
+\beginsentences
+\sitem{ the person [by whom] this machine was invented ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ind})}\label{ex:495} 
+\sitem{ a baker [in whom]$_{i}$ PRO to trust $\epsilon$$_{i}$ ({\bf S$_{r}$.t:$\langle$mode$\rangle =$ inf})}\label{ex:496} 
+\sitem{ *the fork [with which] (Geoffrey) eaten the pudding ({\bf S$_{r}$.t:$\langle$ mode$\rangle =$ppart})}\label{ex:497} 
+\sitem{ *the person [by whom] (this machine) inventing ({\bf S$_{r}$.t:$\langle$mode $\rangle =$ger})}\label{ex:498} 
+\endsentences
+
+ 
+\subsection{Further constraints on the null Comp $\epsilon$$_{C}$} 
+There are additional constraints on where the null Comp $\epsilon$$_{C}$ 
+can occur. The null Comp is not permitted in cases of subject 
+extraction unless there is an intervening clause or or 
+the relative clause is a reduced relative ({\bf mode = ppart/ger}). 
+This can be seen in (\ref{ex:499}-\ref{ex:502}). 
+ 
+\beginsentences
+\sitem{ *the toy [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ $\epsilon$$_{i}$ likes Dafna]]]}\label{ex:499} 
+\sitem{ the toy [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ Fred thinks [ $\epsilon$$_{i}$ likes Dafna]]]}\label{ex:500} 
+\sitem{ the boy [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ $\epsilon$$_{i}$ eating the guava]]]}\label{ex:501} 
+\sitem{ the guava [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ $\epsilon$$_{i}$ eaten by the boy]]]}\label{ex:502} 
+\endsentences
+
+ 
+To model this paradigm, the feature {\bf $\langle$rel-pron$\rangle$} is used in 
+conjunction with the following equations: 
+ 
+\begin{itemize} 
+\item {\bf S$_{r}$.t:$\langle$rel-pron$\rangle =$ Comp.t:$\langle$rel-pron$\rangle$} 
+\item {\bf S$_{r}$.b:$\langle$rel-pron$\rangle =$ S$_{r}$.b:$\langle$mode$\rangle$} 
+\item {\bf Comp.b:$\langle$rel-pron$\rangle =$ppart/ger/adj-clause} 
+(for $\epsilon$$_{C}$) 
+\end{itemize} 
+ 
+The full set of the equations shown above is only present in Comp 
+substitution trees involving subject extraction. So (\ref{ex:503}) will 
+not be ruled out. 
+ 
+\beginsentences
+\sitem{ the toy [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ Dafna likes $\epsilon$$_{i}$ ]]]}\label{ex:503} 
+\endsentences
+
+ 
+The feature mismatch induced by the above equations 
+is not remedied by adjunction of just any S-adjunct 
+because all other S-adjuncts 
+are transparent to the {\bf $\langle$rel-pron$\rangle$} feature 
+because of the following equation:\\ 
+{\bf S$_{m}$.b:$\langle$rel-pron$\rangle =$ S$_{f}$.t:$\langle$rel-pron$\rangle$} 
+ 
+%Chapter~\ref{scomps-section}. 
+ 
+\section{Reduced Relatives} 
+Reduced relatives are permitted only in cases of subject-extraction. 
+Past participial reduced relatives are only permitted on passive 
+clauses. 
+See (\ref{ex:504}-\ref{ex:511}). 
+ 
+\beginsentences
+\sitem{ the toy [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ $\epsilon$$_{i}$ playing the banjo]]] }\label{ex:504} 
+\sitem{ *the instrument [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ Amis playing $\epsilon$$_{i}$ ]]] }\label{ex:505} 
+\sitem{ *the day [$\epsilon$$_{w}$ [$\epsilon$$_{C}$ [ Amis playing the banjo]]] }\label{ex:506} 
+\sitem{ the apple [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ $\epsilon$$_{i}$ eaten by Dafna]]] }\label{ex:507} 
+\sitem{ *the child [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ the apple eaten by $\epsilon$$_{i}$ ]]] }\label{ex:508} 
+\sitem{ *the day [$\epsilon$$_{w}$ [$\epsilon$$_{C}$ [ Amis eaten the apple]]] }\label{ex:509} 
+\sitem{ *the apple [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ Dafna eaten $\epsilon$$_{i}$ ]]] }\label{ex:510} 
+\sitem{ *the child [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [ $\epsilon$$_{i}$ eaten the apple ]]] }\label{ex:511} 
+\endsentences
+
+ 
+These restrictions are built into the {\bf $<$mode$>$} specifications 
+of {\bf S.t}. So non-passive cases of subject extraction have the following 
+feature equation:\\ 
+{\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/inf} 
+ 
+Passive cases of subject extraction have the following 
+feature equation:\\ 
+{\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/ger/ppart/inf} 
+ 
+Finally, all cases of non-subject extraction have the following 
+feature equation:\\ 
+{\bf S$_{r}$.t:$\langle$mode$\rangle =$ ind/inf}\\ 
+ 
+\subsection{Restrictive vs. Non-restrictive relatives} 
+ 
+The English XTAG grammar does not contain any  syntactic distinction between 
+restrictive and non-restrictive relatives because we believe this to 
+be a semantic and/or pragmatic difference. 
+ 
+\section{External syntax} 
+A relative clause can combine with the NP it modifies in at least 
+the following two ways: 
+ 
+\beginsentences
+\sitem{\ [the [toy [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [Dafna likes $\epsilon$$_{i}$ ]]]]] }\label{ex:512} 
+\endsentences
+
+\label{n-attach-ex} 
+\beginsentences
+\sitem{\ [[the toy] [$\epsilon$$_{i}$ [$\epsilon$$_{C}$ [Dafna likes $\epsilon$$_{i}$ ]]]] }\label{ex:513} 
+\endsentences
+
+\label{np-attach-ex} 
+ 
+Based on cases like (\ref{ex:514}) and (\ref{ex:515}), which are problematic for the 
+structure in (\ref{n-attach-ex}), the structure in (\ref{np-attach-ex}) is adopted. 
+ 
+\beginsentences
+\sitem{ [[the man and the woman] [who met on the bus]]}\label{ex:514} 
+\sitem{ [[the man and the woman] [who like each other]]}\label{ex:515} 
+\endsentences
+
+ 
+As it stands, the RC analysis sketched so far will combine in two 
+ways with the Determiner tree shown in Figure~(\ref{trans-rel-clause-trees3}), 
+\footnote{The determiner tree shown has the {\bf $<$rel-clause$>$} feature built in. The RC analysis would give two parses in the absence of this feature.} 
+giving us both the possiblities shown in (\ref{n-attach-ex}) and (\ref{np-attach-ex}). In order 
+to block the structure exemplified in (\ref{n-attach-ex}), the feature 
+{\bf $\langle$rel-clause$\rangle$} is used in combination with the following 
+equations. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\begin{tabular}{cc} 
+\centerline{\htmladdimg{ps/rel_clauses-files/NbetaDnx.ps.gif}} 
+\end{tabular} 
+\label{trans-rel-clause-trees3} 
+\begin{rawhtml} <dl> <dt>{Determiner tree with  $<$rel-clause$>$ feature: $\beta$Dnx <p> </dl> \end{rawhtml}
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+ 
+On the RC:\\ 
+{\bf NP$_{r}$.b:$\langle$rel-clause$\rangle = +$} 
+ 
+On the Determiner tree:\\ 
+{\bf NP$_{f}$.t:$\langle$rel-clause$\rangle = -$} 
+ 
+Together, these equations block 
+introduction of the determiner above the relative clause. 
+ 
+ 
+\section{Other Issues} 
+ 
+\subsection{Interaction with adjoined Comps} 
+The XTAG analysis now has two different ways of introducing a 
+complementizer like {\em that} or {\em for}, depending upon whether 
+it occurs in a relative clause or in sentential complementation. 
+Relative clause complementizers substitute in (using the 
+tree $\alpha$Comp), while sentential complementizers adjoin in 
+(using the tree $\beta$COMPs). Cases like (\ref{ex:516}) where 
+both kinds of complementizers illicitly occur together are blocked. 
+ 
+\beginsentences
+\sitem{*the book [$\epsilon$$_{w_{i}}$ [that [that [Muriel wrote $\epsilon$$_{i}$]]]]}\label{ex:516} 
+\endsentences
+
+ 
+This is accomplished by setting the {\bf S$_{r}$.t:$<$comp$>$} feature 
+in the relative clause tree to {\bf nil}. The {\bf S$_{r}$.t:$<$comp$>$} 
+feature of the auxiliary tree that introduces 
+(the sentential complementation) {\em that} is set to 
+{\bf that}. This leads to a feature clash ruling out (\ref{ex:516}). On the 
+other hand, if a sentential complement taking verb is adjoined 
+in at S$_{r}$, this feature clash goes away (cf. \ref{ex:517}). 
+ 
+\beginsentences
+\sitem{the book [$\epsilon$$_{w_{i}}$ [that Beth thinks [that [Muriel wrote $\epsilon$$_{i}$]]]]}\label{ex:517} 
+\endsentences
+
+ 
+ 
+ 
+\subsection{Adjunction on PRO} 
+Adjunction on PRO, which would yield the ungrammatical (\ref{ex:518}) is blocked. 
+ 
+\beginsentences
+\sitem{*I want [[PRO [who Muriel likes] to read a book]].}\label{ex:518} 
+\endsentences
+
+This is done by specifying the {\bf $<$case$>$} feature of {\bf NP$_{f}$} to be 
+{\bf nom/acc}. The {\bf $<$case$>$} feature of PRO is {\bf null}. This 
+leads to a feature clash and blocks adjunction of relative clauses on to 
+PRO. 
+ 
+\subsection{Adjunct relative clauses} 
+Two types of trees to handle adjunct relative clauses exist in the 
+XTAG grammar: one in which there is {\bf PP$_{w}$} substitution with 
+a null {\bf Comp} built in and one in which there is a null {\bf NP$_{w}$} 
+built in and a {\bf Comp} substitutes in. There is no {\bf NP$_{w}$} 
+substitution tree with a null {\bf Comp} built in. This is because of 
+the contrast between (\ref{ex:519}) and (\ref{ex:520}). 
+\beginsentences
+\sitem{the day [[on whose predecessor] [$\epsilon$$_{C}$ [Muriel left]]]}\label{ex:519} 
+\sitem{*the day [[whose predecessor] [$\epsilon$$_{C}$ [Muriel left]]]}\label{ex:520} 
+\endsentences
+
+In general, adjunct relatives are not possible with an overt {\bf NP$_{w}$}. 
+We do not consider (\ref{ex:521}) and (\ref{ex:522}) to be counterexamples to 
+the above statements because we consider {\em where} and {\em when} 
+to be exhaustive {\bf PP}s that head a {\bf PP} initial tree. 
+ 
+\beginsentences
+\sitem{the place [where [$\epsilon$$_{C}$ [Muriel wrote her first book]]]}\label{ex:521} 
+\sitem{the time [when [$\epsilon$$_{C}$ [Muriel lived in Bryn Mawr]]]}\label{ex:522} 
+\endsentences
+
+ 
+\subsection{ECM} 
+Cases where {\em for} assigns exceptional case (cf. \ref{ex:523}, \ref{ex:524}) are handled. 
+ 
+\beginsentences
+\sitem{a book [$\epsilon$$_{w_{i}}$ [for [Muriel to read $\epsilon$$_{i}$]]]}\label{ex:523} 
+\sitem{the time [$\epsilon$$_{w_{i}}$ [for [Muriel to leave Haverford]]]}\label{ex:524} 
+\endsentences
+
+ 
+The assignment of case by {\em for} is implemented by a combination of the 
+following equations.\\ 
+{\bf Comp.t:$\langle$assign-case$\rangle =$acc}\\ 
+{\bf S$_{r}$.t:$\langle$assign-case$\rangle =$Comp.t:$\langle$assign-case$\rangle$}\\ 
+{\bf S$_{r}$.b:$\langle$assign-case$\rangle =$NP$_{0}$.t:$\langle$case$\rangle$} 
+ 
+\section{Cases not handled} 
+\subsection{Partial treatment of free-relatives} 
+Free relatives are only partially handled. All free relatives on non-subject 
+positions and some free relatives on subject positions 
+are handled. The structure assigned 
+to free relatives treats the extracted {\em wh}-NP as the head NP of 
+the relative clause. The remaining relative clause modifies this 
+extracted {\em wh}-NP (cf. \ref{ex:525}-\ref{ex:527}). 
+ 
+\beginsentences
+\sitem{what(ever) [$\epsilon$$_{w_{i}}$ [$\epsilon$$_{C}$ [Mary likes $\epsilon$$_{i}$]]]}\label{ex:525} 
+\sitem{where(ever) [$\epsilon$$_{w}$ [$\epsilon$$_{C}$ [Mary lives]]]}\label{ex:526} 
+\sitem{who(ever) [$\epsilon$$_{w_{i}}$ [$\epsilon$$_{C}$ [Muriel thinks [$\epsilon$$_{i}$ likes Mary]]]]}\label{ex:527} 
+\endsentences
+
+ 
+However, simple subject extractions without further emebedding are not 
+handled (cf. \ref{ex:528}). 
+ 
+\beginsentences
+\sitem{who(ever) [$\epsilon$$_{w_{i}}$ [$\epsilon$$_{C}$ [$\epsilon$$_{i}$ likes Bill]]]}\label{ex:528} 
+\endsentences
+
+This is because (\ref{ex:527}) is treated exactly like the ungrammatical (\ref{ex:529}). 
+\beginsentences
+\sitem{*the person [ $\epsilon$$_{w_{i}}$ [$\epsilon$$_{C}$ [$\epsilon$$_{i}$ likes Bill]]]}\label{ex:529} 
+\endsentences
+
+ 
+ 
+\subsection{Adjunct P-stranding} 
+The following cases of adjunct preposition stranding are not handled 
+(cf. \ref{ex:530}, \ref{ex:531}). 
+ 
+\beginsentences
+\sitem{the pen Muriel wrote this letter with}\label{ex:530} 
+\sitem{the street Muriel lives on}\label{ex:531} 
+\endsentences
+
+ 
+Adjuncts are not built into elementary trees in XTAG. So there is no 
+clean way to represent adjunct preposition stranding. A better 
+solution is, probably , available if we make use of multi-component 
+adjunction. 
+ 
+\subsection{Overgeneration} 
+The following ungrammatical sentences are currently being 
+accepted by the XTAG grammar. This is because no clean 
+and conceptually attractive way of ruling them out 
+is obvious to us. 
+ 
+\subsubsection{{\em how} as {\em wh}-NP} 
+In standard American English, {\em how} is not acceptable as a 
+relative pronoun (cf. \ref{ex:532}). 
+ 
+\beginsentences
+\sitem{*the way [how [$\epsilon$$_{C}$ [PRO to solve this problem]]]}\label{ex:532} 
+\endsentences
+
+ 
+However, (\ref{ex:532}) is accepted by the current grammar. 
+The only way to rule (\ref{ex:532}) out would be to introduce a special feature 
+devoted to this purpose. This is unappealing. Further, there exist 
+speech registers/dialects of English, where (\ref{ex:532}) is acceptable. 
+ 
+\subsubsection{{\em for}-trace effects} 
+(\ref{ex:533}) is ungrammatical, being an instance of a violation of the 
+{\em for}-trace filter of early transformational grammar. 
+ 
+\beginsentences
+\sitem{the person [$\epsilon$$_{w_{i}}$ [for [$\epsilon$$_{i}$ to read the book]]]}\label{ex:533} 
+\endsentences
+
+ 
+The XTAG grammar currently accepts (\ref{ex:533}).\footnote{It may be of some interest that (\ref{ex:533}) is acceptable in certain dialects of Belfast English.} 
+ 
+ 
+\subsubsection{Internal head constraint} 
+Relative clauses in English (and in an overwhelming number of languages) 
+obey a `no internal head' constraint. This constraint is exemplified in 
+the contrast between (\ref{ex:534}) and (\ref{ex:535}). 
+ 
+\beginsentences
+\sitem{the person [who$_{i}$ [$\epsilon$$_{C}$ Muriel likes $\epsilon$$_{i}$]]}\label{ex:534} 
+\sitem{*the person [[which person]$_{i}$ [$\epsilon$$_{C}$ Muriel likes $\epsilon$$_{i}$]]}\label{ex:535} 
+\endsentences
+
+ 
+We know of no good way to rule (\ref{ex:535}) out, while still ruling (\ref{ex:536}) in. 
+\beginsentences
+\sitem{the person [[whose mother]$_{i}$ [$\epsilon$$_{C}$ Muriel likes $\epsilon$$_{i}$]]}\label{ex:536} 
+\endsentences
+
+ 
+Dayal (1996) suggests that `full' NPs such as {\em which person} and 
+{\em whose mother} are R-expressions while {\em who} and {\em whose} 
+are pronouns. R-expressions, unlike pronouns, are subject to Condition C. 
+(\ref{ex:534}) is, then, ruled out as a violation of Condition C since {\em the person} and {\em which person} are co-indexed and {\em the person} 
+c-commands {\em which person}. If we accept Dayal's argument, we 
+have a principled reason for allowing overgeneration of relative clauses 
+that violate the internal head constraint, the reason being that 
+the XTAG grammar does generate binding theory violations. 
+ 
+\subsubsection{Overt Comp constraint on stacked relatives} 
+Stacked relatives of the kind in (\ref{ex:537}) are handled. 
+ 
+\beginsentences
+\sitem{ [[the book [that Bill likes]] [which Mary wrote]]}\label{ex:537} 
+\endsentences
+
+ 
+There is a constraint on stacked relatives: all but the relative clause 
+closest to the head-NP must have either an overt {\bf Comp} or 
+an overt {\bf NP$_{w}$}. Thus (\ref{ex:538}) is ungrammatical. 
+ 
+\beginsentences
+\sitem{*[[the book [that Bill likes]] [Mary wrote]]}\label{ex:538} 
+\endsentences
+
+ 
+Again, no good way of handling this constraint is known to us 
+currently. 

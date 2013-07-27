@@ -1,0 +1,943 @@
+head	1.7;
+access
+	egedi
+	srini
+	cdoran
+	beth
+	skulick
+	anoop
+	elhuang
+	heatherm
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.7
+date	2001.02.24.00.11.43;	author rjprasad;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2001.02.22.02.56.55;	author rjprasad;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2000.11.13.05.48.13;	author rjprasad;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	98.08.29.20.06.12;	author anoop;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	98.08.29.20.03.17;	author anoop;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	98.08.27.21.31.20;	author anoop;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.01.24.20.14.57;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Appendix on Evaluation and Results.
+The initial version is the `almost final' version.
+@
+
+
+1.7
+log
+@minor editing
+@
+text
+@\chapter{Evaluation and Results}
+\label{evaluation}
+
+In this appendix we describe various evaluations done of the XTAG
+grammar. Some of these evaluations were done on an earlier version of
+the XTAG grammar (the 1995 release), while others were done more
+recently. We will try to indicate in each section which version was
+used. 
+
+\section{Parsing Corpora}
+
+In the XTAG project, we have used corpus analysis in two main ways: (1) to
+identify gaps in the grammar and (2) to measure the performance of the
+English grammar on a given genre.
+
+The first type of evaluation involves performing detailed error
+analysis on the sentences rejected by the parser, and we have done
+this several times on WSJ and Brown data.
+%Lifted directly from TAG+ paper
+Based on the results of such analysis, we prioritize upcoming grammar
+development efforts. The results of an error analysis done in 1994
+\cite{xtag-notes} are shown in Table \ref{errors94}.  
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|l|l|} \hline
+Rank & No of errors & Category of error \\ \hline
+\#1  & 11  &    Parentheticals and appositives \\ \hline
+\#2  & 8     &  Time NP \\ \hline
+\#3  & 8  &     Missing subcat \\ \hline
+\#4  & 7 &      Multi-word construction \\ \hline
+\#5  & 6 &       Ellipsis \\ \hline
+\#6  & 6  &      Not sentences \\ \hline
+\#7  & 3  &      Relative clause with no gap \\ \hline
+\#8  & 2  &      Funny coordination \\ \hline
+\#9  & 2  &      VP coordination \\ \hline
+\#10  & 2  &      Inverted predication \\ \hline
+\#11  & 2  &      Who knows \\ \hline
+\#12  & 1  &      Missing entry \\ \hline
+\#13  & 1   &     Comparative? \\ \hline
+\#14  & 1    &    Bare infinitive \\ \hline
+\end{tabular}
+\caption{Results of Corpus Based Error Analysis with XTAG-95}
+\label{errors94}
+\end{table}
+
+The table does not show errors in parsing due to mistakes made by the POS
+tagger which contributed the largest number of errors: 32. Consequent to
+this error analysis, we have added a treatment of punctuation to handle
+\#1, an analysis of time NPs (\#2), a large number of multi-word
+prepositions (part of \#3), gapless relative clauses (\#7), bare
+infinitives (\#14) and have added the missing subcategorization (\#3) and
+missing lexical entry (\#12).  A more recent evaluation was done on a
+corpus of weather reports \cite{c.97:_maint_xtag}. The weather reports were
+provided to us by CoGenTex.\footnote{%
+%
+Thanks to the Contrastive Syntax Project, Linguistics Department of the
+University of Montreal, for the use of their weather synopsis corpus.%
+%
+} The sentences in this kind of corpus tend to be quite long (an average of
+20 tokens/sentence) and complex. The examples given below are illustrative
+of the type of sentences and terminology in this domain.
+
+\enumsentence{[The warm air mass] affecting [southwestern Quebec] for
+[the past few days] is still moving slowly eastwards and will make room
+for [a much colder air mass] overnight and Wednesday.}
+\enumsentence{Behind [this area] [a moderate flow] will cause [an inflow]
+of [milder air] in [southwestern Quebec] producing temperatures slightly
+above normal on Sunday.}
+
+The performance evaluation showed that the weather reports contained
+several relative clauses that caused problems for the grammar and also that
+the parser was unable to handle some of the more complex longer
+sentences. The problematic cases involved two kinds of relative clauses
+(roughly 40\%) which were not accounted for by the grammar developer at the
+time. The first kind contained examples like {\em A frontal system
+approaching from the west} which included an {\em -ing} form in the
+relative clause predicate, and the other contained examples like {\it The
+disturbance south of Nova Scotia early this morning} which had a
+directional noun phrase as the predicate. As a result of these shortcomings
+and also due to the long and complex sentences in this test set, we could
+parse only about 20\% of the test set (10 out of 48 sentences).
+
+The current version of {\sc XTAG} contains an overhaul of the relative
+clause analysis, which has been updated to extend the coverage of the
+grammar. An evaluation of the current grammar was done in
+\cite{prasadandsarkar00}, which shows a much better performance of the {\sc
+XTAG} parser on the sentences in the weather domain. Of the 48 sentences
+in the corpus, we were able to parse 43 sentences (89.6\%). A comprehensive
+breakdown of the errors is described in
+Table~\ref{tab:weather_analysis}.\footnote{%
+%
+A description of the error types is as follows:\\
+{\bf R1:} Lexical item does not get the right part of speech and therefore
+does not select the correct trees.\\
+{\bf R2:} Lexical item does not select the necessary tree or family.\\
+{\bf R3:} Missing analysis for VP coordination in the current grammar.%
+%
+}
+%
+\footnote{We are in the process of extending the parser to handle VP
+coordination (\#9) (See Chapter~\ref{conjunction} on recent work to handle
+VP and other predicative coordination).%
+%
+}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|c|c|} \hline \hline
+Error Class & No. & \% \\ \hline \hline
+POS Tag (R1) & 1 & 2.08\% \\ \hline
+Missing Tree (R2) & 1 & 2.08\% \\ \hline
+No VP coordination (R3) & 3 & 6.25\% \\ \hline
+{\bf Total} & {\bf 5} & {\bf 10.4\%} \\ \hline
+\end{tabular}
+\caption{\label{tab:weather_analysis} Results of Corpus-Based Error
+Analysis with XTAG-98}
+\end{table}
+
+We find that this corpus-based method of error analysis is very useful in
+focusing grammar development in a productive direction. Furthermore, to
+ensure that we are not losing coverage of certain phenomena as we extend
+the grammar, we have a benchmark set of grammatical and ungrammatical
+sentences from this technical report. We parse these sentences periodically
+to ensure that in adding new features and constructions to the grammar, we
+are not blocking previous analyses.  There are approximately $590$ example
+sentences in this set.
+
+\section{Parsing Test-Suites}
+
+In addition to corpus-based evaluation, we have also run the English
+Grammar on test-suites. Test-suites are intended to be a systematic
+collection of different types of grammatical phenomena and are used to
+track improvements and verify consistency between successive generations of
+grammar development in a system.
+
+\subsection{TSNLP}
+
+In an earlier evaluation of the grammar on test-suites, we used the TSNLP
+(Test Suites Natural Language Processing) English corpus
+\cite{Lehmann96}. This test set contains construction types which include
+complementation, agreement, modification, diathesis, modality, tense and
+aspect, sentence and clause types, coordination, and negation. It contains
+1409 grammatical sentences and phrases and 3036 ungrammatical ones.
+
+\begin{table*}[htb]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Error Class & \% & Example \\ \hline
+POS Tag &  19.7\% & She adds  to/V it , He noises/N him abroad \\ \hline
+Missing lex item & 43.3\% & {\it used} as an auxiliary V, {\it calm NP down} \\ \hline
+Missing tree & 21.2\% & {\it should've}, {\it bet NP NP S}, {\it
+regard NP as Adj} \\ \hline
+Feature clashes & 3\% & {\it My every firm}, {\it All money} \\ \hline
+Rest&12.8\% & {\it approx}, {\it e.g.} \\
+\hline
+\end{tabular}
+\caption{Breakdown of TSNLP Errors}
+\label{tsnlp-table}
+\end{table*} 
+
+%Before parsing the grammatical subset of the TSNLP data, we made a few
+%tokenization changes: we changed contractions from two tokens to one,
+%downcased the first words of sentences, changed a pair of square
+%brackets to parentheses and changed quotes to pairs of opens and
+%closes. 
+There were 42 examples which we judged ungrammatical, and removed from
+the test corpus. These were sentences with conjoined subject pronouns,
+where one or both were accusative, e.g. {\it Her and him succeed.}
+Overall, we parsed 61.4\% of the 1367 remaining sentences and
+phrases. The errors were of various types, broken down in
+Table~\ref{tsnlp-table}. As with the error analysis described above,
+we used this information to help direct our grammar development
+efforts. It also highlighted the fact
+that our grammar is heavily slanted toward American English---our
+grammar did not handle {\it dare} or {\it need} as auxiliary
+verbs\footnote{%
+%
+The current version of the grammar, however, has been extended to handle
+these auxiliaries%
+%
+},
+and there were a number of very British particle constructions,
+e.g. {\it She misses him out}.
+
+\subsection{CSLI LKB}
+
+In a more recent test-suite based evaluation \cite{prasadandsarkar00}, we
+used the CSLI LKB (Linguistic Knowledge Building) test suite
+\cite{copestake99:_lkb_system}. Of the 966 grammatical sentences we were
+unable to parse 26 (2.7\%). A breakdown of the errors is given in
+Table~\ref{tab:CSLI_analysis}):
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|c|c|} \hline \hline
+Error Class & No. & \% \\ \hline \hline
+Missing Lexical Entry & 4 & 0.4\% \\ \hline
+Missing Lexicalized Tree & 4 & 0.4\% \\ \hline
+No analysis for Inverse Predications & 2 & 0.2\% \\ \hline
+No analysis for Ellipsis & 18 & 1.8\% \\ \hline
+Default entry error & 1 & 0.1\% \\ \hline
+{\bf Total} & {\bf 26} & {\bf 2.7\%} \\ \hline
+\end{tabular}
+ \caption{\label{tab:CSLI_analysis} Results of CSLI LKB Test-Suite based Evaluation}
+\end{table}
+
+The analysis for ellipsis and inverse predication has not been added yet in
+our grammar. Of the 387 ungrammatical sentences, 189 did not get any valid
+parses after feature unification. We did not examine the parses obtained
+for the remaining sentences to see if they contained a legitimate ambiguity
+or an error in the grammar.\\
+
+There are several problems with the test-suites as a stand alone metric for
+evaluating wide-coverage grammars like XTAG. Firstly, they are constructed
+by hand to allow for systematic variation only within a particular range of
+grammatical phenomena and, in contrast to the sentences found in
+naturally-occurring corpora, are unlikely to point us towards an increasing
+set of novel constructions. Secondly, in a test-suite, the same lexical
+items are used very often, causing a distribution of words that is unlike
+naturally occurring text~(see \cite{c.97:_maint_xtag} and
+\cite{prasadandsarkar00} for further discussions about the use of
+test-suites for evaluation) and, in addition, can also cause a
+disproportionate amount of grief. For instance, in the TSNLP test-suite,
+{\it used to} appears 33 times and we got all 33 wrong. Thirdly, each
+sentence in a test-suite usually handles a single grammatical phenomena
+and, so, interactions between different phenomena are seldom
+explored. Finally, the XTAG grammar has analyses for syntactic phenomena
+that were not represented in the test suites, such as sentential subjects
+and subordinating clauses, among others. The test-suite evaluations,
+therefore, were useful in highlighting some deficiencies in our grammar,
+but did not provide the same sort of general evaluation as parsing corpus
+data.
+
+\section{Chunking and Dependencies in XTAG Derivations}
+
+We evaluated the XTAG parser for the text chunking
+task~\cite{abney91}. In particular, we compared NP chunks and verb
+group (VG) chunks\footnote{We treat a sequence of verbs and verbal
+  modifiers, including auxiliaries, adverbs, modals as constituting a
+  verb group.}  produced by the XTAG parser with the NP and VG chunks
+from the Penn Treebank~\cite{marcus93}. The test involved $940$
+sentences of length $15$ words or less from sections $17$ to $23$ of
+the Penn Treebank, parsed using the XTAG English grammar. The results
+are given in Table~\ref{chunking-results}.
+
+\begin{table*}[htb]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+& NP Chunking & VG Chunking \\ \hline
+Recall & 82.15\% & 74.51\% \\ \hline
+Precision & 83.94\%  & 76.43\% \\ \hline
+\end{tabular}
+\caption{Text Chunking performance of the XTAG parser}
+\label{chunking-results}
+\end{table*} 
+
+\begin{table*}[htb]
+\centering
+\begin{tabular}{|c|c|c|c|} \hline
+System & Training Size & Recall & Precision  \\ \hline \hline
+Ramshaw \& Marcus & Baseline & 81.9\% & 78.2\% \\ \hline
+Ramshaw \& Marcus & 200,000 & 90.7\% & 90.5\% \\ 
+(without lexical information) & & & \\ \hline 
+Ramshaw \& Marcus & 200,000 & 92.3\% & 91.8\% \\ 
+(with lexical information) & & & \\ \hline \hline
+Supertags & Baseline & 74.0\% & 58.4\% \\ \hline
+Supertags & 200,000 & 93.0\% & 91.8\% \\ \hline
+Supertags & 1,000,000 & 93.8\% & 92.5\% \\ \hline
+\end{tabular}
+\caption{Performance comparison of the transformation based noun
+chunker and the supertag based noun chunker}
+\label{nc-compare}
+\end{table*}
+
+As described earlier, the results cannot be directly compared with
+other results in chunking such as in~\cite{lance&mitch95} since we do
+not train from the Treebank before testing. However, in earlier work,
+text chunking was done using a technique called
+supertagging~\cite{srini97iwpt} (which uses the XTAG English grammar)
+which can be used to train from the Treebank.  The comparative results
+of text chunking between supertagging and other methods of chunking is
+shown in Figure~\ref{nc-compare}.\footnote{It is important to note in
+  this comparison that the supertagger uses lexical information on a
+  per word basis only to pick an initial set of supertags for a given
+  word.}
+
+We also performed experiments to determine the accuracy of the
+derivation structures produced by XTAG on WSJ text, where the
+derivation tree produced after parsing XTAG is interpreted as a
+dependency parse. We took sentences that were $15$ words or less from
+the Penn Treebank~\cite{marcus93}. The sentences were collected from
+sections $17$--$23$ of the Treebank. $9891$ of these sentences were
+given at least one parse by the XTAG system. Since XTAG typically
+produces several derivations for each sentence we simply picked a
+single derivation from the list for this evaluation. Better results
+might be achieved by ranking the output of the parser using the sort
+of approach described in~\cite{srinietal95}.
+
+There were some striking differences in the dependencies implicit in
+the Treebank and those given by XTAG derivations. For instance, often
+a subject NP in the Treebank is linked with the first auxiliary verb
+in the tree, either a modal or a copular verb, whereas in the XTAG
+derivation, the same NP will be linked to the main verb. Also XTAG
+produces some dependencies within an NP, while a large number of words
+in NPs in the Treebank are directly dependent on the verb. To
+normalize for these facts, we took the output of the NP and VG chunker
+described above and accepted as correct any dependencies that were
+completely contained within a single chunk.
+
+For example, for the sentence {\em Borrowed shares on the Amex rose to
+another record}, the XTAG and Treebank chunks are shown below.
+
+\begin{verbatim}
+XTAG chunks:     
+ [Borrowed shares] [on the Amex] [rose] 
+    [to another record] 
+Treebank chunks: 
+ [Borrowed shares on the Amex] [rose] 
+    [to another record] 
+\end{verbatim}
+
+Using these chunks, we can normalize for the fact that in the
+dependencies produced by XTAG {\em borrowed} is dependent on {\em
+shares} (i.e. in the same chunk) while in the Treebank {\em borrowed}
+is directly dependent on the verb {\em rose}. That is to say, we are
+looking at links between \underline{chunks}, not between
+\underline{words}. The dependencies for the sentence are given below.
+
+\begin{verbatim}
+XTAG dependency    Treebank dependency
+
+Borrowed::shares   Borrowed::rose 
+shares::rose       shares::rose 
+on::shares         on::shares 
+the::Amex          the::Amex 
+Amex::on           Amex::on 
+rose::NIL          rose::NIL
+to::rose           to::rose 
+another::record    another::record 
+record::to         record::to 
+\end{verbatim}
+
+After this normalization, testing simply consisted of counting how
+many of the dependency links produced by XTAG matched the Treebank
+dependency links. Due to some tokenization and subsequent alignment
+problems we could only test on $835$ of the original $9891$ parsed
+sentences. There were a total of $6135$ dependency links extracted
+from the Treebank. The XTAG parses also produced $6135$ dependency
+links for the same sentences. Of the dependencies produced by the XTAG
+parser, $5165$ were correct giving us an accuracy of $84.2\%$.
+
+%\section{Performance on various corpora}
+
+%XTAG was used to parse Wall Street Journal (sentences of length $\leq$
+%15 words), IBM manual, and ATIS corpora as a means of evaluating the
+%coverage and correctness of XTAG parses. For this evaluation, a
+%sentence is considered to have parsed if the correct parse is among
+%the parses generated by XTAG. Verifying the presence of the correct
+%parse among the generated parses is done manually at present by random
+%sampling. The results are shown in Table~\ref{results}. 
+
+%\begin{table}[ht]
+%\begin{center}
+%\begin{tabular}{|l|c|c|c|} \hline
+%& \# of & & Av. \# of\\
+%Corpus & Sentences & \% Parsed & Parses/Sent\\ \hline
+
+%WSJ & 18,730 & 41.22 \% & 7.46 \\\hline
+
+%IBM Manual & 2040 & 75.42\% & 6.12\\ \hline
+
+%ATIS & 524 & 88.35\% & 6.0 \\ \hline 
+%\end{tabular}
+%\end{center}
+
+%\caption{Performance of XTAG on various corpora}
+%\label{results}
+%\end{table}
+
+%Performance on the WSJ corpus is lower relative to IBM and ATIS due
+%to the wide-variety of syntactic constructions used. Even grammars
+%induced on the partially bracketed WSJ corpus have fairly low
+%performance (e.g. 57.1\% sentence accuracy for \cite{schabes93}).  
+
+\section{Comparison with IBM}
+
+The evaluation in this section was done with the earlier 1995 release
+of the grammar. This section describes an experiment to measure the
+crossing bracket accuracy of the XTAG-parsed IBM-manual sentences.  In
+this experiment, XTAG parses of 1100 IBM-manual sentences have been
+ranked using certain heuristics. The ranked parses have been
+compared\footnote{We used the parseval program written by Phil Harison
+  (phil@@atc.boeing.com).}  against the bracketing given in the
+Lancaster Treebank of IBM-manual sentences\footnote{The Treebank was
+  obtained through Salim Roukos (roukos@@watson.ibm.com) at IBM.}.
+Table~\ref{ibm-results} shows the results of XTAG obtained in this
+experiment, which used the highest ranked parse for each system. It
+also shows the results of the latest IBM statistical grammar
+(\cite{jelineketal94}) on the same genre of sentences. Only the
+highest-ranked parse of both systems was used for this evaluation.
+Crossing Brackets is the percentage of sentences with no pairs of
+brackets crossing the Treebank bracketing (i.e.  (~(~a~b~)~c~) has a
+crossing bracket measure of one if compared to (~a~(~b~c~)~)~). Recall
+is the ratio of the number of constituents in the XTAG parse to the
+number of constituents in the corresponding Treebank sentence.
+Precision is the ratio of the number of correct constituents to the
+total number of constituents in the XTAG parse.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|c|c|c|c|} \hline 
+System & \# of & Crossing Bracket & Recall & Precision \\
+& sentences & Accuracy & & \\ \hline
+XTAG & 1100 & 81.29\% & 82.34\% & 55.37\% \\ \hline
+IBM Statistical & 1100 & 86.20\% & 86.00\% & 85.00\% \\
+grammar & &  &  &\\ \hline
+\end{tabular}
+
+\vspace{0.1in}
+
+\caption{Performance of XTAG on IBM-manual sentences}
+\label{ibm-results} 
+
+\end{table}
+
+As can be seen from Table~\ref{ibm-results}, the precision figure for
+the XTAG system is considerably lower than that for IBM. For the
+purposes of comparative evaluation against other systems, we had to
+use the same crossing-brackets metric though we believe that the
+crossing-brackets measure is inadequate for evaluating a grammar like
+XTAG. There are two reasons for the inadequacy. First, the parse
+generated by XTAG is much richer in its representation of the internal
+structure of certain phrases than those present in manually created
+treebanks (e.g. IBM: [$_N$ your personal computer], XTAG: [$_{NP}$
+[$_G$ your] [$_N$ [$_N$ personal] [$_N$ computer]]]). This is
+reflected in the number of constituents per sentence, shown in the
+last column of Table~\ref{const-no}.\footnote{We are aware of the fact
+  that increasing the number of constituents also increases the recall
+  percentage. However we believe that this a legitimate gain.}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|c|c|c|c|} \hline
+System & Sent. & \# of & Av. \# of & Av. \# of \\
+& Length & sent & words/sent & Constituents/sent \\ \hline
+XTAG & 1-10 & 654 & 7.45 & 22.03  \\ \cline{2-5}
+& 1-15 & 978 & 9.13 & 30.56 \\ \hline
+IBM Stat. & 1-10 & 447 & 7.50 & 4.60 \\ \cline{2-5}
+Grammar & 1-15 & 883 & 10.30 & 6.40 \\ \hline
+\end{tabular}
+\caption{Constituents in XTAG parse and IBM parse}
+\label{const-no}
+\end{table}
+
+A second reason for considering the crossing bracket measure
+inadequate for evaluating XTAG is that the primary structure in XTAG
+is the derivation tree from which the bracketed tree is derived. Two
+identical bracketings for a sentence can have completely different
+derivation trees (e.g. {\it kick the bucket} as an idiom vs. a
+compositional use). A more direct measure of the performance of XTAG
+would evaluate the derivation structure, which captures the
+dependencies between words.
+
+\section{Comparison with Alvey}
+
+The evaluation in this section was done with the earlier 1995 release
+of the grammar. This section compares XTAG to the Alvey Natural
+Language Tools (ANLT) Grammar. We parsed the set of LDOCE Noun Phrases
+presented in Appendix B of the technical report (\cite{Carroll93})
+using XTAG.  Table~\ref{Alvey-xtag} summarizes the results of this
+experiment.  A total of 143 noun phrases were parsed. The NPs which
+did not have a correct parse in the top three derivations were
+considered failures for either system. The maximum and average number
+of derivations columns show the highest and the average number of
+derivations produced for the NPs that have a correct derivation in the
+top three.  We show the performance of XTAG both with and without the
+tagger since the performance of the POS tagger is significantly
+degraded on the NPs because the NPs are usually shorter than the
+sentences on which it was trained. It would be interesting to see if
+the two systems performed similarly on a wider range of data.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|c|c|c|c|c|}  \hline
+% This table will compare the performance of the XTAG with Alvey.
+System & \# of & \# parsed & \% parsed & Maximum & Average \\
+& NPs &&& derivations & derivations \\ \hline
+ANLT Parser & 143 & 127 & 88.81\% & 32 & 4.57 \\ \hline
+XTAG Parser with & 143 & 93 & 65.03\% & 28 & 3.45 \\
+POS tagger & & & & & \\ \hline
+XTAG Parser without & 143 & 120 & 83.91\% & 28 & 4.14\\
+POS tagger & & & & & \\ \hline
+\end{tabular} \\
+
+\vspace{0.1in}
+
+\caption{Comparison of XTAG and ANLT Parser}
+\label{Alvey-xtag}
+\end{table}
+
+%In \cite{Carroll93}, only the LDOCE NPs
+%are annotated with the number of derivations; we are interested
+%in getting more data annotated with this information, so that we can
+%make further comparisons.
+
+\section{Comparison with CLARE}
+
+The evaluation in this section was done with the earlier 1995 release
+of the grammar. This section compares the performance of XTAG against
+that of the CLARE-2 system (\cite{clare-report92}) on the ATIS corpus.
+Table~\ref{clare-results} shows the performance results. The
+percentage parsed column for both systems represents the percentage of
+sentences that produced any parse.  It must be noted that the
+performance result shown for CLARE-2 is without any tuning of the
+grammar for the ATIS domain. The performance of CLARE-3, a later
+version of the CLARE system, is estimated to be 10\% higher than that
+of the CLARE-2 system.\footnote{When CLARE-3 is tuned to the ATIS
+  domain, performance increases to 90\%. However XTAG has not been
+  tuned to the ATIS domain.}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|c|c|}  \hline
+% This table will compare the performance of the XTAG with CLARE-2
+System & Mean length & \% parsed \\ \hline
+CLARE-2  & 6.53 & 68.50\% \\ \hline
+XTAG  & 7.62 & 88.35\% \\ \hline
+\end{tabular}
+\caption{Performance of CLARE-2 and XTAG on the ATIS corpus}
+\label{clare-results}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}  \hline
+% This table will compare the performance of the XTAG with CLARE-2
+System & Corpus & Mean length & \% parsed \\ \hline
+CLARE-2 & LOB & 5.95 & 53.40\% \\ \hline
+XTAG & WSJ & 6.00 & 55.58\% \\ \hline
+\end{tabular}
+\caption{Performance of CLARE-2 and XTAG on LOB and WSJ corpus
+respectively}
+\label{clare-results1}
+\end{table}
+
+
+In an attempt to compare the performance of the two systems on a wider
+range of sentences (from similar genres), we provide in
+Table~\ref{clare-results1} the performance of CLARE-2 on LOB corpus
+and the performance of XTAG on the WSJ corpus. The performance was
+measured on sentences of up to 10 words for both systems.
+
+@
+
+
+1.6
+log
+@minor changes while proof reading
+@
+text
+@d53 3
+a55 3
+missing lexical entry (\#12).  A more recent error analysis was done on a
+corpus of weather reports. The weather reports were provided to us by
+CoGenTex.\footnote{%
+a69 3
+\enumsentence{[Very mild air] preceding [a disturbance] in [north Dakota]
+will gradually push into part of [St Lawrence River valley] today and
+Monday.}
+d71 9
+a79 9
+\cite{c.97:_maint_xtag} parsed the corpus of weather reports and found that
+it contained several relative clauses that caused problems for the XTAG
+grammar and also that the parser was unable to handle some of the more
+complex longer sentences. The problematic cases involved two kinds of
+relative clauses (roughly 40\%) which were not accounted for by the grammar
+developer at the time. The first kind contained examples like {\em A
+frontal system approaching from the west} which included an {\em -ing} form
+in the relative clause predicate, and the other contained examples like
+{\it The disturbance south of Nova Scotia early this morning} which had a
+d82 1
+a82 1
+parse only about 20\% of the test set (10 out of 48 sentences). 
+a535 5
+In an attempt to compare the performance of the two systems on a wider
+range of sentences (from similar genres), we provide in
+Table~\ref{clare-results1} the performance of CLARE-2 on LOB corpus
+and the performance of XTAG on the WSJ corpus. The performance was
+measured on sentences of up to 10 words for both systems.
+d548 7
+@
+
+
+1.5
+log
+@added discussion of recent evaluation (prasad and sarkar, 2000)
+@
+text
+@d6 1
+a6 1
+the XTAG grammar (the 1995 release), while other were done more
+d12 3
+a14 3
+In the XTAG project, we have used corpus analysis in two main ways:
+(1) to measure the performance of the English grammar on a given genre
+and (2) to identify gaps in the grammar. 
+d16 1
+a16 1
+The second type of evaluation involves performing detailed error
+d43 1
+a43 1
+\caption{Results of Corpus Based Error Analysis}
+d81 13
+a93 12
+in the relative clause predicate, and the other kind contained examples
+like {\it The disturbance south of Nova Scotia early this morning} which
+had a directional noun phrase as the predicate. As a result of these
+shortcomings and also due to the long and complex sentences in this test
+set, we could parse only about 20\% of the test set (10 out of 48
+sentences).  After a recent overhaul of the relative clause analysis in the
+XTAG grammar we wanted to test the updated coverage of the grammar on
+the same test set and evaluate the degree of improvement in performance.
+This was done in \cite{prasadandsarkar00}, where we have obtained a much
+better performance of the XTAG parser on the sentences in the weather
+domain. Of the 48 sentences in the corpus, we were able to parse 43
+sentences (89.6\%). A comprehensive breakdown of the errors is described in
+d103 6
+d119 2
+a120 1
+\caption{\label{tab:weather_analysis} Results of Corpus-Based Error Analysis}
+d123 8
+a130 4
+We are in the process of extending the parser to handle VP coordination
+(\#9) (See Section~\ref{conjunction} on recent work to handle VP and other
+predicative coordination). We find that this method of error analysis is
+very useful in focusing grammar development in a productive direction.
+a131 7
+To ensure that we are not losing coverage of certain phenomena as we
+extend the grammar, we have a benchmark set of grammatical and
+ungrammatical sentences from this technical report. We parse these
+sentences periodically to ensure that in adding new features and
+constructions to the grammar, we are not blocking previous analyses.
+There are approximately $590$ example sentences in this set.
+
+d180 7
+a186 1
+grammar did not handle {\it dare} or {\it need} as auxiliary verbs,
+d194 1
+a194 1
+\cite{copestake99:_lkb_system}. of the 966 grammatical sentences we were
+d209 1
+a209 1
+ \caption{\label{tab:CSLI_analysis} Results of CSLI Test-Suite based Evaluation}
+@
+
+
+1.4
+log
+@fixed title
+@
+text
+@d21 2
+a22 13
+development efforts. The results of a recent error analysis are shown
+in Table \ref{errors}.  The table does not show errors in parsing due
+to mistakes made by the POS tagger which contributed the largest
+number of errors: 32. At this point, we have added a treatment of
+punctuation to handle \#1, an analysis of time NPs (\#2), a large
+number of multi-word prepositions (part of \#3), gapless relative
+clauses (\#7), bare infinitives (\#14) and have added the missing
+subcategorization (\#3) and missing lexical entry (\#12).  We are in
+the process of extending the parser to handle VP coordination (\#9)
+(See Section~\ref{conjunction} on recent work to handle VP and other
+predicative coordination). We find that this method of error analysis
+is very useful in focusing grammar development in a productive
+direction.
+d44 1
+a44 1
+\label{errors}
+d47 73
+d127 1
+a127 1
+\section{TSNLP}
+d130 4
+a133 7
+Grammar on the Test Suites for Natural Language Processing (TSNLP)
+English corpus \cite{Lehmann96}. The corpus is intended to be a
+systematic collection of English grammatical phenomena, including
+complementation, agreement, modification, diathesis, modality, tense
+and aspect, sentence and clause types, coordination, and negation. It
+contains 1409 grammatical sentences and phrases and 3036 ungrammatical
+ones.
+d135 9
+d177 1
+a177 1
+e.g. {\it She misses him out}. 
+d179 1
+a179 10
+One general problem with the test-suite is that it uses a very
+restricted lexicon, and if there is one problematic lexical item it is
+likely to appear a large number of times and cause a disproportionate
+amount of grief. {\it Used to} appears 33 times and we got all 33
+wrong. However, it must be noted that the XTAG grammar has analyses
+for syntactic phenomena that were not represented in the TSNLP test
+suite such as sentential subjects and subordinating clauses among
+others. This effort was, therefore, useful in highlighting some
+deficiencies in our grammar, but did not provide the same sort of
+general evaluation as parsing corpus data.
+d181 47
+@
+
+
+1.3
+log
+@minor typo
+@
+text
+@d122 1
+a122 1
+\section{Comparative Evaluation via Text Chunking}
+@
+
+
+1.2
+log
+@added new evaluations and overhauled old eval notes
+@
+text
+@d58 1
+a58 1
+To ensure that we are not losing coverage of certain phenomenon as we
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d4 5
+a8 5
+In this appendix, we show that the XTAG grammar, which uses only
+corpus-independent statistical information, can match the performance of
+induced probabilistic grammars as well as other rule-based grammars.  Given the
+fact that the grammar has not been fine-tuned to the test data, we predict
+still better results if it were tailored to the domain of the test data.
+d10 1
+d12 3
+a14 9
+XTAG has recently been used to parse Wall Street Journal\footnote{Sentences of
+length $\leq$ 15 words.}, IBM manual, and ATIS corpora as a means of evaluating
+the coverage and correctness of XTAG parses. For this evaluation, a sentence is
+considered to have parsed if the correct parse is among the parses generated by
+XTAG. Verifying the presence of the correct parse among the generated parses is
+done manually at present by random sampling. Preliminary results without the
+use of parse ranking are shown in Table~\ref{results}.  It is worth emphasizing
+that the XTAG grammar is truly wide-coverage and has not been fine-tuned to any
+particular genre, unlike many other grammars.
+d16 18
+a33 5
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|l|c|c|c|} \hline
+& \# of & & Av. \# of\\
+Corpus & Sentences & \% Parsed & Parses/Sent\\ \hline
+d35 22
+a56 1
+WSJ & 18,730 & 41.22 \% & 7.46 \\\hline
+d58 6
+a63 1
+IBM Manual & 2040 & 75.42\% & 6.12\\ \hline
+d65 23
+a87 1
+ATIS & 524 & 88.35\% & 6.0 \\ \hline 
+d89 3
+a91 1
+\end{center}
+d93 17
+a109 1
+\vspace{0.1in}
+d111 10
+a120 3
+\caption{Performance of XTAG on various corpora}
+\label{results}
+\end{table}
+d122 1
+a122 4
+Performance on the WSJ corpus is lower relative to IBM and ATIS due
+to the wide-variety of syntactic constructions used. Even grammars
+induced on the partially bracketed WSJ corpus have fairly low
+performance (e.g. 57.1\% sentence accuracy for \cite{schabes93}).  
+d124 150
+d276 21
+a296 18
+A more detailed experiment to measure the crossing bracket accuracy of the
+XTAG-parsed IBM-manual sentences has been performed. In this experiment, XTAG
+parses of 1100 IBM-manual sentences have been ranked using certain
+heuristics. The ranked parses have been compared\footnote{We used the parseval
+program written by Phil Harison (phil@@atc.boeing.com).}  against the bracketing
+given in the Lancaster Treebank of IBM-manual sentences\footnote{The Treebank
+was obtained through Salim Roukos (roukos@@watson.ibm.com) at
+IBM.}. Table~\ref{ibm-results} shows the results of XTAG obtained in this
+experiment, which used the highest ranked parse for each system. It also shows
+the results of the latest IBM statistical grammar (\cite{jelineketal94}) on the
+same genre of sentences. Only the highest-ranked parse of both systems was used
+for this evaluation. Crossing Brackets is the percentage of sentences with no
+pairs of brackets crossing the Treebank bracketing (i.e.  (~(~a~b~)~c~) has a
+crossing bracket measure of one if compared to (~a~(~b~c~)~)~). Recall is the
+ratio of the number of constituents in the XTAG parse to the number of
+constituents in the corresponding Treebank sentence.  Precision is the ratio of
+the number of correct constituents to the total number of constituents in the
+XTAG parse.
+d320 9
+a328 10
+XTAG. There are two reasons for the inadequacy. First,
+the parse generated by XTAG is much richer in its
+representation of the internal structure of certain phrases than those
+present in manually created treebanks (e.g. IBM: [$_N$ your personal
+computer], XTAG: [$_{NP}$ [$_G$ your] [$_N$ [$_N$ personal] [$_N$
+computer]]]). This is reflected in the number of constituents per
+sentence, shown in the last column of
+Table~\ref{const-no}.\footnote{We are aware of the fact that
+increasing the number of constituents also increases the recall
+percentage. However we believe that this a legitimate gain.}
+d345 7
+a351 7
+inadequate for evaluating XTAG is that the primary
+structure in XTAG is the derivation tree from which the bracketed tree
+is derived. Two identical bracketings for a sentence can have
+completely different derivation trees (e.g. {\it kick the bucket} as
+an idiom vs. a compositional use). A more direct measure of the
+performance of XTAG  would evaluate the derivation
+structure, which captures the dependencies between words.
+d355 15
+a369 13
+We also compared XTAG to the Alvey Natural Language Tools (ANLT) Grammar, and
+found that the two performed comparably. We parsed the set of LDOCE Noun
+Phrases presented in Appendix B of the technical report (\cite{Carroll93})
+using XTAG. Table~\ref{Alvey-xtag} summarizes the results of this experiment.
+A total of 143 noun phrases were parsed. The NPs which did not have a correct
+parse in the top three derivations were considered failures for either
+system. The maximum and average number of derivations columns show the highest
+and the average number of derivations produced for the NPs that have a correct
+derivation in the top three. We show the performance of XTAG both with and
+without the tagger since the performance of the POS tagger is significantly
+degraded on the NPs because the NPs are usually shorter than the sentences on
+which it was trained. It would be interesting to see if the two systems
+performed similarly on a wider range of data.
+d386 1
+a386 2
+\caption{Comparison of XTAG and ANLT
+Parser}
+a389 1
+
+d397 12
+a408 9
+We have also compared the performance of XTAG against that of the CLARE-2
+system (\cite{clare-report92}) on the ATIS corpus. Table~\ref{clare-results}
+shows the performance results. The percentage parsed column for both systems
+represents the percentage of sentences that produced any parse.  It must be
+noted that the performance result shown for CLARE-2 is without any tuning of
+the grammar for the ATIS domain. The performance of CLARE-3, a later version of
+the CLARE system, is estimated to be 10\% higher than that of the CLARE-2
+system.\footnote{When CLARE-3 is tuned to the ATIS domain, performance
+increases to 90\%. However XTAG has not been tuned to the ATIS domain.}
+a421 1
+
+a439 3
+It can be seen from the above comparisons that XTAG system performs
+comparably to CLARE on texts with limited and varied range of sentence
+phenomena.
+@

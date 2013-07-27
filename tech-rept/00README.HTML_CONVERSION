@@ -1,0 +1,62 @@
+
+There are two files in /mnt/linc/xtag/work/doc/tech-rept/
+to help in the conversion from latex to HTML.
+
+-------------------------------------------------------------------------------
+runpar:
+-------------------------------------------------------------------------------
+  * calls par.perl with all the relevant tex files.
+  * edit this file to add new tex files that are
+    part of the document.
+  * converts from latex-2.09 to latex2e
+  * converts from enumsentences to example-numbers.tex
+  * converts from psfig to includegraphics
+  * stores converted tex files in ./html/ using
+    the same name.
+
+-------------------------------------------------------------------------------
+runparhtml:
+-------------------------------------------------------------------------------
+  * calls par_html.perl with the relevant tex files.
+  * does everything that par.perl does plus it adds
+    some HTML markup to make up for problems that 
+    latex2html has with such a large document.
+
+-------------------------------------------------------------------------------
+Before par.perl:
+-------------------------------------------------------------------------------
+There are two types of gerunds identified in the linguistics
+literature. One is the class of {\it derived nominalizations} (also
+called {\it nominal gerundives} or {\it action nominalizations})
+exemplified in \ex{1}, which instantiates the direct object within an
+{\it of} PP.
+The other is the class of so-called {\it sentential} or
+{\it VP gerundives} exemplified in \ex{2}. In the English XTAG grammar,
+the derived nominalizations are termed {\bf determiner gerunds}, and the
+sentential or VP gerunds are termed {\bf NP gerunds}.
+
+\enumsentence{Mary thinks that {\bf John's selling of bonds} is beneficial.}
+
+\enumsentence{Private markets approve of {\bf Washington bashing Wall Street}.}
+
+-------------------------------------------------------------------------------
+After par.perl:
+-------------------------------------------------------------------------------
+There are two types of gerunds identified in the linguistics
+literature. One is the class of {\it derived nominalizations} (also
+called {\it nominal gerundives} or {\it action nominalizations})
+exemplified in \ref{ex:276}, which instantiates the direct object within an
+{\it of} PP.
+The other is the class of so-called {\it sentential} or
+{\it VP gerundives} exemplified in \ref{ex:277}. In the English XTAG grammar,
+the derived nominalizations are termed {\bf determiner gerunds}, and the
+sentential or VP gerunds are termed {\bf NP gerunds}.
+
+\beginsentences
+\sitem{Mary thinks that {\bf John's selling of bonds} is beneficial.}\label{ex:276}
+\endsentences
+
+
+\beginsentences
+\sitem{Private markets approve of {\bf Washington bashing Wall Street}.}\label{ex:277}
+\endsentences

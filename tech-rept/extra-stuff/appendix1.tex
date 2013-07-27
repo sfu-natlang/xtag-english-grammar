@@ -1,0 +1,43 @@
+In this appendix, we will present a detail example illustrating the
+various steps the parser performs in deriving the parse for a given
+input sentence.
+
+Consider the sentence in \ref{ex}.
+
+\begin{example}
+\label{ex}
+John sleeps irregularly.	
+\end{example}
+
+This sentence is subjected to morphological analysis and
+part-of-speech tagging before being input to the parser in the form
+shown in \ref{tagged}
+
+\begin{example}
+\label{tagged}
+Morph/POS tagged output.
+\end{example}
+
+The first stage of the parser, tree selection phase, is to use the
+morphological information of each word, to select trees from the
+lexicon for each word. For the purpose of this example, we assume the
+trees shown in Figure~\ref{parse-det} to be the only trees selected.
+\begin{figure}
+\caption{Trees for the sentence: {\it John sleeps irregularly}.}
+\label{parse-det}
+\end{figure}
+The selected trees are input to the tree grafting stage, which we will
+discuss in detail.
+
+
+-- 
+
+
+
+
+
+
+
+
+
+

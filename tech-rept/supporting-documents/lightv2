@@ -1,0 +1,81 @@
+During the summer of 1998, I noticed that the light verb families
+seemed to have some problems.  There were four families, Tnx0lVN1,
+Tnx0lVN1Pnx2, Tnx0lVdN1, and Tnx0lVdN1Pnx2.  The latter two families
+had a determiner substitition site, while the former two did not.
+They were set up this way because of light-verb/noun predicates such
+as "have a think" and "give a pull", which require a determiner, and
+others such as "take aim", which can't have a determiner.  The first
+thing that I noticed was that "take aim" was in the family that
+*required* a determiner, which seemed rather strange.  In fact, there
+were others which were in the wrong family, so I decided to look more
+closely at the families.
+
+The next thing I noticed was that predicates like "take walk" anchored
+both Tnx0lVN1 and Tnx0lVdN1, and it was the responsibility of the
+former to handle sentences like "I take walks" and the that of the
+latter to handle "I took a walk".  This seemed a violation of the
+general principle in the Xtag english grammar that the same predicate
+should not anchor different families.  Incidentally, the Tnx0lVN1
+family did allow adjunction to the NP, so I wanted to know why "I took
+a walk" did not get two parses---and it turned out that the N node was
+specified as being plural and indefinite.  Thus, determiners like "a"
+and "the" couldn't adjoin.  So I tried "I took some walks" and it
+returned a parse from both families: Tnx0lVN1 with "some" adjoined
+and Tnx0lVdN1 with "some" substituted.
+
+Being as there were multiple problems with the present state of the
+light verbs, I thought it would be best to kill the families that had
+the determiner substitution, and then use forced adjunction for the
+cases of light verbs which required determiners (e.g. "have a think").
+It turns out that by using the determiner features, this can be done
+quite readily by setting the NP and the N levels to have certain
+features which allow (or require) only the desired determiner or
+to disallow them entirely.
+
+The features I used and the templates which invoke them are listed
+below:
+
+#NP1_const+     NP_1.t:<const> = +!
+#NP1_gen+       NP_1.t:<gen> = +!
+#NP1_def-       NP_1.t:<definite> = -!
+#NP1_compl+     NP_1.t:<compl> = +!
+#N_const+       N.b:<const> = +!
+#N_const-       N.b:<const>=-!
+#N_card-        N.b:<card>=-!
+#N_definite-    N.b:<definite>=-!
+#N_sing         N.b:<agr num>=sing!
+
+To block determiners in the case of "take aim", we simply give the
+lexical entry for "take aim" the following templates: #N_const+
+#N_card- #N_sing #N_definite-.  No determiner is capabable of
+adjoining to an NP headed by a noun with those features, as can be
+discerned from the table 2 of the determiner chapter of the tech
+report.
+
+For "have a think", the determiner is forced to adjoin by using the
+following templates: #NP1_compl+ #NP1_def- #N_sing #N_const-.
+#NP1_compl+ forces the adjunction since "think" has N.b:<compl> = -,
+and the others ensure that it is only "a" which can then adjoin.
+
+For "take leave", we don't want to allow most determiners "*take the
+leave", but we do want to allow genitives "John took his leave."  So
+we use only the feature template #NP1_gen+, which doesn't not force
+any determiner to adjoin (giving "John took leave"), but does force one
+to be genitive if it does adjoin.
+
+No linguistic motivation is suggested for the use of these features,
+other than that they allow us to unify what were previously two tree
+families which were in many cases splitting up the work of one
+predicate between them.  It also reduces the size of the grammar with
+no loss of coverage by obviating the Tnx0lVdN1 and Tnx0lVdN1Pnx2
+families, and we have fewer parsing ambiguities.
+
+It does appear difficult to get some of these buggers to parse,
+currently.  In order to make sure "take aim" comes through as the
+light verb, you need to give the parser the predicate with its
+supertag, as in "John took_nx0lVN1 aim".  Otherwise it seems to prefer
+a compositional parse with take_nx0Vnx1.
+
+---------------
+Jason Baldridge
+Nov 21, 1998

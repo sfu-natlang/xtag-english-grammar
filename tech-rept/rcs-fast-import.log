@@ -1,0 +1,29 @@
+Preparing commits
+Sorting by date
+650 single-file commits
+Coalescing [1] by date with fuzz 300
+553 coalesced commits
+warning: Not updating refs/heads/master (new tip 7ad70585742cd907def00b051c5eb6f9dd0c80fe does not contain fbab18e231eb4d5f8332222162362433e26e5bd0)
+git-fast-import statistics:
+---------------------------------------------------------------------
+Alloc'd objects:       5000
+Total objects:         1752 (         4 duplicates                  )
+      blobs  :          646 (         4 duplicates        554 deltas of        604 attempts)
+      trees  :          553 (         0 duplicates        502 deltas of        504 attempts)
+      commits:          553 (         0 duplicates          0 deltas of          0 attempts)
+      tags   :            0 (         0 duplicates          0 deltas of          0 attempts)
+Total branches:           2 (         1 loads     )
+      marks:        1048576 (      1203 unique    )
+      atoms:             79
+Memory total:          2344 KiB
+       pools:          2110 KiB
+     objects:           234 KiB
+---------------------------------------------------------------------
+pack_report: getpagesize()            =       4096
+pack_report: core.packedGitWindowSize = 1073741824
+pack_report: core.packedGitLimit      = 8589934592
+pack_report: pack_used_ctr            =        565
+pack_report: pack_mmap_calls          =          3
+pack_report: pack_open_windows        =          2 /          2
+pack_report: pack_mapped              =    4874317 /    4874317
+---------------------------------------------------------------------

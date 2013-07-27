@@ -1,0 +1,565 @@
+head	1.12;
+access
+	egedi
+	srini
+	beth
+	cdoran
+	skulick
+	anoop
+	elhuang
+	heatherm
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.12
+date	2001.02.22.20.30.19;	author rjprasad;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2001.02.22.04.10.24;	author rjprasad;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2000.11.09.22.08.14;	author anoop;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2000.10.31.20.28.41;	author rjprasad;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	98.08.20.17.05.41;	author cdoran;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	98.07.28.14.34.09;	author cdoran;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	98.02.05.23.00.54;	author anoop;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	97.07.01.19.45.06;	author elhuang;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	97.02.04.21.36.30;	author cdoran;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	95.02.24.16.47.30;	author egedi;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	95.02.16.14.52.23;	author egedi;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.01.24.20.23.02;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Appendix on Future Work.
+This section was requested by Joshi after the big push.
+@
+
+
+1.12
+log
+@minor editing
+@
+text
+@%\appendix
+\chapter{Future Work}
+\label{future-work}
+
+\section{Adjective ordering}
+
+At this point, the treatment of adjectives in the XTAG English grammar does not
+include selectional or ordering restrictions.\footnote{This section is a repeat
+of information found in section~\ref{adj-modifier}.} Consequently, any
+adjective can adjoin onto any noun and on top of any other adjective already
+modifying a noun. All of the modified noun phrases shown in (\ex{1})-(\ex{4})
+currently parse.
+
+\enumsentence{big green bugs}
+\enumsentence{big green ideas}
+\enumsentence{colorless green ideas}
+\enumsentence{$\ast$green big ideas}
+
+While (\ex{-2})-(\ex{0}) are all semantically anomalous, (\ex{0}) also suffers
+from an ordering problem that makes it seem ungrammatical as well.  Since the
+XTAG grammar focuses on syntactic constructions, it should accept
+(\ex{-3})-(\ex{-1}) but not (\ex{0}).  Both the auxiliary and determiner
+ordering systems are structured on the idea that certain types of lexical items
+(specified by features) can adjoin onto some types of lexical items, but not
+others.  We believe that an analysis of adjectival ordering would follow the
+same type of mechanism.
+
+\section{More work on Determiners}
+
+In addition to the analysis described in Chapter~\ref{det-comparitives}, there
+remains work to be done to complete the analysis of determiner constructions in
+English.\footnote{This section is from \cite{ircs:det98}.}  Although
+constructions such as determiner coordination are easily handled if
+overgeneration is allowed, blocking sequences such as {\it one and some} while
+allowing sequences such as {\it five or ten} still remains to be worked out.
+There are still a handful of determiners that are not currently handled by our
+system.  We do not have an analysis to handle {\it most}, {\it such}, {\it
+certain}, {\it other} and {\it own}\footnote{The behavior of {\it own} is
+sufficiently unlike other determiners that it most likely needs a tree of its
+own, adjoining onto the right-hand side of genitive determiners.}.  In
+addition, there is a set of lexical items that we consider adjectives ({\it
+enough}, {\it less}, {\it more} and {\it much}) that have the property that
+they cannot cooccur with determiners.  We feel that a complete analysis of
+determiners should be able to account for this phenomenon, as well.
+
+%\section{{\it -ing} adjectives}
+
+%An analysis has already been provided for past participal ({\it -ed})
+%adjectives (as in sentence~ (\ex{1})), which are restricted to the
+%Transitive Verb family.\footnote{This analysis may need to be extended
+%to the Transitive Verb particle family as well.}  A similar analysis
+%needs to take place for the present participle~({\it -ing}) used as a
+%pre-nominal modifier.  This type of adjective, however, does not seem
+%to be as restricted as the~{\it -ed} adjectives, since verbs in other
+%tree families seem to exhibit this alternation as well
+%(e.g. sentences~(\ex{2}) and (\ex{3})).
+
+%\enumsentence{The murdered man was a doctoral student at UPenn .}
+%\enumsentence{The man died .}
+%\enumsentence{The dying man pleaded for his life .}
+
+\section{Removal of empty elements as anchors}
+
+In the current version of the grammar, we dispensed with some empty
+elements that were lexicalizing trees in the grammar. One was the null COMP
+used in relative clauses, the second was the empty verb anchoring the
+auxiliary verb tree used for multi-component adjunction, and the third was
+the non-lexical PRO which anchored the initial NP tree and substituted into
+the subject NP nodes of non-ECM infinitival clauses. However, there is
+still one more empty element remaining in the grammar which we also need to
+remove. This is the empty prepositional element anchoring the tree for
+subordinating conjunctions (see Chapter~\ref{adjunct-cls}). These
+non-lexicalized trees are used to handle bare adjunct clauses like:
+
+\enumsentence{The fire raged for days, destroying the building .}
+
+\section{Verb selectional restrictions}
+
+Although we explicitly do not want to model semantics in the XTAG grammar,
+there is some work along the syntax/semantics interface that would help reduce
+syntactic ambiguity and thus decrease the number of semantically anomalous
+parses.  In particular, verb selectional restrictions, particularly for PP
+arguments and adjuncts, would be quite useful.  With the exception of the
+required {\it to} in the Ditransitive with PP Shift tree family (Tnx0Vnx1Pnx2),
+any preposition is allowed in the tree families that have prepositions as their
+arguments.  In addition, there are no restrictions as to which prepositions are
+allowed to adjoin onto a given verb.  The sentences in (\ex{1})-(\ex{3}) are
+all currently accepted by the XTAG grammar.  Their violations are stronger than
+would be expected from purely semantic violations, however, and the presence of
+verb selectional restrictions on PP's would keep these sentences from being
+accepted.
+
+\enumsentence{\#survivors walked of the street .}
+\enumsentence{\#The man about the earthquake survived .}
+\enumsentence{\#The president arranged on a meeting .}
+
+\section{Thematic Roles}
+
+Elementary trees in TAGs capture several notions of locality, with the most
+primary of these being locality of $\theta$-role assignment.  Each elementary
+tree has associated with it the $\theta$-roles assigned by the anchor of that
+elementary tree.  In the current XTAG system, while the notion of locality of
+$\theta$-role assignment within an elementary tree has been implicit, the
+$\theta$-roles assigned by a head have not been explicitly represented in the
+elementary tree. Incorporating $\theta$-role information will make the
+elementary trees more informative and will enable efficient pruning of spurious
+derivations when embedded into a specific context.  In the case of a
+Synchronous TAG, $\theta$-roles can also be used to automatically establish
+links between two elementary trees, one in the object language and one in the
+target language.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@
+
+
+1.11
+log
+@added section about removing empty element in subordinating conjunctions
+@
+text
+@d72 1
+a72 1
+subordinating conjunctions (see Chapter~\ref{Adjunct Clauses}). These
+@
+
+
+1.10
+log
+@\appendix causing problems. removed temporarily
+@
+text
+@d62 1
+d64 13
+@
+
+
+1.9
+log
+@removed section on -ing adjectives
+@
+text
+@d1 1
+a1 1
+\appendix
+@
+
+
+1.8
+log
+@Updated citation.
+@
+text
+@d46 1
+a46 1
+\section{{\it -ing} adjectives}
+d48 9
+a56 9
+An analysis has already been provided for past participal ({\it -ed})
+adjectives (as in sentence~ (\ex{1})), which are restricted to the
+Transitive Verb family.\footnote{This analysis may need to be extended
+to the Transitive Verb particle family as well.}  A similar analysis
+needs to take place for the present participle~({\it -ing}) used as a
+pre-nominal modifier.  This type of adjective, however, does not seem
+to be as restricted as the~{\it -ed} adjectives, since verbs in other
+tree families seem to exhibit this alternation as well
+(e.g. sentences~(\ex{2}) and (\ex{3})).
+d58 3
+a60 3
+\enumsentence{The murdered man was a doctoral student at UPenn .}
+\enumsentence{The man died .}
+\enumsentence{The dying man pleaded for his life .}
+@
+
+
+1.7
+log
+@Updated chapter.
+@
+text
+@d32 1
+a32 1
+English.\footnote{This section is from \cite{HockeyEgedi94}.}  Although
+@
+
+
+1.6
+log
+@removed time NP discussion
+added time NP section to Modifiers section
+@
+text
+@a27 35
+
+
+\section{Determiner Adverbs}
+
+There are some apparent adverbs that interact with the NP and determiner system
+(\cite{quirk85}), although there is some debate in the literature as to whether
+these should be classified as determiners or adverbs.\footnote{This section is
+from \cite{HockeyEgedi94}.}
+
+\enumsentence{{\bf hardly} any attempt was made at restitution .}
+\enumsentence{{\bf only} Albert would say such a thing .}
+\enumsentence{{\bf almost} all the people had left by 5pm .}
+
+Adverbs that modify NP's or determiners have restrictions on what types of NP's
+or determiners they can modify. They divide into three classes based on the
+pattern of these restrictions.  The adverbs {\it especially}, {\it even}, {\it
+just} and {\it only} form a class that can modify any NP that is {\bf
+$<$wh$>$=--}, including proper nouns.  A second class, consisting of adverbs
+such as {\it hardly}, {\it merely} and {\it simply}, modifies NP's with
+determiners that are {\bf $<$definite$>$=--} and {\bf $<$const$>$=+}, or that
+are {\bf $<$gen$>$=+}.  This second class of adverbs can also modify NP's with
+{\it the} as a determiner, but they do not modify NP's without determiners.
+The third class, exemplified by {\it almost}, {\it approximately} and {\it
+relatively}, modifies the determiner itself.  These adverbs are restricted to
+modifying determiners with the {\bf $<$card$>$=+} feature, as well as {\it
+all}, {\it double} and {\it half}.  The distinction between adverbs that modify
+NP's and ones that modify determiners can be seen in the NP's in
+({\ex{1}})~and~({\ex{2}}).
+
+\enumsentence{[just][half the people]}
+\enumsentence{[approximately half][the people]}
+
+
+
+
+a45 32
+
+
+
+\section{Comparatives}
+
+Also included in our future grammar development plans are comparatives.
+Comparatives that involve ellipsis would require a general solution of the
+problem of representing ellipsis, but simpler comparatives without ellipsis,
+such as {\it fewer than nine\/} in (\ex{1}), should be amenable to analysis as
+complex determiners, perhaps with trees similar in construction to the
+partitive and genitive NP trees.
+
+\enumsentence{cats have {\bf fewer than} nine lives .}
+
+
+
+%%Removed this section from Future Work and replaced with section on
+%%the implementation of Time NPs in the Modifiers section.
+%\section{Time NP's}
+
+%Although in general NP's cannot simply adjoin onto sentences, there is a class
+%of NP's, called Time NP's, that can.  These NP's behave essentially like PP's,
+%and the XTAG analysis for this is fairly simple, requiring only the creation of
+%proper NP auxiliary trees.  Only slightly more difficult is the identification
+%of all possible anchors of these trees.  A {\bf $<$time$>$=+} feature will be
+%used to ensure that only certain nouns can select the time NP auxiliary trees.
+
+%\enumsentence{I went to Kentucky last month/$\ast$big cat .}
+%\enumsentence{this morning/$\ast$Big cat, we practiced juggling four balls .}
+
+
+
+d48 9
+a56 8
+An analysis has already been provided for {\it -ed} adjectives (as in sentence~
+(\ex{1})), which are restricted to the Transitive Verb family.\footnote{This
+analysis may need to be extended to the Transitive Verb particle family as
+well.}  A similar analysis needs to take place for the \nolinebreak[4]{\it
+-ing} adjectives.  This type of adjective, however, does not seem to be as
+restricted as the \nolinebreak[4]{\it -ed} adjectives, since verbs in other
+tree families seem to exhibit this alternation as well (e.g. sentences~(\ex{2})
+and (\ex{3})).
+a62 16
+
+\section{Punctuation}
+
+We are currently developing an analysis of comma coordination, to
+cover sentences such as (\ex{1}) and (\ex{2}).
+
+\enumsentence{The brilliant , funny and timeless comedian had his 99th birthday
+today .}
+\enumsentence{NP's , PP's and VP's are all adjunction sites .}
+
+Beyond this, we intend to add an analysis of other types of punctuation. We
+believe that there are cases where the punctuation will serve as a guide to the
+correct parse (e.g. comma following topicalized element), thus reducing
+ambiguity.
+
+
+a98 12
+\section{Idioms}
+
+An analysis of idioms has already been worked out (\cite{AS89}), and one idiom
+tree family is contained in the English XTAG grammar (Transitive Idioms;
+section~\ref{nx0Vdn1-family}).  What remains to be done is a wide-ranging
+cataloging of the many English idioms.  The list of idioms must then be divided
+into appropriate tree families, based on the construction of the idiom, the
+elements that are frozen and must therefore anchor the trees, and the
+alternations that the idiom can undergo (e.g. passive, wh-movement, etc).  This
+work has not been done.
+
+
+@
+
+
+1.5
+log
+@edited example sentences- put spaces before punctuation and removed some capital letters.
+@
+text
+@d97 3
+a99 1
+\section{Time NP's}
+d101 6
+a106 6
+Although in general NP's cannot simply adjoin onto sentences, there is a class
+of NP's, called Time NP's, that can.  These NP's behave essentially like PP's,
+and the XTAG analysis for this is fairly simple, requiring only the creation of
+proper NP auxiliary trees.  Only slightly more difficult is the identification
+of all possible anchors of these trees.  A {\bf $<$time$>$=+} feature will be
+used to ensure that only certain nouns can select the time NP auxiliary trees.
+d108 2
+a109 2
+\enumsentence{I went to Kentucky last month/$\ast$big cat .}
+\enumsentence{this morning/$\ast$Big cat, we practiced juggling four balls .}
+@
+
+
+1.4
+log
+@Removed section on PRO control which is now in the main tech report and no longer future work.
+@
+text
+@d37 3
+a39 3
+\enumsentence{{\bf Hardly} any attempt was made at restitution.}
+\enumsentence{{\bf Only} Albert would say such a thing.}
+\enumsentence{{\bf Almost} all the people had left by 5pm.}
+d57 2
+a58 2
+\enumsentence{[Just][half the people]}
+\enumsentence{[Approximately half][the people]}
+d93 1
+a93 1
+\enumsentence{Cats have {\bf fewer than} nine lives.}
+d106 2
+a107 2
+\enumsentence{I went to Kentucky last month/$\ast$big cat.}
+\enumsentence{This morning/$\ast$Big cat, we practiced juggling four balls.}
+d122 3
+a124 3
+\enumsentence{The murdered man was a doctoral student at UPenn.}
+\enumsentence{The man died.}
+\enumsentence{The dying man pleaded for his life.}
+d133 3
+a135 3
+\enumsentence{The brilliant, funny and timeless comedian had his 99th birthday
+today.}
+\enumsentence{NP's, PP's and VP's are all adjunction sites.}
+d159 3
+a161 3
+\enumsentence{\#Survivors walked of the street.}
+\enumsentence{\#The man about the earthquake survived.}
+\enumsentence{\#The president arranged on a meeting.}
+d189 21
+@
+
+
+1.3
+log
+@Added section on Thematic Roles (written by Rajesh).
+@
+text
+@a142 31
+\section{PRO control}
+
+Within the FB-LTAG formalism, PRO-control is an interesting problem because of
+the intrinsic non-local nature of control.\footnote{This section is taken from
+\cite{bhatt94}.}  The controller NP and the controlled PRO are always in
+different clauses.  In this sense, Control is even more non-local than Binding.
+
+In the literature on Control, two types are often distinguished: obligatory
+control, as in sentences~(\ex{1}) and (\ex{2}), and optional control, as in
+sentence~(\ex{3}).
+
+\enumsentence{Jan$_i$ promised Maria [PRO$_i$ to go].}
+\enumsentence{Jan persuaded Maria$_i$ [PRO$_i$ to go].}
+\enumsentence{[PRO$_{arb}$ to dance] is important.}
+
+An analysis for obligatory control has been worked out, although it has yet to
+be implemented.  The NP anchored by PRO will have the feature {\bf
+$<$control$>$=+}.  The {\bf $<$control$>$} feature is also introduced in trees
+that can take sentential arguments.  Depending on the verb, the control
+propagation paths in the auxiliary trees are different.  In the case of subject
+control (as in sentence~(\ex{-2})), the subject NP and the foot node are
+constrained to have the same control features, while for object control
+(e.g. sentence~(\ex{-1})), the object NP and the foot node are constrained to
+have the same control features. 
+
+Work has also been done on an XTAG analysis for optional control, but this has
+not been fully worked out yet.
+
+
+
+
+@
+
+
+1.2
+log
+@Changes from Tilman's proof-read
+@
+text
+@d194 1
+d196 12
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d8 2
+a9 2
+include selectional or ordering restrictions\footnote{This section is a repeat
+of information found in section~\ref{adj-modifier}.}. Consequently, any
+d45 1
+a45 1
+$<$wh$>$=-}, including proper nouns.  A second class, consisting of adverbs
+d47 1
+a47 1
+determiners that are {\bf $<$definite$>$=-} and {\bf $<$const$>$=+}, or that
+d65 1
+a65 1
+In addition to the analysis described in section~\ref{det-comparitives}, there
+d67 1
+a67 1
+English\footnote{This section is from \cite{HockeyEgedi94}.}.  Although
+d79 1
+a79 1
+determiners should be able to account for this phenomena, as well.
+d111 1
+a111 1
+\section{-ing adjectives}
+d113 1
+a113 1
+An analysis has already been provided for -ed adjectives (as in sentence~
+d116 5
+a120 4
+well.}  A similar analysis needs to take place for the -ing adjectives.  This
+type of adjective, however, does not seem to be as restricted as the -ed
+adjectives, since verbs in other tree families seem to exhibit this alternation
+as well (e.g. sentences~(\ex{2}) and (\ex{3})).
+@

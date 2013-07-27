@@ -1,0 +1,160 @@
+head	1.3;
+access
+	rjprasad
+	cdoran;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.3
+date	98.08.21.14.18.31;	author cdoran;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	98.06.12.21.09.42;	author rjprasad;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	98.06.05.21.14.53;	author anoop;	state Exp;
+branches;
+next	;
+
+
+desc
+@Documentation multiword adverbs (Rashmi)
+@
+
+
+1.3
+log
+@Corrected example reference.
+@
+text
+@The grammar also includes auxiliary trees anchored by multi-word adverbs
+like {\it a little}, {\it a bit}, {\it a mite}, {\it sort of}, {\it kind
+of}, etc.. 
+
+Multi-word adverbs like {\it sort of} and {\it kind of} can pre- modify
+almost any non-clausal category. The only strict constraint on their
+occurrence is that they can't modify nouns (in which case an adjectival
+interpretation would obtain)\footnote{Note that there are semantic/lexical
+constraints even for the categories that these adverbs {\it can} modify,
+and no doubt invite a more in-depth analysis.}. The category which they
+scope over can be directly determined from their position, except for when
+they occur sentence finally in which case they are assumed to modify
+VP's. The complete list of auxiliary trees anchored by these adverbs are as
+follows: $\beta$NPax, $\beta$NPpx, $\beta$NPnx, $\beta$NPvx, $\beta$vxNP,
+$\beta$NParb. Selected trees are shown in Figure~\ref{sortof-adv-tree}, and
+some examples are given in (\ex{1})-(\ex{4}).
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/modifiers-files/betaNPax.ps,height=1.5in}}
+& \hspace{.5in} & 
+{\psfig{figure=ps/modifiers-files/betaNPvx.ps,height=1.5in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betavxNP.ps,height=1.5in}}
+\\
+$\beta$NPax&&$\beta$NPvx&&$\beta$vxNP&&\\
+(a)&&(b)&&(c)&&\\
+\end{tabular}\\
+\caption{Selected Multi-word Adverb Modifier trees (for adverbs like {\it
+sort of}, {\it kind of}): $\beta$NPax, $\beta$NPvx, $\beta$vxNP.}
+\label{sortof-adv-tree}
+\end{figure}  
+
+
+
+\enumsentence{John is {\bf sort of} [$_{AP}$ tired].}
+
+\enumsentence{John is {\bf sort of} [$_{PP}$ to the right].}
+ 
+\enumsentence{John could have been {\bf sort of} [$_{VP}$ eating the cake].}
+ 
+\enumsentence{John has been eating his cake {\bf sort of} [$_{ADV}$ slowly].}
+
+
+There are some multi-word adverbs that are, however, not so free in their
+distribution. Adverbs like {\it a little}, {\it a bit}, {\it a mite} modify
+AP's in predicative constructions (sentences with the copula and small
+clauses, AP complements in sentences with raising verbs, and AP's when they
+are subcategorized for by certain verbs (e.g., {\it John felt angry}). They
+can also post-modify VP's and PP's, though not as freely as
+AP's\footnote{They can also appear before NP's, as in, ``John wants {\it a
+little} sugar''. However, here they function as multi-word determiners and
+should not be analyzed as adverbs.}. Finally, they also function as
+downtoners for almost all adverbials\footnote{It is to be noted that this
+analysis, which allows these multiword adverbs to modify adjectival phrases
+as well as adverbials, will yield (not necessarily desirable) multiple
+derivations for a sentence like {\it John is a little unecessarily
+stupid}. In one derivation, {\it a little} modifies the AP and in the other
+case, it modifies the adverb.}. Some examples are provided in
+(\ex{1})-(\ex{4}).
+
+
+\enumsentence{Mickey is {\bf a little} [$_{AP}$ tired].}
+
+\enumsentence{The medicine [$_{VP}$ has eased John's pain] {\bf a little}.}
+
+\enumsentence{John is {\bf a little} [$_{PP}$ to the right].}
+
+\enumsentence{John has been reading his book {\bf a little} [$_{ADV}$ loudly].}
+
+Following their behavior as described above, the auxiliary trees they
+anchor are $\beta$DAax, $\beta$DApx, $\beta$vxDA, $\beta$DAarb,
+$\beta$DNax, $\beta$DNpx, $\beta$vxDN, $\beta$DNarb. Selected trees are
+shown in Figure~\ref{alittle-adv-tree}).
+
+
+\begin{figure}[htb]
+\centering
+\begin{tabular}{ccccccc}
+{\psfig{figure=ps/modifiers-files/betavxDA.ps,height=1.5in}}
+& \hspace{.5in} & 
+{\psfig{figure=ps/modifiers-files/betaDAax.ps,height=1.5in}}
+& \hspace{.5in} &
+{\psfig{figure=ps/modifiers-files/betaDNpx.ps,height=1.5in}}
+\\
+$\beta$vxDA&&$\beta$DAax&&$\beta$DNpx&&\\
+(a)&&(b)&&(c)&&\\
+\end{tabular}\\
+\caption{Selected Multi-word Adverb Modifier trees (for adverbs like {\it
+a little}, {\it a bit}): $\beta$vxDA, $\beta$DAax, $\beta$DNpx.}
+\label{alittle-adv-tree}
+\end{figure}
+
+
+@
+
+
+1.2
+log
+@made some changes in the text - Rashmi
+@
+text
+@d61 1
+a61 1
+(\ex{5})-(\ex{8}).
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d57 5
+a61 3
+as well as adverbials, will yield multiple derivations for a sentence like
+{\it John is a little unecessarily stupid}. In one derivation, {\it a
+little} modifies the AP and in the other case, it modifies the adverb.}.
+d73 3
+a75 3
+anchor are $\beta$DAax, $\beta$DApx, $\beta$vxDA, $\beta$DNax, $\beta$DNpx,
+$\beta$vxDN, $\beta$DAarb, $\beta$DNarb. Selected trees are shown in
+Figure~\ref{alittle-adv-tree}).
+@

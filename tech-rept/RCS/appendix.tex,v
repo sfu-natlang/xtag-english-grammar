@@ -1,0 +1,123 @@
+head	1.1;
+access
+	egedi
+	beth
+	cdoran
+	srini;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.1
+date	93.12.13.15.38.52;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Appendix section
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@\appendix
+\section{Tree Naming conventions}
+
+The names of tree families and the names of the trees within tree families havetwo sections, a prefix and a body. The prefix must contain one of the following:
+
+\begin{tabular}{ll}
+T&Tree family\\
+alpha&initial tree\\
+beta&auxiliary tree\\
+\end{tabular}
+
+Following an $\alpha$ or a $\beta$ can additionally contain one of:
+
+\begin{tabular}{ll}
+I&imperative\\
+E&ergative\\
+R{0,1,2}&wh-relative clause\{position\}\\
+N{0,1,2}&non-wh relative clause\{position\}\\
+G&genitive\\
+pW{0,1,2}&wh-PP extraction\{position\}\\
+W{0,1,2}&wh-NP extraction\{position\}\\
+\end{tabular}
+
+Where the numbering of positions is:
+\begin{tabular}{ll}
+0&subject position\\
+1&first argument (e.g. direct object)\\
+2&second argument (e.g. indirect object)\\
+\end{tabular}
+
+The body of the name consists of a string of the following components
+used to designate the leaves of the tree:
+\begin{tabular}{ll}
+s&sentence\\
+a&adjective\\
+arb&adverb\\
+BE&"be"\\
+x&phrasal category\\
+d&determiner\\
+v&verb\\
+lv&light verb\\
+conj&conjunction\\
+comp&complementizer\\
+g&genitive (e.g. 's)\\
+It&"it"\\
+n&noun\\
+p&preposition\\
+pl&particle\\
+CAPS&anchor\\
+by&"by"\\
+neg&negation\\
+\end{tabular}
+
+
+
+
+\section{Features}
+
+\begin{tabular}{|l|l|}
+\hline
+Feature&Value\\
+\hline
+\hline
+agr 3rdsing&$+,-$\\
+agr num&plur,sing\\
+agr pers&1,2,3\\
+assign-case&nom,acc,none\\
+assign-comp&that,whether,if,for,rel,inf\_nil,ind\_nil\\
+card&$+,-$\\
+case&nom,acc,none\\
+comp&that,whether,if,for,rel,inf\_nil,ind\_nil\\
+conditional&$+,-$\\
+decreas&$+,-$\\
+definite&$+,-$\\
+displ-const&$+,-$\\
+extracted&$+,-$\\
+gen&$+,-$\\
+inv&$+,-$\\
+invlink&\\
+mainv&$+,-$\\
+mode&base,ger,ind,inf,imp,nom,ppart,prep,sbjunt\\
+neg&$+,-$\\
+passive&$+,-$\\
+perfect&$+,-$\\
+pred&$+,-$\\
+predet&$+,-$\\
+progressive&$+,-$\\
+pron&$+,-$\\
+quan&$+,-$\\
+tense&pres,past\\
+trace&no value, indexing only\\
+trans&$+,-$\\
+wh&$+,-$\\
+\hline
+\end{tabular}
+@

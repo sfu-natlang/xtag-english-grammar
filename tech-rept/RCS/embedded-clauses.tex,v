@@ -1,0 +1,199 @@
+head	1.2;
+access
+	egedi
+	beth
+	cdoran
+	srini;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.2
+date	94.07.20.19.31.26;	author cdoran;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	93.12.13.15.43.58;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Section on embedded clauses
+@
+
+
+1.2
+log
+@This file is no longer in use; it's contents are in rel_clauses.tex, sent-comps-subjs.tex, and sent-adjs-sub-conjs.tex.
+..
+@
+text
+@\section{Embedded clauses}
+In the LTAG formalism,  arguments of a lexical items including
+subjects, appear in the initial tree anchored by that lexical item.  A
+sentential arguement appears  as an S node in the appropriate
+position within an elementary tree anchored by the lexical item that
+selects it. This is the case for sentential
+complements of verbs, prepositions and nouns and for sentential
+subjects. Following standard GB approach, the English LTAG grammar
+does not allow VP complements but treats verb-anchored structures
+without overt subjects as having PRO subjects.  
+
+In the English LTAG grammar, complementizers select the type of clause
+to which they adjoin through constraints on the {\bf mode} feature
+of the S footnode in the $\beta$COMPs tree shown in (\ex{1}).
+
+The grammar handles the complementizers: {\it that\/}, {\it
+whether\/}, {\it if\/}, {\it for\/}, and no complementizer, and the
+clause types: indicative, infinitival, gerundive, and subjunctive.
+The {\bf comp} feature reflects the value of the complementizer if one
+has adjoined to the clause and has the value {\bf nil} otherwise.
+
+ This grammar does not have a category distinction between S and
+S'. Clauses with and without complementizers are all of the category
+S. The differences attributed to bar level in GB are represented by
+the {\bf comp} feature in the English LTAG grammar.  The {\bf
+comp} feature also insures that there are no multiple
+complementizers by requiring the footnode of $\beta$COMPs to have {\bf
+$<$comp = nil$>$}.  Note that there are no empty
+complementizers in this system. The absence of an overt complementizer
+is represented by having no complementizer adjoined to S. That is, in
+all cases, absence of a complementizer is taken to actually be absence
+of a complementizer.
+
+Another component of the complementizer system, the {\bf
+assign-comp} feature, is used to represent the requirements of
+particular types of clauses for particular complementizers.  So while
+the {\bf comp} feature represents  constraints originating from the VP
+dominating the clause, the {\bf assign-comp} feature represents constraints
+originating from the highest VP in the clause. The {\bf assign-comp}
+feature is particularly useful in accounting for the variation in
+subjects of infinitival clauses.  
+
+\enumsentence{John wants her to win.}
+\enumsentence{John wants to win.}
+\enumsentence{John wants for her to win.}
+\enumsentence{*John wants for she to win.}
+\enumsentence{*John wants for to win.}
+
+
+Examples (\ex{-2}), (\ex{-1}) and (\ex{0}) show that an accusative
+case subject is obligatory in an infinitive clause if the
+complementizer {\it for\/} is present. The infinitive clauses in both
+(\ex{-4}) and (\ex{-3}) are analyzed in the English LTAG grammar as
+having PRO subjects.  The apparent subject of {\it to win\/} in
+(\ex{-4}) is taken to be an object of the verb rather than the subject
+of the infinitive clause.  To capture these facts, two infinitive
+{\it to}'s are posited. One infinitive {\it to\/} has {\bf
+$<$assign-case$>$ =none$>$} which forces a PRO subject. The other
+infinitive {\it to\/} has no value at all for {\bf assign-case} and
+will only occur with the complementizer {\it for\/} because in those
+instances {\it for} supplies the {\bf assign-case} value. The {\bf
+assign-comp} feature is used with the non-case-assigning {\it to} to
+impose obligatory adjunction of the complementizer {\it for}.
+
+ 
+\subsection{Sentential Complements}
+\subsubsection{Sentential Complements of Verbs}
+Verbs that select for sententential complements select the {\bf mode}
+and {\bf comp} values for those complements. Since with very few
+exceptions\footnote{For example, long distance extraction is not
+possible from the S complement in it-clefts} long distance extraction
+is possible from sentential complements, the S complement nodes are
+adjunction nodes. Figure \ref{think} shows the declarative tree
+$\beta$nx0Vs1, anchored by {\it think}.  
+
+%\begin{figure}
+%\caption{ \label{think}  $\beta$nx0Vs1}
+%\end{figure}
+
+The need for an adjunction node rather than a substitution node  at
+S$_{1}$ may not be obvious untill one considers the derivation of
+sentences with long distance extractions.  For example, the
+declarative in (\ex{1}) is derived by adjoining the tree in figure
+\ref{clara-wrote-a-book} to the S$_{1}$ node of the tree in
+figure \ref{ernest-thinks}.  Since there are no bottom features on
+S$_{1}$, the same final result could have been achieved with a
+substitution node at S$_{1}$. 
+\enumsentence{Ernest thinks Clara wrote a book}
+
+%\begin{figure}
+%\caption{ \label{clara-wrote-a-book} Tree for the sentence {\it Clara
+%wrote a book}}
+%\end{figure}
+
+%\begin{figure}
+%\caption{ \label{ernest-thinks} Tree for [$_{S}${\it Ernest thinks\/}
+%S $_{S}$] 
+%\end{figure}
+
+However, the adjunction node is crucial in deriving (\ex{1}).  
+
+\enumsentence{Who does Ernest think wrote a book?}
+
+This example is derived from the trees for {\it who wrote a book?} shown
+in figure \ref{who-wrote-a-book} and for {\it Ernest think} S shown in
+figure \ref{ernest-think}.
+
+\subsection{Sentential Subjects}
+
+Verbs that select sentential subjects anchor trees that have an S node
+in the subject position rather that an NP node.  Since extraction is
+not possible from sentential subjects, they are implemented as
+substitution nodes in the English LTAG grammar.  Restrictions on
+sentential subjects such as the required "that" complementizer for
+indicatives, are enforced by feature values specified on the S
+substitution node in the elementary tree.  
+
+The distinction between {\bf inf\_nil} and {\bf ind\_nil} captures a
+difference between infinitive and indicative clauses in subject
+position which will be discussed in detail in the section on
+sentential subjects.
+
+\subsection{Relative Clauses}
+Relative clauses are represented in the grammar by auxiliary trees
+that adjoin to NP. These trees are anchored by the verb in the clause
+and appear in the appropriate tree families for the various verb
+subcategorizations. Our analysis of relative clauses allows a single
+tree to provide the structure for various relative clause types. For
+example, the Rnx0Vnx1 tree shown in () is used for the relative
+clauses shown in (\ex{0})-(\ex{5}).
+
+%insert tree
+
+\enumsentence{the man that Muriel likes}
+\enumsentence{the man who Muriel likes}
+\enumsentence{the man Muriel likes}
+\enumsentence{what Muriel likes}
+\enumsentence{the book for Muriel to read}
+\enumsentence{the man reading the book}
+
+The relative pronouns {\it who\/}, and {\it which\/} are treated
+uniformly with {\it that}
+as complementizers but are restricted to relative clauses. These relative
+complementizers anchor the tree $\beta$COMPs  and adjoin onto the S node
+of the relative clauses trees.  The complementizer
+analysis also extends to infinitives with for complementizers as in
+example (\ex{-1}).  
+The relative clauses in (\ex{-5})-(\ex{0}) vary by clause type, type of complementizer
+and the wh-status of the head NP.  Examples (\ex{-5})-(\ex{-3}) have indicative
+clauses with {\bf $<$wh = -$>$} head NP's and show variation between
+{\it that\/}, {\it who\/} and
+no complementizers.   
+By not putting a restriction on the {\bf wh} feature on the NP footnode of
+relative clauses, free relatives such as (\ex{-2}) are accounted for
+as {\bf $<$wh =
++$>$}  NP head with no complementizer.
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@@

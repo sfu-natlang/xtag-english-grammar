@@ -1,0 +1,439 @@
+head	1.1;
+access
+	egedi
+	beth
+	cdoran
+	srini;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.1
+date	93.12.13.15.38.17;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@Adverb section
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@\section{Adverbs}
+
+Three major issues in accounting for abverbs are:
+\begin{enumerate}
+\item accounting for the variation in adverb position as shown in
+(\ex{1})-(\ex{3}). 
+
+\enumsentence{(Now) he is (now) living in N.Y. (now).}
+\enumsentence{(Bravely), Frank (bravely) had (bravely) fought in Spain (bravely).}
+\enumsentence{(Here), you can (here) see the symptom (here).}
+
+\item Whether wh-adverbs require a trace; and
+\item criteria for subclasses of adverbs.
+\end{enumerate}
+
+\subsection{Variation in adverb position}
+ Roughly speaking, adverbs can be in sentence-initial, medial and
+final positions.  Different adverbs occur in different positions and
+some adverbs occur in multiple positions.  To account for this order
+variation Emonds(\shortcite{Emonds}) and
+Jackendoff(\shortcite{Jackendoff}) use several base generated
+positions plus transformations.  Ernst(\shortcite{Ernst}) accounts for
+the order variation with an entirely base generated system.  
+
+
+\subsection{Adverb trace}
+The motivation of having gaps in a transformational analysis of
+extraction construction like wh-question, topicalization, etc. is
+based on the consideration that these constructions behave
+as though there is a node of the appropriate type in the position of
+the extraction site (cf. Jacobson 82). The following are some
+empirical evidence supporting this consideration:
+
+\begin{itemize}
+\item Subcategorization of P and V: Transitive verbs and prepositions 
+cannot, in general, occur without a following NP, but they can occur in 
+these constructions.\\
+
+\enumsentence{Which do you think your father put in the garage?}
+\enumsentence{$\ast$My father put in the garage.}
+\enumsentence{Who did you talk with?}
+\enumsentence{$\ast$I talked with.}
+
+\item In some dialects nominal wh-phrases make a clear case-marking
+distinction with regard to the position of the extraction site.\\
+
+\enumsentence{$\ast$Who/Whom did John see?}
+\enumsentence{Who/$\ast$Whom did John say was coming.}
+
+\item person/number agreement:\\
+
+\enumsentence{{\em Which boy\/} might he say {\em likes\/} Mary?}
+\enumsentence{$\ast${\em Which boy\/} might he say {\em like\/} Mary?}
+\enumsentence{{\em Which boys\/} might he say {\em like\/} Mary?}
+\enumsentence{$\ast${\em Which boys\/} might he say {\em likes\/} Mary?}
+
+\item {\em wanna\/} contraction:\\
+
+\enumsentence{I wanna go to a movie.}
+\enumsentence{Who do you wanna go to the movie with?}
+\enumsentence{$\ast$Who do you wanna go to the movie with Chris?}
+
+\end{itemize}
+
+If we follow the line of reasoning above in positing a trace for
+wh-phrases, there is no reason to posit a trace for adverbial
+wh-phrases: Adverbials are not subcategorized for by verbs or
+prepositions. There is no overt morphological evidence to identify the
+position of the extraction site of adverbs. 
+
+In addition, Baltin(\cite{Baltin}) has pointed out that PP-topicalized
+sentences like (\ref{pp-top}) are grammatical, while the corresponding
+{\it wh}-question in (\ref{pp-top-q}) is ungrammatical:
+
+\enumsentence{After the party$_{i}$, I wonder who$_{j}$ e$_{j}$will
+stay e$_{i}$.}
+\enumsentence{$\ast$When$_{i}$ do you wonder who$_{j}$ e$_{j}$ will stay
+e$_{i}$?}
+
+Baltin uses this contrast to argue that preposed adverbs may not leave
+traces, since under standard GB theory assumptions the trace of the
+adverb in (\ref{pp-top}) would not be properly governed. 
+
+\subsection{Adverb subclasses}
+All approaches to adverbs are faced with the problem of dividing them
+into classes because adverbs do not behave uniformly with respect to
+positions in which they can occur. The classes shown below that have
+been proposed by  \cite{Quirk}   are based primarilly on
+semantic considerations. 
+
+\begin{itemize}
+ \item Time-adverbials ({\em when})
+  \begin{enumerate}
+   \item Time-when adverbials denote a point or period of time, and/or
+imply the point from which that time is measured.
+     \begin{verse}
+      Do come and see again.\\
+      The meeting starts tomorrow \\
+      I'm just finishing my homework.({\em just\/} always in mid-position)\\
+      (Then) he (then) has (then) lived in N.Y.(then).\\
+      (Recently) they (recently) had an accident (recently)
+     \end{verse}
+   \item Time duration adverbials denote (1) length of time or (2) duration
+         from some preceding point of time. 
+     \begin{verse}
+      They always/temorarily out of work.
+     \end{verse}
+   \item Time frequency adverbials denote either (1) definite
+         frequency, or (2) indefinte frequency. They can occur any of
+         the three positions. eg. {\em weekly, generally, normally,
+         always, regulary, sometimes, rarely, etc.}
+  \end{enumerate}
+ \item Place adverbials ({\em where\/})
+     \begin{verse}
+      (Outside), the boys were jumping and skipping (outside).\\
+      (In the nursery) the children were playing happily but noisily.\\
+      The children were playing happily but noisily (in the nursery).
+     \end{verse}
+ \item Manner adverbs ({\em how\/}) are assumed to modify VP's.
+     \begin{verse}
+      They live frugally.\\
+      They examined the specimen microscopically.\\
+      He put the point well/*He well put the point \\
+      The point was put well/The point was well-put.
+     \end{verse}     
+ \item Sentence adverbs are periphral to the sentence structure, and have
+       a wide range of possible structures:  
+     \begin{verse}
+      Frankly, he hasn't got a chance.\\
+      in all frankness \\
+      to be frank/to speak fankly/to put it frankly \\
+      frankly speaking/putting it frankly \\
+      put frankly \\
+      if I may be frank/if I can speak frankly/if I can put it frankly
+     \end{verse}
+\end{itemize}
+       More sentence adverbs are
+       {\em admittedly, certainly, definitely, indeed, surely, perhaps,
+          possibly; in fact, actually, really; officially,
+          superficially, technically, theoretically; fortunately,
+          hopefully, luckily, naturally, preferably, strangely,
+          surprisingly, etc.}
+          Many other sentence adverbials (eg. however, therefore,
+          moreover) have a connective role.
+Many adverbs can function as both manner and sentence adverbs,
+depending on the position of the adverb. 
+
+Emonds(\shortcite{Emonds76}) posits three base positions for adverbs
+and has different adverbs associated with each position. He uses
+tranformations to derive positions other than his three base positions
+or to account for adverbs that can occur in more than one position.
+Base positions and possible tranformations for an adverb depend on its
+class.
+
+Jackendoff(\shortcite{Jackendoff72}) has six subclasses of adverbs,
+according to their pattern of occurrence, and meaning in each of: sentence
+initial position, AuxRange and sentence final position.  He uses a
+number of different transformations depending (primarily) on the
+semantics of the adverbs. He has to resort to semantics to formulate
+the right kind of transformation. So again, categorizing the the
+adverbs is crucial to the analysis.
+
+Ernst(\shortcite{Ernst84} has a base-generation approach to adverbs.
+His base rules generate all possible AdvP positions.  The general
+type of semantics of an adverb specifies what positions that adverb
+can range over, so again semantic classification is crucial.
+
+In summary, accounting for the syntactic behavior of adverbs requires
+classification of adverbs by semantics and/or distributional criteria.
+  
+
+\subsection{LTAG treatment of adverbs}
+In the English LTAG grammar VP-/S-modifying adverbs anchor the
+auxiliary trees $\beta$adS, $\beta$Sad, $\beta$VPad and $\beta$adVP.
+Besides the VP-/S-modifying adverbs, the English LTAG grammar includes
+adverbs that modify other categories asshown in (\ex{1})-(\ex{4})\footnote{This categorization is adapted  from {\em A Communicative
+Grammar of English\/} [Leech and Svartvik 75].}
+
+\enumsentence{modifying an adjective:\\ {\em extremely\/} good\\
+{\em rather\/} tall\\rich {\em enough\/} }
+\enumsentence{modifying an adverb:\\ oddly {\em enough\/}\\ {\em very\/} well}
+\enumsentence{ modifying a PP:\\ {\em right\/} through the wall}
+\enumsentence{modifying a determiner: He has {\em hardly\/} any
+friends\\ {\em over\/} two hundred deaths}
+
+
+
+We have separate trees for each of the modified categories and for
+pre- and post-modification where needed.   The trees are auxiliary
+trees $\beta$ARBx, $\beta$xARB, where X is a variable over S, VP, NP, A,
+Ad, PP, and an initial tree $\alpha$Ad. Examples of these trees are
+shown in figures (\ref{sARB})-(\ref{pxARB})
+
+%need all the adverb trees
+
+
+
+
+Order variation of an adverb is represented by different trees. For
+instance, if an adverb can occur in sentence initial, preverbal and
+sentence final positions as shown in (8) and (9), it can represented by
+four different trees $\beta$ARBS, $\beta$ARBvx, $\beta$vxARB, and
+$\beta$sARB.
+
+\begin{verse}
+(8) ({\em Cleverly\/}) he ({\em cleverly\/}) answered the questions
+({\em cleverly\/}).\\
+(9) My car does not start on the first trial everyday.
+\end{verse}
+
+We assign two trees $\beta$vxARB and $\beta$sARB to sentence final
+adverbs since they can be interpreted as modifying the VP or the whole
+S: e.g. (8) with the adverb {\em cleverly\/} in sentence final
+position has two interpretations (a) It was clever that he answered
+the question (S-modifying), (b) He answered question in a clever
+manner (VP-modifying).\footnote{This line of reasoning, that
+sentence-final adverbs could be represented by either $\beta$vxARB and
+$\beta$sARB depending on their interpretation, is inconsistent with the
+reasoning given in 3.3 with regard to the syntax/semantics mapping. To
+make the story consistent, we can represent all sentence final adverbs
+as $\beta$sARB which can modify either the S or VP.} (9) also has two
+interpretations: (a) For everyday, it is not the case that my car
+starts on the first trial, where the adverb {\em everyday\/} takes the
+scope over the whole sentence (S-modifying), (b) It is not the case
+that my car starts on the first trial everyday, where {\em everyday\/}
+takes the scope over the VP (VP-modifying).
+
+The kind of treatment we give to adverbs here is very much in line
+with the base-generation approach proposed by [Ernst 84], which
+assumes all positions where an adverb can occur to be base-generated,
+and the semantics of the adverb specifies a range of possible
+positions occupied by each adverb.
+However, classification of adverbs in the English LTAG grammar does not directly take
+semantics into account.  Adverbs are simply assigned the appropriate
+trees to account for their distributions.  Adverbs that select the
+same trees, could be considered a class, and although it would be interesting
+if these classes corresponded some semantic distinctions, we have not
+investigated this possiblity at this point in the developement of the
+grammar.
+
+\subsubsection{Nontransformational Treatment of Wh-adverbs}
+
+In the current system, we posit no traces for wh-adverbs in line with
+the base-generation approach for various positions of adverbs,
+and assign the sentence initial wh-adverbs the same auxiliary
+tree for other sentence initial adverbs ($\beta$adS) with the feature
+[+wh] added on {\em ad\/}. 
+
+Under this treatment, the derived tree of the sentence {\em How did
+you go to New York?\/} looks like (14), with no trace:
+
+\begin{verbatim}
+(14)               S
+                 /   \
+               Ad      Sr
+             [+wh]    /  \
+               |     Va   S
+              how    |   /  \
+                    did NP   VP
+                        |   /  \
+                       you V    PP
+                           |   /  \
+                          go  P    NP
+                              |    |
+                             to  New York
+\end{verbatim}
+ 
+\subsubsection{ECP Effects and Wh-island Constraint}
+
+Since we are not assuming a trace for adverbs (including wh-phrases),
+it seems to be worth noting how the long-distance dependency of
+wh-adverbs including the wh-island effect -- which has a simple
+structural explanation (cf. [Kroch 87, 89]) -- is accounted for in the 
+current system. 
+
+Consider the examples given below:
+
+\begin{tabbing}
+(15) \= a. \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
+(15) \> a. When$_{i}$ do you think that Mary will come {\em e\/}$_{i}$?\\
+     \> b. *When$_{i}$ do you wonder who$_{j}$ {\em e\/}$_{j}$ will stay
+{\em e\/}$_{i}$? \\
+(16) \> a. \> *Who$_{i}$ does he think that [{\em e\/}$_{i}$ left]? \\
+     \> b. \> When$_{i}$ does he think that [we left $_{i}$]? \\
+(17) \> a. \> ?On that shelf$_{i}$, how many books$_{j}$ can you fit {\em
+e\/}$_{j}$ {\em e\/}$_{i}$? \\
+     \> b. \> *That many books$_{i}$, on what shelf$_{j}$ {\em e\/}$_{i}$
+can fit {\em e\/}$_{j}$? 
+\end{tabbing}
+
+\noindent
+In [Kroch 89], the (un)grammaticality of the above pairs of examples
+are explained in terms of following mechanisms along with the notion
+of {\em extended domain of locality\/}:
+
+\begin{itemize}
+\item A well-formedness constraint on elementary trees that to the
+effect that they can contain no more than one wh-phrases in sentence
+initial positions for wh-island constraint (cf.\ (15) above)
+\item Three types of proper government for ECP:
+ \begin{enumerate}
+  \item Lexical government for complement trace
+  \item Strictly local antecedent government for a subject trace
+  \item Local antecedent government for an adverb trace
+ \end{enumerate}
+\end{itemize}
+
+The (un)grammaticality of the examples can be easily explained by
+using the same mechanisms described above. In some sense, the
+explanatory mechanism becomes much simpler since we can get away with
+the `local antecedent government' for an adverb trace.
+
+\subsubsection{Complement Extraction out of Wh-islands}
+
+In [Kroch 89], the contrast between (18a) and (18b) is explained by
+employing multi-component adjunction:\footnote{We are omitting the
+details of the explanation here. For the details, refer to [Kroch
+89].}
+
+\begin{tabbing}
+(18) \= a. \= ?What$_{i}$ were you wondering [how$_{j}$ to say {\em
+e\/}$_{i}$ {\em e\/}$_{j}$]? \kill
+(18) \> a. \> ?What$_{i}$ were you wondering [how$_{j}$ to say {\em
+e\/}$_{i}$ {\em e\/}$_{j}$]? \\
+     \> b. \> *How$_{i}$ were you wondering [what$_{j}$ to say {\em
+e\/}$_{j}$ {\em e\/}$_{j}$]?
+\end{tabbing}
+
+\noindent
+The ungarammaticality of (18b), however, can be accounted for in
+another way than the ECP account in [Kroch 89]. Namely, the
+restriction on initial trees described above can rule out the
+sentence.\footnote{Subject extraction of the same sort can also be
+explained in the same way as adverb extraction in (18b).} Ruling out
+the ungrammaticality of the same sentence in two different ways seems
+to be undesirable according to the occam's razor.\footnote{On the
+other hand, this redundency in the TAG mechanism might be unavoidable, 
+considering that the ECP in the standard GB theory
+subsumes the wh-island effect, while the restriction on
+initial trees in TAG discussed in [Kroch 89] is meant to account for
+wh-island effect, and the TAG version of ECP is formulated to take
+care of the classical ECP effect in GB theory(?).}
+
+Instead, if we don't assume the adverb trace, (18b) is ruled out only
+by the restriction on initial trees, although the decision of what is
+the preferrable way of ruling out the sentence must be linguistically
+well-motivated.
+
+\subsubsection{Derivation of the Unbounded Dependency of Wh-adverbs in
+Bridge Verb Construction}
+
+In the current system which does not posit a trace for adverbs, the
+sentences such as given below have two separate derivations:
+
+\begin{verse}
+(19) Why do you think that Mary left angry?\\
+(20) When did you think the TV set was stolen?
+\end{verse}
+
+\noindent
+In (19) and (20), the sentence initial adverbs {\em why\/} and {\em
+when\/} can be originated either from the embedded clause or from the 
+matrix clause. Depending on the derivation, the sentences have different 
+interpretations with respect to the scope of the adverbs. 
+
+Notice that this treatment of wh-adverbs necessarily presuppose that the
+unit of semantics as well as syntax is strictly local, and the
+interpretation of the whole sentence crucially hinges on the derivation
+history of the derived tree. (cf. [Shieber \& Schabes 90] for 
+quantifier scope interpretation)
+
+
+
+\subsection{Inconsistency/Problems in the Adverb Treatment in the Current System}
+
+In the previous system (until 1990 Spring), the structures used for adverbs
+were limited to right and left attachment to S, and right and left attachment
+to VP, which are meant to provide the proper scope for each adverb. 
+
+The decision of the (syntactic) strucuture of adverbs on the basis of scope
+consideration, however, has the following problem:
+
+\begin{itemize}
+\item It presupposes that any adverbs which take the scope over the sentence
+must have have a struture where the adverb is attached right or left to
+S depending on the surface position of the adverb.
+\item This treatment, however, cannot give a coherent story about sentential
+adverbs positioned among auxiliaries as in {\em John could probably have
+done the homework this morning\/}. The adverb {\em probably\/} is
+S-modifying, but its surface order dictates that it should not be
+attached left or right to S but between the first auxiliary {\em could\/}
+and the second auxiliary {\em have\/}.
+\end{itemize}
+
+The problem is due to the two irreconcilable assumptions that all
+adverbs are base-generated, and that the structure of adverbs must
+reflect the semantics of the adverbs (i.e. one-to-one mapping between
+syntax and semantics).
+
+There seem to be at least two ways of making the inconsistency
+linguistically coherent: One is to abandon the idea of having the
+semantics be reflected in the syntax, i.e. there is no one-to-one
+correpondence between the position of an adverbs and its scope, hence
+to admit that a sentence medial adverb can take scope over the whole
+sentence, or a sentence final adverb doesn't have to be realized in
+two different structures to reflect its proper scope. The other is to
+adopt the idea of having a trace for adverbs, so that the base
+position of an adverb reflects the scope interpretation of the adverb
+-- in this case we need to adopt the transformational approach very
+similiar to that discussed in section 2. 
+
+@

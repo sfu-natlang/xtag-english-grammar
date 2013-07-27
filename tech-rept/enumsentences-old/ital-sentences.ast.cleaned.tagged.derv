@@ -1,0 +1,4 @@
+3" ""Beth/PropN wroten't/V her/Det dissertation/N"
+(("nx0Vnx1[wroten't]" NIL) (("NXdxN[dissertation]" (2 2)) (("DXG[her]" (1)))) (("NXN[Beth]" (1))))
+4" ""she'ote/V her/Det dissertation/N"
+(("Inx0Vnx1[she'ote]" NIL) (("NXdxN[dissertation]" (2 2)) (("DXG[her]" (1)))))

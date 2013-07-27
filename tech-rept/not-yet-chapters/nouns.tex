@@ -1,0 +1,55 @@
+\section{Nouns}
+
+There are two basic kinds of noun phrases in XTAG, those with and without a determiner.
+
+\Nouns with sentential complements
+\Predicative nouns
+\Noun gerunds
+\NP and N conjunction
+\Relative clauses
+
+\Noun-Noun Compounds
+
+In the English LTAG grammar, all nouns select the trees shown in
+figure \ref{n-comp} which allows them to do noun-noun modification.
+
+\begin{figure}[h]
+%put in n-n coupmpound tree(s)
+\end{figure}
+
+This allows for the derivation of NP's such as {\it the oatmeal cookies}
+and {\it a basic initialization routine}
+
+\begin{figure}[h]
+%derived tree for the oatmeal cookies and a basic initialization routine
+\end{figure}
+
+Notice that the noun-noun modifier trees differ from the adjective
+tree shown in figure \ref{adj-tree}.
+
+\begin{figure}
+%adj-tree
+\end{figure}
+
+This similarity accurately represents the shared noun modifying
+function of nouns in compounds and adjectives.  Constraints on
+noun-noun compounding that have been discussed in the linguistics
+literature have been based on semantic considerations. Since we are
+currently not attempting to encode sematics in the English LTAG
+grammar, our implementation of noun-noun compounding is quite
+unconstrained and produces multiple derivations. This greatly
+increases ambiguity in the grammar, but this increase in ambiguity
+seems a necessary one.  Different derivations are needed to account
+for the difference between (\ex{1}) and (\ex{2}).
+
+\enumsentence{[Chinese [history teacher]] (a chinese person who
+teaches history)}
+\enumsentence{[[Chinese history] teacher] ( person who teaches chinese
+history)}
+
+
+
+
+
+
+

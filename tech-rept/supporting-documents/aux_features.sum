@@ -1,0 +1,128 @@
+
+From prolo@gradient.cis.upenn.edu Thu Sep 10 11:52:20 1998
+Date: Wed, 9 Sep 1998 10:48:28 -0400 (EDT)
+From: "Carlos A. Prolo" <prolo@gradient.cis.upenn.edu>
+To: Tonia Bleam <tbleam@linc.cis.upenn.edu>
+Subject: Re: summary from last week's meeting
+
+It couldn't be better the summary. Here are some additional comments.
+
+Although I initiallly proposed that small clauses (SC) don't use <passive>
+(as it is currently), I raised the point of whether raising verbs in
+the past participle can anchor SC trees to form perfect constructions:
+	John had seemed tired. Have John seemed happy ?
+Currently they can't (at least syn db doesn't have ppart entry for seem and 
+appear), but the answer in the meeting  (I think) was "yes" they should be 
+allowed. Hence we have to include <passive> in SC to block "was seemed". Right?
+
+As for wiping out the features from the lexicon, yes, that's the idea. But
+only when/if we are very certain. It's easier to change the grammar than
+the lexicon. As Tonia said it requires care and maybe more discussion.
+
+BTW, what about
+	"By this time, tomorrow, John will be having completed half
+		a century of existence"
+Does this sound good or not ? If "be" can't really take perfective
+constructions than we have new data and as Tonia suggested <perfect> would
+be used to block, with the proper additions to the lexicon.
+
+One last thing to think about. There's nothing to force us to be minimal 
+w.r.t. the number of features. We may conclude that all the five features
+are sound and independently motivated, even if not stricly independent in
+a more "mathematical" sense (i.e. we MIGHT handle everything without some).
+However, if we decide for that, then I think ALL the auxiliary entries in the
+lexicon should tell about their status w.r.t. the features (i.e. not only
+to guarantee blocking as last recourse). Again, topic for discussion.
+
+Carlos
+
+> 
+> 
+> Last week we finished a little late and didn't really have time to go over
+> the conclusions of the meeting. I want to make sure that we agree as to
+> what happened in the meeting and what the results should be. So this is a
+> summary of my interpretation of what happened. Could everybody (whether
+> you attended the meeting or not) read this over and make sure you agree
+> with the proposed changes to the grammar? Also -- if you feel like there
+> are issues that need more discussion, please let me know.
+> 
+> (and Carlos, please correct me if i misrepresent your proposals)
+> 
+> 
+> I. Progressive, perfect, and conditional features
+> *************************************************
+> Carlos proposed eliminating the features: progressive, perfect, conditional
+> These features were used in constraining the adjunction of auxiliary verbs, and
+> therefore were located on the VP node and passed up to the S node (for inverted
+> auxiliaries). Carlos proposes that we only need <passive> and <mainv> features
+> to constrain aux adjoining. 
+> 
+> apparently it had already been decided to eliminate these
+> features. Subsequently, however, it was discovered that if these features are
+> eliminated, then sentences like "do you have eaten the apple" would parse. 
+> 
+> This is a potential reason to put <progressive> and <perfect> features back in
+> the grammar. However, Carlos proposes that <mainv> be used to rule sentences
+> like this out, rather than <progressive> and <perfect?. That is, the auxiliary
+> "do" would only adjoin on to a VP that is <mainv:+>.
+> 
+> Apart from this, no other uses were found for <progressive> and
+> <perfect>. Since the meeting, however, we found that "(*)John was having eaten"
+> will parse, suggesting that maybe we need the <perfect> feature after
+> all. ("be" could require that it only adjoin on to VPs that are <perfect:->,
+> thus ruling out the above sentence.) Carlos is looking into this.
+> 
+> > Does anyone else see any reason why we need <progressive> and <perfect>
+> features? This may need to be discussed further, given the problem discussed in
+> the previous paragraph. 
+> 
+> One thing that I wanted to clarify: My understanding is that the proposal is to
+> delete the features completely from the grammar, not just the links from VP to
+> S. Is that right, Carlos?
+> 
+> Also, it was suggested that <conditional> should not be deleted because we
+> might need the feature to implement conditional inversion. I think that this
+> topic also merits further discussion. 
+> 
+> Other Conclusions: <mainv> and <passive> are needed on VP and must be linked to
+> S in regular clauses. <mainv>, but not <passive> is needed in small clauses. 
+> 
+> II. confusion about use of <mainv>
+> **********************************
+> related to I. If <mainv> is going to be used to constrain auxiliary adjoining,
+> then it needs to be used consistently. It sounded like it was sometimes used to
+> refer to a main verb (as opposed to an auxiliary) and other times it was used
+> to indicate that a verb form or clause could or could not appear as a matrix
+> verb/clause (as opposed to a subordinated clause). An example is that
+> subjunctives in the grammar are marked <mainv = ->. 
+> 
+> > Is there a reason we need mainv to mean non-matrix? if so, can we change this
+> feature to be <matrix> or something similar, rather than mainv?
+> 
+> along the same lines: right now all @PRES verbs are marked mainv = -. again,
+> this seems wrong. Can Carlos go ahead and change this?
+> 
+> III. null adjoining constraints on anchors?
+> *******************************************
+> The question was whether there are anchor nodes which require null adjoining
+> constraints. 
+> 
+> The consensus at the meeting seemed to be "no" -- we should not have null
+> adjoining constraints. Even idioms which don't allow some kinds of
+> modifications ("let's bury the little hatchet"), do allow others ("let's bury
+> the proverbial hatchet"); and the constraint seems to be semantic, not
+> syntactic. 
+> 
+> 
+> ********
+> There were a couple more issues on the handout, but I'm not sure if we covered
+> these fully or what the result was. Maybe we can finish this up next meeting if
+> there's time, or the time after that. 
+> ********
+> 
+> Thanks,
+> tonia
+> 
+> 
+> 
+

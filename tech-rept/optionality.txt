@@ -1,0 +1,18 @@
+
+restricted optionality and choices of grammar
+
+where one part of the grammar gives optionality of forms, another part of the
+grammar will use differing forms where-ever possible.
+
+jeff's morphemes don't mean case.
+
+a-marking in spanish -- a-marked indef is specific or non-specific, but hearers
+assume specific because have another form to mean non-specific.
+
+horn's q- and r- based implicatures. 
+I slept on a boat.
+I broke a finger.
+
+when do you assume non-ownership.
+
+

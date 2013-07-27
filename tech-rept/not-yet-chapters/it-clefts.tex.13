@@ -1,0 +1,149 @@
+ 
+
+
+
+
+
+
+\section{Predicational It/Th-clefts}
+Characteristics: \begin{enumerate}
+\item predicate NP with an adjective
+\item subject pronoun must be plural when the NP is plural--not dummy subj
+\item not synonymous with ``unclefted'' simple sentence.
+\end{enumerate}
+
+e.g. It was a rare year in which more than 1,000 whales were killed.
+Those are my cigarettes you got there, buddy.
+
+C. Ball suggests excluding these
+
+\section{Specificational It-clefts}
+
+\subsection{Basic structure}
+
+Potential arg in focus--gap in clause.  Adjunct in focus--no gap in
+clause.  Getting the right kind of clause is a matter of
+semantics--can't construe it right if you get the wrong kind of clause.
+So if you have an adjunct focus with a gap in the clause a required
+argument will be missing.  If you get an argument in the focus and a
+gapless clause then there won't be a spot in the predicate argument
+structure for the focus.  Get headless restrictive relative with
+arguments and ordinary sentential complements with adjuncts. In fact,
+the ones with adjuncts in the focus aren't really considered clefts by
+some people (e.g. C.Ball). 
+
+The Clause
+Possible TAG analyses:
+\begin{enumerate}
+\item Clause and Focus treated as relative clause in argument cases, so
+all It-clefts on arguments would be Tnx0Vnx1 where the nx1 is a relative
+clause, with
+focus as it's head. In adjunct cases one would simply have to be able to
+adjoin in the adjunct in the focus position. Adjuncts would be Tnx0?s2.
+
+problems:  how to get ``that'' as a relativizer. Doesn't have same
+restrictions on head as other relative clauses. Isn't completely
+consistent with Delahunty's analysis.
+
+\item Clause is an S in both argument and adjunct cases. In argument
+cases the S is Wh-moved. In adjunct cases it isn't. Pretty consistent
+with Delahunty's analysis. 
+
+problems:  how to get ``that'' as the relativizer in argument  cases. 
+
+\item Clause is a relative clause with a 0 head in argument cases.
+Adjunct cases are as above.  
+
+problems:  How to designate that the head must be empty.  Are there any
+other places where we need empty-headed relatives? how to get ``that''
+as a relativizer. Not consistent with Delahunty's analysis.
+
+\item Clause is S in both argument and adjunct cases.  Complementizers
+are aquired in the usual way and can be either wh or that.
+
+problem: How to get the gap for the argument cases.  
+\end{enumerate}
+
+Suggestion: Use analysis 2 above and let ``that'' be a wh-word in some
+cases.  It-clefts don't have to have +wh they just need to have the gap.
+
+
+\subsection{agreement}
+
+Case of the focus, which will only show up when the focus is a pronoun, varies by dialect. unfortnately the simplest dialect is non-standard.  In standard written English case is determined by the role the focus would have played in the clause.  Number agreement in the clause seems to be with the focus whenever the clause has a subject gap. The clause and the focus agree in person only when the focus is in nominative case. If the focus is not in nominative case the clause will have it's verb in third person.
+
+It's me who is/*am responsible.
+It is I who am/*is responsible.
+It is the boys who are responsible.
+It is me who the boys are bothering.
+
+
+One might use this pattern of agreement to argue against having the same VP
+structure for three agreement cases. One might especially want to argue in the case of the
+nominative focus and the subject gapped clause that their agreement supports
+treating them as a constituent (for example as a relative clause).  The non-gapped
+clause cases could, in constrast, be given the structure where focus and clause
+are both daughters of VP and would therefore not be expected to show agreement.  Such an
+approach would not account
+for the cases where focus and clause agree only in number in any natural way.
+Heads of relative clauses with subject extractions agree with the verb in all
+respects, not just number and for the structure in which they do not form a
+constituent, we are now arguing represents no structure.  This type of analysis
+would require two entirely separate structures for it-clefts while only accounting
+for two out of three agreement types.  Choosing a single structure with feature
+variation is no less pricipled than the alternative.  The fact that there are
+non-standard dialects in which there is only one agreement pattern tends to
+support the single structure analysis.
+
+
+
+Because auxilliaries adjoin in having a structure with the ``be'' as part of the
+initial tree requires that separate tree be included in the tree familly for
+questions in which ``be'' is inverted and for questions in which auxilliaries are
+inverted as in examples () -() below.
+
+Was it Mary who John kissed?
+Might it have been Mary who John kissed?
+Who was it that John kissed?
+Who might it have been that John kissed?
+
+
+
+
+initial  
+
+\section{Clefts}
+
+There are three main types of clefts that will be discussed:
+\begin{enumerate}
+\item It-clefts\\
+e.g. It was the submarine that sank.
+\item Wh-clefts\\
+e.g.  What sank was the submarine.
+\item Reverse wh-clefts
+e.g. The submarine was what sank.
+\end{enumerate}
+
+All of the clefts have three major components:
+\begin{enumerate}
+\item A clause (e.g. S) with or without a gap,
+\item A constituent (XP) compatible with any gap in the clause,
+\item ``be''
+\end enumerate
+The it-cleft has in addition the dummy subject ``it''.
+
+While \cite{Akmajian70} derived it-clefts from wh-clefts, many current researchers \cite{Delahunty84} \cite{Knowles86} \cite{GKPS85} \cite{Delin89} \cite{Sornicola88} favor base-generation of the various cleft sentences.  The TAG analysis of clefts presented here is consistent with the the current preference for base generation.  In the LTAG system structures that would be related by transformation in a movement-based account will appear in the same tree familly.  The LTAG analysis of clefts has a separate tree familly for each type of cleft, so like the base-generated approaches, we do not postulate a derivational type of relation between various clefts.  Following \cite{Delahunty84} the truth-conditional synonomy of the types of clefts with each other and with simple sentences is accounted for by semantics.  Essentially, although there are two different sentence types, when the same predicates and arguments occur the same truth-conditional interpretation will be availible.
+
+\subsection{It-clefts}
+
+The major points of \cite{Delahunty85}'s analysis that are particularly important to the current LTAG analysis are that the clause and the XP should be sisters and that they should both be daughters of the lowest phrasal projection of V.  
+
+The possiblity of analyzing the XP and together the clause as a relative clause is ruled out by the fact that they cannot be moved as a unit the way a relative clause could be.
+
+Chris hit the man who kissed Mary.
+The man who kissed Mary, Chris hit
+It was the man who Chris hit.
+*The man who Chris hit it was.
+The man it was who Chris hit.
+
+

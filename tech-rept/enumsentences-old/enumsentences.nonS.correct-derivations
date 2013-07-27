@@ -1,0 +1,62 @@
+for/Comp Beth/PropN Ann/PropN to/V play/V frisbee/N with/Prep her/Pron
+(("nx0Vnx1[play]" NIL) (("NXN[frisbee]" (2 2))) (("vxPnx[with]" (2)) (("NXN[her]" (2 2))) (("Vvx[to]" NIL))) (("NXN[Ann]" (1)) (("Nn[Beth]" (1)))) (("COMPs[for]" NIL)))
+
+a/Det biscuit/N
+(("NXdxN[biscuit]" NIL) (("DXD[a]" (1))))
+
+big/A green/A bugs/N
+(("NXN[bugs]" NIL) (("An[green]" (1)) (("An[big]" NIL))))
+
+big/A green/A ideas/N
+(("NXN[ideas]" NIL) (("An[green]" (1)) (("An[big]" NIL))))
+
+colorless/A green/A ideas/N
+(("NXN[ideas]" NIL) (("An[green]" (1)) (("An[colorless]" NIL))))
+
+big/A green/A design/N
+(("NXN[design]" NIL) (("An[green]" (1)) (("An[big]" NIL))))
+
+computer/N furniture/N design/N
+(("NXN[design]" NIL) (("Nn[furniture]" (1)) (("Nn[computer]" NIL))))
+
+computer/N furniture/N design/N
+(("NXN[design]" NIL) (("Nn[furniture]" (1)) (("Nn[computer]" (1)))))
+
+extremely/Adv good/A boy/N
+(("NXN[boy]" NIL) (("An[good]" (1)) (("ARBa[extremely]" (1)))))
+
+rather/Adv tall/A boy/N
+(("NXN[boy]" NIL) (("An[tall]" (1)) (("ARBa[rather]" (1)))))
+
+rich/A enough/Adv boy/N
+(("NXN[boy]" NIL) (("An[rich]" (1)) (("aARB[enough]" (1)))))
+
+John/PropN died/V oddly/Adv enough/Adv
+(("nx0V[died]" NIL) (("vxARB[enough]" (2)) (("ARBarb[oddly]" (2)))) (("NXN[John]" (1))))
+
+John/PropN died/V very/Adv well/Adv
+(("nx0V[died]" NIL) (("vxARB[well]" (2)) (("ARBarb[very]" (2)))) (("NXN[John]" (1))))
+
+right/Adv through/Prep the/Det wall/N
+(("PXPnx[through]" NIL) (("NXdxN[wall]" (2)) (("DXD[the]" (1)))) (("ARBpx[right]" NIL)))
+
+export/N exhibitions/N that/Comp included/V high-tech/A items/N
+(("NXN[exhibitions]" NIL) (("Nn[export]" (1))) (("N0nx0Vnx1[included]" NIL) (("NXN[items]" (2 2 2)) (("An[high-tech]" (1)))) (("COMPs[that]" (2)))))
+
+the/Det man/N that/Comp Muriel/PropN likes/V
+(("NXdxN[man]" NIL) (("DXD[the]" (1))) (("N1nx0Vnx1[likes]" NIL) (("NXN[Muriel]" (2 1))) (("COMPs[that]" (2)))))
+
+the/Det man/N who/Comp Muriel/PropN likes/V
+(("NXdxN[man]" NIL) (("DXD[the]" (1))) (("N1nx0Vnx1[likes]" NIL) (("NXN[Muriel]" (2 1))) (("COMPs[who]" (2)))))
+
+the/Det man/N Muriel/PropN likes/V
+(("NXdxN[man]" NIL) (("DXD[the]" (1))) (("N1nx0Vnx1[likes]" NIL) (("NXN[Muriel]" (2 1)))))
+
+what/Pron Muriel/PropN likes/N
+(("NXN[what]" NIL) (("N1nx0Vnx1[likes]" NIL) (("NXN[Muriel]" (2 1)))))
+
+the/Det book/N for/Comp Muriel/PropN to/V read/V
+(("NXdxN[book]" NIL) (("DXD[the]" (1))) (("N1nx0Vnx1[read]" NIL) (("Vvx[to]" (2 2))) (("NXN[Muriel]" (2 1))) (("COMPs[for]" (2)))))
+
+the/Det book/N Muriel is/V reading/V
+(("NXdxN[book]" NIL) (("DXD[the]" (1))) (("N1nx0Vnx1[reading]" NIL) (("Vvx[is]" (2 2))) (("NXN[Muriel]" (2 1)))))

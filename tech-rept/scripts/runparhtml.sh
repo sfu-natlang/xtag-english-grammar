@@ -1,0 +1,41 @@
+#!/pkg/bin/bash
+
+par_html.perl \
+abstr.tex \
+acknowledgements.tex \
+auxs.tex \
+case.tex \
+comparatives.tex \
+compl-adj.tex \
+conj.tex \
+det.tex \
+double-obj.tex \
+ergatives.tex \
+evaluation.tex \
+extraction.tex \
+families.tex \
+features.tex \
+future-work.tex \
+gerunds.tex \
+getting-around.tex \
+imperatives.tex \
+intro.tex \
+it-clefts.tex \
+lexorg.tex \
+metarules.tex \
+modifiers.tex \
+multiword-advs.tex \
+overview.tex \
+passives.tex \
+pp-compl.tex \
+punct.tex \
+rel_clauses.tex \
+sent-adjs-sub-conjs.tex \
+sent-comps-subjs.tex \
+sm-clause.tex \
+table-intro.tex \
+table.tex \
+timenp.tex \
+tree-naming.tex \
+verb-class.tex \
+resultatives.tex

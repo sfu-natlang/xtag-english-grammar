@@ -1,0 +1,319 @@
+head	1.8;
+access
+	egedi
+	srini
+	cdoran
+	beth
+	skulick
+	anoop
+	elhuang
+	heatherm
+	rjprasad
+	timf
+	prolo
+	jason2
+	fxia
+	tbleam;
+symbols;
+locks; strict;
+comment	@% @;
+
+
+1.8
+date	2001.02.22.20.22.04;	author rjprasad;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2000.10.31.18.37.47;	author rjprasad;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2000.10.31.15.43.11;	author rjprasad;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	98.08.30.02.19.32;	author anoop;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	98.07.16.20.42.27;	author cdoran;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	95.03.09.14.25.14;	author egedi;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	95.01.26.17.23.08;	author egedi;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.01.24.20.30.33;	author egedi;	state Exp;
+branches;
+next	;
+
+
+desc
+@A brief overview of the tech report itself. 
+This section was requested by Joshi after the final push.
+@
+
+
+1.8
+log
+@minor change
+@
+text
+@\chapter{Getting Around}
+
+This technical report presents the English XTAG grammar as implemented by
+the XTAG Research Group at the University of Pennsylvania.  The technical
+report is organized into four parts, plus a set of appendices.  Part 1
+contains general information about the XTAG system and some of the
+underlying mechanisms that help shape the grammar.
+Chapter~\ref{intro-FBLTAG} contains an introduction to the formalism behind
+the grammar and parser, while Chapter~\ref{overview} contains information
+about the entire XTAG system.  Linguists interested solely in the grammar
+of the XTAG system may safely skip these chapters. Chapter~\ref{underview}
+contains a description of the organization of the grammar as tree families
+and subcategorization frames, and discusses some of the linguistic
+principles that underlie the XTAG grammar, including the distinction
+between complements and adjuncts, and how case is handled.
+
+The actual description of the grammar begins with Part 2, and is contained
+in the following three parts.  Parts 2 and 3 contains information on the
+verb classes and the types of trees allowed within the verb classes,
+respectively, while Part 4 contains information on trees not included in
+the verb classes (e.g.  NP's, PP's, various modifiers, etc).
+Chapter~\ref{table-intro} of Part 2 contains a table that attempts to
+provide an overview of the verb classes and tree types by providing a
+graphical indication of which tree types are allowed in which verb classes.
+This has been cross-indexed to tree figures shown in the tech report.
+Chapter~\ref{verb-classes} contains an overview of all of the verb classes
+in the XTAG grammar.  The rest of Part 2 contains more details on several
+of the more interesting verb classes, including ergatives, sentential
+subjects, sentential complements, copula, raising verbs, small clauses,
+ditransitives, ditransitives, datives, verbs selecting PP complements,
+resultatives and it-clefts.
+
+Part 3 contains information on some of the tree types that are available within
+the verb classes.  These tree types correspond to what would be transformations
+in a movement based approach.  Not all of these types of trees are contained in
+all of the verb classes.  The table (previously mentioned) in Part 2 contains a
+list of the tree types and indicates which verb classes each occurs in.  
+
+Part 4 focuses on the non-verb class trees in the grammar.  NP's and
+determiners are presented in Chapter~\ref{det-comparitives}, while the
+various modifier trees are presented in Chapter~\ref{modifiers}.  Auxiliary
+verbs, which are classed separate from the verb classes, are presented in
+Chapter~\ref{auxiliaries}, while certain types of conjunctions are shown in
+Chapter~\ref{conjunction}.  The XTAG treatment of comparatives is presented
+in Chapter~\ref{compars-chapter}, and our treatment of punctuation is
+discussed in Chapter~\ref{punct-chapt}.
+
+Throughout the technical report, mention is occasionally made of changes or
+analyses that we hope to incorporate in the future.
+Appendix~\ref{future-work} details a list of these and other future work.
+The appendices also contain information on some of the nitty gritty details
+of the XTAG grammar, including a system of metarules which can be used for
+grammar development and maintenance in Appendix~\ref{metarules}. A system
+for the organization of the grammar in terms of an inheritance hierarchy is
+in Appendix~\ref{lexorg}. The tree naming conventions used in XTAG are
+explained in detail in Appendix~\ref{tree-naming}, and a comprehensive list
+of the features used in the grammar is given in Appendix~{\ref{features}.
+Appendix~\ref{evaluation} contains an evaluation of the XTAG grammar,
+including comparisons with other wide coverage grammars.
+
+
+@
+
+
+1.7
+log
+@for new release: changed chapter labels for ch 4 and ch 5
+@
+text
+@d11 3
+a13 4
+of the XTAG system may safely skip Chapters~\ref{intro-FBLTAG} and
+\ref{overview}.  Chapter~\ref{underview} contains a description of the
+organization of the grammar as tree families and subcategorization frames,
+Chapter~\ref{case-assignment} information on some of the linguistic
+@
+
+
+1.6
+log
+@for new release: minor additions and typo fixing
+@
+text
+@d13 4
+a16 4
+organization of the grammar as tree families and subcategorization frames, 
+and information on some of the linguistic principles that underlie the XTAG
+grammar, including the distinction between complements and adjuncts, and
+how case is handled.
+@
+
+
+1.5
+log
+@added ref to lexorg
+@
+text
+@d3 14
+a16 11
+This technical report presents the English XTAG grammar as implemented by the
+XTAG Research Group at the University of Pennsylvania.  The technical report is
+organized into four parts, plus a set of appendices.  Part 1 contains general
+information about the XTAG system and some of the underlying mechanisms that
+help shape the grammar.  Chapter~\ref{intro-FBLTAG} contains an introduction to
+the formalism behind the grammar and parser, while Chapter~\ref{overview}
+contains information about the entire XTAG system.  Linguists interested solely
+in the grammar of the XTAG system may safely skip Chapters~\ref{intro-FBLTAG}
+and \ref{overview}.  Chapter~\ref{underview} contains information on some of
+the linguistic principles that underlie the XTAG grammar, including the
+distinction between complements and adjuncts, and how case is handled.
+d18 15
+a32 12
+The actual description of the grammar begins with Part 2, and is contained in
+the following three parts.  Parts 2 and 3 contains information on the verb
+classes and the types of trees allowed within the verb classes, respectively,
+while Part 4 contains information on trees not included in the verb classes
+(e.g.  NP's, PP's, various modifiers, etc).  Chapter~\ref{table-intro} of Part
+2 contains a table that attempts to provide an overview of the verb classes and
+tree types by providing a graphical indication of which tree types are allowed
+in which verb classes.  This has been cross-indexed to tree figures shown in
+the tech report.  Chapter~\ref{verb-classes} contains an overview of all of the
+verb classes in the XTAG grammar.  The rest of Part 2 contains more details on
+several of the more interesting verb classes, including ergatives, sentential
+subjects, sentential complements, small classes, ditransitives, and it-clefts.
+d41 7
+a47 7
+determiners are presented in Chapter~\ref{det-comparitives}, while the various
+modifier trees are presented in Chapter~\ref{modifiers}.  Auxiliary verbs,
+which are classed separate from the verb classes, are presented in
+Chapter~\ref{auxiliaries}, while certain types of conjunction are shown in
+Chapter~\ref{conjunction}.  The XTAG treatment of comparatives is
+presented in Chapter~\ref{compars-chapter}, and our treatment of
+punctuation is discussed in Chapter~\ref{punct-chapt}.
+d49 12
+a60 13
+Throughout the technical report, mention is occasionally made of
+changes or analyses that we hope to incorporate in the future.
+Appendix~\ref{future-work} details a list of these and other future
+work.  The appendices also contain information on some of the nitty
+gritty details of the XTAG grammar, including a system of metarules
+which can be used for grammar development and maintenance in
+Appendix~\ref{metarules}, a system for the organization of the grammar
+in terms of an inheritance hierarchy is in Appendix~\ref{lexorg}, the
+tree naming conventions used in XTAG are explained in detail in
+Appendix~\ref{tree-naming}, and a comprehensive list of the features
+used in the grammar is given in Appendix~{\ref{features}.
+  Appendix~\ref{evaluation} contains an evaluation of the XTAG
+  grammar, including comparisons with other wide coverage grammars.
+@
+
+
+1.4
+log
+@Updated references to chapters and appendices.
+@
+text
+@d47 9
+a55 7
+gritty details of the XTAG grammar, including  a system of metarules which
+can be used for grammar development and maintenance
+(Appendix~\ref{metarules}), the tree naming
+conventions (Appendix~\ref{tree-naming}), and a comprehensive list of the features
+used in the grammar (Appendix~{\ref{features}).
+Appendix~\ref{evaluation} contains an evaluation of the XTAG grammar,
+including comparisons with other wide coverage grammars.
+@
+
+
+1.3
+log
+@Minor grammatical change.
+@
+text
+@d39 3
+a41 4
+Chapter~\ref{conjunction}.  Other conjunctions, such as subordinating and
+discourse conjunction, are considered tree types, and as such are included in
+the chapter on adjunct clauses (section~\ref{sub-conj}).  Sentential
+complements of NP's and PP's are discussed in section~\ref{NPA}.
+d43 11
+a53 8
+Throughout the technical report, mention is occasionally made of changes or
+analyses that we hope to incorporate in the future.  Appendix~\ref{future-work}
+details a list of these and other future work.  The appendices also contain
+information on some of the nitty gritty details of the XTAG grammar, including
+the tree naming conventions (Appendix~\ref{tree-naming}), and a comprehensive
+list of the features used in the grammar (Appendix~{\ref{features}).
+Appendix~\ref{evaluation} contains an evaluation of the XTAG grammar, including
+comparisons with other wide coverage grammars.
+@
+
+
+1.2
+log
+@Changes from Tilman's proof-read.  Also decided to capitalize Chapter
+and Appendix.
+@
+text
+@d36 2
+a37 2
+modifier trees are presented in Chapter~\ref{modifiers}.  A chapter on
+auxiliary verbs, which are classed separate from the verb classes, is found in
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d5 1
+a5 1
+organized in 4 parts, plus a set of appendices.  Part 1 contains general
+d8 1
+a8 1
+the formalism behind the grammar and parser, while chapter~\ref{overview}
+d10 1
+a10 1
+in the grammar of the XTAG system may safely skip chapters~\ref{intro-FBLTAG}
+d15 6
+a20 6
+The actual description of the grammar begins with Part 2, and in contained in
+the following 3 parts.  Parts 2 and 3 contains information on the verb classes
+and the types of trees allowed within the verb classes, respectively, while
+Part 4 contains information on trees not included in the verb classes (e.g.
+NP's, PP's, various modifiers, etc).  Chapter~\ref{table-intro} of Part 2
+contains a table that attempts to provide an overview of the verb classes and
+d34 9
+a42 10
+Part 4 moves away from the idea of verb classes, and contains information on
+`the rest' of the trees in the grammar.  NP's and determiners are presented in
+chapter~\ref{det-comparitives}, while the various modifier trees are presented
+in chapter~\ref{modifiers}.  A chapter on auxiliary verbs, which are classed
+separate from the verb classes, is found in chapter~\ref{auxiliaries}, while
+certain types of conjunction are shown in chapter~\ref{conjunction}.  Other
+conjunctions, such as subordinating and discourse conjunction, are considered
+tree types, and as such as included in the chapter on adjunct clauses
+(section~\ref{sub-conj}).  Sentential complements of NP's and PP's are
+discussed in section~\ref{NPA}.
+d48 4
+a51 4
+the tree naming conventions (appendix~\ref{tree-naming}), and a comprehensive
+list of the features used in the grammar (appendix~{\ref{features}).
+Appendix~\ref{evaluation} contains an evaluation of the XTAG grammar,
+including comparisons with other wide coverage grammars.
+@

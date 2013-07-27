@@ -1,0 +1,127 @@
+\section{Time Noun Phrases} 
+\label{timenps} 
+ 
+%% \subsection{Introduction} 
+ 
+ 
+Although in general NPs cannot modify clauses, there is a class of 
+NPs, with meanings that relate to time, that can do so.\footnote{   There may be other classes of NPs, such as directional phrases, such   as {\em north, south} etc., which behave similarly. We have not yet   analysed these phrases.} We call this class of NPs ``Time~NPs''. 
+Time~NPs behave essentially like PPs. Like PPs, time~NPs can adjoin at 
+four places: to the right of an NP, to the right and left of a VP, and 
+to the left of an~S. 
+ 
+Time~NPs may include determiners, as in {\em this month} in example 
+(\ref{ex:630}), or may be single lexical items as in {\em today} in example 
+(\ref{ex:631}).  Like other NPs, time~NPs can also include adjectives, as in 
+example (\ref{ex:635}). 
+ 
+%% \enumsentence{I go there {\ul every month}} 
+%% \enumsentence{I am free {\ul today}} 
+\beginsentences
+\sitem{Elvis left the building \underline{this week}}\label{ex:630} 
+\sitem{Elvis left the building \underline{today}}\label{ex:631} 
+\sitem{It has no bearing on our work force \underline{today} (WSJ)}\label{ex:632} 
+\sitem{The fire \underline{yesterday} claimed two lives}\label{ex:633} 
+\endsentences
+
+%% In early trading in Tokyo Tuesday, the Nikkei index rose 35.28 
+%% points to 35452.72. 
+%% \enumsentence{It has no bearing \underline{today} on our work force} 
+\beginsentences
+\sitem{\underline{Today} it has no bearing on our work force}\label{ex:634} 
+\sitem{Michael \underline{late yesterday} announced a buy-back program}\label{ex:635} 
+\endsentences
+
+%% Michael late yesterday announced a $ 3.8 million stock buy-back program . 
+ 
+The XTAG analysis for time~NPs is fairly simple, requiring only the 
+creation of proper NP auxiliary trees.  Only nouns that can be part of 
+time~NPs will select the relevant auxiliary trees, and so only these 
+type of NPs will behave like PPs under the XTAG analysis. 
+Currently, about 60 words select Time~NP trees, but since these 
+words can form NPs that include determiners and adjectives, a large 
+number of phrases are covered by this class of modifiers. 
+ 
+Corresponding to the four positions listed above, time~NPs 
+can select one of the four trees shown in Figure~\ref{timenp-trees}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{ccccccc} 
+{\htmladdimg{ps/timenp-files/betaNs.ps.gif}} 
+& \hspace{.5in} & 
+{\htmladdimg{ps/timenp-files/betaNvx.ps.gif}} 
+&  \hspace{.5in} & 
+{\htmladdimg{ps/timenp-files/betavxN.ps.gif}} 
+&  \hspace{.5in} & 
+{\htmladdimg{ps/timenp-files//betanxN.ps.gif}}\\ 
+$\beta$Ns&&$\beta$Nvx&&$\beta$vxN&&$\beta$nxN\\ 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Time Phrase Modifier trees: $\beta$Ns, $\beta$Nvx, $\beta$vxN, $\beta$nxN <p> </dl> \end{rawhtml}
+\label{timenp-trees} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+Determiners can be added to time~NPs by adjunction in 
+the same way that they are added to NPs in other 
+positions. The trees in Figure~\ref{everymonth} show that the 
+structures of examples (\ref{ex:630}) and (\ref{ex:631}) differ only in the 
+adjunction of  {\em this} to the time~NP in example (\ref{ex:630}). 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{ccc} 
+\htmladdimg{ps/timenp-files/elvis-thisweek.ps.gif} 
+& \hspace{.5in} & 
+\htmladdimg{ps/timenp-files/elvis-today.ps.gif} \\ 
+\end{tabular}\\ 
+\begin{rawhtml} <dl> <dt>{Time~NPs with and without a determiner <p> </dl> \end{rawhtml}
+\label{everymonth} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\newpage 
+ 
+The sentence 
+\beginsentences
+\sitem{Esso said the Whiting field started production Tuesday (WSJ)}\label{ex:636} 
+\endsentences
+
+has (at least) two different interpretations, depending on whether 
+{\em Tuesday} attaches to {\em said} or to {\em started}. 
+Valid time~NP analyses are available for both these interpretations and 
+are shown in Figure~\ref{esso}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+{\htmladdimg{ps/timenp-files/EssoSaidTuesday.ps.gif}} & \hspace{.5in} & 
+{\htmladdimg{ps/timenp-files/EssoStartedTuesday.ps.gif}} \\ \end{tabular}\\ 
+\begin{rawhtml} <dl> <dt>{Time~NP trees: Two different attachments \label{esso <p> </dl> \end{rawhtml}
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+Example (\ref{ex:636}) shows that there are cases of genuine ambiguity that will 
+be properly represented with multiple valid parses under our 
+analysis. 
+ 
+Derived tree structures for examples (\ref{ex:632}) -- (\ref{ex:635}), which 
+show the four possible time~NP positions are shown in 
+Figures~\ref{bearingtrees} and \ref{lateyesterday}.  The derivation 
+tree for example (\ref{ex:635}) is also shown in 
+Figure~\ref{lateyesterday}. 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+{\htmladdimg{ps/timenp-files/bearingENDtoday.ps.gif}} & \hspace{.1in} & 
+{\htmladdimg{ps/timenp-files/thefireyesterday.ps.gif}} &  \hspace{.1in} & 
+%% {\htmladdimg{ps/timenp-files/bearingtoday.ps.gif}} &  \hspace{.1in} & 
+{\htmladdimg{ps/timenp-files/todaybearing.ps.gif}} \\ \end{tabular}\\ 
+\begin{rawhtml} <dl> <dt>{Time~NPs in different positions ($\beta$vxN, $\beta$nxN and $\beta$Ns) \label {bearingtrees <p> </dl> \end{rawhtml}
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{ccc} 
+\htmladdimg{ps/timenp-files/lateyesterday.ps.gif} & 
+\hspace{.02in} & 
+\htmladdimg{ps/timenp-files/DERIVlateyesterday.ps.gif} \\ 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Time~NPs: Derived tree and Derivation ($\beta$Nvx position) <p> </dl> \end{rawhtml}
+\label{lateyesterday} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 

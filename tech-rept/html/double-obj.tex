@@ -1,0 +1,173 @@
+\chapter{Ditransitive constructions and dative shift} 
+\label{double-objs} 
+ 
+Verbs such as {\it give\/} and {\it put\/} that require two objects, as 
+shown in examples (\ref{ex:133})-(\ref{ex:136}), are termed ditransitive. 
+ 
+\beginsentences
+\sitem{Christy gave a cannoli to Beth Ann .}\label{ex:133} 
+\sitem{$\ast$Christy gave Beth Ann .}\label{ex:134} 
+\sitem{Christy put a cannoli in the refrigerator .}\label{ex:135} 
+\sitem{$\ast$Christy put a cannoli .}\label{ex:136} 
+\endsentences
+
+ 
+ 
+The indirect objects {\it Beth Ann\/} and {\it refrigerator\/} appear in 
+these examples in the form of PP's.  Within the set of ditransitive 
+verbs there is a subset that also allow two NP's as in (\ref{ex:137}). As can 
+be seen from (\ref{ex:137}) and (\ref{ex:138}) this two NP, or double-object, 
+construction is grammatical for {\it give\/} but not for {\it put}.  
+ 
+\beginsentences
+\sitem{Christy gave Beth Ann a cannoli .}\label{ex:137} 
+\sitem{$\ast$Christy put the refrigerator the cannoli .}\label{ex:138} 
+\endsentences
+
+ 
+The alternation between (\ref{ex:133}) and (\ref{ex:137}) is known as dative 
+shift.\footnote{In languages similar to English that have overt case marking indirect objects would be marked with dative case. It has also been suggested that for English the preposition {\it to} serves as a dative case marker.} In order to account for verbs with dative shift 
+the English XTAG grammar includes structures for both variants in the 
+two tree families Tnx0Vnx1Pnx2 and Tnx0Vnx2nx1.  For an alternating 
+verb such as {\it give}, there are two anchoring instances: {\it give to} selects Tnx0Vnx1Pnx2 and {\it give} selects Tnx0Vnx2nx1.  The 
+declarative trees for the shifted and non-shifted alternations are 
+shown in Figure~\ref{dative-alt}. 
+ 
+ 
+\begin{rawhtml} <p> \end{rawhtml}
+\centering 
+\begin{tabular}{ccc} 
+{\htmladdimg{ps/double-obj-files/alphanx0Vnx1Pnx2.ps.gif}}& 
+\hspace*{0.5in} & 
+{\htmladdimg{ps/double-obj-files/alphanx0Vnx2nx1.ps.gif}} 
+\\ 
+(a)&\hspace*{0.5in}&(b)\\ 
+\end{tabular} 
+\begin{rawhtml} <dl> <dt>{Dative shift trees: $\alpha$nx0Vnx1Pnx2 (a) and $\alpha$nx0Vnx2nx1 (b) <p> </dl> \end{rawhtml}
+\label{dative-alt} 
+\label{2;1,2} 
+\begin{rawhtml} <p> \end{rawhtml}
+ 
+The indexing of nodes in these two trees represents the fact that the semantic 
+role of the indirect object (NP$_2$) in Figure~\ref{dative-alt}(a) is the same 
+as that of the direct object (NP$_2$) in Figure~\ref{dative-alt}(b) (and vice 
+versa).  This use of indexing is consistent with our treatment of other 
+constructions such as passive and ergative. 
+ 
+Verbs that do not show this alternation and have only the NP PP 
+structure (e.g. {\it put\/}) do not select the tree family 
+Tnx0Vnx2nx1.  Non-alternating verbs that select for particular prepositions 
+take 
+Tnx0Vnx1Pnx2 and those which take a wider range of prepositions take 
+Tnx0Vnx1pnx2 (see Chapter~\ref{pp-complement-chapter} for more 
+exposition on the XTAG treatment of these constructions).  
+ 
+Other verbs such as {\it ask} allow only the NP NP structure as shown 
+in (\ref{ex:139}) and (\ref{ex:140}).  These verbs select only the tree family 
+Tnx0Vnx2nx1. 
+ 
+\beginsentences
+\sitem{Beth Ann asked Srini a question .}\label{ex:139} 
+\sitem{$\ast$Beth Ann asked a question to Srini .}\label{ex:140} 
+\endsentences
+
+ 
+There are other apparent cases of dative shift with {\it for}, such as 
+the so called benefectives, 
+(\ref{ex:141}) and (\ref{ex:142}), that we have taken to be structurally distinct from the 
+cases with {\it to}. 
+ 
+\beginsentences
+\sitem{Beth Ann baked Dusty a biscuit .}\label{ex:141} 
+\sitem{Beth Ann baked a biscuit for Dusty .}\label{ex:142} 
+\endsentences
+
+ 
+\cite{mccawley88} notes: 
+ 
+\begin{quote} 
+A ``{\it for-dative}'' expression in underlying structure is external 
+to the V with which it is combined, in view of the fact that the 
+latter behaves as a unit with regard to all relevant syntactic 
+phenomena. 
+\end{quote} 
+ 
+ 
+In other words, the {\it for} PP's that appear to undergo dative shift are 
+actually adjuncts, not complements. Examples (\ref{ex:143}) and (\ref{ex:144}) demonstrate 
+that PP's with {\it for} are optional while ditransitive {\it to} PP's are not. 
+ 
+\beginsentences
+\sitem{Beth Ann made dinner .}\label{ex:143} 
+\sitem{$\ast$Beth Ann gave dinner .}\label{ex:144} 
+\endsentences
+
+ 
+Other evidence in support of the view that {\it for} PP's are adjuncts 
+comes from the {\it do so} test.  {\it Do so} substitutes for an entire VP. This 
+is illustrated in (\ex1), where {\it do so} substitutes for {\it ate a banana}. The VP for which {\it do so} substitutes can exclude adjuncts (which 
+are adjoined to a VP) as in (\ex2), but not arguments, as shown in (\ex3). 
+ 
+\beginsentences
+\sitem{John ate a banana and Mary did so too . (Mary ate a banana also)}\label{ex:145} 
+\sitem{John ate a banana in the morning and Mary did so in the evening.  (Mary ate a banana also and she ate it in the evening)}\label{ex:146} 
+\sitem{*John ate a banana and Mary did so an apple.}\label{ex:147} 
+\endsentences
+
+ 
+\noindent The dative {\it to} phrase acts like an argument according to this 
+test (\ex1), but the {\it for} phrase does not (\ex2). 
+ 
+\beginsentences
+\sitem{John gave a book to Mary and Bill did so too .}\label{ex:148} 
+\sitem{*John gave a book to Mary and Bill did so to Janet .}\label{ex:149} 
+\endsentences
+
+ 
+\beginsentences
+\sitem{John baked a cake for Mary and Bill did so too .}\label{ex:150} 
+\sitem{John baked a cake for Mary and Bill did so for Janet .}\label{ex:151} 
+\endsentences
+
+ 
+Since {\it do so} substitutes for an entire VP, the fact that (\ref{ex:151}) is 
+grammatical indicates that the {\it for} PP is an adjunct (i.e., there exists a 
+VP node lower than the {\it for} PP which {\it do so} can substitute for). 
+ 
+Consequently, in the XTAG grammar the apparent dative shift with {\it for} PP's is treated as Tnx0Vnx2nx1 for the NP NP structure, and as a 
+transitive plus an adjoined adjunct PP for the NP PP structure.  To 
+account for the ditransitive {\it to} PP's, the preposition {\it to} 
+co-anchors the tree family Tnx0Vnx1Pnx2 with the alternating 
+verb. 
+ 
+\cite{mccawley88} also notes that the {\it to} and {\it for} cases 
+differ with respect to passivization; the indirect objects with {\it to} may be 
+the subjects of corresponding passives, as seen in ~(\ref{ex:152})-(\ref{ex:153}), while 
+the alleged indirect objects with {\it for} cannot, as in 
+sentences~(\ref{ex:154})-(\ref{ex:155}).  Note that the passivisation examples are for NP 
+NP structures of verbs that take {\it to} or {\it for} PP's. 
+ 
+\beginsentences
+\sitem{Beth Ann gave Clove dinner .}\label{ex:152} 
+\sitem{Clove was given dinner (by Beth Ann) .}\label{ex:153} 
+\sitem{Beth Ann made Clove dinner .}\label{ex:154} 
+\sitem{?Clove was made dinner (by Beth Ann) .}\label{ex:155} 
+\endsentences
+
+ 
+However, we believe that this picture is inaccurate, and that the indirect 
+objects in the {\it for} case are, in fact, allowed to be the subjects of 
+passives, as in sentences~(\ref{ex:156})-(\ref{ex:157}).  The apparent strangeness of 
+sentence~(\ref{ex:155}) is caused by interference from other interpretations of {\it Clove was made dinner .} 
+ 
+\beginsentences
+\sitem{Dania baked Doug a cake .}\label{ex:156} 
+\sitem{Doug was baked a cake by Dania .}\label{ex:157} 
+\endsentences
+
+ 
+ 
+ 
+ 
+ 
+ 

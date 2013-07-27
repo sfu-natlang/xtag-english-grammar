@@ -1,0 +1,5 @@
+\setlength{\unitlength}{0.012500in}%
+\begin{picture}(0,12)(20,720)
+\put( 20,720){\makebox(0,0)[lb]{\raisebox{0pt}[0pt][0pt]{\special{ps:gsave currentpoint currentpoint translate
+-90.0 rotate neg exch neg exch translate}\twlrm Linguistic Phenomena two\special{ps:currentpoint grestore moveto}}}}
+\end{picture}
