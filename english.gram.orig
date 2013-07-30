@@ -111,7 +111,7 @@
 						    "/syntax/")
 		     :type "lex"))
 
- (:corpus-data-files "unigram"
+  (:corpus-data-files "unigram"
 		     (:default-pathname (concatenate 'string
 						     user::*english-directory*
 						     "/corpus-data/")
@@ -122,6 +122,12 @@
 						  user::*english-directory*
 						  "/examples/")
 		   :type "ex"))
+
+  (:syntax-default "syndefaults"
+                  (:default-pathname (concatenate 'string
+						  user::*english-directory*
+       						  "/syntax/")
+		   :type "dat"))
 
   )
 
