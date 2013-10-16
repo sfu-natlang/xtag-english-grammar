@@ -1,0 +1,41 @@
+N "common noun"
+month   N 3sg
+
+V "verb"
+munch   V PAST WK
+
+A "adjective"
+myriad	A
+
+Adv "adverb"
+precociously	Adv
+
+PropN "proper noun"
+Kate	PropN 3sg
+
+Prep "preposition"
+below	Prep
+
+Pron "pronoun"
+everyone	Pron 3sg nomacc
+
+Det "determiner"
+eight	Det
+
+Part "particle, for verb-particle pairs such as 'call up'"
+up	Part
+
+I "interjection"
+bye-bye	I
+
+Punct "punctuation"
+!	Punct
+
+Conj "conjunction"
+either	Conj
+
+Comp "complementizer"
+whether	Comp
+
+G "genitive, possessive" 
+'s  G
