@@ -1,0 +1,52 @@
+N "noun"
+morph_pos: N, PropN, Pron
+<INDEX>>month<<ENTRY>>month<<POS>>N<<FAMILY>>Tnx0N1 Ts0N1<<FEATURES>>#N_card- #N_const- #N_decreas- #N_definite- #N_gen- #N_quan- #N_refl-
+<<INDEX>>month<<ENTRY>>month<<POS>>N<<TREES>>^CNs ^CvxN ^CNvx ^CnxN ^BNXN ^BN ^CNn<<FEATURES>>#N_card- #N_const- #N_decreas- #N_definite- #N_gen- #N_quan- #N_refl-
+
+A "adjective"
+morph_pos: A
+<<INDEX>>myriad<<ENTRY>>myriad<<POS>>A<<FAMILY>>Tnx0Ax1 Ts0Ax1<<FEATURES>>#A_WH- #A_compar-
+<<INDEX>>myriad<<ENTRY>>myriad<<POS>>A<<TREES>>^CAn ^BA ^BAXA<<FEATURES>>#A_WH- #A_compar-
+
+V "verb"
+morph_pos: V
+<<INDEX>>munch<<ENTRY>>munch<<POS>>V<<FAMILY>>Tnx0V
+<<INDEX>>munch<<ENTRY>>munch<<POS>>V<<FAMILY>>Tnx0Vnx1
+
+Ad "adverb"
+morph_pos: Adv
+<<INDEX>>abruptly<<ENTRY>>abruptly<<POS>>Ad<<TREES>>^CARBs ^CspuARB ^CARBvx ^CvxARB ^BAd<<FEATURES>>#Ad_compar-
+
+PL "particle"
+morph_pos: Part
+<<INDEX>>act<<ENTRY>>act<<POS>>V<<ENTRY>>out<<POS>>PL<<FAMILY>>Tnx0Vplnx1
+
+P "preposition"
+morph_pos: Prep
+<<INDEX>>aboard<<ENTRY>>aboard<<POS>>P<<FAMILY>>Tnx0Pnx1 Ts0Pnx1<<FEATURES>>#p_acc
+<<INDEX>>aboard<<ENTRY>>aboard<<POS>>P<<TREES>>^BP ^CvxPnx ^CspuPnx ^CnxPnx ^BPXPnx ^CPnxs<<FEATURES>>#p_acc
+<<INDEX>>ache<<ENTRY>>ache<<POS>>V<<ENTRY>>for<<POS>>P<<FAMILY>>Tnx0VPnx1<<FEATURES>>#p_acc
+
+D "determiner"
+morph_pos: Det
+<<INDEX>>a<<ENTRY>>a<<POS>>D<<TREES>>^BD<<FEATURES>>#D_definite- #D_quan+ #D_card- #D_gen- #D_wh- #D_decreas- #D_const+ #D_3sg #D_compl+
+
+Conj "conjunction"
+morph_pos: Conj
+<<INDEX>>but<<ENTRY>>but<<POS>>Conj<<TREES>>^CCONJs
+
+Punct "punctuation"
+morph_pos: Punct
+<<INDEX>>!<<ENTRY>>!<<POS>>Punct<<TREES>>^CsPU ^CsPUs<<FEATURES>>#Excl #S1_ind-imp #Sf_term_excl
+
+I "interjection"
+morph_pos: I
+<<INDEX>>yow<<ENTRY>>yow<<POS>>I<<TREES>>^CIs
+
+G "genitive, possessive"
+morph_pos: G
+<<INDEX>>'s<<ENTRY>>'s<<POS>>G<<TREES>>^CnxGnx ^BNXnxG ^BDnxG
+
+Comp "complementizer"
+morph_pos: Comp
+<<INDEX>>whether<<ENTRY>>whether<<POS>>Comp<<TREES>>^CCOMPs<<FEATURES>>#COMP_WH+ #COMP_WHETHER #Sc_ind_inf
