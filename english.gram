@@ -4,7 +4,7 @@
 (defgrammar english
     
   (:default-pathname (setf user::*english-directory*
-			   "/home/zwa47/sfuhome/xtag-english-grammar")
+			   "")
 		     :pretty-name "XTAG English grammar (Release 02.13.2001)"
 		     :start-feature "<mode> = ind/imp <comp> = nil <wh> = <invlink>  <punct term> = per/qmark/excl <punct struct> = nil")
 
@@ -21,7 +21,7 @@
 
 	       (:default-pathname (concatenate 'string
 					       user::*english-directory*
-					       "/grammar/")
+					       "grammar")
 				  :type "trees")
 	       )
   
@@ -85,14 +85,14 @@
 		 "Ts0Vs1"
 		 (:default-pathname (concatenate 'string
 						 user::*english-directory*
-						 "/grammar/")
+						 "grammar")
 		  :type "trees"))
 
   (:lexicon-files "syntax-coded" 
 
 		  (:default-pathname (concatenate 'string
 						  user::*english-directory*
-						  "/syntax/")
+						  "syntax")
 		   :type "db"))
 
 
@@ -100,7 +100,7 @@
 
 		     (:default-pathname (concatenate 'string
 						    user::*english-directory*
-						     "/morphology/")
+						     "morphology")
 		      :type "db"))
 
 
@@ -108,25 +108,25 @@
 
 		    (:default-pathname (concatenate 'string
 						    user::*english-directory*
-						    "/syntax/")
+						    "syntax")
 		     :type "lex"))
 
   (:corpus-data-files "unigram"
 		     (:default-pathname (concatenate 'string
 						     user::*english-directory*
-						     "/corpus-data/")
+						     "corpus-data")
 					:type "data"))
   (:example-files "examples"
 		  
 		  (:default-pathname (concatenate 'string
 						  user::*english-directory*
-						  "/examples/")
+						  "examples")
 		   :type "ex"))
 
   (:syntax-default "syndefaults"
                   (:default-pathname (concatenate 'string
 						  user::*english-directory*
-       						  "/syntax/")
+       						  "syntax")
 		   :type "dat"))
 
   )
