@@ -1,1 +1,28 @@
 <<INDEX>>%s<<ENTRY>>%s<<POS>>N<<TREES>>NXN N Nn<<FEATURES>>#N_wh- #N_refl- #N_decreas- #N_definite+ #N_gen- #N_quan-
+<<INDEX>>%s<<ENTRY>>%s<<POS>>A<<FAMILY>>Tnx0Ax1 Ts0Ax1<<FEATURES>>#A_WH- #A_compar-
+<<INDEX>>%s<<ENTRY>>%s<<POS>>A<<TREES>>An A AXA<<FEATURES>>#A_WH- #A_compar-
+<<INDEX>>%s<<ENTRY>>%s<<POS>>V<<FAMILY>>Tnx0Vnx1 Tnx0V
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Ad<<TREES>>ARBs spuARB ARBvx vxARB Ad<<FEATURES>>#Ad_compar-
+<<INDEX>>%s<<ENTRY>>%s<<POS>>P<<TREES>>vxPs Pss spuPs puPpuvx
+<<INDEX>>%s<<ENTRY>>%s<<POS>>P<<FAMILY>>Tnx0Pnx1 Ts0Pnx1<<FEATURES>>#p_acc
+<<INDEX>>%s<<ENTRY>>%s<<POS>>D<<TREES>>dD Dnx
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>CONJs
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>a1CONJa2<<FEATURES>>#A_lex_conj #And_conj
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>arb1CONJarb2<<FEATURES>>#Ad_lex_conj #And_conj
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>ax1CONJax2<<FEATURES>>#AP_lex_conj #And_conj
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>d1CONJd2<<FEATURES>>#And_conj #Det_lex_conj
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>n1CONJn2<<FEATURES>>#And_conj #N_lex_conj #N_plur
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>nx1CONJnx2<<FEATURES>>#And_conj #NP_lex_conj #NP_plur
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>p1CONJp2<<FEATURES>>#And_conj #P_lex_conj
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>px1CONJpx2<<FEATURES>>#And_conj #PP_lex_conj
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Conj<<TREES>>s1CONJs2<<FEATURES>>#And_conj #S_lex_conj
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Punct<<TREES>>Pu nxPUs PUs
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Punct<<TREES>>nxPUnx
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Punct<<TREES>>sPU
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Punct<<TREES>>sPUnx
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Punct<<TREES>>sPUs
+<<INDEX>>%s<<ENTRY>>%s<<POS>>I<<TREES>>Is sI
+<<INDEX>>%s<<ENTRY>>%s<<POS>>G<<TREES>>NXG
+<<INDEX>>%s<<ENTRY>>%s<<POS>>Comp<<TREES>>COMPs
+<<INDEX>>%s<<ENTRY>>%s<<POS>>V<<ENTRY>>%s<<POS>>PL<<FAMILY>>Tnx0Vplnx1
+<<INDEX>>%s<<ENTRY>>%s<<POS>>V<<ENTRY>>%s<<POS>>P<<FAMILY>>Tnx0VPnx1
