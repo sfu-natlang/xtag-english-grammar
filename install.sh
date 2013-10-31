@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -d ~/nltk_data/xtag_grammar ]; then
     mkdir -p ~/nltk_data/xtag_grammar
 fi
