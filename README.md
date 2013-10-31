@@ -38,7 +38,7 @@ wget https://raw.github.com/sfu-natlang/xtag-english-grammar/master/install.sh
 bash install.sh
 </pre>
 
-Edit the INSTALL script to reflect the location of perl in
+<!--Edit the INSTALL script to reflect the location of perl in
 your system.
 
 Run INSTALL in the english directory with the full path of the
@@ -49,5 +49,5 @@ directory you have installed the english grammar. For example,
 </pre>
 
 The last / in the directory name is important and should not
-be omitted.
+be omitted.-->
 
