@@ -32,6 +32,12 @@ curl -O https://raw.github.com/sfu-natlang/xtag-english-grammar/master/install.s
 bash install.sh
 </pre>
 
+Or
+<pre>
+wget https://raw.github.com/sfu-natlang/xtag-english-grammar/master/install.sh
+bash install.sh
+</pre>
+
 Edit the INSTALL script to reflect the location of perl in
 your system.
 
