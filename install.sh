@@ -34,6 +34,7 @@ fi
 eval $download_cmd$"https://raw.github.com/sfu-natlang/xtag-nltk/master/util.py"
 eval $download_cmd$"https://raw.github.com/sfu-natlang/xtag-nltk/master/load.py"
 eval $download_cmd$"https://raw.github.com/sfu-natlang/xtag-nltk/master/feature.py"
+eval $download_cmd$"https://raw.github.com/sfu-natlang/xtag-nltk/master/LL1.py"
 
 python util.py
 rm -f *.{py,pyc}
