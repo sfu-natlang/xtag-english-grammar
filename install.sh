@@ -38,5 +38,6 @@ eval $download_cmd$"https://raw.github.com/sfu-natlang/xtag-nltk/master/LL1.py"
 
 python util.py
 python -c'import util; util.install("english")'
+python -c'import util; util.install("korean")'
 
 rm -f *.{py,pyc}
