@@ -1,4 +1,4 @@
-("nx0VPnx1" :COMMENT-DISPLAY? T :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+("nx0Vpnx1" :COMMENT-DISPLAY? T :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 S_r.b:<extracted> = -
@@ -37,19 +37,19 @@ S_r.b:<progressive> = VP.t:<progressive>
 S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
-" :COMMENTS "Basic declarative tree for verbs which take particular prepositional
+" :COMMENTS "Basic declarative tree for verbs which take prepositional
 complements.  
 
-John depends on Mary.
-John thought of a new idea.
+John ventured (into,around) the cave.
+The hikers slogged (through,over) the mud.
 
 The VP_e node allows left adjunction between the verb and the preposition:
 
-John depends often on Mary.
+John hikers slogged slowly through the mud.
 
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
-("W0nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
+("W0nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -103,8 +103,8 @@ NP_1:<case> = PP.b:<assign-case>
 PP.b:<wh> = NP_1:<wh>
 " :COMMENTS "Wh on the subject
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "q"))) (((("NP" . "0")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) 
-("N0nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "q"))) (((("NP" . "0")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) 
+("N0nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -121,8 +121,8 @@ NP_r.b:<agr> = NP_f.t:<agr>
 NP_r.b:<case> = NP_f.t:<case>
 S_r.b:<agr> = VP.t:<agr>
 S_r.b:<assign-case> = VP.t:<assign-case>
-S_r.b:<agr> = NP_0.t:<agr>
-S_r.b:<assign-case> = NP_0.t:<case>
+S_r.b:<agr> = NP_0:<agr>
+S_r.b:<assign-case> = NP_0:<case>
 VP.b:<passive> = V.t:<passive>
 V.t:<passive> = -
 VP.b:<agr> = V.t:<agr>
@@ -139,9 +139,9 @@ VP_e.b:<assign-comp> = none
 
 S_r.t:<conj> = nil
 
-NP_w.t:<trace> = NP_0.b:<trace>
-NP_w.t:<case> = NP_0.b:<case>
-NP_w.t:<agr> = NP_0.b:<agr>
+NP_w.t:<trace> = NP_0:<trace>
+NP_w.t:<case> = NP_0:<case>
+NP_w.t:<agr> = NP_0:<agr>
 NP_w.t:<wh> = +
 S_r.t:<comp> = nil
 NP_r.b:<rel-clause> = +
@@ -152,14 +152,9 @@ PP.b:<wh> = NP_1:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "Subject relative clause:
-\"...the man who depends on Mary...\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
-("W1nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
-
-
-
-
-
+\"...the man who ventured into the cave...\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
+("W1nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -216,11 +211,11 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Wh & topicalization on NP1:
-   \"Who does John depend on?\"
-   \"Mary John depends on. (Emma he doesn't)\"
+   \"What did John venture into?\"
+   \"The cave John ventured into. (The haunted house he didn't)\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "q"))) (((("NP" . "1")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
-("N1nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "q"))) (((("NP" . "1")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
+("N1nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<mode> = VP.t:<mode>
 S_r.b:<assign-comp> = VP.t:<assign-comp>
@@ -271,17 +266,10 @@ NP_f.b:<case> = nom/acc
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "Object relative:
-    \"...the woman that John depends on...\"
+    \"...the cave that John venture into...\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) ) 
-("pW1nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
-
-
-
-
-
-
-
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) ) 
+("pW1nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -333,10 +321,10 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Fronted PP-complement:
-	\"On these they feel they can rely.\" (Brown corpus)
+    \"Into the cave he ventured.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "q"))) (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
-("Inx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "q"))) (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
+("Inx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 S_r.b:<extracted> = -
@@ -374,7 +362,6 @@ VP_e.b:<mainv> = -
 VP_e.b:<compar> = -
 VP_e.b:<assign-comp> = none
 
-V.b:<mode> = base
 P.t:<assign-case> = PP.b:<assign-case>
 NP_1:<case> = PP.b:<assign-case>
 PP.b:<wh> = NP_1:<wh>
@@ -383,17 +370,10 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Imperative:
-    \"Think of an answer!\"
+    \"Glance through these documents!\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
-("Dnx0VPnx1" :COMMENT-DISPLAY? T :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
-
-
-
-
-
-
-
+ (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
+("Dnx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -416,16 +396,9 @@ P.t:<assign-case> = PP.b:<assign-case>
 NP_1:<case> = PP.b:<assign-case>
 PP.b:<wh> = NP_1:<wh>
 " :COMMENTS "PP-complement: determiner gerund
-   \"His depending entirely on Mary bothered me greatly.\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . ""))) (((("D" . "")) :substp T))  (((("N" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
-("nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
-
-
-
-
-
-
-
+   \"His venturing into the cave bothered me greatly.\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
+ (((("NP" . ""))) (((("D" . "")) :substp T))  (((("N" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
+("nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -475,10 +448,9 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Passive with by-phrase:
-    \"The idea was thought of by John.\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) 
-("nx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
-
+    \"The corn field was trampled on by the children.\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
+ (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) 
+("nx1Vp" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -526,17 +498,10 @@ V.t:<passive> = +
 V.t:<mode> = ppart
 V.t:<punct struct> = nil
 " :COMMENTS "Passive:
-   \"The idea was thought of.\"
+   \"The cornfield was trampled on.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :headp T)) ) ) ) ) 
-("pW0nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
-
-
-
-
-
-
-
+ (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :substp T)) ) ) ) ) 
+("pW0nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -594,11 +559,11 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Wh question on NP0 in passive constructions, by-phrase extracted:
-    \"By whom was the idea thought of?\"
+    \"By whom was the cornfield trampled on?\"
 
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "q"))) (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :headp T)) ) )  (((("PP" . "by")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) 
-("W1nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "q"))) (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :substp T)) ) )  (((("PP" . "by")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) 
+("W1nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -652,13 +617,15 @@ S_r.t:<conj> = nil
 PP_0.b:<wh> = NP_0:<wh>
 P.t:<assign-case> = PP.b:<assign-case>
 NP_1:<case> = PP.b:<assign-case>
-PP.b:<wh> = NP_1:<wh>" :COMMENTS "Wh question on NP1 in passive constructions
-    \"What was thought of by Bob?\"
+PP.b:<wh> = NP_1:<wh>
+" :COMMENTS "Wh question on NP1 in passive constructions
+    \"What was trampled on by the children?\"
 
-	
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) 
-("W1nx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) 
+("W1nx1Vp" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+
+
 
 
 
@@ -677,11 +644,11 @@ S_q.b:<wh> = NP_1:<wh>
 S_r.b:<inv> = -
 S_q.b:<mode> = S_r.t:<mode>
 S_q.b:<comp> = nil
-NP_1:<agr> = NP.t:<agr>
-NP_1:<case> = NP.t:<case>
-NP_1:<wh> = NP.t:<wh>
+NP.t:<agr> = NP.t:<agr>
+NP.t:<case> = NP.t:<case>
+NP.t:<wh> = NP.t:<wh>
 NP.t:<wh> = +
-NP_1:<trace> = NP.t:<trace>
+NP.t:<trace> = NP.t:<trace>
 S_r.b:<mode> = VP.t:<mode>
 S_r.b:<comp> = nil
 S_r.b:<tense> = VP.t:<tense>
@@ -710,12 +677,11 @@ P.t:<assign-case> = PP.b:<assign-case>
 NP_1:<case> = PP.b:<assign-case>
 PP.b:<wh> = NP_1:<wh>
 " :COMMENTS "Wh question on NP1 in passive constructions
-    \"What was thought of?\"
-
-	
+    \"What was trampled on?\"
+    
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) ) 
-("N0nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) ) ) ) ) 
+("N0nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -768,10 +734,10 @@ PP_0.b:<wh> = NP_0:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction of NP0 from by-phrase:
-	(I know) the person that the idea was thought of by.\"
+    (I know) the person that the idea was thought of by.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
-("N1nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
+("N1nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -823,10 +789,10 @@ PP_0.b:<wh> = NP_0:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction from NP1:
-   \"(I heard) the idea that was thought of by John.\"
+   \"(I heard that) the corn field was trampled on by the children.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
-("N1nx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
+("N1nx1Vp" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -874,11 +840,11 @@ NP_f.b:<case> = nom/acc
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction from NP1:
-    \"(I saw) the woman that was depended on.\"
+    \"(I saw) the field that was trampled on.\"
 
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) ) ) 
-("Nbynx0nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) ) ) ) ) ) 
+("Nbynx0nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -931,10 +897,10 @@ NP_f.b:<case> = nom/acc
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction of NP0 from by-phrase:
-   \"(I know) the person by whom the idea was thought of.\"
+   \"(I know) the person by whom the cave was ventured into.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "w")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
-("Npxnx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "w")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
+("Npxnx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -984,10 +950,10 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Adjunct relative clause:
-   \"the day on which John thought of the idea (was very joyous).\"
+   \"the day on which John ventured into the cave (was very joyous).\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
-("Npxnx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
+("Npxnx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -1039,9 +1005,9 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Adjunct relative clause on passive:
-   \"the day on which the idea was thought of by John\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
-("Npxnx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+   \"the day on which the field was trampled on by the children\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
+("Npxnx1Vp" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -1089,10 +1055,10 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Adjunct extraction from passive:
-   \"the day on which the idea was thought of (was very joyous).\"
+   \"the day on which the field was trampled on (was very joyous).\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) ) ) 
-("Npx1nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) ) ) ) ) ) 
+("Npx1nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<mode> = VP.t:<mode>
 S_r.b:<assign-comp> = VP.t:<assign-comp>
@@ -1144,9 +1110,9 @@ PP.b:<wh> = NP_1:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "Relative clause on fronted PP:
-   \"the person on whom John depends (is Mary).\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
-("Nc0nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+   \"the field on which the children trampled (is ruined).\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
+("Nc0nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -1195,9 +1161,9 @@ PP.b:<wh> = NP_1:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "Relative clause on NP0:
-  \"the man that depends on Mary (slept soundly).\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
-("Nc1nx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+  \"the man that ventured into the cave (slept soundly).\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
+("Nc1nx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<mode> = VP.t:<mode>
 S_r.b:<assign-comp> = VP.t:<assign-comp>
@@ -1249,10 +1215,10 @@ NP_f.b:<case> = nom/acc
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "Relative clause on NP1:
-   \"the woman that John depends on (slept soundly).\"
+   \"the cave that John ventured into (was dark).\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) ) 
-("Nc0nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :substp T))  (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) ) 
+("Nc0nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -1306,10 +1272,10 @@ PP_0.b:<wh> = NP_0:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction of NP0 from by-phrase:
-   \"(I know) the person that the idea was thought of by.\"
+   \"(I know) the children that the field was trampled on by.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
-("Nc1nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
+("Nc1nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -1362,10 +1328,10 @@ PP_0.b:<wh> = NP_0:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction from NP1:
-   \"(I saw) the woman that was depended on by John.\"
+   \"(I saw) the field that was trampled on by the children.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
-("Nc1nx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
+("Nc1nx1Vp" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 
@@ -1414,11 +1380,11 @@ NP_f.b:<case> = nom/acc
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction from NP1:
-   \"(I saw) the woman that was depended on.\"
+   \"(I saw) the field that was trampled on.\"
 
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) ) ) 
-("Ncnx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) ) ) ) ) ) 
+("Ncnx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -1470,10 +1436,10 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Adjunct relative clause:
-   \"the day that John thought of the idea (was joyous).\"
+   \"the day that John ventured into the cave (was joyous).\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
-("Ncnx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) ) ) 
+("Ncnx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -1527,9 +1493,9 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Adjunct relative clause with passive:
-   \"(I remember) the day that the idea was thought of by John.\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
-("Ncnx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+   \"(I remember) the day that the field was trampled on by the children.\"" :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
+("Ncnx1Vp" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -1579,16 +1545,10 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Adjunct relative clause with passive:
-   \"(I remember) the day that the idea was thought of.\"
+   \"(I remember) the day that the field was trampled on.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) ) ) 
-("W0nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
-
-
-
-
-
-
+ (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) ) ) ) ) ) 
+("W0nx1Vpbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 
@@ -1650,11 +1610,11 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Wh & topicalization on passivized NP0:
-  \"Who was the idea thought of by?\"
-  \"John the idea was thought of by.\"
+  \"Who was the cave ventured into by?\"
+  \"John the cave was ventured into by.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "q"))) (((("NP" . "0")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
-("Gnx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
+ (((("S" . "q"))) (((("NP" . "0")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
+("Gnx0Vpnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
 
 
 NP_r.b:<case> = nom/acc
@@ -1679,13 +1639,12 @@ VP_e.b:<assign-comp> = none
 
 V.t:<passive> = -
 NP_0:<case> = acc/gen
-" :COMMENTS "Multi Anchor PP-complement - NP gerund
-
-[John('s) depending on Mary] was difficult for her mother.
-
+" :COMMENTS "PP-complement - NP gerund
+ 
+[John('s) venturing into the cave] was dangerous.
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
-("Gnx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
+("Gnx1Vpbnx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 
 NP_r.b:<case> = nom/acc
@@ -1713,13 +1672,12 @@ P_0.b:<assign-case> = acc
 PP_0.b:<wh> = NP_0:<wh>
 NP_0:<case> = PP_0.b:<assign-case>
 NP_1:<case> = acc/gen
-" :COMMENTS "Multi Anchor PP-complement - gerund passive with the by-phrase
+" :COMMENTS "PP-complement - gerund passive with the by-phrase
    
-...the idea('s) being thought of by John...
-
+...the cave('s) being ventured into by John...
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) 
-("Gnx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) 
+("Gnx1Vp" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
 
 
 NP_r.b:<case> = nom/acc
@@ -1743,13 +1701,12 @@ V.t:<mode> = ppart
 V.t:<passive> = +
 PP.b:<wh> = NP_1:<wh>
 NP_1:<case> = acc/gen
-" :COMMENTS "Multi Anchor PP-complement - gerund passive without the by-phrase:
- 
-...John('s) being depended on...
+" :COMMENTS "PP-complement - gerund passive without the by-phrase
 
+...the cave('s) being ventured into...
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) 
-("nx0VPnx1-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) ) ) ) 
+("nx0Vpnx1-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -1786,15 +1743,20 @@ S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 VP.t:<mode> = inf/ger
 
-" :COMMENTS "Multi Anchor PP complement - PRO subject
+" :COMMENTS "PP Complement - PRO subject  
+
+John wanted [PRO to venture (into,around) the cave].
+While [PRO slogging (through,over) the mud] the hikers got dirty.
 
 
-John wants [PRO to think of a new idea].
+The VP_e node allows left adjunction between the verb and the preposition:
+
+... slog slowly through the mud.
 
 
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
-("nx1VPbynx0-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
+("nx1Vpbynx0-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<extracted> = -
 S_r.b:<inv> = -
@@ -1836,19 +1798,21 @@ S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 VP.t:<mode> = inf/ger
 
-" :COMMENTS "Multi Anchor PP complement - Passive with by-phrase, w/ PRO subject
+" :COMMENTS "PP Complement - Passive with by-phrase, w/ PRO subject
+    
+The men didn't want [PRO to be trampled on by the bulls].
+While [PRO being trampled on by the bulls] the men screamed.
 
-John wanted [PRO to be depended on by his kids].
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) 
-("nx1VP-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) 
+("nx1Vp-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 S_r.b:<inv> = -
 S_r.b:<comp> = nil
 S_r.b:<extracted> = -
 S_r.b:<wh> = NP_1:<wh>
-S_r.b:<agr> = NP_1:<agr>
 S_r.b:<assign-case> = NP_1.t:<case>
+S_r.b:<agr> = NP_1:<agr>
 S_r.b:<control> = NP_1.t:<control>
 S_r.b:<agr> = VP.t:<agr>
 S_r.b:<mode> = VP.t:<mode>
@@ -1859,7 +1823,7 @@ S_r.b:<passive> = VP.t:<passive>
 S_r.b:<progressive> = VP.t:<progressive>
 S_r.b:<assign-comp> = VP.t:<assign-comp>
 NP_1:<wh> = -
-NP_1.t:<case> = none
+NP_0.t:<case> = none
 VP.b:<compar> = -
 VP.b:<agr> = V.t:<agr>
 VP.b:<mode> = V.t:<mode>
@@ -1877,13 +1841,13 @@ V.t:<mode> = ppart
 V.t:<punct struct> = nil
 VP.t:<mode> = inf/ger
 
-" :COMMENTS "Multi Anchor PP complement - Passive w/o by-phrase, w/ PRO subject
+" :COMMENTS "PP Complement - Passive w/o by-phrase, w/ PRO subject
 
-John wanted [PRO to be depended on].
-
+The men didn't want [PRO to be trampled on].
+While [PRO being trampled on] the men screamed.
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :headp T)) ) ) ) ) 
-("Gnx0VPnx1-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
+ (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :substp T)) ) ) ) ) 
+("Gnx0Vpnx1-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
 
 NP_r.b:<case> = nom/acc
 NP_r.b:<agr num> = sing
@@ -1904,15 +1868,16 @@ VP_e.b:<mainv> = -
 VP_e.b:<compar> = -
 VP_e.b:<mode> = base
 VP_e.b:<assign-comp> = none
+
 V.t:<passive> = -
 
-" :COMMENTS "Multi Anchor PP-complement - NP gerund w/ PRO subject
 
-[PRO thinking of ideas] makes John feel good.
-
+" :COMMENTS "PP-complement - NP gerund w/ PRO subject
+ 
+[PRO venturing into the cave] was dangerous for John.
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
-("Gnx1VPbynx0-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T))  (((("NP" . "1")) :substp T)) ) ) ) ) 
+("Gnx1Vpbynx0-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
 
 NP_r.b:<case> = nom/acc
 NP_r.b:<agr num> = sing
@@ -1920,8 +1885,8 @@ NP_r.b:<agr pers> = 3
 NP_r.b:<agr 3rdsing> = +
 NP_r.b:<gerund> = +
 NP_1:<wh> = NP_r.b:<wh>
-NP_1.t:<wh> = -
 NP_1.t:<case> = none
+NP_1.t:<wh> = -
 VP.t:<mode> = ger
 VP.b:<mode> = V.t:<mode>
 VP.b:<passive> = V.t:<passive>
@@ -1939,13 +1904,13 @@ P_0.b:<assign-case> = acc
 PP_0.b:<wh> = NP_0:<wh>
 NP_0:<case> = PP_0.b:<assign-case>
 
-" :COMMENTS "Multi Anchor PP-complement - gerund passive with the by-phrase, PRO subject
-
-[PRO being depended on by John] made Mary happy.
+" :COMMENTS "PP-complement - gerund passive with the by-phrase, w/ PRO subject
+   
+[PRO being trampled on by John] was bad for the field.
 
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) 
-("Gnx1VP-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
+ (((("NP" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) 
+("Gnx1Vp-PRO" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
 
 NP_r.b:<case> = nom/acc
 NP_r.b:<agr num> = sing
@@ -1968,9 +1933,15 @@ V.t:<mode> = ppart
 V.t:<passive> = +
 PP.b:<wh> = NP_1:<wh>
 
-" :COMMENTS "Multi Anchor PP-complement - gerund passive w/o the by-phrase, w/ PRO subject
+" :COMMENTS "PP-complement - gerund passive without the by-phrase, w/ PRO subject
 
-[PRO being depended on] made John happy.
+[PRO being trampled on] was bad for the field.
 
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
- (((("NP" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) 
+ (((("NP" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("PRO" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :substp T)) ) ) ) ) 
+
+
+
+
+
+
