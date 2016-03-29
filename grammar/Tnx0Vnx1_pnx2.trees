@@ -98,7 +98,7 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Passive:
-	the poodle was put in the oven by Max
+    the poodle was put in the oven by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) 
 ("W0nx0Vnx1Pnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -615,7 +615,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Passive w/out by-phrase:
-	the poodle was put in the oven
+    the poodle was put in the oven
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) ) ) ) 
 ("W0nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -681,7 +681,7 @@ PP_0.b:<wh> = NP:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "passive, extraction from by-phrase:
-	who was the poodle put in the oven by
+    who was the poodle put in the oven by
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("NP" . "0")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
 ("pW0nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -745,7 +745,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "passive, extraction of by-phrase:
-	by whom was the poodle put in the oven
+    by whom was the poodle put in the oven
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) 
 ("W2nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -807,7 +807,7 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "passive, extraction of NP2:
-	what was the poodle put in by Max
+    what was the poodle put in by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("NP" . "2")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) ) 
 ("W2nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -865,7 +865,7 @@ PP.b:<wh> = NP.t:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "passive, extraction of NP2, w/0 by-phrase:
-	what was the poodle put in
+    what was the poodle put in
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("NP" . "2")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
 ("N1nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -923,7 +923,7 @@ V.t:<mode> = ppart
 V.t:<assign-comp> = ppart_nil
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction from NP1:
-	(I saw) the dog that was put in the oven by Max
+    (I saw) the dog that was put in the oven by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
 ("N1nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -975,7 +975,7 @@ V.t:<mode> = ppart
 V.t:<assign-comp> = ppart_nil
 V.t:<passive> = +
 " :COMMENTS "Passive that relative clause, extraction from NP1, w/o by-phrase:
-	(I saw) the dog that was put in the oven
+    (I saw) the dog that was put in the oven
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) ) ) ) ) ) 
 ("W1nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1038,8 +1038,8 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Wh question on NP1 in passive constructions, with by-phrase
-	what was put in the oven by Max
-	
+    what was put in the oven by Max
+    
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) 
 ("W1nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1098,7 +1098,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Wh question on NP1 in passive constructions, w/o by-phrase
-	what was put in the oven
+    what was put in the oven
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) ) ) ) ) 
 ("pW2nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1157,7 +1157,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "passive, extraction of NP2, w/o by-phrase:
-	where was the poodle put by Max
+    where was the poodle put by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
 ("pW2nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1220,7 +1220,7 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "passive, extraction of NP2:
-	where was the poodle put by Max
+    where was the poodle put by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) ) 
 ("N2nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1279,7 +1279,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP2 from indirect object
-	(I saw) the oven that the poodle was put in by Max
+    (I saw) the oven that the poodle was put in by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) ) ) 
 ("N2nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1334,7 +1334,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP2 from indirect object, w/o by-phrase
-	(I saw) the oven that the poodle was put in
+    (I saw) the oven that the poodle was put in
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) ) 
 ("N0nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1393,7 +1393,7 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP0 from by-phrase:
-	(I saw) the person that the poodle was put in the oven by
+    (I saw) the person that the poodle was put in the oven by
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
 ("Nbynx0nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1452,7 +1452,7 @@ PP.b:<wh> = NP_2:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction of NP0 from by-phrase:
-	(I saw) the person that the poodle was put in the oven by
+    (I saw) the person that the poodle was put in the oven by
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "w")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
 ("Npxnx0Vnx1Pnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1563,7 +1563,7 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Passive:
-	the poodle was put in the oven by Max
+    the poodle was put in the oven by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
 ("Npxnx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1617,7 +1617,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Passive w/out by-phrase:
-	the poodle was put in the oven
+    the poodle was put in the oven
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) ) ) ) ) ) 
 ("Npx2nx0Vnx1Pnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1730,7 +1730,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP2 from indirect object
-	(I saw) the oven that the poodle was put in by Max
+    (I saw) the oven that the poodle was put in by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w"))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) ) ) 
 ("Npx2nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -1786,7 +1786,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP2 from indirect object, w/o by-phrase
-	(I saw) the oven that the poodle was put in
+    (I saw) the oven that the poodle was put in
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("PP" . "w"))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
 ("Nc0nx0Vnx1Pnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -2000,7 +2000,7 @@ V.t:<mode> = ppart
 V.t:<assign-comp> = ppart_nil
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction from NP1:
-	(I saw) the dog that was put in the oven by Max
+    (I saw) the dog that was put in the oven by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
 ("Nc1nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -2054,7 +2054,7 @@ V.t:<mode> = ppart
 V.t:<assign-comp> = ppart_nil
 V.t:<passive> = +
 " :COMMENTS "Passive that relative clause, extraction from NP1, w/o by-phrase:
-	(I saw) the dog that was put in the oven
+    (I saw) the dog that was put in the oven
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) ) ) ) ) ) 
 ("Nc2nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -2113,7 +2113,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP2 from indirect object
-	(I saw) the oven that the poodle was put in by Max
+    (I saw) the oven that the poodle was put in by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T)) ) ) ) ) ) 
 ("Nc2nx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -2168,7 +2168,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP2 from indirect object, w/o by-phrase
-	(I saw) the oven that the poodle was put in
+    (I saw) the oven that the poodle was put in
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) ) 
 ("Nc0nx1VPnx2bynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -2227,7 +2227,7 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "That relative clause, extraction of NP0 from by-phrase:
-	(I saw) the person that the poodle was put in the oven by
+    (I saw) the person that the poodle was put in the oven by
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
 ("Ncnx0Vnx1Pnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -2342,7 +2342,7 @@ PP_0.b:<wh> = NP_0:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Passive:
-	the poodle was put in the oven by Max
+    the poodle was put in the oven by Max
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) ) 
 ("Ncnx1VPnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -2398,7 +2398,7 @@ PP.b:<wh> = NP_2:<wh>
 V.t:<mode> = ppart
 V.t:<passive> = +
 " :COMMENTS "Passive w/out by-phrase:
-	the poodle was put in the oven
+    the poodle was put in the oven
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :constraints "NA" :constraint-type :NA) (((("" . "w")))) )  (((("S" . "r"))) (((("NP" . "1")) :substp T :constraints ""))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . ""))) (((("P" . "")) :headp T))  (((("NP" . "2")) :substp T)) ) ) ) ) ) ) 
 ("Gnx0Vnx1Pnx2" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? T :UNIFICATION-EQUATIONS "
@@ -2592,7 +2592,7 @@ VP.t:<mode> = inf/ger
 
 " :COMMENTS "Multi Anchor Ditransitive with PP
 Passive w/ by-phrase, w/ PRO subject
-	
+    
 The poodle didn't want [PRO to be put in the oven by Max].
 While [PRO being given to the customer by the clerk] the parrot flew away.
 

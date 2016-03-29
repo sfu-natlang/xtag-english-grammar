@@ -333,7 +333,7 @@ S_r.b:<perfect> = VP.t:<perfect>
 S_r.b:<passive> = VP.t:<passive>
 S_r.b:<mainv> = VP.t:<mainv>
 " :COMMENTS "Fronted PP-complement:
-	\"On these they feel they can rely.\" (Brown corpus)
+    \"On these they feel they can rely.\" (Brown corpus)
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T))  (((("NP" . "1")) :substp T)) )  (((("S" . "r"))) (((("NP" . "0")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "t")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) 
 ("Inx0VPnx1" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -655,7 +655,7 @@ NP_1:<case> = PP.b:<assign-case>
 PP.b:<wh> = NP_1:<wh>" :COMMENTS "Wh question on NP1 in passive constructions
     \"What was thought of by Bob?\"
 
-	
+    
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "NA" :constraint-type :NA) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :substp T :constraints "")) ) ) ) ) 
 ("W1nx1VP" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -712,7 +712,7 @@ PP.b:<wh> = NP_1:<wh>
 " :COMMENTS "Wh question on NP1 in passive constructions
     \"What was thought of?\"
 
-	
+    
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("S" . "q"))) (((("NP" . "1")) :substp T :constraints "" :constraint-type :DUMMY))  (((("S" . "r"))) (((("NP" . "")) :constraints "NA" :constraint-type :NA) (((("" . "")))) )  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) ) ) ) ) 
 ("N0nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
@@ -768,7 +768,7 @@ PP_0.b:<wh> = NP_0:<wh>
 NP_r.b:<pron> = NP_f.t:<pron>
 
 " :COMMENTS "That relative clause, extraction of NP0 from by-phrase:
-	(I know) the person that the idea was thought of by.\"
+    (I know) the person that the idea was thought of by.\"
 " :SHAPE NIL :BORDER-WIDTH NIL :CONSTRAINT-STYLE NIL :CONNECTOR NIL :DEFAULT-STYLE NIL :SUBSCRIPT-STYLE NIL :WHITE-SPACE NIL  :MINIMUM-NODE-SEPARATION NIL :LEVEL-SEPARATION NIL)
  (((("NP" . "r"))) (((("NP" . "f")) :footp T :constraints "NA" :constraint-type :NA))  (((("S" . "p")) :constraints "NA" :constraint-type :NA) (((("NP" . "w")) :substp T))  (((("S" . "r"))) (((("NP" . "1")) :substp T))  (((("VP" . ""))) (((("V" . "")) :headp T))  (((("VP" . "e"))) (((("V" . "e")) :constraints "NA" :constraint-type :NA) (((("" . "v")))) )  (((("PP" . "")) :constraints "" :constraint-type :DUMMY) (((("P" . "")) :headp T)) ) )  (((("PP" . "0"))) (((("P" . "0"))) (((("by" . "")))) )  (((("NP" . "0")) :constraints "NA" :constraint-type :NA) (((("" . "")))) ) ) ) ) ) ) 
 ("N1nx1VPbynx0" :COMMENT-DISPLAY? NIL :FEATURE-DISPLAY? NIL :EQUATION-DISPLAY? NIL :UNIFICATION-EQUATIONS "
